@@ -1,0 +1,1 @@
+System structures are documented in [[eg(Generator)]] and [[4 System Structures]]. SBC(System) is equivalent to Manage)

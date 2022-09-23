@@ -1,0 +1,133 @@
+{
+  "main": {
+    "id": "74d72a1604ab774b",
+    "type": "split",
+    "children": [
+      {
+        "id": "9a06c640c60ec42f",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "MoonVolve🌀/1NewMoon🌑/durable_dominance/def(durable_dominance).md",
+            "mode": "source",
+            "backlinks": true,
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d202e938d18d679a",
+    "type": "split",
+    "children": [
+      {
+        "id": "735f619c40dd0f2c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6f013bdfca987c0d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "3034aebb7f09d93c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "behavior finance",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": true,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3b47cff9c3abc23d",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "fa3d690da2109497",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "👁🧠🌲🏭 Digital Twin/deConv(Digital Twin)/🏭 Generator/eg(Generator)/Computational Bayesian Statistics/def(Prior).md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 278.5
+  },
+  "right": {
+    "id": "d45901c627f066f3",
+    "type": "split",
+    "children": [
+      {
+        "id": "8e9c45232bd81bc2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7613e1d4c3d7d897",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "ec6b673ca227491a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "MoonVolve🌀/1NewMoon🌑/durable_dominance/def(durable_dominance).md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "6f013bdfca987c0d",
+  "lastOpenFiles": [
+    "MoonVolve🌀/4Gibbous🌔/VaccineMisinf 🌊/Epidemiology background.md",
+    "MoonVolve🌀/4Gibbous🌔/VaccineMisinf 🌊/def(VaccineMisinf).md",
+    "MoonVolve🌀/4Gibbous🌔/VaccineMisinf 🌊/waterfall.md",
+    "toltol/ForresterWorld/Nathaniel Osgood.md",
+    "MoonVolve🌀/2Crescent🌒/SVD2Parameter/StructuralParam/FinanceBehavior.md",
+    "MoonVolve🌀/2Crescent🌒/SVD2Parameter/StructuralParam/def(BehavioralPrior).md",
+    "MoonVolve🌀/1NewMoon🌑/Bias/Inductive Bias.md",
+    "MoonVolve🌀/1NewMoon🌑/Bias/Cognitive Bias.md",
+    "👁🧠🌲🏭 Digital Twin/deConv(Digital Twin)/🏭 Generator/eg(Generator)/Computational Bayesian Statistics/HW5.md",
+    "👁🧠🌲🏭 Digital Twin/deConv(Digital Twin)/🏭 Generator/eg(Generator)/Computational Bayesian Statistics/def(Prior).md"
+  ]
+}

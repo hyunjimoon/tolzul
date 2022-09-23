@@ -1,0 +1,14 @@
+{
+  "readableLineLength": false,
+  "alwaysUpdateLinks": true,
+  "promptDelete": false,
+  "fileSortOrder": "byModifiedTime",
+  "attachmentFolderPath": "ref",
+  "pdfExportSettings": {
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 50
+  },
+  "newFileLocation": "current"
+}

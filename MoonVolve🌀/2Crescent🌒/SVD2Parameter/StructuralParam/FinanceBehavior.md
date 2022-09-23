@@ -1,0 +1,3 @@
+- Stake holder's decision is conditional upon the assumption tha copper price is a randomwalk. However, the finiteness of the stakeholder group makes it non-randomwalk.
+- Could the following three types of investor be casted into _causal prior_? ("A system dynamics model of stock price movements" paper)
+- ![[Pasted image 20220919121435.png]]

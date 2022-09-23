@@ -1,0 +1,21 @@
+His paper on best practice for SD modeling recommends model reliability check in three aspects:
+## 1. Problem definition
+
+1a. Get the full historical context from the client, subject matter experts (SMEs), and as much related literature as possible. (For a case that has no history, such as the design of a new product or service, identify the broader class to which this case belongs, and compile data and information about relevant members of that class.)
+	
+1b. Assemble a broad array of potentially relevant time-series data, for as many variables as possible, even into the dozens. Some of these data will turn out to be significant and others will not, but you cannot know the difference beforehand, and should not do too much up-frontfiltering-out. (Client recollections of the pastare often unreliable and should not be used in place of data for reference modeconstruction. Clients are most helpful in describing current structures and policies.)
+	
+1c. Based on what you’ve learned from the information above, define the keyproblem or question in terms of measured outcomes that define better and worse.List factors that seem central to explaining the problem, and list possible solutions.1d. Draw a hybrid causal-loop and stock-and-flow diagram that logically connectsthe central factors, endogenously explains the outcomes, and shows where thepolicy options mayfit in. This diagram is your preliminary dynamic hypothesis(DH), but it is not a complete model, and it shouldfit easily on a single piece ofpaper. Core stock–flow structures (e.g., aging chains), and not just causal loops,should be prominent in the diagram; stock–flow dynamics are at least as importantas feedback dynamics in well-built SD models (Richmond, 1994; Homer, 1997).
+	
+## 2.Model formulation and reliability testing
+2a. Assemble a running simulation model based on the DH diagram. To develop aproper simulation model, some of the concepts in the DH diagram will need to bebroken out into separate, logically distinct variables. As a result, even afirst-versionsimulation model may end up substantially bigger than the DH diagram. Go back toyour information sources (client, SMEs, literature) as needed to ensure realism in allformulations. Use other good practices of equation formulation (robustness underextreme conditions, units consistency, etc.) as described in SD textbooks. In somecases, generic structures described in textbooks (e.g., market diffusion, productioncontrol, commodity cycles) may be useful, but note that these have many variationsand likely need customization for a particular real-world application.
+
+2b. Run the model to determine its ability to reproduce the full array of time-seriesdata corresponding to model variables, and the plausibility of all its base-case outputs.Do sensitivity tests (e.g., neutralizing a causal link, or subjecting the model to plausi-ble extreme conditions) to ensure the model is doing the right things for the right rea-sons. If such testing reveals logical inconsistencies, go back to revise the model.
+
+2c. Identify all large gaps between model and data, and question your informationsources in an attempt to explain these gaps. Additional information gathering isoften required. Some gaps may be corrected through better parameter estimation.Other gaps may be the result of systematicflaws in equation formulation or theabsence of an important variable—indicating the need for model revision. Yetother gaps may be acceptable deviations corresponding to one-time events or mea-surement error—for which the model need not be revised.2d. Revise the model accordingly and repeat the above procedures until all base-case outputs are plausible, and an acceptablefit to data is obtained. If new vari-ables or formulations are added, make sure they are supported by your informa-tion sources and integrate properly with the rest of the model without harming itsstructural coherence.
+
+3.Policy/scenario analysis and policy sensitivity testing
+
+3a. Test policies and alternative scenarios (individually and in combination) withrealistic inputs and determine whether the outputs are plausible. If they are not,this will require a return to step 2 for model revision.
+
+3b. Initial policy results may spur ideas for other policies and policy structures not included initially, and which may be added at this point.

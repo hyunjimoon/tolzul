@@ -1,0 +1,8 @@
+> For everything that we do in OR, context is important, and that means that one cannot avoid the details of the domain. The best solutions typically combine good methodology with enough domain knowledge to amplify the impact of the methods. Besides, domain knowledge can be learned by talking to experts.
+
+> If I may introduce my interest further, [this](https://arxiv.org/pdf/2103.10522.pdf) research requires a fundamental understanding of confidence interval, power, and sampling (Could you be generous enough to classify these concepts as domain knowledge? After all, the concept of 'power' is statisticians' invention for system efficiency like most other domain knowledge). It was interesting to see how they cast the best confidence interval problem as an optimization problem.
+
+I would not call this domain knowledge. It is definitely statistical/mathematical knowledge but not really domain knowledge -- at least the way I define it. To mean a "domain" is something physical, with physical constraints. A power grid, a queuing system, a logistics and distribution system, etc. are all domains. They have physical constraints that we (as mathematicians, statisticians, OR researchers) abstract out and create mathematical/statistical models. Within the model we can certainly have ways of transforming one question into another that is more tractable.
+
+Cronon essay 1995
+> The only thing we have to preserve Nature with is Culture

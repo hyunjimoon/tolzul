@@ -1,0 +1,1 @@
+This is the same with [[AssumedParam🌱]], but the input file structure of vensim is confusing us. Pulling it of to general programming language such as python, it is clear that [[]] 

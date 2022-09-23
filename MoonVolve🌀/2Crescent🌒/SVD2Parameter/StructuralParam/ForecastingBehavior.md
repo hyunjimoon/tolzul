@@ -1,0 +1,3 @@
+John introduces four ways of preceiving a demand: static, regressive, adaptive, adaptive, extrapolative :
+
+> Expected losses may be formed in various ways. Common formulations include static expectations $\hat{L}_{t}=L^{*}$ (a constant or equilibrium value), regressive expectations $\hat{L}_{t}=\gamma L_{t-1}+(1-\gamma) L^{*}, 0 \leq \gamma \leq 1$, adaptive expectations $\hat{L}_{t}=\theta L_{t-1}+(1-\theta) \hat{L}_{t-1}$, $0 \leq \theta \leq 1$, and extrapolative expectations, $\Delta \hat{L}_{t}=\sum \omega_{i} \cdot \Delta L_{t-i}$, where $\Delta$ is the first difference
