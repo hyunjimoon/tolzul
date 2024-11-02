@@ -1,0 +1,4 @@
+- hedgehog
+- descendants of the sun
+- [[🏭generator]]
+-  yang opts in uncertainty and majorly use inductive reasoning and have relatively global and compartment-based view e.g. [[def(iai)]], [[def(o4)]]

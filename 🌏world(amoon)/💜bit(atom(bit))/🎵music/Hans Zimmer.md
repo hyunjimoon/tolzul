@@ -1,0 +1,6 @@
+- [The last samurai](https://youtu.be/rUD0GOYlKoc)
+- [Gladiator](https://youtu.be/q8wj7EjOX9A)
+- [The prince of Egypt](https://youtu.be/5GE6hZqHByE)
+- [The lion king](https://youtu.be/q50LsFOXNZE)
+- [Interstellar](https://youtu.be/hazRsFHD9gE)
+- [Pirates of the Caribbean](https://youtu.be/hazRsFHD9gE)

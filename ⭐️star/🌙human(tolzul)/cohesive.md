@@ -1,0 +1,4 @@
+writing style
+- to add cohesiveness, invent one sentence each at the end of each section that summarizes current section and bridges the next section (MAKE READERS CURIOUS e.g. after explaining resource rationality ratio, you should question, different ratios are being observed in different contexts - how much can agent's irrationality be accounted for this heterogeneity? which would help readers curious about decision making process and operations-market reasoning and action. this'd increase reader's absorptive capacity)
+
+- to add cohesiveness, explain how each figure and table are related with each other. assign agent to each figures and tables and allow them to understand each other. let's call this process `connect(table_fig)` and you MUST include `connect(table_fig)` if the table and fig appear in the same section (e.g. table1-fig2, table2/3-fig3). the others are your choice.

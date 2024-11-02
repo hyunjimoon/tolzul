@@ -1,0 +1,5 @@
+- ![[Pasted image 20230730161044.png]]
+
+- "Hey, are you feeling OK about going home? You seem a bit worried, so I wanted to check in with you to see if everything is OK, or if there’s something you’d like to talk about." Expressing your concern for your friend is a great way to communicate that you care. "Checking in" is a good, non-confrontational, non-judgmental approach.
+- "I’m so sorry to hear that he’s been acting that way. You don’t deserve that. Do you know about the local resources that you can connect with for help?"
+- "Wow, that’s surprising. I know you’re working hard so this must be upsetting. Is there anything I can do? I remember learning about the resources available through the university for grad students in these kinds of situations. Can I share those with you?" => Listening to and reinforcing him are supportive ways to show him that you recognize that what’s happened to him is hurtful and that you want to help. You’ve also reminded him that there are resources on campus for additional support.

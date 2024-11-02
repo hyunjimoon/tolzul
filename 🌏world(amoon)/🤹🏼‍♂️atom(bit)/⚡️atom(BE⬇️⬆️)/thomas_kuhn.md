@@ -1,0 +1,2 @@
+- scientific paradigm := universally recognized scientific achievements that, for a time, provide model problems and solutions for a community of researchers
+- 

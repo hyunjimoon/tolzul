@@ -1,0 +1,3 @@
+
+
+- [astrogeneca](https://youtubetranscript.com/?v=q9SK_R5nKEw&t=1372): The drug repurposing group at the organization was tasked with assessing molecules across the portfolio, including parked and active molecules, to explore their potential for alternative indications, such as the anti-IL-6 drug MED5117, which was being investigated for cardiovascular disease despite originally being developed for rheumatoid arthritis by MedImmune.

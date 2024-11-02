@@ -1,0 +1,2 @@
+[[📝Equity Proposals as Actions Converging toward Optimal Term Sheet  during Scaling]]
+[[📝Bayesian Hierarchical Modeling of Essential Heterogeneity in Startup Valuations-Dynamic, Multi-Stage Approach for CIVA]]

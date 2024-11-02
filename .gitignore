@@ -1,0 +1,53 @@
+spandrel/**/*
+spandrel/data/**/*
+_ref/
+**/.DS_Store
+**/.dll
+**/.m
+*.m
+**/*.m
+**/.trash/
+**/.sops/
+.trash/
+
+# Add new extensions
+*.mdl
+**/*.mdl
+*.voc
+**/*.voc
+*.vpd
+**/*.vpd
+*.lst
+**/*.lst
+*.vsc
+**/*.vsc
+*.vmf
+**/*.vmf
+*.prm
+**/*.prm
+**/*.key
+**/*.pptx
+**/*.pdf
+
+🌙amoon()/⚡️generate(tolzul)/management/1🔴BayesSD/1🏭generator/branched_generator/bit(generator)/**
+
+# to exclude Obsidian's settings (including plugin and hotkey configurations)
+.obsidian/
+
+# to only exclude plugin configuration. Might be useful to prevent some plugin from exposing sensitive data
+.obsidian/plugins
+
+# OR only to exclude workspace cache
+.obsidian/workspace.json
+
+# to exclude workspace cache specific to mobile devices
+.obsidian/workspace-mobile.json
+
+# Add below lines to exclude OS settings and caches
+.trash/
+.DS_Store🌙amoon()/⚡️generate(tolzul)/operations/2🟩bayes_dec_game/transpo/Wu23_transpo101_pset_rec_quiz.pdf
+🌏world(amoon)/🌀iter(🤹🏼‍♂️)=E/🏛️semester_class/Tenanbaum24/*.pptx
+🌏world(amoon)/🌀iter(🤹🏼‍♂️)=E/🏛️semester_class/Tenanbaum24/*.pdf
+🌏world(amoon)/🤹🏼‍♂️atom(bit)/🗺️atom(PC⬆️⬇️)/jun_youngbum/*.pdf
+🌏world(amoon)/🤹🏼‍♂️atom(bit)/🧭atom(PC🔃)/moshe_ben-akiva/*.pdf
+🌙amoon()/⚡️generate(tolzul)/operations/2🟩bayes_dec_game/optimization/*.key

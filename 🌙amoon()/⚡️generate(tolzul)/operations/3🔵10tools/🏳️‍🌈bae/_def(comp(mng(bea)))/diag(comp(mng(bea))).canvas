@@ -1,0 +1,8 @@
+{
+	"nodes":[
+		{"type":"file","file":"_ref/physic_dual_pen.png","id":"85963cb9a2e3b17c","x":-14,"y":-72,"width":385,"height":400},
+		{"type":"text","text":"slow, estimator, body, atom","id":"770aff71edd9abed","x":-1500,"y":740,"width":250,"height":60},
+		{"type":"text","text":"fast, generator, soul, bit","id":"e0da9c1a43280ae5","x":-1500,"y":1260,"width":250,"height":60}
+	],
+	"edges":[]
+}

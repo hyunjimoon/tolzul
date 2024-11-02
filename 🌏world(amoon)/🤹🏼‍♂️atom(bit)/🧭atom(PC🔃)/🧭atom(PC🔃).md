@@ -1,0 +1,2 @@
+- benchmark of [[🧭navigate(startup)]] function
+- possess tool to act and think fast enough to respond without accurate prediction

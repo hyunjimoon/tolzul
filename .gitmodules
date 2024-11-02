@@ -1,0 +1,9 @@
+[submodule "MoonVolve🌀/1NewMoon🌑/social_defense_reliability"]
+	path = MoonVolve🌀/1NewMoon🌑/social_defense_reliability
+	url = git@github.com:hyunjimoon/social_defense_reliability.git
+[submodule "MoonVolve🌀/1NewMoon🌑/DurableDominance"]
+	path = MoonVolve🌀/1NewMoon🌑/DurableDominance
+	url = git@github.com:hyunjimoon/DurableDominance.git
+[submodule "MoonVolve🌀/1NewMoon🌑/durable_dominance"]
+	path = MoonVolve🌀/1NewMoon🌑/durable_dominance
+	url = git@github.com:hyunjimoon/durable_dominance.git

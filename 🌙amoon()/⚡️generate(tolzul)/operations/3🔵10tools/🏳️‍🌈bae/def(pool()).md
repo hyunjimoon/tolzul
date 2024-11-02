@@ -1,0 +1,3 @@
+- platform() = digital pallet
+- how does pool differ for bits and atoms; is bits [[../../../../../../../BayesSD/playbook/1generator🏭/branched_generator/form(generator)/open_sys/def(open_sys)|def(open_sys)]] and atoms [[../../../../../../../BayesSD/playbook/1generator🏭/branched_generator/form(generator)/closed_sys/def(closed_sys)|def(closed_sys)]]
+- 

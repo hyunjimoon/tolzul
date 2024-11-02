@@ -1,0 +1,477 @@
+{UTF-8}
+Company Task Quality=A FUNCTION OF(Company Task Quality,Quality Decrease,Quality Increase\
+		) ~~|
+Company Task Quality= INTEG (
+	Quality Increase-Quality Decrease,
+		)
+	~	Dmnl
+	~		|
+
+Tasks to be Done= INTEG (
+	Return+Tasks Arrival-Work,
+		100)
+	~	Task
+	~		|
+
+Managers= INTEG (
+	Managers Hiring-Managers Firing,
+		1)
+	~	Manager
+	~		|
+
+Non Managers= INTEG (
+	Non Managers Hiring-Non Manager Firing,
+		5)
+	~	Nonmanager
+	~		|
+
+Non Managers Hiring=A FUNCTION OF(Non Managers Hiring,Desired Non Managers,Non Manager Hiring Delay\
+		) ~~|
+Non Managers Hiring=
+	~	Nonmanager/Month
+	~		|
+
+Manager Fatigue in=A FUNCTION OF(Manager Fatigue in,Difference of Manager Workweek) ~~|
+Manager Fatigue in=
+	~	MFatigue/Month
+	~		|
+
+Tasks Arrival=A FUNCTION OF(Tasks Arrival,New Tasks) ~~|
+Tasks Arrival=
+	~	Task/Month
+	~		|
+
+Manager Fatigue=A FUNCTION OF(Manager Fatigue,Manager Fatigue in,Manager Fatigue out)\
+		 ~~|
+Manager Fatigue= INTEG (
+	Manager Fatigue in-Manager Fatigue out,
+		)
+	~	MFatigue
+	~		|
+
+Non Manager Fatigue=A FUNCTION OF(Non Manager Fatigue,Non Manager Fatigue in,Non Manager Fatigue out\
+		) ~~|
+Non Manager Fatigue= INTEG (
+	Non Manager Fatigue in-Non Manager Fatigue out,
+		)
+	~	NMFatigue
+	~	should start from 0? find equlibrium
+	|
+
+Non Manager Fatigue in=A FUNCTION OF(Non Manager Fatigue in,Differnce of Non Manager Workweek\
+		) ~~|
+Non Manager Fatigue in=
+	~	NMFatigue/Month
+	~		|
+
+Managers Hiring=A FUNCTION OF(Managers Hiring,Desired Managers,Time to manager hiring\
+		) ~~|
+Managers Hiring=
+	~	Manager/Month
+	~		|
+
+Non Manager Firing=A FUNCTION OF(Non Manager Firing,Desired Non Managers,Non Manager Firing Delay\
+		) ~~|
+Non Manager Firing=
+	~	Nonmanager/Month
+	~		|
+
+Manager Fatigue out=A FUNCTION OF(Manager Fatigue out,Difference of Manager Workweek)\
+		 ~~|
+Manager Fatigue out=
+	~	MFatigue/Month
+	~		|
+
+Non Manager Fatigue out=A FUNCTION OF(Non Manager Fatigue out,Differnce of Non Manager Workweek\
+		) ~~|
+Non Manager Fatigue out=
+	~	NMFatigue/Month
+	~		|
+
+Time to manager hiring=A FUNCTION OF(Time to manager hiring) ~~|
+Time to manager hiring=
+	~	
+	~		|
+
+Managers Firing=A FUNCTION OF(Managers Firing,Desired Managers,Time to manager retiring\
+		) ~~|
+Managers Firing=
+	~	Manager/Month
+	~		|
+
+Quality Increase Index=A FUNCTION OF(Quality Increase Index) ~~|
+Quality Increase Index=
+	~	
+	~		|
+
+Time to manager retiring=
+	5
+	~	Month
+	~		|
+
+Desired Managers  = A FUNCTION OF( Expected Managers Workweek,Standard Managers Workweek\
+		)
+	~	
+	~		|
+
+Desired Non Managers  = A FUNCTION OF( Expected Non Managers Workweek,Non Managers,Standard Non Managers Workweek\
+		)
+	~	
+	~		|
+
+Non Manager Hiring Delay  = A FUNCTION OF( )
+	~	
+	~		|
+
+Non Manager Workweek  = A FUNCTION OF( Non Managers)
+	~	
+	~		|
+
+Difference of Manager Workweek  = A FUNCTION OF( Expected Managers Workweek,Standard Managers Workweek\
+		)
+	~	
+	~		|
+
+Differnce of Non Manager Workweek  = A FUNCTION OF( Expected Non Managers Workweek,Standard Non Managers Workweek\
+		)
+	~	
+	~		|
+
+Expected Managers Workweek  = A FUNCTION OF( Detected Tasks,Detection,Managers)
+	~	
+	~		|
+
+Expected Non Managers Workweek  = A FUNCTION OF( Non Managers,Tasks to be Done)
+	~	
+	~		|
+
+Fail  = A FUNCTION OF( Manager Workweek,Probability of Non Manager Mistakes)
+	~	
+	~		|
+
+Manager Workweek  = A FUNCTION OF( Managers)
+	~	
+	~		|
+
+Net Change of Prob of Manager Mistake  = A FUNCTION OF( Difference of Manager Workweek\
+		,Manager Fatigue,Probability of Manager Mistakes)
+	~	
+	~		|
+
+"Net Change of Prob of N-Manager Mistake"  = A FUNCTION OF( Differnce of Non Manager Workweek\
+		,Non Manager Fatigue,Probability of Non Manager Mistakes)
+	~	
+	~		|
+
+New Tasks  = A FUNCTION OF( Company Task Quality)
+	~	
+	~		|
+
+Non Manager Firing Delay  = A FUNCTION OF( )
+	~	
+	~		|
+
+Return  = A FUNCTION OF( Manager Workweek)
+	~	
+	~		|
+
+Standard Managers Workweek  = A FUNCTION OF( )
+	~	
+	~		|
+
+Pass  = A FUNCTION OF( Manager Workweek,Probability of Non Manager Mistakes)
+	~	
+	~		|
+
+Probability of Manager Mistakes  = A FUNCTION OF( Net Change of Prob of Manager Mistake\
+		)
+	~	
+	~		|
+
+Probability of Non Manager Mistakes  = A FUNCTION OF( "Net Change of Prob of N-Manager Mistake"\
+		)
+	~	
+	~		|
+
+Probability of Task Complete without Mistakes  = A FUNCTION OF( Manager Workweek,Probability of Manager Mistakes\
+		)
+	~	
+	~		|
+
+Quality Decrease  = A FUNCTION OF( Quality Decrease Index,Task Complete with Mistakes\
+		)
+	~	
+	~		|
+
+Quality Decrease Index  = A FUNCTION OF( )
+	~	
+	~		|
+
+Quality Increase  = A FUNCTION OF( Quality Increase Index,Task Complete without Mistakes\
+		)
+	~	
+	~		|
+
+Task Complete with Mistakes  = A FUNCTION OF( Probability of Task Complete without Mistakes\
+		)
+	~	
+	~		|
+
+Task Complete without Mistakes  = A FUNCTION OF( Probability of Task Complete without Mistakes\
+		)
+	~	
+	~		|
+
+Standard Non Managers Workweek  = A FUNCTION OF( )
+	~	
+	~		|
+
+Work  = A FUNCTION OF( Non Manager Workweek)
+	~	
+	~		|
+
+Detected Tasks  = A FUNCTION OF( Fail,-Return)
+	~	
+	~		|
+
+Detection  = A FUNCTION OF( -Pass,-Fail,Work)
+	~	
+	~		|
+
+Undetected Tasks  = A FUNCTION OF( Pass,-Task Complete with Mistakes,-Task Complete without Mistakes\
+		)
+	~	
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 100
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,110,0
+10,1,Tasks to be Done,497,422,47,188,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,2,48,304,339,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,3,5,1,4,0,0,22,0,0,0,-1--1--1,,1|(419,339)|
+1,4,5,2,100,0,0,22,0,0,0,-1--1--1,,1|(345,339)|
+11,5,0,382,339,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,6,Tasks Arrival,382,358,43,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,7,Detection,727,290,42,62,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,8,10,7,4,0,0,22,0,0,0,-1--1--1,,1|(650,293)|
+1,9,10,1,100,0,0,22,0,0,0,-1--1--1,,1|(573,293)|
+11,10,0,609,293,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,11,Work,609,312,20,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,12,Undetected Tasks,935,336,45,109,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,13,Detected Tasks,730,554,42,63,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,14,16,12,4,0,0,22,0,0,0,-1--1--1,,1|(862,286)|
+1,15,16,7,100,0,0,22,0,0,0,-1--1--1,,1|(796,286)|
+11,16,0,829,286,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,17,Pass,829,305,16,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,18,20,1,4,0,0,22,0,0,0,-1--1--1,,1|(575,535)|
+1,19,20,13,100,0,0,22,0,0,0,-1--1--1,,1|(653,535)|
+11,20,0,613,535,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,21,Return,613,554,22,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,22,48,1131,269,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,23,25,22,4,0,0,22,0,0,0,-1--1--1,,1|(1083,269)|
+1,24,25,12,100,0,0,22,0,0,0,-1--1--1,,1|(1006,269)|
+11,25,0,1039,269,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,26,Task Complete without Mistakes,1039,296,55,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,27,48,1136,383,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,28,30,27,4,0,0,22,0,0,0,-1--1--1,,1|(1088,383)|
+1,29,30,12,100,0,0,22,0,0,0,-1--1--1,,1|(1009,383)|
+11,30,0,1045,383,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,31,Task Complete with Mistakes,1045,410,65,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,32,34,13,4,0,0,22,0,0,0,-1--1--1,,1|(728,459)|
+1,33,34,7,100,0,0,22,0,0,0,-1--1--1,,1|(728,383)|
+11,34,0,728,421,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,35,Fail,756,421,20,12,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+10,36,Non Managers,218,526,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+12,37,48,49,529,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,38,40,36,4,0,0,22,0,0,0,-1--1--1,,1|(151,529)|
+1,39,40,37,100,0,0,22,0,0,0,-1--1--1,,1|(85,529)|
+11,40,0,118,529,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,41,Non Managers Hiring,118,556,48,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,42,48,358,527,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,43,45,42,4,0,0,22,0,0,0,-1--1--1,,1|(328,527)|
+1,44,45,36,100,0,0,22,0,0,0,-1--1--1,,1|(277,527)|
+11,45,0,303,527,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,46,Non Manager Firing,303,554,45,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,47,Standard Non Managers Workweek,-11,726,70,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,48,Expected Non Managers Workweek,275,647,70,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,49,1,48,1,0,0,0,0,64,0,-1--1--1,,1|(417,649)|
+1,50,36,48,1,0,0,0,0,64,0,-1--1--1,,1|(225,589)|
+10,51,Desired Non Managers,88,631,42,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,52,47,51,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,53,48,51,1,0,0,0,0,64,0,-1--1--1,,1|(188,667)|
+1,54,36,51,1,0,0,0,0,64,0,-1--1--1,,1|(170,608)|
+1,55,51,46,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,56,51,41,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+10,57,Non Manager Hiring Delay,-29,599,45,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,58,57,41,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+10,59,Non Manager Firing Delay,363,601,45,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,60,59,46,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+10,61,Managers,1042,557,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+12,62,48,872,559,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,63,65,61,4,0,0,22,0,0,0,-1--1--1,,1|(975,559)|
+1,64,65,62,100,0,0,22,0,0,0,-1--1--1,,1|(909,559)|
+11,65,0,942,559,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,66,Managers Hiring,942,578,52,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,67,48,1194,558,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,68,70,67,4,0,0,22,0,0,0,-1--1--1,,1|(1161,558)|
+1,69,70,61,100,0,0,22,0,0,0,-1--1--1,,1|(1104,558)|
+11,70,0,1133,558,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,71,Managers Firing,1133,577,51,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,72,Expected Managers Workweek,871,704,64,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,73,61,72,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,74,7,72,1,0,0,0,0,64,0,-1--1--1,,1|(769,514)|
+1,75,13,72,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+10,76,Desired Managers,1127,661,58,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,77,76,66,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,78,76,71,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+10,79,Standard Managers Workweek,1000,739,63,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,80,79,76,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,81,72,76,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+10,82,Time to manager hiring,950,630,50,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,83,Time to manager retiring,1283,622,49,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,84,82,66,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,85,83,71,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+10,86,Probability of Task Complete without Mistakes,1268,346,61,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,87,86,26,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,88,86,31,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+10,89,Probability of Non Manager Mistakes,654,724,68,29,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,90,48,382,720,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,91,93,89,4,0,0,22,0,0,0,-1--1--1,,1|(526,720)|
+1,92,93,90,100,0,0,22,0,0,0,-1--1--1,,1|(423,720)|
+11,93,0,461,720,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,94,"Net Change of Prob of N-Manager Mistake",461,747,73,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,95,Non Manager Fatigue,392,875,66,27,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,96,48,198,876,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,97,99,95,4,0,0,22,0,0,0,-1--1--1,,1|(299,876)|
+1,98,99,96,100,0,0,22,0,0,0,-1--1--1,,1|(234,876)|
+11,99,0,267,876,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,100,Non Manager Fatigue in,267,903,45,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,101,48,619,871,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,102,104,101,4,0,0,22,0,0,0,-1--1--1,,1|(564,871)|
+1,103,104,95,100,0,0,22,0,0,0,-1--1--1,,1|(483,871)|
+11,104,0,514,871,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,105,Non Manager Fatigue out,514,898,45,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,106,Differnce of Non Manager Workweek,26,807,67,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,107,Non Manager Workweek,374,454,45,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,108,36,107,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,109,107,11,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,110,48,106,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,111,47,106,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,112,106,100,1,0,0,0,0,64,0,-1--1--1,,1|(141,915)|
+1,113,106,94,1,0,0,0,0,64,0,-1--1--1,,1|(275,827)|
+1,114,89,94,1,0,0,0,0,64,0,-1--1--1,,1|(595,805)|
+1,115,95,94,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,116,106,105,1,0,0,0,0,64,0,-1--1--1,,1|(164,1002)|
+1,117,89,35,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,118,89,17,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+10,119,Probability of Manager Mistakes,1329,772,84,36,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,120,48,1070,766,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,121,123,119,4,0,0,22,0,0,0,-1--1--1,,1|(1206,766)|
+1,122,123,120,100,0,0,22,0,0,0,-1--1--1,,1|(1118,766)|
+11,123,0,1162,766,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,124,Net Change of Prob of Manager Mistake,1162,793,73,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,125,Manager Fatigue,1179,886,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+12,126,48,1000,887,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,127,129,125,4,0,0,22,0,0,0,-1--1--1,,1|(1109,887)|
+1,128,129,126,100,0,0,22,0,0,0,-1--1--1,,1|(1039,887)|
+11,129,0,1074,887,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,130,Manager Fatigue in,1074,914,31,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,131,48,1332,887,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,132,134,131,4,0,0,22,0,0,0,-1--1--1,,1|(1299,887)|
+1,133,134,125,100,0,0,22,0,0,0,-1--1--1,,1|(1241,887)|
+11,134,0,1270,887,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,135,Manager Fatigue out,1270,914,54,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,136,Manager Workweek,906,506,37,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,137,136,17,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,138,136,35,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,139,136,21,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,140,136,86,1,0,0,0,0,64,0,-1--1--1,,1|(1082,450)|
+10,141,Difference of Manager Workweek,836,800,67,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,142,72,141,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,143,79,141,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,144,141,130,1,0,0,0,0,64,0,-1--1--1,,1|(923,908)|
+1,145,141,135,1,0,0,0,0,64,0,-1--1--1,,1|(992,969)|
+1,146,125,124,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,147,141,124,1,0,0,0,0,64,0,-1--1--1,,1|(968,838)|
+1,148,119,124,1,0,0,0,0,64,0,-1--1--1,,1|(1245,846)|
+1,149,119,86,1,0,0,0,0,64,0,-1--1--1,,1|(1376,497)|
+1,150,61,136,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+10,151,Company Task Quality,893,115,63,31,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,152,48,694,120,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,153,155,151,4,0,0,22,0,0,0,-1--1--1,,1|(801,120)|
+1,154,155,152,100,0,0,22,0,0,0,-1--1--1,,1|(732,120)|
+11,155,0,767,120,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,156,Quality Increase,767,139,51,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,157,48,1092,116,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,158,160,157,4,0,0,22,0,0,0,-1--1--1,,1|(1053,116)|
+1,159,160,151,100,0,0,22,0,0,0,-1--1--1,,1|(984,116)|
+11,160,0,1019,116,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,161,Quality Decrease,1019,135,54,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,162,26,156,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,163,31,161,1,0,0,0,0,64,0,-1--1--1,,1|(1171,212)|
+10,164,Quality Increase Index,780,191,52,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,165,164,156,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+10,166,Quality Decrease Index,978,192,55,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,167,166,161,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+10,168,New Tasks,258,219,37,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,169,151,168,1,0,0,0,0,64,0,-1--1--1,,1|(550,63)|
+1,170,168,6,1,0,0,0,0,64,0,-1--1--1,,1|(293,291)|
+///---\\\
+:L<%^E!@
+5:Company Task Quality
+9:Current
+19:110,0
+24:0
+25:0
+26:0
+15:0,0,0,0,0,0
+27:2,
+34:0,
+42:0
+72:0
+73:0
+95:0
+96:0
+97:0
+77:0
+78:0
+102:1
+93:0
+94:0
+92:0
+91:0
+90:0
+87:0
+75:
+43:
+103:8,8,8,3,8
+105:0,0,0,0,0,0,0,0,0,0
+104:Helvetica|12||0-0-0|0-0-0|-1--1--1|0-0-0|192-192-192|-1--1--1

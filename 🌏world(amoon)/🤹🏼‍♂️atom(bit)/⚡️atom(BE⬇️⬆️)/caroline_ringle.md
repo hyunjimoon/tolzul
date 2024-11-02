@@ -1,0 +1,2 @@
+- harvard economics
+- 미얀마 (physical cost of genocide using gdp)

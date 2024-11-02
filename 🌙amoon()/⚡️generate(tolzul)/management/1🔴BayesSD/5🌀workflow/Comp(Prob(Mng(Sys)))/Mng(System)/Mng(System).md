@@ -1,0 +1,1 @@
+System structures are documented in [[../../../../../BayesSD/playbook/1generator🏭/branched_generator/form(generator)/seven_examples]] and [[🏭generator]]. SBC(System) is equivalent to Manage)

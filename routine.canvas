@@ -1,0 +1,39 @@
+{
+	"nodes":[
+		{"id":"ef0054693677256e","type":"file","file":"_ref/action_speed_space.png","x":698,"y":-2760,"width":999,"height":671},
+		{"id":"f7ca641c2a7b101a","type":"file","file":"world(amoon)/🧍atom(bit)/def(🧍atom(bit)).md","x":1017,"y":300,"width":412,"height":247},
+		{"id":"aeb10ba9f1e0bfd4","type":"text","text":"read paper\n![[Pasted image 20240406105905.png|2000]]","x":176,"y":920,"width":2043,"height":1680},
+		{"id":"d119244b144fce65","type":"file","file":"🌙amoon()/⚡️generate(tolzul)/operations/2🟩bayes_dec_game/🟩inf_gen_alg/🟩UseMachinePartner.md","x":2009,"y":-759,"width":420,"height":643,"color":"4"},
+		{"id":"d8dd1fb1e1c264f2","type":"file","file":"🌙amoon()/👓synthesize(pc4innov)/🌳💰nail_cap/🔷InnovVal_ResAlloc.md","x":657,"y":-1908,"width":360,"height":617,"color":"5"},
+		{"id":"16d326f78a29b9f0","type":"file","file":"🌙amoon()/⚡️generate(tolzul)/🔴💙management/1🔴BayesSD/spandrel/🔴gen_inf_prog/🔴ProbProgLang.md","x":-34,"y":-759,"width":420,"height":643,"color":"1"},
+		{"id":"8a47a76447ab876d","type":"file","file":"🌙amoon()/👓synthesize(bayes-entrep)/💜CMO_C(SJ)/💜CMO.md","x":1360,"y":-1908,"width":360,"height":617,"color":"6"},
+		{"id":"d54d01255a3c54a0","type":"file","file":"world(amoon)/🧍atom(bit)/PC_⬆/def(PC_⬆️).md","x":717,"y":547,"width":240,"height":154,"color":"2"},
+		{"id":"5bf4b7ff551a02d3","type":"file","file":"world(amoon)/🧍atom(bit)/BE_⬇️/PC_⬇/def(PC_⬇️).md","x":717,"y":141,"width":240,"height":135,"color":"6"},
+		{"id":"a79c5ca62158864d","type":"file","file":"world(amoon)/🧍atom(bit)/BE_⬇️/def(BE_⬇️).md","x":1429,"y":-251,"width":223,"height":135,"color":"6"},
+		{"id":"40bdd79697df86f6","type":"file","file":"world(amoon)/🧍atom(bit)/PC_🔃/def(PC_🔃).md","x":55,"y":354,"width":242,"height":97,"color":"1"},
+		{"id":"80c453d83b4eed12","type":"file","file":"world(amoon)/🧍atom(bit)/BE_⬆/def(BE_⬆️).md","x":1417,"y":130,"width":246,"height":146,"color":"4"},
+		{"id":"ef5119ac3c70812d","type":"file","file":"_ref/template/🧠🤜need_sol.md","x":-34,"y":-5200,"width":1065,"height":920},
+		{"id":"ec1fa9a59fcdbe30","type":"file","file":"_ref/template/mng(stock).md","x":1604,"y":-5200,"width":1059,"height":920},
+		{"id":"21da9b1f2624377b","type":"file","file":"_ref/template/sol(prob)<>mng(stock).md","x":750,"y":-3960,"width":1220,"height":1120}
+	],
+	"edges":[
+		{"id":"563cd715a58f5e25","fromNode":"aeb10ba9f1e0bfd4","fromSide":"top","toNode":"f7ca641c2a7b101a","toSide":"bottom","fromEnd":"arrow","label":"day2week"},
+		{"id":"4a5ea6a7ce984628","fromNode":"f7ca641c2a7b101a","fromSide":"top","toNode":"ef0054693677256e","toSide":"bottom","fromEnd":"arrow","label":"week2month"},
+		{"id":"2b948eb52d8400c0","fromNode":"5bf4b7ff551a02d3","fromSide":"right","toNode":"80c453d83b4eed12","toSide":"left","fromEnd":"arrow"},
+		{"id":"e7a75ce9f3002543","fromNode":"d54d01255a3c54a0","fromSide":"top","toNode":"5bf4b7ff551a02d3","toSide":"bottom","fromEnd":"arrow","label":"PC_NS"},
+		{"id":"821806c8af48c828","fromNode":"a79c5ca62158864d","fromSide":"bottom","toNode":"80c453d83b4eed12","toSide":"top","fromEnd":"arrow","label":"BE_NS"},
+		{"id":"e16452a818978dd8","fromNode":"16d326f78a29b9f0","fromSide":"top","toNode":"d8dd1fb1e1c264f2","toSide":"left","label":"gen-finance"},
+		{"id":"fcf369aef5715b4f","fromNode":"16d326f78a29b9f0","fromSide":"right","toNode":"d119244b144fce65","toSide":"left"},
+		{"id":"133d39e445d0153e","fromNode":"16d326f78a29b9f0","fromSide":"right","toNode":"8a47a76447ab876d","toSide":"left"},
+		{"id":"8906fabf738505bf","fromNode":"80c453d83b4eed12","fromSide":"right","toNode":"d119244b144fce65","toSide":"bottom"},
+		{"id":"30da583884d8a2ee","fromNode":"a79c5ca62158864d","fromSide":"top","toNode":"8a47a76447ab876d","toSide":"bottom"},
+		{"id":"e98c93c68a044774","fromNode":"40bdd79697df86f6","fromSide":"right","toNode":"5bf4b7ff551a02d3","toSide":"left"},
+		{"id":"7dc069a371c110ff","fromNode":"40bdd79697df86f6","fromSide":"right","toNode":"d54d01255a3c54a0","toSide":"left"},
+		{"id":"c41b72d179451df5","fromNode":"40bdd79697df86f6","fromSide":"top","toNode":"16d326f78a29b9f0","toSide":"bottom"},
+		{"id":"b8336e71c58b7f30","fromNode":"5bf4b7ff551a02d3","fromSide":"top","toNode":"8a47a76447ab876d","toSide":"bottom"},
+		{"id":"c2378e7464fdf883","fromNode":"8a47a76447ab876d","fromSide":"right","toNode":"d119244b144fce65","toSide":"top","fromEnd":"arrow"},
+		{"id":"d8d6c7956d649078","fromNode":"ef5119ac3c70812d","fromSide":"right","toNode":"ec1fa9a59fcdbe30","toSide":"left"},
+		{"id":"64f610bcb14dad87","fromNode":"ec1fa9a59fcdbe30","fromSide":"bottom","toNode":"21da9b1f2624377b","toSide":"right"},
+		{"id":"8f5cedfe236a461c","fromNode":"21da9b1f2624377b","fromSide":"left","toNode":"ef5119ac3c70812d","toSide":"bottom"}
+	]
+}

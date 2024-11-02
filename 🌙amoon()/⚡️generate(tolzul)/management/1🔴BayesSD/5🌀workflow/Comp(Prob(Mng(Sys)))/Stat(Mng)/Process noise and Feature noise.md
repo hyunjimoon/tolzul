@@ -1,0 +1,24 @@
+## process noise - feature noise
+
+![](https://mail.google.com/mail/u/3/images/cleardot.gif)
+
+> How official are the word “process noise” and “measurement noise” in system dynamics domain? May we call the process noise as process variability? Below are reasons. If you agree with this, process noise is not an object to be ignored or not but rather to be estimated with parameter. You could say “point mass parameter + process noise” are replaced with distributional parameter in Bayesian frame.
+> 
+> -   In your paper, “factors outside model boundary” is labeled as process noise. This “unknown” is modeled as random variable (perhaps representing epistemic uncertainty) which is not always a “noise”. Large variability is a “signal” for robuster system. 
+> -   Comment from your textbook “simulation's trajectory changes significantly if different streams of random numbers (from the same distribution) are used for process noises that drive the model, or if measurement errors are significant” support that process noise is connected with encoded randomness.
+
+## definition of process noise (by Hazhir)
+- a random process (that is, there is a new draw every time period) that changes model's dynamics (typically is added to flow variables in a ODE, making it stochastic ODE) but for which we don't have direct measurements. In the SIR example, changes in weather, holidays, and other factors that may change the infection rate beyond what is predicted in the otherwise deterministic model, but are not directly measurable. As such we need to "simulate" the process noise (with some assumptions on the distributional features of the noise) when we are creating synthetic data (e.g. as part of SBC), but how we treat it in the estimation is what we are exploring (note for example that the ODE examples you sent both assume away/ignore process noise, making the model deterministic).
+
+
+- Process noise estimation can be used to measure unmodeled variation of the model (aleatoric uncertatinty)
+
+## Story of potential color shift (by John)
+
+Jay Forrester knew back in the 1940s and 50s that white noise doesn’t exist in reality because all real systems have some inertia that limits the power in the higher frequencies of random disturbances, whether those are in a physical servomechanism, a supply chain, the economy, or one’s beliefs.  In Industrial Dynamics he addressed this issue by sampling from a white noise distribution at finite intervals (rather than at every time step, “DT").  FYI, sampling at every time step in a system integrated numerically by Euler’s method means that the power spectrum of the noise added to any system (process or measurement noise) will be sensitive to the time step because the highest frequency in a pseudo-white noise stream with values chosen every DT is 1/2DT).  Even worse, using higher-order integration schemes such as Runge-Kutta have large impacts on the power spectrum of noise in models.  The time step and numerical simulation algorithm used in any model are artifacts of the simulation method, and not a feature of reality.  The results of any model, including the model’s response to process and measurement noise, should not depend on the time step or simulation methods.  
+  
+By sampling white noise at a finite interval, say, ST (for Sampling Time), ST>DT, Jay’s early models solved the problem of having the system’s response to noise be sensitive to the time step in the Euler integration, but it was rather arbitrary (the power spectrum has a sharp and unrealistic cutoff at the highest frequency allowed, 1/2ST, which is independent of DT.  So in the 60s folks in system dynamics came up with the formulations for first-order autocorrelated noise.  They called it pink noise to indicate that it was not white noise.  Pink was used to suggest that the power spectrum was more “red” (lower frequency) than white noise, which includes “blue” and other higher frequencies in equal measure.  
+  
+The problem with calling first-order autocorrelated noise (white noise put through a low-pass filter given by first-order exponential smoothing) is that, independently, the term pink noise has become associated in the world of science with 1/f noise, whereas the  first-order autocorrelated noise has a power spectrum that’s 1/f^2.  This makes a big difference in the frequency response of systems.  
+  
+We in system dynamics therefore need to come up with a different name for the first-order autocorrelated noise and stop calling it “pink” — I suggested “brown” off the cuff when we chatted in my office about this but I’m not sure it’s the best name.  But we have to stop calling the 1/f^2 noise “pink” because doing so will cause a great deal of confusion.

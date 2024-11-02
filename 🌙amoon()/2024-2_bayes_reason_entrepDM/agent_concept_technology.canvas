@@ -1,0 +1,39 @@
+{
+	"nodes":[
+		{"id":"1d594d6da0ad6080","type":"file","file":"🌙amoon()/2024-2_bayes_reason_entrepDM/technology/perceptual_physical reasoning.md","x":-1560,"y":287,"width":400,"height":98,"color":"1"},
+		{"id":"e121b2afad721e5d","type":"file","file":"🌙amoon()/2024-2_bayes_reason_entrepDM/technology/probablistic reasoning.md","x":-1560,"y":502,"width":400,"height":76,"color":"2"},
+		{"id":"82c764152e772a8d","type":"file","file":"🌙amoon()/2024-2_bayes_reason_entrepDM/technology/relational reasoning.md","x":-1560,"y":749,"width":400,"height":80,"color":"5"},
+		{"id":"1bcc3245ef656d1a","type":"file","file":"🌙amoon()/2024-2_bayes_reason_entrepDM/technology/social reasoning.md","x":-1560,"y":991,"width":400,"height":88,"color":"6"},
+		{"id":"f71ea1d7ac072852","type":"file","file":"🌙amoon()/2024-2_bayes_reason_entrepDM/concepts/experiment_learning.md","x":47,"y":502,"width":387,"height":77},
+		{"id":"8a2a457205087b89","type":"file","file":"🌙amoon()/2024-2_bayes_reason_entrepDM/concepts/persuasion.md","x":47,"y":749,"width":234,"height":77},
+		{"id":"e0b46dfbf1da90b6","type":"file","file":"🌙amoon()/2024-2_bayes_reason_entrepDM/agents/algorithm_builder.md","x":-1000,"y":1520,"width":400,"height":77},
+		{"id":"e740c3b325379acb","type":"file","file":"🌙amoon()/2024-2_bayes_reason_entrepDM/agents/stakeholders.md","x":-580,"y":1520,"width":400,"height":77},
+		{"id":"f1fe0a92873c9c31","type":"file","file":"🌙amoon()/2024-2_bayes_reason_entrepDM/agents/tool_builder.md","x":-1000,"y":1657,"width":400,"height":80},
+		{"id":"0c219e5ea365422b","type":"file","file":"🌙amoon()/2024-2_bayes_reason_entrepDM/agents/tool_builder.md","x":-580,"y":1657,"width":400,"height":77},
+		{"id":"cea11ffe4b824781","type":"file","file":"🌙amoon()/2024-2_bayes_reason_entrepDM/agents/model_builder.md","x":-1000,"y":1800,"width":400,"height":80},
+		{"id":"0595068a1a4a7cb7","type":"file","file":"🌙amoon()/2024-2_bayes_reason_entrepDM/concepts/pedagogy_practice.md","x":47,"y":991,"width":400,"height":80},
+		{"id":"54ffcd71804908ef","type":"file","file":"🌙amoon()/2024-2_bayes_reason_entrepDM/concepts/prior.md","x":47,"y":287,"width":180,"height":80},
+		{"id":"59f6feeb66318435","type":"file","file":"🌙amoon()/2024-2_bayes_reason_entrepDM/product/acculturate.md","x":-740,"y":75,"width":400,"height":160},
+		{"id":"deaf826d299e901e","type":"file","file":"🌙amoon()/2024-2_bayes_reason_entrepDM/product/value chain roadmapping.md","x":-740,"y":1160,"width":400,"height":280},
+		{"id":"60a8b6475aad7d38","type":"file","file":"🌙amoon()/2024-2_bayes_reason_entrepDM/product/collaborate.md","x":-740,"y":871,"width":400,"height":120},
+		{"id":"a66e2eb586f0eef2","type":"file","file":"🌙amoon()/2024-2_bayes_reason_entrepDM/product/➰loop(market, ops).md","x":-740,"y":310,"width":400,"height":150},
+		{"id":"9ff8e87766c85226","type":"text","text":"CHI SOL + BE NEED - (catalyzing enablers) -> EDM TOOLS","x":-840,"y":-120,"width":660,"height":80},
+		{"id":"dd4070c1c9972deb","x":-740,"y":579,"width":400,"height":101,"type":"file","file":"🌙amoon()/2024-2_bayes_reason_entrepDM/product/capitalize.md"}
+	],
+	"edges":[
+		{"id":"6f2024ef50884c77","fromNode":"54ffcd71804908ef","fromSide":"left","toNode":"59f6feeb66318435","toSide":"right"},
+		{"id":"1bd7bc41034beefd","fromNode":"1d594d6da0ad6080","fromSide":"right","toNode":"59f6feeb66318435","toSide":"left"},
+		{"id":"806e6454645e0c5f","fromNode":"e121b2afad721e5d","fromSide":"right","toNode":"a66e2eb586f0eef2","toSide":"left"},
+		{"id":"1296cd7109dfc1a6","fromNode":"f71ea1d7ac072852","fromSide":"left","toNode":"a66e2eb586f0eef2","toSide":"right"},
+		{"id":"92876d84ebaac616","fromNode":"1bcc3245ef656d1a","fromSide":"right","toNode":"60a8b6475aad7d38","toSide":"left","label":"CLIPS"},
+		{"id":"0a5395936ea7f38a","fromNode":"1bcc3245ef656d1a","fromSide":"right","toNode":"deaf826d299e901e","toSide":"left","label":"inverse planning"},
+		{"id":"200221344264e138","fromNode":"0595068a1a4a7cb7","fromSide":"left","toNode":"deaf826d299e901e","toSide":"right"},
+		{"id":"1ac39186ec6ba56a","fromNode":"82c764152e772a8d","fromSide":"right","toNode":"60a8b6475aad7d38","toSide":"left"},
+		{"id":"4fec6c345f375a1b","fromNode":"8a2a457205087b89","fromSide":"left","toNode":"60a8b6475aad7d38","toSide":"right"},
+		{"id":"c2f0a20b8f956b83","fromNode":"82c764152e772a8d","fromSide":"right","toNode":"59f6feeb66318435","toSide":"left"},
+		{"id":"cd5ca401ea7b37a5","fromNode":"1bcc3245ef656d1a","fromSide":"right","toNode":"59f6feeb66318435","toSide":"left"},
+		{"id":"bf6ac38fb2ffb3ab","fromNode":"8a2a457205087b89","fromSide":"left","toNode":"dd4070c1c9972deb","toSide":"right"},
+		{"id":"17c2bec9e47a9094","fromNode":"82c764152e772a8d","fromSide":"right","toNode":"dd4070c1c9972deb","toSide":"left"},
+		{"id":"7f3f8709f16bb073","fromNode":"e121b2afad721e5d","fromSide":"right","toNode":"dd4070c1c9972deb","toSide":"left"}
+	]
+}

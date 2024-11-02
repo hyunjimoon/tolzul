@@ -1,0 +1,3 @@
+- class, clustered information made by groups of people. 
+- I digested in SNU, Columbia, MIT with varying length of period from day, week, month, semester which I classified to less than three times ([[def(day_seminar)]]) and the rest ([[week_class💫]]).
+- Three forms "pattern" based on [[23signal]].

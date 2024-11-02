@@ -1,0 +1,4 @@
+- regulation system
+- research (targeting for journal publish, gluing with the established), 
+- top down, [[../../../../../BayesSD/playbook/1generator🏭/branched_generator/form(generator)/closed_sys/def(closed_sys)|def(closed_sys)]]
+- 

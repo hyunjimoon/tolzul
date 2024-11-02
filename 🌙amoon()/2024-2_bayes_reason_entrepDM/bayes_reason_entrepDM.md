@@ -1,0 +1,1 @@
+how entrepreneurs form beliefs, update those beliefs through experimentation and learning, and make decisions under uncertainty. It involves using Bayesian inference to revise probability estimates as new information is acquired.

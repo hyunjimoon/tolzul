@@ -1,0 +1,1 @@
+I'm unwilling to accept diagnosis of helplessness

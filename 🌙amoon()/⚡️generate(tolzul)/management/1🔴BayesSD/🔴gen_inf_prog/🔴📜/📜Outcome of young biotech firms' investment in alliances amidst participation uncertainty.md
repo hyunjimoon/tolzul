@@ -1,0 +1,2 @@
+[Entrepreneurial firms and downstream alliance partnerships: Impact of portfolio depth and scope on technology innovation and commercialization success](https://journals.sagepub.com/doi/abs/10.1111/j.1937-5956.2012.01410.x)
+ 

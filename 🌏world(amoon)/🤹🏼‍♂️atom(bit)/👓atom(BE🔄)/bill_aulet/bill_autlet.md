@@ -1,0 +1,1 @@
+operations successs (attention to execution vs fall in love): C/(A+B) is different from D/(A+B)

@@ -1,0 +1,1 @@
+- atom that is ingested inside
