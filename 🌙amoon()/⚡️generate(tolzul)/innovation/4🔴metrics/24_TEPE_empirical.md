@@ -1,9 +1,9 @@
-- 🧱[[TEPE_theory]]
+- 🧱[[24_TEPE_theory]]
 - from [[TEPE24_syllabus.pdf]], "rationale for entrepreneurial firms"
 
  The nine-week “core” component will span economics and finance. It will emphasize the connections between economic theory—particularly in contract theory, organizational economics, and corporate finance--and empirical work. Among the topics that will be covered are the rationale for entrepreneurial firms, the structure of arrangements between entrepreneurs and investors, the relationship with larger entities, entrepreneurial strategy, and the decision to go public.
 
-Certainly! Here's the table for the 51 Empirical Papers:
+
 
 | Topic                                                  | Year | Author                        | Link                                                                                                                                                                                        | Takeaway |
 | ------------------------------------------------------ | ---- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |

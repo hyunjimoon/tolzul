@@ -1,6 +1,6 @@
 - bridge mapped world with compassed world
 - sum of  [[3🗺️->14🧭_scott]]'s upward drive and [[43🌏->12🧠_jb]]]'s leftward drive
-- [[📝Startup Lifecycle World modeling and Decision Making with Program Synthesis]] is epigenetic (meaning) and [[📝Parallel Evolutionary and Sequential Bayesian Startup Adaptations]]  is genetic (inference).
+- [[📝Startup Lifecycle World modeling with Program Synthesis]] is epigenetic (meaning) and [[📝Parallel Evolutionary and Sequential Bayesian Startup Adaptations]]  is genetic (inference).
 - [[📜lo21_evol_bayes]], [optimization vs action, sequential vs parallel, bayes vs evol learning](https://github.com/Data4DM/BayesSD/discussions/244#discussioncomment-10442011) 
 
 | Aspect          | Product 3 (Map/World Model)🗺️ - meaning function | Product 4 (Compass/Agent Adaptation)🧭 - inference function |

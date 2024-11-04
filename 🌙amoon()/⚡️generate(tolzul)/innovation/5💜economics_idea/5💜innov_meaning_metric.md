@@ -1,2 +1,0 @@
-- having all complexity of institution, environmental stochasticity, high causal density
-- compared to [[4💕Bayes_Ent_domain specific language]] and [[4🔴metrics]], either agent got more aggregated (increasing causal density) or causal became feedback loop

@@ -1,3 +1,11 @@
+[조병수 건축가 저는 이런 집에 살고 싶어요 중정이 있는집 제 아이디어 쓰셔도 돼요](https://youtu.be/TPJDlU3t2Kk?si=_g-8CVaEyyK-T7Bt&t=155)
+[한번에 확 들어오는 한국적인 즉흥성을 생각하고 만든 문](https://youtu.be/N6YgF9dMTrk?si=tIV3lBBZFmsRZlrh&t=68)
+five things she like: soak up in the sun, big smile, reading, makeover, red lips
+아틀리에 6회 고재권
+![[Pasted image 20241102205320.png|100]]
+2024-11-02
+[나래식 바람이 분다 노래](https://www.youtube.com/watch?v=OS5KHO6NZ8c&ab_channel=%EB%82%98%EB%9E%98%EC%8B%9D): 아름답고 귀엽고 고급스럽고 우아하고 사랑스럽고 멋지고 장하고 다 잘하고 챙겨주고 싶고
+
 2024-11-01
 여성미,남성미,선함,악함,그 어떤역도 완벽하게 소화하는거 놀랍다
 뭔가 공허하면서도 정년이한텐 다정한 신비로운 채고 인기배우 옥경이 역

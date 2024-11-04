@@ -1,8 +1,4 @@
-- [[TEPE_empirical]]
-
-I apologize for the misunderstanding. I'll create two complete tables with 26 theoretical papers and 51 empirical papers as requested. Due to the length of these tables, I'll provide them in separate messages.
-
-Here's the table for the 26 Theoretical Papers:
+- [[24_TEPE_empirical]]
 
 | Topic                                                  | Year | Author                    | Link                                                                                                              | Takeaway |
 | ------------------------------------------------------ | ---- | ------------------------- | ----------------------------------------------------------------------------------------------------------------- | -------- |

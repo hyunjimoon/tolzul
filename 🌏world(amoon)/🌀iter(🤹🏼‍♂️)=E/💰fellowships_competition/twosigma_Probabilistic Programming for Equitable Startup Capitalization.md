@@ -17,6 +17,11 @@ This work is not only technically innovative but also has the potential to addre
 
 Our approach offers significant advantages over existing baselines such as statistical regression models, Monte Carlo simulations, and in-context prompted language models. It can handle complex terms and dynamic scenarios with greater flexibility and consistency. While our initial focus is on the early stage, this research lays the groundwork for extending probabilistic programming approaches to capitalize scaling and mature stages of startup.
 
+### two sigma
+
+
+---
+### mit designX
 This research aligns with MITdesignX's mission of improving quality of life through creative innovation. By applying MITdesignX's human-centered design methodology, we address the latent needs of founders in equity design - particularly those who may lack access to sophisticated financial modeling tools. The interdisciplinary nature of MITdesignX, combining expertise from SA+P, computer science, and management, provides an ideal environment for developing and testing our solution. MITdesignX's venture accelerator framework could accelerate this research by:
 - Access to Startup Ecosystem: Direct access to diverse founding teams (our potential customers) and institutional partners for product validation 
 - Technical-to-Market Translation: Expert mentorship in transforming our probabilistic programming innovation into a practical tool for entrepreneurs

@@ -42,4 +42,4 @@
 - role: evaluate, segment
 - hypothesis: best segment for persuasion
 - marginnote3app://note/FDFC2128-3EB3-4F93-A4DD-7D895BB4CA77
-- evaluates [[4🔴metrics]], [[5💜innov_meaning_metric]], [[4💕Bayes_Ent_domain specific language]]
+- evaluates [[4🔴metrics]], [[5💜innov_meaning]], [[4💙ENT_DSL]]

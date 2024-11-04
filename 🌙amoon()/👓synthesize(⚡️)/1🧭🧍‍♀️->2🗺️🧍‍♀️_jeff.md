@@ -1,4 +1,4 @@
-- evaluated by [[jeff🗺️, 🧠]]
+- evaluated by [[jeff🗺️, 🧍‍♀️]]
 - 🧱bricks: bridging compass and map i.e. meaning (why) and inference (how) for [[operations.canvas|operations]] and [[innovation management.canvas|innovation management]]
 
 | symbol | function        | domain                                                  |
