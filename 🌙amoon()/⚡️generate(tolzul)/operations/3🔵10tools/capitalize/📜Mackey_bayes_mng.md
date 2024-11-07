@@ -1,0 +1,5 @@
+Bayesian Statistics in Management Research
+
+Bayesian statistics deserve a more prominent place in strategic management methodology. Bayesian methodology shines in its ability to both model heterogeneity and simultaneously model endogenously chosen strategies and heterogeneity in the effect of a strategy on firm-level outcomes. Moreover, within the broader class of Bayesian methods, some methodologies present solutions to a pernicious problem—that of essential heterogeneity, in which typical methods of accounting for endogenously chosen strategies, e.g., instrumental variables, treatment effects models, or random-coefficient models, fail when the effects of strategies on outcomes are heterogeneous across firms. Research about Bayesian inference, including discussions of the theoretical underpinnings of Bayesian statistics and how to implement an empirical workflow using Bayesian statistics, can be useful for building bespoke models to fit theoretical questions pertaining to management research.
+
+Keywords: Bayesian inference, causal inference, endogeneity, heterogeneity, resource-based theory

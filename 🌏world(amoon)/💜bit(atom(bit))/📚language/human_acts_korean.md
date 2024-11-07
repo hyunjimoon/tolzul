@@ -2,6 +2,7 @@ translation instruction
 
 # english
 
+
 It wasn’t as though we didn’t know how overwhelmingly the army outnumbered us. But the strange thing was, it didn’t matter. Ever since the uprising began, I’d felt something coursing through me, as overwhelming as any army. Conscience. Conscience, the most terrifying thing in the world. The day I stood shoulder to shoulder with hundreds of thousands of my fellow civilians, staring down the barrels of the soldiers’ guns, the day the bodies of those first two slaughtered were placed in a handcart and pushed at the head of the column, I was startled to discover an absence inside myself: the absence of fear. I remember feeling that it was all right to die; I felt the blood of a hundred thousand hearts surging together into one enormous artery, fresh and clean … the sublime enormity of a single heart, pulsing blood through that vessel and into my own. I dared to feel a part of it.
 
 ## part 1

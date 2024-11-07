@@ -1,4 +1,4 @@
-[[project proposal]]
+[[🌙amoon()/⚡️generate(tolzul)/management/project proposal]]
 ## Course Summary
 
 This course explores computational approaches to understanding human cognition, with a focus on Bayesian inference, probabilistic programming, and rational models of cognition. Topics include inductive learning, concept formation, language of thought, graphical models, and applications to everyday reasoning.

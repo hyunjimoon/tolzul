@@ -1,3 +1,9 @@
+2024-11-05
+Do or do not. There's no try.
+- Yoda from Starwars
+
+Thanks for your patience and mentorship in describing my giraffe as comparing apple, oragne, and orchid.
+
 2024-10-25
 - has deep reverence to babies ("ok to have babies without getting married but not talking about them without have one")
 

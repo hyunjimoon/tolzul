@@ -1,0 +1,5 @@
+Abstract: We survey 885 institutional venture capitalists (VCs) at 681 ﬁrms to learn how they make decisions. Using the framework in Kaplan and Strömberg (2001), we provide detailed information on VCs’ practices in pre-investment screening (sourcing evaluating and selecting investments), in structuring investments, and in post-investment monitoring and advising. In selecting investments, VCs see the management team as somewhat more important than business-related characteristics such as product or technology although there is meaningful cross-sectional variation across company stage and industry. VCs also attribute the ultimate investment success or failure more to the team than to the business. While deal sourcing, deal selection, and post-investment value-added all contribute to value creation, the VCs rate deal selection as the most important of the three. We compare our results to those for chief ﬁnancial oﬃcers (Graham and Harvey, 2001) and private equity investors (Gompers et al., 2016a).
+
+
+Keywords: Venture capita, Value creation, Capital structure, Entrepreneurship
+

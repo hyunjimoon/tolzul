@@ -25,11 +25,6 @@
 | **4. Addresses Root Cause** |                     | Bridges statistical-pragmatic gap by:<br>- Incorporating context dynamics<br>- Enabling nuanced term interpretation<br>- Supporting informed negotiation decisions                                                                          |
 | **5. Production Plan**      |                     | 1. Build probabilistic term analysis tools<br>2. Develop context-specific interpretation guides<br>3. Create dynamic updating mechanisms<br>4. Design practical negotiation support system                                                  |
 
-### [[💠integ(process-product)]]
-
-
----
-
 
 🧱Brick: [🛠️selling probabilistic program to implement Entrepreneurship](https://github.com/Data4DM/BayesSD/discussions/224), [[origin_equity_hollywood]]
 - comparison model: valuation Y: regressor (termsheet characteristics - x), [conversational inference of equity valuation and allocation]( https://github.com/Data4DM/BayesSD/discussions/249), [making baseline hierarchical bayes for CIVA](https://github.com/Data4DM/BayesSD/discussions/253)

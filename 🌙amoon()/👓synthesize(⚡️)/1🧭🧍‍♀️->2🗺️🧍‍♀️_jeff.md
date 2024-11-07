@@ -1,5 +1,26 @@
-- evaluated by [[jeff🗺️, 🧍‍♀️]]
+- evaluated by [[jeff_dotson]]
 - 🧱bricks: bridging compass and map i.e. meaning (why) and inference (how) for [[operations.canvas|operations]] and [[innovation management.canvas|innovation management]]
+
+---
+[2024-11-05 chat](https://otter.ai/u/BlKpdUjwrTG8DulMoiWXULh4m3g?utm_source=copy_url)
+using [[💠integ(process-product)]] syntax,
+
+| Dimension                | Research Component                  | Description                                                                                                                                                                                        |
+| ------------------------ | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🧭 Process Integration   | Data Collection & Modeling Approach | - 🧠 Hierarchical Bayesian modeling to capture investor heterogeneity<br>- 🤜 LLM-based elicitation of investor perceptions<br>- 👓 Validation through discrete choice experiments                 |
+| 🗺️ Meaning Construction | Theoretical Framework               | - 🧠 Mapping observable characteristics (X) to latent perceptions (S)<br>- 🤜 Exploring lay theories of investor decision-making<br>- 👓 Understanding value creation vs. value capture trade-offs |
+| 🧍‍♀️ Agent Perspective  | Investor vs. Founder View           | - 🧠 Rational expectations framework<br>- 🤜 Signal sending through pitch characteristics<br>- 👓 Evaluation of deal characteristics                                                               |
+| 🌏 Market Context        | Environmental Factors               | - 🧠 Industry-specific factors (tech vs. manufacturing)<br>- 🤜 Revenue growth vs. cost savings capabilities<br>- 👓 Market opportunity assessment                                                 |
+
+Key Themes:
+1. Integration of direct (S_d) and indirect (S_i) effects through Bayesian hierarchical modeling
+2. Use of LLMs for eliciting investor perceptions and generating informative priors 
+3. Focus on heterogeneity in investor preferences and decision-making
+4. Emphasis on rational meaning construction through observable characteristics and latent perceptions
+
+This summary captures the key methodological and theoretical aspects discussed while incorporating both Jeff's research philosophy and Angie's interests in Bayesian entrepreneurship.
+
+---
 
 | symbol | function        | domain                                                  |
 | ------ | --------------- | ------------------------------------------------------- |

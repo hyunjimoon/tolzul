@@ -1,3 +1,6 @@
+2024-11-07
+introduced mural work [next of this](https://github.com/Data4DM/BayesSD/discussions/23#discussioncomment-11169421)
+
 2024-10-11
 three takeaways:
 - bob liked marketing VS developing supply chain (ent.proj) - innovation,
