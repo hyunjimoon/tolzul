@@ -1,5 +1,7 @@
-- bridge mapped world with compassed world
-- sum of  [[3🗺️->14🧭_scott]]'s upward drive and [[43🌏->12🧠_jb]]]'s leftward drive
+- product/horizontal integration hence happens after [[🧭2🧭🗺️_B2BD_scott-jeff-matt]] 
+- this module is on evolutionary part. bayesian counterpart is developed in [[123🗺️->14🧭_scott]], which are then integrated in [[13🧍‍♀️->24🌏_jb]]
+- bridge mapped world with compassed world; product integration 
+- sum of  [[123🗺️->14🧭_scott]]'s upward drive and [[13🧍‍♀️->24🌏_jb]]]'s leftward drive
 - [[📝Startup Lifecycle World modeling with Program Synthesis]] is epigenetic (meaning) and [[📝Parallel Evolutionary and Sequential Bayesian Startup Adaptations]]  is genetic (inference).
 - [[📜lo21_evol_bayes]], [optimization vs action, sequential vs parallel, bayes vs evol learning](https://github.com/Data4DM/BayesSD/discussions/244#discussioncomment-10442011) 
 
@@ -16,7 +18,6 @@
 
 ---
 
-- this module is on evolutionary part. bayesian counterpart is developed in [[3🗺️->14🧭_scott]], which are then integrated in [[43🌏->12🧠_jb]]
 - Represents the agent-environment co-evolution in startup development - Product 3 models how environments evolve across startup stages (nail/scale/sail), while Product 4 examines how agents adapt through sequential or parallel learning. These interlock because agent strategies shape environmental responses while environmental pressures guide agent adaptation. Running these analyses in parallel helps understand their dynamic interaction, like how agent experimentation shapes market evolution, or how environmental selection pressures guide learning strategies.
 
 | Environment-Centered (Epigenetic)                                                                                                                                                                                                                                                             | Stage / Role              | Agent-Centered (Genetic)                                                                                                                                                                                                                                                              |

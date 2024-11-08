@@ -2349,7 +2349,7 @@
 - [[🌙amoon()/⚡️generate(tolzul)/management/1🔴BayesSD/system_dynamics/AMD/Empirical/Draws/2_MSM/MSM_Applied_Example/MSM_Applied_Example_Section_6_MatlabCodes/RUN_MSM.m]]
 - [[🌙amoon()/⚡️generate(tolzul)/management/1🔴BayesSD/1🏭generator/branched_generator/bit(generator)/solve(sd(generator))/2_MSM/MSM_Applied_Example/MSM_Applied_Example_Section_6_MatlabCodes/RUN_MSM.m]]
 - [[update_all.py]]
-- [[evaluate.md]]
+- [[evaluate]]
 - [[Martin Modrak.md]]
 - [[healthcare.md]]
 - [[viterbi.m]]
