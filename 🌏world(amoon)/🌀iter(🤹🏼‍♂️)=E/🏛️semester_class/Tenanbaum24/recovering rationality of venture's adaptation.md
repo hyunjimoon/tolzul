@@ -12,6 +12,7 @@ How can seemingly "biased" patterns of entrepreneurial attention allocation betw
 | [[#2. 🏎️Speed of Reaction Under Pressure (🧍‍♀️'s 🗺️)\|2. 🏎️Speed of Reaction Under Pressure (🧍‍♀️'s 🗺️)]]                         | What determines the optimal magnitude (speed) of the resource allocation vector?                                                              | [[📜Agrawal21_ebl_choice]] demonstrates how entrepreneurs must choose between competing commercialization strategies - "control" (delayed entry with protection) vs "execution" (rapid entry with learning) - and shows how this fundamental tradeoff shapes resource investment patterns<br>[[📜gans23_expchoice]]<br><br>[[📜Vul14_onedone]] shows mathematically why few samples can be optimal for decisions under time pressure - people rationally take more samples only when stakes are high or time costs are low                | Vector magnitude (processing speed) reflects a fundamental tradeoff:<br>- Faster processing = More opportunities explored<br>- Slower processing = Higher precision<br>The optimal speed balances exploration against precision.                                          | Now that we understand vector magnitude (speed), we examine how different environments determine optimal vector direction (operations vs market focus).                           | [[#2. 🏎️Speed of Reaction Under Pressure (🧍‍♀️'s 🗺️)#🗄️table2. control vs execution: endogenous appropriability\|🗄️table2. control vs execution: endogenous appropriability]]                                                    |
 | [[#3. 🧭Direction of Rational Environment Adaptation (🌏's 🧭)\|3. 🧭Direction of Rational Environment Adaptation (🌏's 🧭)]]<br>       | How do different environments determine optimal vector direction (p_c/p_r ratio)?                                                             | [[📜Phadnis17_e2e]] models tradeoffs in sourcing and sales strategies (i.e., upstream and downstream supply chain strategies)                                                                                                                                                                                                                                                                                                                                                                                                             | Vector direction systematically varies by:<br>- Product type (physical vs digital)<br>- Supply chain position (upstream vs downstream)<br>These factors determine optimal p_c/p_r ratio.                                                                                  | Understanding how environments shape both vector direction and magnitude lets us build a complete theory of adaptive processing.                                                  | [[#3. 🧭Direction of Rational Environment Adaptation (🌏's 🧭)#🖼️fig1. Adapting agent & Lifting Agent-Belief to Agent-Belief-Desire-Environment\|🖼️fig1. Adapting agent & Lifting Agent-Belief to Agent-Belief-Desire-Environment]] |
 
+[[📜Spearman22_unified_ops_sci]]
 
 ### 1. Venture's Cognitive Resource Investment as Vector(🧍‍♀️'s 🧭)
 
@@ -46,6 +47,26 @@ The critical question that emerges is what determines the optimal processing spe
 | **Learning Pattern**  | - Most learning happens before market entry<br>- Less learning from customer feedback                                                             | - Limited pre-market learning<br>- Extensive learning from customer interaction                                                         |
 | **Risk Profile**      | - Lower variance in outcomes<br>- Protected from competition<br>- Higher upfront costs                                                            | - Higher variance in outcomes<br>- Exposed to competition<br>- Lower upfront costs                                                      |
 | **Example**           | Filing patents and securing IP before product launch                                                                                              | Launching MVP to get customer feedback quickly                                                                                          |
+
+
+bops: buy online, pickup store (no 취합 - no batch, low benefit of pooling, P system) - 
+environment causes that motivates agent to change from P to Q system (수송, 창고 효율성), 
+p가 안전재고가 더 큼. bureaucracy (회전기금; 1년 배치가 )  z (정책 %수요충족; 2 ~ .95%) * sigma * sqrt(LT); 
+
+P system: z sigma sqrt(period + lead time)  
+Q system: z sigma sqrt( lead time) - 적재율 (100개 생산; fixed cost / n) 
+
+Q: 모니터링 값이 낮을때 (if inventory < 10, ), 배송값 적음.  
+military uses p system (high monitoring cost = delay cost)
+
+bureaucracy: online (p->q; fulfillment); lower noise (walmart - cross docking; periodicity; p system)
+
+|                            | 👁️high monitoring cost | 👁️low monitoring cost |
+| -------------------------- | ----------------------- | ---------------------- |
+| 🚚high transportation cost | america                 |                        |
+| 🚚low transportation cost  | africa                  | vietnam                |
+
+위기 -> low time step
 
 ### 3. 🧭Direction of Rational Environment Adaptation (🌏's 🧭)
 
