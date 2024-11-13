@@ -26,4 +26,4 @@ using [Connecting Inductive Bias and Expected Utility cld](https://claude.ai/cha
 | 🌏 Cultural Context    | • SAFE common in US, rare in Asia<br>• Regional differences in acceptance<br>• Need cultural adaptation                                                                | Reminds founders to consider local context                                                  |
 | ⚖️ Balanced Approach   | • Equal focus on cap operations<br>• Control growth pace<br>• Integrate with market/ops strategy                                                                       | Promotes holistic company building                                                          |
 | 📚 Education Focus     | • Capitalization knowledge crucial<br>• Affects all strategic decisions<br>• Need systematic education                                                                 | Empowers better decision-making                                                             |
-[[📝Conversational Inference of Equity Valuation Agreement]]
+[[📝🤝Conversational Inference of Equity Valuation Agreement]]

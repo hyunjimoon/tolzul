@@ -1,4 +1,6 @@
 a.k.a. Rational Meaning Construction in Venture Investment Decisions: A Hierarchical Bayesian Approach
+
+todo: update with https://claude.ai/chat/e78a0bff-dd08-456c-b83f-89daae9cf8e2
 #### abstract
 Early-stage venture investors make decisions with limited information, relying on observable startup characteristics to form expectations about potential success. For example, prior research shows that investors often focus on factors like the management team or business model when assessing a firm’s ability to execute its vision. Little is known, however, about how these observable characteristics map onto the perceptions investors use when evaluating deals or how this mapping varies by investor type. Our research investigates this process, drawing on theories of rational meaning creation and lay theory construction to explain how investors interpret observable signals as indicators of unobservable qualities. We develop a hierarchical Bayesian framework that allows us to empirically study how investors with different expertise and focus areas translate deal characteristics into structured beliefs about a venture’s potential.
 

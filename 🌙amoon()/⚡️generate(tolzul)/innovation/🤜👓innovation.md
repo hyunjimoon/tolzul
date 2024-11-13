@@ -1,5 +1,5 @@
 - synthesizing [[4🔴metrics]] and [[5💜innov_meaning]], below introduces  angie's approach of rational meaning construction of innovation
-- is 🧱 of [[📝Conversational Inference of Equity Valuation Agreement]]
+- is 🧱 of [[📝🤝Conversational Inference of Equity Valuation Agreement]]
 
 # Basic Unit Theories for Innovation Understanding
 

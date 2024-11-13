@@ -1,5 +1,7 @@
 똘똘(toltol) in korean means smart and bright.
 
+세련되다: 말이나 글, 행동 등이 서투르거나 어색하지 않고 훌륭하고 능숙하다.
+
 > For everything that we do in OR, context is important, and that means that one cannot avoid the details of the domain. The best solutions typically combine good methodology with enough domain knowledge to amplify the impact of the methods. Besides, domain knowledge can be learned by talking to experts.
 
 > If I may introduce my interest further, [this](https://arxiv.org/pdf/2103.10522.pdf) research requires a fundamental understanding of confidence interval, power, and sampling (Could you be generous enough to classify these concepts as domain knowledge? After all, the concept of 'power' is statisticians' invention for system efficiency like most other domain knowledge). It was interesting to see how they cast the best confidence interval problem as an optimization problem.

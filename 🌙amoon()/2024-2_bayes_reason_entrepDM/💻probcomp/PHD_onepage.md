@@ -112,7 +112,7 @@ when all components are orthogonal, component wise descent is optimal and not pr
 
 ### Thm.3. Lifting and perspective function
 $p -> \phi^{-1}(p) -> p$ tangent bundle
-![[Pasted image 20210723210804.png]]
+![[inf_proj.png]]
 
 ### Thm.4. Iteration
 개별 정체성을 주는 idx를 찾아서 복제하면 됨. 현지는 한국에 사는 여자 대학생 $f(a1...an) -> w_i * f(Ea_i, ..)$ 이게 회귀계수지. 

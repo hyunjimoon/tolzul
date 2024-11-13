@@ -5,4 +5,4 @@ The destruction of the space shuttle Challenger was a tremendous blow to America
 
 marginnote3app://note/3D56EE10-A76F-47B8-8984-96CFB1AA3F2D
 
-![[Pasted image 20241108183656.png]]
+![[nasa_ab.png]]

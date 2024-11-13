@@ -30,7 +30,7 @@ high dim:
 	- dependency structure
 	- what information does highly related models give us?
 	- 
-- ![[Pasted image 20210729171240.png]]
+- ![[C_x(u1..ud)=F_x(F-1(u1)..F-1(ud)).png]]
 - ecdf()
 
 ![](https://i.imgur.com/6D5R7MO.png)
@@ -81,4 +81,4 @@ As trading decisions are made at split-second intervals, the task of ensuring th
 - Blockchain: real-time gross settlement, or ﬁnancial transactions veriﬁcation: probablistic outperform deterministic
 - Cryptosystems: stream + block cipher
 
-![[Pasted image 20210918154638.png]]
+![[calibrate_extrapolate.png]]

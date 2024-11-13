@@ -8,6 +8,20 @@ This seminar examines the affective turn in critical theory, focusing on its imp
 
 > 저도 선함을 믿어요 일단 내 마음이 편하잖아요
 
+title: "[persons] 9"
+date: "2019-03-24"
+categories: 
+  - "persons"
+---
+
+> 고립되어 혼자 그렇게 싸우는 것이 아니라는 현실을 나누어 계속 싸울 힘을 주는 것이 연결이다
+
+\-- 존경하는 한 교수님 (김수아)
+
+> 여러분들정도의 능력이면, 안해서 못하는 거지 못해서 못하는게 아니다
+
+\-- 존경하는 또 다른 교수님 (김정하)
+
 ## 2022-1
 재현, 압축, 타이밍, 여성동지, 미각, capability와 ability의 차이,
 선, 똘똘, 웃음, 후회, 생태, 보편, 상대성에

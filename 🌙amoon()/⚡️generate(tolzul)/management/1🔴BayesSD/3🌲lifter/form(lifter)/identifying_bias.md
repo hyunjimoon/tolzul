@@ -22,6 +22,6 @@ using the observed demand values
 = compromise with optimal conditional on the payoff averaged over the subjective temporal and spatial prior
 
 -   To avoid posthumous glory of worse than better dynamics and to enjoy priorhumous appreciation of better than worse
--   related to [[how-clever-is-random]]as we are using the benefits of locality i.e. prior knowledge
+-   related to [[spandrel/prev_post/how-clever-is-random]]as we are using the benefits of locality i.e. prior knowledge
 
 [^1]: [[Sterman89_ModManagBeh.pdf]] 

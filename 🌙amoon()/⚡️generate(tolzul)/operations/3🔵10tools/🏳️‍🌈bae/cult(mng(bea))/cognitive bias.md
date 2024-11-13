@@ -24,7 +24,7 @@ using the observed demand values
 = compromise with optimal conditional on the payoff averaged over the subjective temporal and spatial prior
 
 -   To avoid posthumous glory of worse than better dynamics and to enjoy priorhumous appreciation of better than worse
--   related to [[how-clever-is-random]]as we are using the benefits of locality i.e. prior knowledge
+-   related to [[spandrel/prev_post/how-clever-is-random]]as we are using the benefits of locality i.e. prior knowledge
 
 ## confirmation bias
 - [mark rober's 2023 mit speech confirmation bias](https://youtu.be/0FGlsuTnt_U?t=848) for good human relationship - cross river together
