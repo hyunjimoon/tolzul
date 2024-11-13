@@ -43,3 +43,10 @@ Visualization tools can play a crucial role in tracking how exaptive processes d
 
 **Monika Blattmeier (2023)** delves deeper into the aestheticization of business processes, emphasizing how visualizing their **Gestalt** can enhance collective decision-making. This visualization approach helps entrepreneurs see the holistic potential of their business models and innovation pathways. Such tools foster collective thinking in startups, helping teams make more informed decisions when navigating pivot dynamics.
 
+### Table 2: Information Structure and Evolutionary Learning
+
+| Information Type          | Mathematical Form                | Evolutionary Analog | Search Strategy Impact                |
+| ------------------------- | -------------------------------- | ------------------- | ------------------------------------- |
+| Prior Knowledge           | Beta Distribution Parameters     | Inherited Traits    | Influences initial search direction   |
+| Learning Rate / Step Size | $\Delta(\alpha, \beta)$ per test | Adaptation Speed    | Determines 🏎️optimal test frequency  |
+| Correlation Structure     | $\color{Orange}{\rho}$ matrix    | Trait Linkage       | Affects parallel vs sequential choice |

@@ -15,5 +15,17 @@ projecting to [[🗄️🪶product2]], using [Leveraging Mokyr's Punctured Equil
 | **🧩Correlation**      | Ecosystem Links:<br>- Horizontal: Species interaction<br>- Vertical: Food chain              | Your Framework:<br>$\sigma \sim \rho * exp(\sigma)$                                                                    | 🕸️Web vs 🔗Chain:<br>- High correlation: Complex web<br>- Low correlation: Linear chain                                          | "Cross-fertilization of different techniques... creative symbiosis in which previously disjoint technologies are merged"                                                                      |
 | **Decision Rule**      | When to Evolve:<br>- Crisis: Big leaps<br>- Stability: Small steps                           | Your Rule:<br>If $c_{act}* \sigma * k$ large:<br>→ Choose parallel<br>If $\sigma_c < \sigma_r$:<br>→ Choose sequential | 🎯Target Choice:<br>- Many small targets vs<br>- One big target                                                                   | "Selection operates on what exists, not on what could have been. In other words, evolution is path dependent."                                                                                |
 [[Mokyr92_evoldyn_tech.pdf]]
+
+
+"$\color{Red}{macroinventions}$ are more difficult to understand, and seem to be governed by individual genius and luck as much as by economic forces."
+"Without $\color{Green}{microinventions}$, most $\color{Red}{macroinventions}$ would not be implemented and their economic rents not realized. But without  $\color{Red}{macroinventions}$ , what would there be to improve?" (complementarity)
+"Some societies were less receptive to radical changes than others... The conservative forces failed to stop the great scientific achievements of the seventeenth century, but not for lack of trying." (environmental)
+
+when to choose parallel search strategies
+- There's potential for breakthrough innovations that can create new technological "species"
+- The environment can support radical change
+- The innovation space isn't constrained by local conditions
+- Social and institutional factors are supportive of major changes
+
 marginnote3app://note/C6EB4319-28FA-4796-858B-8B82D5FDD60E 
 ![[Pasted image 20241112092641.png|100]]
