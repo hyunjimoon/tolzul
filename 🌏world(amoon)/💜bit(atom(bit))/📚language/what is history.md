@@ -1,5 +1,5 @@
 2024-04-06
-
+[[Edward Hallet Carr-What Is History_-Vintage (1967).pdf]]
 
 history is science?
 
@@ -67,3 +67,5 @@ Carr’s approach to history emphasizes the subjective and constructed nature of
 - 물질적으로 연속적인데, 이걸 "change", 이용하기 위해 나누는거 아닌가요?  (python library import ...)
 - 러시아 농민 (종교신념) - 1917 (시대정의 역사적인 이벤트)
 - 변화가 필요하다는 액션이 시대를 정의하고 역사를 기록하고, 
+
+

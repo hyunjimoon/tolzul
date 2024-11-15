@@ -1,4 +1,4 @@
-summary of  [[eval(charlie, 📝Vectorizing Venture Adaptation)]], further summary in [[eval(josh, recovering rationality of venture's adaptation)]]
+summary of  [[📝🧭Vectorizing Adaptation]], further summary in [[eval(josh, recovering rationality of venture's adaptation)]]
 ### Research Domain and Motivation
 How does entrepreneurs allocate limited cognitive resources between cost-reduction and revenue-growth activities during venture scaling? This is interesting because while much research examines what decisions entrepreneurs make, less attention has been paid to how cognitive  constraints shape these decisions across different industry contexts.
 

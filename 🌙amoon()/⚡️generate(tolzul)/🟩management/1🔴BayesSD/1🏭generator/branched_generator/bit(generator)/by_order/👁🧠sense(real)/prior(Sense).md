@@ -1,0 +1,1 @@
+-   Prior serves the role of uncertainty representation and branching in hierarchical structure.

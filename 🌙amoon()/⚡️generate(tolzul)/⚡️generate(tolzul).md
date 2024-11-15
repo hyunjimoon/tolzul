@@ -1,8 +1,36 @@
-based on  [[toltol_quotes]] and [[zulzul_quotes]], I learned what I care and am capable of. using this, i synthesize nine knowledge modules i can meaningfully generate with increasing complexity in either agent or environment axis, from [[1bayes_sd]], [[2🔴program_synthesis]], [[2🟩bayes_dec_game]], [[3🔵capitalize]], [[3🔷resource_rational_fit]], [[ignorance prior]], [[4💙ENT_DSL]], [[5💜innov_meaning]]
+based on  [[toltol_quotes]] and [[zulzul_quotes]], I learned what I care and am capable of. using this, i synthesize nine knowledge modules i can meaningfully generate with increasing complexity in either agent or environment axis, from [[1🔴BayesSD]], [[2🔴program_synthesis]], [[2🟩bayes_dec_game]], [[3🔵capitalize]], [[3🔷resource_rational_fit]], [[ignorance prior]], [[4💙ENT_DSL]], [[5💜innov_meaning]]
 - agent: 0💡💸 idea , 1🧍‍♀️individual , 2🏢 institution
 - environment: 1📍🌲static, independent choices, 2 🎲🌲dynamic, independent choices , 2📍🕸️ static, inter-related choices, 3🎲🕸️dynamic, inter-related choices
 
 ----
+2024-11-15
+![[Pasted image 20241115051710.png|100]]
+
+|         | 🟩🔴operations management                   | 🟩management                                                | 💜🟩innovation management             |
+| ------- | ------------------------------------------- | ----------------------------------------------------------- | ------------------------------------- |
+| role    | 🧠👓scientist and judge's supportive skills | 🧠🤜scientist and artist discovering management's principle | 🤜👓artist and judge envisioning hope |
+| outcome | skill, meaning                              | discover, understanding                                     | vision, hope                          |
+| module  | [[🔵scaling_tools]], [[2🟩bayes_dec_game]]  |                                                             | [[4🔴metrics]], [[5💜innov_meaning]]  |
+
+
+|                                                                                              | agent | agent + environment                                         |
+| -------------------------------------------------------------------------------------------- | ----- | ----------------------------------------------------------- |
+| **🔧 Operational Domain (1,2)**<br>*Resource Optimization*<br>"Working within constraints"   |       | 🧠🤜scientist and artist discovering management's principle |
+| **🌱 Evolutionary Domain (3,4)**<br>*Environmental Adaptation*<br>"Changing the constraints" |       | discover, understanding                                     |
+
+[[💠integ(process-product)]]
+
+| Dimension                                                                                    | 🎨 Meaning Function (1,3)<br>Translating "Where" to Programs                                                                                                                                                                                | 🎯 Inference Function (2,4)<br>Computing "How" from Programs                                                                                                                                        |
+| -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **🔧 Operational Domain (1,2)**<br>*Resource Optimization*<br>"Working within constraints"   | **Product 1: State Representation**<br>- Translates resource descriptions into formal states<br>- Maps constraints into program conditions<br>- Represents efficiency metrics as queries<br>*"Translating what we have into program state"* | **Product 2: Resource Inference**<br>- Computes optimal resource allocations<br>- Reasons about operation tradeoffs<br>- Simulates deployment outcomes<br>*"Computing optimal actions given state"* |
+| **🌱 Evolutionary Domain (3,4)**<br>*Environmental Adaptation*<br>"Changing the constraints" | **Product 3: World Model Construction**<br>- Builds generative models of possible futures<br>- Represents evolutionary trajectories<br>- Defines opportunity space formally<br>*"Translating possibilities into world models"*              | **Product 4: Strategic Inference**<br>- Samples adaptation strategies<br>- Computes strategic responses<br>- Reasons about capability evolution<br>*"Computing optimal strategies given models"*    |
+
+
+
+
+
+
+---
 
 1. 🌳Nail (Term Sheet Advisor): Angie will focus on developing a probabilistic program to analyze and advise on term sheets for early-stage startups. This involves modeling the complex negotiations and decision-making processes between founders and investors, considering factors like valuation, equity distribution, and investment terms. The goal is to create an AI tool that can help entrepreneurs make more informed decisions during the crucial funding stages of their ventures.
 
@@ -12,7 +40,7 @@ based on  [[toltol_quotes]] and [[zulzul_quotes]], I learned what I care and am 
 
 | Module                                   | Complexity                           | Field                                                                                         | Evaluators      | Stage (Need)                                               | Physics Analogy                                                                                                                                                                                                               |
 | ---------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------- | --------------- | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1. program                               | 0+1+0= [[1bayes_sd]]          | Prob. program + language model                                                                |                 | 🌳Nail (Term sheet optimization)                           |                                                                                                                                                                                                                               |
+| 1. program                               | 0+1+0= [[1🔴BayesSD]]          | Prob. program + language model                                                                |                 | 🌳Nail (Term sheet optimization)                           |                                                                                                                                                                                                                               |
 | 2. 🔴Program synthesis                   | 0+2+0=[[2🔴program_synthesis]]                | Prob. program + language model, Investment structuring                                        | Charlie, Vikash | 🌳Nail (Generating term sheet variations)                  | `Quantum mechanics` (Introduces probabilistic elements and uncertainty). acknowledge that outcomes can exist in multiple states simultaneously until observed or decided upon.                                                |
 | 2. Bayes decision + game                 | 1+1+0=[[2🟩bayes_dec_game]]            | Environments for machine co-founder, Prob. program + language model                           |                 | ⛰️Scale (Market strategy for Cybertruck)                   |                                                                                                                                                                                                                               |
 | 3. Capitalize                            | 0+2+1=[[3🔵capitalize]]              | Investment structuring                                                                        | Charlie, Scott  | 🌳Nail (Financial modeling for term sheets)                | `Newtonian mechanics` (Foundational framework for predictable, deterministic systems) works well for straightforward scenarios but may oversimplify complex situations.                                                       |
@@ -31,31 +59,3 @@ based on  [[toltol_quotes]] and [[zulzul_quotes]], I learned what I care and am 
 
 💡transfer decision tools in resource-concentrated environment (hospital institution in healthcare industry) to less resource-concentrated environment (entrepreneurship founder/institution in entrepreneurship industry)
 
-
-
-Specifically, to solve complexity of entrepreneurial decision making, differentiable programming is needed to  (evaluated by Charlie), how this extends to program synthesis and Bayesian decision-making (evaluated by Charlie, Vikash, and Tom), and how these concepts can be applied to resource rationality and innovative decision-making (evaluated by Vikash, Scott, and Tom). 
-
-
-
-
-
-
-
-|      | execute                                                                                                            | control                                                                                                                         |
-| ---- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| slow |                                                                                                                    | SJ (): [[⚡️atom(BE⬇️⬆️))]] are scientists understanding what'll happen in slow clockspeed environment -> [[⚡️generate(tolzul)]] |
-| fast | AJ (vision, hope) [[👓atom(BE🔄)]] -> [[👓synthesize(bayes-entrep)]] are judges evaluating utility of what happens |                                                                                                                                 |
-
-
-
-| Dimension | 🎨 Meaning Function (1,3)<br>Translating "Where" to Programs | 🎯 Inference Function (2,4)<br>Computing "How" from Programs |
-|-----------|-----------------------------------------------------------|-----------------------------------------------------------|
-| **🔧 Operational Domain (1,2)**<br>*Resource Optimization*<br>"Working within constraints" | **Product 1: State Representation**<br>- Translates resource descriptions into formal states<br>- Maps constraints into program conditions<br>- Represents efficiency metrics as queries<br>*"Translating what we have into program state"* | **Product 2: Resource Inference**<br>- Computes optimal resource allocations<br>- Reasons about operation tradeoffs<br>- Simulates deployment outcomes<br>*"Computing optimal actions given state"* |
-| **🌱 Evolutionary Domain (3,4)**<br>*Environmental Adaptation*<br>"Changing the constraints" | **Product 3: World Model Construction**<br>- Builds generative models of possible futures<br>- Represents evolutionary trajectories<br>- Defines opportunity space formally<br>*"Translating possibilities into world models"* | **Product 4: Strategic Inference**<br>- Samples adaptation strategies<br>- Computes strategic responses<br>- Reasons about capability evolution<br>*"Computing optimal strategies given models"* |
-
-
-
-| Time Horizon | 👁️ Meaning Function<br>"What is our goal?" | 🤜 Inference Function<br>"How do we achieve it?" |
-|--------------|---------------------------------------------|------------------------------------------------|
-| **⚡ Short-term**<br>*Internal Focus*<br>"Working within system" | **Product 1: Internal State**<br>- Maps current resources & capabilities<br>- Understands operational constraints<br>- Projects current business state<br>*"Where are we now as a company?"* | **Product 2: Internal Action**<br>- Optimizes current operations<br>- Allocates existing resources<br>- Makes immediate business choices<br>*"How do we best use what we have?"* |
-| **🌊 Long-term**<br>*External Focus*<br>"Changing the system" | **Product 3: World Modeling**<br>- Maps market evolution<br>- Projects future opportunities<br>- Models environmental changes<br>*"How is our world changing?"* | **Product 4: Strategic Evolution**<br>- Adapts agent capabilities<br>- Pivots strategy for future fit<br>- Evolves business model<br>*"How must we change to fit?"* |

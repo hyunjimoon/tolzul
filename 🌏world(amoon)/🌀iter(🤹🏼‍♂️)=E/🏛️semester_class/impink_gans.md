@@ -10,7 +10,7 @@ using cloud it impacts tech stack breadth (standardized)
 
 ## luca guis
 
-great ideas don't sell themselves: disclosure paradox
+great ideas don't sell themselves: disclosure #paradox
 bob kearns, windshield wiper (ford took prototype) 20 yr suing
 
 contentious struggle (both invented) - winklevoss twins

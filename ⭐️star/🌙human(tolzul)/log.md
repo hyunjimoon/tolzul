@@ -1,3 +1,8 @@
+2024-11-13
+- respect, responsibility, 인내, 친절, 정직
+
+
+
 > Consciousness isn't a journey upward, but a journey inward. Not a pyramid, but a maze. - [[22west_world]]
 
 assumption1: life's goal is increasing usability of oneself

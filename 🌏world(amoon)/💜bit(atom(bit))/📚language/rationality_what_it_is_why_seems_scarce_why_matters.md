@@ -21,7 +21,7 @@ symbiosis of theory and practice (education)
    Pinker draws on David Hume’s philosophy, which suggests that our goals are driven by passions, not reason itself. Rationality helps prioritize conflicting goals—allowing individuals to balance short-term and long-term desires. Through reason, people navigate the complexity of multiple goals that may clash, using rationality to weigh the value of each goal over time.
 
 3. **Ignorance and self-constraint can be rational choices**  
-   This chapter discusses the paradox where limiting oneself can be rational. Pinker uses the story of Odysseus, who restrained himself from temptation to achieve his goal. The chapter explores how strategic ignorance and self-constraint serve as tools for rational decision-making, enabling people to avoid destructive distractions and focus on beneficial pursuits.
+   This chapter discusses the #paradox where limiting oneself can be rational. Pinker uses the story of Odysseus, who restrained himself from temptation to achieve his goal. The chapter explores how strategic ignorance and self-constraint serve as tools for rational decision-making, enabling people to avoid destructive distractions and focus on beneficial pursuits.
 
 4. **Science applies rationality to the real world**  
    Here, Pinker illustrates how science exemplifies rationality in practice. Rationality is applied through empirical testing, where hypotheses are tested to validate claims. He distinguishes between unfalsifiable and falsifiable statements, underscoring the importance of empirical methods in establishing truth and advancing knowledge.

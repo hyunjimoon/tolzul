@@ -12,7 +12,7 @@ this class project for Josh Tenenbaum's [[966 Computational Cognitive Science]]
 
 **Contributions**: This research will advance theory by providing a unified framework for understanding rational adaptation in entrepreneurial decision-making, while offering practical guidelines for context-specific resource allocation optimization. Table of contents:
 
-full paper in [[eval(charlie, 📝Vectorizing Venture Adaptation)]]
+full paper in [[📝🧭Vectorizing Adaptation]]
 
 1. Bhui, R., Lai, L., & Gershman, S. J. (2021). Resource-rational decision making. _Current Opinion in Behavioral Sciences_, _41_, 15-21.
 2. Ching, K., Gans, J., & Stern, S. (2019). Control versus execution: endogenous appropriability and entrepreneurial strategy. _Industrial and Corporate Change_, _28_(2), 389-408. 
