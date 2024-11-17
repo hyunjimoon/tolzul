@@ -5,7 +5,7 @@
 	- phase3 (sail): making phase2 more efficient and sustainable
 - Xinyu shared his interest in state space model - sequence; (fft: TlogT, inverse (matrix)); imputation - change btw bf and af covid
 - interested in physics driven spatio-temporal learning (including manifold and laplacian) 
-	- angie emphasize causal model (business cycle from [[mng(market)]] as [[🏭generator]]
+	- angie emphasize causal model (business cycle from [[mng(market)]] as [[🏭def(generate)]]
 	- degree of the parameter's affect on interpretability, use different inference algorithms (MCMC vs admm, conjugate descent for AR model coefficient, RANK)
 
 - Xinyu introduced [Data-Driven Economic NMPC Using Reinforcement Learning](https://doi.org/10.1109/TAC.2019.2913768)

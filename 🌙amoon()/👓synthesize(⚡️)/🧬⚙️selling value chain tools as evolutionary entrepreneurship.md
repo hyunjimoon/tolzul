@@ -34,36 +34,9 @@ when an industry has a horizontal structure, another set of forces push toward m
 ## 2. change between modular and integral given industry and product architecture structure
 and my favorite table which classifies industrial context based on product tech, process tech, organization clockspeed coordinate
 
-| Industry                                | Product Tech Clockspeed | Process Tech Clockspeed | Organization Clockspeed |
-|-----------------------------------------|-------------------------|-------------------------|-------------------------|
-| **Fast-Clockspeed Industries**          |                         |                         |                         |
-| Personal computers                      | < 6 months              | 2–4 years               | 2–4 years               |
-| Computer-aided software engineering     | 6 months                | 2–4 years               | 2–4 years               |
-| Toys and games                          | < 1 year                | 5–15 years              | 5–15 years              |
-| Athletic footwear                       | < 1 year                | 5–15 years              | 5–15 years              |
-| Semiconductors                          | 1–2 years               | 2–3 years               | 3–10 years              |
-| Cosmetics                               | 2–3 years               | 5–10 years              | 10–20 years             |
-| **Medium-Clockspeed Industries**        |                         |                         |                         |
-| Bicycles                                | 4–6 years               | 10–15 years             | 20–25 years             |
-| Automobiles                             | 4–6 years               | 4–6 years               | 10–15 years             |
-| Computer operating systems              | 5–10 years              | 5–10 years              | 5–10 years              |
-| Agriculture                             | 3–8 years               | 5–10 years              | 8–10 years              |
-| Fast food                               | 3–8 years               | 25–50 years             | 5–25 years              |
-| Beer brewing                            | 4–6 years               | 400 years               | 2–3 years               |
-| Airlines                                | 5–7 years               | 25 years (hardware)     | < 5 years               |
-|                                         |                         | 2–3 years (software)    |                         |
-| Machine tools                           | 6–10 years              | 6–10 years              | 10–15 years             |
-| Pharmaceuticals                         | 7–15 years              | 10–20 years             | 5–10 years              |
-| **Slow-Clockspeed Industries**          |                         |                         |                         |
-| Aircraft (commercial)                   | 10–20 years             | 5–30 years              | 20–30 years             |
-| Tobacco                                 | 1–2 years               | 20–30 years             | 30–40 years             |
-| Steel                                   | 20–40 years             | 10–20 years             | 50–100 years            |
-| Aircraft (military)                     | 20–30 years             | 5–30 years              | 2–3 years               |
-| Shipbuilding                            | 25–35 years             | 5–30 years              | 10–30 years             |
-| Petrochemicals                          | 10–20 years             | 20–40 years             | 20–40 years             |
-| Paper                                   | 10–20 years             | 20–40 years             | 20–40 years             |
-| Electricity                             | 100 years               | 25–50 years             | 50–75 years             |
-| Diamond mining                          | Centuries               | 20–30 years             | 50–100 years            |
+![[🗄️⏰📦⚙️🫀]]
+
+
 
 In order of recommendation:
 - recent paper [Fines22_Operations for entrepreneurs_POM.pdf](https://github.com/Data4DM/BayesSD/files/10050254/Operations.for.entrepreneurs-.POM.paper.2022.1.pdf), esp. sec.3.2 scaling from nailing, scaling, sailing strategy

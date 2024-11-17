@@ -25,7 +25,7 @@ In the world of continuous branch and merge, start from your demand. Then draws 
 | uncertainty         | fight with the `known`                                                                                                                    | fight with the `unknown` (=its complement = nature)                                                                                                                                                                                                                                                                         |
 | statistical support |                                                                                                                                           | uniformity test like SBC (computationally heavy)                                                                                                                                                                                                                                                                            |
 
-- map examples in [[🏭generator]] with #o4eq 
+- map examples in [[🏭def(generate)]] with #o4eq 
 - strategies for sail it stage? preventing bloop? #o4eq 
 - could we connect failure function bathtub-shape [[pool(engine).png]]
 [[by_t(player)]], [[by_s(generator)]], [[hier_agency2]]

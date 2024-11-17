@@ -1,0 +1,6 @@
+Some firms (e.g. Intel and Medtronics) use a time-pacing strategy for product development (PD), introducing new generations at regular intervals. If the firm adopts a fast pace (introducing frequently), it prematurely cannibalizes its old generation, incurring high development costs, while if it has a slow pace, it fails to capitalize on customer willingness-to-pay for improved technology. We develop a model to gain insight into which factors drive the pace. We consider PD cost, the diffusion rate (coefficients of innovation and imitation), the rate of margin decline, and the degree to which a new generation stimulates market growth. We find that a faster pace is generally associated with faster diffusion, a higher market growth rate and faster margin decay. Not so intuitively, we find that relatively minor differences in the development cost function can significantly impact the pace.
+
+Keywords: OR in research and development; New product introduction; Diffusion; Time-pacing; Clockspeed
+
+cites [[📜⏰Carrillo05_Industry Clockspeed and the Pace of New Product Development]]
+[[Druehl09_opt_pu.pdf]]

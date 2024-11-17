@@ -1,2 +1,0 @@
-- first box (si) is less robust to randomness (luck in reality) and [[cult(ab)]] has the effect of i) increase diversity, lower randomness $\frac{\sigma}{\sqrt{n}}$ and ii) increase interaction
-- a.k.a uncertainty, different data sources

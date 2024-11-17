@@ -1,2 +1,0 @@
-- understand what will happen and imagine what might happen from [[cronin_🧠🤜👓]]
-- 

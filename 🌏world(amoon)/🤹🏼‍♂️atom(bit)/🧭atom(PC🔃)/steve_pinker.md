@@ -5,18 +5,18 @@
 
 ## out
 
-| Publication Year | Book Title                                     | Key Message                                                                                               |
-| ---------------- | ---------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| 1984             | Language Learnability and Language Development | Language acquisition in children follows systematic patterns and is guided by innate linguistic abilities |
-| 1994             | The Language Instinct                          | Language is a biological adaptation, an instinct that humans are born with                                |
-| 1997             | How the Mind Works                             | The mind is a system of computational modules shaped by natural selection                                 |
-| 1999             | Words and Rules                                | Language processing involves two mechanisms: memorized words and grammatical rules                        |
-| 2002             | The Blank Slate                                | Human nature is largely influenced by genetics, not just environment and culture                          |
-| 2007             | The Stuff of Thought                           | Language reveals how the mind works and reflects human nature                                             |
-| 2011             | The Better Angels of Our Nature                | Violence has declined throughout human history                                                            |
-| 2014             | The Sense of Style                             | A guide to clear writing based on modern linguistics and cognitive science                                |
-| 2018             | Enlightenment Now                              | Human progress is real and measurable across multiple dimensions                                          |
-| 2021             | Rationality                                    | Rational thinking tools can help us make better decisions and understand the world                        |
+| Publication Year | Book Title                                              | Key Message                                                                                               |
+| ---------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| 1984             | Language Learnability and Language Development          | Language acquisition in children follows systematic patterns and is guided by innate linguistic abilities |
+| 1994             | The Language Instinct                                   | Language is a biological adaptation, an instinct that humans are born with                                |
+| 1997             | How the Mind Works                                      | The mind is a system of computational modules shaped by natural selection                                 |
+| 1999             | Words and Rules                                         | Language processing involves two mechanisms: memorized words and grammatical rules                        |
+| 2002             | The Blank Slate                                         | Human nature is largely influenced by genetics, not just environment and culture                          |
+| 2007             | The Stuff of Thought                                    | Language reveals how the mind works and reflects human nature                                             |
+| 2011             | [[The Better Angels of Our Nature]]                     | Violence has declined throughout human history                                                            |
+| 2014             | The Sense of Style                                      | A guide to clear writing based on modern linguistics and cognitive science                                |
+| 2018             | Enlightenment Now                                       | Human progress is real and measurable across multiple dimensions                                          |
+| 2021             | [[rationality_what_it_is_why_seems_scarce_why_matters]] | Rational thinking tools can help us make better decisions and understand the world                        |
 
 ## in
 

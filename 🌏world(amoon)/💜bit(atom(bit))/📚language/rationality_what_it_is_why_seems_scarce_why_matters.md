@@ -11,7 +11,6 @@ symbiosis of theory and practice (education)
 | 5              | **Institutions make us less partial – and more rational**               | Institutions like governments or judicial systems help reduce personal biases, making collective rationality possible. By setting rules and checks, societies manage individual ambitions and partiality, enhancing fairness. |
 | 6              | **Punishing people for their own good creates a more rational commons** | Rules and punishments help sustain rational choices for the collective good, preventing “tragedy of the commons” situations where individuals act in self-interest to the detriment of communal resources.                    |
 | 7              | **Our most important moral idea is compelling because it's rational**   | Rationality supports the "Golden Rule"—treating others as one wishes to be treated. This idea is universally found in ethical frameworks, grounded in the logic of fairness and reciprocity.                                  |
-![[Pasted image 20241028160611.png]]
 ### Summary of Each Chapter
 
 1. **Rationality is a means to an end**  

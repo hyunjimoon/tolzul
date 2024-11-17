@@ -419,7 +419,7 @@ Wong, L., Grand, G., Lew, A. K., Goodman, N. D., Mansinghka, V. K., Andreas, J.,
 ----
 # todo
 - review [[Kuljanin et al (in press) - Computational Process Theory.pdf]]
--  - key literature/module:  [[Cronin24_the_enterprise.pdf]], [Moon et al (2024)'s integrating bayesian inference and system dynamics](https://docs.google.com/presentation/d/19aQe6h7lz70h5427cArytNUJXqx0ndNKziyIVmUKtZs/edit#slide=id.g2ff515a62c6_0_115),   [[1🔴BayesSD]], [[ns(operations and innovation management for early-stage social scientists)]]
+-  - key literature/module:  [[Cronin24_the_enterprise.pdf]], [Moon et al (2024)'s integrating bayesian inference and system dynamics](https://docs.google.com/presentation/d/19aQe6h7lz70h5427cArytNUJXqx0ndNKziyIVmUKtZs/edit#slide=id.g2ff515a62c6_0_115),   [[1🧬🌏AGCTE(mng)]], [[ns(operations and innovation management for early-stage social scientists)]]
 
 Integrated Reasoning: combining multiple types of reasoning - probabilistic, relational, and social - to develop a more comprehensive and coherent approach to understanding language and constructing meaning. This integration aims to address the challenges of fragmentation and limited practical applicability in current language understanding and reasoning systems. The key components are:
 1. Probabilistic reasoning: Using Bayesian methods and probabilistic programming to model uncertainty and update beliefs based on evidence.

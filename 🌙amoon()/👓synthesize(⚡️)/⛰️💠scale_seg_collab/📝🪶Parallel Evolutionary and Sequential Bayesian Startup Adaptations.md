@@ -1,6 +1,17 @@
+- [[#0. table of contents:|0. table of contents:]]
+- [[#1. Theoretical Background|1. Theoretical Background]]
+	- [[#1. Theoretical Background#1.1 experiment design theory|1.1 experiment design theory]]
+	- [[#1. Theoretical Background#1.2 Adjacent Possible theory|1.2 Adjacent Possible theory]]
+	- [[#1. Theoretical Background#2. Model|2. Model]]
+		- [[#2. Model#2.1📍 low cost ratio of sampling to action|2.1📍 low cost ratio of sampling to action]]
+		- [[#2. Model#2.2 🎲 high Uncertainty|2.2 🎲 high Uncertainty]]
+		- [[#2. Model#2.3🧩 low correlation|2.3🧩 low correlation]]
+	- [[#1. Theoretical Background#3. TODO/Future Work|3. TODO/Future Work]]
+			- [[#2.3🧩 low correlation#**Visualization of Pivot Dynamics and Exaptive Opportunities**|**Visualization of Pivot Dynamics and Exaptive Opportunities**]]
+	- [[#1. Theoretical Background#Table 2: Information Structure and Evolutionary Learning|Table 2: Information Structure and Evolutionary Learning]]
 ## Abstract
 Ventures face a critical choice between sequential and parallel search strategies when testing new opportunities. We synthesize three theoretical perspectives - experimental design theory, adjacent possibility theory, and convergence diagnostics - to understand this choice. Our synthesis reveals that parallel search represents a "low-bar" experiment design emphasizing exaptation through many short chains, while sequential search embodies a "high-bar" approach favoring adaptation through fewer, longer chains. Through computational modeling of Bayesian belief updating, we formalize when each strategy is optimal by analyzing three key dimensions: a) 📍Cost structure, where parallel search becomes optimal when test-to-action cost ratios are low (T4C1 total cost = 4test + $\color{Red}{1choose}$ vs T2C1 total cost = (2test + $\color{Red}{1choose}$) × 2); b) 🎲Uncertainty propagation, where parallel search enables broader exploration of the 'adjacent possible' through simultaneous testing ($\color{Green}{\sigma_c}, \color{Purple}{\sigma_r} \sim \color{SkyBlue}{exp(\sigma)}$), allowing ventures to discover unexpected possibilities (exaptation) rather than committing early to a single path; c) 🧩Correlation effects, both horizontal (across industry) and vertical (within value chain), where parallel search better captures joint distributions and cross-level dependencies ($\color{Green}{\sigma_c}, \color{Purple}{\sigma_r} \sim \color{Orange}{\rho} * \color{SkyBlue}{exp(\sigma)}$). We derive a unified decision rule: choose parallel search when implementation costs and uncertainty are high ($\color{Red}{c_{act}} * \color{SkyBlue}{\sigma} * \color{Orange}{k}$ is large), prefer need (market)-first sequential search when market uncertainty dominates ($\color{Green}{\sigma_c} < \color{Purple}{\sigma_r}$), and default to solution (product)-first sequential search otherwise. This framework reconciles the apparent inefficiency of parallel search with its empirical prevalence by showing how high uncertainty and correlation can make broad exploration through parallel, low-bar experiments more valuable than deep exploitation through sequential, high-bar tests. 
-[[🗄️🪶product2_APT]]
+
 ## 0. table of contents:
 ![[🗄️🪶product2]]
 
