@@ -1,6 +1,6 @@
 ## 1. The Resilience and Rhythm of Breaststroke
 
-In uncertain environments, survival demands adaptability over pure efficiency. Breaststroke, while slower than freestyle (another swimming technique) in ideal conditions, demonstrates remarkable resilience across diverse challenges. In murky waters, it enables navigation while maintaining visibility. During rough conditions, its symmetrical motion provides stability. When energy conservation is crucial, its natural glide phase allows recovery. This adaptability across varied conditions mirrors the challenges of innovation in uncertain markets.
+In uncertain environments, survival demands adaptability over pure efficiency. Breaststroke, while slower than freestyle (another swimming technique), demonstrates remarkable resilience across diverse challenges. In murky waters, it enables navigation while maintaining visibility. During rough conditions, its symmetrical motion provides stability. When energy conservation is crucial, its natural glide phase allows recovery. This adaptability across varied conditions mirrors the challenges of innovation in uncertain markets.
 
 More importantly, breaststroke's three-phase rhythm—wide sweep, focused thrust, glide—provides a profound model for innovation cycles. Unlike freestyle's continuous rotation or butterfly's explosive bursts, breaststroke's distinct phases illuminate how parallel exploration (sweep) creates the conditions for focused scaling (thrust), followed by systematic optimization (glide). This natural progression, refined over centuries of human swimming evolution, offers unique insights into managing innovation under uncertainty.
 
@@ -20,10 +20,47 @@ The breast stroke's three-phase rhythm reveals how organizations naturally cycle
 
 **Glide (SAIL IT)**: The streamlined glide represents the crucial transition period [[📜Mokyr92_evoldyn_tech]] identifies between innovation cycles. Just as evolution is path-dependent - "selection operates on what exists, not what could have been" - organizations must optimize current advantages while positioning for the next wave of macroinventions. Like a swimmer gathering momentum for the next stroke, firms balance system optimization with preparation for future wide sweeps, maintaining the natural rhythm between radical change and incremental improvement.
 
-## 2. Mathematical Model
+## 3. Mathematical Model (choose between the two)
 
-### 2.1 baseline model 
+### 3.1 baseline model 1
 
+Three components determine optimal sampling behavior when balancing accuracy versus speed:
+
+🎯 Q. Decision Quality:
+$Q(\color{orange}{k}, \color{skyblue}{p}) = \color{skyblue}{p} \cdot (1 - Binomial_{cdf}(\color{orange}{k}/2, \color{orange}{k}, \color{skyblue}{p})) + (1-\color{skyblue}{p}) \cdot Binomial_{cdf}(\color{orange}{k}/2, \color{orange}{k}, \color{skyblue}{p})$
+
+Where:
+- $\color{orange}{k}$ = number of samples taken
+- $\color{skyblue}{p}$ = true probability (uniformly distributed between 0.5 and 1.0)
+- Decision quality improves with diminishing returns as samples increase
+
+⏰ T. Time Cost:
+$T(\color{orange}{k}, \color{green}{r}) = \color{green}{r} + \color{orange}{k}$
+
+Where:
+- $\color{green}{r}$ = action time / sample time (A2S ratio)
+- Higher $\color{green}{r}$ means actions are more expensive relative to sampling
+- Total time combines fixed action cost and linear sampling cost
+
+📊 R. Utility Rate:
+$R(\color{orange}{k}, \color{green}{r}) = Q(\color{orange}{k}, \color{skyblue}{p})/(\color{green}{r} + \color{orange}{k})$
+
+Optimal samples $\color{orange}{k^*} = argmax_{\color{orange}{k}} R(\color{orange}{k}, \color{green}{r})$
+
+This model reveals several key insights:
+1. When $\color{green}{r}$ is high (expensive actions like VC investments), more samples become optimal
+2. When $\color{green}{r}$ is low (cheap actions like HFT), fewer samples are optimal
+3. Optimal $\color{orange}{k}$ jumps from 1 to odd numbers (3,5,7) to ensure clear majorities
+4. "One-and-done" sampling is rational across many realistic $\color{green}{r}$ values
+5. No penalty for incorrect decisions makes zero samples optimal when $\color{green}{r}=1$
+
+This explains phenomena like:
+- VCs taking extensive samples before major investments (high $\color{green}{r}$)
+- HFT firms making rapid decisions with minimal sampling (low $\color{green}{r}$)
+- Poor individuals making faster decisions due to high sampling costs
+- Desert-dwellers optimally taking fewer samples than city-dwellers
+
+### 3.2 baseline model 2
 Three iterative steps characterize how entrepreneurs adapt strategy through learning:
 
 🧠 B. Believing:
@@ -43,7 +80,7 @@ Optimal action ($\color{Red}{a^*}$) maximizes expected utility gains based on op
 
  We design a situation where high and low bar experiment is possible in both production strategy and market segment. The tradeoff between higher mean for lowbar but higher sigma for highbar experiments manifests in three dimensions: (1) Market size dynamics - Model 2 targets larger but saturated market vs Cybertruck/Robotaxi's uncertain but potentially larger new segments; (2) Competitive landscape - Model 2 faces intense competition from other EVs and used vehicles leading to lower margins, while Cybertruck/Robotaxi occupy less competitive niches enabling higher margins despite uncertainty; (3) Unit economics - Model 2 offers predictable but lower per-unit returns vs Cybertruck's higher variance but potentially higher per-unit returns due to premium pricing in novel segment. Market expansion during growth. Tesla's evolution from Roadster to mass market vehicles exemplifies this dual exploration: their early wide-sweeping experiments in both luxury segments and manufacturing approaches generated crucial insights that enabled focused scaling. This parallel exploration, like a swimmer's coordinated arm and leg movements, creates unexpected advantages - spandrels - that become critical during the scaling phase.
 
-### 2.2 Sweep Fuels Thrust - Spandrel Effect
+### 3.2 Sweep Fuels Thrust - Spandrel Effect
 
 The parallel exploration during wide sweep creates unexpected advantages (spandrels) that become crucial during focused thrust. Tesla's evolution illustrates how this manifests in both high-bar and low-bar experiments. High-bar experiments (like Cybertruck) have higher uncertainty (σ) but potentially larger payoffs through three mechanisms:
 
@@ -61,19 +98,23 @@ This parallel exploration generates spandrels - unexpected insights and capabili
 
 The parallel-sequential distinction manifests in two fundamental trade-offs:
 
-**Error Management (EDT)**
-```
-Parallel (Low-bar): 1-∏(fi)  "Only need one winner"
-Serial (High-bar): ∏(1-fi)   "Chain as strong as weakest link"
-```
-
-**Growth Dynamics (APT)**
+exaptation [[🛠️Exaptation]]:  
+- sequential: radio to podcast to recording (new function)
+- parallel: environment (no function at the beginning)
+**TAP**
 ```
 Sequential: Mt+1 = Mt(1-μ) + α1Mt           [Linear growth]
 Parallel:   Mt+1 = Mt(1-μ) + α(2^Mt - Mt - 1) [Explosive growth]
 ```
 
-(math spandrel in  [[🗄️product2_EDT]], [[🗄️🪶product2_APT]] waiting for selection)
+**experiment  Management (EDT)**
+```
+Parallel (Low-bar): 1-∏(fi)  "Only need one winner"
+Serial (High-bar): ∏(1-fi)   "Chain as strong as weakest link"
+```
+
+
+(math spandrel in  [[🗄️product2_EDT]], [[🗄️🪶product2_TAP]] waiting for selection)
 
 Three key mechanisms drive parallel advantage:
 
@@ -103,7 +144,7 @@ Like the transfer of momentum through glide, vertical correlation (ρv) shows ho
 
 
 
-### 3. Future work: glide enables sweep - ? effect 
+### 4. Future work: glide enables sweep - ? effect 
 
 | Phase                                                                  | Swimming Action                                                                                                                                  | Innovation Action                                                                                                                                                  | Sail to nail strategy (靜中動2)                                                            |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------- |

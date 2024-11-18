@@ -1,14 +1,3 @@
-- [[#0. table of contents:|0. table of contents:]]
-- [[#1. Theoretical Background|1. Theoretical Background]]
-	- [[#1. Theoretical Background#1.1 experiment design theory|1.1 experiment design theory]]
-	- [[#1. Theoretical Background#1.2 Adjacent Possible theory|1.2 Adjacent Possible theory]]
-	- [[#1. Theoretical Background#2. Model|2. Model]]
-		- [[#2. Model#2.1📍 low cost ratio of sampling to action|2.1📍 low cost ratio of sampling to action]]
-		- [[#2. Model#2.2 🎲 high Uncertainty|2.2 🎲 high Uncertainty]]
-		- [[#2. Model#2.3🧩 low correlation|2.3🧩 low correlation]]
-	- [[#1. Theoretical Background#3. TODO/Future Work|3. TODO/Future Work]]
-			- [[#2.3🧩 low correlation#**Visualization of Pivot Dynamics and Exaptive Opportunities**|**Visualization of Pivot Dynamics and Exaptive Opportunities**]]
-	- [[#1. Theoretical Background#Table 2: Information Structure and Evolutionary Learning|Table 2: Information Structure and Evolutionary Learning]]
 ## Abstract
 Ventures face a critical choice between sequential and parallel search strategies when testing new opportunities. We synthesize three theoretical perspectives - experimental design theory, adjacent possibility theory, and convergence diagnostics - to understand this choice. Our synthesis reveals that parallel search represents a "low-bar" experiment design emphasizing exaptation through many short chains, while sequential search embodies a "high-bar" approach favoring adaptation through fewer, longer chains. Through computational modeling of Bayesian belief updating, we formalize when each strategy is optimal by analyzing three key dimensions: a) 📍Cost structure, where parallel search becomes optimal when test-to-action cost ratios are low (T4C1 total cost = 4test + $\color{Red}{1choose}$ vs T2C1 total cost = (2test + $\color{Red}{1choose}$) × 2); b) 🎲Uncertainty propagation, where parallel search enables broader exploration of the 'adjacent possible' through simultaneous testing ($\color{Green}{\sigma_c}, \color{Purple}{\sigma_r} \sim \color{SkyBlue}{exp(\sigma)}$), allowing ventures to discover unexpected possibilities (exaptation) rather than committing early to a single path; c) 🧩Correlation effects, both horizontal (across industry) and vertical (within value chain), where parallel search better captures joint distributions and cross-level dependencies ($\color{Green}{\sigma_c}, \color{Purple}{\sigma_r} \sim \color{Orange}{\rho} * \color{SkyBlue}{exp(\sigma)}$). We derive a unified decision rule: choose parallel search when implementation costs and uncertainty are high ($\color{Red}{c_{act}} * \color{SkyBlue}{\sigma} * \color{Orange}{k}$ is large), prefer need (market)-first sequential search when market uncertainty dominates ($\color{Green}{\sigma_c} < \color{Purple}{\sigma_r}$), and default to solution (product)-first sequential search otherwise. This framework reconciles the apparent inefficiency of parallel search with its empirical prevalence by showing how high uncertainty and correlation can make broad exploration through parallel, low-bar experiments more valuable than deep exploitation through sequential, high-bar tests. 
 
@@ -24,7 +13,7 @@ Ventures face a critical choice between sequential and parallel search strategie
 ![[🗄️product2_EDT]]
 
 ### 1.2 Adjacent Possible theory
-![[🗄️🪶product2_APT]]
+![[🗄️🪶product2_TAP]]
 
 Exaptation plays a critical role in expanding the **adjacent possible**—the set of all future innovations that become accessible based on current conditions (Kauffman, 1995). By repurposing existing resources or technologies, startups can unlock previously unforeseen opportunities and strategically pivot into new markets. In **parallel search**, startups running multiple experiments simultaneously are more likely to encounter exaptive opportunities, especially for resources or technologies that were not originally designed for their current use. For instance, **CRISPR Therapeutics** began as a tool for bacterial immune systems but was rapidly exapted for use in human gene-editing therapies, enabling the startup to address a variety of diseases from cancer to genetic disorders. This broad exploration uncovers hidden possibilities and allows startups to pivot in response to new market data. In **sequential search**, exaptive opportunities emerge more gradually, often following a deeper understanding of the technology being repurposed. **Waymo**, Google’s autonomous vehicle project, initially focused on self-driving technology for ride-hailing services. Over time, as the technology evolved, Waymo incrementally expanded into autonomous delivery, reflecting how sequential pivots uncover new applications over time, grounded in methodical learning.
 
