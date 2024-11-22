@@ -51,7 +51,7 @@ This reframing with concrete examples helps explain why some intuitive strategie
 | 📍 d(pressure)/d(A2S)   | 1. Christensen (1997) "The Innovator's Dilemma": Links market pressure to innovation patterns                                   | 💹 Revenue Dynamics suggests margin pressure drives speed through competitive necessity      | A2S shows both margin pressure and development speed are outcomes of high A2S environments: When firms can learn and act quickly (high A2S), they naturally tend toward both faster cycles and lower margins. This explains why some high-pressure industries remain slow (like utilities) while some low-pressure ones move quickly (like open source software) - A2S is the underlying driver. |
 |                         | 2. Teece (2007) "Explicating Dynamic Capabilities": Connects market dynamism to firm adaptation                                 |                                                                                              |                                                                                                                                                                                                                                                                                                                                                                                                  |
 
-[[👁️🧠explain_away]]
+[[🗄️👁️🧠explain_away]]
 
 # 🗄️ Industry Clockspeed Analysis: Traditional Views vs A2S Framework
 

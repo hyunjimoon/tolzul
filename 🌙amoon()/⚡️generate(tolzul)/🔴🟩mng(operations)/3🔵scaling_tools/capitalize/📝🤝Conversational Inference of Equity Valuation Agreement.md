@@ -1,5 +1,7 @@
 - a.k.a. Proposals as Actions Converging toward Optimal Term Sheet
 - 🧱: express  [[🤜👓innovation]] with [[🎯💭💻marr 3lev]] , [[🧠🤜1331need_sol]], [[💠integ(process-product)]] syntax
+- 🏛️: [[Two Sigma Phd Fellowship-Conversational Inference of Equity Valuation and Allocation]]
+
 
 ### [[🎯💭💻marr 3lev]]
 
@@ -154,19 +156,22 @@ The lower layers of the inference stack comprise Inference Programs, Generative 
 ### 4 Theory, Algorithm, Implementation for Equity Valuation and Allocation Situation
 
 ![[bimodal founder utility.png]]
-Figure 3: payoff landscape of founder and investor, given their constraints (state) using post money SAFE model in the appendix
+Figure 3: payoff landscape of founder and investor, given their constraints (state) using post money SAFE model in the appendix ([interactive](https://claude.site/artifacts/4799eccb-a2d9-4622-8985-86d0e26cbb0b)) using [visualizing optimal decisions at 🌱 cld](https://claude.ai/chat/2c2aaff1-e1a9-4b6f-b97a-0ad8cc3c999e)
 
 ---
 # todo
 [Updating Algorithmic Level for Startup Negotiations cld](https://claude.ai/chat/894ee9af-b0d4-4e8a-b1e2-c7bc16298fc1) 
 
-#tfq 
+#tfq  as i discussed this with [[tom_fiddaman]]
 
 1. update diagram to below which explains bimodality, explaining tradeoffs
 a) Success scenario: If the startup receives sufficient investment and efficiently converts it into knowledge, it crosses the threshold and achieves a high valuation. This results in high founder utility despite some dilution.
 b) Failure scenario: If the startup doesn't receive enough investment, or if the valuation cap is set too high (deterring investment), it may not reach the knowledge threshold before running out of cash. This results in low founder utility.
 
-summary of bimodality in investment amount and valuation cap: The bimodal distribution of founder utility with respect to investment amount and valuation cap reflects the stark contrast between success and failure scenarios in startup ventures. Lower investment amounts or excessively high valuation caps may lead to insufficient funding to reach critical milestones, resulting in low founder utility. Conversely, higher investment amounts can provide necessary resources to cross knowledge thresholds and achieve high valuations, but risk over-dilution if paired with low valuation caps. The "valley" between these outcomes represents a precarious middle ground where the startup has some funding but struggles to reach its full potential, creating a bimodal landscape that epitomizes the high-risk, high-reward nature of startup investments.
+summary of bimodality in investment amount and valuation cap: The bimodal distribution of founder utility with respect to investment amount and valuation cap reflects the stark contrast between success and failure scenarios in startup ventures. 
+⬇️ lower investment amounts or excessively high valuation caps may lead to insufficient funding to reach critical milestones, resulting in low founder utility. 
+⬆️higher investment amounts can provide necessary resources to cross knowledge thresholds and achieve high valuations, but risk over-dilution if paired with low valuation caps.
+🏜️valley between these outcomes represents a precarious middle ground where the startup has some funding but struggles to reach its full potential, creating a bimodal landscape that epitomizes the high-risk, high-reward nature of startup investments. (단타나 장타만 해야지 섞으면 망함)
 [Visualizing optimal investment decisions at 🌱 cld](https://claude.ai/chat/2c2aaff1-e1a9-4b6f-b97a-0ad8cc3c999e)
 
 | Tradeoff                                         | Description                                                                         |

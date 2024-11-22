@@ -9,13 +9,11 @@ Noise | Measurement error | Variance of a blood glucose test, error in counting 
 Prior | Parameter | Mean & variance of belief about price elasticity | Not sure Bayesians are thinking of these as parameters, but they're implemented as parameters (constants) in a Vensim model, so included for completeness.
   | Hyperparameter | Plausible variety in covid transmission rates in different locations, where model has [location] detail
 
-Sdspeak | Sdspeak
--- | -- | --
-| Leverage: narrowly, influence of a parameter on model behavior, or broadly, influence of a policy  on a desired outcome | Influence of a data point on a parameter estimate |
-| ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| Behavior: trajectory of a model variable over time, or description of agents' decision making in a model                |                                                   |
 
-|                                                                                                                         |                                                   |
+| Sdspeak                                                                                                                 | FrequentistSpeak                                  | BayesSpeak |
+| ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- | ---------- |
+| Leverage: narrowly, influence of a parameter on model behavior, or broadly, influence of a policy  on a desired outcome | Influence of a data point on a parameter estimate |            |
+| Behavior: trajectory of a model variable over time, or description of agents' decision making in a model                |                                                   |            |
 
 
 

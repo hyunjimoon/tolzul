@@ -27,7 +27,9 @@ The breast stroke's three-phase rhythm reveals how organizations naturally cycle
 Three components determine optimal sampling behavior when balancing accuracy versus speed:
 
 🎯 Q. Decision Quality:
-$Q(\color{orange}{k}, \color{skyblue}{p}) = \color{skyblue}{p} \cdot (1 - Binomial_{cdf}(\color{orange}{k}/2, \color{orange}{k}, \color{skyblue}{p})) + (1-\color{skyblue}{p}) \cdot Binomial_{cdf}(\color{orange}{k}/2, \color{orange}{k}, \color{skyblue}{p})$
+$Q(\color{orange}{k}, \color{skyblue}{p}\color{white}{)} = \color{skyblue}{p} \color{white}{\cdot (1 - Binomial_{cdf}(}\color{orange}{\frac{k}{2}}, \color{orange}{k}, \color{skyblue}{p} \color{white}{))} + (1-\color{skyblue}{p}\color{white}{)}  \color{white}{\cdot Binomial_{cdf}(}\color{orange}{\frac{k}{2}}, \color{orange}{k}, \color{skyblue}{p} \color{white}{)}$
+
+binomial CDF for P(X ≤ floor(k/2)) where X ~ Binomial(k,p)
 
 Where:
 - $\color{orange}{k}$ = number of samples taken
@@ -35,17 +37,17 @@ Where:
 - Decision quality improves with diminishing returns as samples increase
 
 ⏰ T. Time Cost:
-$T(\color{orange}{k}, \color{green}{r}) = \color{green}{r} + \color{orange}{k}$
+$T(\color{orange}{k}, \color{green}{r}\color{white}{)} = \color{green}{r} \color{white}{+}  \color{orange}{k}$
 
 Where:
-- $\color{green}{r}$ = action time / sample time (A2S ratio)
+- $\color{green}{r}$ = 📍action time / 🧠sample time (A2S ratio)
 - Higher $\color{green}{r}$ means actions are more expensive relative to sampling
 - Total time combines fixed action cost and linear sampling cost
 
 📊 R. Utility Rate:
-$R(\color{orange}{k}, \color{green}{r}) = Q(\color{orange}{k}, \color{skyblue}{p})/(\color{green}{r} + \color{orange}{k})$
+$R(\color{orange}{k}, \color{green}{r}\color{white}{)} = \frac{Q(\color{orange}{k}, \color{skyblue}{p}\color{white}{)}}{T(\color{orange}{k}, \color{green}{r}\color{white}{)}}$
 
-Optimal samples $\color{orange}{k^*} = argmax_{\color{orange}{k}} R(\color{orange}{k}, \color{green}{r})$
+Optimal number of samples per decision $\color{orange}{k^*} = \underset{\color{orange}{k}}{\color{white}{argmax}} R(\color{orange}{k}, \color{green}{r}\color{white}{)}$
 
 This model reveals several key insights:
 1. When $\color{green}{r}$ is high (expensive actions like VC investments), more samples become optimal

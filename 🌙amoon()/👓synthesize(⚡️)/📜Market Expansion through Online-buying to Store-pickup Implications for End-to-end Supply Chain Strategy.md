@@ -3,3 +3,4 @@ A growing body of literature examines demand effects of the increasingly popular
 **Keywords**:
 
 Buy-online-pickup-in-store, End-to-end supply chain, Omnichannel, Sourcing
+

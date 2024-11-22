@@ -1,4 +1,5 @@
 a.k.a. Rational Meaning Construction in Venture Investment Decisions: A Hierarchical Bayesian Approach
+todo: read blog and textbook https://occasionaldivergences.com/posts/non-centered/, https://onlinelibrary-wiley-com.libproxy.mit.edu/doi/epdf/10.1002/0471729000
 #### abstract
 Early-stage venture investors make decisions with limited information, relying on observable startup characteristics to form expectations about potential success. For example, prior research shows that investors often focus on factors like the management team or business model when assessing a firm’s ability to execute its vision. Little is known, however, about how these observable characteristics map onto the perceptions investors use when evaluating deals or how this mapping varies by investor type. Our research investigates this process, drawing on theories of rational meaning creation and lay theory construction to explain how investors interpret observable signals as indicators of unobservable qualities. We develop a hierarchical Bayesian framework that allows us to empirically study how investors with different expertise and focus areas translate deal characteristics into structured beliefs about a venture’s potential.
 
@@ -29,13 +30,13 @@ We investigate how early-stage venture investors construct meaning from observab
 
 The research aims to uncover how heterogeneous "rational meaning construction" leads different investors to value identical startups differently based on their unique "lay theories" about which observable characteristics signal strong execution or valid business models.
 
-![[Pasted image 20241106011155.png|300]]
+![[Pasted image 20241106011155.png|600]]
 
-| Arrow Type | Description | Role in Model | Implementation |
-|-|-|-|-|
-| Lay Theory Mapping (Solid) | Observable → Perceptual | Maps concrete characteristics (team composition, technical capabilities) to abstract perceptions (execution capability, market understanding) | - Encoded in β parameters of hierarchical model<br>- Varies by investor characteristics<br>- Primary focus of meaning construction study |
-| Utility Formation (Solid) | Perceptual → Decision | Translates perceptions into investment utility/value | - Maps perceptual dimensions to binary invest/don't invest decision<br>- Part of choice model<br>- Could vary by investor type |
-| Direct Effects (Dotted) | Observable → Decision | Direct impact of characteristics on decisions beyond perceptual mediation | - Controls for effects not captured by perceptual mapping<br>- Important for model identification<br>- Allows for "ancillary signals" discussed in transcript |
+| Arrow Type                 | Description             | Role in Model                                                                                                                                 | Implementation                                                                                                                                                |
+| -------------------------- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Lay Theory Mapping (Solid) | Observable → Perceptual | Maps concrete characteristics (team composition, technical capabilities) to abstract perceptions (execution capability, market understanding) | - Encoded in β parameters of hierarchical model<br>- Varies by investor characteristics<br>- Primary focus of meaning construction study                      |
+| Utility Formation (Solid)  | Perceptual → Decision   | Translates perceptions into investment utility/value                                                                                          | - Maps perceptual dimensions to binary invest/don't invest decision<br>- Part of choice model<br>- Could vary by investor type                                |
+| Direct Effects (Dotted)    | Observable → Decision   | Direct impact of characteristics on decisions beyond perceptual mediation                                                                     | - Controls for effects not captured by perceptual mapping<br>- Important for model identification<br>- Allows for "ancillary signals" discussed in transcript |
 
 
 #### 🔡🦸‍♂️LLM based profile
@@ -56,6 +57,7 @@ for each of them, we'll show invsetor-llms: "Series A startup with: Technical fo
 | 3          | 1                | [0, 0, 0.5, 0.25, 0]                                                                  | [0, 1, 0, 1, 1, 0]                                                                                                    |
 | 4          | 2                | [0, 0, 0.5, 0.25, 0]                                                                  | [0, 1, 0, 1, 1, 0]                                                                                                    |
 | 5          | 1                | [1, 0, 1.0, 0.20, 1]                                                                  | [1, 0, 1, 1, 0, 1]                                                                                                    |
+|            |                  | (discretization)                                                                      |                                                                                                                       |
 
 #### 🌲hierarchical Bayesian model
 The hierarchical Bayesian model formalizes how investors translate observable startup characteristics into investment decisions through both direct and perceptual pathways (perceptual mediates observable and investment decision). At its core, the model captures two key mappings: first, how observable characteristics ($X$) map to perceptual dimensions (Perceptions) through investor-specific coefficients ($\beta$ modified by $\theta$ based on investor characteristics $Z$); and second, how these perceptions combine with direct effects to influence final investment decisions ($Y$) through a utility function. The model's hierarchical structure, discussed extensively in the transcript, allows for three levels of variation: population-level patterns in $\beta$, investor-type-level effects through $\theta$, and individual-level heterogeneity through the correlation structure $\Omega$. The bernoulli_logit likelihood for investment decisions reflects the binary nature of invest/don't invest choices, while the normal and LKJ priors encode reasonable assumptions about parameter distributions. This structure implements the "lay theory mapping" discussed in the transcript, where different investors can construct different meanings from identical startup characteristics.
@@ -64,50 +66,50 @@ using [cld](https://claude.ai/chat/e78a0bff-dd08-456c-b83f-89daae9cf8e2)
 ```python
 data {
   int<lower=0> N;              // Number of investment decisions
-  int<lower=0> K;              // Number of observable deal characteristics
-  int<lower=0> P;              // Number of perceptual dimensions (2: execution + business model)
-  int<lower=0> T;              // Number of investor archetypes
-  int<lower=0> M;              // Number of investor characteristics
+  int<lower=0> O;              // Number of observable deal char.
+  int<lower=0> P;              // Number of perceptual dims. (2groups:idea+exec.)
+  int<lower=0> A;              // Number of investor archetypes
+  int<lower=0> M;              // Number of investor char.
   
-  matrix[N, K] X;              // Observable deal characteristics matrix
-  matrix[T, M] Z;              // Investor archetype characteristics
-  int<lower=1,upper=T> type[N];// Investor type for each decision
+  matrix[N, O] X;              // Observable deal char. matrix
+  matrix[A, M] Z;              // Investor archetype char.
+  int<lower=1,upper=A> type[N];// Investor type for each decision
   int<lower=0,upper=1> Y[N];   // Investment decision (1=invest, 0=pass)
 }
 
 parameters {
   // Perception formation parameters
-  matrix[K, P] Beta;           // Mapping from observables to perceptions
-  matrix[M, K] Theta;          // How investor characteristics affect mapping
+  matrix[O, P] alpha;           // Mapping from observables to perceptions
+  matrix[M, O] Theta;          // How investor char. affect mapping
   
   // Investment decision parameters
-  vector[P] Alpha;             // Impact of perceptions on investment decision
+  vector[P] beta;             // Impact of perceptions on investment decision
   real<lower=0> sigma;         // Decision noise
   
   // Hierarchical parameters
-  corr_matrix[K] Omega;        // Correlation between characteristic effects
-  vector<lower=0>[K] tau;      // Scaling for characteristic effects
+  corr_matrix[O] Omega;        // Correlation between char. effects
+  vector<lower=0>[O] tau;      // Scaling for char. effects
 }
 
 transformed parameters {
   matrix[N, P] Perceptions;    // Latent perceptual dimensions
   vector[N] InvestmentUtil;    // Investment utility
   
-  // Generate perceptions based on characteristics and investor type
+  // Generate perceptions based on char. and investor type
   for (n in 1:N) {
-    matrix[K, P] BetaType = Beta + (Theta * Z[type[n]])';
-    Perceptions[n] = X[n] * BetaType;
+    matrix[O, P] alphaType = alpha + (Theta * Z[type[n]])';
+    Perceptions[n] = X[n] * alphaType;
   }
   
   // Calculate investment utility
-  InvestmentUtil = Perceptions * Alpha;
+  InvestmentUtil = Perceptions * beta;
 }
 
 model {
   // Priors
-  to_vector(Beta) ~ normal(0, 1);
+  to_vector(alpha) ~ normal(0, 1);
   to_vector(Theta) ~ normal(0, 0.5);
-  Alpha ~ normal(0, 1);
+  beta ~ normal(0, 1);
   tau ~ cauchy(0, 2.5);
   Omega ~ lkj_corr(2);
   
