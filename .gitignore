@@ -11,8 +11,6 @@ _ref/
 .trash/
 
 # Add new extensions
-*.mdl
-**/*.mdl
 *.voc
 **/*.voc
 *.vpd
