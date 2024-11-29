@@ -41,9 +41,6 @@ This axis represents a shift from independent to correlated models. The left sid
 | 3. Best arm id. → Best arm id. in linear bandits           | ∏_i P(μ_i ∈ [μ̂_i - ε_i, μ̂_i + ε_i]) → P(θ ∈ C_δ) ≥ 1 - δ              | In classic best arm id., we use independent confidence intervals for each arm's mean μ_i. In linear bandits, we use a confidence ellipsoid C_δ for the parameter vector θ, with confidence level 1 - δ.                                                                                                                                                     |     |
 | 4. Best arm id. in Beta-Bernoulli bandits → BayesOpt       | p(μ_1,...,μ_K) = ∏_i Beta(α_i, β_i) → f(x) ~ GP(m(x), k(x,x'))          | Beta-Bernoulli bandits use independent Beta distributions for each arm's mean μ_i. BayesOpt uses a Gaussian Process to model the function f(x), introducing spatial correlation via the kernel k(x,x').                                                                                                                                                     |     |
 
-
-
-
 ---
 
 ## Reply from hyunjimoon on 2024-09-01T17:59:12Z
@@ -51,5 +48,6 @@ This axis represents a shift from independent to correlated models. The left sid
 @jeanbaptiste you might be interested in the above - could you explain more on your discovery of different tribes/origin/user group of optimization and bayesian?
 
 ---
+
 
 [Discussion link](https://github.com/Data4DM/BayesSD/discussions/248)

@@ -3,17 +3,17 @@
 | Group              | Type  | Core Functions             | Notable Characters                                                                | Career Examples                           |
 | ------------------ | ----- | -------------------------- | --------------------------------------------------------------------------------- | ----------------------------------------- |
 | **Analysts (NT)**  |       |                            |                                                                                   |                                           |
-| INTJ               | Ni-Te | 🧠 Systematic Analysis     | Dr. Strange, Gandalf, Heo Young Seo,  **Mark Zuckerberg, Elon Musk**              | Scientists, Architects; Strategic Planner |
+| [[intj]]           | Ni-Te | 🧠 Systematic Analysis     | Dr. Strange, Gandalf, Heo Young Seo,  **Mark Zuckerberg, Elon Musk**              | Scientists, Architects; Strategic Planner |
 | INTP               | Ti-Ne | 🧠 Theoretical Analysis    | Neo (Matrix), Bruce Banner, Albert Einstein                                       | Researchers, Programmers                  |
-| ENTJ               | Te-Ni | 🧠👓 Analysis & Judgment   | Miranda Priestly, Steve Jobs                                                      | CEOs, Military Leaders; Bold Commander    |
+| [[entj]]           | Te-Ni | 🧠👓 Analysis & Judgment   | Miranda Priestly, Steve Jobs                                                      | CEOs, Military Leaders; Bold Commander    |
 | ENTP               | Ne-Ti | 🧠🤜 Analysis & Innovation | Tony Stark, Rick Sanchez                                                          | Inventors, Debaters                       |
 | **Diplomats (NF)** |       |                            |                                                                                   |                                           |
 | INFJ               | Ni-Fe | 👓🤜 Vision & Harmony      | Aragorn, MLK Jr., Moon Ok-Gyeong                                                  | Counselors, Activists                     |
-| INFP               | Fi-Ne | 🤜 Creative Expression     | Luna Lovegood, William Shakespeare                                                | Poets, Artists                            |
+| [[infp]]           | Fi-Ne | 🤜 Creative Expression     | Luna Lovegood, William Shakespeare                                                | Poets, Artists                            |
 | ENFJ               | Fe-Ni | 👓 People Development      | Dumbledore, Oprah Winfrey                                                         | Teachers, Coaches                         |
 | ENFP               | Ne-Fi | 🤜 Enthusiastic Creation   | Robin Williams                                                                    | Performers, Journalists                   |
 | **Sentinels (SJ)** |       |                            |                                                                                   |                                           |
-| ISTJ               | Si-Te | 👓 Systematic Order        | Hermione Granger, George Washington, Kang So-Bok,  **Jeff Bezos, Warren Buffett** | Accountants, Military; Perfect Logician   |
+| [[istj]]           | Si-Te | 👓 Systematic Order        | Hermione Granger, George Washington, Kang So-Bok,  **Jeff Bezos, Warren Buffett** | Accountants, Military; Perfect Logician   |
 | ISFJ               | Si-Fe | 👓 Supportive Structure    | Captain America, Mother Teresa, Hong Joo-Ran                                      | Nurses, Administrators                    |
 | ESTJ               | Te-Si | 👓🧠 Practical Management  | Darth Vader, Margaret Thatcher, Seo Hye-Rang                                      | Managers, Executives                      |
 | ESFJ               | Fe-Si | 👓 Social Harmony          | Monica Geller, Julie Andrews                                                      | Teachers, Event Planners                  |
@@ -34,7 +34,6 @@
 | Structure   | J (판단형) | 📋     | Judging        | Systematic, planned             |
 |             | P (인식형) | 🎯     | Perceiving     | Flexible, adaptable             |
 
-신뢰도, 타당도; entp vs istj
-
+todo: 신뢰도, 타당도
 https://claude.ai/chat/442bfd57-b329-4cd6-9095-bab69a4d3290
 

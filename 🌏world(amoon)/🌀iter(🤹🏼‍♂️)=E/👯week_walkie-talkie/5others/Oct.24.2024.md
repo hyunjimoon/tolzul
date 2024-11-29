@@ -1,4 +1,4 @@
-1. [[tenenbaum]]: what's meta here and what's being learned (ministry of supply didn't really learn the market)?
+1. [[josh_tenanbaum]]: what's meta here and what's being learned (ministry of supply didn't really learn the market)?
 - mental model of entrepreneurs are expanding 
 - administrative behavior (todo1: send mail to gershenman, asking what his example on induction machine was, share bayesian ent paper)
 - todo2: summarize my pitch to josh and josh's feedback

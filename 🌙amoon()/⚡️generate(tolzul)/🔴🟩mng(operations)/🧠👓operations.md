@@ -1,2 +1,2 @@
-- understand what will happen (scientist) and evaluate utility of what happens (judge) in [[cronin_🧠🤜👓]]
+- understand what will happen (scientist) and evaluate utility of what happens (judge) in [[👓🧠🤜judge_scientist_artist]]
 - process theories in  [[2🟩bayes_dec_game]] to productized education and application using [[🔵scaling_tools]]

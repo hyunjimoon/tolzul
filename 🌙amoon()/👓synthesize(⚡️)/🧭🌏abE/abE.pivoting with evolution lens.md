@@ -1,7 +1,62 @@
  - bridge brain and world 
 - 🧱bricks: [[🧭2🧭🗺️_B2BD_scott-jeff-matt]],  [parallel research design for startup product cld](https://claude.ai/chat/09179a39-0f62-43eb-9990-dd0b9336ab34), [decoding angie's comprehensive coding system cld](https://claude.ai/chat/a6831148-15a0-49c6-933b-8fa05aa4294f)
--
 - external evaluators: [[josh_tenenbaum]], [[steve_pinker]]
+
+| Pattern Type | Example | Process Flow | Key Variables & Dynamics | Testing-Implementation Cycle |
+|--------------|---------|--------------|-------------------------|----------------------------|
+| **Functional Adaptation** (Direct Selection) | Tesla Battery (Original) | 👁️ → 👓 → 🧠 → 📍 → 🤜 | • Strong 👁️→👓 (Clear market feedback)<br>• Active 📉🧠 and 📉🤜 drive iteration<br>• 💨 feeds back to 👁️ quickly | • Sequential testing<br>• R1: 👓→🧠 loop is tight<br>• R2: 📍→🤜 loop is direct<br>• High 📉🤜 drives continuous improvement |
+| **Functional Shift** (Secondary Adaptation) | Tesla Powerwall | 👁️ → (🧠 + 👓) → 📍 → 🤜 | • Existing 🧠 reduces 👓 needs<br>• Lower 📉🧠 (proven theory)<br>• New 💨 patterns emerge<br>• Modified 📍 for new context | • Parallel testing of existing + new<br>• R1: Leverages existing 🧠<br>• R2: New 🤜 in different domain<br>• Moderate 📉🤜 in new context |
+| **Co-option** (Non-adaptation) | BYD Blade Battery | (👁️ + 👓 + 🧠) → 📍 → 🤜 | • Multiple 👁️ discoveries<br>• Parallel 👓 benefits<br>• Emergent 🧠 formation<br>• Unexpected 💨 advantages | • Highly parallel testing<br>• R1: Multiple 🧠 emerge<br>• R2: Multiple 🤜 reinforce<br>• Low initial 📉🤜 due to multiple benefits |
+
+Key Pattern Distinctions:
+1. **Testing Sequence**:
+   - Functional Adaptation: Linear (👁️→👓→🧠)
+   - Functional Shift: Hybrid ((🧠+👓)→📍)
+   - Co-option: Parallel (👁️+👓+🧠)
+
+2. **Theory Development** (🧠):
+   - Functional Adaptation: Built through direct testing
+   - Functional Shift: Leverages existing + new theory
+   - Co-option: Emerges from multiple discoveries
+
+3. **Commitment Dynamics** (🤜):
+   - Functional Adaptation: High decay (📉🤜), needs constant renewal
+   - Functional Shift: Moderate decay, supported by existing knowledge
+   - Co-option: Multiple reinforcing commitments
+
+4. **Diffusion Patterns** (💨):
+   - Functional Adaptation: Direct market feedback
+   - Functional Shift: Cross-domain application
+   - Co-option: Multiple concurrent channels
+
+[[📜Felin23_disrupt_evol]]
+2024-11-27
+
+for [[📝🪶Parallel Evolutionary and Sequential Bayesian Startup Adaptations]], 
+
+| Component            | System Dynamics Formula                                                  | TAP Interpretation                                                    | Combined Formula                                                             |                          |
+| -------------------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ------------------------ |
+| 📊 Theory Growth     | Theory = INTEG(testing - implementing - decaying_usefulness, 50)         | M_t+1^p = M_t^p(1-μ_p) + Σ(i=2 to M_t^p)(M_t^p choose i)(1/T_T)       | dTheory/dt = testing - implementing - μ_p×Theory + Σ(Theory choose i)/T_T    |                          |
+| 🤜 Commitment Growth | Commitment = INTEG(implementing - diffusing - decaying_effectiveness, 0) | M_t+1^c = M_t^c(1-μ_c) + Σ(i=2 to M_t^c)(M_t^c choose i)(1/T_I)       | dCommit/dt = implementing - diffusing - μ_c×Commit + Σ(Commit choose i)/T_I  |                          |
+| 👥 Total System      | Observable = INTEG(diffusing - testing, 100)                             | M_t+1^a = M_t^a(1-(μ_p+μ_c)) + Σ(i=2 to M_t^a)(M_t^a choose i)(1/T_D) | dSystem/dt = diffusing - testing - (μ_p+μ_c)×System + Σ(System choose i)/T_D |                          |
+| ⏱️ Time Parameters   |                                                                          |                                                                       |                                                                              |                          |
+|                      | testing_time                                                             | Basic delay                                                           | 1/rate of successful combinations                                            | T_T                      |
+|                      | implementing_time                                                        | testing_time × cost_ratio                                             | 1/rate of action creation                                                    | T_I                      |
+|                      | diffusing_time                                                           | Feedback delay                                                        | 1/rate of system response                                                    | T_D                      |
+| 📉 Decay Parameters  |                                                                          |                                                                       |                                                                              |                          |
+|                      | mu_p                                                                     | Theory decay                                                          | Knowledge entropy                                                            | Theory obsolescence rate |
+|                      | mu_c                                                                     | Commitment decay                                                      | Action entropy                                                               | Impact diminishing rate  |
+
+Key Synthesis Points:
+1. SD flows (testing, implementing, diffusing) map to TAP combination rates (1/T_T, 1/T_I, 1/T_D)
+2. SD decay rates (mu_p, mu_c) map to TAP's extinction rate μ
+3. Combined formulas show both continuous flow and discrete combinatorial aspects
+
+[[🗄️ 🧩correlation examples]]
+
+[[stochastic implementation of cont approx]]
+
+---
 
 I'd like to - reinforce the vision of our collaboration - propose delegating scientist(angie), artist(jb), judge(charlie) role - review scientist's state on four variants of resource rational model (AB.agent's belief, ABD.agent's belief + desire, AEB.agent x environment's belief, AEBD.agent x environment's belief + desire) which I communicated with you individually - elicit JB's imagination on how evolutionary concepts on spandrel, disruption, exaptation can be modeled with AEB.agent x environment's belief model - elicit Charlie's evaluation on how implementing evolutionary concepts can be operationalized - plan next action for the vision. So far, interacting with charlie helped me get the "skill" to understand pivoting and interacting with JB helped me "discover" how bayesian and evolutionary approaches can be synthesized. This aligns with the attached which explains how skill and discovery are developed from (scientist x judge) and (scientist x artist). My ideal goal of this meeting is scientist tries to understand what will happen, artist tries to imagine what might happen, judge tries to evaluates (dis)utility of what happens. as explained in the attached of how skill and discovery are formed
 
@@ -9,7 +64,7 @@ I'd like to - reinforce the vision of our collaboration - propose delegating sci
 2024-11-08
 1. project [[🪵(📝product1)]], [[📜Gershman15_comp_rationality]], [[📜Bhui21_resource_rational_dm]],  on  [[eval(josh, recovering rationality of venture's adaptation)]]  framework 
 2. connect speed with investment (execute, control) and direction with orientation (operations vs marketing))
-3. connect "decision ⏰clockspeed" as state (P system) and action (Q system - frequency of monitoring efforts); sampling step size (nusiance parameter), tradeoff between low vs high step size (meaning of numbers of sample (after burn-in and 솎아내기)) - ⭐️adaptive stepsize [[@dec. mm                                                                                                                                                                                                                                                                                                                                                               g g[]]
+3. connect "decision ⏰clockspeed" as state (P system) and action (Q system - frequency of monitoring efforts); sampling step size (nusiance parameter), tradeoff between low vs high step size (meaning of numbers of sample (after burn-in and 솎아내기)) - ⭐️adaptive stepsize
 4. 
 
 can co-evolve with

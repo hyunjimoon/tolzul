@@ -31,3 +31,15 @@ In the world of continuous branch and merge, start from your demand. Then draws 
 [[by_t(player)]], [[by_s(generator)]], [[hier_agency2]]
 
 [[two_box]]
+
+---
+2024-11-23
+
+|           | atom   | bit      |
+| --------- | ------ | -------- |
+| offensive | tesla,  | mit      | 
+| defensive |  apple      | columbia |
+
+- #o4eq amazon?
+- apple's product doesn't shift fast -> defensive
+

@@ -3,3 +3,5 @@ Research Summary: The search for new resources is costly and difficult within th
 Managerial Summary: How do managers and entrepreneurs search, identify, and find assets and resources in relentlessly competitive markets? Existing arguments largely suggest that firms should not engage in costly and competitive “external” search—instead they should focus “inside,” leveraging the endowments and resources they already possess. We argue that vast reservoirs of dormant resources are available, and that a particular form of external resource search offers a powerful alternative to the prescription to “look inside.” Specifically, we highlight how a “search image” can enable entrepreneurs and managers to search and see resources and value that is not obvious to others. In particular, the search for a functional need—and solution to a formulated problem—can help firms recognize and find dormant resources and create value.
 
 KEYWORDS: factor markets, perception, resource search, resource-based view
+
+[[📜Mastrogiorgio22_more_thumbs]]

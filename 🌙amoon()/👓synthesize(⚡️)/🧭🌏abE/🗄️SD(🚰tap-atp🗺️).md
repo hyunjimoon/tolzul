@@ -1,0 +1,22 @@
+| Type               | Name                           | Formula/Value                                                          | Unit      | Meaning                      | Process Role             |
+| ------------------ | ------------------------------ | ---------------------------------------------------------------------- | --------- | ---------------------------- | ------------------------ |
+| 📦 Stocks          |                                |                                                                        |           |                              |                          |
+|                    | 👁️ Observable                 | INTEG(diffusing_commitment - testing, 100)                             | unit      | Raw information database     | Input source             |
+|                    | 🧠 Perceptual_Program (Theory) | INTEG(testing - implementing - decaying_usefulness, 50)                | unit      | Theory repository            | Knowledge base           |
+|                    | 🤜 Commitment                  | INTEG(implementing - diffusing_commitment - decaying_effectiveness, 0) | dmnl      | Decision repository          | Action state             |
+| 🔄 Flows           |                                |                                                                        |           |                              |                          |
+|                    | 👓 testing                     | Theory/testing_time                                                    | unit/Week | 👁️→🧠 Theory development    | R1: Theory reinforcement |
+|                    | 👆implementing                 | Commitment/implementing_time                                           | unit/Week | 🧠→🤜 Theory application     | R2: Action reinforcement |
+|                    | 💨 diffusing_commitment        | Commitment/diffusing_time                                              | dmnl/Week | 🤜→👁️ Impact realization    | Feedback to environment  |
+| 🔀 Decay Flows     |                                |                                                                        |           |                              |                          |
+|                    | 📉 decaying_usefulness         | Theory × mu_p                                                          | unit/Week | 🧠↓ B1: Theory obsolescence  | Knowledge entropy        |
+|                    | 📉 decaying_effectiveness      | Commitment × mu_c                                                      | dmnl/Week | 🤜↓ B2: Impact erosion       | Action entropy           |
+| ⏱️ Time Parameters |                                |                                                                        |           |                              |                          |
+|                    | testing_time                   | 0.5                                                                    | Week      | Theory development delay     | Learning cost            |
+|                    | implementing_time              | testing_time × implement_to_test_time_cost                             | Week      | Application delay            | Action cost              |
+|                    | diffusing_time                 | 2                                                                      | Week      | Environmental response delay | Feedback delay           |
+| 🎚️ Decay Rates    |                                |                                                                        |           |                              |                          |
+|                    | mu_p                           | 0.1                                                                    | dmnl/Week | Theory decay rate            | Knowledge deterioration  |
+|                    | mu_c                           | 0.1                                                                    | dmnl/Week | Commitment decay rate        | Impact diminishing       |
+| ⚙️ Constants       |                                |                                                                        |           |                              |                          |
+|                    | implement_to_test_time_cost    | 10                                                                     | dmnl      | Action/learning cost ratio   | Resource allocation      |

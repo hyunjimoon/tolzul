@@ -100,7 +100,7 @@ This parallel exploration generates spandrels - unexpected insights and capabili
 
 The parallel-sequential distinction manifests in two fundamental trade-offs:
 
-exaptation [[🛠️Exaptation]]:  
+exaptation [[🛠️exaptation_spandrel]]:  
 - sequential: radio to podcast to recording (new function)
 - parallel: environment (no function at the beginning)
 **TAP**

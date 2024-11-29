@@ -25,7 +25,7 @@ to elaborate,
 	3. (pivot) softer product has lower risk but lower threshold leading to less viscous pivot strategy
 		- software (green) and hardware (red)'s pivot strategy
 		   ![[hardness_pivot.png|300]]
-		   - softer solutions are more adhesive to needs in different domain (ready, fire, aim by Neil Gershenfeld)
+		   - softer solutions are more adhesive to needs in different domain (ready, fire, aim by [[neil gershenfeld]])
 			   - fluidic ribosome (create biology for nonbiological) -> genome transplantation
 			   - rfid tag (can't read one at a time, nonlinearity in material, spin resonance) -> spin-spin exchange quantum computing
 			   - glue composite parts -> snap parts, modulus ultralight material

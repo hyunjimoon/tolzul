@@ -3,6 +3,11 @@ Thinking Cosmopolitanism with Jhumpa Lahiri [[김정하_cosmopolitan.pdf]]
 
 ## 2017 
 This seminar examines the affective turn in critical theory, focusing on its impact on American literary studies. With what critical concerns and agendas has this new field of study revisited and renewed the modern American novel? What kind of reading practices and hermeneutic framework might be enabled by this affective approach to American literature? With these questions in mind, we explore the ways in which literary texts register structures of feeling of modern America.[[김정하_현대미국소설 1.pdf]]
+
+
+### 2018
+![[Pasted image 20241123140926.png|100]]
+![[Pasted image 20241123140145.png|100]]
 ## 2019-03-24
 > 여러분들정도의 능력이면, 안해서 못하는 거지 못해서 못하는게 아니다
 
@@ -39,6 +44,22 @@ In this course we will read selected writings of Freud and think about the basic
 [[김정하_2022-2_문학과정신분석.pdf]]
 이 수업의 목표는 정신분석학의 주요 개념에 담긴 인간관, 사회관, 예술관을 이해하고, 이를 바탕으로 문학작품을 독해하는 훈련을 하는 것이다. 정신분석적 관점에서 문학을 읽어보고, 문학이 정신분석에 제시하는 통찰을 또한 생각해본다. 즉, 정신분석과 문학이 서로에게 어떤 종류의 거울이 되어주는지 공부한다. 수업은 정신분석 이론에 대한 강의와 문학작품에 대한 자유로운 토론을 병행한다.
 
+| Week   | Dates                      | Topic               | Readings                                                                                                                  |
+| ------ | -------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| 1      | -                          | Introduction        | -                                                                                                                         |
+| 2      | March 7, 9                 | 문학, 풍-작업, 해석        | 지그문트 프로이트, "창조적 작가와 몽상" (1907), <증의 해석> (1900) 일부                                                                         |
+| 3      | March 14, 16               | 환상과 자아: 나르시시즘, 거울단계 | 지그문트 프로이트, "나르시시즘에 관해: 서론" (1914); 자크 라깡, "거울단계" (1966); 김영하, "거울에 대한 명상" (1995)                                          |
+| 4      | March 21, 23               | 오이디푸스 콤플렉스          | 지그문트 프로이트, "오이디푸스 콤플렉스" (1924); 소포클레스, <오이디푸스 왕>; 윌리엄 셰익스피어, <햄릿> (1603) *퀴즈1                                             |
+| 5      | March 28, 30               | 어머니라는 수수께끼          | 멜라니 클라인, <아동 정신분석> (1932); 제인 정 트렌카, <피의 연어> (2003/2005, 2012) *퀴즈2                                                       |
+| 6      | April 4, 6                 | 페티시즘                | 지그문트 프로이트, "페티시즘" (1927)                                                                                                  |
+| 7      | April 11, 13               | 사랑                  | 지그문트 프로이트, "사랑의 심리" (1910, 1912); 민승기 "사랑의 윤리학" (2010); 권여선, "사랑을 믿다" (2008); 김금희, "너무 한낮의 연애" (2015); 장가흔, <황양연화> (2000) |
+| 8      | April 18, 20               | 기억                  | 지그문트 프로이트, "덮개 기억에 관하여" (1899)                                                                                            |
+| 9      | April 25, 27               | 트라우마                | 지그문트 프로이트, "쾌락원칙을 넘어서" (1920)                                                                                             |
+| 10     | May 2, 4                   | 에도와 멜랑콜리아           | 지그문트 프로이트, "애도와 멜랑콜리아" (1917); 한강, <소년이 온다> (2014) *퀴즈3                                                                   |
+| 11     | May 9, 11                  | 낯익은 낯설음             | 지그문트 프로이트, "낯익은 낯설음" (1919), 앤드류 웰린 포, "어셔 저택의 몰락" (1839)                                                                 |
+| 12     | May 16, 18                 | 응시와 해상              | 슬라보예 지젝, <삐딱하게 보기: 힐러우드의 정신분석> 일부                                                                                         |
+| 13     | May 23, 25                 | 인종, 젠더, 환상          | 데이비드 엥, <인종적 거세> (2001) 일부; 데이비드 헨리 황, <M. 버터플라이> (1988/1998) *퀴즈4                                                        |
+| 14, 15 | May 30, June 1; June 8, 13 | 테스트, 해석, 정신분석       | 엔 앤린 쟝, "징후 없는 정신분석" (2009)                                                                                               |
 ## 2024-06-05
 - 동시대적 감각 + 나를 건드는 질문에 대한 짧은 글이 좋은 비평의 시작 
 
@@ -58,3 +79,4 @@ trauma of empire: violence, minor affect, and cold war transpacific (2014)
 - 담배피는 학우를 보고, 그렇지 너희도 사람인데. 힘들겠지. 이해받았다는 따뜻한 느낌
 - 유학때 너무 오래 앉아계셔서 바지에 구멍난 일화. 그 사실에 놀랐다는 감정이 섞였다는게 포인트
 - "재현"은 전문용어에요.
+

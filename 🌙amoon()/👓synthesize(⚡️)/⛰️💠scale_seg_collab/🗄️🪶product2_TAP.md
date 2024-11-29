@@ -34,4 +34,4 @@ Key Insight: The optimal search strategy requires balancing:
 This supports Mokyr's argument that macroinventions work best with:
 - Moderate horizontal correlation (enabling complementary technologies)
 - High vertical correlation (breaking through historical constraints)
-[[🛠️Exaptation]]
+[[🛠️exaptation_spandrel]]

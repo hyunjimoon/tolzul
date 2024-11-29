@@ -11,7 +11,7 @@
 
 ---
 2023 summer
-[[🗺️abD_mon]], [[🌏abD_tues]], [[🌏abdE_thurs]], [[🌏🗺️aE_fri]], 
+[[🗺️abD_mon]], [[🌏abE_tues]], [[🌏abdE_thurs]], [[🌏🗺️aE_fri]], 
 ### Rational AI foundation models via probabilistic programming
 
 | Feature                    | Transformers                         | Databases, Graphics Engines, Parsers (e.g., C++) | Generative Databases, Graphics Engines, Semantic Parsers                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |

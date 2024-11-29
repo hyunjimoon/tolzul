@@ -72,7 +72,7 @@ links are for marginenote (with  [[🌏world(amoon)]] syntax)
 | [[📏bayesrule]]                        | Symbol System     | Angie's notation for Bayesian concepts                   | Table mapping Bayesian concepts to emoji symbols for visualization                                                  |
 | [[🐕saprhd 👮‍♀️policy]]               | Application Notes | Table of RL/MDP concepts applied to different scenarios  | State, action, transition, reward frameworks across domains                                                         |
 | [[💠integ(process-product)]]           | Integration Notes | Synthesis of cognitive frameworks                        | Integration of behavioral, Bayesian and evolutionary perspectives                                                   |
-| [[🎯💭💻marr 3lev]]                    | Theory Framework  | Application of Marr's levels to investment decisions     | Computational theory, representation/algorithm, and implementation levels                                           |
+| [[🎯🧱💻marr 3lev]]                    | Theory Framework  | Application of Marr's levels to investment decisions     | Computational theory, representation/algorithm, and implementation levels                                           |
 
 
 
