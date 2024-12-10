@@ -1,3 +1,11 @@
+
+2024-12-03
+three questions to ask: 
+1. tips for "assessing fit and buy-in", "establishing control"
+2. "pressured to execute quickly before they had before they have had a chance to establish control" (=entrepreneurs need investors who will give them sufficient time to properly set up their business infrastructure and competitive advantages, rather than rushing them to market prematurely) from scott's textbook:
+	> Implementation of an architectural strategy often requires large amounts of upfront investment (especially relative to disruption) in planning and making strategic commitments to build an entirely new value chain. architectural entrepreneurs must be diligent in assessing fit and buy-in with potential investors, and ensure that they will not be pressured to execute quickly before they have had a chance to establish control.
+
+
 [[🗄️scott]]
 Dear xx,
 

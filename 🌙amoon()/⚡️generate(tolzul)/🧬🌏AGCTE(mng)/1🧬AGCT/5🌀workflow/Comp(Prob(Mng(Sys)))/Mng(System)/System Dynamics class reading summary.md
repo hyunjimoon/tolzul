@@ -31,5 +31,5 @@ Struben, sterman
 - [[Syllabus-15879-Fall2022.pdf]]
 
 
-## Getting things done, firefighting, capability traphs, death spirals
+## Getting things done, firefighting, capability traps, death spirals
 - Angel system from [[MoonVolve🌀/sail🌕/comp(mng(bea))/_def(comp(mng(bea)))/off_def(bea)#Angel and Devil]]

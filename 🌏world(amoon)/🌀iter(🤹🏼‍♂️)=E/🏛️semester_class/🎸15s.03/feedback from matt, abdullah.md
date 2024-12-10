@@ -1,3 +1,5 @@
+#⚜️
+
 For startup educators, teaching operations theory doesn't vouch for the use of that theory. Current approach is to teach knowhow (how to use) on top of the theory. However, choosing startups with high theory absorption capacity might be more effective. Just like a startup has a beachhead market, a startup educator should have a beachhead market (segment of startup).
 
   

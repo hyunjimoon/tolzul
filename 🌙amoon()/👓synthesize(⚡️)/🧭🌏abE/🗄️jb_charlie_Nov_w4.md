@@ -1,8 +1,22 @@
 for [[📝🪶Parallel Evolutionary and Sequential Bayesian Startup Adaptations]]
 
-[[🧠👁️🤜scientist_artist_judge]]
 
-[[🔄UTC_understanding-theory-commitments]]
+| Date       | Key Improvements                                                                                                                                                                                                                                 |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 2024-12-01 | - Created mapping table between System Dynamics and Evolution-Bayes models linking Quality, Belief-Desire-Action, and Time costs ratios<br>- Applied analysis to three cases (Tesla/Porsche/BYD) to demonstrate evolutionary processes in action |
+| 2024-11-30 | - Shared diagram and abstract with collaborators<br>- Developed detailed recommendation table for test strategies based on execution/development time ratios and evolutionary patterns                                                           |
+| 2024-11-29 | - Refined understanding of BYD case as functional shift rather than pure spandrel<br>- Created detailed comparison table of evolutionary concepts across Tesla, Porsche, and BYD cases                                                           |
+| 2024-11-28 | - Developed mapping between academic and accessible versions of the research<br>- Created parallel narratives connecting theoretical concepts to accessible stories                                                                              |
+| 2024-11-27 | - Expanded taxonomy of evolutionary processes (Functional Adaptation, Shift, Co-option)<br>- Applied framework to transportation and non-transportation examples                                                                                 |
+| 2024-11-26 | - Introduced stochastic implementation of continuous approximation<br>- Connected to agent's belief and desire in equity valuation                                                                                                               |
+| 2024-11-25 | - Created comprehensive framework linking evolution theory, experimental design, and adjacent possible theory<br>- Applied framework to Tesla's three phases of evolution                                                                        |
+| 2024-11-24 | - Developed quality cascade model linking meaning, belief-desire, and action<br>- Created detailed mapping between system dynamics and evolution-Bayes models                                                                                    |
+| 2024-11-23 | - Updated comparison between exaptation and spandrel based on JB-Charlie discussion<br>- Clarified that both are natural evolutionary processes with different mechanisms                                                                        |
+
+----
+
+
+[[🔄UTB_understanding-theory-body]]
 ## 2024-12-01
 
 - applying [[🗄️SD(🚰tap-atp🗺️)]] theory to my operations, i routinized decomposing task into goal, understanding, theory
@@ -93,7 +107,7 @@ Here's the updated feature-function table with explicit connections to Tesla, BY
 
 not [[🗺️abD]] but [[🗺️abD.agent's belief and desire to equity valuation]]
 
-[[🧭🌏abE.pivoting with evolution lens]]
+[[🧭🌏abE.moving with bayesian lens]]
 ![[🗺️abD]]
 ##  2024-11-25
 1. 🌱A1.classic adaptation, 🦅A2.**Cooptation** (Pre-adaptation), 🐠NA.**Cooption** (non-aption e.g. **Spandrel**)

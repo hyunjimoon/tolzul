@@ -5,7 +5,7 @@ Keywords: exaptation, embodied rationality, bounded rationality, heuristics, neu
 [[Mastrogiorgio22_thumbs_than_rules_rational_exapt.pdf]]
 collaboration of [[📜Mastrogiorgio16_innov_adapt_det]] and [[📜Felin21_ResourceOriginsSearch]]
 
-in the context of [[🧭🌏abE.pivoting with evolution lens]],
+in the context of [[🧭🌏abE.moving with bayesian lens]],
 
 | Aspect                        | Paper 1: Is Rationality an Exaptation?                                                                                                                                                                            | Paper 2: Resource Origins and Search                                                                                                                                   |
 | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

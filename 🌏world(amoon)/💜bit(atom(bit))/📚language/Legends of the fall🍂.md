@@ -19,6 +19,7 @@
 
 ---
 using  [[language_translation_template]]
+[[zizek]]
 ### In Search of Honor in an Age of Romance
 
 I deeply cherish the film "Legends of the Fall." Born in the same year as I was, this film has become my personal elixir, one I return to whenever I find myself contemplating my next step in life. The protagonist Tristan, who shared blood with a grizzly bear, embodies untamed wilderness. The narrator One Stab recalls that he always lived in the borderlands. Like a traditional Western hero, Tristan is untamed, unable to adapt to society, taking justice into his own hands. However, this film departs from convention, opening with Colonel Ludlow abandoning his sword after witnessing Native Americans falling victim to the frontier spirit, and showing Tristan growing up embracing Native American spirituality - marking it as a revisionist Western. Notably, the Ludlow family saga is narrated through One Stab's remembrance. When Tristan avenges his wife's death only to face imprisonment, and when he must flee after dispensing justice, we see him not as a hero but as a vulnerable individual repeatedly wounded in his resistance against social evil. This pattern of romantic ideals, betrayal, and madness is also visible in his brothers Samuel and Alfred, revealing the variations that traverse "Legends of the Fall."

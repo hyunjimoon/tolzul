@@ -1,4 +1,12 @@
+- [[#Table 1: Definition and example of Four Axioms of Entrepreneurial Strategy|Table 1: Definition and example of Four Axioms of Entrepreneurial Strategy]]
+- [[#Table 2: Entrepreneurial Strategy Compass with Detailed Explanations and Examples|Table 2: Entrepreneurial Strategy Compass with Detailed Explanations and Examples]]
+- [[#Table 3: Categorization and Definition of Key Choices in Entrepreneurial Strategy|Table 3: Categorization and Definition of Key Choices in Entrepreneurial Strategy]]
+- [[#Table 4: 4es x 3evol|Table 4: 4es x 3evol]]
+- [[#Table 5.|Table 5.]]
+- [[#Table 6.|Table 6.]]
+
 [[scott_stern]] with backgroud/belief/expertise in [[scott23🛠️_econ_idea_innov_ent.pdf]], [[scott24👓_Bayesian_Entrepreneurship.pdf]] have value hypothesis as [[val(scott).png]]
+
 
 ## Table 1: Definition and example of Four Axioms of Entrepreneurial Strategy
 
@@ -11,17 +19,17 @@
 
 ## Table 2: Entrepreneurial Strategy Compass with Detailed Explanations and Examples
 
-| Strategy | Intellectual Property | Value Chain | Disruptor | Architectural |
-|----------|----------------------|--------------|-----------|----------------|
-| Nickname | THE THINKERS | THE PARTNERS | THE HUSTLERS | THE BUILDERS |
-| Tagline | "Ideas Factory" | "Core Competency" | "Creative Destruction" | "Zero to One" |
-| Customer Focus | DELIVER value for EXISTING users | DISCOVER value for EXISTING users | DISCOVER value for NEW users | DELIVER value for NEW users |
-| Innovation Type | Develop GENERAL COMPONENT innovations | Develop SPECIALIZED COMPONENT innovations | Develop SPECIALIZED SYSTEM innovations | Develop GENERAL SYSTEM innovations |
-| Orientation | Orientation towards COLLABORATION and investment in CONTROL | Orientation towards COLLABORATION and investment in EXECUTION | Orientation towards COMPETITION and investment in EXECUTION | Orientation towards COMPETITION and investment in CONTROL |
-| Resources & Capabilities | Leverage FUNCTIONAL RESOURCES | Build FUNCTIONAL CAPABILITIES | Build INTEGRATED CAPABILITIES | Leverage INTEGRATED RESOURCES |
+| Strategy                  | Intellectual Property                                                                    | Value Chain                                                                               | Disruptor                                                                         | Architectural                                                                    |
+| ------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Nickname                  | THE THINKERS                                                                             | THE PARTNERS                                                                              | THE HUSTLERS                                                                      | THE BUILDERS                                                                     |
+| Tagline                   | "Ideas Factory"                                                                          | "Core Competency"                                                                         | "Creative Destruction"                                                            | "Zero to One"                                                                    |
+| Customer Focus            | DELIVER value for EXISTING users                                                         | DISCOVER value for EXISTING users                                                         | DISCOVER value for NEW users                                                      | DELIVER value for NEW users                                                      |
+| Innovation Type           | Develop GENERAL COMPONENT innovations                                                    | Develop SPECIALIZED COMPONENT innovations                                                 | Develop SPECIALIZED SYSTEM innovations                                            | Develop GENERAL SYSTEM innovations                                               |
+| Orientation               | Orientation towards COLLABORATION and investment in CONTROL                              | Orientation towards COLLABORATION and investment in EXECUTION                             | Orientation towards COMPETITION and investment in EXECUTION                       | Orientation towards COMPETITION and investment in CONTROL                        |
+| Resources & Capabilities  | Leverage FUNCTIONAL RESOURCES                                                            | Build FUNCTIONAL CAPABILITIES                                                             | Build INTEGRATED CAPABILITIES                                                     | Leverage INTEGRATED RESOURCES                                                    |
 | Value Creation Hypothesis | VENTURE CREATES VALUE because its COMPONENT INNOVATIONS deliver value for EXISTING users | VENTURE CREATES VALUE because its COMPONENT INNOVATIONS discover value for EXISTING users | VENTURE CREATES VALUE because its SYSTEM INNOVATIONS discover value for NEW users | VENTURE CREATES VALUE because its SYSTEM INNOVATIONS deliver value for NEW users |
-| Value Capture Hypothesis | VENTURE CAPTURES VALUE because it CONTROLS a key FUNCTIONAL RESOURCE | VENTURE CAPTURES VALUE because it EXECUTES on key FUNCTIONAL CAPABILITIES | VENTURE CAPTURES VALUE because it EXECUTES on key INTEGRATED CAPABILITIES | VENTURE CAPTURES VALUE because it CONTROLS a key INTEGRATED RESOURCE |
-| Examples | Harry Potter, Getty Images, Xerox, DOLBY, INTELLECTUAL VENTURES, Genentech | Foxconn, PayPal, Madaket, Mattermark, DRIZLY, STRATACOM | NETFLIX, Zipcar, Salesforce, Amazon, Skype, oDesk | Facebook, AngelList, eBay, Ford, Etsy, Dell |
+| Value Capture Hypothesis  | VENTURE CAPTURES VALUE because it CONTROLS a key FUNCTIONAL RESOURCE                     | VENTURE CAPTURES VALUE because it EXECUTES on key FUNCTIONAL CAPABILITIES                 | VENTURE CAPTURES VALUE because it EXECUTES on key INTEGRATED CAPABILITIES         | VENTURE CAPTURES VALUE because it CONTROLS a key INTEGRATED RESOURCE             |
+| Examples                  | Harry Potter, Getty Images, Xerox, DOLBY, INTELLECTUAL VENTURES, Genentech               | Foxconn, PayPal, Madaket, Mattermark, DRIZLY, STRATACOM                                   | NETFLIX, Zipcar, Salesforce, Amazon, Skype, oDesk                                 | Facebook, AngelList, eBay, Ford, Etsy, Dell                                      |
 
 ## Table 3: Categorization and Definition of Key Choices in Entrepreneurial Strategy
 
@@ -36,6 +44,74 @@
 | Optimization Error | Value Delivery | Market | Uncertainty arising from the actions of firms and consumers. On the supply side, firm's decisions affect switching costs, network effects, and integration/modularization. On the demand side, consumers' preferences for quality, innovation, price, and compatibility introduce uncertainty. |
 | | | Product | The set of potential product or service designs, features, and attributes. Uncertainty arises from the unpredictable success of different product designs and features in meeting customer needs and preferences. |
 
+## Table 4: 4es x 3evol
+using [conv(jb, scott|charlie) cld](https://claude.ai/chat/9784e8f4-8480-4825-bc95-142c911151d4)
+1. Speed ratio = 👆/👓 (implementation vs testing speed)
+2. Feedback ratio = 💨/(👆+👓) (feedback vs total execution time)
+3. Learning ratio = 🙈/🤯 (understanding vs theory decay)
+
+
+![[Pasted image 20241203105756.png|1600]]
+
+| Ent.Strategy (Scott speaks)  | Hypothesis (Scott speaks)                                                                                                                                                                                                                                   | Example (Scott speaks)                                                            | Evolution  (JB speaks)           | Key Parameters (Charlie speaks)<br>👆/👓, 🔄/(👆+👓), 🍃/🗑️                                                                   |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Value Chain "The Partners"   | CREATES VALUE as its <font color  = "green">COMPONENT INNOVATIONS</font> discover value for <font color  = "#C0A0C0">EXISTING users</font><br>CAPTURES VALUE as it <font color  = "red">EXECUTES</font> on key <font color  = "red">FUNCTIONAL CAPABILITIES | Foxconn, PayPal, Madaket, <br>Mattermark, Drizly, Stratacom                       | Adaptation (F1→F1+)              | - High 👆implement time/👓test time<br>- Low 🔄feedback time/👆+👓total time<br>- High 🍃rejecting rate/🗑️retiring rate       |
+| IP Strategy "The Thinkers"   | CREATES VALUE as its <font color  = "green">COMPONENT INNOVATIONS</font> deliver value for <font color  = "#C0A0C0">EXISTING users</font><br>CAPTURES VALUE as it <font color  = "red">CONTROLS</font> a key <font color  = "red">FUNCTIONAL RESOURCE       | DOLBY, Harry Potter, <br>Xerox, Intellectual Venture,<br>Genentech, Getty Images, | Co-opted Adaptation (F1→F2)      | - Low 👆implement time/👓test time<br>- Medium 🔄feedback time/👆+👓total time<br>- Medium 🍃rejecting rate/🗑️retiring rate   |
+| Disruptor <br>"The Hustlers" | CREATES VALUE as its <font color  = "green">SYSTEM INNOVATIONS</font> discover value for <font color  = "#C0A0C0">NEW users</font><br>CAPTURES VALUE as it <font color  = "red">EXECUTES</font> on key <font color  = "red">INTEGRATED CAPABILITIES         | NETFLIX, Zipcar, Salesforce, <br>Amazon, Skype, oDesk                             | Co-opted Nonadaptation (None→F1) | - Very high 👆implement time/👓test time<br>- High 🔄feedback time/👆+👓total time<br>- High 🍃rejecting rate/🗑️retiring rate |
+| Architectural "The Builders" | CREATES VALUE as its <font color  = "green">SYSTEM INNOVATIONS</font> deliver value for <font color  = "#C0A0C0">NEW users</font><br>CAPTURES VALUE as it <font color  = "red">CONTROLS</font> a key <font color  = "red">INTEGRATED RESOURCE               | Facebook, AngelList, eBay, <br>Ford, Etsy, Dell                                   | Co-opted Nonadaptation (None→F1) | - High 👆implement time/👓test time<br>- Medium 🔄feedback time/👆+👓total time<br>- Medium 🍃rejecting rate/🗑️retiring rate  |
+
+
+## Table 5.
+
+| Business Risk                                                         | Fundamental Uncertainty                                  |
+| --------------------------------------------------------------------- | -------------------------------------------------------- |
+| - Probability can be calculated exactly (e.g., 1/6 for fair die roll) | - Cannot assign accurate probabilities to outcomes       |
+| - Based on historical data (e.g., franchise failure rates)            | - No historical data to base predictions on              |
+| - Applies to established businesses expanding to new countries        | - Applies to entirely new business ideas/concepts        |
+| - Examples: gambling odds, weather forecasting, insurance pricing     | - Examples: new product launches, unfair die rolls       |
+| - Can do clear-cut risk calculations                                  | - No structure to understand scenarios and probabilities |
+| - Data-driven assessment possible                                     | - Cannot realistically conceptualize scenarios           |
+| - Familiar business scenarios with known variables                    | - Uncertainty about underlying quality of idea           |
+| - Decision-making process is straightforward                          | - No clear framework for decision-making                 |
+## Table 6. test2choose1 examples
+
+| Key Message | Example | Lesson |
+|------------|----------|---------|
+| Test Multiple Paths | 🎯 PillPack testing three customer segments:\n- Elderly patients\n- Post-incident middle-aged\n- Health-conscious supplement users | Different market segments reveal different value propositions and challenges |
+| Commit After Testing | 🍲 Soup seasoning analogy | You must eventually commit to a strategy, but only after proper testing |
+| Low-Cost Initial Testing | 📚 Amazon's early book category testing\n👗 Vera Wang's small Madison Avenue salon | Start with controlled experiments before major investment |
+| Danger of Single-Path Commitment | 🧃 Juicero's $400 juicer failure\n🏝️ Fyre Festival disaster | Lack of testing multiple strategies can lead to expensive failures |
+| Balance Learning & Operations | 🥾 L.L. Bean Boot:\n- Good: Market validation\n- Bad: Initial manufacturing issues | Success requires both market fit AND operational excellence |
+| Uncertainty Management | 🎲 Unfair dice analogy | You can't eliminate uncertainty, but you can manage it through systematic testing |
+| High-Fidelity, Low-Cost Testing | 👗 Vera Wang testing designs alongside established competitors | Find ways to get meaningful feedback without major resource commitment |
+
+## Table 7. why test2choose1
+
+| Strategic Element     | Core Concept                                                          | Key Examples                                                                          | Implementation Principles                                                                                |
+| --------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Risk Reduction        | Multiple viable strategies reduce dependency on single approaches     | Fyre Festival failure due to single-path strategy; Amazon's early category testing    | - Test multiple paths before commitment<br>- Validate core assumptions<br>- Maintain alternative options |
+| Resource Optimization | Identify most efficient route through comparative testing             | Jeff Bezos testing books alongside other categories; OpenTable's focused market entry | - Compare cost/benefit ratios<br>- Start small, scale proven approaches<br>- Minimize sunk costs         |
+| Market Learning       | Generate comprehensive customer insights through different approaches | L.L. Bean's boot testing with hunters; Vera Wang's bridal salon experiment            | - Gather diverse customer feedback<br>- Test in real market conditions<br>- Validate customer needs      |
+| Strategic Flexibility | Maintain ability to pivot while gathering critical information        | Vera Wang's limited initial investment; OpenTable's city-by-city expansion            | - Keep initial commitments limited<br>- Build in adaptation options<br>- Preserve pivot capability       |
+| Competitive Advantage | Build stronger market position through informed testing               | OpenTable's focused San Francisco testing; Amazon's category selection                | - Understand market alternatives<br>- Position strategically<br>- Build scaling foundation               |
+| Failure Prevention    | Identify critical flaws before major investment                       | Juicero's $400 juicer failure; L.L. Bean's prototype testing                          | - Test core assumptions early<br>- Identify potential pitfalls<br>- Validate before scaling              |
+| Innovation Quality    | Create robust solutions through systematic exploration                | Vera Wang's revolutionary designs; L.L. Bean's waterproof boot development            | - Think deeply about value creation<br>- Solve problems creatively<br>- Build on validated insights      |
+examples from [[Scott_school.pdf]]
+p.1: 🎲fundaments uncertainty on knowing unfair dice
+
+p.2💊PillPack’s idea: a roll of bags of medications presorted by the time of day of each dose for online pharmacy
+Three executing strategy (customer segments): 
+- elderly patients with multiple chronic conditions
+- middle-aged patients after their first major medical incident (e.g. heart attack)
+- healthy consumers with highly individualized and complex vitamin and supplement routines
+
+p.3: 🍲To get the best tasting soup, you have to commit to how you season it (and maybe then see what Gordon Ramsey thinks of it).
+
+p.4: 📚 Amazon’s lowbar testing, 🧃 Juicero and Fyre Festival’s failure from not testing (let alone parallel) “Had Evans considered multiple strategies, before committing to the technology and model, he may have better understood the potential flaws in his assumptions and in the idea itself”
+
+p.5: 🥾bean boot mixed learning (bad operations, good market) i.e. option creation
+
+p.6: 👗vera wang’s testing of critical hypothesis with high-fidelity and low opportunity costs
 
 #scott
 [[val(scott).png]]

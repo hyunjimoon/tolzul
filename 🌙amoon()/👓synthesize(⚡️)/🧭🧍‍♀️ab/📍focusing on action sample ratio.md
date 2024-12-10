@@ -8,7 +8,7 @@ todo: read [Sutton's Sunk Costs and Market Structure](https://mitpress.mit.edu/9
 5. based on 1, different observed behavior of TNC1's N (parallel vs sequential) can all be interpreted as rational (environment's `A2S` explains away irrationality given heterogeneous observed behavior)
    
 
-![[🗄️⏰]]
+![[🌙amoon()/👓synthesize(⚡️)/🧭🧍‍♀️ab/🗄️⏰]]
 
 
 using [Explaining Away and Mach Illusion: How Lighting, Reflectance, and Shape Affect Shading and Contours cld](https://claude.ai/chat/b10d0a7d-0af1-4b12-b081-b091b5e7c7c8) 

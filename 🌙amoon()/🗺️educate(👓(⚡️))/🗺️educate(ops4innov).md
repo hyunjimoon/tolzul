@@ -12,3 +12,9 @@ my philosophy on educating and mentoring
 	- project proposal in [[w1_pj2_blog_mng(mng())]]
 	 - https://trello.com/b/LDGeksYg/15785action
 
+
+![[Pasted image 20241207153855.png]]- [ENT Curriculm with data modeling cld](https://claude.ai/chat/f8c132f6-5599-4ada-ad99-4f448e7e6cb4)
+diagram for participatory modeling and planning with AI in ENT https://claude.site/artifacts/4d31a7bc-0d57-4343-ba3d-8ea94f64cf2c
+
+
+![[Pasted image 20241207153948.png]]

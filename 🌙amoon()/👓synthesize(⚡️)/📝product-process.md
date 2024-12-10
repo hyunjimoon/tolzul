@@ -20,6 +20,24 @@ Fixed Planning versus Inverse Planning distinguishes between inferring only beli
 
 [[🐸Breast Stroke Model of Innovation]] bridges these frameworks by showing how cyclical patterns of sweep-thrust-glide help individual firms coordinate their learning about capabilities (belief inference) with discovery of new opportunities (desire inference), revealing spandrels that become crucial advantages during scaling.
 
+| System Component                       | 🔄UTC Framework               | BYD Example                                           | 👻Phantom Framework               | Hotel Example                                               |
+| -------------------------------------- | ----------------------------- | ----------------------------------------------------- | --------------------------------- | ----------------------------------------------------------- |
+| 👁️Quality of Perceptive Understanding | Understanding through testing | "Battery safety is key for EVs"                       | Observable feature perception     | "Hotels vary by brand and price"                            |
+| 🧠Quality of Programmatic Theory       | Theory development            | "Blade design improves both safety and manufacturing" | Latent attribute inference        | "Higher price signals better comfort"                       |
+| 🤜Quality of Strategic Commitments     | Implementation & execution    | "Implement blade battery in production"               | Choice/purchase decisions         | "Book Hampton Inn at $149"                                  |
+| Key Functions                          |                               |                                                       |                                   |                                                             |
+| 👓Testing                              | Maps understanding → theory   | Testing blade battery safety                          | O2P matrix mapping                | Guest perceives Hampton brand + $149 price → infers comfort |
+| 👆Implementing                         | Theory → commitments          | Scaling up blade battery production                   | P2A matrix mapping                | Comfort perception → booking decision                       |
+| 💨Receiving Feedback                   | Updates understanding         | Market response to blade battery                      | Choice validation                 | Post-stay experience feedback                               |
+| Dynamics                               |                               |                                                       |                                   |                                                             |
+| R1: Learning Loop                      | 👁️→🧠→🤜→👁️                 | Safety focus → cost benefits discovery                | Observable → perceptual → booking | Brand + price → comfort → choice                            |
+| R2: Refining Loop                      | Better theory from testing    | Improved manufacturing process                        | Feature → attribute refinement    | Price-comfort relationship learning                         |
+| B1: Rejecting Loop                     | Drops invalid concepts        | Eliminating unsafe designs                            | Bad perception pruning            | Rejecting uncomfortable hotels                              |
+| B2: Retiring Loop                      | Retires old approaches        | Phasing out traditional batteries                     | Invalid attribute removal         | Retiring outdated brand perceptions                         |
+
+Key timing ratios:
+- BYD: Long implementation time (factory setup) vs. quick testing → parallel development optimal
+- Hotels: Quick implementation (booking) vs. slower testing → sequential adaptation works well
 
 ## 📝Product
 

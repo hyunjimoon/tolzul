@@ -4,4 +4,4 @@ Keywords: exaptation, embodied rationality, bounded rationality, heuristics, neu
 
 [[📜Felin23_disrupt_evol]]
 
-[[🗄️jb_charlie_Nov_w3]]
+[[🗄️jb_charlie_Nov_w4]]

@@ -1,3 +1,4 @@
+[[🛝eval(scott, angie)2]]
 ## Machine Partner for Decision-Making
 
  2024-10-14 with two evaluators: 
