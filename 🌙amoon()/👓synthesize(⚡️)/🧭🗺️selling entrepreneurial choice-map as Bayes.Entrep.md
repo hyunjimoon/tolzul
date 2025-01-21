@@ -300,6 +300,7 @@ https://gist.github.com/hyunjimoon/ac42e298f3e4d64071c7f132e88062cd
 
 ---
 
+[[Bayesian Workflow and Startup Operations]]
 ## Reply from hyunjimoon on 2023-09-18T12:06:43Z
 
 First Final draft based on https://chat.openai.com/share/a67aef02-7043-482e-99f7-286064507cc4

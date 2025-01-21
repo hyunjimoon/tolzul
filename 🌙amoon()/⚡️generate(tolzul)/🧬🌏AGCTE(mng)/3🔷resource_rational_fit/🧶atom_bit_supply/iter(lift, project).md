@@ -89,16 +89,16 @@ Here are some related references that I am going through:
 
 - [Projections Onto Convex Sets (POCS) Based Optimization by Lifting](http://repository.bilkent.edu.tr/bitstream/handle/11693/27908/Projections%20onto%20convex%20sets%20(POCS)%20based%20optimization%20by%20lifting.pdf;jsessionid=5E92DF0BFBD6BEDEC1239F6B27C881F0?sequence=1)
 
-![[Pasted image 20220919185418.png]]
+![[Pasted image 20220919185418.png|100]]
 - [M](http://www.princeton.edu/~yc5/ele522_optimization/lectures/mirror_descent.pdf)[irror descent](http://www.princeton.edu/~yc5/ele522_optimization/lectures/mirror_descent.pdf)
 
 - Geometry of regularized optimal transport from [here](https://arxiv.org/pdf/1610.06447.pdf)
 
-![[Pasted image 20220919185340.png]]
+![[Pasted image 20220919185340.png|100]]
 
 
 - Information projection from Nielsen's [lecutre](https://youtu.be/X3cBhBA1nNw?t=5229)  
-![[Pasted image 20220919185359.png]]
+![[Pasted image 20220919185359.png|100]]
 
 
 ## 4. Information Relaxation (Brown, Smith and Sun, 2010)
@@ -122,23 +122,13 @@ Applications/extensions:
 • Brown and Haugh (2017) – inﬁnite horizon MDPs
 • Haugh and Lacedelli (2019) – POMDPs
 
-
-
-
-
 ## 5. 
  "convexify operator via lifting"이 일차 탐구대상이고, 이것과 tractable (time-spatial process), 3차원기하 well-structured 등 [Link chavatal_loc_cut_tilt](marginnote3app://notebook/32A6CD72-6DBD-4780-828F-0A87714D0B7F) to mindmap.
 
 
+## 6. [[Aggregate and Marginalize]]
 
-
-
-
-
-
-
-
-
-
-
+## 7. [[inspection paradox]]
+connection with transportation and entrepreneurship on [[🍪CHIP mobility]].
+continue building thoughts on https://chatgpt.com/c/677677e2-9ca0-8002-809c-63bb388e2708 - on synthesizing lift with disaggregate, project with aggregate. 
 

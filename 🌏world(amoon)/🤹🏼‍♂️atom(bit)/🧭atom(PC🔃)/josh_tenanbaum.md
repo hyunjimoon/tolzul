@@ -1,3 +1,4 @@
+[[966 Computational Cognitive Science]]
 2024-11-05
 Do or do not. There's no try.
 - Yoda from Starwars

@@ -45,7 +45,7 @@ Aggregation in SD is related as with the independent assumption, EXY = EX * EY
 ---
 different degree of uncertainty in demand and lead time might be on a different time scale in supply and demand side.  has different  but I think if we model So the model with a large time with a constant model that fix leadtime as a constant as long as we are using the same time scale as  (demand forecasting seems to be the invese action of time delay considering the opposite direction of diffused time, but I haven't developed it fully yet.)
 
-I understood aggregation as averaging out i.e. $\integ d\theta$ and the source of limitation in Covid paper regarding aggregation seems to be too much marginalization. We integrated out mixture distribution and want to un-integrate it. seems to be is because pointed out out certain "variable" we knownot sure how to understand this concept
+I understood aggregation as averaging out i.e. $\int d\theta$ and the source of limitation in Covid paper regarding aggregation seems to be too much marginalization. We integrated out mixture distribution and want to un-integrate it. seems to be is because pointed out out certain "variable" we knownot sure how to understand this concept
 
 version of uncertainunderstand that the modeling should be independent of time step 
 Our aggregation which tries to model the average effect  E[I_{Man}I_{Wom}]

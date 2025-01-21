@@ -390,6 +390,10 @@ just as prediction function that minimizes the loss  decisions , model a decisio
 Long term goal:
 Stochasticity is introduced either to express additional uncertainty or to substitute the original solution with cheap iterations; Bayesian and stochastic optimization are examples for each purpose. Validation is defined as “the process of determining the degree to which a model is an accurate representation of the real world from the perspective of the intended uses of the model.” (National Academy of Sciences report). However, due to the uncertainty underlying the intention and difficulty in finding the correct representation, stochasticity could be wisely included in the data exploration workflow from which the modeler's intention and model's representation could both evolve. Modelers can calibrate their goal based on simulated decisions and model can improve its ability to sample decisions based on the provided feedback from modelers. This is based on three observations: i) what we call "model" is actually the composition of multiple components such as model space specification, density, and approximate computation, ii) every unnecessary layer of composition leads to information loss, and iii) users are uncertain about their interests. An additional update algorithm that is paired with Algorithm 1 is required for encode update. Fig.8 and 9 suggest two views on this paired update of model and modeler.
 
+2025-01-04 
+![[Pasted image 20250104192009.png|100]]
+in the context of A2E and E2K from [[🗺️abD.agent's belief and desire to equity valuation]], I returned to this detailed balance idea after three years. i summarized chat with this gpt which includes above balance between society's symbolic level and individual's algorithmic in one paragraph as follows. **Detailed balance** ensures that exploration and exploitation remain in “dynamic equilibrium” by maintaining equal “flow” in each direction. Concretely, if you switch from exploring new possibilities (A2E) to refining a known path (E2K) at a certain rate, then you allow a symmetric path back from E2K to A2E. This balancing act helps a modeler (and their model) avoid getting stuck in one mode or discarding prior gains; any time you invest in exploitation remains valid if you later decide to reopen the search. Mathematically, this is captured by saying the probability of being in A2E times the chance of moving to E2K equals the probability of being in E2K times the chance of moving back to A2E. By regulating how often (and how easily) you pivot between modes, detailed balance keeps the entire process “least‐irreversible”—no knowledge or flexibility is lost, even as you iterate, validate, and evolve both your intentions and your model’s representation.
+
 ![](https://i.imgur.com/WK6jzFH.png)
 
 *Fig.8 Bottomup view: Evolving parameter, measure, and replicated data with MCMC.*
@@ -405,6 +409,7 @@ The parameters could be views as $\theta$ as a whole but, structural condition s
 
 ![](https://i.imgur.com/R1kx11I.png)
 *Fig.10 Detailed balance $p(\phi)p(\phi|\theta) = p(\theta|\phi)p(\phi)$ could be used to extend the Markov chain further.*
+
 
 
 ## Appendix 

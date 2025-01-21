@@ -2,8 +2,9 @@ abstract: Industries display remarkable variation in innovation pace, from daily
 
 This optimization principle explains why high A2S environments (like software, where testing takes minutes but deployment takes days) favor rapid iteration, while low A2S contexts (like aerospace, where building takes years but market research takes months) optimize for fewer, larger moves. This unifying framework resolves multiple industry 🧩puzzles: why modularity succeeds (by improving A2S), why massive R&D budgets don't always accelerate innovation (absolute costs matter less than their ratio), and why margin pressure correlates with development speed (both increase with A2S). Beyond product development, A2S theory offers a mechanistic explanation for process and organizational evolution rates, potentially providing the first unified model of industry clockspeed across all dimensions of business activity.
 
+Detailed in [[🐸Breast Stroke Model of Innovation]]
 
-![[🌙amoon()/👓synthesize(⚡️)/🧭🧍‍♀️ab/🗄️⏰]]
+![[🗄️⏰]]
 
 
 Industries vary dramatically in their clockspeed - defined as the rate at which new product generations are introduced into the market, from monthly updates in software to multi-year cycles in aircraft manufacturing. Traditional explanations have focused on:

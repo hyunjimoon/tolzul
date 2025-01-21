@@ -1,4 +1,4 @@
-- [ ] embed this in [[eval(1234💠)]]
+- [ ] embed this in [[🗺️eval(1234💠)]]
 #### strategy
 governed by [[ceo(bsem)]], [[cmo2(bent -> bsent)]] is led by vikash on selling `bsent` to `bent`.  
 #### operations
