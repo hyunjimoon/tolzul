@@ -9,14 +9,24 @@ procedurally: imagine t+1 world model given i chose $a_t$ and make sure $a_t$ is
 
 - information relaxation: prediction
 
+[[📜swift_guilliver's travel]]
+
 ----
 - using [updating beliefs to align with desires cld](https://claude.ai/chat/67680c6c-6fca-4d72-9599-8ccd71455eb7), i designed [[🧠🫀Daily Update of Believed Desire and Desired Belief]]
   
+2025-02-06
+The balance between understanding (past) and evaluating (future) flows suggests seeking a state where:
+
+1. Information processing capacity is equally distributed between learning from past observations and evaluating future possibilities
+2. The rate of entropy reduction through understanding matches the rate of entropy reduction through opportunity evaluation
+3. The system maintains dynamic equilibrium while continuously reducing total entropy
+
+Does this help frame your optimization problem? I find particularly interesting how entrepreneurial agents might achieve ergodicity by balancing their information processing between past learning and future opportunity recognition. Would you like me to elaborate on any of these aspects?
 
 # Believed Desire
 I want to live what mathematicians call an “ergodic life,” where each day’s actions consistently reflect my core purpose rather than short-term swings in motivation. I see deep understanding—truly grasping why things work—as the bedrock of meaningful learning. By staying focused on the principles behind success, rather than just imitating surface behaviors, I ensure that my long-term vision remains steady even amidst unpredictable uncertainties, such as changing market conditions or shifting personal challenges.
 
-# Desired Believ
+# Desired Belief
 To guide decisions effectively, I aim to use a “Bayesian calibrated choice” process that integrates my core desires with my best current knowledge. This means clarifying the right “state variables” to track (like market understanding, skill levels, and goals) and updating them based on immediate feedback rather than clinging to past wins or losses. Each day, I assess what I believe, what I want to achieve, and what I’m capable of now—ensuring that every choice is rooted in a present-focused framework that remains flexible and aligned with my higher aims.
 
 # Ergodic and Markovian (My Stock-and-Flow Perspective, with SBC)
@@ -26,9 +36,9 @@ From this vantage point, _ergodic_ is the “-ed” (the stable, long-term prope
 
 Suggested Edits for tomorrow
 
-1. Replace "such as changing market conditions or shifting personal challenges" with specific examples of reducible vs. irreducible uncertainty
-2. Add a bridging sentence in paragraph 2: "This integration requires..."
-3. Consider moving the technical SBC details to a separate note and focusing on its intuitive meaning
-4. include below spirit
+4. Replace "such as changing market conditions or shifting personal challenges" with specific examples of reducible vs. irreducible uncertainty
+5. Add a bridging sentence in paragraph 2: "This integration requires..."
+6. Consider moving the technical SBC details to a separate note and focusing on its intuitive meaning
+7. include below spirit
 	1. if you were asked to divide the three paragraphs in # 📝draft to # Believed Desire and # Desired belief, what'd it be? 
 	2. if my desired state is ergodicity, explain how desiring markovian can helpful decision rule to converge to that state.

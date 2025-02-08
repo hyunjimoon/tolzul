@@ -1,4 +1,17 @@
 #🐠
+
+
+| Aspect | Non-Entrepreneurial Agent | Entrepreneurial Agent |
+|--------|-------------------------|---------------------|
+| Information Processing | Processes information within controlled boundaries (like the original demon in a closed system) | Processes information across system boundaries, creating new connections (like a demon that can work between multiple chambers) |
+| Resource Allocation | projecting/sorting/designing fracs limited to owned resources | projecting/sorting/designing fracs extend beyond owned resources through creative recombination |
+| Entropy Reduction | Reduces local entropy within controlled domain | Reduces entropy across broader systems by identifying and exploiting opportunities |
+| Time Horizon | Optimizes for current state | Optimizes for future potential states |
+| Information Cost | Pays standard information cost (k log 2 per bit) | Willing to pay higher information costs for potential future value |
+[[📜gleick11_information]]
+
+----
+
 ## 🚗 Cover Story 
 
 ### Introduction: More Than Meets the Eye

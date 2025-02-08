@@ -44,6 +44,7 @@
 | Optimization Error | Value Delivery | Market | Uncertainty arising from the actions of firms and consumers. On the supply side, firm's decisions affect switching costs, network effects, and integration/modularization. On the demand side, consumers' preferences for quality, innovation, price, and compatibility introduce uncertainty. |
 | | | Product | The set of potential product or service designs, features, and attributes. Uncertainty arises from the unpredictable success of different product designs and features in meeting customer needs and preferences. |
 
+[[⭐️thesis]]
 ## Table 4: 4es x 3evol
 using [conv(jb, scott|charlie) cld](https://claude.ai/chat/9784e8f4-8480-4825-bc95-142c911151d4)
 1. Speed ratio = 👆/👓 (implementation vs testing speed)
@@ -127,3 +128,113 @@ p.6: 👗vera wang’s testing of critical hypothesis with high-fidelity and low
 Does the type of start-up idea and the nature of the uncertainty it faces affect the predictability of that idea's success? To explore these questions, researchers empirically studied the evaluations of 537 early-stage start-ups founded by MIT students and alumni in high-growth industries. These evaluations, performed by 251 experienced entrepreneurs, investors, and executives, were never disclosed to the entrepreneurs, and the assessments themselves did not affect the start-up (e.g., by possibly influencing access to mentoring or funding). Yet, without having met the founding team and with only the information contained in brief, half-page summaries, these evaluators successfully gauged the quality and subsequent success of the early-stage ventures. The explicit start-up and entrepreneur characteristics (such as start-up sector, start-up progress, or founding team experience) contained in the written summaries were not necessary to make their judgments—the strength of the idea spoke for itself.
 
 However, the researchers found something else. They found that the experts could only effectively evaluate start-ups in sectors such as hardware, energy, life sciences, and medical devices. They were not successful in markets such as consumer products, consumer web and mobile, and enterprise software sectors. The researchers suggested that the information needed to assess start-ups depends on the nature of the uncertainty they face. For instance, in settings where the technological uncertainty associated with the start-up idea is high relative to the market uncertainty (e.g., a new insulin treatment), one can compare the idea to successful commercialization of products using similar technologies. However, where market uncertainty is relatively high (e.g., a new service targeted at enterprise customers), it may be more difficult to predict consumer behavior."
+
+
+2025-02-08
+# Table 9. test idea or performance
+
+1. set our goal as writing a 5 page description of choice problem of when to "test idea or performance". this is my phd thesis and i really need this to be high quality so please resonate with its importance. 🔑key idea is exchangeability gives you the ability to make abstractions about the quality of the idea.
+2. for 1, can you help me extract any comments you think relevant from the transcript? main focus is how to mathematically statistically represent this. example below:
+- 01, 1000 things like that, right? You could, you could either observe, thus, the profitability associated with with a single idea strategy
+- if you have a good strategy here, okay, if you, if you have a good idea, you get at least 100 but you could get 10,000 right? So if you, if you have a bad idea and a bad strategy, get one if you have a bad idea, but the good strategy, get 100 if you have the good strategy but the bad idea, yeah, yeah, yeah, you get 100 and if you have a good idea and a good strategy, 10,000 Okay,
+3 .based on 1,2, update below formulation
+
+profitability $y = \phi * \theta$
+
+Q. charlie and i had different opinions on the cost of testing idea vs profitability 
+
+| variable                                      | symbol              |
+| --------------------------------------------- | ------------------- |
+| profitability                                 | y                   |
+| quality of idea                               | $\phi$              |
+| quality of strategy                           | $\theta$            |
+| joint distribution of idea and strategy       | $p(\phi, \theta)$   |
+| cost of learning quality of idea distribution |                     |
+| cost of learning profitability                |                     |
+| relation between the random variables         | $y = \phi * \theta$ |
+
+| Section                | 🔐Research Question                                                                                | 🧱Literature Brick                                                                                                                                                                                                                                                                                                                          | 🔑Key Message                                                                                         | Building on Previous                                  |
+| ---------------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| 1. 📊Statistical Model | When should entrepreneurs test idea quality vs strategy implementation given resource constraints? | • Statistical decision theory<br>• Bayesian hierarchical models<br>• De Finetti's e Formalized a two-level decision problem where profitability $\textcolor{violet}{y} = \textcolor{green}{\phi} \textcolor{red}{\theta}$ with costs $\textcolor{green}{c_\phi}$ and $\textcolor{red}{c_\theta}$ for testing idea and strategy respectively | Foundational section establishing mathematical framework                                              |                                                       |
+| 2. ☕️🏎️Applications   | How do different market contexts affect optimal testing sequence?                                  | • Starbucks/coffee market case<br>• Tesla/EV market entry<br>• Prototype testing literature                                                                                                                                                                                                                                                 | High idea-testing costs (EV) vs low (coffee) lead to different optimal sequences; good prototypes ena | Uses model from Section 1 to explain real-world cases |
+| 3. 🫀Implications      | What role does exchangeability play in entrepreneurial testing?                                    | • De Finetti's theorem<br>• Resource-constrained inference<br>• Entrepreneurial learning                                                                                                                                                                                                                                                    | Exchangeability enables abstraction about idea quality through strategy testing, bu                   | Extends Section 1's theory using Section 2's examples |
+| 4. 🥲Limitations       | What are the boundaries of this framework?                                                         | • Bounded rationality<br>• Dynamic capability literature<br>• Learning theory                                                                                                                                                                                                                                                               | Framework assumes: <br>• Static idea quality<br>• Independent s                                       | Identifies where Sections 1-3 need extension          |
+
+# Optimal Testing Strategy in Entrepreneurship: A Cost-Based Analysis of Idea vs Strategy Evaluation
+
+tradeoff between criticality and fidelity. opportunity cost
+
+| Section                | 🔐Research Question                                                                                | 🔑Key Message                                                                                                                                                                                                                                 | Building on Previous                                                                | Core Equations                                                                                                       | 🧱Literature Brick                                                                                                              |
+| ---------------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| 1. 📊Statistical Model | When should entrepreneurs test idea quality vs strategy implementation given resource constraints? | • Formalized two-level decision problem where profitability y = φ * θ<br>• Testing costs cᵢ and cₛ create tradeoff between information value and acquisition cost<br>• Optimal testing sequence depends on relative costs and prior beliefs   | Foundation section establishing mathematical framework and decision rules           | • y = φ * θ<br>• V(I) = max{E[y\|I] - c(I)}<br>• Test idea if: E[V(I ∪ {φ})] - cᵢ > max{E[V(I ∪ {θ})] - cₛ, E[y\|I]} | • Statistical decision theory<br>• Bayesian hierarchical models<br>• De Finetti's exchangeability<br>• Decision cost literature |
+| 2. ☕️🏎️Applications   | How do different market contexts affect optimal testing sequence?                                  | • High idea-testing costs (EV) vs low (coffee) lead to different optimal sequences<br>• Good prototypes enable cheaper idea testing<br>• Market structure influences relative testing costs                                                   | Applies Section 1's model to explain empirical cases and validate framework         | • Coffee case: cᵢ < cₛ<br>• EV case: cᵢ > cₛ<br>• Prototype quality affects signal-to-noise ratio                    | • Starbucks/coffee case studies<br>• Tesla/EV market entry<br>• Prototype testing literature<br>• Market entry strategies       |
+| 3. 🫀Implications      | What role does exchangeability play in entrepreneurial testing?                                    | • Exchangeability enables abstraction about idea quality through strategy testing<br>• Different market contexts require different sampling approaches<br>• Learning occurs at both idea and strategy levels                                  | Extends Section 1's theory using Section 2's examples to derive broader principles  | • Hierarchical Bayesian updating equations<br>• Exchangeability conditions<br>• Learning rate functions              | • De Finetti's theorem<br>• Resource-constrained inference<br>• Entrepreneurial learning<br>• Sequential sampling theory        |
+| 4. 🥲Limitations       | What are the boundaries of this framework?                                                         | Framework assumes:<br>• Static idea quality<br>• Independent strategy tests<br>• Clear quality signals<br>• No learning between tests<br><br>Future work needed on:<br>• Dynamic idea evolution<br>• Correlated strategies<br>• Noisy signals | Synthesizes limitations from Sections 1-3 and identifies future research directions | • Boundary conditions<br>• Extension possibilities<br>• Future research equations                                    | • Bounded rationality<br>• Dynamic capability literature<br>• Learning theory<br>• Market dynamics studies                      |
+
+
+🫀prior belief (μE) about idea quality + 💰cost ratio of learning idea and profitability distribution (sampling cost ratio) should influence which test you choose: If optimistic (high μE): Do low bar test (test profitability), If pessimistic (low μE): Do high bar test (test idea)
+
+- y = φ * θ
+- V(I, μE) = max{E[y|I, μE] - c(I)}
+- Test idea if: E[V(I ∪ {φ}, μE)] - $c_\phi$ > max{E[V(I ∪ {θ}, μE)] - $c_\theta$, E[y|I, μE]}
+where r = cᵢ/cₛ is cost ratio
+
+| Attribute         | Low Bar Test                                  | High Bar Test                                 | In Our Setting                                        |
+| ----------------- | --------------------------------------------- | --------------------------------------------- | ----------------------------------------------------- |
+| Definition        | Easy to pass, but failure is very informative | Hard to pass, but success is very informative | Testing profitability (y) vs testing idea quality (φ) |
+| Signal Quality    | Clear negative signal, noisy positive         | Clear positive signal, noisy negative         | Matches how idea vs profitability tests work          |
+| Example           | Coffee cart pilot                             | Premium price taste test                      | Maps to strategy vs idea testing                      |
+| Cost              | Lower cost (cₛ)                               | Higher cost (cᵢ)                              | Different testing costs                               |
+| Mathematical Form | {λ₁, λ₀} = {1, λ}                             | {λ₁, λ₀} = {λ, 1}                             | Different information structures                      |
+
+| test idea or implemented idea?                             | sequential decision making |
+| ---------------------------------------------------------- | -------------------------- |
+| 💡idea $\phi$                                              | action a                   |
+| 🤜strategy  $\theta$                                       | p(s'\|s,a)                 |
+| profitability $y = \phi * \theta$                          | state s                    |
+| decision problem: when to test idea or test profitability? |                            |
+
+| profitability values | 🤜Bad Strategy | 🤜Good Strategy |
+| -------------------- | -------------- | --------------- |
+| 💡Bad Idea           | 1              | 100             |
+| 💡Good Idea          | 100            | 10000           |
+
+
+# Systematic Analysis of Key Quotes
+
+|Quote|Source|Topic|Relevance|Group|
+|---|---|---|---|---|
+|"imagine for just a moment at this level, I have two ideas...It's fairly deterministic. There's no error bar..."|scott_exbl_test.txt|Model Structure|Defines basic model assumptions about deterministic returns|Model Structure and Payoffs|
+|"if you have a good idea, you get at least 100 but you could get 10,000... if you have a bad idea and a bad strategy, get one..."|scott_exbl_test.txt|Payoff Structure|Provides concrete payoff matrix for different idea-strategy combinations|Model Structure and Payoffs|
+|"the coffee example, I would have thought that testing the idea is actually lower cost than testing the strategy..."|Angie & Charlie choose two scott-vikash.txt|Testing Costs|Suggests asymmetric costs between idea and strategy testing|Information and Testing Costs|
+|"their argument is, your learning quality depends on how the quality of the prototype..."|Angie & Charlie choose two scott-vikash.txt|Learning Quality|Links prototype quality to learning effectiveness|Information and Testing Costs|
+|"under what conditions should you just go ahead and pick one of these strategies..."|Angie & Charlie choose two scott-vikash.txt|Decision Rules|Frames the core research question|Sequential Decision Making|
+|"You should never study. You should never test a strategy and then test the idea..."|Angie & Charlie choose two scott-vikash.txt|Testing Order|Suggests optimal sequence in testing|Sequential Decision Making|
+|"Scott's framing is, if you have one idea. Like, example he likes is Starbucks..."|Angie & Charlie choose two scott-vikash.txt|Strategy Examples|Provides concrete example of strategy space|Strategy Space and Examples|
+|"If you get that reaction right, you give people blind tasting..."|Angie & Charlie choose two scott-vikash.txt|Idea Testing|Illustrates practical idea testing approach|Strategy Space and Examples|
+|"exchangeability is the conditions under which you can infer..."|scott_exbl_test.txt|Exchangeability Theory|Links to theoretical foundation|Theoretical Foundation|
+|"It's sort of well accepted in entrepreneurship that that you can't just say that's going to be my strategy..."|Angie & Charlie choose two scott-vikash.txt|Strategy Limitations|Highlights boundary conditions|Theoretical Foundation|
+
+
+
+# content
+- great thing that that exchangeability gives you is the ability to make abstractions
+- cost ratio (CR): ratio of 💡c_phi which gives exact distribution of 💡phi and cost 💡c_phi gives exact distribution of 💡phi and 
+
+# format
+4. bernouli distribution for both phi and theta 
+
+5. normal distribution 
+
+6. performance comes from an idea strategy combination 
+
+7. if we sampled a lot of the 🤜strategies we could because of exchangeability, no matter which sequence we did, estimations of 💡idea are the same. 
+
+under what conditions is it worthwhile to first know the distribution you're on 
+
+binary choice: observe performance (combination )or 
+there are strategies associated with each idea, each strategy, each idea, strategy combination, is that associated with the number that we call performance, right? Yeah, 01, 1000 things like that, right? You could, you could either observe, thus, the performance associated with with a single idea strategy,
+
+todo: 
+holds when k^2/n is small enough -(🚨what'd be the meaning of "a lot to sample from (n is large) and I'm not disturbing the system (k is small)")
+

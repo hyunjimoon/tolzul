@@ -1,3 +1,21 @@
+2025-01-29
+
+define the problem more generally so that we can flexibly apply our finding to more detailed situation.
+
+Our question/problem is “how to find” the most paying customer with a limited resources.
+
+To simplify the question, let’s start from the “fixed product” (which means we are not thinking about adding/editing features of product)
+
+Now we can define a features of customers in some categorical vectors - may be those category can vary 
+
+and we can selectively sending a marketing email to certain group of customers by random sampling (so called Market Segment defined by subset of categorical vector space)
+
+what we need to “maximize” is there conversion rate to paying customer to the product.
+
+We can define the set of “limited resources” as the how many emails we can send
+
+
+
 ## 08.23
 [Counterfactual Identifiability of Bijective Causal Models](https://arxiv.org/pdf/2302.02228.pdf) explains causal identification with ellipsoid model example; 
 

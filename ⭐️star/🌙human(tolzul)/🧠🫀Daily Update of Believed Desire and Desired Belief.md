@@ -1,4 +1,4 @@
-latest version in [[⭐️ergodic]]
+latest version in [[⭐️living an ergodic life]]
 ## Input Format
 1. Changes/Observations since last update:
    - New experiences/evidence related to belief updating

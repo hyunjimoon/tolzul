@@ -6,6 +6,17 @@ categories:
   - "math"
   - "persons"
 ---
+2025-01-27
+excerpts
+- kolmogorov ext: a theorem that guarantees that a suitably "consistent" collection of finite-dimensional distributions will define a stochastic process.
+
+- komolgorov shows conflicting intuitions in borel paradox are from different choice of sigma algebra (subset of objects that are closed under 1.complement 2.countably infinite conjunctions and 3.disjunctions)
+##### UNIFICATION
+- differences wash out in the integral
+- symmetry conditions on degrees of belief
+- can be approximated on finite sequences
+- exchangeable probabilities that makes the tosses independent are gotten from the surface of independence (wright manifold in population genetics) within the plane of exchangeability. points on the plane and beneast are ebl probabilities that can be represnted as averages over un
+
 2024-12-29
 sampling with vs without uncertainty
 

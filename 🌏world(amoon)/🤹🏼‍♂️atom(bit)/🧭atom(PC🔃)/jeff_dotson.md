@@ -1,3 +1,6 @@
+2025-02-05
+Greg Allenby, Peter Rossi, Peter Lenk' student (Allenby and Rossi's committee member was economist in Chicago)
+
 2024-12-11
 - product is attribute (manifested needs - primitive of marketing - consumer pre-exist; safety and shelter)
 - product to find to satify needs ; brand to  

@@ -8,12 +8,3 @@
 | Fall 2023             | Economics of Ideas (15.357)    | Desire: To understand innovation systems                              | Belief evolved: Saw how idea flow depends on existing stock of knowledge                                   | Prof.Scott Stern<br>Realized entrepreneurial sampling must adapt to ecosystem context                                                                             |
 | Spring 2024           | Transportation (1.200)         | Desire: To learn network optimization                                 | New understanding: Experiments aren't isolated but form networks of learning                               | Prof.Cathy Wu<br>Connected network theory to how entrepreneurs navigate possibility spaces                                                                        |
 | Fall 2024 (Planned)   | Comp. Cognitive Science (9.66) | Current desire: To formalize mental models                            | Anticipated evolution: Better tools for modeling how entrepreneurs update beliefs                          | Prof.Josh Tenenbaum<br>Seeking to connect cognitive science tools with Bayesian inference                                                                         |
-
-The transcript particularly reveals this evolution through statements like:
-- Early focus: "like I said last time, without some very concrete structure of a mathematics, it's hard to start something"
-- Middle stage: "But this semester, I discovered, as I discovered just cognitive science, I discovered there is always also a distance between them"
-- Current synthesis: "I think I converge to things like sampling. Sampling algorithm is one area where Bayesian statistics and cognitive science can provide some theoretical judgments"
-
-This shows how your thinking evolved from seeking mathematical structure to appreciating cognitive frameworks, finally synthesizing both in your approach to sampling problems.
-
-Would you like me to expand on any particular transition in your intellectual journey?

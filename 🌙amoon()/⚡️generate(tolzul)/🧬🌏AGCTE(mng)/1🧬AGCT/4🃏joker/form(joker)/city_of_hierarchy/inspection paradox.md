@@ -1,3 +1,5 @@
+2025-02-04
+![[Pasted image 20250204164414.png]]
 2025-01-04
 
 | **Literature**                                                                 | **Key Arguments**                                                                                                                                                                                                                                                                                | **Contribution to Integrated Analysis**                                                                                                                                                                                                         |

@@ -30,4 +30,4 @@ blank slate: modernn denial of human nature
 
 engage for things he cares about
 - value 
-[[rationality_what_it_is_why_seems_scarce_why_matters]]
+[[📜pinker_rationality_what_it_is_why_seems_scarce_why_matters]]
