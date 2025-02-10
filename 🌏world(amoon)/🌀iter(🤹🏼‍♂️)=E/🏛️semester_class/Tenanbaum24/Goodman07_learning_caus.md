@@ -59,7 +59,7 @@ Where:
 
 This measures how effectively students balance exploration (finding new value) against exploitation (using known information) under resource constraints.
 
-[[🗄️🗄️scott,charlie]] 
+[[🗄️🗄️scott_charlie]] 
 
 [[🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep]]
 

@@ -1,3 +1,12 @@
+2025-02-09
+### Key Tips from Statistical Rethinking's Style of Blending 🧮Math and 💻Code:
+
+1. **Progressive Disclosure**: The text introduces concepts gradually, starting with intuitive explanations before formal math.
+2. **Code as Validation**: Code examples serve to validate the mathematical concepts, showing how theoretical ideas translate into practical computation.
+3. **Visual Support**: Plots are used strategically to bridge mathematical concepts and code implementation.
+4. **Narrative Flow**: Maintains a conversational tone while weaving between math and code, using transitions like "Let's compute this..." or "We can verify this by..."
+5. **Concrete Examples**: Uses specific examples to ground abstract concepts.
+
 2025-02-06
 Below is a three-paragraph summary of **Chapter 13: Models With Memory** (multilevel or hierarchical Bayesian models), followed by a comparative table that addresses how **Theory-Based Entrepreneurial Search** (which benefits from hierarchical Bayesian thinking) contrasts with **Practice-Based Entrepreneurial Search** in key dimensions.
 
