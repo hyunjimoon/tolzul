@@ -1,1406 +1,136 @@
-[[⛏️extract(exbl)]]
+using [[⛏️extract(exbl)]], i showed [[exbl(ent)_day2.pdf]] to [[🗄️🧠scott]] which he liked. i'm developing as below.
 # (D) Problem Formulation for Entrepreneurship
 
 🗣️REQUEST4:  A clear, jargon-free formulation of the problem you want to solve in entrepreneurship (both mathematically and verbally, with well developed notation and clear explanation, accompanied by a clear description of what you are modeling and why). Please include a discussion of how exchangeability is to be included, justified, and represented, as well as how and why exchangeability will be a useful, important feature of your model and reflective of the 👀phenomena you wish to model.
 
-[[☕️peets_starbucks]]
+---
+2025-02-28
+
+- 🧙‍♀️proposition1: the more optimistic, the more you're likely to go to market
+- 📍proposition2: the less room for learning (tighter prior), the more you're likely to go to market [[📜vandensteen04_rational_overopt]]
+- 🧪proposition3: sample size [[📜Vul14_onedone]]
+todo: combine the transcript i collected from johannese and pranit
+
+- modeling [[📜gans23_expchoice]], 
+  
+  
+- ## Payoff-Centered Description of Moon (2025) Variables
+
+Based on the Knightian Uncertainty framework, here's a payoff-centered description of Moon's key variables:
+
+|Variable|Description|Payoff Relevance|
+|---|---|---|
+|φ (phi)|Idea's value/market viability (in [0,1])|Determines the probability of success (similar to p in Knightian framework)|
+|θ(·)|Implementation strategy|Determines how effectively φ can be exploited (affects payoff magnitude)|
+|α|Prior strength parameter|Reflects confidence in prior distribution on φ (similar to size of F in Knightian framework)|
+|MVT|Market Viability Test|Direct test of φ at fixed cost cφ, yielding φtrue|
+|GMT|Go-to-Market Test|Sample of size n at cost n·cy, updating prior on φ based on outcomes|
+|V|Potential venture value|Payoff received if venture succeeds (identical to V in Knightian framework)|
+|C|Launch cost|Cost incurred to launch venture (identical to C in Knightian framework)|
+|n|Sample size for GMT|Affects information gain and cost of testing|
+|y|Binomial outcome of GMT|Observations from n trials, follows Binomial(n, φtrue)|
+|µ = a/(a+b)|Prior mean of φ|Expected value of idea's success probability under Beta(a,b) distribution|
+
+The fundamental payoff equation in Moon's model mirrors the Knightian framework:
+
+- Expected payoff from launching: n·φtrue - C
+- Expected payoff with GMT: n·(a+n·φtrue)/(a+b+n) - n·cy
+- Expected payoff with MVT: n·φtrue - cφ
+
+## Critique of Linear Graphical Representation
+
+Your critique about the linearity in the graphs is insightful. Both figures attempt to represent how uncertainty affects willingness-to-pay (WTP) for experiments, but they differ in how they model uncertainty:
+
+### Analysis of Differences:
+
+1. **Uncertainty Representation**:
+    
+    - **Figure 3.3 (Knightian)** uses a linear model where uncertainty is represented as a range [p, p̄]. As this range narrows (arrows pointing inward), uncertainty decreases.
+    - **Figure 3 (Moon)** suggests a non-linear transformation where priors evolve from "triangle" to "circle" to "square" shapes as α decreases, indicating a more complex relationship between confidence and WTP.
+2. **Epistemic vs. Aleatoric Uncertainty Effects**:
+    
+    - The Knightian model doesn't explicitly separate these types, treating all uncertainty as a distribution range.
+    - Moon's model distinguishes between:
+        - **Epistemic uncertainty**: Represented by the strength parameter α, which affects the shape of the prior distribution
+        - **Aleatoric uncertainty**: Inherent randomness in market outcomes even with perfect knowledge of φ
+3. **Impact on WTP Curves**:
+    
+    - In Figure 3.3, WTP curves are strictly triangular, suggesting a linear relationship between uncertainty and value of information.
+    - Moon's model suggests that as α decreases (higher uncertainty), the WTP curve transforms non-linearly - becoming more like a circle or square - which better captures how different uncertainty types affect experimentation value.
+4. **Theoretical Implications**:
+    
+    - The linear model oversimplifies how different types of uncertainty affect decision-making.
+    - When epistemic uncertainty dominates (low α), the value of experiments likely follows a flatter, more uniform distribution across a wider range of prior means.
+    - When aleatoric uncertainty dominates, the WTP curve should maintain a sharper peak near µ̃ (where µ̃V = C).
+
+This distinction is crucial because epistemic uncertainty can be reduced through experimentation, while aleatoric uncertainty cannot. Moon's non-linear representation better captures how entrepreneurs' WTP for experiments should vary based on the relative proportion of reducible versus irreducible uncertainty they face.
+
+The transformation from triangle to circle to square as α decreases suggests that high uncertainty entrepreneurs value experiments differently than the linear model would predict - they see value in experiments across a broader range of prior means rather than just near the indifference point.
+
+
+
+# v1😈 abstract-based prediction maxwell demon 
+
+
+
+| Capability                                           | # Phenomena or previous theory                                                                                                                                                                                        | ➡️IN                                                                                                                                                       | ⚙️PROCESS                                                                                                                                                                                                                                                                              | ⬅️OUT                                                                                                                                                                                                                                                                   | Phenomena explained with proposed model                                                                                                                                                                                                                                                                                                                                                   | subsection                                                                                                                                                                                                                                                                                                                                 |
+| ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **📜😈.Entrepreneurial Testing and Decision Models** | **Entrepreneurs** face uncertainty in allocating resources to tests; **Bayesian updating** is often suboptimal in practice; **Maxwell's demon** as conceptual model for creating order from complexity                | - Literature on entrepreneurial decision-making <br>- Research on experiment design choice <br>- Theoretical gaps on how abstraction influences testing    | The paper **frames** how entrepreneurs choose between direct viability tests (MVT) and integrated pilot launches (GMT) based on prior beliefs and confidence levels                                                                                                                    | A mathematical model explaining why entrepreneurs appear to make "biased" testing choices (GMT vs. MVT) that are actually rational given their priors, confidence, and constraints                                                                                      | - The model explains why optimistic entrepreneurs rationally prefer GMT<br>- Shows how entrepreneurs with varying confidence levels choose different test types<br>- Demonstrates why "ordering" of tests matters based on prior beliefs                                                                                                                                                  |                                                                                                                                                                                                                                                                                                                                            |
+| **👁️.Visioning (Purpose)**                          | **Entrepreneurial learning** theories that entrepreneurs "waste resources" on wrong tests, but the paper posits that test choice might be _optimal_ given prior beliefs and confidence levels                         | - Contradictions in entrepreneurship literature<br>- Observations of testing patterns across ventures<br>- Theoretical gap on abstraction-based prediction | 1. **Reframe**: Asks if "wasteful" entrepreneurial testing is truly error or actually optimal<br>2. **Envision**: Proposes that testing choices can be strategic<br>3. **Challenge**: Questions whether test failures are due to "wrong" methods or rational ones                      | - A paradigm shift: from "entrepreneurs make testing mistakes" to "entrepreneurs use abstraction-based prediction for good reasons"<br>- New lens: test design as a purposeful choice about tolerating errors<br>- Foundation for more nuanced entrepreneurial guidance | - The model explains the "Maxwell's demon" phenomenon - showing how entrepreneurs sort information through strategic test selection<br>- Clarifies why entrepreneurs test opportunities with methods that appear biased but are actually optimal<br>- Reframes testing strategy as a function of prior belief and confidence rather than a mistake                                        | 1.1 **Preview of Main Result**: High-level statement about GMT vs. MVT choice depending on prior beliefs and confidence<br><br>1.2 **Plan for the Paper**: Outlines the paper's structure and aims<br><br>5. **Conclusion**: Summarizes findings and suggests implications for entrepreneurial test strategy                               |
+| **🤜. Inventing (Process)**                          | **Go-to-Market Testing** as indirect viability assessment; **Market Viability Testing** as direct viability assessment; references to prior beliefs (optimistic vs. pessimistic) and confidence levels (high vs. low) | - Concepts of false positives vs. false negatives<br>- Formal modeling approach (parameters μ, α, n)<br>- Empirical examples from entrepreneurial contexts | 1. **Construct Novel Model**: Defines GMT vs. MVT experiments mathematically<br>2. **Create Taxonomy**: Testing strategies based on prior beliefs and confidence<br>3. **Propose Propositions**: Outlines how different belief structures lead to different test choices               | - New modeling tool: Entrepreneurs pick tests based on their prior mean (μ) and confidence (α)<br>- Clear definitions of "direct" vs. "indirect" testing approaches<br>- Unexpected insight: confidence changes push optimists toward MVT, pessimists toward GMT        | - The model provides a formal explanation for why entrepreneurs choose between direct and indirect testing strategies<br>- Shows how prior belief and confidence drive test design choice<br>- Explains various experimental approaches as rational choices based on belief structure<br>- Demonstrates that entrepreneurs optimize tests to minimize specific types of error             | 2.1 **Model Setup**: Defines the parameters (μ, α, φ) and test types (GMT, MVT)<br><br>2.2 **Relationship with Entrepreneurship Literature**: Interprets prior work on testing and places new model in context<br><br>2.3 **Test Choice**: Uses the model to show how entrepreneurs select between GMT and MVT                             |
+| **🕸️. Sensemaking (Perspective)**                   | **Abstraction-based prediction**: entrepreneurs sort complex information through simplified models; **Computational irreducibility**: venture paths must "run in full" to know outcomes                               | - Entrepreneurial belief formation<br>- Irreducible vs. reducible dynamics<br>- Mapping "pockets of reducibility" in venture creation                      | 1. **Connect** seemingly contradictory observations: Why patterns emerge despite irreducibility<br>2. **Identify Patterns**: Entrepreneurs choose tests based on where they believe reducibility exists<br>3. **Integrate**: Blends hierarchical modeling with Maxwell's demon concept | - Coherent explanation: "abstraction-based prediction" guides test choice<br>- Why entrepreneurs systematically choose different tests<br>- Clarifies the paradox: testing strategies are actually optimal information-sorting processes                                | - The model reconciles computational irreducibility with pockets of reducibility in entrepreneurial contexts<br>- Shows why different entrepreneurs pursue different testing approaches for the same opportunity<br>- Explains how abstraction-based prediction leads to systematic patterns in test choice<br>- Demonstrates that testing choice represents rational information sorting | 3.1 **Optimists vs. Pessimists**: Highlights how prior beliefs shape entrepreneurs' perspectives on testing<br><br>3.2 **Confidence Levels**: Distinguishes high confidence vs. low confidence, clarifying how each influences test choice                                                                                                 |
+| **👥. Relating (People)**                            | **Software vs. Hardware** ventures example; entrepreneurial teams with varying risk tolerance; interactions between founders and investors with different beliefs                                                     | - Team dynamics in test selection<br>- Founder-investor belief alignment<br>- Information disclosure and strategic interaction                             | 1. **Model Interaction**: Incorporates how entrepreneurs and investors influence test choice<br>2. **Information Disclosure**: Who benefits from revealing test results?<br>3. **Team Dynamics**: How diverse prior beliefs within teams affect test strategy                          | - Deeper understanding of how entrepreneurs and investors respond to testing signals<br>- Potential cooperation scenarios between founders and investors<br>- Strategic communication choices around test outcomes                                                      | - The model illuminates dynamics between entrepreneurs and investors through testing choices<br>- Shows how entrepreneurs strategically respond to investor signals<br>- Demonstrates that test design can serve as a signal of entrepreneurial confidence<br>- Explains when and why cooperation emerges after test outcomes                                                             | 4.1 **Entrepreneurial Teams**: Considers how team composition affects test choice and interpretation<br><br>4.2 **Founder-Investor Dynamics**: Studies how investor beliefs influence entrepreneurial testing strategy<br><br>4.3 **Strategic Testing**: Shows how observable test outcomes shape resource allocation and strategic pivots |
+
+
+# v2😈 three propositions
+- 🧙‍♀️proposition1: the more optimistic, the more you're likely to go to market
+- 📍proposition2: the less room for learning (tighter prior), the more you're likely to go to market [[📜vandensteen04_rational_overopt]]
+- 🧪proposition3: sample size [[📜Vul14_onedone
+
+
+---
+
 - 15 examples from [[🔮📗gans_power]]
+[[M0_☘️hypotheses]]
+[[M1_🗄️ Variable Table]]
+[[M2_🟰 4-Step Optimization Formulation]]
+[[M3_🗄️ EU012 Comparison Table]]
+[[M4_📏 sampling and optimizing]]
+[[M5_☕️starbucks_peets]]
+[[M6_🚗tesla_toyota]]
+[[M7_💻code]]
+[[M8_🙈implications_comp_cfo]]
+[[M9🥾_zappos_commonwealth]]
+
+- [[🗄️ 🧩correlation examples]]
+- [[🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep]]
+
+[[🗄️🗄️scott_charlie]]
+
+| Hypothesis                                                                                                                   | Mathematical Form                                                                                                     |
+| ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| H1: Higher correlation between market potential and implementation effectiveness increases preference for integrated testing | $\rho(\color{green}{\phi}, \color{red}{\theta}) \uparrow$ → $\color{brown}{\Delta \Delta EU} \uparrow$                |
+| H2: Higher certainty in market potential increases preference for integrated testing                                         | $\frac{1}{\sigma_{\color{blue}{\mu_0}}} \uparrow$ → $\color{brown}{\Delta \Delta EU} \uparrow$                        |
+| H3: Higher ratio of modular to integrated testing costs increases preference for integrated testing                          | $\frac{\color{brown}{c^{\phi}}}{\color{brown}{c^{\phi\theta}}} \uparrow$ → $\color{brown}{\Delta \Delta EU} \uparrow$ |
+
+| Hypothesis                                                                                                                   | Mathematical Form                                                                                                     | Integrated Example Candidates                                                                             | Modular Example Candidates                                                                                         |
+| ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| H1: Higher correlation between market potential and implementation effectiveness increases preference for integrated testing | $\rho(\color{green}{\phi}, \color{red}{\theta}) \uparrow$ → $\color{brown}{\Delta \Delta EU} \uparrow$                | **Toyota (Lean Manufacturing)**: High correlation between production efficiency and market demand.        | **Zappos (Online Shoe Retailing)**: Market potential could be tested separately from logistics.                    |
+|                                                                                                                              |                                                                                                                       | **Commonwealth Fusion (Magnet Performance)**: Technical performance directly determined market viability. | **Netflix (Streaming Market Entry)**: Market adoption could be tested before large infrastructure investments.     |
+| H2: Higher certainty in market potential increases preference for integrated testing                                         | $\frac{1}{\sigma_{\color{blue}{\mu_0}}} \uparrow$ → $\color{brown}{\Delta \Delta EU} \uparrow$                        | **Starbucks (Café Expansion)**: Clear demand allowed aggressive integrated growth.                        | **Tesla (Early EV Market)**: High uncertainty about EV adoption led to prototype-based learning.                   |
+|                                                                                                                              |                                                                                                                       | **Commonwealth Fusion (Fusion Energy Demand)**: Demand certainty led to early integrated approach.        | **Better Place (Battery Swapping Model)**: High uncertainty in consumer adoption necessitated modular testing.     |
+| H3: Higher ratio of modular to integrated testing costs increases preference for integrated testing                          | $\frac{\color{brown}{c^{\phi}}}{\color{brown}{c^{\phi\theta}}} \uparrow$ → $\color{brown}{\Delta \Delta EU} \uparrow$ | **Toyota (3-DCE Concurrent Engineering)**: High modular validation costs favored full integration.        | **Rent the Runway (Fashion Rentals)**: Low-cost modular testing enabled demand validation before scaling.          |
+|                                                                                                                              |                                                                                                                       | **Commonwealth Fusion (Testing Cost Structure)**: Similar costs made integrated testing attractive.       | **HP (Bundled vs. Unbundled Software)**: Lower cost of testing modular software solutions led to modular approach. |
+
+*Variables:*
+- $\color{green}{\phi}$: Market potential
+- $\color{red}{\theta}$: Implementation effectiveness
+- $\color{blue}{\mu_0}$: Prior distribution
+- $\color{brown}{\Delta \Delta EU}$: Relative value of integrated vs. modular learning
+- $\color{brown}{c^{\phi\theta}}$: Integrated testing cost
+- $\color{brown}{c^{\phi}}$: Modular testing cost
 
----
 
-title: "exchangeability in entrepreneurship"
-
-author: "Angie Moon"
-
-format:
-
-html:
-
-css: styles.css
-
-code-fold: true
-
-jupyter: python3
-
----
-
-Abstract: Entrepreneurs launching new ventures face two distinct uncertainties: whether customers want their solution (market potential φ) and whether they can deliver it effectively (implementation effectiveness θ). We develop a practical framework to help entrepreneurs decide between three testing strategies: no testing, testing only market potential, or testing both market potential and implementation together. Using a Bayesian approach, we show how this choice depends on three key factors: test costs, available resources, and expected value gains from each type of learning. We demonstrate our framework through contrasting cases in coffee retail and electric vehicle manufacturing, revealing how different industry contexts and prior beliefs shape optimal testing strategies. The paper provides both a rigorous statistical foundation for entrepreneurial learning and an actionable decision algorithm for practitioners choosing between different market testing approaches.
-
-  
-
-## 1. Statistical model
-
-  
-
-This table presents a framework for evaluating market testing strategies through two concrete examples: premium coffee retail and electric vehicle (EV) manufacturing. The model uses two key parameters: ${\color{#20B2AA}{\phi}}$ (phi), which represents the fundamental market potential or the value of an idea, and ${\color{#DC143C}{\theta}}$ (theta), which measures implementation effectiveness. These parameters are estimated using prior distributions (denoted by ${\color{#000080}{M_0}}$) and can be updated through different types of market tests. The framework compares two testing approaches: testing only market potential ($\Delta E^{\color{#20B2AA}{\phi}}$), such as conducting surveys or prototypes, versus testing both market potential and implementation together ($\Delta E^{{\color{#20B2AA}{\phi}},{\color{#DC143C}{\theta}}}$), like opening a pilot store or production line. The choice between these approaches depends on their relative expected values and costs ($c^{\color{#20B2AA}{\phi}}$ vs. $c^{{\color{#20B2AA}{\phi}}{\color{#DC143C}{\theta}}}$), helping managers make informed decisions about their market testing strategy.
-
-# 🗄️table1
-
-| Variable | Description | **Coffee Context (Sec. 2.1)** | **EV Context (Sec. 2.2)** |
-
-|----------|-------------|------------------------------|---------------------------|
-
-| $(a_{\color{#20B2AA}{\phi}}, b_{\color{#20B2AA}{\phi}})$ | Beta distribution parameters for **fundamental market potential** prior | Prior belief about how much consumers value premium coffee. | N/A (or alternative prior for ${\color{#20B2AA}{\phi}}$, if not Beta). |
-
-| $(a_{\color{#DC143C}{\theta}}, b_{\color{#DC143C}{\theta}})$ | **Beta distribution parameters for implementation effectiveness** | Prior belief about Starbucks vs. Peet's capability in executing their strategy. | Prior belief about EV battery/production efficiency. |
-
-| ${\color{#000080}{\mu}}_{\color{#20B2AA}{\phi}}$ | Mean of normal distribution for **fundamental market potential** | N/A | Expected market demand for EVs ($/year). |
-
-| ${\color{#20B2AA}{\phi}}$ | **Fundamental market potential** (population parameter) | Market demand for premium coffee ($/year). | Market demand for EVs ($/year). |
-
-| ${\color{#DC143C}{\theta}}$ | Implementation capture rate (unit‐level parameter) | Success of implementation strategy (binary in simplest model). | Success of implementation strategy (continuous). |
-
-| $y$ | **Realized profitability** | Profit of chosen strategy (binary or continuous). | Profit of chosen EV approach ($/year). |
-
-| $c_{\color{#20B2AA}{\phi}}$ | **Idea validation cost** | Cost of blind taste tests, surveys. | Cost of prototype testing or consumer surveys. |
-
-| $c_{{\color{#20B2AA}{\phi}},{\color{#DC143C}{\theta}}}$ | **Implemented idea test** cost | Cost of opening new retail stores/roasters. | Cost of building pilot production lines. |
-
-| $\Delta E^{\color{#20B2AA}{\phi}}$ | $\Delta E^{\color{#20B2AA}{\phi}} = E_{{\color{#000080}{\mu}}_{1}^{\color{#20B2AA}{\phi}}}[{\color{#20B2AA}{\phi}}\times{\color{#DC143C}{\theta}}] - E_{{\color{#000080}{\mu}}_{0}^{\color{#20B2AA}{\phi}}}[{\color{#20B2AA}{\phi}}\times{\color{#DC143C}{\theta}}] - c_{\color{#20B2AA}{\phi}}$ | Improvement in expected ${\color{#20B2AA}{\phi}}\times{\color{#DC143C}{\theta}}$ from learning market potential. | Gain from clarifying demand alone. |
-
-| $\Delta E^{{\color{#20B2AA}{\phi}},{\color{#DC143C}{\theta}}}$ | $\Delta E^{{\color{#20B2AA}{\phi}},{\color{#DC143C}{\theta}}} = E_{{\color{#000080}{\mu}}_{1}^{{\color{#20B2AA}{\phi}},{\color{#DC143C}{\theta}}}}[{\color{#20B2AA}{\phi}}\times{\color{#DC143C}{\theta}}] - E_{{\color{#000080}{\mu}}_{0}^{{\color{#20B2AA}{\phi}},{\color{#DC143C}{\theta}}}}[{\color{#20B2AA}{\phi}}\times{\color{#DC143C}{\theta}}] - c_{{\color{#20B2AA}{\phi}},{\color{#DC143C}{\theta}}}$ | Improvement in viability from actual store test. | Gain from launching pilot production. |
-
-  
-
-### 1.1 Market Testing Optimization Model
-
-  
-
-This formulation states that the entrepreneur chooses an action \(a \in A\) (no test, test \(\textcolor{#20B2AA}{\phi}\), or test \(\textcolor{#20B2AA}{\phi}\times \textcolor{#DC143C}{\theta}\)) to **maximize** the net expected value \(\Delta E(a) = E[V \mid a] - c(a)\), subject to a **budget constraint** \(c(a)\leq B\). Concretely, if the entrepreneur tests **only market potential** \(\textcolor{#20B2AA}{\phi}\), then they incur cost \(c^{\textcolor{#20B2AA}{\phi}}\) but update beliefs about \(\textcolor{#20B2AA}{\phi}\) from \(\textcolor{#000080}{M_0}\) to \(\textcolor{#000080}{M_1^{\phi}}\), yielding \(\Delta E^{\textcolor{#20B2AA}{\phi}} > 0\) if the improved knowledge sufficiently outweighs that cost. Alternatively, testing **implemented idea** (\(\textcolor{#20B2AA}{\phi} \times \textcolor{#DC143C}{\theta}\)) is more expensive but can refine both the **idea** and **execution** parameters, potentially leading to \(\Delta E^{\textcolor{#20B2AA}{\phi}, \textcolor{#DC143C}{\theta}} > 0\) if the combined insight justifies its higher investment. If both tests and “no test” are possible, the choice that maximizes \(\Delta E(a)\) becomes the **optimal** course of action.
-
-$$
-
-\max_{a \in A} \Delta E(a) = E[V|a] - c(a)
-
-$$
-
-  
-
-where:
-
-$$
-
-A = \{\text{no\_test}, \text{test}_{\phi}, \text{test}_{\phi\theta}\}
-
-$$
-
-  
-
-Subject to:
-
-$$
-
-\begin{aligned}
-
-1. &\quad \text{Budget constraint: } c(a) \leq B \\[0.5em]
-
-2. &\quad \Delta E^{\color{#20B2AA}{\phi}} = \mathbb{E}_{M_1^{\color{#20B2AA}{\phi}}}[\color{#20B2AA}{\phi} \times \color{#DC143C}{\theta}] - \mathbb{E}_{M_0}[\color{#20B2AA}{\phi} \times \color{#DC143C}{\theta}] - c^{\color{#20B2AA}{\phi}} \\[0.5em]
-
-3. &\quad \Delta E^{\color{#20B2AA}{\phi}, \color{#DC143C}{\theta}} = \mathbb{E}_{M_1^{\color{#20B2AA}{\phi}, \color{#DC143C}{\theta}}}[\color{#20B2AA}{\phi} \times \color{#DC143C}{\theta}] - \mathbb{E}_{M_0}[\color{#20B2AA}{\phi} \times \color{#DC143C}{\theta}] - c^{\color{#20B2AA}{\phi}, \color{#DC143C}{\theta}}
-
-\end{aligned}
-
-$$
-
-  
-
----
-
-  
-
-### 1.2 Algorithm
-
-  
-
-$$
-
-\textbf{Algorithm: Choose Testing Strategy}
-
-$$
-
-  
-
-### Inputs:
-
-$$
-
-c_{\phi}, \quad c_{\phi,\theta}, \quad \Delta E^{\phi}, \quad \Delta E^{\phi,\theta}, \quad \mathrm{resource} \geq 0.
-
-$$
-
-  
-
-### Step 1: Check feasibility and positivity.
-
-  
-
-$$
-
-\begin{aligned}
-
-\text{feasibleIdea} &:= \bigl[\mathrm{resource} \geq c_{\phi} \bigr] \wedge \bigl[\Delta E^{\phi} > 0 \bigr]. \\[0.5em]
-
-\text{feasibleImpl} &:= \bigl[\mathrm{resource} \geq c_{\phi,\theta} \bigr] \wedge \bigl[\Delta E^{\phi,\theta} > 0 \bigr].
-
-\end{aligned}
-
-$$
-
-  
-
-### Step 2: Decision Logic.
-
-  
-
-(a) **If neither feasible:**
-
-$$
-
-\textbf{if} \quad \neg \text{feasibleIdea} \quad \wedge \quad \neg \text{feasibleImpl} \quad \textbf{then} \quad \text{No Test.}
-
-$$
-
-  
-
-(b) **If both feasible:**
-
-$$
-
-\textbf{else if} \quad \text{feasibleIdea} \wedge \text{feasibleImpl}
-
-$$
-
-$$
-
-\begin{aligned}
-
-\textbf{if} \quad \Delta E^{\phi} > \Delta E^{\phi,\theta} \quad \textbf{then} \quad \text{Test Idea;} \\[0.5em]
-
-\textbf{else} \quad \text{Test Implemented Idea.}
-
-\end{aligned}
-
-$$
-
-  
-
-(c) **If only Idea feasible:**
-
-$$
-
-\textbf{else if} \quad \text{feasibleIdea} \quad \textbf{then} \quad \text{Test Idea.}
-
-$$
-
-  
-
-(d) **If only Implementation feasible:**
-
-$$
-
-\textbf{else} \quad \text{Test Implemented Idea.}
-
-$$
-
-  
-
-### Algorithm: Choose Testing Strategy
-
-The algorithm enforces both resource feasibility ($\mathrm{resource} \geq c_{\phi}$ or $c_{\phi,\theta}$) and net expected value positivity ($\Delta E^\phi > 0$ or $\Delta E^{\phi,\theta} > 0$). First, it checks if neither idea test nor implemented‐idea test is feasible and beneficial; if not, it prescribes “No Test.” Next, if both are valid, it compares $\Delta E^\phi$ and $\Delta E^{\phi,\theta}$ directly, recommending whichever yields higher net gain. Finally, if only the idea test is valid, it picks that, or vice versa. This ensures that only feasible, positive‐value tests get selected, clarifying whether the entrepreneur should skip testing, test only $\textcolor{#20B2AA}{\phi}$, or test $\textcolor{#20B2AA}{\phi} \times \textcolor{#DC143C}{\theta}$.
-
-  
-
-## 2. Three e
-
-  
-
-### 2.1☕️Coffee Context (Binary Success Case)
-
-  
-
-Imagine you're an entrepreneur considering opening a specialty coffee shop. Your success depends on two critical factors: whether your core coffee concept resonates with local customers (φ) and whether your team can consistently execute the service (θ). Let's build a framework to help make testing decisions.
-
-  
-
-```{python}
-
-def test_hypothesis_1(market_model, impl_model, n_grid=20):
-
-mu_phi_grid = np.linspace(0.1, 0.9, n_grid)
-
-test_cases = [
-
-{"true_phi": 0.1, "case": "Low True Value"}, # More extreme low value
-
-{"true_phi": 0.9, "case": "High True Value"} # More extreme high value
-
-]
-
-results = []
-
-for test_case in test_cases:
-
-print(f"\nProcessing {test_case['case']}...")
-
-for mu_phi in mu_phi_grid:
-
-n_obs = 50 # Increased sample size
-
-true_theta = 0.95 # Higher implementation effectiveness
-
-# More extreme test outcomes
-
-if test_case["case"] == "Low True Value":
-
-market_successes = np.random.binomial(n_obs, test_case["true_phi"] * 0.8) # Pessimistic market test
-
-impl_successes = np.random.binomial(n_obs, test_case["true_phi"] * true_theta * 1.2) # Optimistic implementation
-
-else:
-
-market_successes = np.random.binomial(n_obs, test_case["true_phi"] * 1.2) # Optimistic market test
-
-impl_successes = np.random.binomial(n_obs, test_case["true_phi"] * true_theta * 0.8) # Pessimistic implementation
-
-# Fit market test model
-
-market_data = {
-
-"n_obs": n_obs,
-
-"successes": market_successes,
-
-"mu_phi": mu_phi,
-
-"value_multiplier": 50.0 # Increased value multiplier
-
-}
-
-market_fit = market_model.sample(data=market_data)
-
-# Fit implementation test model
-
-impl_data = {
-
-"n_obs": n_obs,
-
-"successes": impl_successes,
-
-"mu_phi": mu_phi,
-
-"mu_theta": 0.95, # Higher prior on implementation
-
-"value_multiplier": 50.0
-
-}
-
-impl_fit = impl_model.sample(data=impl_data)
-
-# Extract expected values with more extreme cost structure
-
-market_ev = market_fit.draws_pd()['expected_value'].mean()
-
-impl_ev = impl_fit.draws_pd()['expected_value'].mean()
-
-# More dramatic cost difference
-
-c_phi = 2.0 # Lower market test cost
-
-c_phi_theta = 15.0 # Much higher implementation test cost
-
-delta_E_phi = market_ev - c_phi
-
-delta_E_phi_theta = impl_ev - c_phi_theta
-
-results.append({
-
-"case": test_case["case"],
-
-"mu_phi": mu_phi,
-
-"mean_delta_E_phi": delta_E_phi,
-
-"mean_delta_E_phi_theta": delta_E_phi_theta,
-
-"market_ev": market_ev,
-
-"impl_ev": impl_ev
-
-})
-
-return pd.DataFrame(results)
-
-  
-
-# Usage:
-
-idea_model = CmdStanModel(stan_file="/Users/hyunjimoon/Dropbox (MIT)/Tool4Ops4Entrep/product/program/market-model/exchangbl/scott/stan/h1_idea.stan")
-
-impl_model = CmdStanModel(stan_file="/Users/hyunjimoon/Dropbox (MIT)/Tool4Ops4Entrep/product/program/market-model/exchangbl/scott/stan/h1_imp_idea.stan")
-
-results = test_hypothesis_1(idea_model, impl_model)
-
-# Plot results
-
-fig = plot_h1_results(results)
-
-plt.show()
-
-  
-
-# Print summary statistics
-
-print("\nSummary of Results:")
-
-print(results.groupby('case')[['p_test_phi_theta']].describe())
-
-```
-
-  
-
-```{python}
-
-import numpy as np
-
-import matplotlib.pyplot as plt
-
-import seaborn as sns
-
-from matplotlib.gridspec import GridSpec
-
-  
-
-def analyze_theta_sensitivity(market_model, impl_model, n_grid=10):
-
-mu_phi = 0.5 # Fix prior belief
-
-theta_values = np.linspace(0.3, 0.9, n_grid) # Range of true theta values
-
-test_cases = [
-
-{"true_phi": 0.1, "case": "Low True Value"},
-
-{"true_phi": 0.9, "case": "High True Value"}
-
-]
-
-results = []
-
-for test_case in test_cases:
-
-for true_theta in theta_values:
-
-n_obs = 50
-
-# Generate data
-
-market_successes = np.random.binomial(n_obs, test_case["true_phi"])
-
-impl_successes = np.random.binomial(n_obs, test_case["true_phi"] * true_theta)
-
-# Market test model
-
-market_data = {
-
-"n_obs": n_obs,
-
-"successes": market_successes,
-
-"mu_phi": mu_phi,
-
-"value_multiplier": 50.0
-
-}
-
-market_fit = market_model.sample(data=market_data)
-
-# Implementation test model
-
-impl_data = {
-
-"n_obs": n_obs,
-
-"successes": impl_successes,
-
-"mu_phi": mu_phi,
-
-"mu_theta": true_theta,
-
-"value_multiplier": 50.0
-
-}
-
-impl_fit = impl_model.sample(data=impl_data)
-
-# Calculate deltas
-
-market_ev = market_fit.draws_pd()['expected_value'].mean()
-
-impl_ev = impl_fit.draws_pd()['expected_value'].mean()
-
-c_phi = 2.0
-
-c_phi_theta = 15.0
-
-delta_E_phi = market_ev - c_phi
-
-delta_E_phi_theta = impl_ev - c_phi_theta
-
-results.append({
-
-"case": test_case["case"],
-
-"true_theta": true_theta,
-
-"delta_difference": delta_E_phi - delta_E_phi_theta,
-
-"market_ev": market_ev,
-
-"impl_ev": impl_ev
-
-})
-
-return pd.DataFrame(results)
-
-  
-
-def plot_theta_sensitivity(results):
-
-# Set style
-
-plt.style.use('seaborn-v0_8-whitegrid')
-
-sns.set_palette("husl")
-
-# Create figure with GridSpec
-
-fig = plt.figure(figsize=(12, 8))
-
-gs = GridSpec(2, 2, width_ratios=[3, 1], height_ratios=[3, 1])
-
-# Main plot
-
-ax_main = fig.add_subplot(gs[0, 0])
-
-# Plot for each case
-
-for case in ['Low True Value', 'High True Value']:
-
-case_data = results[results['case'] == case]
-
-# Main line
-
-line = ax_main.plot(case_data['true_theta'],
-
-case_data['delta_difference'],
-
-'o-', label=case, linewidth=2, markersize=8)
-
-# Add confidence band
-
-ax_main.fill_between(case_data['true_theta'],
-
-case_data['delta_difference'] * 0.9,
-
-case_data['delta_difference'] * 1.1,
-
-alpha=0.2)
-
-# Add horizontal line at y=0
-
-ax_main.axhline(y=0, color='gray', linestyle='--', alpha=0.5)
-
-# Customize main plot
-
-ax_main.set_xlabel('Implementation Effectiveness (θ)', fontsize=12)
-
-ax_main.set_ylabel('Δ Expected Value\n(E[φ] - E[φ,θ])', fontsize=12)
-
-ax_main.set_title('Sensitivity of Testing Strategy to Implementation Effectiveness',
-
-fontsize=14, pad=20)
-
-ax_main.legend(title='Market Potential', bbox_to_anchor=(1.05, 1), loc='upper left')
-
-# Add annotations
-
-ax_main.text(0.02, 0.98,
-
-'Above 0: Prefer market-only test\nBelow 0: Prefer implementation test',
-
-transform=ax_main.transAxes,
-
-verticalalignment='top',
-
-bbox=dict(facecolor='white', edgecolor='gray', alpha=0.8))
-
-# Add marginal distributions
-
-ax_right = fig.add_subplot(gs[0, 1])
-
-for case in ['Low True Value', 'High True Value']:
-
-case_data = results[results['case'] == case]
-
-sns.kdeplot(y=case_data['delta_difference'], label=case, ax=ax_right)
-
-ax_right.set_ylabel('')
-
-ax_right.set_title('Distribution of Δ')
-
-# Add summary statistics
-
-ax_bottom = fig.add_subplot(gs[1, 0])
-
-summary_data = results.groupby('case').agg({
-
-'delta_difference': ['mean', 'std', 'min', 'max']
-
-}).round(2)
-
-ax_bottom.axis('off')
-
-table = ax_bottom.table(cellText=summary_data.values,
-
-rowLabels=summary_data.index,
-
-colLabels=['Mean', 'Std', 'Min', 'Max'],
-
-loc='center',
-
-cellLoc='center')
-
-table.auto_set_font_size(False)
-
-table.set_fontsize(9)
-
-plt.tight_layout()
-
-return fig
-
-  
-
-# Run analysis and create plot
-
-results = analyze_theta_sensitivity(idea_model, impl_model)
-
-fig = plot_theta_sensitivity(results)
-
-plt.show()
-
-  
-
-```
-
-  
-
-### 2.1.2 sensitivity plot
-
-This plot reveals how implementation effectiveness (θ) influences the choice between market-only testing and full implementation testing for different market potential scenarios. The y-axis shows the difference in expected value between the two testing strategies, where positive values favor market-only testing and negative values favor implementation testing. The downward slopes for both high and low true market value cases indicate that as implementation effectiveness increases (moving right on the x-axis), the advantage of market-only testing diminishes. However, the high true value case (brown line) maintains a stronger preference for market-only testing across all θ values, suggesting that when the market potential is truly high, entrepreneurs are better off conducting market-only tests first, even with good implementation capabilities. The density plot on the right shows this effect is more variable for high true value scenarios.
-
-```{python}
-
-import numpy as np
-
-import matplotlib.pyplot as plt
-
-import seaborn as sns
-
-from matplotlib.gridspec import GridSpec
-
-  
-
-def analyze_theta_sensitivity(market_model, impl_model, n_grid=10):
-
-mu_phi = 0.5 # Fix prior belief
-
-theta_values = np.linspace(0.3, 0.9, n_grid) # Range of true theta values
-
-test_cases = [
-
-{"true_phi": 0.1, "case": "Low True Value"},
-
-{"true_phi": 0.9, "case": "High True Value"}
-
-]
-
-results = []
-
-for test_case in test_cases:
-
-for true_theta in theta_values:
-
-n_obs = 50
-
-# Generate data
-
-market_successes = np.random.binomial(n_obs, test_case["true_phi"])
-
-impl_successes = np.random.binomial(n_obs, test_case["true_phi"] * true_theta)
-
-# Market test model
-
-market_data = {
-
-"n_obs": n_obs,
-
-"successes": market_successes,
-
-"mu_phi": mu_phi,
-
-"value_multiplier": 50.0
-
-}
-
-market_fit = idea_model.sample(data=market_data)
-
-# Implementation test model
-
-impl_data = {
-
-"n_obs": n_obs,
-
-"successes": impl_successes,
-
-"mu_phi": mu_phi,
-
-"mu_theta": true_theta,
-
-"value_multiplier": 50.0
-
-}
-
-impl_fit = impl_model.sample(data=impl_data)
-
-# Calculate deltas
-
-market_ev = market_fit.draws_pd()['expected_value'].mean()
-
-impl_ev = impl_fit.draws_pd()['expected_value'].mean()
-
-c_phi = 2.0
-
-c_phi_theta = 15.0
-
-delta_E_phi = market_ev - c_phi
-
-delta_E_phi_theta = impl_ev - c_phi_theta
-
-results.append({
-
-"case": test_case["case"],
-
-"true_theta": true_theta,
-
-"delta_difference": delta_E_phi - delta_E_phi_theta,
-
-"market_ev": market_ev,
-
-"impl_ev": impl_ev
-
-})
-
-return pd.DataFrame(results)
-
-  
-
-def plot_theta_sensitivity(results):
-
-# Set style
-
-plt.style.use('seaborn-v0_8-whitegrid')
-
-sns.set_palette("husl")
-
-# Create figure with GridSpec
-
-fig = plt.figure(figsize=(12, 8))
-
-gs = GridSpec(2, 2, width_ratios=[3, 1], height_ratios=[3, 1])
-
-# Main plot
-
-ax_main = fig.add_subplot(gs[0, 0])
-
-# Plot for each case
-
-for case in ['Low True Value', 'High True Value']:
-
-case_data = results[results['case'] == case]
-
-# Main line
-
-line = ax_main.plot(case_data['true_theta'],
-
-case_data['delta_difference'],
-
-'o-', label=case, linewidth=2, markersize=8)
-
-# Add confidence band
-
-ax_main.fill_between(case_data['true_theta'],
-
-case_data['delta_difference'] * 0.9,
-
-case_data['delta_difference'] * 1.1,
-
-alpha=0.2)
-
-# Add horizontal line at y=0
-
-ax_main.axhline(y=0, color='gray', linestyle='--', alpha=0.5)
-
-# Customize main plot
-
-ax_main.set_xlabel('Implementation Effectiveness (θ)', fontsize=12)
-
-ax_main.set_ylabel('Δ Expected Value\n(E[φ] - E[φ,θ])', fontsize=12)
-
-ax_main.set_title('Sensitivity of Testing Strategy to Implementation Effectiveness',
-
-fontsize=14, pad=20)
-
-ax_main.legend(title='Market Potential', bbox_to_anchor=(1.05, 1), loc='upper left')
-
-# Add annotations
-
-ax_main.text(0.02, 0.98,
-
-'Above 0: Prefer market-only test\nBelow 0: Prefer implementation test',
-
-transform=ax_main.transAxes,
-
-verticalalignment='top',
-
-bbox=dict(facecolor='white', edgecolor='gray', alpha=0.8))
-
-# Add marginal distributions
-
-ax_right = fig.add_subplot(gs[0, 1])
-
-for case in ['Low True Value', 'High True Value']:
-
-case_data = results[results['case'] == case]
-
-sns.kdeplot(y=case_data['delta_difference'], label=case, ax=ax_right)
-
-ax_right.set_ylabel('')
-
-ax_right.set_title('Distribution of Δ')
-
-# Add summary statistics
-
-ax_bottom = fig.add_subplot(gs[1, 0])
-
-summary_data = results.groupby('case').agg({
-
-'delta_difference': ['mean', 'std', 'min', 'max']
-
-}).round(2)
-
-ax_bottom.axis('off')
-
-table = ax_bottom.table(cellText=summary_data.values,
-
-rowLabels=summary_data.index,
-
-colLabels=['Mean', 'Std', 'Min', 'Max'],
-
-loc='center',
-
-cellLoc='center')
-
-table.auto_set_font_size(False)
-
-table.set_fontsize(9)
-
-plt.tight_layout()
-
-return fig
-
-  
-
-# Run analysis and create plot
-
-results = analyze_theta_sensitivity(market_model, impl_model)
-
-fig = plot_theta_sensitivity(results)
-
-plt.show()
-
-```
-
-  
-
-A coffee startup evaluating entry into the U.S. market faces a fundamental decision: should it first test market demand for premium coffee (**φ**) or proceed directly with an **implementation strategy** (**θ**)? Idea validation (**c_φ**) involves running blind taste tests or consumer surveys to determine whether customers recognize and prefer high-quality coffee. Alternatively, the company can commit to an **implementation strategy**, either selling brewed coffee (Starbucks model) or packaged beans (Peet’s model), incurring an **implemented idea test cost (c_φθ)**. The **realized profitability (y)** is binary, where **y = 1** indicates financial success only if both **φ** (market demand) and **θ** (implementation) are strong. This hierarchical **Beta-Bernoulli model** captures the entrepreneur’s choice between testing and immediate implementation, where learning updates prior beliefs about demand (**a_φ, b_φ**) and implementation effectiveness (**a_θ, b_θ**).
-
-  
-
-Unlike coffee, where modeling assumption of discrete market validation (good vs. bad) is acceptable, electric vehicle (EV) adoption depends on continuous trade-offs in market demand (**φ**) and implementation effectiveness (**θ**). A car manufacturer like Tesla or Toyota must decide whether to validate demand for EVs before committing to large-scale production. Idea validation (**c_φ**) may involve prototype testing or consumer surveys to estimate willingness to pay, while an **implemented idea test** (**c_φθ**) includes pilot production or limited regional releases. The **realized profitability (y)** is a continuous measure, reflecting financial success based on **φ** (consumer demand) and **θ** (production scalability).
-
-  
-
-Because profitability outcomes are no longer binary but instead vary across a range of values, a **computational approach becomes essential** for modeling realistic decision-making. A **Normal-Beta model** generalizes implementation effectiveness (**a_θ, b_θ**) across multiple scenarios, requiring Bayesian inference and Monte Carlo simulations to track how **beliefs evolve with each market observation**. Unlike in the coffee example, where discrete testing suffices, **EV adoption involves dynamic adjustments**, such as pricing strategies, technological advancements, and policy shifts. Capturing these **complex interactions necessitates computational modeling**, making a normal distribution a more suitable framework for decision-making.
-
-  
-  
-  
-
-```{python}
-
-import numpy as np
-
-from dataclasses import dataclass
-
-  
-
-@dataclass
-
-class TestParameters:
-
-c_phi: float
-
-c_phi_theta: float
-
-budget: float
-
-value_multiplier: float = 100.0
-
-n_samples: int = 10000
-
-  
-
-def calculate_expected_values(params: TestParameters,
-
-true_phi_alpha: float,
-
-true_phi_beta: float,
-
-prior_phi_alpha: float,
-
-prior_phi_beta: float) -> Dict[str, float]:
-
-"""Debug version to understand value differences"""
-
-n_samples = params.n_samples
-
-# Generate samples
-
-true_phi_samples = np.random.beta(true_phi_alpha, true_phi_beta, n_samples)
-
-prior_phi_samples = np.random.beta(prior_phi_alpha, prior_phi_beta, n_samples)
-
-theta_samples = np.random.beta(2, 2, n_samples)
-
-print("\nDistribution Means:")
-
-print(f"Mean true phi: {np.mean(true_phi_samples):.3f}")
-
-print(f"Mean prior phi: {np.mean(prior_phi_samples):.3f}")
-
-print(f"Mean theta: {np.mean(theta_samples):.3f}")
-
-# Calculate raw values before costs
-
-V0 = np.mean(prior_phi_samples * theta_samples)
-
-V_phi = np.mean(true_phi_samples * theta_samples)
-
-V_phi_theta = np.mean(true_phi_samples * theta_samples)
-
-print("\nBase values before costs:")
-
-print(f"V0: {V0:.3f}")
-
-print(f"V_phi: {V_phi:.3f}")
-
-print(f"V_phi_theta: {V_phi_theta:.3f}")
-
-# Add value multiplier and subtract costs
-
-E_V0 = V0 * params.value_multiplier
-
-E_V_phi = V_phi * params.value_multiplier - params.c_phi
-
-E_V_phi_theta = V_phi_theta * params.value_multiplier - params.c_phi_theta
-
-print("\nFinal values after multiplier and costs:")
-
-print(f"E_V0: {E_V0:.3f}")
-
-print(f"E_V_phi: {E_V_phi:.3f}")
-
-print(f"E_V_phi_theta: {E_V_phi_theta:.3f}")
-
-delta_E = {
-
-'no_test': 0,
-
-'test_phi': E_V_phi - E_V0,
-
-'test_phi_theta': E_V_phi_theta - E_V0
-
-}
-
-print("\nDelta E values:")
-
-for action, value in delta_E.items():
-
-print(f"{action}: {value:.3f}")
-
-return delta_E
-
-  
-
-# Test cases
-
-if __name__ == "__main__":
-
-# Create parameters
-
-params = TestParameters(
-
-c_phi=5.0,
-
-c_phi_theta=15.0,
-
-budget=20.0,
-
-value_multiplier=100.0
-
-)
-
-print("Case 1: Low True Value, Low Prior")
-
-calculate_expected_values(
-
-params,
-
-true_phi_alpha=1, true_phi_beta=2, # Low true value
-
-prior_phi_alpha=1, prior_phi_beta=2 # Low prior
-
-)
-
-print("\nCase 2: Low True Value, High Prior")
-
-calculate_expected_values(
-
-params,
-
-true_phi_alpha=1, true_phi_beta=2, # Low true value
-
-prior_phi_alpha=2, prior_phi_beta=1 # High prior
-
-)
-
-print("\nCase 3: High True Value, Low Prior")
-
-calculate_expected_values(
-
-params,
-
-true_phi_alpha=2, true_phi_beta=1, # High true value
-
-prior_phi_alpha=1, prior_phi_beta=2 # Low prior
-
-)
-
-print("\nCase 4: High True Value, High Prior")
-
-calculate_expected_values(
-
-params,
-
-true_phi_alpha=2, true_phi_beta=1, # High true value
-
-prior_phi_alpha=2, prior_phi_beta=1 # High prior
-
-)
-
-```
-
-  
-
-```{stan}
-
-data {
-
-int<lower=0> N; // total trials
-
-int<lower=0,upper=N> W;// total successes
-
-}
-
-parameters {
-
-real<lower=0,upper=1> p; // Probability idea is good
-
-real<lower=0,upper=1> q; // Probability implementation is good
-
-}
-
-model {
-
-// Beta(2,2) priors for both p and q
-
-p ~ beta(2, 2);
-
-q ~ beta(2, 2);
-
-  
-
-// Binomial likelihood with success prob p*q
-
-W ~ binomial(N, p*q);
-
-}
-
-```
-
-  
-
-```{python}
-
-import numpy as np
-
-import matplotlib.pyplot as plt
-
-import seaborn as sns
-
-from scipy import stats
-
-  
-
-# Set style for plots
-
-sns.set_theme()
-
-#plt.contourf(phi_vals, theta_vals, POST, levels=30, cmap='BuPu')
-
-  
-
-sns.set_palette("husl")
-
-  
-
-def plot_binary_success_model():
-
-# Create grid for probability values
-
-phi = np.linspace(0, 1, 100)
-
-theta = np.linspace(0, 1, 100)
-
-PHI, THETA = np.meshgrid(phi, theta)
-
-# Success probability (both must be good)
-
-Z = PHI * THETA
-
-# Create the plot
-
-fig, ax = plt.subplots(figsize=(10, 8))
-
-# Plot contours
-
-contours = ax.contour(PHI, THETA, Z, levels=10)
-
-plt.clabel(contours, inline=True, fontsize=8)
-
-# Add colorbar
-
-plt.colorbar(contours)
-
-# Labels and title
-
-ax.set_xlabel('Idea Quality (φ)')
-
-ax.set_ylabel('Implementation Effectiveness (θ)')
-
-ax.set_title('Success Probability in Coffee Shop Venture')
-
-return fig
-
-  
-
-# Visualize belief updating
-
-def plot_belief_update(prior_alpha=2, prior_beta=2, n_success=3, n_trials=5):
-
-x = np.linspace(0, 1, 200)
-
-# Prior distribution
-
-prior = stats.beta(prior_alpha, prior_beta).pdf(x)
-
-# Posterior distribution
-
-post_alpha = prior_alpha + n_success
-
-post_beta = prior_beta + (n_trials - n_success)
-
-posterior = stats.beta(post_alpha, post_beta).pdf(x)
-
-fig, ax = plt.subplots(figsize=(10, 6))
-
-ax.plot(x, prior, 'b--', label='Prior')
-
-ax.plot(x, posterior, 'r-', label='Posterior')
-
-ax.fill_between(x, posterior, alpha=0.3, color='red')
-
-ax.set_xlabel('Success Probability')
-
-ax.set_ylabel('Density')
-
-ax.set_title('Belief Update After Customer Testing')
-
-ax.legend()
-
-return fig
-
-```
-
-  
-
-Our model encapsulates two key uncertainties:
-
-  
-
-4. Idea Quality (φ): Will American customers appreciate high quality coffee?
-
-  
-
-- Prior: Beta(aφ, bφ) reflecting initial market research
-
-- Success = positive customer feedback
-
-- Failure = negative feedback
-
-  
-
-5. Implementation (θ): Can your team deliver consistently?
-
-  
-
-- Prior: Beta(aθ, bθ) based on staff experience
-
-- Success = proper execution
-
-- Failure = service issues
-
-  
-
-The binary success function is:
-
-- y = 1 if (φ = Good AND θ = Good)
-
-- y = 0 otherwise
-
-  
-
-```{python}
-
-# Example usage
-
-model_fig = plot_binary_success_model()
-
-plt.show()
-
-  
-
-# Show belief update after pilot testing
-
-update_fig = plot_belief_update(n_success=3, n_trials=5)
-
-plt.show()
-
-```
-
-  
-
-### briding🌉 2.1 and 2.2
-
-While coffee quality perception is often discrete (good vs. bad), decision-making in industries like electric vehicles involves continuous trade-offs, such as battery range, cost, and manufacturing efficiency. EV success depends on **gradual variations in both idea quality (market demand) and implementation effectiveness (cost efficiency, supply chain constraints),** requiring a model that captures **incremental improvements, investment trade-offs, and continuous learning from market signals.** This motivates our shift to a normal distribution framework in Section 2.2, allowing for more nuanced updates and strategic adjustments.
-
-  
-
-### 2.2🚗 EV Context (Normal Distribution Extension)
-
-  
-  
-
-## 3. Implications
-
-Table compares **Sec. 2.1 (Coffee: Peet’s vs Starbucks)**, **Sec. 2.2 (EV: Better Place vs Tesla)**, and **Sec. 2.3 (EV: Toyota vs Tesla)**. Each row references the relevant “🔑table titles” from #🗄️scott to highlight how these examples differ in terms of the Four Axioms, Strategy Compass, key uncertainties, etc.
-
-  
-
-## 1) Fundamental Difference (Sec. 2.2 vs Sec. 2.3) in Scott’s Terms
-
-  
-
-In **Sec. 2.2 (Better Place vs Tesla)**, both players are *entrants* attempting to deliver new “system innovations” (to use Table 2’s language) for EV technology. This scenario reflects a *Disruptor or Architectural orientation*—no incumbent is dominating, so each entrant is searching for an advantage in a relatively open market structure. According to Scott’s **Four Axioms** (Table 1), there is significant *Uncertainty* about which new EV approach (battery-swap vs. integrated battery + charger network) will best create and capture value, and both must manage *Noisy Learning* about consumer acceptance.
-
-  
-
-By contrast, **Sec. 2.3 (Toyota vs Tesla)** pits an *incumbent* (Toyota) against a *disruptive entrant* (Tesla). The market for “electrified vehicles” is partially established (Toyota’s hybrids), so there is *Constraint* (Axiom 2) from Toyota’s existing capabilities and brand. Meanwhile, Tesla is embracing a *Disruptor strategy* (Table 2) and invests heavily in *Execution* on integrated capabilities. The fundamental difference is that Toyota’s large existing assets and brand shape its risk posture and ability to adapt, while Tesla’s path is riskier but can yield a novel architectural advantage. Thus, from Scott’s perspective, the **core contrast** in Sec. 2.3 is *incumbent vs. disruptor strategies* under more direct head-to-head competition, whereas Sec. 2.2 is *two entrants* vying to shape a still-emerging EV market.
-
-  
-
-Below is one **crisp table** aligning each section’s example (Coffee vs. two EV scenarios) with the “🔑table titles” from #🗄️scott. We highlight how each example maps to the Four Axioms, Strategy Compass, key uncertainties, etc.
-
-  
-
-| **Section** | **Context & Players** | **Four Axioms (Table 1)** | **Strategy Compass (Table 2)** | **Key Uncertainty (Table 5)** | **Relevance of “Test 2 Choose 1” (Table 7)** |
-
-|--------------------------------|----------------------------------------------------------|----------------------------------------------------------------------|---------------------------------------------------------------------------|------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-| **Sec. 2.1**<br>*Coffee* <br>(Peet’s vs. Starbucks) | Two *alternative* expansions of a high-quality coffee idea: <br>– Peet’s invests in artisanal beans <br>– Starbucks invests in café model | 1) **Freedom**: More than one path to create value (retail café or premium beans).<br>2) **Constraint**: Couldn’t do both at scale simultaneously. | Both lean toward *Value Chain* or partial *IP* (they focus on functional resources— sourcing/roasting vs. cafe ops). <br>(See “The Partners” in Table 2 if collaborating with supply chain) | Mostly **Epistemic**— uncertain how American consumers adopt new coffee habits. Historical data were scant for “Italian bar” concept. | Each tested, *to some extent*, a pilot. Starbucks did a “pop-up cafe.” Peet’s stuck with careful expansions. Demonstrates how parallel testing clarifies which route is more viable before committing large resources. |
-
-| **Sec. 2.2**<br>*EV: entrant vs. entrant* <br>(Better Place vs. Tesla) | Two *newcomers* in the EV space: <br>– Better Place tries battery-swap infrastructure <br>– Tesla invests in integrated battery + charging network | 1) **Uncertainty**: No clear track record for pure EV approach <br>2) **Noisy Learning**: Pilots reveal viability of swap stations vs. integrated superchargers. | Both are closer to *Disruptor* or *Architectural* (Table 2). They are exploring “new users, new system innovations.” They differ in **execution** approach: infrastructure vs. integrated. | Primarily **Epistemic**— no established demand data for large-scale EV, plus partial *Aleatoric* from unknown consumer tastes & battery tech. | Each must “test 2 choose 1” early. Better Place invests heavily in physical swap stations, Tesla invests in battery R&D + superchargers. In parallel, they validate different system designs to see which best scales. |
-
-| **Sec. 2.3**<br>*EV: incumbent vs. entrant* <br>(Toyota vs. Tesla) | An established automaker with hybrid success (Toyota) <br>vs. a pure-EV disruptor (Tesla) | 1) **Constraint**: Toyota’s existing brand, supply chain, & incremental approach. <br>2) **Uncertainty**: Whether Tesla’s radical integrated EV can outpace Toyota’s “hybrid-first” stance. | Toyota may lean *Value Chain* or *IP* to protect existing capabilities. Tesla uses a *Disruptor* strategy, investing in integrated capabilities for new customers. | Mixed **Epistemic** and **Aleatoric**. Toyota has partial data from hybrids. Tesla faces unknown scale-up and competitive response. | Toyota can do “learn while scaling hybrids.” Tesla “goes all-in” on pure EV. Each has to weigh cost of large pilot expansions. Testing multiple approaches is restricted for Toyota by legacy constraints, while Tesla’s approach is a high-stakes single path. |
-
-  
-
-**Key Takeaway**:
-
-- **Sec. 2.1**: Two *alternative expansions* from the *same idea* (quality coffee).
-
-- **Sec. 2.2**: Two *entrant* startups racing to define a new EV approach.
-
-- **Sec. 2.3**: Incumbent (Toyota) vs. disruptor (Tesla) contending with legacy constraints and radically new system design.
-
-  
-  
-  
-  
-
-```{python}
-
-import numpy as np
-
-import matplotlib.pyplot as plt
-
-from scipy.stats import beta
-
-  
-
-# -------------------------
-
-# 1. Define prior parameters
-
-# Beta(a_phi, b_phi) for phi, Beta(a_theta, b_theta) for theta
-
-a_phi, b_phi = 2, 2
-
-a_theta, b_theta = 2, 2
-
-  
-
-# Example data:
-
-# idea_test_result = 1 (success)
-
-# impl_test_result = 0 (failure)
-
-# We'll treat:
-
-# P(idea_test=1 | phi) = phi
-
-# P(impl_test=1 | phi,theta) = phi*theta
-
-# So if impl_test_result = 0, that likelihood is (1 - phi*theta).
-
-  
-
-# 2. Set up the 2D grid
-
-n_grid = 100
-
-phi_vals = np.linspace(0, 1, n_grid)
-
-theta_vals = np.linspace(0, 1, n_grid)
-
-  
-
-# We'll create a meshgrid for convenience
-
-PHI, THETA = np.meshgrid(phi_vals, theta_vals)
-
-  
-
-# 3. Compute the prior for each (phi,theta) on the grid
-
-# prior_phi = Beta(a_phi, b_phi) at PHI
-
-# prior_theta = Beta(a_theta, b_theta) at THETA
-
-prior_phi = beta.pdf(PHI, a_phi, b_phi)
-
-prior_theta = beta.pdf(THETA, a_theta, b_theta)
-
-# Assuming phi and theta are independent, the joint prior is the product
-
-PRIOR = prior_phi * prior_theta
-
-  
-
-# 4. Compute the likelihood from the data:
-
-# L_idea = phi^1 * (1-phi)^0 = PHI
-
-# L_impl = (phi*theta)^0 * (1 - phi*theta)^1 = 1 - (PHI*THETA)
-
-L_idea = PHI
-
-L_impl = 1 - (PHI*THETA)
-
-  
-
-LIKELIHOOD = L_idea * L_impl
-
-  
-
-# 5. Unnormalized posterior
-
-UNSTD_POST = PRIOR * LIKELIHOOD
-
-  
-
-# 6. Normalize so that sum of posterior over entire grid = 1
-
-POST = UNSTD_POST / UNSTD_POST.sum()
-
-  
-
-# 7. Plot results
-
-plt.figure(figsize=(8,6))
-
-plt.contourf(phi_vals, theta_vals, POST, levels=30, cmap='viridis')
-
-plt.colorbar(label='Posterior density')
-
-plt.xlabel('phi (Idea quality)')
-
-plt.ylabel('theta (Implementation effectiveness)')
-
-plt.title('Posterior over (phi, theta) - Binary Success Model')
-
-plt.show()
-
-  
-
-```
-
-## Appendix
-
-### language choice
-
-Based on the analysis of Scott's Entreprenerial strategy and choice and Charlie's clockspeed which included around 200 sentences that used "execute" and "implement", I analyzed Scott and Charlie share fundamental views on execution/implementation as critical to venture success, particularly emphasizing capability development and systematic learning. Both scholars recognize the importance of speed and efficiency - Scott describes how "Warby Parker has executed quickly and consistently," while Charlie highlights how "Intel executed new product and process development... at breakneck speed." They also agree on the role of continuous improvement, with Scott noting how firms must "continue to execute well to maintain market position" and Charlie describing how "Toyota continuously strengthens and deepens its capabilities." Where they diverge is in their primary analytical lens: Scott frames execution primarily as a strategic choice against control, exemplified in the Salesforce case where "focusing on execution" meant choosing against building protective "moats." Charlie, meanwhile, approaches implementation through an operational and technical perspective, focusing on "implementing clockspeed concepts" and "three-dimensional concurrent engineering." Their emphasis on trade-offs also differs slightly: Scott highlights the tension between speed and protection ("execute quickly while evading incumbent detection"), while Charlie focuses more on integration challenges ("Toyota struggled when it tried to implement global three-dimensional concurrent engineering from a highly integral supply base"). However, these differences appear more complementary than contradictory - Scott's strategic view and Charlie's operational perspective together provide a more complete understanding of how ventures execute and implement effectively.
 ----
 
 | **Section/Subsection**                | **🔑Focus**                                                                                                                                                            | **🧱Algorithm & Variables**                                                                                                                                                                                                        | **📝Examples & Implications**                                                                                                                                                                                                                                     |
@@ -1455,7 +185,7 @@ While coffee quality perception is often discrete (good vs. bad), decision-makin
 - Test specific implementations (e.g., pilot products)
 Each test has a cost, and the entrepreneur needs to decide which testing approach to use."
 
-6. Mathematical Model:
+2. Mathematical Model:
 
 ```
 Core Setup:
@@ -1465,19 +195,19 @@ where:
 θ ∈ {θ_bad, θ_good}     // implementation effectiveness
 
 Two Testing Options:
-7. Test φ directly: Observe φ at cost c_φ
-8. Test (φ,θ) pair: Observe y at cost c_y
+1. Test φ directly: Observe φ at cost c_φ
+2. Test (φ,θ) pair: Observe y at cost c_y
 
 Key Exchangeability Property:
 p(y_1, y_2 | φ) = p(y_2, y_1 | φ)   // order of implementation doesn't affect inferred value of idea quality
 ```
 
-9. Why Exchangeability Matters:
+3. Why Exchangeability Matters:
 - Business Reality: Entrepreneurs often test multiple implementations of the same idea's 
 - Exchangeability means: Order of testing implemented ideas doesn't affect what we learn about idea quality
 - Example: Testing "coffee shop in location A then B" vs "B then A" should give same information about the quality of the core business idea
 
-10. Decision Problem:
+4. Decision Problem:
 ```
 max_{d∈{test_φ, test_y}} E[V(π)] - c(d)
 
@@ -1487,7 +217,7 @@ V(π) = Expected value under belief state π
 π(φ,θ|test_y) = Indirect learning through implementation
 ```
 
-11. Key Questions This Answers:
+5. Key Questions This Answers:
 - When should entrepreneurs test idea vs implemented idea?
 - How does exchangeability help us learn about idea quality from implemented idea tests?
 - How do testing costs affect optimal learning approach?
@@ -1573,8 +303,8 @@ Because physical theories typically predict numerical values, an improvement in 
 
 Entrepreneurs often face **two contrasting** domains in product management:
 
-12. **Atom (Physical/Hardware).** Here, founders expect **tight, uniform** performance across products (e.g., identical batteries from a factory). Any deviation (e.g., one battery charging 30 minutes vs. another 45 under the same conditions) signals that the underlying “physical process” is not truly the same—an important discovery for process improvement.
-13. **Bit (Software/Behavior/Market Segments).** Here, founders **expect** variation (e.g., how different customer groups adopt a new app). Surprisingly _similar_ outcomes can be the big news (e.g., both “luxury buyers” and “eco-conscious buyers” giving equally high ratings)—revealing an unexpected _common_ acceptance factor.
+6. **Atom (Physical/Hardware).** Here, founders expect **tight, uniform** performance across products (e.g., identical batteries from a factory). Any deviation (e.g., one battery charging 30 minutes vs. another 45 under the same conditions) signals that the underlying “physical process” is not truly the same—an important discovery for process improvement.
+7. **Bit (Software/Behavior/Market Segments).** Here, founders **expect** variation (e.g., how different customer groups adopt a new app). Surprisingly _similar_ outcomes can be the big news (e.g., both “luxury buyers” and “eco-conscious buyers” giving equally high ratings)—revealing an unexpected _common_ acceptance factor.
 
 This duality implies **asymmetric testing**: hardware-like domains benefit from “physics-grade” tight thresholds (Meehl’s “strong tests”), while psychology-like domains risk “crud factor” false positives if we rely solely on a p-value. We aim to integrate **exchangeability** so that the model can systematically handle _when_ items (or data points) should be treated as “essentially the same” versus “likely different.”
 

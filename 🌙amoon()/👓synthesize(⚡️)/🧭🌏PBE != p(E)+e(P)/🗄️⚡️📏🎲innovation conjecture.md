@@ -58,7 +58,7 @@ The connection between these:
 | Tn (Stopping Times)      | inf(t: ∫₀ᵗ\|EP[u̇s\|Us]\|²ds > n)                             | Critical points where battery functionality significantly changes            | Major breakthroughs in Blade Battery development:<br>1) Nail penetration test success proving safety<br>2) Cell-to-pack integration achieving 60% volume utilization<br>3) Discovery that blade structure could serve as structural component<br>4) Manufacturing scale achievement reducing costs                                                                                 |
 | νn (Measure)             | dνn = ρ(-δzûn)dP                                              | Probability framework for evaluating battery innovation stages               | BYD's stage-gate evaluation process:<br>1) Safety validation (>90% confidence)<br>2) Manufacturing feasibility (>80% yield)<br>3) Pack integration success (>70% space efficiency)<br>4) Cost targets achieved (>60% reduction vs previous)                                                                                                                                        |
 
-[[🗄️scott]]
+[[🗄️🧠scott]]
 Tn = inf(t: ∫₀ᵗ|EP[u̇s|Us]|²ds > n)
 
 Where:

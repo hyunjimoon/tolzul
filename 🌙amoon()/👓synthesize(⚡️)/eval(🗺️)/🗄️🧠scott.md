@@ -19,17 +19,22 @@
 
 ## Table 2: Entrepreneurial Strategy Compass with Detailed Explanations and Examples
 
-| Strategy                  | Intellectual Property                                                                    | Value Chain                                                                               | Disruptor                                                                         | Architectural                                                                    |
-| ------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| Nickname                  | THE THINKERS                                                                             | THE PARTNERS                                                                              | THE HUSTLERS                                                                      | THE BUILDERS                                                                     |
-| Tagline                   | "Ideas Factory"                                                                          | "Core Competency"                                                                         | "Creative Destruction"                                                            | "Zero to One"                                                                    |
-| Customer Focus            | DELIVER value for EXISTING users                                                         | DISCOVER value for EXISTING users                                                         | DISCOVER value for NEW users                                                      | DELIVER value for NEW users                                                      |
-| Innovation Type           | Develop GENERAL COMPONENT innovations                                                    | Develop SPECIALIZED COMPONENT innovations                                                 | Develop SPECIALIZED SYSTEM innovations                                            | Develop GENERAL SYSTEM innovations                                               |
-| Orientation               | Orientation towards COLLABORATION and investment in CONTROL                              | Orientation towards COLLABORATION and investment in EXECUTION                             | Orientation towards COMPETITION and investment in EXECUTION                       | Orientation towards COMPETITION and investment in CONTROL                        |
-| Resources & Capabilities  | Leverage FUNCTIONAL RESOURCES                                                            | Build FUNCTIONAL CAPABILITIES                                                             | Build INTEGRATED CAPABILITIES                                                     | Leverage INTEGRATED RESOURCES                                                    |
-| Value Creation Hypothesis | VENTURE CREATES VALUE because its COMPONENT INNOVATIONS deliver value for EXISTING users | VENTURE CREATES VALUE because its COMPONENT INNOVATIONS discover value for EXISTING users | VENTURE CREATES VALUE because its SYSTEM INNOVATIONS discover value for NEW users | VENTURE CREATES VALUE because its SYSTEM INNOVATIONS deliver value for NEW users |
-| Value Capture Hypothesis  | VENTURE CAPTURES VALUE because it CONTROLS a key FUNCTIONAL RESOURCE                     | VENTURE CAPTURES VALUE because it EXECUTES on key FUNCTIONAL CAPABILITIES                 | VENTURE CAPTURES VALUE because it EXECUTES on key INTEGRATED CAPABILITIES         | VENTURE CAPTURES VALUE because it CONTROLS a key INTEGRATED RESOURCE             |
-| Examples                  | Harry Potter, Getty Images, Xerox, DOLBY, INTELLECTUAL VENTURES, Genentech               | Foxconn, PayPal, Madaket, Mattermark, DRIZLY, STRATACOM                                   | NETFLIX, Zipcar, Salesforce, Amazon, Skype, oDesk                                 | Facebook, AngelList, eBay, Ford, Etsy, Dell                                      |
+| Strategy                                             | 🦠Intellectual Property                                                                  | 🐬Value Chain                                                                             | 🐅Disruptor                                                                       | 🐘Architectural                                                                  |
+| ---------------------------------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Nickname                                             | THE THINKERS                                                                             | THE PARTNERS                                                                              | THE HUSTLERS                                                                      | THE BUILDERS                                                                     |
+| Tagline                                              | "Ideas Factory"                                                                          | "Core Competency"                                                                         | "Creative Destruction"                                                            | "Zero to One"                                                                    |
+| Customer Focus                                       | DELIVER value for EXISTING users                                                         | DISCOVER value for EXISTING users                                                         | DISCOVER value for NEW users                                                      | DELIVER value for NEW users                                                      |
+| Innovation Type                                      | Develop GENERAL COMPONENT innovations                                                    | Develop SPECIALIZED COMPONENT innovations                                                 | Develop SPECIALIZED SYSTEM innovations                                            | Develop GENERAL SYSTEM innovations                                               |
+| Orientation                                          | Orientation towards **👥**COLLABORATION and investment in CONTROL                        | Orientation towards **👥**COLLABORATION and investment in EXECUTION                       | Orientation towards **🥷**COMPETITION and investment in EXECUTION                 | Orientation towards **🥷**COMPETITION and investment in CONTROL                  |
+| Resources & Capabilities                             | Leverage FUNCTIONAL RESOURCES                                                            | Build FUNCTIONAL CAPABILITIES                                                             | Build INTEGRATED CAPABILITIES                                                     | Leverage INTEGRATED RESOURCES                                                    |
+| Value Creation Hypothesis                            | VENTURE CREATES VALUE because its COMPONENT INNOVATIONS deliver value for EXISTING users | VENTURE CREATES VALUE because its COMPONENT INNOVATIONS discover value for EXISTING users | VENTURE CREATES VALUE because its SYSTEM INNOVATIONS discover value for NEW users | VENTURE CREATES VALUE because its SYSTEM INNOVATIONS deliver value for NEW users |
+| Value Capture Hypothesis                             | VENTURE CAPTURES VALUE because it CONTROLS a key FUNCTIONAL RESOURCE                     | VENTURE CAPTURES VALUE because it EXECUTES on key FUNCTIONAL CAPABILITIES                 | VENTURE CAPTURES VALUE because it EXECUTES on key INTEGRATED CAPABILITIES         | VENTURE CAPTURES VALUE because it CONTROLS a key INTEGRATED RESOURCE             |
+| Examples                                             | Harry Potter, Getty Images, Xerox, DOLBY, INTELLECTUAL VENTURES, Genentech               | Foxconn, PayPal, Madaket, Mattermark, DRIZLY, STRATACOM                                   | NETFLIX, Zipcar, Salesforce, Amazon, Skype, oDesk                                 | Facebook, AngelList, eBay, Ford, Etsy, Dell                                      |
+| high bar (collaborate) vs low bar (compete)          | high bar                                                                                 | high bar                                                                                  | low bar                                                                           | low bar                                                                          |
+| 🧠market viability testing vs 🤜go to market testing | market viability testing                                                                 | go to market testing                                                                      | go to market testing                                                              | market viability testing                                                         |
+
+ip strategy - market viability testing; disruptor strategy - go to market strategy
+
 
 ## Table 3: Categorization and Definition of Key Choices in Entrepreneurial Strategy
 
@@ -141,3 +146,58 @@ However, the researchers found something else. They found that the experts could
 | y         | **Realized profitability**                                                                                                                             | Profitability of chosen implementation strategy ($, binary outcome) | Profitability of EV model ($/year, continuous outcome)                       |
 | c_φ       | Idea validation cost                                                                                                                                   | Cost of blind taste tests, market research ($)                      | Cost of prototype testing, surveys ($)                                       |
 | c_φθ      | Implemented idea test cost                                                                                                                             | Cost of opening stores, launching sales ($)                         | Cost of pilot production, small-scale launches ($)                           |
+
+[[📜Vul14_onedone]]
+## Table 10. 
+
+| Prior Reality \ Signal | 😫 Bad News           | 😆 Good News          |
+| ---------------------- | --------------------- | --------------------- |
+| 💩 Bad Idea            | λ₀ (True Negative)    | 1-λ₀ (False Positive) |
+| 💡 Good Idea           | 1-λ₁ (False Negative) | λ₁ (True Positive)    |
+
+
+[[cohesive]]
+
+low and high bar test 
+false positive (1-lambda0; good news failure), false negative (1-lambda1; bad news for success)
+mu upper bar (any positive new - you're in), mu lower bar (move a lot) - mu uppr bar (); mu
+underlying experimental technology comes with type1,2 error (repeated draws - precise signal) - proportionally 
+spend effort to figure out min type 1 or type2 or both (budget of 2) - signal would be perfect (min type 1 error; lambda0=1)
+lambda0=1 -> no false postivite; lambda1 = 1 -> no false negative (given the capital lambda)
+
+if the signal is less then have of the time, you flip (you get 1 for free)
+for those not at mutilde, put all your effort (if you're i'm in 
+-> choose low bar; choose experiment only fails  (high fp, low fn)) - best foot forward (zappos) 
+-> skeptic (choose high bar; get rid of false positive (only way this works is it actually works))
+only reason it sells is bc it is good 
+zappos (only situation they failed is they; even though they believed in it); 
+high bar: hard to pass
+tight prior ; uniform prior
+
+![[Pasted image 20250212141732.png]]
+
+
+[[📜gans23_expchoice]]]
+
+| Approach                              | Low Bar (Lenient Threshold)                                                                  | High Bar (Strict Threshold)                                                                                                                           |
+| ------------------------------------- | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🧠Market Viability Learning (Control) | Quick customer surveys about product features<br><br>Focus groups for new product concepts   | Blind taste tests for premium coffee with rigorous statistical significance<br><br>Early Tesla battery performance tests in controlled lab conditions |
+| 🤜Go to Market Learning (Execute)     | Zappos' initial shoe sales experiment<br><br>Airbnb's initial photo service for NYC listings | Commonwealth Fusion Systems' full reactor test<br><br>SpaceX's complete rocket launches                                                               |
+
+2. Compete vs Collaborate and Bar Height:
+
+This is an intriguing question. Let me think through it:
+
+For 🥷 Compete:
+- Entrants often use low bar testing because:
+  - Need to move fast before incumbent response
+  - Can iterate and improve rapidly
+  - Example: Netflix's initial DVD-by-mail was a relatively low bar test compared to Blockbuster's infrastructure
+  - Can't afford long validation periods
+
+For 👥 Collaborate:
+- Entrants often use high bar testing because:
+  - Need to prove credibility to potential partners
+  - Must demonstrate clear value proposition
+  - Example: Genentech needed rigorous scientific validation before pharmaceutical partnerships
+  - Have more time for thorough validation due to collaborative rather than competitive dynamics

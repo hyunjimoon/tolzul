@@ -3,7 +3,7 @@
 
  2024-10-14 with two evaluators: 
  - [[charlie24👓_nss🗣️]], [[charlie24🛠️_clockspeed🗣️]], [[🗄️charlie]]
- - [[scott24👓_Bayesian_Entrepreneurship.pdf]], [[scott23🛠️_econ_idea_innov_ent.pdf]], [[🗄️scott]]
+ - [[scott24👓_Bayesian_Entrepreneurship.pdf]], [[scott23🛠️_econ_idea_innov_ent.pdf]], [[🗄️🧠scott]]
 ---
 ##### Plan for Today
 1. Reflect on last meeting

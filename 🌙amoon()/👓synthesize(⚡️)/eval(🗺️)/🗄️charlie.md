@@ -23,3 +23,17 @@
 | 1. The relentless entry of niche competitors hoping to pick off discrete industry segments. | 1. Technical advances in one subsystem can make that the scarce commodity in the chain, giving market power to its owner. |
 | 2. The challenge of keeping ahead of the competition across the many dimensions of technology and markets required by an integral system. | 2. Market power in one subsystem encourages bundling with other subsystems to increase control and add more value. |
 | 3. The bureaucratic and organizational rigidities that often settle upon large, established companies. | 3. Market power in one subsystem encourages engineering integration with other subsystems to develop proprietary integral solutions. |
+
+## Table 10: product vs process 
+
+| Dimension | Disruptive Product Innovation (Electronics) | Disruptive Process Innovation (Autos) |
+|-----------|------------------------------------------|-------------------------------------|
+| Key Driver | Moore's Law - Component Performance | Toyota Production System - Process Efficiency |
+| Value Creation | New product capabilities & features | Cost reduction & quality improvement |
+| Market Impact | Creates new markets/applications | Transforms existing markets |
+| Learning Speed | Fast iteration on product features | Slower iteration on process improvements |
+| Examples | **New Entrants → Established:**<br>- Intel: Chips<br>- Microsoft: Software<br>- Amazon: E-commerce platforms<br>- Dell: PC assembly | **Process Innovators:**<br>- Toyota: Lean production<br>- Ford: Mass production<br>- Walmart: Supply chain<br>- Southwest: Quick turnaround<br>- McDonald's: Standardization<br>- Zara: Fast fashion |
+| Clock Speed | Rapid (months to 1-2 years) | Slower (2-5 years) |
+| Value Capture | Through controlling key components/platforms | Through operational excellence |
+| Innovation Focus | Product architecture & features | Process optimization & efficiency |
+integrate process then product

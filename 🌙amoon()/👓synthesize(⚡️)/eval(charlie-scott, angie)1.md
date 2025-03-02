@@ -1,5 +1,5 @@
 2024-10-14
-- evaluators: [[charlie24👓_nss🗣️]], [[charlie24🛠️_clockspeed🗣️]], [[🗄️charlie]], [[scott24👓_Bayesian_Entrepreneurship.pdf]], [[scott23🛠️_econ_idea_innov_ent.pdf]], [[🗄️scott]]
+- evaluators: [[charlie24👓_nss🗣️]], [[charlie24🛠️_clockspeed🗣️]], [[🗄️charlie]], [[scott24👓_Bayesian_Entrepreneurship.pdf]], [[scott23🛠️_econ_idea_innov_ent.pdf]], [[🗄️🧠scott]]
 - which are separated into [[🛝 Slide Deck eval(charlie-scott,angie)1]] [[📝 paper eval(charli-scott, angie)1]]
 --- 
 plan for today

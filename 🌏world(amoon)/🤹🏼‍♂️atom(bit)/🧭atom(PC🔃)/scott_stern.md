@@ -6,7 +6,7 @@ three questions to ask:
 	> Implementation of an architectural strategy often requires large amounts of upfront investment (especially relative to disruption) in planning and making strategic commitments to build an entirely new value chain. architectural entrepreneurs must be diligent in assessing fit and buy-in with potential investors, and ensure that they will not be pressured to execute quickly before they have had a chance to establish control.
 
 
-[[🗄️scott]]
+[[🗄️🧠scott]]
 Dear xx,
 
 May 15th is my favorite Korean holiday: teacher's day.

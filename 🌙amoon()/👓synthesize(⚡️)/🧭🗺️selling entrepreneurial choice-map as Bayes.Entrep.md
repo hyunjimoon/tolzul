@@ -584,6 +584,7 @@ In conclusion, a judiciously scaled hybrid model can empower MoS to harness the 
 
 ## Reply from hyunjimoon on 2023-09-30T04:59:01Z
 
+[[🤹‍♀️sampling based hypothesis testing for experiment]]
 ## 1. Testing Entrepreneurial Hypothesis and Experiment 
 <img width="911" alt="image" src="https://github.com/Data4DM/BayesSD/assets/30194633/937c609f-7710-47e6-8869-e581d301ac43">
 
@@ -884,14 +885,13 @@ UCC Filings #, Last UCC Filing Date, Last UCC Expiration Date
 
 ### Reply from miaomiaozhang20 on 2023-12-24T15:16:27Z
 
-1. Universe, Ticker, Daily Updates, Weekly Updates, EBITDA, EBIT, Market Cap, Company Size
-[Ticker, EBITDA, EBIT, Market Cap] are mostly for post-IPO companies. These are not available for startups.
+1. Universe, Ticker, Daily Updates, Weekly Updates, EBITDA, EBIT, Market Cap, Company Size [Ticker, EBITDA, EBIT, Market Cap] are mostly for post-IPO companies. These are not available for startups.
 "Universe" could be M&A, Debt Financed, Venture Capital, etc, a joint list of financing status.
 "Daily Updates" and "Weekly Updates" are subscription means for users of Pitchbook. If I sign up for daily updates, I will receive daily scraped news about this company.
 "Company Size" is employee #.
 
 2. difference btw [First Financing Valuation] and [First Financing Valuation Status]?
-"First Financing Valuation" is $$$; "First Financing Valuation Status" can be Complete, In Progress, etc.
+"First Financing Valuation" is ; "First Financing Valuation Status" can be Complete, In Progress, etc.
 
 3. difference btw Last Financing Size and Last Financing Size Status?
 Same as above.

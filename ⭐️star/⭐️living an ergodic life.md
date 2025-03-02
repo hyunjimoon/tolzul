@@ -1,3 +1,9 @@
+
+1. using examples of subsection that corresponds to each input and output, could you give me a linear pseudo (code) program for ⚙️PROCESS on how you'd output (⬅️OUT) given input (➡️IN) using the ⚙️PROCESS? you can understand as "processification".
+2. given 2 and 3, update ⚙️PROCESS column of the table
+3. check whether given ➡️IN, applying ⚙️PROCESS gives contents with two conditions that codifies reversibility. if one of the conditions doesn't hold, update the ⚙️PROCESS. iterate until it holds. 1. ⚙️PROCESS ( ➡️IN) =⬅️OUT 2. inverse of ⚙️PROCESS(⬅️OUT ) = ➡️IN 3. ⬅️OUT subsumes information spanned by the paper.
+
+---
 my motto is "Ergodic life: transforming time into meaningful paths"
 
 1. Seeking diverse experiences rather than repeating the same patterns
