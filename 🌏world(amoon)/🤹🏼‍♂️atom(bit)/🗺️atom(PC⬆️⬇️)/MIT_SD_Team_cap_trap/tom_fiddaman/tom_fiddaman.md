@@ -2,6 +2,10 @@
 Corresponds to [[Andrew Gelman]] in Bayes world in that he writes a blog that subsumes diverse domain.
 
 ---
+2025-03-09
+[[⚙️(🗄️📝)]]
+
+
 [[🗄️tf-sd]]
 
 2024-12-08

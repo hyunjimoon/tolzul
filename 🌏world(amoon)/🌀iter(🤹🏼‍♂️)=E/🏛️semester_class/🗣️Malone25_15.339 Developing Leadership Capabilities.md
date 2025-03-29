@@ -37,6 +37,9 @@ Develop leadership skills needed in today’s increasingly decentralized organiz
 with the intention to interact with thomas malone and wanda olinski, i applied via https://docs.google.com/forms/d/e/1FAIpQLSf7M5sKeXLnnGcrVRieEN3EIHh2gX0SwuTPvlK9E4OUw200uQ/viewform 
 which asked me to Tell  **who you are** and **why you would like to take** this class. (2-5 sentences)   + Do you hold a **leadership role** in a student group or serve in **student government** (GSC, Sloan Senate, etc.)? If so, which role(s)?
 
+
+[[25_TEPEI_empirical]]
+
 ---
 [[thomas_malone]], [[wanda_orlikowski]]
 # day1

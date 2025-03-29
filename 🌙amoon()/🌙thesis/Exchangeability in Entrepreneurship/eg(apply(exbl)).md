@@ -35,7 +35,7 @@ uniformity testing,
 
 [[clever-lifting]]
 
-[[🌙amoon()/⚡️generate(tolzul)/🧬🌏AGCTE(mng)/3🔷resource_rational_fit/🧶atom_bit_supply/how-clever-is-random|how-clever-is-random]]
+[[🌙amoon()/💭 Theorize/🧬🌏AGCTE(mng)/3🔷resource_rational_fit/🧶atom_bit_supply/how-clever-is-random|how-clever-is-random]]
 
 computational rationality cognitive science
 

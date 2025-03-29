@@ -1,3 +1,26 @@
+2025-03-26
+You're right - let me make sure the descriptions and emojis are consistent, and I'll keep the business class travel indicator for "Upward":
+
+|Internally Deep (Self) - RSTU|Signs to Look For|Externally Quick (Others) - ABCD|Signs to Look For|
+|---|---|---|---|
+|**R**obust 🧩: Connects ideas and spots patterns easily|Asks thought-provoking questions|**A**cute ⚡: Makes smart, quick decisions|Acts decisively under pressure|
+|**S**imulation-based 🧭: Plans strategically through mental modeling|Shows organized appearance and thinking|**B**right 💡: Creative with playful spirit|Has lively eyes and smile|
+|**T**ruthful 🔍: Updates beliefs with new information|Willing to change their mind|**C**aring 💗: Values others equally to self|Shows thoughtfulness in actions|
+|**U**pward 📈: Growing emotionally and financially secure|Can afford business class travel 💺|**D**evelopmental 🙏: Humble and eager to learn|Engages deeply in shared interests|
+
+
+2025-03-21
+
+condition of
+
+1. friend 
+- can love me as much as one loves oneself
+
+2. partner
+- appreciates me
+- is aware that he/she needs me
+
+2024
 배우자 조건
 same condition that i apply to myself [[log]] below 
 
@@ -9,14 +32,13 @@ same condition that i apply to myself [[log]] below
 | up: 심리적, 금전적 (비행기 비즈니스석) 여유가 있는 사람                     |        | down: learning 과 research에 진심인 사람                          | 자신 연구 (흥미)와 상대 연구 연결하는 대화에 대한 관심도 |
 | [[👓synthesize(ops4innov)]]<br>[[🧭navigate(startup)]] |        | [[⚡️generate(tolzul)]]<br>[[🗺️educate(ops4innov)]]        |                                   |
 
-
-| internally denser (self)                                                                                                                                                    | diagnostics                           | externally faster (others)                                                                                    | diagnostics                                                                                               |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `robust`: A person capable of abductive and analogical thinking                                                                                                             |                                       | `aligned`: A person embodies Bayesian thinking                                                                | - capable of acting quickly and consistently<br>- strategy degree for decision > .7 (Van den Steen, 2016) |
-| `strategic`: A person who can think systematically and understands the strategy of rewarding one and others to strengthen team performance                                  | clean appearance                      | `brilliant`: A person who isn't too serious about everything, creative and does out of the box thinking       | playful eyes and smile                                                                                    |
-| `truthful`: A person who can manage the parallel process of updating ones belief and acting based on incomplete truth i.e. Bayesian thinking (simulation-based calibration) |                                       | `commit`: A person whose love toward others is on par with that toward oneself, and shows this care in action |                                                                                                           |
-| `up`: A person with psychological and financial                                                                                                                             | can ride business class in airplane💺 | `down`: A person genuinely interested in learning and research                                                | interest in conversations connecting my and their research (interests) with others'                       |
-|                                                                                                                                                                             |                                       | `entrepreneurial`                                                                                             |                                                                                                           |
+| internally denser (self)                                                                                                                                                                                                 | diagnostics                                                                               | externally faster (others)                                                                                  | diagnostics                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `robust`: A person capable of abductive and analogical thinking                                                                                                                                                          |                                                                                           | `acute`: A person who embodies Bayesian thinking                                                            | - capable of acting quickly and consistently<br>- strategy degree for decision > .7 (Van den Steen, 2016) |
+| `strategic`: A person who can think systematically and understands the strategy of rewarding one and others to strengthen team performance                                                                               | clean appearance                                                                          | `brilliant`: A person who isn't too serious about everything, creative and does out of the box thinking     | playful eyes and smile                                                                                    |
+| `truthful`: A person who can manage the parallel process of updating one's belief and action based on incomplete data generating model of the world i.e. Bayesian thinking - simulation-based calibration to be specific |                                                                                           | `care`: A person whose love toward others is on par with that toward oneself, and shows this care in action |                                                                                                           |
+| `up`: A person with psychological and financial safety stock                                                                                                                                                             | psychological: ?<br><br>financial: capable of traveling with business class in airplane💺 | `down`: A person genuinely interested in learning and research                                              | interest in conversations connecting one's and the other's interest (research)                            |
+| [[👓synthesize(ops4innov)]]<br>[[🧭navigate(startup)]]                                                                                                                                                                   |                                                                                           | [[⚡️generate(tolzul)]]<br>[[🗺️educate(ops4innov)]]                                                         |                                                                                                           |
 
 
 

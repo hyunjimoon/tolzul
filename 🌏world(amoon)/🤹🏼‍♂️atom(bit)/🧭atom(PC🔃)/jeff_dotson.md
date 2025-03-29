@@ -1,3 +1,6 @@
+2025-03-09
+discussed differential visualization from [[⚙️(🗄️📝)]]
+
 2025-02-05
 Greg Allenby, Peter Rossi, Peter Lenk' student (Allenby and Rossi's committee member was economist in Chicago)
 

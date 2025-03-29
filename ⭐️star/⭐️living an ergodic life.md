@@ -1,3 +1,4 @@
+a goal i can meet only at the moment i die
 
 1. using examples of subsection that corresponds to each input and output, could you give me a linear pseudo (code) program for ⚙️PROCESS on how you'd output (⬅️OUT) given input (➡️IN) using the ⚙️PROCESS? you can understand as "processification".
 2. given 2 and 3, update ⚙️PROCESS column of the table

@@ -1,0 +1,40 @@
+{
+	"nodes":[
+		{"type":"file","file":"🌙amoon()/💭 Theorize/🧬🌏AGCTE(mng)/1🧬AGCT/5🌀workflow/def/🌀player.md","id":"5d747eed9dde09c2","x":-2756,"y":-1101,"width":400,"height":400},
+		{"type":"file","file":"🌙amoon()/💭 Theorize/🧬🌏AGCTE(mng)/1🧬AGCT/2🎥infer/def/table(estimator).md","id":"d8bfa9ed2dc9e73f","x":-3768,"y":605,"width":475,"height":400,"color":"4"},
+		{"type":"file","file":"🌙amoon()/💭 Theorize/🧬🌏AGCTE(mng)/1🧬AGCT/1🏭generate/part/def(atom(generator)).md","id":"659dab04a52490fd","x":-3768,"y":-230,"width":475,"height":400,"color":"1"},
+		{"type":"file","file":"🌙amoon()/💭 Theorize/🧬🌏AGCTE(mng)/1🧬AGCT/def/geppetto_playbook.md","id":"0fa9f6ab4d67fc55","x":-4246,"y":-1101,"width":654,"height":400},
+		{"type":"file","file":"🌙amoon()/💭 Theorize/🧬🌏AGCTE(mng)/1🧬AGCT/def/by_t(playbook).md","id":"48340556ab0c289f","x":-4119,"y":-2027,"width":400,"height":400},
+		{"type":"file","file":"🌙amoon()/💭 Theorize/🧬🌏AGCTE(mng)/1🧬AGCT/3🌲inf(gen)/def/table(inf(gen)).md","id":"8c321074e967ffad","x":-2756,"y":-230,"width":400,"height":400,"color":"6"},
+		{"type":"file","file":"🌙amoon()/💭 Theorize/🧬🌏AGCTE(mng)/1🧬AGCT/4🃏joker/form(joker)/city_of_asymmetry/def(city_of_asymmetry).md","id":"132643c492b999c9","x":-2263,"y":1487,"width":443,"height":400},
+		{"type":"file","file":"🌙amoon()/💭 Theorize/🧬🌏AGCTE(mng)/1🧬AGCT/4🃏joker/form(joker)/city_of_closed_zerosum/def(city_of_closed_zerosum).md","id":"5ed4b6666396c92a","x":-1804,"y":1487,"width":400,"height":400},
+		{"type":"file","file":"🌙amoon()/💭 Theorize/🧬🌏AGCTE(mng)/1🧬AGCT/4🃏joker/form(joker)/city_of_noise/def(city_of_noise).md","id":"b3c9fa06ac421947","x":-1325,"y":1487,"width":400,"height":400},
+		{"type":"file","file":"🌙amoon()/💭 Theorize/🧬🌏AGCTE(mng)/1🧬AGCT/4🃏joker/form(joker)/city_of_hierarchy/def(city_of_hierarchy).md","id":"b40c378864cb8d0f","x":-861,"y":1487,"width":400,"height":400},
+		{"type":"file","file":"🌙amoon()/💭 Theorize/🧬🌏AGCTE(mng)/1🧬AGCT/4🃏joker/def/🃏joker.md","id":"d730bf8a3b0c0c32","x":-2063,"y":639,"width":417,"height":332,"color":"6"},
+		{"type":"file","file":"🌙amoon()/💭 Theorize/🧬🌏AGCTE(mng)/1🧬AGCT/5🌀workflow/def/by_t(player).md","id":"5697e5c2177c8419","x":-1321,"y":-1524,"width":2541,"height":390},
+		{"type":"file","file":"🌙amoon()/💭 Theorize/🧬🌏AGCTE(mng)/1🧬AGCT/5🌀workflow/def/by_ts(player).md","id":"d720bedb08a7fb68","x":-1321,"y":-1068,"width":2541,"height":334},
+		{"type":"file","file":"🌙amoon()/💭 Theorize/🧬🌏AGCTE(mng)/1🧬AGCT/1🏭generate/type/by_s(generator).md","id":"5dc6e834c994b92f","x":-1321,"y":250,"width":1461,"height":410},
+		{"type":"file","file":"🌙amoon()/💭 Theorize/🧬🌏AGCTE(mng)/1🧬AGCT/2🎥infer/def/by_s(estimator).md","id":"233c9ecde2c7f1d2","x":-3807,"y":1487,"width":553,"height":400},
+		{"type":"file","file":"🌙amoon()/💭 Theorize/🧬🌏AGCTE(mng)/1🧬AGCT/3🌲inf(gen)/def/table(inf(gen)).md","id":"46829cde31eedbce","x":-1321,"y":-251,"width":1461,"height":443},
+		{"type":"file","file":"🌙amoon()/💭 Theorize/🧬🌏AGCTE(mng)/1🧬AGCT/4🃏joker/def/🗺️diagram(map_sims_stats).md","id":"39f70d6a766ca8e7","x":-3397,"y":2000,"width":1683,"height":817}
+	],
+	"edges":[
+		{"id":"f5f86562006d9154","fromNode":"5d747eed9dde09c2","fromSide":"right","toNode":"5697e5c2177c8419","toSide":"left"},
+		{"id":"5689aa4f51d09238","fromNode":"5d747eed9dde09c2","fromSide":"right","toNode":"d720bedb08a7fb68","toSide":"left"},
+		{"id":"122fd856ab558bd6","fromNode":"659dab04a52490fd","fromSide":"right","toNode":"d730bf8a3b0c0c32","toSide":"left"},
+		{"id":"6ee6fc30f0d8051d","fromNode":"d8bfa9ed2dc9e73f","fromSide":"right","toNode":"d730bf8a3b0c0c32","toSide":"left"},
+		{"id":"dfd79b95b80ba8a0","fromNode":"659dab04a52490fd","fromSide":"right","toNode":"8c321074e967ffad","toSide":"left","label":"merg"},
+		{"id":"d5a0bb039ebca734","fromNode":"d8bfa9ed2dc9e73f","fromSide":"right","toNode":"8c321074e967ffad","toSide":"left","label":"merg"},
+		{"id":"1a229a8c1bf9ac13","fromNode":"0fa9f6ab4d67fc55","fromSide":"right","toNode":"5d747eed9dde09c2","toSide":"left","label":"ML connection"},
+		{"id":"1e336a3d941ab4fd","fromNode":"5d747eed9dde09c2","fromSide":"bottom","toNode":"8c321074e967ffad","toSide":"top","label":"is a"},
+		{"id":"8904e42d9cc8f1f6","fromNode":"5d747eed9dde09c2","fromSide":"bottom","toNode":"d730bf8a3b0c0c32","toSide":"top","label":"fight"},
+		{"id":"6e7d1d68095bc109","fromNode":"39f70d6a766ca8e7","fromSide":"top","toNode":"8c321074e967ffad","toSide":"bottom"},
+		{"id":"aad4e5fdec1e5a76","fromNode":"0fa9f6ab4d67fc55","fromSide":"top","toNode":"48340556ab0c289f","toSide":"bottom","label":"sd-connection"},
+		{"id":"fc38ebcd7582d9e5","fromNode":"8c321074e967ffad","fromSide":"right","toNode":"46829cde31eedbce","toSide":"left"},
+		{"id":"a5c7566c8dc5b879","fromNode":"d8bfa9ed2dc9e73f","fromSide":"bottom","toNode":"233c9ecde2c7f1d2","toSide":"top"},
+		{"id":"a22f8126a396610a","fromNode":"d730bf8a3b0c0c32","fromSide":"bottom","toNode":"132643c492b999c9","toSide":"top"},
+		{"id":"4a1f46d1fdd7885b","fromNode":"d730bf8a3b0c0c32","fromSide":"bottom","toNode":"5ed4b6666396c92a","toSide":"top"},
+		{"id":"a0fbd450172eefb2","fromNode":"d730bf8a3b0c0c32","fromSide":"bottom","toNode":"b3c9fa06ac421947","toSide":"top"},
+		{"id":"b7fa331e092e4926","fromNode":"d730bf8a3b0c0c32","fromSide":"bottom","toNode":"b40c378864cb8d0f","toSide":"top"}
+	]
+}

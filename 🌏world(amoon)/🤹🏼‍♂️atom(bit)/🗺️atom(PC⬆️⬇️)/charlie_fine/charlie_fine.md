@@ -2,6 +2,10 @@ ed anderson's perception of charlie (is known for): quality, game theory, flexib
 
 
 ---
+2025-03-09
+gave feedback that introduction includes construction of the paper so why don't i compare the introduction only. updated model to methodology and [[⚙️(🗄️📝)]]
+
+[[📜zellweger_ent_sci_pragmatist]]
 Aug.
 fine (). laud (sourced cases), sergey lit rev
 alphabetical is signal / medicine: first and last person ()

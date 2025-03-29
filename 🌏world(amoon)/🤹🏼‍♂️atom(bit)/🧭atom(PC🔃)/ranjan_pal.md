@@ -1,4 +1,7 @@
-research on cyber risk/resilience management through CAMS using the interplay of computer science and decision science.
+2023
+research on cyber risk/resilience management through CAMS using the interplay of computer science and decision science. 
+
+emphasized vision (in cv) and quality
 
 - who should i meet in mit
 - what is appealing to professors?

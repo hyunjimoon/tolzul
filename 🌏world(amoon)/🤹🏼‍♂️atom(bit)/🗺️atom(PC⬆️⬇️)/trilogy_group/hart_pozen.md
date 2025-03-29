@@ -1,3 +1,51 @@
+[[⚙️(🗄️📝)]]
+
+
+2025-03-06
+[[hart__angie_paper writing_otter_ai (1).txt]]
+1. how to implement and evaluate three frames 
+2. literature for learn vs earn - why was it surprising to you?
+
+gave 20hr lecture in zurich 
+
+communicate it, so worthwile - no choice but to 
+
+bandit model (sutton; random initial two arms; homogenous; when my belief falls below second (endogensously))
+
+modularize ( simon's watch maker)
+
+condition under which his approach is more useful 
+
+one or two arms (one inside vs outside options)- pull the profits and losses (pull the ); one unit 
+
+pre-entry (post-entry)
+
+abstract (key)
+
+key idea and expands on that - hierarchy 
+
+subelements, first paragraph of the introduction (rest of the introduction is)
+
+contribution
+
+search the four paragraph - 
+
+you thought X but I'm Y.
+surprise vs novelty
+
+SURPRISE + FACE VALIDITY (buy surprise) + IMPORTANT 
+
+surprise + 
+
+two or three reasons - navigation can provide insight (can't )
+
+audience of vericie of triange (interesting; )
+five sentence (lower cost )
+bandit model 
+
+- bayesian entrepreneurship
+
+
 2024-11-16
 explaining heterogeneity
 
