@@ -1,15 +1,4 @@
-                // Draw motion indicators to show planet movement more clearly
-                // Add directional motion blur
-                const motionTrailLength = 20 * scale;
-                const motionTrailWidth = 15 * scale;
-                const backwardAngle = domainAngle - Math.PI/7;
-                
-                // Create a motion trail gradient
-                const motionGradient = ctx.createLinearGradient(
-                    domainX, domainY,
-                    domainX - motionTrailLength * Math.cos(domainAngle),
-                    domainY - motionTrailLength * Math.sin(domainAngle)
-         <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -86,8 +75,8 @@
             stars.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                size: Math.random() * 1.8 + 0.3,
-                brightness: Math.random() * 0.5 + 0.3,
+                size: Math.random() * 2.5 + 0.6, // Increased star size
+                brightness: Math.random() * 0.6 + 0.4, // Increased brightness
                 pulseFactor: pulseFactor,
                 pulseSpeed: pulseSpeed,
                 pulseOffset: Math.random() * Math.PI * 2
@@ -105,9 +94,9 @@
         
         // Additional elements - now assigned to specific planets
         const additionalElements = [
-            { name: 'Academia', planet: 0, angle: 0, speed: 0.03, distance: 50, x: 0, y: 0, size: 12, color: '#16a34a80' }, // Academia orbits Theorize
-            { name: 'Industry', planet: 1, angle: 0, speed: 0.04, distance: 50, x: 0, y: 0, size: 12, color: '#ea580c80' }, // Industry orbits Productize
-            { name: 'Community', planet: 2, angle: 0, speed: 0.05, distance: 50, x: 0, y: 0, size: 12, color: '#7c3aed80' }  // Community orbits Evaluate
+            { name: 'Academia', planet: 0, angle: 0, speed: 0.03, distance: 50, x: 0, y: 0, size: 18, color: '#16a34a80' }, // Academia orbits Theorize - increased size
+            { name: 'Industry', planet: 1, angle: 0, speed: 0.04, distance: 60, x: 0, y: 0, size: 18, color: '#ea580c80' }, // Industry orbits Productize - increased size
+            { name: 'Community', planet: 2, angle: 0, speed: 0.05, distance: 50, x: 0, y: 0, size: 18, color: '#7c3aed80' }  // Community orbits Evaluate - increased size
         ];
         
         // Moon trail and state for astrophysically-inspired motion
@@ -130,8 +119,13 @@
             const centerX = canvas.width / 2;
             const centerY = canvas.height / 2;
             
-            // Scale based on canvas size
-            const scale = Math.min(canvas.width, canvas.height) / 800;
+            // Scale based on canvas size - Increased base scale for mobile
+            let scale = Math.min(canvas.width, canvas.height) / 700;
+            
+            // Ensure minimum scale for small screens
+            if (window.innerWidth < 500) {
+                scale = Math.max(scale, 0.7); // Minimum scale for mobile
+            }
             
             // Draw stars with twinkling effect
             stars.forEach(star => {
@@ -162,43 +156,44 @@
             // Draw center text "Living Ergodic Life" (replacing the star) - improved legibility
             const centerTextGlow = ctx.createRadialGradient(
                 centerX, centerY, 0,
-                centerX, centerY, 80 * scale
+                centerX, centerY, 90 * scale // Increased glow size
             );
-            centerTextGlow.addColorStop(0, 'rgba(255, 255, 255, 0.25)');
+            centerTextGlow.addColorStop(0, 'rgba(255, 255, 255, 0.3)');
             centerTextGlow.addColorStop(1, 'rgba(255, 255, 255, 0)');
             
             // Create a more visible background for the text
             ctx.beginPath();
-            ctx.arc(centerX, centerY, 65 * scale, 0, Math.PI * 2);
+            ctx.arc(centerX, centerY, 75 * scale, 0, Math.PI * 2); // Increased background size
             ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
             ctx.fill();
             
             ctx.beginPath();
-            ctx.arc(centerX, centerY, 60 * scale, 0, Math.PI * 2);
+            ctx.arc(centerX, centerY, 70 * scale, 0, Math.PI * 2); // Increased core size
             ctx.fillStyle = centerTextGlow;
             ctx.fill();
             
-            // Draw text with better contrast
-            ctx.font = `bold ${18 * scale}px 'Segoe UI', Arial, sans-serif`;
+            // Draw text with better contrast and larger font
+            ctx.font = `bold ${22 * scale}px 'Segoe UI', Arial, sans-serif`; // Increased font size
             ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            ctx.fillText('LIVING', centerX, centerY - 12 * scale);
+            ctx.fillText('LIVING', centerX, centerY - 14 * scale);
             ctx.fillText('ERGODIC', centerX, centerY + 0 * scale);
-            ctx.fillText('LIFE', centerX, centerY + 12 * scale);
+            ctx.fillText('LIFE', centerX, centerY + 14 * scale);
             
             // Add a subtle stroke to the text for better legibility
-            ctx.lineWidth = 0.7;
+            ctx.lineWidth = 0.8;
             ctx.strokeStyle = 'rgba(0, 0, 0, 0.5)';
-            ctx.strokeText('LIVING', centerX, centerY - 12 * scale);
+            ctx.strokeText('LIVING', centerX, centerY - 14 * scale);
             ctx.strokeText('ERGODIC', centerX, centerY + 0 * scale);
-            ctx.strokeText('LIFE', centerX, centerY + 12 * scale);
+            ctx.strokeText('LIFE', centerX, centerY + 14 * scale);
             
-            // Define orbit radii - Theorize (outer), Productize (middle), Evaluate (inner)
+            // Define orbit radii - adjusted for better visibility on mobile
+            // Make orbits slightly closer together to fit better on small screens
             const orbitRadii = [
-                230 * scale, // Theorize - outer orbit
-                170 * scale, // Productize - middle orbit
-                110 * scale  // Evaluate - inner orbit
+                210 * scale, // Theorize - outer orbit (slightly reduced)
+                155 * scale, // Productize - middle orbit (slightly reduced)
+                100 * scale  // Evaluate - inner orbit (slightly reduced)
             ];
             
             // Draw orbit paths for knowledge domains with more pronounced appearance
@@ -214,20 +209,20 @@
                     centerX - orbitRadius, centerY,
                     centerX + orbitRadius, centerY
                 );
-                orbitGradient.addColorStop(0, `rgba(${hexToRgb(domain.color)}, 0.1)`);
-                orbitGradient.addColorStop(0.5, `rgba(${hexToRgb(domain.color)}, 0.3)`);
-                orbitGradient.addColorStop(1, `rgba(${hexToRgb(domain.color)}, 0.1)`);
+                orbitGradient.addColorStop(0, `rgba(${hexToRgb(domain.color)}, 0.15)`); // Increased visibility
+                orbitGradient.addColorStop(0.5, `rgba(${hexToRgb(domain.color)}, 0.4)`); // Increased visibility
+                orbitGradient.addColorStop(1, `rgba(${hexToRgb(domain.color)}, 0.15)`); // Increased visibility
                 
                 ctx.strokeStyle = orbitGradient;
-                ctx.lineWidth = 2 * scale;
+                ctx.lineWidth = 2.5 * scale; // Increased line width
                 ctx.stroke();
                 
                 // Add subtle dashed secondary line for depth
                 ctx.beginPath();
                 ctx.arc(centerX, centerY, orbitRadius + 1 * scale, 0, Math.PI * 2);
-                ctx.strokeStyle = `rgba(${hexToRgb(domain.color)}, 0.15)`;
+                ctx.strokeStyle = `rgba(${hexToRgb(domain.color)}, 0.2)`; // Increased visibility
                 ctx.setLineDash([5, 8]);
-                ctx.lineWidth = 1 * scale;
+                ctx.lineWidth = 1.2 * scale; // Increased line width
                 ctx.stroke();
                 ctx.setLineDash([]);
             });
@@ -253,16 +248,16 @@
                 ctx.beginPath();
                 ctx.moveTo(centerX, centerY);
                 ctx.lineTo(domainX, domainY);
-                ctx.strokeStyle = `rgba(${hexToRgb(domain.color)}, 0.15)`;
-                ctx.lineWidth = 0.5;
+                ctx.strokeStyle = `rgba(${hexToRgb(domain.color)}, 0.2)`; // Increased visibility
+                ctx.lineWidth = 0.8; // Increased width
                 ctx.stroke();
                 
-                // Draw domain (medium circle)
-                const domainSize = 35 * scale; // Slightly larger for better visibility
+                // Draw domain (medium circle) - INCREASED SIZE for mobile
+                const domainSize = 45 * scale; // Significantly larger for better visibility
                 
                 // Add motion indicators to show planets are revolving
                 const motionIndicatorAngle = domainAngle + Math.PI/2; // Perpendicular to orbit
-                const motionLength = 12 * scale;
+                const motionLength = 15 * scale; // Increased length
                 const motionX = domainX + Math.cos(motionIndicatorAngle) * motionLength;
                 const motionY = domainY + Math.sin(motionIndicatorAngle) * motionLength;
                 
@@ -274,24 +269,24 @@
                     domainX, domainY,
                     motionX, motionY
                 );
-                motionGradient.addColorStop(0, `rgba(${hexToRgb(domain.color)}, 0.7)`);
+                motionGradient.addColorStop(0, `rgba(${hexToRgb(domain.color)}, 0.8)`); // Increased visibility
                 motionGradient.addColorStop(1, `rgba(${hexToRgb(domain.color)}, 0)`);
                 ctx.strokeStyle = motionGradient;
-                ctx.lineWidth = 3 * scale;
+                ctx.lineWidth = 4 * scale; // Increased width
                 ctx.stroke();
                 
                 // Draw domain glow
                 const gradient = ctx.createRadialGradient(
                     domainX, domainY, 0,
-                    domainX, domainY, domainSize * 2
+                    domainX, domainY, domainSize * 2.2 // Increased glow
                 );
                 gradient.addColorStop(0, domain.color);
                 gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
                 
                 ctx.beginPath();
-                ctx.arc(domainX, domainY, domainSize * 1.5, 0, Math.PI * 2);
+                ctx.arc(domainX, domainY, domainSize * 1.7, 0, Math.PI * 2); // Increased size
                 ctx.fillStyle = gradient;
-                ctx.globalAlpha = 0.3;
+                ctx.globalAlpha = 0.4; // Increased opacity
                 ctx.fill();
                 ctx.globalAlpha = 1.0;
                 
@@ -301,8 +296,8 @@
                 ctx.fillStyle = domain.color;
                 ctx.fill();
                 
-                // Draw domain label
-                ctx.font = `bold ${16 * scale}px 'Segoe UI', Arial, sans-serif`;
+                // Draw domain label - LARGER FONT
+                ctx.font = `bold ${20 * scale}px 'Segoe UI', Arial, sans-serif`; // Increased font size
                 ctx.fillStyle = '#ffffff';
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
@@ -328,17 +323,17 @@
                 ctx.moveTo(parentX, parentY);
                 ctx.lineTo(element.x, element.y);
                 ctx.strokeStyle = element.color;
-                ctx.lineWidth = 1 * scale;
+                ctx.lineWidth = 1.5 * scale; // Increased width
                 ctx.stroke();
                 
-                // Draw element
+                // Draw element - INCREASED SIZE
                 ctx.beginPath();
                 ctx.arc(element.x, element.y, element.size * scale, 0, Math.PI * 2);
                 ctx.fillStyle = element.color;
                 ctx.fill();
                 
-                // Draw element label
-                ctx.font = `${12 * scale}px 'Segoe UI', Arial, sans-serif`;
+                // Draw element label - INCREASED SIZE
+                ctx.font = `${15 * scale}px 'Segoe UI', Arial, sans-serif`; // Increased font size
                 ctx.fillStyle = '#ffffff';
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
@@ -364,7 +359,7 @@
             
             // Calculate moon position using parametric equations inspired by orbital mechanics
             // This creates a path that will sometimes approach each planet at different times
-            const r = 80 * scale; // Base orbital radius for moon
+            const r = 85 * scale; // Base orbital radius for moon - slightly increased
             
             // Calculate main oscillation components (inspired by perturbation theory in celestial mechanics)
             const x1 = Math.sin(moonTime * freq1) * Math.cos(moonTime * freq2) * r * 1.3;
@@ -415,39 +410,39 @@
                 ctx.moveTo(moonX, moonY);
                 ctx.lineTo(domain.orbitCenter.x, domain.orbitCenter.y);
                 ctx.strokeStyle = `rgba(${hexToRgb(domain.color)}, ${opacity})`;
-                ctx.lineWidth = 0.7;
+                ctx.lineWidth = 1; // Increased width
                 ctx.stroke();
             });
             
-            // Draw moon as a crescent emoji (🌙)
-            const moonSize = 24 * scale;
+            // Draw moon as a crescent emoji (🌙) - SIGNIFICANTLY LARGER
+            const moonSize = 32 * scale; // Increased size for better visibility
             
             // Create subtle glow around moon
             const moonGlow = ctx.createRadialGradient(
                 moonX, moonY, 0,
-                moonX, moonY, moonSize * 2
+                moonX, moonY, moonSize * 2.2 // Increased glow
             );
-            moonGlow.addColorStop(0, 'rgba(255, 255, 255, 0.2)');
+            moonGlow.addColorStop(0, 'rgba(255, 255, 255, 0.3)'); // Increased visibility
             moonGlow.addColorStop(1, 'rgba(255, 255, 255, 0)');
             
             ctx.beginPath();
-            ctx.arc(moonX, moonY, moonSize * 1.5, 0, Math.PI * 2);
+            ctx.arc(moonX, moonY, moonSize * 1.7, 0, Math.PI * 2); // Increased size
             ctx.fillStyle = moonGlow;
             ctx.fill();
             
-            // Use emoji style crescent moon
-            ctx.font = `${moonSize * 2}px Arial`;
+            // Use emoji style crescent moon - LARGER
+            ctx.font = `${moonSize * 2.5}px Arial`; // Increased font size
             ctx.fillStyle = '#ffffff';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
             ctx.fillText('🌙', moonX, moonY);
             
-            // Draw Angie Moon label near the moon
-            ctx.font = `${12 * scale}px 'Segoe UI', Arial, sans-serif`;
+            // Draw Angie Moon label near the moon - LARGER
+            ctx.font = `${15 * scale}px 'Segoe UI', Arial, sans-serif`; // Increased font size
             ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            ctx.fillText('Angie Moon', moonX, moonY + moonSize + 12 * scale);
+            ctx.fillText('Angie Moon', moonX, moonY + moonSize + 15 * scale);
             
             // Draw a trail behind the moon
             drawMoonTrail(moonX, moonY, scale);
@@ -483,10 +478,10 @@
                     moonTrail[moonTrail.length-1].x, moonTrail[moonTrail.length-1].y
                 );
                 gradient.addColorStop(0, 'rgba(255, 255, 255, 0)');
-                gradient.addColorStop(1, 'rgba(255, 255, 255, 0.2)');
+                gradient.addColorStop(1, 'rgba(255, 255, 255, 0.3)'); // Increased visibility
                 
                 ctx.strokeStyle = gradient;
-                ctx.lineWidth = 2 * scale;
+                ctx.lineWidth = 3 * scale; // Increased width
                 ctx.stroke();
             }
         }
