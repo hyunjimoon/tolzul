@@ -8,6 +8,19 @@ todo
 1. culture and reputation that are carried over are similar to process
 2. tesla roadster vs S (⚙️M2I then 📦M2I)
 
+2025-04-15
+opportunity to pitch my theory to j straubel https://web.cvent.com/event/87df9b30-eb21-4af6-81ef-40211d19666a/websitePage:e5662a6a-4a0a-4300-a602-dcfad8cc9a2b?environment=P2
+
+2025-04-06
+![[tesla_betterplace.png|200]]
+2025-04-04
+
+# Tesla vs. Better Place: Comparison of Probabilistic Models
+
+using [modeling entrep4ops with markov chains cld](https://claude.ai/chat/62fb7470-2b95-4bab-8df9-60329a8ea677)
+![[Pasted image 20250404083022.png|300]]
+![[Pasted image 20250404081950.png|300]]
+
 
 2025-03-09
 

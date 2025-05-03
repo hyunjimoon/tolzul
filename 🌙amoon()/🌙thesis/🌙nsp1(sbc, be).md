@@ -1,3 +1,5 @@
+process: [[visr🗄️(📝)]], [[visr⚙️(🗄️(📝))]]
+
 2025-03-12
 
 I need your input on the viability of pairing **NEED** and **SOLUTION 1,2** and using that as publication. Two papers that formed my loose prior on its venue are attached.

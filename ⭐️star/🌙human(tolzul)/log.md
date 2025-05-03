@@ -8,7 +8,7 @@
 assumption1: life's goal is increasing usability of oneself
 goal reaching tactics: 
 1. detect need-solution pair of homogenous agent (group of people or ai agent or their combination) that's able to provide fast enough feedback on the desirability of my product
-2. based on the desirability signal from 1, decompose production function into capabilities that produce the function. this function of functions can be thought of organization and scaling this requires expertise in how to professionalize, evaluate, processify, segment, collaborate, automate, platformize, capitalize,  acculturate,  replicate (peps.capcar). whether i own at least on professionalized expertise is necessary condition to choose type of producer - for me it's [[🗺️educate(ops4innov)]], [[def(nextopt)]], [[🌏world(amoon)/🤹🏼‍♂️atom(bit)/🌙human(tolzul)]] to start with
+2. based on the desirability signal from 1, decompose production function into capabilities that produce the function. this function of functions can be thought of organization and scaling this requires expertise in how to professionalize, evaluate, processify, segment, collaborate, automate, platformize, capitalize,  acculturate,  replicate (peps.capcar). whether i own at least on professionalized expertise is necessary condition to choose type of producer - for me it's [[🗺️explain(entrepreneuring)]], [[def(nextopt)]], [[🌏world(amoon)/🤹🏼‍♂️atom(bit)/🌙human(tolzul)]] to start with
 
 assumption2: i'm an engineer
 from [[교양있는 엔지니어 감상문]]

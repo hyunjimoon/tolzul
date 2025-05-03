@@ -1,4 +1,7 @@
-synthesize([[🗄️🧠scott]], [[🗄️charlie]]), [[📜stern24_bayesent]]
+synthesize([[🗄️🧠scott]], [[🗄️🧠charlie]]), [[📜stern24_bayesent]]
+
+2025-04-01
+
 
 2025-02-14
 - Every era has different classifications of stick figure and abstraction (e.g. )

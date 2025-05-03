@@ -1,30 +1,22 @@
+I'm a Ph.D. at MIT studying entrepreneurship and mobility with [Charles Fine](https://www.charles-fine.com/),  [Scott Stern](https://www.scott-stern.com/), [Vikash Mansinghka](http://probcomp.csail.mit.edu/principal-investigator/). My past and future in [resume](https://www.dropbox.com/scl/fi/fa14fcd5ihdq014k6v4h0/Angie-Moon-Resume.pdf?rlkey=y7eerk8e6yx028es2rq7vjmid&dl=0). 
+
+Presently, I'm exploring how probabilistic reasoning drives action across three orbits around my star **LIVING ERGODIC LIFE** – the gravitational center unifying my research on theorizing bayesian and evolutionary behavior in entrepreneurship, productizing theory as entrepreneuring style using probabilistic program, and evaluating the productized styel as entrepreneur.
+
+**[[💭theorize(💸)]]**: In the outer orbit, I bridge Bayesian and evolutionary entrepreneurship through probabilistic programming. My work on [Simulation-Based Calibration Checking for Bayesian Computation](https://hyunjimoon.github.io/SBC/) constructs new meaning for simulation-based experiments, helping evaluate [[16 styles of entrepreneur]].
+
+**[[📐produce(💭)]]**: In the middle orbit, I transform theories into computational tools assessing entrepreneurial quality. [[vision-of-my-startup-nextopt]] emerged from bridging theory and practice. Pain ingrained in me as a founder, fuels my theorizing act.
+
+**[[def(💸Evaluate)]]**: In the closest orbit, I embody living an ergodic life through rational assessment. I absorbed modeling philosophies of computational Bayesian modelers, stochastic modelers, system dynamics modelers, discrete choice modelers'. I feel alive when I expose these embodied modeling philosophies to students who evaluate their value.
+
+The crescent moon (🌙) traversing these orbits represents my journey—sometimes closer to theory, sometimes application, always guided by meaningful evaluation.
+
+<iframe src="https://html-preview.github.io/?url=https://github.com/hyunjimoon/tolzul/blob/master/%E2%AD%90%EF%B8%8Fstar/amoon-revolution.html" width="100%" height="500px"></iframe>
+
+
+---
+
+    
+
 
 
 ![[amoon.png|center|100]]
-
-Are you looking for Angie Moon's snapshot? You're in the right page!
-
-I'm currently a Ph.D. at MIT, majoring operations and innovation management, advised by  [Charles Fine](https://www.charles-fine.com/). This is my [resume](https://www.dropbox.com/scl/fi/6t0kx5e2ooggahr98va37/Angie_Moon_resume.pdf?rlkey=sqgkvokf2sunj5fash96asnto&dl=0).
-
-My  vision is to bridge Bayesian and evolutionary entrepreneurship with probabilistic program.
-
-Angie agent and the world
-	- desire: living ergodic life by making my operations and innovation management theory usable by establishing [[👓synthesize(ops4innov)]]
-	-  [[🌙amoon()]] shows Bayes is my religion, simulation forms me. 
-	- [[🌏world(amoon)]] archives the world around me
-
-Angie agent's language 
-	- startup ([[def(nextopt)]] CEO)
-	- education community (textbook Bayesian Data Analysis translators)
-	- open-source ([Stan](https://mc-stan.org/), [Arviz](https://arviz-devs.github.io/), [SBC](https://hyunjimoon.github.io/SBC/)). 
-
-
-![[Pasted image 20240406152353.png|300]]
-
-
-- I'm addicted to visual representation and below is mural of how my research is evolving
-
-2023
-![[Pasted image 20231226150937.png|100]]
-2022
-![[Pasted image 20230805203758.png|100]]

@@ -5,6 +5,16 @@ a goal i can meet only at the moment i die
 3. check whether given ➡️IN, applying ⚙️PROCESS gives contents with two conditions that codifies reversibility. if one of the conditions doesn't hold, update the ⚙️PROCESS. iterate until it holds. 1. ⚙️PROCESS ( ➡️IN) =⬅️OUT 2. inverse of ⚙️PROCESS(⬅️OUT ) = ➡️IN 3. ⬅️OUT subsumes information spanned by the paper.
 
 ---
+2025-03-29
+
+|Internally Deep (Self) - RSTU|Signs to Look For|Externally Quick (Others) - ABCD|Signs to Look For|
+|---|---|---|---|
+|**R**obust 🧩: Connects ideas and spots patterns easily|Asks thought-provoking questions|**A**cute ⚡: Makes smart, quick decisions|Acts decisively under pressure|
+|**S**imulation-based 🧭: Plans strategically through mental modeling|Shows organized appearance and thinking|**B**right 💡: Creative with playful spirit|Has lively eyes and smile|
+|**T**ruthful 🔍: Updates beliefs with new information|Willing to change their mind|**C**aring 💗: Values others equally to self|Shows thoughtfulness in actions|
+|**U**pward 📈: Growing emotionally and financially secure|Can afford business class travel 💺|**D**evelopmental 🙏: Humble and eager to learn|Engages deeply in shared interests|
+
+2025-02-26
 my motto is "Ergodic life: transforming time into meaningful paths"
 
 1. Seeking diverse experiences rather than repeating the same patterns

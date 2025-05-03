@@ -1,0 +1,3 @@
+my phd thesis is about operations and innovation management for mobility innovation ecosystem. i'm curious how mobility ventures' operations such as culturalization, collaboration, capitalization, segmentation are affected by the evaluation of local state or government. for instance, evaluation measure that focus only on technological performance often fail to incentivize operational part. so cost per mile is better evaluation target.
+
+[[🚕taxie]]

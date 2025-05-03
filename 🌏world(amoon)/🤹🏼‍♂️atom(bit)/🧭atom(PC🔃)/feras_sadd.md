@@ -1,1 +1,0 @@
-Something that cannot be done with parameteric model can be done with nonparameteric (new idea search!)

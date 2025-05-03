@@ -1,5 +1,5 @@
 Table comparing direction and speed in different industries and time
-todo: nail, scale, sail; synthesize from [[🗄️charlie]]
+todo: nail, scale, sail; synthesize from [[🗄️🧠charlie]]
 
 | Parameter Pair | Relationship                                                                                                                        | Industry Effect                                                           |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
