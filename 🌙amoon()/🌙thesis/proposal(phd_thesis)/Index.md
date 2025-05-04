@@ -6,11 +6,11 @@ longform:
   sceneFolder: /
   scenes:
     - 🗄️table_of_contents
-    - manuscript1
-    - manuscript23
-    - manuscript45
-    - manuscript67
     - IV Conclusion Integration and Evaluation
     - 🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash, moshe, jinhua
-  ignoredFiles: []
+  ignoredFiles:
+    - eval(charlie, manuscript)
+    - eval(manuscript, charlie2)
+    - exchanging influence with investment
+    - 🏭venture_studio
 ---

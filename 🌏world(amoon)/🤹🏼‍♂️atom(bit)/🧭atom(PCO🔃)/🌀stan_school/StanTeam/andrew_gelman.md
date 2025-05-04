@@ -20,3 +20,6 @@ excerpts from his writing
 
 2021-05-31
 Hi, Hyunji.  I don't really know enough about Operations Research at either school to give an informed opinion.  I think operations research is usually more theoretical than statistics, but there should be some flexibility on what you can work on.  Perhaps you can do some innovative synthesis of Bayesian decision analysis with machine learning (generative adversarial networks, etc.).  It is my impression that for statistics and information science, Columbia is better than Yale.  And Columbia has a better statsitics department.  So I recommend Columbia.  I do not think I can be your primary advisor because I am not in the engineering school, but we can work together and I can probably be on your committee.
+
+
+- 🛝[playroom slide](https://docs.google.com/presentation/d/1EftnfRgzkmxMerBzk7L-pYIYwpVjjYkZpL5Yar0pN2U/edit?slide=id.g10c3c90caca_0_13#slide=id.g10c3c90caca_0_13)

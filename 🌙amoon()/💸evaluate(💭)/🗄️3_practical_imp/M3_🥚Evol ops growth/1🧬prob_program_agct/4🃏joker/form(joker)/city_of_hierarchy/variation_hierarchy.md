@@ -8,7 +8,6 @@ What we can't fully know, that is to say much about everything, can have prior. 
 |                | driving noise     | disturbance to inventory stock from randomness in sales or "unmodeled uncertainty" effects like shrinkage (theft & spoilage) #tfq |
 | Prior          | parameter         | loc, scale of belief about price elasticity                                                                                       |
 |                | hyper parmeter    | plausible variety in covid transmission rates in different locations, where model has location detail #tfq                        |
-|                |                   |                                                                                                                                   |
 
 ## Variation (a.k.a. Uncertainty)
 As the main part of calibration is inference, our goal is to formulate dynamic model into Bayesian statistical model.
@@ -59,3 +58,4 @@ plus 4 estimated params (:= external to loop)
 
 its equation can be extended to as follows:
 - ![[SpaceTimeHier.excalidraw.svg]]
+[[🌙amoon()/💸evaluate(💭)/🗄️3_practical_imp/🟩moshe_vikash/💻simulation-based calibraton/Does nuisance parameter inconsistency justify lenient calibration of hyperparameter in hierarchical model_|Does nuisance parameter inconsistency justify lenient calibration of hyperparameter in hierarchical model_]]

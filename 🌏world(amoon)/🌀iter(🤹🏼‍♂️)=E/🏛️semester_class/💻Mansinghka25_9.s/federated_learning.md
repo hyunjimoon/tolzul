@@ -1,4 +1,4 @@
-solution for [[⏰👥III Expectation Propagation to Lower Operational Multi-Stakeholder Complexities]]
+solution for [[III.🤜👥Expectation Propagation to Lower Operational Multi-Stakeholder Complexities]]
 - andrew's [[expectation-propagation]]
 - 
 ## Question 🔐
