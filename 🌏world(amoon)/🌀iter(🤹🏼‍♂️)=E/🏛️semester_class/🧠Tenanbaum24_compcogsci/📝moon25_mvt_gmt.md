@@ -4,11 +4,22 @@
 
 - [[📜arora25_be_user]]
 
+
+2025-05-04
+
+| Concept                        | Dual Action Rule (Upper)                             | Expected Utility Equation (Lower)                                          | Intuitive Meaning                                |
+| ------------------------------ | ---------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------ |
+| ✅ **Decision to act**          | $a_j^* = 1$ if gain > cost                           | $\Delta EU(n) > 0$                                                         | Should I test this or not?                       |
+| 🟣 **Stakeholder importance**  | $\textcolor{purple}{w_j}$                            | $w_j$ (implicit in spillover weights or test priority)                     | How much do I care about stakeholder $j$?        |
+| 🔵 **Expected benefit**        | $\lambda_j + \beta_j^T \mu_j(1) - \log Z_j(\beta_j)$ | $\left[\frac{n\alpha}{\alpha + n}\right](\mu - \phi_{\text{true}})$        | How much more confident will I be after testing? |
+| 🔻 **Entropy gain**            | Appears in dual as log-probability improvement       | Appears as reduced uncertainty via $\mu - \phi_{\text{true}}$              | Belief update from test                          |
+| 🔺 **Likelihood / confidence** | Exponential family terms $\lambda_j, \beta_j, Z_j$   | Prior strength $\alpha$ and updated belief $\mu$                           | How strongly do I believe this test will help?   |
+| 🔴 **Test cost**               | $\gamma c_j$                                         | $n c^y$                                                                    | How much will this test cost (per try)?          |
+| 🟠 **Shadow price of budget**  | $\gamma$                                             | Not explicit, but implicitly captured in when $\Delta EU(n)$ drops below 0 | How tight is my budget?                          |
+| 🟣 **Outside option**          | Not shown explicitly (action vs. no action)          | $+ c^\phi$                                                                 | What do I get if I don’t test at all?            |
+
 2025-04-17
 synthesis with [[🗄️🧠scott]], architectural and disruptor which competes to deliver or discover value for "new" users are  go to market. <> ip and value chain which collaborate to deliver or discover value for existing users are market viability test
-
-
-
 
 # Hierarchical Bayesian Models as Resource-Rational Experiment Design: Analysis
 
