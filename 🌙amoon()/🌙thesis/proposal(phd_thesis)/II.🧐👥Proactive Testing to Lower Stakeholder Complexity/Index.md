@@ -5,11 +5,11 @@ longform:
   workflow: Default Workflow
   sceneFolder: /
   scenes:
-    - 4.🧐👥Individual level of multi-stakeholder complexity problem
-    - 5.1💭Theorize solution(🧐👥)
-    - 5.2📐Produce solution(🧐👥)
-    - 5.3💸Evaluate solution
-    - 5.4📜Related work
-    - II.🧐👥Proactive Testing to Lower Multi-stakeholder Complexity
+    - 2.🔄Individual level of multi-stakeholder coordination problem
+    - 2.1💭Theorize solution(🔄)
+    - 2.2📐Produce solution(🔄)
+    - 2.3💸Evaluate solution(🔄)
+    - 2.4📜Related work(🔄)
+    - II.🔄Multi-Stakeholder Decision Matrices
   ignoredFiles: []
 ---

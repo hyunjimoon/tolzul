@@ -3,6 +3,13 @@ tags:
   - charlie
   - scott
 ---
+2025-05-05
+![[📜Terwiesch09_innov_tourn 2025-05-05-9.svg]]
+%%[[📜Terwiesch09_innov_tourn 2025-05-05-9.md|🖋 Edit in Excalidraw]]%%
+
+
+
+
 2025-04-27
 ## Step 1: Mapping Segway Tasks to (S, A) Language
 

@@ -5,10 +5,10 @@ longform:
   workflow: Default Workflow
   sceneFolder: /
   scenes:
-    - 2.🤜🙋‍♀️Individual level of operational complexity problem
-    - 3.1💭Theorize solution(🤜🙋‍♀️)
-    - 3.2📐Produce solution(🤜🙋‍♀️)
-    - 3.3💸Evaluate solution(🤜🙋‍♀️)
-    - 3.4📜Related work
+    - 1.📽️Individual level of stakeholder perception problem
+    - 1.1💭Theorize solution(📽️)
+    - 1.2📐Produce solution(📽️)
+    - 1.3💸Evaluate solution(📽️)
+    - 1.4📜Related work(📽️)
   ignoredFiles: []
 ---
