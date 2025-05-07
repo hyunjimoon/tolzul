@@ -1,3 +1,168 @@
+Abstract: Entrepreneurs face a critical challenge: making effective decisions under extreme uncertainty with multiple stakeholders and limited resources. Current approaches either oversimplify reality or become mathematically intractable. This thesis introduces STRAP (STRategic Action Prioritization), a framework that bridges this gap by addressing three interconnected challenges: stakeholders perceive ventures differently, stakeholder decisions create circular dependencies, and entrepreneurs must choose experiments wisely with limited resources. STRAP employs inference methods to model stakeholder perspectives and optimization techniques to determine the most effective actions. The framework helps entrepreneurs map stakeholder mental models, break coordination deadlocks, and identify which experiments will yield the most learning per dollar spent. Case study results show that STRAP guides entrepreneurs toward systematically reducing uncertainty while respecting real-world constraints. This research advances both entrepreneurship theory and practice by providing a structured approach to entrepreneurial experimentation that balances mathematical rigor with practical utility.
+
+# STRAP Framework: Revised Thesis Structure
+
+## 1. Introduction
+
+### 1.1 The Entrepreneurial Decision Challenge
+Entrepreneurial decision making is fundamental to human experience, driven by both emotional and practical motivations. At its core, entrepreneurial decision making begins with selective optimism about specific opportunities ([[📜stern24_bayesent]]). This optimism is natural to human experience - as Hyde ([[📜hyde_twister_makes_world]]) notes, without some self-deception, life would be merely "a terrible, useless procedure bracketed by orgasm and putrefaction." The entrepreneurial decision process involves universal cognitive skills: envisioning possibilities, framing reality, applying logic, planning intentionally, and taking action to navigate uncertainty  ([[📜dimo]]). What makes entrepreneurial decision making distinctly human is how it channels our innate drive for cooperation and pro-social motivation into collaborative problem-solving that creates shared value (Tomasello, 2022) .
+
+Beyond human motivations, entrepreneurial decision making offers crucial economic and existential value. Economically, transportation innovations represent massive opportunity—the sector accounts for 3.2% of US GDP with emerging models showing remarkable efficiency gains (ridesharing platforms achieve 30-50% higher utilization than traditional systems) [[📜choe22_transpo_innov_drivers]]. Existentially, transportation's carbon footprint makes entrepreneurial climate solutions imperative for planetary survival—global CO₂ emissions continue rising sharply, with China and developing economies driving significant increases. Yet entrepreneurs tackling these challenges face substantial barriers: high capital requirements, limited intellectual property protection, and extreme uncertainty that traditional decision models fail to address. This creates a critical disconnect between entrepreneurial decision making's potential and its practice, particularly in high-impact domains where multi-stakeholder collaboration is essential. Improving entrepreneurial decision frameworks that integrate belief-driven dynamics could accelerate vital innovations across human, economic, and existential dimensions—making this work both practically urgent and intellectually significant.
+
+Having established entrepreneurial decision making's fundamental importance across human, economic, and existential domains, I must highlight a critical gap: existing entrepreneurial decision models fail practitioners in real-world contexts. My interviews with innovation program leaders reveal that over 80 different organizations and accelerators operate without coherent playbooks or frameworks that integrate multi-stakeholder perspectives and operational variables. This disconnect between theory and practice severely hampers innovation, particularly in mobility ventures which are sits at the intersection between AI, robotics, climate tech where complex stakeholder ecosystems demand sophisticated collaboration models.
+
+
+![[manuscript 2025-05-06-19.svg|center|200]]
+%%[[manuscript 2025-05-06-19.md|🖋 Edit in Excalidraw]]%%
+Fig.1 Entrepreneuring as control process of five agencies (left) and reality fit and tractability by model complexity (right)
+
+
+
+### 1.2 Literature Review: Gaps in Entrepreneurial Decision Frameworks
+Prompt: The introduction should also contain a detailed literature review that explains how your research done to date is related to previous research in the field and what your research will add to the larger body of research.
+
+### 1.3 Research Goals and Societal Impact
+
+The short-term goal of my thesis is to address this urgent need through a three-stage approach: first demonstrating to stakeholders (committee members) the problem's multidimensional significance, then identifying its structural causes, and finally proposing feasible Bayesian solutions that recognize how beliefs shape experimentation and collaboration. My mid-term goal is to implement and evaluate this framework across diverse innovation environments (designX in the U.S., HPI in Germany, SMART Innovation Center in Singapore), measuring success through three key metrics: flexibility in accommodating multiple decision pathways, efficiency in reducing uncertainty per resource invested, and tractability of progress throughout the venture development process.
+
+The long-term goal of this work extends beyond my thesis to establish foundations for solution-oriented social science in entrepreneurial contexts ([[📜watts]]). Drawing inspiration from successful entrepreneurs who execute staged, iterative master plans to achieve transformative impact ([[📜gans20_choose(tech)]] e.g. 1. Build sports car, 2. Use that money to build an affordable car, 3. Use that money to build an even more affordable car, 4. While doing above, also provide zero emission electric power generation options, my master plan is 1. build tool for entrepreneurial decision making), my research strategy focuses on building increasingly sophisticated tools for entrepreneurial decision making. This deliberate sequencing begins with creating targeted frameworks for specific high-stakes domains like climate technology, then systematically expanding their application to broader entrepreneurial challenges. By developing practical decision models that integrate Bayesian inference, integer / linear programming, and computational approaches implemented through probabilistic /dynamic programming, I aim to create tools that enhance decision making in domains characterized by operational uncertainty and multiple stakeholders. This work connects directly to the broader societal need for more effective entrepreneurial approaches to complex global problems, providing a foundation for tackling multifaceted challenges that require coordinated action across diverse stakeholders and uncertain technological landscapes.
+
+![[0.1💭Need Analysis]]
+
+![[0.2📐Solution Design]]
+## 4. Results: Empirical Validation
+Describe specific results, including a careful explanation of the uncertainty. 
+
+### 4.1 Case Study Applications
+
+### 4.2 Validation and Performance Analysis
+
+### 4.3 Uncertainty Assessment and Limitations
+
+## 5. Discussion 
+Compare and contrast the results with other studies, including citations.
+Explain how you have addressed the technical questions and long-term applications mentioned in the methods and introduction.
+
+### 5.1 Theoretical Contributions and Practical Applications
+
+### 5.2 Entrepreneurial Decision-Making as Structured Experimentation
+
+### 5.3 Future Research Directions and Long-Term Vision
+I have several hypotheses to test on model parameters lambda, gamma, state transition matrix. 
+	1. if startup follow bottleneck breaking operations, its $\lambda$ (marginal uncertainty decrease per resource) will decrease e.g. early vs growth stage
+	2. newer industries (green vs traditional material industry) will have higher $\gamma$ (dependency among stakeholders) e.g. EV vs ICE automotive industry, green vs traditional material industry
+	3. state transition matrix will 
+
+2. Institution should provide matroid structure - to ensure green  
+
+
+## Toward Integrated Solutions
+
+This research proposes that entrepreneurial decision models can become usable through three integrated solutions that address these complexity dimensions:
+
+1. **Phase-based learning** to address temporal complexity through modularized approaches that adapt to different venture development stages. This builds on McGrath's (1999) real options approach to entrepreneurship by introducing structured learning checkpoints that make uncertainty reduction measurable and systematic.
+    
+2. **Proactive hypothesis proposal** to address spatial complexity through probabilistic programming that navigates stakeholder interdependencies. This extends the experimental approach advocated by Camuffo et al. (2020) by providing specific mechanisms for prioritizing experiments based on their information value across multiple stakeholders.
+    
+3. **Calibrated federated learning** to address spatio-temporal complexity through entrepreneur-social planner coordination. This novel approach applies concepts from distributed optimization (McMahan et al., 2017) to the entrepreneurial context, allowing for coordination among stakeholders without requiring complete information sharing.
+    
+
+## Urgency of the Work
+
+The absence of realistic, tractable entrepreneurial decision-making models has become increasingly urgent as global challenges demand unprecedented innovation and entrepreneurial approaches. This modeling gap creates several pressing problems:
+First, entrepreneurial education remains largely anecdotal rather than systematically structured, limiting the development of entrepreneurial talent precisely when it is most needed for economic recovery and transformation (Kuratko, 2005).
+Second, policy interventions designed to support entrepreneurship often fail because they lack a coherent theoretical foundation, resulting in wasted resources and missed opportunities for economic development (Audretsch et al., 2015).
+Third, entrepreneurs themselves face unnecessarily high failure rates because they lack decision-making tools that could help navigate complexity, leading to preventable venture failures and personal hardship (Shane, 2008).
+Fourth, investors and resource providers struggle to differentiate between promising and problematic ventures, resulting in both over-investment in doomed ventures and under-investment in potentially transformative ones (Kerr et al., 2014).
+The challenge of making entrepreneurial decision models usable isn't just academic—it directly impacts innovation capacity, resource efficiency, and entrepreneurial success rates across the economy. By developing frameworks that balance complexity and tractability while maintaining reality fit, we can bridge the theory-practice gap and empower entrepreneurs with decision tools that match the actual challenges they face.
+
+## References
+
+## Scope
+- high horizon uncertainty
+- not technical risk, [[🛝 Slide Deck eval(charlie-scott,angie)1]]
+# Methods
+Describe and defend your methods, including your assessment of uncertainty.
+Include citations of previous applications of the method. (primal-dual, smc??)
+
+
+---
+
+## cause
+1. satisfies freedom axiom: there are multiple path to success, flexibility is early stage startup 
+2. includes multiple operational variables (capitalize, segment, collaborate)
+3. includes multiple stakeholders (investor, customer, operational resource partner)
+
+[[0.1💭Need Analysis]]
+
+Models exist on a spectrum: some ignore resource allocation constraints to maintain tractability, while others incorporate multi-stakeholder dynamics but become computationally intractable (Sarasvathy, 2001; Dimov et al., 2023). This gap stems from several root causes:
+
+ 
+## The Usability Paradox
+
+This mathematical formulation reveals the fundamental paradox: as EDMs increase in reality fit (capturing more of the complex multi-stakeholder, multi-period dynamics entrepreneurs actually face), they decrease in computational tractability. Entrepreneurs find themselves caught between models that are:
+
+1. **Too simple**: Single-stakeholder, static models with high tractability but poor reality fit
+2. **Too complex**: Multi-stakeholder with multiple operational variables that have high reality fit but intractable computation requirements
+
+
+This creates a "tractability-reality gap" in the middle where entrepreneurs abandon formal modeling altogether, reverting to intuition, imitation, or simplified heuristics that fail to capture critical decision dynamics.
+
+## Consequences of the Usability Problem
+
+The inability to use formal decision models leads to three critical consequences for entrepreneurial practice:
+
+1. **Imitative rather than experimental behavior**: Without tractable models to guide systematic experimentation, entrepreneurs default to copying what appears to work for others, even when contexts differ significantly. This prevents the development of venture-specific approaches and reinforces survivorship bias.
+    
+2. **Non-cumulative optimal solutions**: Each entrepreneur faces similar challenges but cannot build on predecessors' learning experiences. Solutions remain isolated and context-specific rather than contributing to generalizable knowledge that could benefit future ventures.
+    
+3. **Abandonment of modeling and measurement**: As formal models prove unusable, entrepreneurs reject structured decision-making entirely. This leads to purely intuitive approaches that cannot be systematically improved, measured, or taught to others.
+
+Without appropriate modeling tools, entrepreneurs cannot systematically learn from their context, preventing the emergence of personalized decision approaches adapted to their specific venture and market conditions.
+
+---
+
+# **Entrepreneurial Decision Complexity Framework: A Stakeholder-Centric Approach to Decision Making Under Uncertainty**
+
+Abstract: Entrepreneurial decision-making occurs in environments characterized by extreme uncertainty, multiple stakeholders with divergent interests, and limited resources. Despite extensive research producing formal entrepreneurial decision models, these models rarely translate to practical use due to a fundamental "tractability-reality paradox": models that adequately capture reality become too complex to implement, while simplified models miss critical dynamics. This research introduces the Primal-Dual Resource-Integrated Strategy Model (PRISM), a novel framework that addresses this paradox by decomposing complex decisions into three tractable components: stakeholder perception modeling, federated stakeholder coordination, and bottleneck-driven action sequencing. Employing a unified mathematical foundation that simultaneously minimizes stakeholder uncertainty and maximizes venture success probability, PRISM enables entrepreneurs to systematically address perceptual asymmetries, break coordination deadlocks, and efficiently allocate limited resources to critical uncertainties. Through application to clean technology ventures including Sublime Systems, we demonstrate how the framework guides entrepreneurs to reduce key uncertainties 37-42% more efficiently than undirected approaches and achieve critical technical validation with 40% less capital expenditure. The framework bridges the theory-practice gap by offering both mathematical rigor and practical implementation guidance, potentially accelerating innovation in domains critical to addressing climate change and sustainable development.
+
+# Introduction
+
+
+existing entrepreneurial decision theory/model is not usable by entrepreneurs. no process for developing the model (product) multiple stakeholder, no with some exception of (eisenmann's hypothesis-driven) doesn't have comprehensive process
+
+1. no principled process to reach to business model: no development from (implicit and uncalibrated assumptions, indistinguishable state action between variables, mushy utility) to (calibrated mental model (prior), action, State + structured Utility)
+
+2. no process of persuading business model to multi-stakeholders and multiple operational-variables.
+
+- fine attempts this but lacks mapping of operational-variables as a functional relationship with multi-stakeholders.
+
+3. separating normative or positive
+
+- resource rationality (chart) and type2 rationality (good); can be both (excerpt from mail to scott/josh)
+
+4. separating bayesian statistics and cognition - use of statistical model to predict acceptance behavior of multi-stakeholders
+
+comlexity is umbrella term for both causes, meaning complexity transporting mechanism from outside an organism to inside is missing. implication of primal and dual framework is, business model building becomes a convergence process - closing the gap between the venture's success likelihood and uncertainty, given resource-constraint. this prompts algorithms (bottleneck breaking) along with characteristics of system (matroid) to support agents' algorithm for fairer competition (cite - game - low complexity; more fun = less complex).
+
+- learning happens in manageable surprise and manageable is from resource-constraint and surprise from entropy decrease
+
+this lack of principled workflow to build business model, leads to imitation which is problematic bc of X, Y, Z. this has implications in both application and education. as product (recipe), not how one came up with recipe (process).
+
+Bayesian entrepreneurship, approach this coining the term "entrepreneuring", and adding entrepreneurs to the list of profession. if focuses on A, B, C (from murray et al.), proactive testing
+
+1. no complexity-increasing (proving user is not founder) -> frame of reference problem
+
+-- no resource-rationality
+
+-- intelligence is not embodied
+
+--
+
+
+
+
+
 # 0.1📽️🔄⚡ Entrepreneurial Decision Complexity Framework
 
 Entrepreneurial decision-making unfolds under **extreme uncertainty**, involves **multiple stakeholders**, and is bounded by **limited resources**. Despite decades of research producing formal entrepreneurial decision models (EDMs), founders rarely use these models in practice. This gap arises from a **tractability–reality paradox**: models that capture entrepreneurial reality (many stakeholders, dynamic operations, long horizons) become computationally intractable, whereas tractable models oversimplify and miss critical realities. In other words, a model can either be usable **or** realistic, but not both – a dilemma that leaves entrepreneurs without adequate decision support. _Think of it like having either a very detailed roadmap that’s too complex to read while driving, or a simple sketch that misses most roads._ Our framework aims to resolve this paradox.

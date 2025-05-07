@@ -38,7 +38,7 @@ Using this model, we target "early-stage social scientists face challenge in inn
 ### 📜R.reference
 
 #### A
-Arrow KJ (1969) Classiﬁcatory notes on the production and transmission of technological knowledge. Amer. Econom. Rev. 59(2):29–35.
+Arrow KJ (1969) Classiﬁcatory notes on the production and transmission of technological knowledge. Amer. Econom. Rev. 59(2):29–35. [[📜Arrow69_classifactory_production_knowledge]]
 Weitzman ML (1979) Optimal search for the best alternative. Econometrica 47(3):641–654.
 Kerr, W. R., Nanda, R., & Rhodes-Kropf, M. (2014). Entrepreneurship as experimentation. _Journal of Economic Perspectives_, _28_(3), 25-48.
 Hofman, J. M., Watts, D. J., Athey, S., Garip, F., Griffiths, T. L., Kleinberg, J., ... & Yarkoni, T. (2021). Integrating explanation and prediction in computational social science. _Nature_, _595_(7866), 181-188.

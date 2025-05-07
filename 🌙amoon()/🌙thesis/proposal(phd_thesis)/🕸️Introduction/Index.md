@@ -6,7 +6,7 @@ longform:
   sceneFolder: /
   scenes:
     - 0.1📽️🔄⚡ Entrepreneurial Decision Complexity Framework
-    - 0.2🧠 Theoretical Foundation and Solution Approach
+    - 0.2📐Solution Design
     - 0.3🎞️ Thesis Scope and Example Case
   ignoredFiles:
     - 0.3😵‍💫Thesis Scope and Example Case
