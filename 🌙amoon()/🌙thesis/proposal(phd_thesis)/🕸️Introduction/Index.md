@@ -5,10 +5,11 @@ longform:
   workflow: Default Workflow
   sceneFolder: /
   scenes:
-    - 0.1🏳️‍🌈Entrepreneurial Decision-Making Reimagined
-    - 0.2💭Need Analysis
-    - 0.3📐Solution Design
-    - 0.4💸Evaluate
+    - 0.Abstract
+    - 1.🏳️‍🌈Entrepreneurial Decision-Making Reimagined
+    - 2💭Need Analysis
+    - 3.📐Solution Design
+    - 4.💸Evaluate
     - 5.Moving Forward
     - Appendix
   ignoredFiles:
@@ -18,4 +19,6 @@ longform:
     - 0.1📽️🔄⚡ Entrepreneurial Decision Complexity Framework 1
     - 0.1📽️🔄⚡ Entrepreneurial Decision Complexity Framework
     - 0.3🎞️ Thesis Scope and Example Case
+    - 🛴segway_🥌sublime
+    - segway_sublime
 ---
