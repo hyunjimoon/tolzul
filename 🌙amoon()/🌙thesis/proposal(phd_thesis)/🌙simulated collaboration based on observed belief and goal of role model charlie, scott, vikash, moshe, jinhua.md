@@ -6,6 +6,15 @@ tags:
   - jinhu
   - vikash
 ---
+2025-05-11
+a_supply: getting acceptance from my committe members with four evaluation (📐production (perception module [1], action module [2]) 📦delivery (teaching operations for entrepreneurship [3], teaching strategy for entrepreneurship [4]))
+a_demand: find demand side stakeholder that can help me design "perception" module (sec.2.1) e.g. DAERO (대로?)
+
+a_supply is scheduled this thursday (my thesis proposal to a committee of two supply side stakeholders group:
+who'd test four aspects) where i designed committee members with diverse evaluation function: charlie fine (ent.ops), scott stern (ent.strat), vikash mansinghka (probabilistic program + serial entrepreneur), moshe benakiva (STATS)
+
+
+
 2025-04-29
 ### five abstracts -> three abstracts
 motivation: [[exchanging influence with investment]]: making five versions of abstract that each leverages the optimism of each professors - think of this as selfish gene logic where human's nature is to desire for influence (whether biological or spiritual) and invest money, time, effort to satisfy that desire. i.e. my business model is to create and capture value using optimism of the five professors. several success examples is implementing the advice of mentor/investors have increase the startup quality as measured by one research using creative destruction lab venture accelerator database (description attached). using charlie's advice - you want others to feel excited about your research, and the recipe for others to get excited about something is, first find a shared vision (as you go up the ladder of abstraction, you can find shared vision with everyone e.g. from optimism of small scope like entrepreneurship to bigger scope of world peace). then given the shared vision, help them understand what they can contribute to they would find a "how" themselves.
@@ -303,6 +312,8 @@ I apologize for the error regarding Charlie Fine's examples. You're right, and I
 | George  | Oct.2022                                                                                                                                                                                                |                     |                                                                                                                                                                                                                                            |                                           |
 | Yoni    | Apr.2023<br>- interested in understanding procrastination                                                                                                                                               |                     |                                                                                                                                                                                                                                            |                                           |
 | Matthew | Apr.203<br> - vectorization more than parallelization, to do more efficient computations on the GPU<br>- ADEV: automatic differentiation                                                                |                     |                                                                                                                                                                                                                                            |                                           |
+| Matin   | Aug.2022<br>- met after<br>-                                                                                                                                                                            |                     |                                                                                                                                                                                                                                            |                                           |
+| xiodi?? |                                                                                                                                                                                                         |                     |                                                                                                                                                                                                                                            |                                           |
 
 ---
 this prompted [[🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash, moshe, jinhua]] which I'll send out to sync "goal and role prior" on Apr.11

@@ -1,4 +1,6 @@
-#scott 
+
+2025-05-11
+adding source - it’s a compiled version for three github threads i kept in parallel interacting with scott stern, charlie fine, vikash mansinghka
 
 combining two threads: [Bayesian Entrepreneurship: 🗺️map for startup compass🧭](https://github.com/Data4DM/BayesSD/discussions/159) with 🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep
 from hyunjimoon on 2023-08-22T16:43:07Z
