@@ -1,4 +1,4 @@
-solution for [[III.⚡Bottleneck-Driven Action Sequencing]]
+solution for [[III.⚡Agency]]
 - andrew's [[expectation-propagation]]
 - 
 ## Question 🔐

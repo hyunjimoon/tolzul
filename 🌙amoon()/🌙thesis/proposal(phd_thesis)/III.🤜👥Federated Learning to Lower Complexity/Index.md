@@ -5,8 +5,8 @@ longform:
   workflow: Default Workflow
   sceneFolder: /
   scenes:
-    - III.⚡Bottleneck-Driven Action Sequencing
-    - 3.⚡Individual level of resource optimization problem
+    - III.🧬Agent Samples for Society to Optimize
+    - 3.🧬Individual and social level of resource optimization problem
     - 3.1💭Theorize solution(⚡)
     - 3.2📐Produce solution(⚡)
     - 3.3💸Evaluate solution(⚡)

@@ -1,6 +1,6 @@
 2025-04-08
 
-related with [[thesis]],
+related with [[🌏world(amoon)/💜bit(atom(bit))/🏢company/bass_vc/thesis]],
 
 
 
