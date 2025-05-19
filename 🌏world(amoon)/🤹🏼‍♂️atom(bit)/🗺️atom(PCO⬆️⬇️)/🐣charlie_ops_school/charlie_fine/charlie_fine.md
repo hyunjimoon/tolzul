@@ -1,5 +1,13 @@
 ed anderson's perception of charlie (is known for): quality, game theory, flexible manufacturing, sd and simulation friendly, big thinker
 
+2025-05-14
+Dear Charlie,
+"First fall in love with your advisor, then find your research question" is the best advice i chose to follow.
+Thanks for being my intrinsic motivation, Charlie
+ -Angie 2025.05.15
+ in front of a book on david krep's [arguing about tastes](https://cup.columbia.edu/book/arguing-about-tastes/9780231209915/) [[Kreps23_argue(taste)]]
+
+
 
 ---
 2025-05-07

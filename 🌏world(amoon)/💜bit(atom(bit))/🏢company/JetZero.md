@@ -20,4 +20,4 @@ Their strategic choices reflect sophisticated implementation of these theoretica
 | 🤜 Strategic Choice | Committed to full-scale commercial demonstration with Air Force funding; focused on compatibility with existing airport infrastructure |
 | 💨 Impact Diffusion | Created new understanding through stakeholder engagement (airlines, regulators, manufacturers); generated feedback cycles informing production scaling strategy |
 
-[[def(tesla)]]
+[[🚘def(tesla)]]

@@ -1,3 +1,9 @@
+2025-05-18
+- connecting with [[🪢STRAP]], and cld mentioned nested option [[def(ops4entrpre)]] which was surprising due to the repeated use of words nested e.g. [[📝s25_Lecture18_NestedLogit.pdf]]
+- 
+
+
+
 2025-04-27
 Fine et al. (2022) proposes a structured progression for entrepreneurial operations by compartmentalizing the journey into three sequential phases—**Nailing**, **Scaling**, and **Sailing**​.  
 This framework mirrors a **subpath-based formulation**: instead of trying to optimize the venture journey all at once (route-based) or just making isolated decisions (arc-based), it **modularizes entrepreneurial development into distinct phases**, each with different operational priorities and tools. "Nailing" focuses on rapid experimentation to establish a value proposition, "Scaling" emphasizes building repeatable and robust operational systems, and "Sailing" concentrates on continuous improvement within a matured organization.  

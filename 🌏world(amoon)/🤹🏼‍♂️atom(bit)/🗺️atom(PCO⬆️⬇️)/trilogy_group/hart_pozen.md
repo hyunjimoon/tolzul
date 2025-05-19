@@ -1,5 +1,15 @@
 [[⚙️(🗄️📝)]]
 
+2025-05-17
+My approach is always initially positive — but a positive approach may then underlie subsequent normative advice. 
+
+Here’s the reason I make this suggestion: If you don't understand how the world currently works, it's very hard to prescribe policies to get the world to function in a new way. 
+
+In my own work, I develop models that characterize some situation in the world using assumptions that are at least at an abstract level behaviorally plausible. 
+
+Doing this allows me to understand the dynamics of the world and allows me to say something about what policy interventions may enhance the outcomes on the dimensions I care about. 
+
+Normative advice without a deep understanding and model of how the world actually works is usually just pontificating — the stuff of self-help books. Of course, I recognize that lots of people will disagree with me on what I've just said.
 
 2025-03-06
 [[hart__angie_paper writing_otter_ai (1).txt]]

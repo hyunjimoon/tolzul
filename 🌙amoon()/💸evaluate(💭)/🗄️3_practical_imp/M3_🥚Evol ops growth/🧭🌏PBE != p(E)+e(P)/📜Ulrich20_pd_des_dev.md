@@ -78,4 +78,4 @@ Because risk of failure increases as opportunities deviate from what the team al
 
 Because of the need to launch a product within about a y ear, the FroliCat team explicitly avoided Horizon 3 opportunities. The team wished to build on its initial success with the Bolt cat toy , and so focused on its existing customers and the existing needs it already addressed. It sought a next- generation solution for the existing need to entertain cats, and thus focused on Horizon 2 opportunities.
 
-[[def(tesla)]], [[🎲uncertainty]]
+[[🚘def(tesla)]], [[🎲uncertainty]]
