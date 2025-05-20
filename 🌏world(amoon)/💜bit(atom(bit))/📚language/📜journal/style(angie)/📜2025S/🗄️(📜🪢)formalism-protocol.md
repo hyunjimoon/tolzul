@@ -6,13 +6,13 @@ This protocol operationalizes the formalism enhancement mechanism of the STRAP m
 
 ## Mathematical Formalization Components
 
-| Section Type     | Formalism Elements                             | Enhancement Strategies                                                                                           | Implementation Notation                                                                                                                                |
-| ---------------- | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Introduction** | Theoretical constructs; Conceptual framing     | Precise articulation of decision-theoretic foundations; Formal definition of stakeholder odds against acceptance | $p_j^1$: Acceptance probability<br>$p_j^0 = 1-p_j^1$: Rejection probability<br>$S = \{(s_{\text{supp}}, s_{\text{cust}}) \in \{0,1\}^2\}$: State space |
-| **Methods**      | Mathematical models; Algorithmic specification | Explicit formulation of optimization objective; State transition matrix specification                            | $p_j^1(x) = \frac{\exp(\boldsymbol{\beta}_j^T x)}{1 + \exp(\boldsymbol{\beta}_j^T x)}$<br>$T^{(a)}_{to,from}$: Transition probabilities                |
-| **Results**      | Quantitative metrics; Comparative analysis     | Probabilistic state analysis; Statistical evaluation of performance differentials                                | $\Delta p_j^1(a)$: Acceptance probability improvement<br>$\frac{\sum_{j \in J} w_j \cdot f_j^1 \cdot \Delta p_j^1(a)}{c_a}$: Action efficiency         |
-| **Discussion**   | Theoretical integration; Framework connections | Formal relationship to established theories; Mathematical equivalence demonstrations                             | $\lambda_j$: Threshold constraint multipliers<br>$\gamma$: Resource constraint multiplier                                                              |
-| **Further Work** | Formal extensions; Theoretical generalizations | Mathematical specification of extensions; Analytical framework development                                       | Entropy formulations<br>Network model extensions<br>Dual variable dynamics                                                                             |
+| Section Type | Formalism Elements | Enhancement Strategies | Implementation Notation |
+|--------------|-------------------|------------------------|-------------------------|
+| **Introduction** | Theoretical constructs; Conceptual framing | Precise articulation of decision-theoretic foundations; Formal definition of stakeholder odds against acceptance  | $p_j^1$: Acceptance probability<br>$p_j^0 = 1-p_j^1$: Rejection probability<br>$S = \{(s_{\text{supp}}, s_{\text{cust}}) \in \{0,1\}^2\}$: State space |
+| **Methods** | Mathematical models; Algorithmic specification | Explicit formulation of optimization objective; State transition matrix specification | $p_j^1(x) = \frac{\exp(\boldsymbol{\beta}_j^T x)}{1 + \exp(\boldsymbol{\beta}_j^T x)}$<br>$T^{(a)}_{to,from}$: Transition probabilities |
+| **Results** | Quantitative metrics; Comparative analysis | Probabilistic state analysis; Statistical evaluation of performance differentials | $\Delta p_j^1(a)$: Acceptance probability improvement<br>$\frac{\sum_{j \in J} w_j \cdot f_j^1 \cdot \Delta p_j^1(a)}{c_a}$: Action efficiency |
+| **Discussion** | Theoretical integration; Framework connections | Formal relationship to established theories; Mathematical equivalence demonstrations | $\lambda_j$: Threshold constraint multipliers<br>$\gamma$: Resource constraint multiplier |
+| **Further Work** | Formal extensions; Theoretical generalizations | Mathematical specification of extensions; Analytical framework development | Entropy formulations<br>Network model extensions<br>Dual variable dynamics |
 
 ## Section-Specific Rigor Enhancement Protocol
 
@@ -26,7 +26,7 @@ This protocol operationalizes the formalism enhancement mechanism of the STRAP m
   Entrepreneurial decision-making can be formalized as a sequential optimization problem with state space S, action space A, and transition function T(s,a,s'), where the entrepreneur seeks to maximize expected stakeholder acceptance under resource constraints.
   ```
 
-#### 1.2 Context: Prioritizing Actions Under Interdependent Stakeholder Uncertainty
+#### 1.2 Context: Prioritizing Actions Under Interdependent Stakeholder odds against acceptance 
 - **Current Rigor State**: $p_{\text{rigor}}^1 = 0.65$
 - **Enhancement Strategy**: Formalize notion of stakeholder interdependence through probabilistic conditioning
 - **Implementation Template**:
@@ -39,7 +39,7 @@ This protocol operationalizes the formalism enhancement mechanism of the STRAP m
 - **Enhancement Strategy**: Systematize literature classification according to theoretical dimensions
 - **Implementation Template**:
   ```
-  We characterize the existing literature along two axes: (1) uncertainty representation (implicit vs. explicit) and (2) stakeholder modeling (univariate vs. multivariate), yielding a 2×2 typology of entrepreneurial decision frameworks.
+  We characterize the existing literature along two axes: (1) odds against acceptance  representation (implicit vs. explicit) and (2) stakeholder modeling (univariate vs. multivariate), yielding a 2×2 typology of entrepreneurial decision frameworks.
   ```
 
 #### 1.4 Gap: Missing Objective Function and Domain-Specific Limitations
@@ -174,10 +174,10 @@ This protocol operationalizes the formalism enhancement mechanism of the STRAP m
 
 #### 5.1 Entropy-Based Unknown Unknowns
 - **Current Rigor State**: $p_{\text{rigor}}^1 = 0.85$
-- **Enhancement Strategy**: Develop information-theoretic formalism for uncertainty quantification
+- **Enhancement Strategy**: Develop information-theoretic formalism for odds against acceptance  quantification
 - **Implementation Template**:
   ```
-  Entropy-based uncertainty can be formalized as H(p_j) = -∑_s p_j^s·log(p_j^s), providing a distinction between predictive uncertainty (entropy) and outcome favorability (acceptance probability).
+  Entropy-based odds against acceptance  can be formalized as H(p_j) = -∑_s p_j^s·log(p_j^s), providing a distinction between predictive odds against acceptance  (entropy) and outcome favorability (acceptance probability).
   ```
 
 #### 5.2 Enhanced Interdependence Modeling

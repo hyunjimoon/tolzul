@@ -1,3 +1,6 @@
+2025-05-19
+using [optimizing dual-metric research system cld](https://claude.ai/chat/d1dbed2c-8666-40d1-b967-d3cba525e086)
+[[📜Bolton24]]
 # 🧠(📜🪢) STRAP Manuscript Optimization Framework
 
 ## System Architecture
