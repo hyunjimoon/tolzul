@@ -1,3 +1,7 @@
+2025-05-20
+using [[Jose Lopez]]'s doctorla theis, I derieved "Entrepreneurs should mirror B2B platforms by first establishing strong standalone value before systematically expanding to cross-side network effects, while being selective about same-side value investments that may have limited returns in competitive markets." using [driving b2b growth through value creation cld](https://claude.ai/chat/d75c0f1f-14ad-44a6-801b-fa5d82b759ea)
+
+----
 
 Platform collaboration with pull, pool, push strategy
 - pull: invest infrastructure (solar power), educate, 
