@@ -103,7 +103,7 @@ The transformation from triangle to circle to square as α decreases suggests th
 [[M9🥾_zappos_commonwealth]]
 
 - [[🗄️ 🧩correlation examples]]
-- [[🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep]]
+- [[scott(🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep)]]
 
 [[🗄️🗄️scott_charlie]]
 

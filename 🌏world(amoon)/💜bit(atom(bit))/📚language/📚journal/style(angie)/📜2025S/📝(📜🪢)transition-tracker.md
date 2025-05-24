@@ -15,13 +15,13 @@ The tracking system employs a state-transition framework with:
 
 ## Enhancement Implementation Registry
 
-| Enhancement ID | Target Section | Enhancement Type | Implementation Date | Time Investment | Action Description | Status |
-|----------------|----------------|------------------|---------------------|-----------------|-------------------|--------|
-| E001 | 1.4 Gap | 🚗 Contextualization | 2025-05-19 | 3 hrs | Enhanced practical examples of domain-specific limitations across contexts; added metaphorical framing | Completed |
-| E002 | 5.1 Entropy-Based Unknown Unknowns | 🚗 Contextualization | 2025-05-20 | 2 hrs | Developed practical application of entropy concepts to entrepreneurial decision-making | Scheduled |
-| E003 | 4.1 Entrepreneurial Operations Connection | 🗄️ Formalism | 2025-05-21 | 3 hrs | Formalize connection to operations management through mathematical isomorphism | Scheduled |
-| E004 | 3.3 Action Sequence Comparison | 🗄️ Formalism | 2025-05-22 | 3 hrs | Develop formal Markov decision process model for sequence comparison | Scheduled |
-| E005 | 2.3 Modeling Interdependent Stakeholder Uncertainties | 🚗 Contextualization | 2025-05-23 | 4 hrs | Develop practical guidance for transition matrix construction | Scheduled |
+| Enhancement ID | Target Section                                        | Enhancement Type     | Implementation Date | Time Investment | Action Description                                                                                     | Status    |
+| -------------- | ----------------------------------------------------- | -------------------- | ------------------- | --------------- | ------------------------------------------------------------------------------------------------------ | --------- |
+| E001           | 1.4 Gap                                               | 👥 Contextualization | 2025-05-19          | 3 hrs           | Enhanced practical examples of domain-specific limitations across contexts; added metaphorical framing | Completed |
+| E002           | 5.1 Entropy-Based Unknown Unknowns                    | 👥 Contextualization | 2025-05-20          | 2 hrs           | Developed practical application of entropy concepts to entrepreneurial decision-making                 | Scheduled |
+| E003           | 4.1 Entrepreneurial Operations Connection             | 🗄️ Formalism        | 2025-05-21          | 3 hrs           | Formalize connection to operations management through mathematical isomorphism                         | Scheduled |
+| E004           | 3.3 Action Sequence Comparison                        | 🗄️ Formalism        | 2025-05-22          | 3 hrs           | Develop formal Markov decision process model for sequence comparison                                   | Scheduled |
+| E005           | 2.3 Modeling Interdependent Stakeholder Uncertainties | 👥 Contextualization | 2025-05-23          | 4 hrs           | Develop practical guidance for transition matrix construction                                          | Scheduled |
 
 ## Completed Enhancement Analysis
 
@@ -214,7 +214,7 @@ Current entrepreneurial decision-making resembles navigating with misfit tools: 
 | Enhancement Type | Avg. Probability Improvement | Avg. Time Investment | Avg. Efficiency | Primary Dimension | Secondary Dimension |
 |------------------|----------------------------|---------------------|---------------|------------------|-------------------|
 | 🗄️ Formalism | +0.18 | 3.0 hrs | 0.060/hr | +0.18 (Rigor) | +0.00 (Relevance) |
-| 🚗 Contextualization | +0.20 | 3.0 hrs | 0.067/hr | +0.20 (Relevance) | +0.02 (Rigor) |
+| 👥 Contextualization | +0.20 | 3.0 hrs | 0.067/hr | +0.20 (Relevance) | +0.02 (Rigor) |
 
 ### Key Findings
 

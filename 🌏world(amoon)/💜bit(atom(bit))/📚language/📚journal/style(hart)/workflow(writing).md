@@ -26,7 +26,7 @@ dependency between the components (theory, phenomena), function (visioning, rel
 
 1. [[story(dialectical)]]
     
-    - **Audience**: Profile of Bayesian entrepreneurship scholars [[🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep]]
+    - **Audience**: Profile of Bayesian entrepreneurship scholars [[scott(🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep)]]
     - **Thesis-Antithesis**: The accepted idea in Bayesian entrepreneurship and your challenging counterpoint
     - **Validity Elements**: Why your experiment design will be seen as methodologically sound and intuitively true
     - **Importance Elements**: Why your focus on incentives and information sharing matters to theory and practice

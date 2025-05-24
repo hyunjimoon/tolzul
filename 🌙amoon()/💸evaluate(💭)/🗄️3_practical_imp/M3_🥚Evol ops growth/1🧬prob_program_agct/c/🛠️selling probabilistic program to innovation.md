@@ -602,3 +602,6 @@ You have to spend, for example, six months in the mud to really get to know the 
 ---
 
 [Discussion link](https://github.com/Data4DM/BayesSD/discussions/224)
+
+
+[[tom_griffith]]

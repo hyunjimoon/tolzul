@@ -32,7 +32,7 @@ using [gpt](https://chatgpt.com/c/676b497b-6fe8-8002-bd35-a7b16e3619de)
 Use (and modify) the above table as a concise roadmap for your manuscript. If you need further breakdowns (e.g., multiple subsections per row) or prefer the #🗄️example2 format with “Key Literature / Key Message / Technical Details,” simply adapt these headings to match your preference. Always feel free to ask for clarifications!
 [[scott24👓_Bayesian_Entrepreneurship.pdf]], 
 [[Bayesian Workflow and Startup Operations]]
-[[🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep]]
+[[scott(🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep)]]
 
 
 ### 5. bayesian learning through experiments

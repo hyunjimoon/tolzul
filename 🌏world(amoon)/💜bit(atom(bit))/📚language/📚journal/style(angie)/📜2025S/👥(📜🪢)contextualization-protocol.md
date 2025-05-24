@@ -1,4 +1,6 @@
-# 🚗(📜🪢) Contextualization Enhancement Protocol
+- either relate with existing papers or cases of startup
+- compete with [[🗄️(📜🪢)formalism-protocol]]
+# 👥(📜🪢) Contextualization Enhancement Protocol
 
 ## Application Framework for Relevance Optimization
 

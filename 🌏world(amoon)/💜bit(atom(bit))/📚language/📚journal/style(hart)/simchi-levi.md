@@ -1,5 +1,5 @@
 2025-05-18
-applied [[Operations Rules_ Delivering Customer Value through Flexible Operations — Prof. David Simchi-Levi - English (auto-generated).txt]] to design flexibility in my operation of mapping solution modules of [[🪢STRAP]] to need modules of [[🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep]] 
+applied [[Operations Rules_ Delivering Customer Value through Flexible Operations — Prof. David Simchi-Levi - English (auto-generated).txt]] to design flexibility in my operation of mapping solution modules of [[🪢STRAP]] to need modules of [[scott(🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep)]] 
 using [Modular STRAP Framework for Bayesian Entrepreneurship cld](https://claude.ai/chat/58814f07-508e-4157-9976-b76f7ff05b12)
 
 

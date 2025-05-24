@@ -1,10 +1,91 @@
+- refined using [[mss(🫀, markovian(🧠))]], [[MSS(🫀Update 📜🪢 into Management Science Paper, markovian(🧠))]]
+- spawned to [[mss(🫀mincost_maxflow(sol(OM), need(ENT)), 🧠(charlie-scott))]] using scaling strategy as [[scale(charlie-scott, ops-ent)]]
 ![[minmaxflow(field) 2025-05-18-14.svg]]
 %%[[minmaxflow(field) 2025-05-18-14.md|🖋 Edit in Excalidraw]]%%
 
 
-three components are need to write a paper: [[design(experiment)]], [[narrativ()]]
+three components are need to write a paper: [[design(experiment)]]
+2025-05-22
+
+| Need Group                                      | 📐 Rule                                                                              | 🫀 Cause                                                                                                                                           | 🧠 Knowledge                                                                                                                                                                 | 🗄️ Structure                                                                                                   | 💸 Validation                                                                                                  |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **N1: Subjective Belief Formation & Alignment** | `IF entrepreneur_belief ≠ stakeholder_belief THEN persuasion_required = TRUE`        | C1: Market heterogeneity creates belief divergence<br>C2: Individual lacks credibility metrics<br>C3: Institution lacks belief alignment framework | S1: Robust optimization under uncertainty<br>S3: Total Quality Management for belief consistency<br>Strategic: Persuasion & signaling<br>Emerging: Entrepreneurial cognition | Focus: Perception flexibility<br>Solutions: S1 (robust optimization), S3 (TQM), persuasion<br>Chapters: 2, 5, 8 | Case 1: Private info advantage<br>Case 2: Overconfidence as rationality<br>Case 3: Investor persuasion success |
+| **N2: Adaptive Experimentation & Learning**     | `IF experiment_result ≠ prior_belief THEN belief_update = Bayesian(prior, evidence)` | C1: Market uncertainty demands testing<br>C2: Individual lacks learning metrics<br>C3: Institution lacks experimentation framework                 | S2: Stochastic dynamic programming<br>S1: Robust optimization for experiments<br>Strategic: Real options theory<br>Emerging: Continuous learning systems                     | Focus: Action flexibility<br>Solutions: S2 (stochastic DP), S1 (robust optimization)<br>Chapters: 2, 8, 9, 10   | Case 1: Pivot decision optimization<br>Case 2: Sequential learning gains<br>Case 3: Resource-rational updating |
+
+## 🏭 **Operations Management Solution Modules**
+
+|Module|🎯 Definition|N1 Application|N2 Application|Flow Capacity|
+|---|---|---|---|---|
+|**S1: Robust Optimization**|Optimize decisions under worst-case uncertainty scenarios|Handle belief divergence robustly|Design experiments robust to model uncertainty|High (serves both N1 & N2)|
+|**S2: Stochastic Dynamic Programming**|Sequential decision-making under random processes|Limited application to belief persuasion|Core method for adaptive learning|Medium (primarily N2)|
+|**S3: Total Quality Management**|Systematic quality improvement through process control|Ensure belief consistency and credibility|Limited application to experiment quality|Low (primarily N1)|
+
+## 🌐 **Min-Cost Max-Flow Network Problem Formulation**
+
+### Network Structure
+
+```
+Source Node: S123 (Combined Solution Modules)
+Sink Nodes: N1, N2 (Need Groups)
+Intermediate Nodes: 📐🫀🧠🗄️💸 (Framework Components)
+```
+
+### Flow Network Graph
+
+```
+      [S1: Robust Opt]────┐
+           │              │
+    [S123]─┤ [S2: Stoch DP]──→ [📐🫀🧠🗄️💸] ──→ [N1: Belief Alignment]
+           │              │         │                │
+      [S3: TQM]──────────┘         │                │
+                                   ↓                ↓
+                              [N2: Experimentation] [N12: Combined]
+```
+
+### Capacity & Cost Matrix
+
+|Edge|Capacity|Unit Cost|Rationale|
+|---|---|---|---|
+|S1 → N1|8|2|High: Robust optimization handles belief uncertainty well|
+|S1 → N2|6|3|Medium: Supports experiment design under uncertainty|
+|S2 → N1|2|8|Low: Limited application to belief persuasion|
+|S2 → N2|10|1|High: Core method for sequential learning|
+|S3 → N1|7|3|High: TQM ensures belief consistency|
+|S3 → N2|3|6|Low: Limited to experiment quality control|
+
+### Objective Function
+
+```
+Minimize: Σ(cost_ij × flow_ij)
+Subject to: 
+- Flow conservation at all nodes
+- Capacity constraints: flow_ij ≤ capacity_ij
+- Demand satisfaction: flow_to_N1 + flow_to_N2 = Total_Demand
+```
+
+### 🎯 **Optimal Solution Interpretation**
+
+The min-cost max-flow solution reveals the most efficient allocation of operations management techniques to address entrepreneurial needs, maximizing **Homo Entrepreneuricus** effectiveness while minimizing implementation costs.
+
+## 🎯 **Combined Objective Function**
+
+```
+Homo_Entrepreneuricus = f(📐belief_alignment × 📐belief_updating) 
+                     × (🫀shared_root_causes)
+                     × (🧠integrated_knowledge)
+                     × (🗄️complementary_structure)
+                     × (💸cross_validated_impact)
+```
+
+## 💭 **Memory Device**
+
+> **"📐 Align beliefs through 🔬 experiments, 🫀 addressing same causes via 🧠 integrated knowledge"**
+
 2025-05-18
 [[📜PhanChambers18_EntTheoryOM]]
+
+
+# Capability: operations management [[scott(🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep)]]
 # Citation-Weighted Analysis for Prioritizing Research Arcs A7–A10
 
 ## Literature Selection and Scoring Methodology
@@ -36,6 +117,9 @@ The table below summarizes the OM papers, each with relevance scores to arcs A7�
 
 **Table 1:** **Operations Management Literature Assessment.** Each paper’s relevance (0–5) to arcs A7–A10 is multiplied by its normalized annual citations and journal impact factor to yield a weighted score contribution for each arc. _E.g._, Li et al. (2011) scores 5 on A7 and, with ~22.6 cites/year and IF 7.5, contributes **846.4** to arc A7’s value – reflecting the high impact of research linking fragmented supply chain stakeholders to better information flow. Bolded cells (if any) would indicate highest relevance per paper. All papers are from top OM journals, ensuring quality and impact (e.g. _Management Science_, _POM_, _JOM_). Citation counts are from Google Scholar as of 2025.
 
+----
+# Market: entrepreneurship
+## Old Entrepreneurship
 ## Table 2. BE Literature Assessment (Top 7 Papers) with Arc Scores
 
 Table 2 similarly presents the Bayesian Entrepreneurship/decision-theory papers. These works largely tackle the entrepreneurial decision-making paradigm under uncertainty – often highlighting the absence of a single “optimal” rule (N2) and proposing either improved **perception** (e.g. learning, updating beliefs) or guiding **action** (experiments, heuristics) as solutions. Notably, several are highly cited theoretical pieces that shape current thinking (e.g. Fisher 2012, Shepherd et al. 2015). For instance, Fisher (2012) compares effectuation, causation, and bricolage decision logics, directly addressing _how entrepreneurs act vs. plan_ when no unified rule exists. It scored max on both A9 and A10, and with >1600 citations in _ETP_ (IF ~10), it heavily weights both arcs. Shepherd et al. (2015) provide a comprehensive review of entrepreneurial decision-making research – covering cognitive biases (perception) and action-oriented strategies – hence high on A9 and A10; its ~1175 citations in _Journal of Management_ confirm its influence. In contrast, Koudstaal et al. (2016) focus on cognitive differences in risk perception between entrepreneurs and managers, mainly contributing to A9 (perception under uncertainty). Each paper’s weighted scores reflect these emphases.
@@ -52,4 +136,5 @@ Table 2 similarly presents the Bayesian Entrepreneurship/decision-theory papers.
 
 **Table 2:** **Bayesian Entrepreneurship Literature Assessment.** Relevance and weighted scores of representative BE papers for arcs A7–A10. These works predominantly address N2 (the absence of a clear decision rule in entrepreneurship) by proposing new decision frameworks. For example, Fisher (2012) and Shepherd et al. (2015) collectively contribute very heavily to arcs A9 and A10, given their high citations and direct focus on entrepreneurial cognition and action under uncertainty. _Note:_ Some highly-cited conceptual works (Shepherd 2015, Fisher 2012) drive up the totals for A9/A10 significantly (as seen in their weighted scores). This indicates that a large portion of scholarly attention has been on how entrepreneurs **think and act** (perceive information and make decisions) when classical optimization or rational models fail – exactly the issues A9 and A10 represent. Meanwhile, stakeholder-focused arc A7/A8 receive comparatively fewer but still notable contributions (e.g. effectuation emphasizes stakeholder commitments, reflected in Fisher 2012’s nonzero A7/A8 scores).
 
+## New Entrepreneurship
 [[📜stern24_bayesent]]

@@ -1,4 +1,4 @@
-🧱: [[🧬⚙️selling value chain tools as evolutionary entrepreneurship]], [[🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep]]
+🧱: [[charlie(🧬⚙️selling value chain tools as evolutionary entrepreneurship)]], [[scott(🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep)]]
 
 ## 📜An Evolutionary Theory of Economic Change
 

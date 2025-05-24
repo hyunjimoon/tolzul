@@ -61,7 +61,7 @@ This measures how effectively students balance exploration (finding new value) a
 
 [[🗄️🗄️scott_charlie]] 
 
-[[🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep]]
+[[scott(🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep)]]
 
 Ah yes! Let me redesign the experiment following Goodman's "alien panel" paradigm but applied to automotive innovation:
 

@@ -1,4 +1,6 @@
 
+2025-05-22
+paired with [[scott(🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep)]]
 from hyunjimoon on 2022-11-20T17:09:57Z
 
 

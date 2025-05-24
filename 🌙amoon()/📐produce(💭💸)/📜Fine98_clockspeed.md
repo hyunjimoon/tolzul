@@ -16,4 +16,4 @@ Moving at an even slower clockspeed, the automobile companies typically refresh 
 
 At the slowest end of the clockspeed scale -- up there with the sea turtles and the California redwoods -- are the manufacturers of aircraft. The Boeing Company, for instance, measures its products’ clockspeeds in decades. Mega-profits still flow from sales of its venerable 747 jumbo jet 30 years after its launch. The 747s produced in the 1990s rely on the same basic design and the same manufacturing plant that rolled out the first of these aircraft almost three decades ago. Elsewhere in the slow-clockspeed aircraft industry, Lockheed-Martin was working diligently in 1997 to design a warplane that was not expected to go into production before 2008.
 
-[[🧬⚙️selling value chain tools as evolutionary entrepreneurship]]
+[[charlie(🧬⚙️selling value chain tools as evolutionary entrepreneurship)]]

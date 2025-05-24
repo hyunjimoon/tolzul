@@ -12,9 +12,9 @@
 |**4TUS**|Dependent|Multiple Periods|Aleatoric|Most complex model integrating all dimensions - interdependent stakeholders, multiple time periods, and complex uncertainty structures.|Full supply chain optimization under complex uncertainty; multi-period coordination|Integrated Bayesian decision systems; simulation-based inference|Highest research value; represents the frontier of operations for entrepreneurship research|
 
 
-[[minmaxflow(field)]]
+[[mss(🫀mincost_maxflow(sol(OM), need(ENT)), 🧠(angie))]]
 
-[[🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep]]
+[[scott(🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep)]]
 ## 💚 The Solution: STRAP (Strategic Threshold Resolution for Actionable Priorities)
 
 STRAP provides a comprehensive framework for entrepreneurial decision-making built on a fundamental equivalence: systematically reducing uncertainty directly increases venture success probability. The framework consists of two integrated modules:

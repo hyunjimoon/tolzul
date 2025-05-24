@@ -1,3 +1,4 @@
+- using [[MSS(🫀A, 🧠B)]]
 ## Current State (Sₜ)
 
 **Student List**: jiarui, xinling, chenan, yuhan, adam, donghang, hanyong, jae, hanyang, ziyan, eve, amelia, summer, bianchi, niaz, deniz, shogo, hirotaka, pierre, david

@@ -1,4 +1,4 @@
-# 💯(📜🪢) Manuscript Evaluation Framework
+# 💸(📜🪢) Manuscript Evaluation Framework
 
 ## Probabilistic Assessment Protocol for Academic Stakeholder Acceptance
 
@@ -8,7 +8,7 @@ This evaluation framework implements a systematic methodology for assessing manu
 
 The evaluation system is grounded in a probabilistic state assessment model with binary acceptance dimensions:
 
-- **Theoretical Rigor (🤜🧮)**: Probability of manuscript acceptance based on theoretical advancement and methodological sophistication
+- **Theoretical Rigor (🤜🗄️)**: Probability of manuscript acceptance based on theoretical advancement and methodological sophistication
 - **Practical Relevance (👥💸)**: Probability of manuscript acceptance based on managerial applicability and actionable insights
 
 For each manuscript section, we quantify:
@@ -133,10 +133,10 @@ For each bottleneck section:
 
 3. **Action Selection**:
    - If u_rigor > u_relevance: Apply Formalism Enhancement (🗄️)
-   - If u_relevance > u_rigor: Apply Contextualization Enhancement (🚗)
+   - If u_relevance > u_rigor: Apply Contextualization Enhancement (👥)
 
 4. **Enhancement Implementation**:
-   - Retrieve appropriate enhancement template from 🗄️ or 🚗 protocol
+   - Retrieve appropriate enhancement template from 🗄️ or 👥 protocol
    - Apply template to section while maintaining contextual coherence
    - Ensure enhancements preserve existing strengths while addressing deficiencies
 

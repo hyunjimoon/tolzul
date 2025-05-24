@@ -2,7 +2,7 @@ Table compares **Sec. 2.1 (Coffee: Peet’s vs Starbucks)**, **Sec. 2.2 (E
 
 [[[M1_🗄️ Variable Table]]]
 
-[[🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep]]
+[[scott(🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep)]]
 
 ZAPPOS CASE:
 - Founder background: Nick Swinburne had no experience in retail, shoes, or internet
