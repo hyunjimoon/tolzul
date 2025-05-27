@@ -27,7 +27,7 @@
 | 🎯Focus       | balances customer requests with following a product vision.                                                                                               |
 
 2025-04-16
-connect with [[📜fine_manuf_str]]
+connect with [[📜fine85_str(manuf)]]
 
 2025-04-15
 using [applying bayesian workflow to business modeling cld](https://claude.ai/chat/01ce8397-60cc-4035-8263-4b225b793b6b)

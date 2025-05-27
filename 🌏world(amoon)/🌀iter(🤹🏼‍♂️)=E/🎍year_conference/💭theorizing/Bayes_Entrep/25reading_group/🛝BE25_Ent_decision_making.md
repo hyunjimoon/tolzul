@@ -31,7 +31,7 @@ Title2: how stylized world lowers complexity for entrepreneurial decision making
 | 💸💸 Resource                                                                           | ❌: Ignoring or assuming zero costs associated with conceptualizing and theorizing new ideas.<br>✅: Explicitly recognizing and incorporating the non-zero cognitive and resource costs of developing theoretical frameworks.                 | ❌: Zero theorizing cost<br>✅: Nonzero theorizing cost                                                                                                                       |
 | 💭💭 Implementation                                                                     | ❌: Implementing imagination separately from the development of perception and utility.<br>✅: Dynamically integrating imagination as my perception and utility evolve through flexible and adaptive decision-making processes.               | ❌: Strict temporal sequence of information<br>✅: Adjustable current information set using expectations of the future (e.g. information relaxation, simulation)              |
 
-[[📜Vul14_onedone]]
+[[📜tenanbaum14_1sample(1decide)]]
 ## Evaluation Criteria
 
 |Constraint|Traditional Approach (❌)|Advanced Approach (✅)|Score Scale|

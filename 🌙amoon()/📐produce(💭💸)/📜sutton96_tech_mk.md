@@ -2,7 +2,7 @@ abstract: This paper re-examines the relationship between the R&D intensity of a
 
 Keywords: Technology; Market structure; Industrial structure
 
-- applying [[👁️🤜🕸️👥(📝)visr(paper)]], [[📜gans23_expchoice]]
+- applying [[👁️🤜🕸️👥(📝)visr(paper)]], [[📜gans23_choose(ent, exp)]]
 
 
 ## 1. 📦PRODUCT4toc

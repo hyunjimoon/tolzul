@@ -1,4 +1,4 @@
-- 🧱: [[form(ent(exbl))]], [[🗄️🧠scott]] recommended to benchmark [[📜gans23_expchoice]]
+- 🧱: [[form(ent(exbl))]], [[🗄️🧠scott]] recommended to benchmark [[📜gans23_choose(ent, exp)]]
 - using [hierarchical modeling's bias-variance tradeoff advantages cld](https://claude.ai/chat/89e6f227-17b9-4b1d-94e4-6e2a8c55a4a3)
 - [[📜gans25_knightian_uc]], [[📜Bhui21_resource_rational_dm]], [[📜ullman20_conceptualdev]]
 
@@ -222,7 +222,7 @@ loss of efficiency is large C1 >> C2 -> choose small alpha -> expect null hypoth
 
 
 ---
-three different versions (paradox resolving format like [[📜gans23_expchoice]] , [[📜sutton96_tech_mk]]) 
+three different versions (paradox resolving format like [[📜gans23_choose(ent, exp)]] , [[📜sutton96_tech_mk]]) 
 1. statistical model 
 
 [[Murray04_purposeful_exp]]

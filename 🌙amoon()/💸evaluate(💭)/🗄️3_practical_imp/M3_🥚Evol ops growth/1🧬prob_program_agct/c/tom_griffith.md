@@ -4,15 +4,15 @@ _Bonus Episode • 21st May 2025 • Learning Bayesian Statistics • Alexandre 
 
 # Contrasting Approaches to Human Rationality
 
-| Aspect                       | Kahneman/Tversky Perspective                  | Resource Rationality Approach                   |
-| ---------------------------- | --------------------------------------------- | ----------------------------------------------- |
-| **Philosophical Foundation** | Measures against idealized rational standards | Considers bounded computational resources       |
-| **View of Human Cognition**  | Focuses on flaws/biases/deviations            | Views decisions as efficient adaptations        |
-| **Key Concepts**             | Heuristics as errors, Cognitive biases        | Bounded optimality, Computational trade-offs    |
-| **Role of Constraints**      | Seen as limitations to overcome               | Central to understanding human behavior         |
-| **AI Development Goal**      | Create systems that avoid human flaws         | Build systems that complement human constraints |
-| **Measurement Standard**     | Comparison to perfect rationality             | Performance relative to resource limits         |
-| **Practical Applications**   | Debiasing systems, Error correction           | Cognitive augmentation tools, Decision support  |
+| Aspect                       | Kahneman/Tversky Perspective                  | Resource Rationality Approach                          |
+| ---------------------------- | --------------------------------------------- | ------------------------------------------------------ |
+| **Philosophical Foundation** | Measures against idealized rational standards | Considers bounded computational resources              |
+| **View of Human Cognition**  | Focuses on flaws/biases/deviations            | Views decisions as efficient adaptations               |
+| **Key Concepts**             | Heuristics as errors, Cognitive biases        | Bounded optimality, Computational trade-offs           |
+| **Role of Constraints**      | Seen as limitations to overcome               | Central to understanding human behavior                |
+| **AI Development Goal**      | Create systems that avoid human flaws         | Build systems that complement human constraints        |
+| **Measurement Standard**     | Comparison to perfect rationality             | Performance relative to resource limits                |
+| **Practical Applications**   | Debiasing systems, Error correction           | Cognitive augmentation tools (games), Decision support |
 
 ### [00:00:00 - 00:05:02] Human Intelligence vs. Machine Intelligence
 

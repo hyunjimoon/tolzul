@@ -1,4 +1,4 @@
-synthesize([[🗄️🧠scott]], [[🗄️🧠charlie]]), [[📜stern24_bayesent]]
+synthesize([[🗄️🧠scott]], [[🗄️🧠charlie]]), [[📜SS_stern24_model(beliefs, experimentation)]]
 
 2025-04-01
 

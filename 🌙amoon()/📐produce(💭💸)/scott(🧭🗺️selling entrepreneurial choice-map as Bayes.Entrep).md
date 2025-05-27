@@ -7,7 +7,7 @@
 * Scholars with interdisciplinary interests spanning cognitive science and entrepreneurship.  
 
 # Table of Contents Summary
-building on [[📜stern24_bayesent]]
+building on [[📜SS_stern24_model(beliefs, experimentation)]]
 
 - cognitive considerations (Ch.1 & Ch.5), through the defining Homo Entrepreneuricus traits (Ch.2), to practical mechanisms of experiments, data, and adaptive learning (Ch.8, Ch.9, Ch.10).
 - _continuous, resource-rational updating drives venture success_.  

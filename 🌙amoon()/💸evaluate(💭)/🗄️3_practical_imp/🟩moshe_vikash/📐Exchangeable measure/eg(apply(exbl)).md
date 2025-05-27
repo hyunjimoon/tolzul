@@ -56,6 +56,6 @@ random utility model
 ---
 
 how exbl appeared in applied papers
-- [[📜Vul14_onedone]]'s uses majority voting system to define decision quality in binary choice p * binominal_cdf(n, p) + (1-p) * (1- binominal_cdf(n, p)) and i disagree with treating n people's vote as exchangeable
+- [[📜tenanbaum14_1sample(1decide)]]'s uses majority voting system to define decision quality in binary choice p * binominal_cdf(n, p) + (1-p) * (1- binominal_cdf(n, p)) and i disagree with treating n people's vote as exchangeable
 - [[📜Gans19_EntrepreneurialStrategy]]'s test two choose one uses max(v1,v2) which assumes v1 and v2 are exchangeable (order doesn't matter testing v1 then v2 gives same result as testing v2 then v1)
 - [[Aggregate and Marginalize]]'s manufacturing assumes independence across different SKUs ()which is unrealistic (ignoring shared political system)

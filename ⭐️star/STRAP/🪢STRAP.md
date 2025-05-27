@@ -40,7 +40,7 @@ STRAP provides a comprehensive framework for entrepreneurial decision-making bui
 ---
 
 2025-05-18
-connecting with [[📜Fine22_ops4ent]]'s [[⚙️anwell]]
+connecting with [[📜SO_fine22_integrate(om-theory, ent-practice)]]'s [[⚙️anwell]]
 2025-05-17
 
 collaborating with [[🧠🤜1331need_sol]],  with problem [[moral_hazard]]
@@ -97,4 +97,4 @@ https://claude.ai/chat/22c8367a-07c9-441b-83bd-067a
   
 
   
-[[🌏world(amoon)/🌀iter(🤹🏼‍♂️)=E/🏛️semester_class/🧠Tenanbaum24_compcogsci/📜Phadnis17_e2e|📜Phadnis17_e2e]]
+[[📜fine17_e2e|📜fine17_e2e]]

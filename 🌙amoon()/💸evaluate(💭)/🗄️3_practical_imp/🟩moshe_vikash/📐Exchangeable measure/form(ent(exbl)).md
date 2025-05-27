@@ -8,10 +8,10 @@ using [[⛏️extract(exbl)]], i showed [[exbl(ent)_day2.pdf]] to [[🗄️🧠s
 
 - 🧙‍♀️proposition1: the more optimistic, the more you're likely to go to market
 - 📍proposition2: the less room for learning (tighter prior), the more you're likely to go to market [[📜vandensteen04_rational_overopt]]
-- 🧪proposition3: sample size [[📜Vul14_onedone]]
+- 🧪proposition3: sample size [[📜tenanbaum14_1sample(1decide)]]
 todo: combine the transcript i collected from johannese and pranit
 
-- modeling [[📜gans23_expchoice]], 
+- modeling [[📜gans23_choose(ent, exp)]], 
   
   
 - ## Payoff-Centered Description of Moon (2025) Variables

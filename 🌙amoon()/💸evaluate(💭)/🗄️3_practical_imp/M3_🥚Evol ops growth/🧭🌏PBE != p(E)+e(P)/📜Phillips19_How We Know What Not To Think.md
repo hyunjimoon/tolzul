@@ -9,4 +9,4 @@
 | Two-Stage Model | How do sampling and evaluation processes interact in decision making? | • Work on fast vs slow decision systems<br>• Research on cached vs computed values | A quick sampling stage based on cached approximate values is followed by more precise evaluation of sampled options | • Cached values allow rapid generation of candidates<br>• Detailed evaluation only of sampled subset<br>• Balance between accuracy and computational cost |
 | Broader Implications | What are the implications for understanding modal cognition and its origins? | • Work on development of possibility concepts<br>• Research on individual differences<br>• Studies of modal cognition across tasks | Default modal cognition may derive core properties from its role in decision making, explaining consistent biases across diverse cognitive tasks | • Predicts similar biases across domains<br>• Explains development of modal concepts<br>• Accounts for effects of time pressure |
 
-[[📜Vul14_onedone]]
+[[📜tenanbaum14_1sample(1decide)]]

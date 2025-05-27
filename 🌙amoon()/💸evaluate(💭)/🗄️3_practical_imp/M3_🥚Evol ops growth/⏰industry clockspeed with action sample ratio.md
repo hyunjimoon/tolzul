@@ -21,7 +21,7 @@ Recent literature identifies three main drivers of this heterogeneity: A. Revenu
 
 In fact, there's a simpler explanation. These seemingly distinct drivers can be explained by a more fundamental parameter: the ratio of action (earning) cost to sampling (learning) cost. 
 
-Building on [[📜Vul14_onedone]] 's insight that optimal decision-making balances sampling cost against action cost, we propose that these seemingly distinct drivers can be explained by a single parameter: Action-to-Sample time-cost ratio (A2S). A2S measures how many learning attempts (samples) you can take in the time needed for one earning attempt (action). The key insight is that optimal number of samples per decision action increases proportionally with A2S - when sampling is cheap relative to acting, it's optimal to learn more before each action.
+Building on [[📜tenanbaum14_1sample(1decide)]] 's insight that optimal decision-making balances sampling cost against action cost, we propose that these seemingly distinct drivers can be explained by a single parameter: Action-to-Sample time-cost ratio (A2S). A2S measures how many learning attempts (samples) you can take in the time needed for one earning attempt (action). The key insight is that optimal number of samples per decision action increases proportionally with A2S - when sampling is cheap relative to acting, it's optimal to learn more before each action.
 
 Consider two extremes:
 

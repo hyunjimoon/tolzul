@@ -152,7 +152,7 @@ However, the researchers found something else. They found that the experts could
 | c_φ       | Idea validation cost                                                                                                                                   | Cost of blind taste tests, market research ($)                      | Cost of prototype testing, surveys ($)                                       |
 | c_φθ      | Implemented idea test cost                                                                                                                             | Cost of opening stores, launching sales ($)                         | Cost of pilot production, small-scale launches ($)                           |
 
-[[📜Vul14_onedone]]
+[[📜tenanbaum14_1sample(1decide)]]
 ## Table 10. 
 
 | Prior Reality \ Signal | 😫 Bad News           | 😆 Good News          |
@@ -182,7 +182,7 @@ tight prior ; uniform prior
 ![[Pasted image 20250212141732.png]]
 
 
-[[📜gans23_expchoice]]]
+[[📜gans23_choose(ent, exp)]]]
 
 | Approach                              | Low Bar (Lenient Threshold)                                                                  | High Bar (Strict Threshold)                                                                                                                           |
 | ------------------------------------- | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
