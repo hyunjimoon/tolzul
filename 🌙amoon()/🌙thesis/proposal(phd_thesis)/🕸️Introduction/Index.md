@@ -5,10 +5,10 @@ longform:
   workflow: Default Workflow
   sceneFolder: /
   scenes:
-    - lp1(📜🪢)
-    - methods(📜🪢)
-    - results(📜🪢)
-    - discussion(📜🪢)
+    - 1p1(📜🪢)
+    - 2methods(📜🪢, s(p1))
+    - 3results(📜🪢, c(p1))
+    - 4discussion(📜🪢, p1)
     - conclusion(📜🪢)
   ignoredFiles:
     - 0.3😵‍💫Thesis Scope and Example Case

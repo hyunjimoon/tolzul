@@ -6,6 +6,11 @@ tags:
   - jinhu
   - vikash
 ---
+2025-05-29
+
+thread for charlie, scott, vikash
+[[homophily of contrarian]]
+
 2025-05-11
 a_supply: getting acceptance from my committe members with four evaluation (📐production (perception module [1], action module [2]) 📦delivery (teaching operations for entrepreneurship [3], teaching strategy for entrepreneurship [4]))
 a_demand: find demand side stakeholder that can help me design "perception" module (sec.2.1) e.g. DAERO (대로?)

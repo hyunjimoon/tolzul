@@ -1,3 +1,59 @@
+2025-05-30
+**
+
+due date: june 15th (one of your students) 
+
+Introduce yourself - phd working with Charles Fine and Scott Stern on operations for bayesian entrepreneurship
+
+  
+
+Introduce your work - 3 sentences  
+Operations research
+
+Good for startups in making decision/pipelines
+
+Case studies
+
+  
+
+I believe that my work is more relevant for Operations management in the Management Science journal. However, the end goal is more related to Innovation and Entrepreneurship. Given this dilemma, I thought an expert like you might proofread my draft and suggest the best subtopic I should aim for in Management Science.
+
+  
+
+Specifically I am looking for these inputs:
+
+- OM or Innov
+    
+- if neither, how can i improve
+    
+
+—
+
+I need some direct advice, confused at times regarding the approach. Can we have actionable goals
+
+- i’ve been more computational (but not formulation as such) how mathematical 
+    
+- which sections that need math expansion (come back with revised draft)
+    
+
+  
+
+ask charlie
+
+ - letter of intent (apply to both in the keywords; intersection of OM and innovation); work heavily ; real time cases for and validate (impact will be huge on innovation (ecosystem); but framework is heavily on OM)
+
+- innovation and OM (angie should take the LEAD)
+
+  
+  
+
+ask manuel
+
+- ask for both ok? (both ppl want)
+    
+
+**
+
 2025-05-22
 - using https://claude.ai/chat/2fadc45e-2980-4cec-b30e-7df2dadcddc4
 - [[scott(🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep)]], [[charlie(🧬⚙️selling value chain tools as evolutionary entrepreneurship)]]

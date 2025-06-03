@@ -1,1 +1,0 @@
-Mapping the similarities between 24 Steps and [[STRAP]]

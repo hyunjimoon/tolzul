@@ -1,6 +1,6 @@
-- 🧱cluster 2,3,4 analyze the problem sold in [[lp1(📜🪢)]]. goal is to persuade the value of solving the needs (painpoint) of C12 given C0. C0 will be the modeling assumption in [[methods(📜🪢)]] on which C12 will be compared with the other modeling appraoches in [[ls12(📜🪢, p1)]] - three contributions are 1) modeling stakeholder's acceptance as state variables (instead of belif), 2) deriving a operations rule based on the model, 3) illustrate how OM can be used to develop theories in entrepreneurship.
+- 🧱cluster 2,3,4 analyze the problem sold in [[1p1(📜🪢)]]. goal is to persuade the value of solving the needs (painpoint) of C12 given C0. C0 will be the modeling assumption in [[2methods(📜🪢, s(p1))]] on which C12 will be compared with the other modeling appraoches in [[1s(so)(📜🪢, p1)]] - three contributions are 1) modeling stakeholder's acceptance as state variables (instead of belif), 2) deriving a operations rule based on the model, 3) illustrate how OM can be used to develop theories in entrepreneurship.
 
-[[🗄️(lc012ls12(p1)(📜🪢))]]
+[[🗄️(p1c(nso)s(so)(📜🪢))]]
 
 | Element                | Details                                                                                                                          |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------- |

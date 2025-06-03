@@ -1,4 +1,10 @@
-  
+2025-06-03
+- detail of math equation interpretation : economics > computational statistics > computational cognitive science
+- math to code/figure ratio:   economics > computational statistics > computational cognitive science
+- need to infer which phase (state) i'm in and since risk is a variable, progression of phase is not monotonic
+- 
+
+
 2025-05-16
 Request: May I share biweekly progress updates with you as I rebuild my research approach? No feedback expected, though occasional guidance would be valuable.  
   

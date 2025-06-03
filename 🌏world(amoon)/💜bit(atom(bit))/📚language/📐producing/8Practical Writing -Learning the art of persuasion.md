@@ -1,13 +1,13 @@
 [[kris_ferrira]]'s insight during EMTOM
 1. introduction  
-audience: broad tom academics (to a certain extent practitioners) [[lp1(📜🪢)]]
+audience: broad tom academics (to a certain extent practitioners) [[1p1(📜🪢)]]
 -  hooking people early on
 - add specific context/example everyone can understand
  - choose which results to highlight as main contributions (explicitly states)
 
 2. literature review
-- why your work is needed vs existing literature (create table of relevant features of model, assumption, setting, algorithm) [[lc012(📜🪢, p1)]]
-- why your contributions extend existing work [[ls12(📜🪢, p1)]]
+- why your work is needed vs existing literature (create table of relevant features of model, assumption, setting, algorithm) [[1c(nso)(📜🪢, p1)]]
+- why your contributions extend existing work [[1s(so)(📜🪢, p1)]]
 
 ---
 
