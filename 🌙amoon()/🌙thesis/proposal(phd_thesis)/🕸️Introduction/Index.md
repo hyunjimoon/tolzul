@@ -6,7 +6,6 @@ longform:
   sceneFolder: /
   scenes:
     - 1p1(📜🪢)
-    - 2methods(📜🪢, s(p1))
     - 3results(📜🪢, c(p1))
     - 4discussion(📜🪢, p1)
     - conclusion(📜🪢)

@@ -32,3 +32,5 @@ my perpetual goal is nextopt:
 ## product
 ![[Pasted image 20240101092734.png]]
 high resol: [[QTell 2.pdf]],[[QTell 3.pdf]]
+
+![[Pasted image 20250606101111.png]]

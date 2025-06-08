@@ -1,1 +1,0 @@
-[[story(dialectical)]], [[design(experiment)]], [[map(journal)]]

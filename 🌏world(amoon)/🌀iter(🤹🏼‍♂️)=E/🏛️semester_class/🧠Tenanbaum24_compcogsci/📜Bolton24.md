@@ -1,3 +1,39 @@
+2025-06-06
+
+1. p₀V - K < 0 Role: Establishes the fundamental investment problem - without additional information, the venture has negative expected NPV and won't be funded.
+2. p₀(V-K) - C > 0 Role: Shows that a perfect experiment makes the venture profitable by eliminating downside risk while paying experiment cost C.
+3. π_{s₁,s₂} = p₀s₁V - [p₀s₁ + (1-p₀)(1-s₂)]K - C Role: Defines expected payoff from an imperfect experiment characterized by specificity (s₁) and sensitivity (s₂).
+4. p₀s₁V - [p₀s₁ + (1-p₀)(1-s₂)]K - C > 0 Role: Condition for the most informative experiment to yield positive NPV - ensures social desirability of experimentation.
+5. U_I = p₀s₁αV - [p₀s₁ + (1-p₀)(1-s₂)]K - C Role: Investor's utility function showing dependence on experiment design and ownership share α.
+
+3.1 choice of experiment
+independent tasks (prop.1,2)
+6. p₀s₁V - [p₀s₁ + (1-p₀)(1-s₂)]K - C < 0 Role: Condition under which moral hazard leads to market failure - investor won't fund due to entrepreneur's poor experiment design.
+substitute tasks (prop.3)
+7. U_I = p₀s₁V - [p₀s₁ + (1-p₀)(1-max(K-s₁,s₂))]K - C Role: Investor utility under substitute tasks where improving one dimension (specificity/sensitivity) worsens the other.
+complementary tasks (prop.4,5)
+8. p₀[(1-α)V + Z] - (1-p₀)λZ > 0 Role: Condition for entrepreneur to choose optimal experiment design under complementary tasks.
+9. 1-α ≥ Z(λ(1-p₀)-p₀)/(p₀V) Role: Minimum equity stake needed to align entrepreneur's incentives with investor's preferences under complementary tasks.
+10. s₁[p₀V - (Z-K)(λ(1-p₀)-p₀)] ≥ [(1-p₀)(1-s₂)]K + C Role: Condition for investor to fund experiment when providing sufficient "skin in the game" to entrepreneur.
+3.2 paying for failed test
+11. max p₀s₁Z + (1-p₀)(1-s₂)Z + [p₀(1-s₁) + (1-p₀)s₂]X + Z Role: Entrepreneur's optimization problem when compensated for failed experiments (payment X for negative results).
+12. s₁p₀[Z-X] + s₂(1-p₀)[X-Z] + p₀X + (1-p₀)Z + Z Role: Reformulated entrepreneur objective showing how payment for failure (X) affects experiment design incentives.
+independent tasks (prop.6)
+13. p₀[s₁(V-K) - (1-s₁)Z] - (1-p₀)[s₂Z + (1-s₂)K] - C ≥ 0 Role: Investor's break-even condition when paying for failed experiments under independent tasks.
+substitute tasks (prop.7)
+14. p₀[s₁(V-K) - (1-s₁)Z] - (1-p₀)[s₂Z + (1-s₂)K] - C ≥ 0 Role: Same condition applied to substitute tasks case (appears to be duplicate in your notes).
+complementary tasks (prop.8)
+15. p₀(1-s₁) + (1-p₀)(1-s₂-λs₁) ≤ λ(1-p₀) - p₀ Role: Condition determining when paying for failure is cheaper than providing equity incentives under complementary tasks.
+answering charlie’s question: Bolton’s complementary sensitivity and specificity (s1+s2 = K) case becomes Gan’s lowbar (max s1), highbar (max s2)
+
+2025-06-04
+
+| Dimension                                                    | Take-away from the manual                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Concrete illustration from the text                                                                                                                                                                                                   |
+| ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **💭 1) What they are trying to model**                      | The manuscript formalises a **contracting and experiment-design game** between a cash-rich investor and a cash-poor entrepreneur. The core decision is which _test design_ $(s_1,s_2)$—think **specificity** vs. **sensitivity** of a prototype test—the entrepreneur will run, given that the investor can only compensate with an equity share $\alpha$.                                                                                                                                                              | Eq. (4) states that for _any_ design the venture is worth doing only if the most informative test yields positive NPV .                                                                                                               |
+| **🫀 2) Meaning & intuition of the key variables/equations** | * **$C$** – upfront **cash cost** to fund the test. * **$K$** – capital required to commercialise if the test succeeds. * **$V$** – present value of the successful venture. * **$p_0$** – prior probability that the technology will pass the test. * **$(s_1,s_2)$** – **design knobs**: $s_1$ raises true-positive rate (sensitivity), $s_2$ raises true-negative rate (specificity). * **$\alpha$** – investor’s equity stake; investor’s utility $U_I$ and entrepreneur’s utility $U_E$ split $V$ proportionally . | _If $p_0=0.3$, $\alpha=0.6$, $V=$10,$M, $K=$3,$M, $C=$1,$M, and a design with $(s_1,s_2)=(0.9,0.8)$ is chosen, the investor’s expected payoff is $U_I = 0.3!\times!0.9!\times!0.6!\times!10 - [\ldots] - 1$, exactly as in Eq. (5) ._ |
+| **🏟️ 3) How & why complexity is pruned or added**           | **Removed**: no discounting, outside options $=0$, equity is the _only_ contract form—these trims isolate _test design_ as the single strategic lever. **Added**: two flavours of task interaction—_independent_ vs. _substitute_—to explore when investor and entrepreneur goals diverge (Propositions 2 & 3) . By toggling just one interaction assumption, the model shows exactly when a venture with positive social NPV still fails to get funded.                                                                | In the _substitute-task_ scenario the entrepreneur always maximises $s_1$, forcing $s_2=\kappa-s_1$, which can leave the investor indifferent or opposed, depending on whether “substitution bites at the corner” .                   |
+
 2025-05-18
 1. Builds a theoretical foundation
 2. Signals contributions to specific literature

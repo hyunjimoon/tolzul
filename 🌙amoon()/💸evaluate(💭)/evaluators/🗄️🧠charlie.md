@@ -1,3 +1,8 @@
+- [[#Table 4: Nail, Scale, Sail|Table 4: Nail, Scale, Sail]]
+- [[#Table 9: Clockspeed|Table 9: Clockspeed]]
+- [[#Table 10: product vs process|Table 10: product vs process]]
+	- [[#Table 10: product vs process#Process Bottlenecks|Process Bottlenecks]]
+
 [[charlie_fine]], [[charlie24👓_nss🗣️]], [[charlie24🛠️_clockspeed🗣️]], [[val(charlie).png]]
 ## Table 4: Nail, Scale, Sail
 
@@ -24,6 +29,19 @@
 | 2. The challenge of keeping ahead of the competition across the many dimensions of technology and markets required by an integral system. | 2. Market power in one subsystem encourages bundling with other subsystems to increase control and add more value. |
 | 3. The bureaucratic and organizational rigidities that often settle upon large, established companies. | 3. Market power in one subsystem encourages engineering integration with other subsystems to develop proprietary integral solutions. |
 
+
+
+| **Theory**                     | **Simple Explanation**                                                                                          | **Real-World Example**                                                                                                                                                   |                                      |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------ |
+| **Tiering** 🌲                 | Instead of one company managing a messy web of suppliers, it organizes them into clean layers (like a pyramid). | Ford works with its main "Tier 1" seat supplier. That supplier then manages the "Tier 2" foam and fabric makers. Ford doesn't have to manage everyone.                   | ![[Pasted image 20250607112208.png]] |
+| **Bullwhip Effect** 🤠         | A small change in customer demand creates huge, amplified swings for suppliers further up the chain.            | If customer demand for a phone drops 10%, the parts maker might see a 30% drop in orders. The effect gets worse the further you go from the customer.                    | ![[Pasted image 20250607112217.png]] |
+| **Clockspeed Amplification** ⏰ | The closer you are to the customer, the faster your part of the business has to innovate and change.            | Apple must release new iPhones every year (a fast "clockspeed"). The company that mines the raw metals for the phone works on a much slower cycle (a slow "clockspeed"). | ![[Pasted image 20250607112232.png]] |
+
+2025-05-21
+- when does modules become commodities?
+- core rigidities?
+![[clockspeed.png]]
+
 ## Table 10: product vs process 
 
 | Dimension | Disruptive Product Innovation (Electronics) | Disruptive Process Innovation (Autos) |
@@ -37,3 +55,27 @@
 | Value Capture | Through controlling key components/platforms | Through operational excellence |
 | Innovation Focus | Product architecture & features | Process optimization & efficiency |
 integrate process then product
+
+
+
+# list of bottleneck reference
+
+
+you need to have a clear image of what your supply chain design looks like, who is doing what for whom, and where the “clockspeed bottlenecks” are occurring. The
+
+### Process Bottlenecks
+
+The critical path method and the design structure matrix are designed for and applied primarily to the analysis of a single engineering project. Often, each project within a company is managed by its own project manager, not infrequently a heavyweight project manager, as suggested by the lean production paradigm, 211 who may have a great deal of autonomy in managing his or her project, using tools such as CPM and DSM. In such cases, however, there are often resources in the firm that must be shared across multiple projects. For example, in a semiconductor design house, the prototype manufacturing facility is often be shared across all the design projects. In an automotive company, the clay model shop, where models of the concept vehicles are made, is typically shared by the designers in various divisions, each of which is working on its own projects.
+
+The process bottleneck perspective, explored in work by research teams at MIT and Stanford,212  reconceptualizes the product development function as analogous to a factory for product development. Instead of focusing on the activities and relationships within the CPM or DSM model for each project, the process bottleneck approach focuses on the resources to be used by all the projects. These resources collectively represent the firm’s product development factory. Applying the concepts from Goldratt’s “theory of constraints,” which states that all factories have a bottleneck (or “constraint”) resource, 213 one then looks for the constraint resources in the company’s product development “factory.”
+
+In the product development context, when multiple projects compete for bottleneck resources, each must wait in queue for its turn to access the constraint capacity. Managing these queues and the relative demand versus supply of capacity at them typically has an enormous impact on the development time of the individual projects. In one study at Polaroid, for example, individual projects under the direction of several project managers working separately were often completed many months, or even years, later than scheduled in the CPM models. 214 Our analysis, using the process bottleneck perspective, concluded that these models had ignored in their calculations the large chunks of time that projects waited for an opportunity to be serviced by the scarce bottleneck resources. Once top management realized that someone in the organization below the level of CEO needed to “own the process” of assessing the capacity levels of various product development resources, the knowledge was available to reduce project completion times significantly.
+
+... 👓A number of tools from multiple perspectives exist for two-dimensional concurrent engineering to support this process, including the various perspectives defined by DFM, project scheduling, design structure, process bottleneck, and customer requirements.
+
+
+... As important as this insight and accompanying analysis is, its power can be increased by applying it to an integrated 3-DCE framework. In many development projects, supplier contributions can be the bottlenecks. These suppliers serve a large number of projects, sometimes more than one from the same customer. Adding key suppliers as resources in the model and, for those who may be bottlenecks, then managing them as carefully as internal bottlenecks are managed, can have a huge impact on total project time and performance.
+
+In a research project at General Motors, we analyzed one of the key bottlenecks for the entire vehicle development process: the provision of stamping dies, large steel tools that provide the shape for all stamped metal body parts. 215
+
+---

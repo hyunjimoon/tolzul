@@ -18,7 +18,7 @@ started from mailing [[alex_lew]] to consult on automating writing paper project
 # 3. 🕸️graphical representation 234map -
 dependency between the components (theory, phenomena), function (visioning, relating, sensemaking, inventing - four functions I learned from leadership IAP course), paper structure (intro, lit review, model, discussion) here.
 
-[[hart_pozen]]
+[[hart_posen]]
 
 ----
 

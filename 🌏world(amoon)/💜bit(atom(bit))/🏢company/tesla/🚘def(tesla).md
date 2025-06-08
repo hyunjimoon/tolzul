@@ -3,11 +3,27 @@ using [tesla info idx table cld](https://claude.ai/chat/d0107e5e-72ee-4a64-baf3-
 [[decide(charlie-jb,(tesla s or ford t))]], [[🗄️⬆️up(🌲level, 🏎️tesla)]]
 
 ---
+2025-06-05
+
+
+# 🍗opportunity that excited Xcellent
+
+Straubel reflected, “We concluded that, rather than seek out rock-bottom labor costs, we should compromise between low labor costs and technological capability, and so we ended up choosing Xcellent.” At the time the battery assembly was moved to Thailand, Tesla had built fewer than 10 production battery packs at their engineering shop in California, and had built those by hand without specialized production tooling.
+
+Xcellent specialized in the manufacturing of aluminum forming for BBQ grills, which surprisingly had a very similar geometry and fabrication process to the battery pack enclosure. Xcellent’s available capacity consisted of an essentially empty warehouse that could be purposed for whatever needs Tesla deemed necessary. However, as Xcellent was a small manufacturer and the battery cells were expensive, Tesla needed to pay for raw materials up-front at Xcellent in order to have enough inventory on-hand to keep up with production. Each cell cost approximately $2.50 at the time. The battery pack with 6,831 cells would contain more than $17,000 worth of cells.
+
+The assembly process included packing the cells into the 11 sheets and encapsulating them in plastic. It also included fabrication of the enclosure and assembling the sheets into the pack. On average, assembling one sheet took an assembly worker one day. The majority of the time was spent packing cells and connecting the cells into the circuit. Both of these tasks were simple and required little training. The pack enclosure and installation of the 11 sheets took an assembly worker approximately8 half a day. training.
+
+This was a relatively complex electro mechanical assembly that required significant
+
+Tesla manufacturing engineers Jason Mendez and John Williams were sent to Xcellent to teach employees how to assemble the li-ion cells into sheets and then assemble the sheets into the battery pack. When they arrived at Xcellent, they received a warm greeting and were given an office filled with BBQ’s proudly displayed, all products Xcellent had made in its factory (Exhibit 8).
+
+Jason Mendez said, “Making a battery pack was nothing like building a BBQ but they were ready to learn and excited to enter the high tech industry. We built the battery factory in Thailand together with the Xcellent team.”
+
+The Xcellent team was very excited to have the opportunity to enter into a new cutting edge technology. But their resources to support the development of the manufacturing process were very limited. Even development of the equipment to build simple parts and subassemblies was challenging. Exhibit 9 shows the Xcellent team examining a prototype part against the engineering drawing on the floor. Tesla had not anticipated that Xcellent would have virtually no design or quality control capabilities.
+
 
 2025-05-19
-
-
-
 # Tesla Experiments Aligned with Existing Examples
 
 | Set          | Definition                                                             | Market Validation Examples                                              | Operational Verification Examples                                            | BINARIZED CHOICE                                                                                                                                               |
