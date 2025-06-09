@@ -1,8 +1,5 @@
 2025-05-18
 - connecting with [[🪢STRAP]], and cld mentioned nested option [[def(ops4entrpre)]] which was surprising due to the repeated use of words nested e.g. [[📝s25_Lecture18_NestedLogit.pdf]]
-- 
-
-
 
 2025-04-27
 Fine et al. (2022) proposes a structured progression for entrepreneurial operations by compartmentalizing the journey into three sequential phases—**Nailing**, **Scaling**, and **Sailing**​.  
@@ -20,8 +17,6 @@ KEYWORDS entrepreneurial operations, evolutionary entrepreneurship, new ventures
 Sergey's master thesis: Managing operational capabilities in startup companies
 
 Hundreds of papers exist on entrepreneurial marketing and finance, whereas capabilities for operations get far less attention. Furthermore, much of the literature in operations management addresses challenges of companies in stable environments, leaving entrepreneurs with little theoretical or practical guidance on operations strategy. As a result, many entrepreneurs focus their efforts on value creation: marketing, product development, lead generation, and conversion. Ironically, extreme focus on value creation might represent a trap, whereby a company fails not because of a poor value proposition or bad marketing, but because of an inability to scale up and deliver value for perhaps an outstanding, innovative new product or service. In over a dozen case studies written during the past four years, we have found numerous examples where the development of operational capabilities was a determining factor for success or failure in entrepreneurial firms. We study the effect of timing of introduction of operational capabilities on market success as a function of firm's value proposition. We provide case evidence on the challenges and opportunities of building operations capabilities in entrepreneurial firms and we construct theoretical and testable models for assessing when and why entrepreneurs should invest sooner, or later, in operational capabilities.
-
-
 
 # dynamic capability
 
@@ -90,59 +85,4 @@ impact of growth opportunities and competition on firm level capability developm
 
 **Core Framework**: Three-stage entrepreneurial lifecycle (Nail It, Scale It, Sail It) with stage-specific operational challenges and tools **Key Process**: Field-based case study development across multiple continents, iterating between classroom teaching and practitioner feedback **Tradeoffs 🔴(💜,💚)**: Balancing operational rigor with entrepreneurial flexibility; systematic process development versus rapid experimentation needs
 
-[[def(abcd_t)]], [[bit(abcd_t)]], [[]]
-## 🖼️ Visual Analysis
-
-```svg
-<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="800" height="600" fill="#f8f9fa" />
-  
-  <!-- Title -->
-  <text x="400" y="40" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">Operations for Entrepreneurs Framework</text>
-  
-  <!-- Need-Solution Mapping (top) -->
-  <rect x="50" y="70" width="700" height="120" rx="10" fill="#ffffff" stroke="#cccccc" stroke-width="2" />
-  <text x="400" y="100" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">💜💚 Need-Solution Mapping</text>
-  <rect x="80" y="120" width="280" height="50" fill="#f0e6ff" stroke="#8e44ad" stroke-width="1" />
-  <text x="220" y="135" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">Problem (💜)</text>
-  <text x="220" y="150" font-family="Arial" font-size="10" text-anchor="middle">OM theory ignores entrepreneurial contexts</text>
-  
-  <rect x="440" y="120" width="280" height="50" fill="#e8f5e8" stroke="#27ae60" stroke-width="1" />
-  <text x="580" y="135" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">Solution (💚)</text>
-  <text x="580" y="150" font-family="Arial" font-size="10" text-anchor="middle">Integrated operations-entrepreneurship framework</text>
-  
-  <!-- Core Framework (middle) -->
-  <rect x="50" y="210" width="700" height="200" rx="10" fill="#ffffff" stroke="#cccccc" stroke-width="2" />
-  <text x="400" y="240" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">🧭🗺️ Nail-Scale-Sail Framework</text>
-  
-  <!-- Three stages -->
-  <rect x="80" y="260" width="180" height="120" fill="#fff3cd" stroke="#856404" stroke-width="1" />
-  <text x="170" y="280" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">NAIL IT</text>
-  <text x="170" y="300" font-family="Arial" font-size="10" text-anchor="middle">🧍‍♀️ Jungle exploration</text>
-  <text x="170" y="320" font-family="Arial" font-size="10" text-anchor="middle">💭 Value proposition iteration</text>
-  <text x="170" y="340" font-family="Arial" font-size="10" text-anchor="middle">🌏 Resource optimization</text>
-  
-  <rect x="310" y="260" width="180" height="120" fill="#d4edda" stroke="#155724" stroke-width="1" />
-  <text x="400" y="280" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">SCALE IT</text>
-  <text x="400" y="300" font-family="Arial" font-size="10" text-anchor="middle">📐 10 Scaling Tools</text>
-  <text x="400" y="320" font-family="Arial" font-size="10" text-anchor="middle">🧭 Process systematization</text>
-  <text x="400" y="340" font-family="Arial" font-size="10" text-anchor="middle">🗺️ Mountain climbing</text>
-  
-  <rect x="540" y="260" width="180" height="120" fill="#d1ecf1" stroke="#0c5460" stroke-width="1" />
-  <text x="630" y="280" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">SAIL IT</text>
-  <text x="630" y="300" font-family="Arial" font-size="10" text-anchor="middle">💸 Continuous improvement</text>
-  <text x="630" y="320" font-family="Arial" font-size="10" text-anchor="middle">⚓ Stability & innovation</text>
-  <text x="630" y="340" font-family="Arial" font-size="10" text-anchor="middle">🌊 Mature operations</text>
-  
-  <!-- Applications (bottom) -->
-  <rect x="50" y="430" width="700" height="140" rx="10" fill="#ffffff" stroke="#cccccc" stroke-width="2" />
-  <text x="400" y="460" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">💸 Key Applications</text>
-  <text x="200" y="490" font-family="Arial" font-size="12" text-anchor="middle">Entrepreneurship Education</text>
-  <text x="200" y="510" font-family="Arial" font-size="10" text-anchor="middle">Operations courses for entrepreneurs</text>
-  <text x="400" y="490" font-family="Arial" font-size="12" text-anchor="middle">Startup Advisory</text>
-  <text x="400" y="510" font-family="Arial" font-size="10" text-anchor="middle">10 scaling tools framework</text>
-  <text x="600" y="490" font-family="Arial" font-size="12" text-anchor="middle">Economic Development</text>
-  <text x="600" y="510" font-family="Arial" font-size="10" text-anchor="middle">Regional capability building</text>
-</svg>
-```
+[[def(abcd_t)]], [[bit(abcd_t)]]

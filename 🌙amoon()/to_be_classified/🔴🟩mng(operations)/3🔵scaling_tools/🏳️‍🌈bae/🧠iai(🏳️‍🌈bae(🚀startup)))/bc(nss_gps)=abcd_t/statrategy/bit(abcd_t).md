@@ -10,17 +10,17 @@
 
 ### scale well
 
-| -                      | `atom_supply`   | `bit_supply`   | `customer`   | `demand`   | note                          |     |
-| ---------------------- | --- | --- | --- | --- | ----------------------------- | --- |
-| ⚡️anwell              | g   | g   |    |    | pivot                         |     |
-| 🐷bgi                  | g1  | g3  | g2  |g     |  promote partnership (d), build capabilities (b) then find markets (c)                             |     |
-| 🩺meditech             | g1  | b   |     |     |                               |     |
-| 🔝metalicon            | g1  | g2  | g3  |     |                               |     |
-| 🏭metropli             | g2  | g1  | g3  |     | buy market intelligence/brand (c, (d?))        |     |
-| 🕵🏻ministry of supply | b3  | g2  | g1  |     |     affected by Bill Aulet's `customer-focus`                          |     |
-| 🏠nxstage              | b3  | g2  | g1   |     |  failed to engineer "distribute (nephrologist)" (b)                             |     |
-| 🚘tesla                | g1  | b2  |     |g     | low price would create demand, redesign operations |     |
-| 🛖unity home           | g1    |g2     |     |     |                               |     |
+| -                      | `atom_supply` | `bit_supply` | `customer` | `demand` | note                                                                  |     |
+| ---------------------- | ------------- | ------------ | ---------- | -------- | --------------------------------------------------------------------- | --- |
+| ⚡️anwell               | g             | g            |            |          | pivot                                                                 |     |
+| 🐷bgi                  | g1            | g3           | g2         | g        | promote partnership (d), build capabilities (b) then find markets (c) |     |
+| [[🩺meditech]]         | g1            | b            |            |          |                                                                       |     |
+| 🔝metalicon            | g1            | g2           | g3         |          |                                                                       |     |
+| 🏭metropli             | g2            | g1           | g3         |          | buy market intelligence/brand (c, (d?))                               |     |
+| 🕵🏻ministry of supply | b3            | g2           | g1         |          | affected by Bill Aulet's `customer-focus`                             |     |
+| 🏠nxstage              | b3            | g2           | g1         |          | failed to engineer "distribute (nephrologist)" (b)                    |     |
+| 🚘tesla                | g1            | b2           |            | g        | low price would create demand, redesign operations                    |     |
+| 🛖unity home           | g1            | g2           |            |          |                                                                       |     |
 
 Q1. order of ⚡️anwell: g1, g2,? how well did they manage `atom_supply`? with `atom_supply` and `bit_supply` both good, can they chill about `customer` (as they can pivot)?
 Q2. does chosen component (`atom_supply`,`bit_supply`,`customer`,`demand`) to nail first, determine `tech push vs market pull` after? 

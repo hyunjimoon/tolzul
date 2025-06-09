@@ -1,10 +1,7 @@
 ## 1.2 Literature Review: Nature of Need and Solution Direction (5 paragraphs)
 
-searching for resource partner customer - 
-
-[[🗄️🧠scott]]
-
-
+2025-06-09
+spectrum of too operational and too strategical
 
 with substitutive utility (instead of product market fit) lowers false positive probability, offers flexible strategy and operations (easier to pivot if there's better matching between rp and c), and is more meaningful (reverse engineer given perceptual dimension). compared to product and market fit. 
 to construct the meaning of startup strategy and operations, it should be fit around stakeholders, rather than abstract product market fit
