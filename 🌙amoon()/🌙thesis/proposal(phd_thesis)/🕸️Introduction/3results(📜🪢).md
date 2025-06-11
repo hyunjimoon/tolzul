@@ -1,3 +1,4 @@
+using [PR-CR, ⚠️📍zone with ⬆️➡️⬇️⬅️ cld](https://claude.ai/chat/034d19d7-0606-407b-a607-33b3cecfb868)
 After summarizing the decision rules derived from [[2methods(📜🪢, s(p1))]], we use retrospective analysis. Intention is to illustrate the process of formulating and solving the optimization problem which includes 1) calculation of overage and underage cost, 2) judging the type of situation they are in (how stochastic or interdependent) to make them confident in applying our proposed theory in their decision analysis (for academics) or decision making (practitioners). To refrain from making (incorrect) normative suggestions of past situation where we lack information access, we changed the first name of each company: from webvan, tesla, betterplace to xeban, sesla, cetterplace. 
 
 1. describe the main logic of # code in six paragraphs.
