@@ -1,0 +1,10 @@
+2025-06-10
+[[📜ss_parker05_twosided_network_ext]]
+[[📜SS_stern24_model(beliefs, experimentation)]]
+[[📜SS_spina16_elicit(beliefs, systematically)]]
+[[📜SS_packard17_observe(opportunities, beliefs)]]
+[[📜SS_camuffo19_structure(experiments, learning)]]
+[[📜SS_granovetter78_model(collective-behavior, thresholds)]]
+[[📜SS_kerr14_systematize(experimentation, entrepreneurship)]]
+[[📜CN+SS_march91_extract(organizations, small-histories)]]
+[[📜SS_Nejad22_A structural model of mentorship in startup accelerators]]

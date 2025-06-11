@@ -1,3 +1,6 @@
+2025-06-11
+asked [[hart_pozen]] for feedback on my representation of joint proj_theta (argmax_{phi, theta} p(theta, phi)) != argmax_{theta} p(theta, phi=phi0)
+
 2025-06-03
 
 "reverse engineering" a surprising result can be summarized as:

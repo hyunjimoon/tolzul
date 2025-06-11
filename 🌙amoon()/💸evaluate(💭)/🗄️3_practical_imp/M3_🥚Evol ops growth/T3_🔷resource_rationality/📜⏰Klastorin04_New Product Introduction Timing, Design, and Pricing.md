@@ -5,4 +5,4 @@ Key words: newproduct development; game theory; product index
 
 cites [[📜⏰Souza04_New-Product Strategy and Industry Clockspeed]]
 
-[[hart_posen]]
+[[hart_pozen]]

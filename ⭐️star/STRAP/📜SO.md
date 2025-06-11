@@ -1,0 +1,7 @@
+[[📜SO_johnston02(caution startup)]]
+[[📜SO_wood10_observe(behavior, beliefs)]]
+[[📜SO_fine22_integrate(om-theory, ent-practice)]]
+[[📜SO_anderson13_customize(optimization, early-stage)]]
+[[📜SO_read16_systematize(entrepreneurship, decisions)]]
+[[📜SO_teece97_integrate(capabilities, changing-environments)]]
+- need to check [[📜SO_sarasvathy01_leverage(contingencies, uncertainty)]]

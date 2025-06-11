@@ -53,7 +53,7 @@ This quantitative framework aligns with our mathematical formalization of the en
 | **Cost Structure**    | - Linear delay cost c(t)<br>- Diminishing returns on computation value | - Time cost c(t)t<br>- Space-time cost c(s,t)t                       | - Validation cost (statistical bias)<br>- Verification cost (approximation bias)<br>- Opportunity cost (delayed action) |
 | **Optimization Goal** | Find t* that maximizes:<br>Value(t) - c(t)t                            | Find optimal (a,s,t) that maximizes:<br>U(Δc, Δr, a, s, t) - c(s,t)t | Maximize information gain while minimizing total costs                                                                  |
 | **Key Tradeoff**      | Precision vs Speed                                                     | Exploration (space) vs Exploitation (time)                           | Test Quality vs Resource Usage                                                                                          |
-todo: synthesize with [[hart_posen]]'s 
+todo: synthesize with [[hart_pozen]]'s 
 
 1. **Theoretical Completeness**:
 - The Gershman paper shows value of computation can become negative
@@ -90,7 +90,7 @@ I'll update the table to include the three action choices at each step, structur
 
 
 
-[[hart_posen]]
+[[hart_pozen]]
 
 The power of this vector-based approach lies in its ability to explain diverse entrepreneurial behaviors as rational adaptations to different environmental conditions. ⭐️Just as a compass needle responds to magnetic fields, the entrepreneurial decision vector aligns with the underlying probability structure of the environment. This alignment process raises a fundamental question that drives our subsequent analysis: How do different environmental conditions shape these decision vectors, and what determines their optimal orientation across various industry clockspeeds?
 ## 2. Vector Direction: Rational Adaptation to Environmental Signals

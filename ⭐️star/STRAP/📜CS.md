@@ -1,0 +1,6 @@
+[[📜CS_Sarasvathy01(caus_eff)]]
+[[📜CS_kemell20_identify(metrics, startups)]]
+[[📜CS_alvarez07_bridge(discovery, creation)]]
+[[📜CS_mcmullen06_handle(uncertainty, action)]]
+[[📜CS_peng21_overload(information, decisions)]]
+[[📜CS_camerer20_debias(entrepreneurs, overconfidence)]]
