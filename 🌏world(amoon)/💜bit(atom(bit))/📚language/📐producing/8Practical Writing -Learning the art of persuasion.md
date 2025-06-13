@@ -1,6 +1,6 @@
 [[kris_ferrira]]'s insight during EMTOM
 1. introduction  
-audience: broad tom academics (to a certain extent practitioners) [[1intro(📜🪢)]]
+audience: broad tom academics (to a certain extent practitioners) [[1intro(📝🪢)]]
 -  hooking people early on
 - add specific context/example everyone can understand
  - choose which results to highlight as main contributions (explicitly states)

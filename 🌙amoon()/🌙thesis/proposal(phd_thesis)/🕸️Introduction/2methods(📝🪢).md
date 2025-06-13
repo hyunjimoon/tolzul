@@ -1,6 +1,288 @@
 step0 ([[classic]]). given customer's demand $\color{skyblue}D$ , supplier's quantity $\color{red}q$?
-step1. given customer's demand $\color{skyblue}Bern(q)$ and resource partner's supply $\color{skyblue}Bern(1-q)$, quality of proposed product $\color{red}q$?
-step2 (charlie). given customer's demand $\color{skyblue}Bin(Q, q)$ and resource partner's supply $\color{skyblue}Bin(Q, 1-q)$, quality $\color{red}q$ and quantity $\color{red}Q$?
+step1 (quality). given customer's quality-linear demand $\color{skyblue}Bern(q)$ and resource partner's quality-linear supply $\color{skyblue}Bern(1-q)$, quality of proposed product $\color{red}q$?
+step2 (non-linear quality). given customer's quality-nonlinear demand  and resource partner's quality-nonlinear supply
+step3 (non-linear quality and quantity). given customer's quality-nonlinear demand  and resource partner's quality-nonlinear supply, quality $\color{red}q$ and quantity $\color{red}Q$?
+
+## 2 Methods  
+
+We incrementally extend the classical newsvendor along two orthogonal dimensions—**decision type** (quantity → quality → quality + quantity) and **stakeholder response** (deterministic → linear Bernoulli → sigmoid).  
+Table 1 situates the three propositions developed in this section.
+
+| Step  | Decision(s)               | Commitment probabilities                                                                     | New relative to classic newsvendor                                             | appendix    |
+| ----- | ------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | ----------- |
+| **1** | quality $q$               | $P_c(q)=q$ , $P_r(q)=1-q$                                                                    | Demand–supply asymmetry driven by quality rather than quantity                 | [[classic]] |
+| **2** | quality $q$               | $P_c(q)=\dfrac1{1+e^{-\beta_c(q-\theta_c)}}$ , $P_r(q)=\dfrac1{1+e^{\ \beta_r(q-\theta_r)}}$ | Threshold & saturation effects (S-curves)                                      |             |
+| **3** | quality $q$, quantity $Q$ | same sigmoids as Step 2                                                                      | Joint quality–quantity choice with diminishing–return revenue $R(Q)=aQ-bQ^{2}$ |             |
+
+---
+
+### 2.1 Step 1 – Linear-quality commitments  
+
+**Proposition 1 (Optimal quality under linear Bernoulli commitments).**  
+Let mismatch loss be  
+$L(q)=C_u q^{2}+C_o(1-q)^{2}-V q(1-q)$ with $q\in[0,1]$,
+$C_u,C_o>0$, and match bonus $V\ge0$.  
+Then  
+
+$$
+q^{*}=\frac{V+2C_o}{2\,(C_u+C_o+V)},
+\qquad
+\frac{\partial q^{*}}{\partial V}=\frac{C_u-C_o}{2\,(C_u+C_o+V)^{2}} .
+$$
+
+> **When is $q^{*}$ high?**  
+> (i) $C_o\!\gg\!C_u$—expensive surplus; managers raise quality to pull demand.  
+> (ii) $V$ large *and* $C_u>C_o$—opportunity seekers court customers even at surplus risk.  
+> (iii) $V$ small *and* $C_o>C_u$—risk avoiders still favour higher quality to dodge leftovers.
+
+*Why interesting?*  
+Unlike the classic critical-fractile, which moves with a single cost ratio,
+here the *direction* of $V$’s impact flips when the cheaper mismatch changes,
+highlighting a dual-cost amplification mechanism absent in quantity-only
+settings.
+
+---
+
+### 2.2 Step 2 – Non-linear-quality commitments  
+
+**Proposition 2 (Optimal quality under sigmoid commitments).**  
+With logistic response curves  
+
+$$
+P_c(q)=\frac1{1+e^{-\beta_c(q-\theta_c)}},\qquad
+P_r(q)=\frac1{1+e^{\ \beta_r(q-\theta_r)}},
+$$
+
+the expected loss  
+
+$$
+L(q)=C_uP_c(1-P_r)+C_oP_r(1-P_c)-V P_cP_r
+$$
+
+is strictly quasi-convex on $[0,1]$; its derivative $L'(q)=0$ has a *u*
+
+-----
+
+
+
+## Appendix A Detailed Mathematical Derivations  
+*(To accompany the three propositions in Section 2)*  
+
+The exposition mirrors the level of clarity in our preliminary “classic newsvendor” appendix :contentReference[oaicite:0]{index=0} while extending it to the quality-driven settings introduced in the paper.  We proceed in ascending order of model complexity.
+
+---
+
+### A.1 Step 1 — Linear-Quality (Two Bernoulli) Model  
+
+#### A.1.1 Notation  
+| Symbol | Meaning |
+|--------|---------|
+| $q\in[0,1]$ | product quality (decision variable) |
+| $P_c(q)=q$ | probability customer commits |
+| $P_r(q)=1-q$ | probability resource partner commits |
+| $C_u$ | unit under-stock (opportunity) cost |
+| $C_o$ | unit over-stock cost |
+| $V$   | bonus value when both commit |
+
+#### A.1.2 Expected Loss Function  
+Only one mismatch cost can realise in any outcome.  Enumerating the four Bernoulli states:
+
+\[
+L(q)=C_u\,P_c(1-P_r)+C_o\,P_r(1-P_c)-V\,P_cP_r
+      =C_u q^{2}+C_o(1-q)^{2}-V q(1-q).
+\]
+
+#### A.1.3 Convexity  
+\[
+L''(q)=2(C_u+C_o+V)>0\ \Longrightarrow\ L(q)\ \text{strictly convex}.
+\]
+
+#### A.1.4 Unique Optimum  
+Set $L'(q)=0$:
+
+\[
+2(C_u+C_o+V)q-(2C_o+V)=0
+\quad\Longrightarrow\quad
+q^{*} = \frac{V+2C_o}{2(C_u+C_o+V)}.
+\]
+
+#### A.1.5 Comparative Static w.r.t. $V$  
+
+\[
+\frac{\partial q^{*}}{\partial V}
+      =\frac{C_u-C_o}{2(C_u+C_o+V)^{2}}.
+\]
+
+*Interpretation:* $q^{*}$ increases in $V$ iff $C_o<C_u$ and decreases if $C_o>C_u$ (see cost-asymmetry discussion in Section 2).
+
+---
+
+### A.2 Step 2 — Non-Linear Quality (Sigmoid Commitments)  
+
+#### A.2.1 Notation  
+| Symbol | Meaning |
+|--------|---------|
+| $q\in[0,1]$ | product quality |
+| $P_c(q)=\dfrac{1}{1+e^{-\beta_c(q-\theta_c)}}$ | customer sigmoid |
+| $P_r(q)=\dfrac{1}{1+e^{\ \beta_r(q-\theta_r)}}$ | partner sigmoid (mirrored) |
+| $\beta_c,\beta_r>0$ | steepness parameters |
+| $\theta_c,\theta_r\in(0,1)$ | inflection points |
+| Other symbols $C_u,C_o,V$ as before |
+
+We write the derivatives  
+$P_c'(q)=\beta_cP_c(1-P_c)$ and $P_r'(q)=-\beta_rP_r(1-P_r)$ for later use.
+
+#### A.2.2 Expected Loss Function  
+
+\[
+L(q)=C_uP_c(1-P_r)+C_oP_r(1-P_c)-V P_cP_r.
+\]
+
+#### A.2.3 Monotone-Difference Form of the Gradient  
+
+\[
+\begin{aligned}
+L'(q)
+&=\beta_cP_c(1-P_c)\bigl[C_u(1-P_r)-C_oP_r-VP_r\bigr]  \\
+&\quad+\beta_rP_r(1-P_r)\bigl[C_uP_c-C_o(1-P_c)+VP_c\bigr].
+\end{aligned}
+\tag{A.1}
+\]
+
+The two bracketed terms are strictly decreasing and increasing in $q$,
+respectively, while the sigmoid prefactors are strictly positive on $(0,1)$.
+
+#### A.2.4 Uniqueness of the Optimum  
+
+Because (A.1) is a weighted sum of functions with opposite monotonicity,
+$L'(q)$ can cross zero **at most once**.  Since $L'(0)<0$ and $L'(1)>0$,
+it crosses exactly once, implying strict quasi-convexity and a unique minimiser
+$q^{\dagger}\in(0,1)$.
+
+#### A.2.5 Comparative Static w.r.t. $V$  
+
+Implicit differentiation of $L'(q^{\dagger},V)=0$ gives  
+
+\[
+\frac{\partial q^{\dagger}}{\partial V}
+  =-\frac{\partial L'/\partial V}{\partial L'/\partial q}.
+\]
+
+Denominator $>0$ by quasi-convexity.  Evaluating the numerator at the root of $L'(q)$ yields $(C_u-C_o)\,[\beta_cP_c(1-P_c)+\beta_rP_r(1-P_r)]$, again delivering $\operatorname{sgn}(\partial q^{\dagger}/\partial V)=\operatorname{sgn}(C_u-C_o)$.
+
+---
+
+### A.3 Step 3 — Joint Quality–Quantity Model  
+
+#### A.3.1 Additional Notation  
+| Symbol | Meaning |
+|--------|---------|
+| $Q\ge0$ | production quantity (new decision) |
+| $R(Q)=aQ-bQ^{2}$, $a,b>0$ | diminishing-return revenue when both commit |
+
+#### A.3.2 Expected Profit  
+
+\[
+\Pi(q,Q)= R(Q)P_c(q)P_r(q)
+          -C_uP_c(q)\bigl[1-P_r(q)\bigr]
+          -C_oP_r(q)\bigl[1-P_c(q)\bigr].
+\]
+
+#### A.3.3 Optimising Quantity for Fixed Quality  
+
+\[
+\frac{\partial \Pi}{\partial Q}=aP_cP_r-2bQP_cP_r
+   =P_cP_r\bigl(a-2bQ\bigr)=0
+\ \Rightarrow\ 
+Q^{*}=\frac{a}{2b}.
+\]
+
+This vertex is independent of $q$.
+
+#### A.3.4 Reduced One-Dimensional Quality Problem  
+
+Substituting $Q^{*}$ drops $Q$ from all mismatch terms and scales the revenue
+coefficient by $P_cP_r$:
+
+\[
+\max_{q\in[0,1]}
+\Bigl[\tfrac{a^{2}}{4b}P_c(q)P_r(q)-C_uP_c(1-P_r)-C_oP_r(1-P_c)\Bigr].
+\]
+
+The maximiser satisfies the *same* first-order condition $L'(q)=0$ derived in
+Step 2, so $q^{\dagger}$ and all its comparative statics carry over.
+ 
+---
+
+### A.4 Summary of Structural Properties  
+
+| Model | Convexity | Closed-form optimum? | Direction of $\partial q/\partial V$ |
+|-------|-----------|----------------------|--------------------------------------|
+| Step 1 | **Strictly convex** | Yes, $q^{*}$ | $\;$sign$(C_u-C_o)$ |
+| Step 2 | Strictly quasi-convex | No (unique root) | $\;$sign$(C_u-C_o)$ |
+| Step 3 | Separable: $Q$ concave, $q$ as Step 2 | $Q^{*}=a/2b$, $q^{\dagger}$ via root-finding | $\;$sign$(C_u-C_o)$ |
+
+These formal results justify the managerial insights highlighted in the main
+text while supplying POMS scholars with full derivations for replication and
+future extensions.
+```
+
+## Step 0 
+
+* **Quantity decision** $\color{red}{q}\in\mathbb R_{+}$  
+* **Random demand** $\color{skyblue}{D}$ with CDF $\color{skyblue}{F}(\cdot)$ and PDF $\color{skyblue}{f}(\cdot)$  
+* Usual critical-fractile solution  
+  $\displaystyle \color{skyblue}{F}\!\bigl(\color{red}{q}^{*}\bigr)
+  =\frac{\text{under-stock cost}}{\text{under}+\text{over cost}}$  
+
+
+---
+
+## Step 1 (Bernoulli commitments)
+
+|                                         | $\color{skyblue}{Q}=0$ (partner absent)                                  | $\color{skyblue}{Q}=1$ (partner present)                               |
+| --------------------------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------------- |
+| $\color{skyblue}{D}=1$ (customer shows) | $\color{red}{q}^{2}$&nbsp;⟶ **shortage** incurs *opportunity* cost $C_u$ | $(1-\color{red}{q})\color{red}{q}$&nbsp;⟶ **match** gains value $+V$   |
+| $\color{skyblue}{D}=0$ (no customer)    | $\color{red}{q}(1-\color{red}{q})$&nbsp;⟶ **match** (no cost)            | $(1-\color{red}{q})^{2}$&nbsp;⟶ **excess** incurs *overage* cost $C_o$ |
+
+\[
+\begin{aligned}
+\mathrm E[\text{Cost}]
+&= C_u\,\Pr(\color{skyblue}{D}=1,\color{skyblue}{Q}=0)
+  + C_o\,\Pr(\color{skyblue}{D}=0,\color{skyblue}{Q}=1)
+  - V\,\Pr(\color{skyblue}{D}=1,\color{skyblue}{Q}=1)\\[2mm]
+&= C_u\,\color{red}{q}^{2}\;+\;C_o\,(1-\color{red}{q})^{2}\;-\;V\,\color{red}{q}(1-\color{red}{q})
+\end{aligned}
+\]
+
+### Optimal quality $\color{red}{q}^{*}$
+
+\[
+\frac{d}{d\color{red}{q}}\mathrm E[\text{Cost}]
+= 2C_u\,\color{red}{q}-2C_o(1-\color{red}{q})-V(1-2\color{red}{q})
+=0
+\]
+
+\[
+\boxed{\;
+\color{red}{q}^{*}
+=\frac{\,V+2C_o\,}{2\,(C_u+C_o+V)}
+=\frac12\!\left[\,1+\frac{C_o-C_u}{C_u+C_o+V}\right]
+\;}
+\]
+
+*When $V=0$: $\displaystyle \color{red}{q}^{*}=1-\text{CR}$ with  
+$\text{CR}=\frac{C_u}{C_u+C_o}$ (the classical critical ratio).*
+
+---
+
+### When does $\color{red}{q}^{*}$ land **high**?
+
+1. **High $C_o$, low $C_u$** – you dread leftover stock, so you raise quality to attract customers.  
+2. **High $V$** – the upside of a full match is large (e.g., $C_u=p-c>C_o=c$).  
+3. **Low $V$** *and* $C_u<C_o$ – risk-averse posture: avoid unsold production.
+
+---
 
 # Newsvendor Model - Complete Derivation
 
@@ -75,12 +357,12 @@ $$= \text{E}[(Q-D)c | D \leq Q] P(D \leq Q) + \text{E}[(D-Q)(p-c) | D > Q] P(D >
 
 ### Case Analysis for Bernoulli Variables
 
-| $\color{skyblue}D$ | $\color{skyblue}Q$ | Probability         | Condition | Cost                 |     |
-| ------------------ | ------------------ | ------------------- | --------- | -------------------- | --- |
-| 0                  | 0                  | $(1-q) \cdot q$     | $D = Q$   | 0                    |     |
-| 0                  | 1                  | $(1-q) \cdot (1-q)$ | $D < Q$   | $(1-0)c = c$         |     |
-| 1                  | 0                  | $q \cdot q$         | $D > Q$   | $(1-0)(p-c) = (p-c)$ |     |
-| 1                  | 1                  | $q \cdot (1-q)$     | $D = Q$   | 0                    |     |
+| $\color{skyblue}D$ | $\color{skyblue}Q$ | Probability         | Condition | Cost                 |
+| ------------------ | ------------------ | ------------------- | --------- | -------------------- |
+| 0                  | 0                  | $(1-q) \cdot q$     | $D = Q$   | 0                    |
+| 0                  | 1                  | $(1-q) \cdot (1-q)$ | $D < Q$   | $(1-0)c = c$         |
+| 1                  | 0                  | $q \cdot q$         | $D > Q$   | $(1-0)(p-c) = (p-c)$ |
+| 1                  | 1                  | $q \cdot (1-q)$     | $D = Q$   | 0                    |
 
 ### Expected Cost Calculation
 
@@ -184,7 +466,7 @@ Even small utility changes—such as the 0.06-util uplift from **example 1**—a
 >
 > This demonstrates how the strategic choice of a specific resource partner—balancing their excitement against their inexperience—leads to the final `p_r = 0.67` and `p_c = 0.33` probabilities used in the subsequent analysis.
 
-[[2methods(📜🪢)|2methods(📜🪢)]]
+[[2methods(📝🪢)|2methods(📝🪢)]]
 ## 2.2 Second Stage: Sequencing Engagement through a Newsvendor Lens
 
 The second stage is organized into three subsections: (i) _Inputs & Cost Architecture, (ii)  Why a single-period Newsvendor backbone is appropriate and (iii) Newsvendor Formulation and Decision Rule.

@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"id":"6077378a24add21b","type":"group","x":-1100,"y":-1620,"width":2360,"height":440,"color":"6","label":"P"},
+		{"id":"1cbb7e1718fa5359","type":"file","file":"🌙amoon()/🌙thesis/proposal(phd_thesis)/🕸️Introduction/🗄️(📝🪢).md","x":-1840,"y":-880,"width":400,"height":400},
+		{"id":"ccfdee0ee1f21338","type":"file","file":"⭐️star/STRAP/📜SO.md","x":840,"y":640,"width":400,"height":400},
+		{"id":"c00bc2dc4a89b6a0","type":"file","file":"⭐️star/STRAP/📜CS.md","x":-1080,"y":640,"width":400,"height":400},
+		{"id":"790f235fa60e2c1c","type":"file","file":"🌙amoon()/🌙thesis/proposal(phd_thesis)/🕸️Introduction/2methods(📝🪢).md","x":-480,"y":-200,"width":400,"height":400},
+		{"id":"4828ada5f2d22a47","type":"file","file":"⭐️star/STRAP/📜CO.md","x":-640,"y":640,"width":400,"height":400},
+		{"id":"339258035b91c233","type":"file","file":"🌙amoon()/🌙thesis/proposal(phd_thesis)/🕸️Introduction/🗄️(📝🪢🔴).md","x":-960,"y":-2480,"width":1560,"height":680},
+		{"id":"330c0005f275ba0d","type":"file","file":"🌙amoon()/🌙thesis/proposal(phd_thesis)/🕸️Introduction/🗄️compare(🪢, cs_co).md","x":-1480,"y":-2400,"width":400,"height":400},
+		{"id":"21448dce1fea51b6","type":"file","file":"⭐️star/STRAP/📜P.md","x":-106,"y":-448,"width":400,"height":400},
+		{"id":"adb03f8cddb10528","type":"file","file":"🌙amoon()/🌙thesis/proposal(phd_thesis)/🕸️Introduction/3results(📝🪢).md","x":840,"y":-800,"width":400,"height":400},
+		{"id":"d793d28b74404105","type":"file","file":"_ref/♾️(paper)1.png","x":-510,"y":-632,"width":660,"height":232},
+		{"id":"dc6782003eea469e","type":"file","file":"🌙amoon()/🌙thesis/proposal(phd_thesis)/🕸️Introduction/1intro(📝🪢).md","x":-1080,"y":-1600,"width":400,"height":400},
+		{"id":"412ac355b2972d03","type":"file","file":"🌙amoon()/🌙thesis/proposal(phd_thesis)/🕸️Introduction/45discussion(📝🪢).md","x":840,"y":-1600,"width":400,"height":400},
+		{"id":"4468b148d2fc9249","type":"file","file":"⭐️star/STRAP/📜P.md","x":-280,"y":-1600,"width":400,"height":400}
+	],
+	"edges":[]
+}

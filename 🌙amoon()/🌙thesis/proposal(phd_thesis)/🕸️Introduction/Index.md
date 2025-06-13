@@ -5,9 +5,9 @@ longform:
   workflow: Default Workflow
   sceneFolder: /
   scenes:
-    - 1intro(📜🪢)
-    - 3results(📜🪢)
-    - 45discussion(📜🪢)
+    - 1intro(📝🪢)
+    - 3results(📝🪢)
+    - 45discussion(📝🪢)
   ignoredFiles:
     - 0.3😵‍💫Thesis Scope and Example Case
     - 0.2🏳️‍🌈Complexity Spectrum of Entrepreneurial Decision Models

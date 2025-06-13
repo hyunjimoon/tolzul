@@ -1,3 +1,9 @@
+2025-06-12
+
+associate editor (lost cause) - field's perspective
+present at some place (set of reviewer)
+![[Angie and Jeff Updates_otter_ai (1).txt]]
+
 2025-03-09
 discussed differential visualization from [[⚙️(🗄️📝)]]
 
