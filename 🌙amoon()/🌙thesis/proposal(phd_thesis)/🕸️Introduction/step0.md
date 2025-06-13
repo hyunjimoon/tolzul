@@ -28,6 +28,41 @@ A retailer must decide how much inventory to order before knowing actual custome
 
 ---
 
+# Newsvendor Model - Complete Derivation
+
+## Notation
+
+- Decision quantity: $\color{red}{q}$
+- Random demand: $\color{skyblue}{D}$
+- Price per unit: $\color{green}{p}$
+- Cost per unit: $\color{green}{c}$
+- CDF:  
+    $$\color{skyblue}{F}\bigl(\color{red}{q}\bigr) = P\bigl(\color{skyblue}{D}\le\color{red}{q}\bigr)$$
+- PDF:  
+    $$\color{skyblue}{f}(x) = \frac{d}{dx},\color{skyblue}{F}(x)$$
+
+---
+
+## Derivation
+
+We minimize the expected sum of opportunity- and overage-costs:
+
+$$\begin{aligned} &\mathbb{E}\bigl[\text{opp.\ cost} + \text{ovg.\ cost}\bigr] \[6pt] &= \underbrace{\mathbb{E}!\bigl[(\color{red}{q}-\color{skyblue}{D}),\color{green}{c};\bigm|;\color{skyblue}{D}\le\color{red}{q}\bigr];P!\bigl(\color{skyblue}{D}\le\color{red}{q}\bigr)}_{\text{overage cost}} ;+; \underbrace{\mathbb{E}!\bigl[(\color{skyblue}{D}-\color{red}{q})(\color{green}{p}-\color{green}{c});\bigm|;\color{skyblue}{D}>\color{red}{q}\bigr];P!\bigl(\color{skyblue}{D}>\color{red}{q}\bigr)}_{\text{opportunity cost}} \[6pt] &= \color{green}{c},\mathbb{E}\bigl[\color{red}{q}-\color{skyblue}{D}\mid \color{skyblue}{D}\le \color{red}{q}\bigr],\color{skyblue}{F}(\color{red}{q}) ;+; (\color{green}{p}-\color{green}{c}),\mathbb{E}\bigl[\color{skyblue}{D}-\color{red}{q}\mid \color{skyblue}{D}>\color{red}{q}\bigr],[1-\color{skyblue}{F}(\color{red}{q})] \[6pt] &= \color{green}{c}\Bigl(\color{red}{q},\color{skyblue}{F}(\color{red}{q}) -\int_{x\le\color{red}{q}}x,\color{skyblue}{f}(x),dx\Bigr) +(\color{green}{p}-\color{green}{c})\Bigl(\int_{x>\color{red}{q}}x,\color{skyblue}{f}(x),dx -\color{red}{q},[1-\color{skyblue}{F}(\color{red}{q})]\Bigr) \[6pt] &= \color{green}{p}!\int_{x>\color{red}{q}}x,\color{skyblue}{f}(x),dx -\color{green}{p},\color{red}{q},[1-\color{skyblue}{F}(\color{red}{q})] -\color{green}{c}!\int_{x>\color{red}{q}}x,\color{skyblue}{f}(x),dx +\color{green}{c},\color{red}{q},[1-\color{skyblue}{F}(\color{red}{q})] +\color{green}{c},\color{red}{q},\color{skyblue}{F}(\color{red}{q}) -\color{green}{c}!\int_{x\le\color{red}{q}}x,\color{skyblue}{f}(x),dx \[4pt] &= \color{green}{p}!\int_{x>\color{red}{q}}x,\color{skyblue}{f}(x),dx -\color{green}{p},\color{red}{q} +\color{green}{p},\color{red}{q},\color{skyblue}{F}(\color{red}{q}) +\color{green}{c},\color{red}{q} -\color{green}{c},\mathbb{E}[\color{skyblue}{D}]. \end{aligned}$$
+
+---
+
+## First‐order condition
+
+Differentiate w.r.t. $\color{red}{q}$:
+
+$$\begin{aligned} \frac{\partial}{\partial ,\color{red}{q}}, \mathbb{E}[\dots] &= \frac{\partial}{\partial ,\color{red}{q}} \Bigl[ \color{green}{p}!\int_{x>\color{red}{q}}x,\color{skyblue}{f}(x),dx -\color{green}{p},\color{red}{q} +\color{green}{p},\color{red}{q},\color{skyblue}{F}(\color{red}{q}) +\color{green}{c},\color{red}{q} -\color{green}{c},\mathbb{E}[\color{skyblue}{D}] \Bigr] \[4pt] &= -\color{green}{p},\color{red}{q},\color{skyblue}{f}(\color{red}{q}) -\color{green}{p} +\color{green}{p},\color{skyblue}{F}(\color{red}{q}) +\color{green}{p},\color{red}{q},\color{skyblue}{f}(\color{red}{q}) +\color{green}{c} \[3pt] &= \boxed{,\color{green}{p},\color{skyblue}{F}(\color{red}{q}) +\color{green}{c} -\color{green}{p},}. \end{aligned}$$
+
+Setting this to zero gives the **critical fractile**:
+
+$$\color{skyblue}{F}\bigl(\color{red}{q}^*\bigr) = \frac{\color{green}{p}-\color{green}{c}}{\color{green}{p}}$$
+
+----
+
 ## 💸 The Two Types of Costs
 
 ### 1. **Overage Cost** (Too much inventory)
@@ -110,7 +145,7 @@ $$\text{Optimal Service Level} = \frac{\text{Profit Margin}}{\text{Selling Price
 
 - Selling price: $\color{green}p = $10$
 - Purchase cost: $\color{green}c = $6$
-- Optimal service level: $\frac{10-6}{10} = 40%$
+- Optimal service level: \frac{10-6}{10} = 40%
 
 **Translation**: Order enough to meet 40% of possible demand scenarios.
 
@@ -124,3 +159,6 @@ $$\text{Optimal Service Level} = \frac{\text{Profit Margin}}{\text{Selling Price
 4. **Simple formula, powerful insight**: The critical fractile gives us the exact answer
 
 This model forms the foundation for countless supply chain and inventory management decisions across industries worldwide.
+
+
+----
