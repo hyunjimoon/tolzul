@@ -1,4 +1,4 @@
-using [[🌱2🌲doubling🧬(📝)|🌱2🌲doubling🧬(📝)]]), [[🗄️(📝🪢🔴)]]
+using [[🌱2🌲doubling🧬(📝)_v2|🌱2🌲doubling🧬(📝)_v2]]), [[🗄️(📝🪢🔴)]]
 
 Fine et al.'s Non-Integration Problem
 - Quote: _"We could offer entrepreneurs our standard operations sessions... but mostly with cases and context from mature firms"_ - Shows optimization tools divorced from probabilistic startup uncertainty

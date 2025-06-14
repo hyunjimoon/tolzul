@@ -15,7 +15,7 @@ _Bonus Episode • 21st May 2025 • Learning Bayesian Statistics • Alexandre 
 | **Practical Applications**   | Debiasing systems, Error correction           | Cognitive augmentation tools (games), Decision support |
 |                              | descriptive (bdd rationality)                 | predictive, prescriptive (bdd optimality)              |
 2025-05-28
-phenomena and need [[🌱2🌲doubling🧬(📝)|🌱2🌲doubling🧬(📝)]]
+phenomena and need [[🌱2🌲doubling🧬(📝)_v2|🌱2🌲doubling🧬(📝)_v2]]
 " it's better to work on a problem than a method. So it's better to say, this is the thing that I want to understand, or this is the problem that I want to solve than to say, I am going to solve this problem using Markov Chain Monte Carlo or whatever it is, right? Because if you have a problem, somebody making progress on methods is good news for you, right? So as AI gets better, you're putting yourself in a position to do a better job of solving your problem. Rather than worrying about, someone is going to, you know, do something which is better than the method that I'm using."
 
 ### [00:00:00 - 00:05:02] Human Intelligence vs. Machine Intelligence
