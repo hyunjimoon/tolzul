@@ -1,4 +1,4 @@
-[[🌱2🌲doubling🧬(📝)_v1
+[[🌱2🌲doubling🧬(📝)_v1]], [[🗄️🧠charlie]]
 
 2025-06-13
 - should be paired with [[🌲2🌱halving🧬(yoo16)]] applied to [[snuaee장학금 수상소감]], [[push_pull()]]

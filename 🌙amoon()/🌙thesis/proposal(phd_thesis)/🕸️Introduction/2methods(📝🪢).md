@@ -8,10 +8,6 @@
 	- [[#2.2 Step 2: Sigmoid Quality Model#2.2.1 Mathematical setup|2.2.1 Mathematical setup]]
 	- [[#2.2 Step 2: Sigmoid Quality Model#Proposition 2|Proposition 2]]
 	- [[#2.2 Step 2: Sigmoid Quality Model#2.2.2  Business intuition (5A, 5B)|2.2.2  Business intuition (5A, 5B)]]
-- [[#2.3 Step 3: Joint Quality–Quantity Model|2.3 Step 3: Joint Quality–Quantity Model]]
-	- [[#2.3 Step 3: Joint Quality–Quantity Model#2.3.1 Mathematical setup|2.3.1 Mathematical setup]]
-	- [[#2.3 Step 3: Joint Quality–Quantity Model#Proposition 3|Proposition 3]]
-	- [[#2.3 Step 3: Joint Quality–Quantity Model#2.3.2 Business intuition (6A, 6B)|2.3.2 Business intuition (6A, 6B)]]
 
 
 # 2 Methods
@@ -103,21 +99,3 @@ The sigmoid model preserves Step 1's cost-priority principle while capturing rea
 **Stakeholder's symmetric responsiveness to quality**: With $\beta_c = 1$ and $\beta_r = -1$, the model captures mirror-image behaviors—customers become more willing as quality rises while partners become less willing at the same rate. This symmetry enables the elegant logarithmic solution and ensures that the direction of $V$'s impact depends purely on the cost differential: $\operatorname{sgn}(\partial q^*/\partial V) = \operatorname{sgn}(C_u - C_o)$. Unlike the general case where asymmetric responsiveness parameters can override cost considerations, this special case isolates the fundamental trade-off between avoiding shortage versus overage.
 
 **Stakeholder's asymmetric responsiveness to quality**: In the general case with arbitrary $\beta_c$ and $\beta_r$, these steepness parameters fundamentally alter the optimization landscape. Larger $|\beta_c|$ makes customers more sensitive to quality changes near their indifference point, creating a sharper transition from rejection to acceptance. Similarly, larger $|\beta_r|$ intensifies partner responsiveness. When $\beta_c \gg \beta_r$, customers react more dramatically to quality adjustments than partners, giving customer preferences greater "weight" in determining $q^*$—potentially overriding small cost differences. For instance, if $C_u$ slightly exceeds $C_o$ (suggesting lower quality), but customers are extremely responsive ($\beta_c$ very large) while partners are gradual responders ($\beta_r$ small), the optimal $q^*$ might still be high to capture the steep customer response curve. This asymmetry breaks the clean cost-priority principle: rather than $\operatorname{sgn}(\partial q^*/\partial V) = \operatorname{sgn}(C_u - C_o)$, the direction now depends on the interplay of $\beta_c P_c(1-P_c)P_r + \beta_r P_r(1-P_r)P_c$. Thus, stakeholder responsiveness asymmetries can dominate pure cost considerations, making the general case require numerical methods as no closed-form solution exists.
-
----
-## 2.3 Step 3: Joint Quality–Quantity Model 
-
-### 2.3.1 Mathematical setup 
-Add production quantity $Q$ and a concave revenue $R(Q)=aQ-bQ^{2}$. Commitment probabilities follow the sigmoid forms of Step 2. 
-### Proposition 3 
-*Joint insight on quality and quantity* For any fixed $q$, profit $\Pi(q,Q)$ is concave in $Q$ with \[ Q^{*}=\frac{a}{2b}.Substituting $Q^{*}$ reduces optimisation to the one‑dimensional problem of Step 2; hence the optimal $q^{\ddagger}=q^{\dagger}$ and all Step 2 comparative statics carry over.
-
-### 2.3.2 Business intuition (6A, 6B)
-
-- **Quantity decoupling** – the optimal $Q^{*}$ depends only on revenue parameters $(a,b)$, not on mismatch costs, because the latter cancel out when both parties commit.
-- **Quality driver** – strategic emphasis therefore shifts to quality: higher $V$ or larger shortage cost $C_u$ motivates improving $q$ rather than expanding $Q$.
-
-
-
----
-
