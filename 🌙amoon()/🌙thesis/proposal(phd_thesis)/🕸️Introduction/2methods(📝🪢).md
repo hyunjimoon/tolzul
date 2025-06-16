@@ -9,7 +9,8 @@
 	- [[#2.2 Step 2: Sigmoid Quality Model#Proposition 2|Proposition 2]]
 	- [[#2.2 Step 2: Sigmoid Quality Model#2.2.2  Business intuition (5A, 5B)|2.2.2  Business intuition (5A, 5B)]]
 
-
+2025-06-15
+- applied [intuitive plots explaining quality FOC cld]()
 # 2 Methods
 
 We incrementally extend the classical newsvendor along two orthogonal dimensions—**decision type** (quantity → quality → quality + quantity) and **stakeholder response** (deterministic → linear Bernoulli → sigmoid).  Naming three progressive models as three step models, step 1 model establishes the core cost-priority principle under quality-linear stakeholder responses. Step 2 model captures realistic choice behavior using quality non-linear responses. Step 3 model extends to joint quality-quantity decisions.
@@ -21,7 +22,7 @@ Table 1 situates the three propositions developed in this section.
 | 0     | Supply $s$                | Demand $D$                                                               |                                                                                                                                                   | [[step012-need3]] |
 | **1** | quality $q$               | Customer commitment $C(q)$<br><br>Resource partner commitment $R(q)$<br> | Demand–supply asymmetry driven by quality rather than quantity<br><br>$P_c(q)=q$ , $P_r(q)=1-q$                                                   |                   |
 | **2** | quality $q$               | Customer commitment $C(q)$<br><br>Resource partner commitment $R(q)$     | Statistically capture stakeholders' responsiveness to quality<br><br>$P_c(q)=\dfrac1{1+e^{-\beta_c * q}}$ , $P_r(q)=\dfrac1{1+e^{\ \beta_r * q}}$ |                   |
-| **3** | quality $q$, quantity $Q$ | Customer commitment $C(q)$<br><br>Resource partner commitment $R(q)$     | Joint quality–quantity choice with diminishing–return revenue $R(Q)=aQ-bQ^{2}$                                                                    |                   |
+
 
 ## 2.0 Classic Newsvendor
 
@@ -69,7 +70,10 @@ $\text{CR}=\frac{C_u}{C_u+C_o}$ (the classical critical ratio).*
 1. **High $C_o$, low $C_u$** – you dread leftover stock, so you raise quality to attract customers.  
 2. **High $V$** – the upside of a full match is large (e.g., $C_u=p-c>C_o=c$).  
 3. **Low $V$** *and* $C_u<C_o$ – risk-averse posture: avoid unsold production.
+- **Opportunity Seeker** (Cu​>Co​): Focused on **capturing every potential high-profit sale.** This person's primary fear is missing out on the high margin of a sale, so they invest in quality (q) to maximize customer demand, even if it increases production risk.    
+- **Risk Avoider** (Cu​<Co​): Focused on **preventing the creation of an unsold product.** This person's primary fear is the cost of wasted production, so they adopt strategies that minimize this risk, even if it means forgoing potential low-margin sales.''
 ```
+
 
 ---
 ## 2.2 Step 2: Sigmoid Quality Model 
