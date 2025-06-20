@@ -1,8 +1,6 @@
-**Agree - Anderson & Parker (2013)**: "Integration and Cospecialization of Emerging Complementary Technologies by Startups" 
 
-Abstract: "We examine how startups commercialize emerging complementary technologies when established firms control key complementary assets. Using a formal model, we show that startups can overcome this disadvantage through integration and cospecialization strategies. Our analysis reveals that operational decisions about resource allocation and capability development critically determine startup success in markets with strong complementarities." _Relevance: Demonstrates successful application of operations-based decision rules to entrepreneurial contexts._
+# using [[update(🧬process, 📜product)]], 
 
-using [[update(🧬process, 📜product)]], 
 
 Below are **emoji‑tagged versions** of each summary level.  
 The coloured squares map every sentence to its eight‑module framework exactly as you specified earlier:
@@ -101,14 +99,3 @@ The coloured squares map every sentence to its eight‑module framework exactly 
 🟧 **V2** A system‑dynamics simulation links integration spending with learning‑curve feedbacks that reshape costs and demand.  
 🟥 **V3** Across deterministic and stochastic scenarios, aggressive focus maximises expected NPV, whereas conservative spending best protects against insolvency.  
 🟥 **V4** Except when spillovers are large, this robustness suggests founders should specialise early while policymakers balance neglected technologies.
-
----
-
-#### How to reuse
-
-- **Copy‑paste** any block directly into your prompt files (`update(🧬process, 📜product).md` or `update(📜product, 🧬process).md`)—the coloured prefixes act as micro‑tags so the next LLM can instantly recognise module boundaries without extra parsing.
-    
-- Because each sentence already contains all essential context, downstream compression or expansion functions can operate deterministically.
-    
-
-Feel free to ask if you need a different colour scheme, additional tags, or a CSV/JSON version for programmatic use!

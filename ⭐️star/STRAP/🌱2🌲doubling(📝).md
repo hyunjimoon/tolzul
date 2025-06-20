@@ -1,5 +1,140 @@
-- first example in [[4-8-16-32(📝🪢)]]
-- applied to [[📜SO_anderson13_customize(optimization, early-stage)]], [[📜Optimal project sequencing model (Production and Operations Management, 2003)]], [[📜]]
+- first example in [[5-10-30(📝🪢)]]
+- applied to [[📜🟧_anderson13_model(startup, integration-decisions)]], [[📜Optimal project sequencing model (Production and Operations Management, 2003)]], [[📜]]
+- 2025-06-19 applied [[🧲flow(magnetic, 📝)]]
+
+# **Academic Writing Assistant Prompt: Paper Analysis & Structure Generation**
+
+You are an academic writing assistant. Your primary task is to generate and analyze a publication-quality POMS paper skeleton, specifically combining discrete-choice modeling and newsvendor optimization for entrepreneurial stakeholder prioritization.
+
+## **1. Paper Skeleton Generation Guidelines:**
+
+You will expand on a set of core ideas, progressing through three distinct stages of development:
+
+- **Stage 1:** 5 sentences
+- **Stage 2:** 10 sentences
+- **Stage 3:** 30 sentences
+
+You must preserve a perfect 1:1 lineage at every growth stage (meaning each sentence in stage _k_ spawns exactly one child in stage _k+1_). Sentence IDs never change, and new sentences receive the next unused ID. Children are placed immediately beneath their parent.
+
+**Color-Coding Legend:**
+
+- 🟪: phenomena/problem
+- 🟩: set-up/result
+- 🟧: method detail
+- 🟥: prescription/vision
+
+Output Format (Strict):
+
+For each stage, present the sentences in order. Following the sentences, provide a mini-table with two columns: "ID" and "ParentID".
+
+- **Section 1 – Stage 1 (5 sentences)**
+- **Section 2 – Stage 2 (10 sentences)**
+- **Section 3 – Stage 3 (30 sentences)**
+
+## **2. Paper Structure Analysis (Self-Correction/Improvement Focus):**
+
+After generating the paper skeleton, you will analyze its structure and content through the lens of probabilistic, statistical, and optimization approaches, with a specific focus on how the argument is presented.
+
+1. **Phenomena and Needs Assembly:**
+    
+    - How do the `🟪 (phenomena/problem)` sentences establish the research "needs" (🟩 set-up/result)?
+    - Specifically, identify how "Need 1: To predict stakeholder commitments" and "Need 2: To optimize quality given predicted commitments" are articulated.
+    - Discuss the transition from problem observation to these specific research needs.
+2. **Integration of Solutions:**
+    
+    - How are the `🟧 (method detail)` sections presented as solutions to the identified needs?
+    - Trace the connection between "Solution 1: Predicting demand using choice modeling" and "Solution 2: Optimizing supply using newsvendor logic."
+    - Explain how these methods are introduced as direct responses to the established needs.
+3. **Result and Insight Integration:**
+    
+    - How do `🟦 (result/insight)` sentences integrate the prediction and optimization components?
+    - Examine the link between "predicting commitment" and "predicting demand," and "optimizing quality" and "optimizing inventory."
+    - Discuss the overall coherence and logical flow from needs to solutions to integrated insights.
+4. **Overall Structural Flow and Thematic Development:**
+    
+    - **Vertical Symmetry:** Analyze how the core thematic elements (e.g., those introduced in the initial 5 sentences) are symmetrically developed and balanced across the three stages (5 → 10 → 30 sentences), ensuring consistent elaboration of each concept.
+    - **Progressive Depth:** Comment on how each stage builds upon the previous, adding layers of detail, results, and evidence.
+    - **Color Consistency:** Assess how similar functions (phenomena, methods, results, prescriptions) are consistently represented by the same color across all stages, and how this enhances clarity and argument progression.
+
+5. for 🟪A (alert) series, it should answer "what is the phenomena in entrepreneurial operations and why is this problematic?"  
+6. for 🟩D (develop needs) series, it should answer "what are the gaps in current literature for addressing the problem identified in A. (e.g. lack or insufficient research, lack of understanding or consensus, limitations of previous studies, practical problem that needs fixing)"  
+7. for 🟧G (grow model) series, it should answer "given the needs 🟩developed from 🟪alerted phenomena, how should we grow the model that is USABLE and what USEFUL implication does it give"?  
+8. for 🟥C (core contribution) series, it should answer "what is THE MOST IMPACTFUL value created by integrating grown model as a solution from 🟧G and developed needs from 🟩D"?
+
+| Stage                                    | [[1.🌱NAIL Stage Problem-Solving Innovation (4→8 sentences)]]                                                                   | [[2.🌿 SCALE Stage Process Creation (8→16 sentences)]]                                                                                                            | [[3.🌾 SAIL Impact Optimization (16→32 sentences)]]                                                                                                          |                                      |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------ |
+| **Mission**                              | “Carry as little as possible but choose that little with care”                                                                  | “Ideas are rewarded. Execution is worshipped!”                                                                                                                    | “Anyone can hold the helm when the sea is calm!”                                                                                                             |                                      |
+| **Stake‑holder Focus**                   | Identify key academic **customers** (target journals, research communities)                                                     | Engage **resource partners** (reviewers, methodological experts)                                                                                                  | Maximize value for **customers** (readers, citers)                                                                                                           |                                      |
+| **Key Dilemma**                          | Theory push vs. literature pull                                                                                                 | Depth vs. breadth in methodology development                                                                                                                      | Current contribution vs. future platform                                                                                                                     |                                      |
+| **Key Output**                           | **Minimum Viable Paper (MVP)** – core argument crystallized                                                                     | **Publication‑Ready Framework** – complete methodology with evidence                                                                                              | **Research Platform** – complete system enabling follow‑up work                                                                                              |                                      |
+| **Module Coverage**(sentences completed) | 5 = (A1,A21)+G1+(C9,C29); 2+1+2<br><br>🟪⬜ A1<br>⬜⬜⬜⬜⬜⬜⬜<br>🟥⬜ C9<br><br>🟧⬜⬜⬜⬜G11<br>⬜⬜⬜⬜⬜<br><br>🟪⬜A21<br>⬜⬜⬜⬜⬜⬜⬜<br>🟥⬜C29 | 10 = (A1,A21)+ (D3, D23)+(G11-14) +(C9,C29); 3+4+3<br><br>🟪⬜ A1<br>🟩⬜⬜⬜⬜⬜D3<br>🟥⬜C9<br><br>🟧🟩🟧🟩G11-14<br>⬜⬜⬜⬜⬜⬜<br><br><br>🟪⬜ A21<br>🟩⬜⬜⬜⬜⬜D23<br>🟥⬜C29 | 30 = 10+10+10<br><br><br>🟪🟪A12<br>🟩🟧🟩🟧🟩🟧D3-8 <br>🟥🟥C910<br><br>🟧🟩🟧🟩🟧🟩🟧🟩🟧🟩G11-20<br><br><br>🟪🟪 A2122<br>🟧🟩🟧🟩🟧🟩D23-28<br>🟥🟥C2930 | ![[Pasted image 20250619110553.png]] |
+| **Strategic Principles**                 | • Speed > perfection  <br>• Experiment & iterate  <br>• Customer intimacy                                                       | • Processification (S11‑16)  <br>• Professionalization (S17‑22) <br>• Segmentation  <br>• Detail‑oriented quality                                                 | • Ambidextrous thinking  <br>• System perspective  <br>• Platform building  <br>• Stable exploration                                                         |                                      |
+| **Validation Tests**                     | “Can you explain the problem & solution in 2 min?”                                                                              | “Would POMS reviewers see rigorous methodology with clear value?”                                                                                                 | “Does this enable 5+ follow‑up papers?”                                                                                                                      |                                      |
+
+## 3. Example
+### Stage 1 (5 sentences)
+
+🟪 A1. stakeholder prioritization is complex for ENT
+
+🟪 A21. large number of variables (no constraint and blank slate; innovation leads to interaction among stakeholders)
+
+🟧 G11, G12. system uses prediction and choice models to forecast stakeholder demand and supply based on quality levels, approach employs discrete-choice models where increasing quality boosts customer commitment but symmetrically reduces partner commitment.
+
+🟥 C9, C10. prediction-based prescription
+
+🟥 C29, C30. choose then optimize. Entrepreneurs should choose quality levels that minimize expected mismatch costs between supply-side capabilities and demand-side commitments.
+
+### Stage 2 (10 sentences)
+
+🟪 A1. stakeholder prioritization is complex for ENT
+
+🟪 A21. large number of variables (no constraint and blank slate; innovation leads to interaction among stakeholders)
+
+🟩 D345. entrepreneur's reasoning on customer and resource partner's reasoning.
+
+🟩 D23, D24. given responsiveness coefficient and cost parameter, optimize quality
+
+🟧 G11, G12. system uses prediction and choice models to forecast stakeholder demand and supply based on quality levels, approach employs discrete-choice models where increasing quality boosts customer commitment but symmetrically reduces partner commitment.
+
+🟧 G13, G14, G15. In the Step 1 Linear Quality Model, the entrepreneur chooses product quality q∈[0,1], which influences customer willingness to buy (Pc​(q)=q) and resource partner willingness to supply (Pr​(q)=1−q). This transforms supply into a stochastic outcome dependent on quality decisions. The optimal quality is given by q∗=2(Cu​+Co​+V)V+2Co​​, reflecting a dual-cost balancing rule that incorporates the match bonus V. This model introduces dual mismatch risks (customer wants but partner can't deliver, or partner can deliver but customer doesn't want) through quality-driven stakeholder responses, distinguishing it from the classic newsvendor's single mismatch channel.
+
+🟥 C9, C10. prediction-based prescription
+
+🟥 C29, C30. choose then optimize. Entrepreneurs should choose quality levels that minimize expected mismatch costs between supply-side capabilities and demand-side commitments.
+
+### Stage 3 (30 sentences)
+
+🟪 A1. stakeholder prioritization is complex for ENT
+
+🟪 A2. degeneracy of optimal action is one lens to analyze and react to complexity
+
+🟪 A21. large number of variables (no constraint and blank slate; innovation leads to interaction among stakeholders)
+
+🟪 A22. small number of constraints (no time and tool for systematic data collection; innovation makes underlying data generating process both physical and mental model)
+
+🟩 D345. entrepreneur's reasoning on customer and resource partner's reasoning.
+
+🟩 D678. news vendor logic's price, cost, overage cost, underage cost
+
+🟩 D23, D24. given responsiveness coefficient and cost parameter, optimize quality
+
+🟩 D25, D26. given responsiveness coefficient and quality, optimize cost parameter
+
+🟩 D27, D28. given cost parameter and quality, optimize responsiveness coefficient
+
+🟧 G11, G12. system uses prediction and choice models to forecast stakeholder demand and supply based on quality levels, approach employs discrete-choice models where increasing quality boosts customer commitment but symmetrically reduces partner commitment.
+
+🟧 G13, G14, G15. In the Step 1 Linear Quality Model, the entrepreneur chooses product quality q∈[0,1], which influences customer willingness to buy (Pc​(q)=q) and resource partner willingness to supply (Pr​(q)=1−q). This transforms supply into a stochastic outcome dependent on quality decisions. The optimal quality is given by q∗=2(Cu​+Co​+V)V+2Co​​, reflecting a dual-cost balancing rule that incorporates the match bonus V. This model introduces dual mismatch risks (customer wants but partner can't deliver, or partner can deliver but customer doesn't want) through quality-driven stakeholder responses, distinguishing it from the classic newsvendor's single mismatch channel.
+
+🟧 G16, G17, G18. The Step 2 Sigmoid Quality Model extends this by using logistic commitment functions, Pc​(q)=1+e−βc​∗q1​ and Pr​(q)=1+e βr​∗q1​, which reflect empirically observed S-shaped responsiveness to quality signals. The optimal quality under these sigmoid probabilities is q∗=ln(2Cu​+V2Co​+V​) when βc​=1 and βr​=−1. This model preserves the cost-priority principle: q∗>0 when Co​>Cu​ (pushing quality higher to avoid expensive overage) and q∗<0 when Cu​>Co​ (lowering quality to avoid costly shortages).
+
+🟧 G19, G20. Special cases of the Sigmoid Model consider symmetric responsiveness (βc​=βr​=β), leading to q∗=β1​ln(Co​+VCu​+V​). In this case, quality balances the net penalty of under-committing against the net penalty of over-committing. Other special cases include customer-dominant responsiveness (βc​≫βr​), partner-dominant responsiveness (βr​≫βc​), and the high-match-value limit (V≫Cu​,Co​), each yielding a closed-form solution for q∗ based on different trade-offs of costs and responsiveness.
+
+🟥 C9, C10. prediction-based prescription
+
+🟥 C29, C30. choose then optimize. Entrepreneurs should choose quality levels that minimize expected mismatch costs between supply-side capabilities and demand-side commitments.
+
+----
 
 | Dimension             | Entrepreneurial Innovation                | Academic Paper Innovation                         |
 | --------------------- | ----------------------------------------- | ------------------------------------------------- |
@@ -11,119 +146,3 @@
 | **Innovation Risk**   | Product-market fit failure                | Theory-evidence fit failure                       |
 | **Feedback Loops**    | Customer feedback → product iteration     | Peer review → paper revision                      |
 | **Network Effects**   | User adoption creates more value          | Citations create more visibility                  |
-
-| Stage                                    | [[1.🌱NAIL Stage Problem-Solving Innovation (4→8 sentences)]]                             | [[2.🌿 SCALE Stage Process Creation (8→16 sentences)]]                                                            | [[3.🌾 SAIL Impact Optimization (16→32 sentences)]]                                                                                     |
-| ---------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| **Mission**                              | “Carry as little as possible but choose that little with care”                            | “Ideas are rewarded. Execution is worshipped!”                                                                    | “Anyone can hold the helm when the sea is calm!”                                                                                        |
-| **Stake‑holder Focus**                   | Identify key academic **customers** (target journals, research communities)               | Engage **resource partners** (reviewers, methodological experts)                                                  | Maximize value for **customers** (readers, citers)                                                                                      |
-| **Key Dilemma**                          | Theory push vs. literature pull                                                           | Depth vs. breadth in methodology development                                                                      | Current contribution vs. future platform                                                                                                |
-| **Key Output**                           | **Minimum Viable Paper (MVP)** – core argument crystallized                               | **Publication‑Ready Framework** – complete methodology with evidence                                              | **Research Platform** – complete system enabling follow‑up work                                                                         |
-| **Module Coverage**(sentences completed) | 🟪🟪 p12<br>🟩⬜🟧⬜🟦⬜nsp3,5,7<br>🟥⬜ c9<br>⬜⬜⬜⬜⬜⬜<br>⬜⬜⬜⬜⬜⬜<br>🟪⬜p23<br>⬜⬜⬜⬜⬜⬜<br>🟥⬜c31 | 🟪🟪 p12<br>🟩🟩🟧🟧🟦🟦 nsp3-8<br>🟥🟥c910<br>🟧🟧⬜⬜⬜⬜m1112<br>🟩⬜⬜⬜⬜⬜r17<br>🟪🟪 p23-24<br>⬜⬜⬜⬜⬜⬜<br>🟥⬜c31     | 🟪🟪p12<br>🟩🟩🟧🟧🟦🟦 nsp3-8<br>🟥🟥c910<br>🟧🟧🟧🟧🟧🟧 m11-16<br>🟩🟩🟩🟩🟩🟩 r17-22<br>🟪🟪 p34<br>🟩🟩🟧🟧🟦🟦 nsp5-10<br>🟥🟥c12 |
-| **Strategic Principles**                 | • Speed > perfection  <br>• Experiment & iterate  <br>• Customer intimacy                 | • Processification (S11‑16)  <br>• Professionalization (S17‑22) <br>• Segmentation  <br>• Detail‑oriented quality | • Ambidextrous thinking  <br>• System perspective  <br>• Platform building  <br>• Stable exploration                                    |
-| **Validation Tests**                     | “Can you explain the problem & solution in 2 min?”                                        | “Would POMS reviewers see rigorous methodology with clear value?”                                                 | “Does this enable 5+ follow‑up papers?”                                                                                                 |
-1. write me a prompt that asks to analyze each of the paper using the
-    
-2. given that we'll squarely focus the literature review on probabilistic, statistical, optimization approach, use papers to learn the best structure to present. e.g. how to assemble needs(🟩) from framed phenomena (🟪) 🟦integrated with solutions from models (🟧). what we originally had was 🟩🟩🟧🟧🟦🟦 . i.e.
-    
-    1. 🟩need1 to predict stakeholders' commitment
-        
-    2. 🟩need2 to optimize quality given predicted commitments)
-        
-    3. 🟧sol1 to predict demand using choice modeling
-    4. 🟧sol2 to optimize supply using newsvendor
-        
-    5. 🟦integrate1: predicting commitment ~ predicting demand
-    6. 🟦integrate2: optimizing quality ~ optimizing inventory
-
--  **Vertical symmetry**: Modules 1↔6, 2↔7, 3↔8, 
-- **Progressive depth**: Each stage doubles content (4→8→16 sentences, **Color consistency**: Similar functions use similar colors across stages. 
-- color code (🟪 phenomena, 🟥 contribution, 🟧 methods, 🟩 results) build upon each other through the three stages of paper development.
-
-3. You are an academic writing assistant.
-
-**Goal**  
-Expand four seed sentences into a 32‑sentence, publication‑quality POMS paper skeleton that combines discrete‑choice modelling and news‑vendor optimisation for entrepreneurial stakeholder prioritisation.  
-You must preserve a perfect 1 : 1 lineage at every growth stage (4→8→16→32), colour‑code each sentence, and show the full lineage table.
-
---------------------------------------------------------------------
-□ Colour legend  
-  🟪 phenomenon/problem · 🟩 set‑up/result · 🟧 method detail · 🟦 result/insight · 🟥 prescription/vision
---------------------------------------------------------------------
-□ Growth rule  
-  • Every sentence in stage _k_ spawns **exactly one** child in stage _k + 1_.  
-  • IDs never change; new sentences receive the next unused ID.  
-  • Children are placed immediately beneath their parent.  
---------------------------------------------------------------------
-□ Output format (strict)  
-
-1. **Section 0 – Four seeds (4 sentences)**  
-   List S1, S9, S23, S31 with colour emojis.
-
-2. **Section 1 – NAIL stage (8 sentences)**  
-   Show the 8 sentences in order.  
-   Then give a mini‑table with columns: ID · ParentID.
-
-3. **Section 2 – SCALE stage (16 sentences)**  
-   Show the 16 sentences in order.  
-   Then give a mini‑table with columns: ID · ParentID.
-
-4. **Section 3 – SAIL stage (32 sentences)**  
-   Show the 32 sentences in order.  
-   Then give a mini‑table with columns: ID · ParentID.
-
---------------------------------------------------------------------
-□ The four seed sentences (keep wording exactly)  
-
-🟪 **S1.** Early‑stage entrepreneurs struggle to decide between following customer pull versus technology push strategies when developing their products.  
-🟥 **S9.** Entrepreneurs should choose quality levels that minimise the expected mismatch cost between supply‑side capabilities and demand‑side commitments.  
-🟪 **S23.** Market dynamics continuously shift the balance between technology possibilities and customer preferences, destabilising any fixed prioritisation strategy.  
-🟥 **S31.** Adaptive quality‑management systems can dynamically balance stakeholder priorities as commitment functions evolve over time.  
-
---------------------------------------------------------------------
-□ Canonical expansion you must reproduce  
-
-> **NAIL (8 sentences)**  
-> S1, S2, S3, S5, S7, S9, S23, S31   where  
->   🟪 S2 This ambiguity drives costly misallocations: recent post‑mortems show 42 % of start‑ups fail because they over‑ or under‑serve actual demand.  
->   🟩 S3 Entrepreneurs therefore need an evidence‑based capability to predict stakeholder commitments across the quality spectrum, turning noisy opinions into choice curves.  
->   🟧 S5 We satisfy this prediction need with a Step 1 linear discrete‑choice model in which customer commitment rises linearly with quality, \(P_c(q)=q\), while partner commitment falls symmetrically, \(P_r(q)=1-q\).  
->   🟦 S7 Embedding the choice model in a news‑vendor loss function reveals a dual‑cost “critical‑fractile‑of‑quality” balancing expected under‑ and over‑commitment costs.  
-> *(all other sentences unchanged from seeds)*  
->
-> **SCALE (16 sentences)** – add exactly S4, S6, S8, S10, S11, S12, S17, S24 with the wording:  
->   🟩 S4 They simultaneously need a complementary capability to optimise quality so that predicted commitments jointly minimise mismatch losses.  
->   🟧 S6 We extend realism through a Step 2 sigmoid model, \(P_c(q)=1/(1+e^{-\beta_c q})\) and \(P_r(q)=1/(1+e^{\beta_r q})\), capturing diminishing returns while preserving solvability.  
->   🟦 S8 Numerical experiments confirm the sigmoid version preserves the cost‑priority logic yet remains robust to behavioural steepness differences.  
->   🟥 S10 We operationalise the principle through a one‑period stochastic programme: \( \min_{q} C_u P_c(q)[1-P_r(q)] + C_o P_r(q)[1-P_c(q)] - V P_c(q)P_r(q) \).  
->   🟧 S11 Model inputs comprise cost parameters \((C_u,C_o,V)\) and choice‑curve parameters \((\beta_c,\beta_r)\) estimated via Bayesian hierarchical logistic regression.  
->   🟧 S12 The optimisation yields \(q^{*}_{\text{lin}}=\frac{V+2C_o}{2(C_u+C_o+V)}\) and \(q^{*}_{\text{sig}}=\ln[(2C_o+V)/(2C_u+V)]\).  
->   🟩 S17 Calibrating on 68 hardware start‑ups cuts expected mismatch losses by 29 % relative to expert heuristics.  
->   🟪 S24 Static optimisation therefore risks lock‑in, echoing the “pivot‑or‑persevere” dilemma.  
->
-> **SAIL (32 sentences)** – add exactly S13–S16, S18–S22, S25–S30, S32 with the wording:  
->   🟧 S13 Intuitively, the optimal quality leans toward the stakeholder whose non‑commitment is costlier, generalising the classic critical ratio.  
->   🟧 S14 Sensitivity analysis shows \( \partial q^{*}/\partial V >0 \) when \(C_o>C_u\) and the opposite otherwise, revealing a match‑bonus amplifier absent in traditional news‑vendor settings.  
->   🟧 S15 Assumptions include independent stakeholder responses, risk‑neutral entrepreneurs, and a single‑period horizon—conditions typical of early “big‑bet” launches.  
->   🟧 S16 Extensions to multi‑segment demand or joint quality–quantity decisions are tractable but require integer‑convex reformulations, outlined in Appendix A.  
->   🟩 S18 Monte‑Carlo experiments show the sigmoid specification halves worst‑case regret when responsiveness is highly non‑linear.  
->   🟩 S19 Managerially, the framework converts the abstract quality‑scope debate into a numeric target that aligns engineering and marketing.  
->   🟩 S20 For investors, the savings translate into a 12‑point boost in expected NPV—material in seed‑round negotiations.  
->   🟩 S21 A medical‑device case shows that adopting the model averted over‑engineering and accelerated FDA submission by three months.  
->   🟩 S22 Boundary tests indicate diminishing returns when \(C_u/C_o<0.2\) or \(>5\), signalling when heuristics suffice.  
->   🟩 S25 We can embed Bayesian learning that updates \((\beta_c,\beta_r)\) after each market cycle, where commitments becomes closer to Bernoulli distribution as beta increases.  
->   🟩 S26 A receding‑horizon optimiser re‑solves \(q\) whenever posterior variance exceeds a tolerance, keeping decisions current.  
->   🟧 S27 The adaptive loop resembles a multi‑armed bandit where exploration of new quality levels competes with exploitation of the current best estimate.  
->   🟧 S28 The resulting policy approximates a Gittins index yet remains computationally light for start‑up dashboards.  
->   🟦 S29 Simulations on a fast‑fashion market maintain mismatch costs within 5 % of the moving optimum under monthly preference shocks.  
->   🟦 S30 Field pilots with two SaaS ventures confirm timely quality tweaks that pre‑empt churn spikes and supplier disengagement.  
->   🟥 S32 Such systems foreshadow an era of commitment‑aware product management, where algorithms continuously recalibrate product attributes to sustain balanced stakeholder engagement in volatile markets.  
-
---------------------------------------------------------------------
-**Your task**  
-*Reproduce the four blocks (A–D) exactly, including the sentence texts above, colour emojis, IDs, and the lineage tables.  Follow the output format strictly.*
-
-
-📊 Progress Tracking
-- [ ] NAIL complete
-- [ ] SCALE complete  
-- [ ] SAIL complete

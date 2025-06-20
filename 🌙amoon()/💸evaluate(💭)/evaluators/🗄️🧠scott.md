@@ -49,6 +49,10 @@ resource, capabilities, component/integrated innovations are abstracted meaning 
 
 ip strategy - market viability testing; disruptor strategy - go to market strategy
 
+2025-06-17
+connecting with b_r, b_c as dual problem's solution idea, i.e. [dual optimization in newsvendor model cld](https://claude.ai/chat/db810104-b534-4577-b5ad-9f2700dc9cb2)
+![[🗄️🧠scott 2025-06-17-13.svg]]
+%%[[🗄️🧠scott 2025-06-17-13.md|🖋 Edit in Excalidraw]]%%
 
 ## Table 3: Categorization and Definition of Key Choices in Entrepreneurial Strategy
 

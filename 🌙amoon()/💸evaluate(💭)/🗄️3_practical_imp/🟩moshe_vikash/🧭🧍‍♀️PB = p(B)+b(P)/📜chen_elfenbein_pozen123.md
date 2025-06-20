@@ -1,4 +1,4 @@
-all three uses [[📜RyanLippman05_opt_exit_deterpj]]
+[[📜🟩_chen18_establish(learning, entry-exit)]],[[📜🟦_chen22_integrate(teams, decisions)]], [[📜🟧_chen24_optimize(experimentation, learning)]] 
 #### 2024 Programs of Experimentation and Pivoting for (Overconfident) Entrepreneurs
 
 | Research Phase 🧭          | Core Question 🤔                                                                                     | Theoretical Framework 🗺️                                                                   | Mathematical Formalization 📐                                                                                                        | Empirical Evidence 📊                                                                                                        | Key Findings 🎯                                                                                                                                                                 |

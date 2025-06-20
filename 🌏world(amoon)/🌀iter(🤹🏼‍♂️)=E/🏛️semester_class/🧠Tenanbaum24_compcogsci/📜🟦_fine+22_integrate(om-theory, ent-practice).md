@@ -1,3 +1,6 @@
+- mutual influence [[📜🟧_anderson13_model(startup, integration-decisions)]]
+- 
+
 2025-05-18
 - connecting with [[🪢STRAP]], and cld mentioned nested option [[def(ops4entrpre)]] which was surprising due to the repeated use of words nested e.g. [[📝s25_Lecture18_NestedLogit.pdf]]
 
@@ -33,7 +36,7 @@ impact of growth opportunities and competition on firm level capability developm
 
 ----
 
-# 📜SO_fine22_integrate(om-theory, ent-practice)
+
 
 ## Summary
 

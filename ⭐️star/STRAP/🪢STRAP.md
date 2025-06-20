@@ -40,7 +40,7 @@ STRAP provides a comprehensive framework for entrepreneurial decision-making bui
 ---
 
 2025-05-18
-connecting with [[📜SO_fine22_integrate(om-theory, ent-practice)]]'s [[⚙️anwell]]
+connecting with [[📜🟦_fine+22_integrate(om-theory, ent-practice)]]'s [[⚙️anwell]]
 2025-05-17
 
 collaborating with [[🧠🤜1331need_sol]],  with problem [[moral_hazard]]
