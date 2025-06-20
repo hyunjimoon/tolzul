@@ -1,6 +1,9 @@
+# nail
 - first example in [[5-10-30(📝🪢)]]
-- applied to [[📜🟧_anderson13_model(startup, integration-decisions)]], [[📜Optimal project sequencing model (Production and Operations Management, 2003)]], [[📜]]
-- 2025-06-19 applied [[🧲flow(magnetic, 📝)]]
+- applied to [[📜🟧_anderson13_model(startup, integration-decisions)]], [[📜Optimal project sequencing model (Production and Operations Management, 2003)]], [[📜]] to construct [[🗄️litrev(📝🪢, 🟪🟩🟧🟦(📜))]]
+# scale
+- 2025-06-19 made a magnetic flow forming tool and illustrated in [[🧲flow(magnetic, 📝)]] that grows 15sentences 🟪A1,2, 🟩🟧D3-8, 🟥C9, 🟧🟩G11-16, 🟪A21,22, 🟩🟧D23-28 ,🟥C29) all four modules, based on the design principle: integrate 🟩need and 🟧solution + stop integrate when the grown solution, consumed less past needs compared to new future needs created.
+
 
 # **Academic Writing Assistant Prompt: Paper Analysis & Structure Generation**
 
