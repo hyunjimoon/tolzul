@@ -10,4 +10,4 @@ trait: flow-stock-flow i.e. # of flow > # of stock
 ## examples
 
 -   prey-predator, supply-demand
-[[push_pull()]]
+[[ㅓpush_pull()]]

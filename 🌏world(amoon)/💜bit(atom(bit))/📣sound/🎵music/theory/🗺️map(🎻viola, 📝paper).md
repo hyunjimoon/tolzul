@@ -1,4 +1,13 @@
 - todo: timbre?
+- vertical harmony for need (developed from problematic phenomena) and solution (implied from models) pairing
+
+- To prevent you from calling this as daydreaming, I'd like to carefully share 
+
+- horizontal melody for cross-sectional variable threads
+
+- counterpoint for prediction vs prescription tension to create systematic academic organization.
+
+
 
 2025-06-20
 i asked to recommend one or two for each theorize, produce, evaluate function -

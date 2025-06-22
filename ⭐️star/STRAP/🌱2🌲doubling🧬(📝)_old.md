@@ -1,7 +1,7 @@
 [[🌱2🌲doubling(📝)]], [[🗄️🧠charlie]]
 
 2025-06-13
-- should be paired with [[🌲2🌱halving🧬(yoo16)]] applied to [[snuaee장학금 수상소감]], [[push_pull()]]
+- should be paired with [[🌲2🌱halving🧬(yoo16)]] applied to [[snuaee장학금 수상소감]], [[ㅓpush_pull()]]
 using [iterative paper design cld](https://claude.ai/chat/3b779fa3-22a4-4a06-886d-c0d298ff4c1f)
 ![[🧬⚙️(📝) 2025-06-13-6.svg]]
 %%[[🧬⚙️(📝) 2025-06-13-6.md|🖋 Edit in Excalidraw]]%%

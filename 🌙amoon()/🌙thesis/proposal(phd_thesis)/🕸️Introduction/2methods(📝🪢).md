@@ -14,7 +14,6 @@
 	- [[#2.3 Step 2.3: Four Special Cases of the Sigmoid Model#Proposition 2.3.3 (Partner‐Dominant Responsiveness)|Proposition 2.3.3 (Partner‐Dominant Responsiveness)]]
 	- [[#2.3 Step 2.3: Four Special Cases of the Sigmoid Model#Proposition 2.3.4 (High‐Match‐Value Limit)|Proposition 2.3.4 (High‐Match‐Value Limit)]]
 
-
 2025-06-15
 - applied [intuitive plots explaining quality FOC cld]()
 # 2 Methods

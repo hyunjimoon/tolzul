@@ -8,4 +8,4 @@ push strategy
 1. identify two b,r loops around 
 2. revolve around the earth the planet on which we live; the world
 
-[[push_pull()]], [[two_box]],
+[[ㅓpush_pull()]], [[two_box]],
