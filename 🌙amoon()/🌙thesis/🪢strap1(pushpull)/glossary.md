@@ -40,3 +40,10 @@
 - **Quality dimension**: Non-monetary "fitness of use" characteristics (performance, reliability, aesthetics, manufacturability)
 - **Cost dimension**: Pure monetary impacts (overage costs, underage costs, component expenses)
 - **Responsiveness dimension**: Stakeholder sensitivity to quality improvements (β parameters, commitment probabilities)
+
+# Performance metric
+- prescription effectiveness
+- prescription profitability
+- prediction accuracy
+- prediction effectiveness
+- updated efficiency
