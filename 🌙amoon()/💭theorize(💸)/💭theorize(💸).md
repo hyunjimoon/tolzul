@@ -18,10 +18,8 @@
 ## Publications
 
 - "Simulation-Based Calibration Checking for Bayesian Computation"
-- "Evolutionary Dynamics in Entrepreneurial Decision-Making"
-- "Bridging Theoretical Statistics and Practical Implementation: The Case for Probabilistic Programming"
 
-The theoretical domain exists not in isolation but as the foundation for both [[📐produce(💭)]] and [[def(💸Evaluate)]] domains. As the outermost orbit, it moves deliberately, creating space for deep thinking and rigorous foundation-building.
+The theoretical domain exists not in isolation but as the foundation for both [[📐produce(💭)]] and [[💸Evaluate()]] domains. As the outermost orbit, it moves deliberately, creating space for deep thinking and rigorous foundation-building.
 
 _"Theory without application is hollow, but application without theory is blind."_
 

@@ -64,21 +64,8 @@ Unlike the classic critical-fractile, which moves with a single cost ratio, here
 1. **Dual‑cost amplification** – raising the cheaper mismatch cost tilts $q^{*}$ toward avoiding the more expensive side. 
 2. **Match bonus effect** – a larger $V$ pulls $q^{*}$ in the direction of the *scarcer* party, explaining why Step 1 departs from the pure cost ratio of Step 0. 
 
-```
-### 🚨ADD MORE to Business intuition (4A, 4B) 
-$\frac{d}{d\color{red}{q}}\mathrm E[\text{Cost}]= 2C_u\,\color{red}{q}-2C_o(1-\color{red}{q})-V(1-2\color{red}{q})=0$
-$\boxed{\;\color{red}{q}^{*}=\frac{\,V+2C_o\,}{2\,(C_u+C_o+V)}=\frac12\!\left[\,1+\frac{C_o-C_u}{C_u+C_o+V}\right]\;}$
-*When $V=0$: $\displaystyle \color{red}{q}^{*}=1-\text{CR}$ with  
-$\text{CR}=\frac{C_u}{C_u+C_o}$ (the classical critical ratio).*
 
-### When does $\color{red}{q}^{*}$ land **high**?
-1. **High $C_o$, low $C_u$** – you dread leftover stock, so you raise quality to attract customers.  
-2. **High $V$** – the upside of a full match is large (e.g., $C_u=p-c>C_o=c$).  
-3. **Low $V$** *and* $C_u<C_o$ – risk-averse posture: avoid unsold production.
-- **Opportunity Seeker** (Cu​>Co​): Focused on **capturing every potential high-profit sale.** This person's primary fear is missing out on the high margin of a sale, so they invest in quality (q) to maximize customer demand, even if it increases production risk.    
-- **Risk Avoider** (Cu​<Co​): Focused on **preventing the creation of an unsold product.** This person's primary fear is the cost of wasted production, so they adopt strategies that minimize this risk, even if it means forgoing potential low-margin sales.''
-```
-
+todo: need to add asymmetric linear for duality
 
 ---
 ## 2.2 Step 2: Sigmoid Quality Model 
@@ -98,8 +85,6 @@ $$\frac{\partial q^*}{\partial V} = \frac{2(C_u - C_o)}{(2C_u + V)(2C_o + V)}$$
 
 ### 2.2.2  Business intuition (5A, 5B)
 - Behavioural steepness $(\beta_c,\beta_r)$ moderates the cost‑priority principle: when one side reacts sharply to quality, its preferences weigh more heavily in $q^{\dagger}$, potentially overriding small cost asymmetries. 
-
-### 2.2.2 Business intuition (5A, 5B)
 
 The sigmoid model preserves Step 1's cost-priority principle while capturing realistic S-shaped stakeholder responses. The closed-form solution $q^* = \ln\left(\frac{2C_o + V}{2C_u + V}\right)$ reveals several key insights:
 

@@ -18,7 +18,7 @@ i asked to recommend one or two for each theorize, produce, evaluate function -
     
     - **Kreutzer: Etudes for Viola**
         - **Why:** These etudes are pure "production," focusing on transforming theoretical knowledge into practical, repeatable technical skills. They are computational tools for skill development, bridging theory and practice. These are specifically viola scores.
-3. **[[def(💸Evaluate)]] (Inner Orbit: Rational Assessment & Lived Experience)**
+3. **[[💸Evaluate()]] (Inner Orbit: Rational Assessment & Lived Experience)**
     
     - **Paul Hindemith: Sonata for Solo Viola, Op. 25 No. 1**
         - **Why:** Performing this complete work requires continuous "rational assessment" and refinement through "lived experience," embodying the full cycle of understanding, executing, and evaluating your musical "product". This is a definitive viola score.

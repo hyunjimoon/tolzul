@@ -71,3 +71,21 @@ This operations strategy framework makes several significant contributions:
     
 
 The framework addresses a fundamental challenge in management: how to ensure that operational excellence contributes to strategic success rather than simply improving efficiency in isolation. By providing systematic approaches to both content decisions and process management, it offers a comprehensive guide for creating operations-based competitive advantage.
+
+---
+2025-06-22
+
+|**Aspect**|**Traditional Approach**|**Operational Excellence Approach**|
+|---|---|---|
+|**Core Philosophy**|Accept trade-offs as fixed constraints|Overcome trade-offs through enhanced capabilities|
+|**Strategic Position**|Reposition along existing frontier|Push out the efficient frontier entirely|
+|**Decision Framework**|"Either/or" - choose between competing priorities|"And/also" - achieve multiple objectives simultaneously|
+|**Prediction vs Prescription**|More prediction → better understanding but slower responseMore prescription → faster action but higher misalignment|Integrated approach enables simultaneous learning AND betting|
+|**Example from Operations**|Airlines choose cost efficiency OR variety|Modular design achieves better variety AND cost efficiency|
+|**Capability Development**|Work within existing operational limits|Develop new capabilities that transcend limitations|
+|**Trade-off Management**|Optimize within constraints|Transform constraints into competitive advantages|
+|**Strategic Outcome**|Repositioning on the curve|Frontier expansion and new performance levels|
+|**Risk Approach**|Balance between robustness and efficiency|Achieve both robustness and efficiency|
+|**Innovation Focus**|Process optimization|Capability transformation|
+
+**Key Insight**: Operational excellence represents a fundamental shift from accepting trade-offs to transcending them through superior capabilities and integrated approaches.

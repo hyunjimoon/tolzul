@@ -22,7 +22,7 @@ related with [[🌏world(amoon)/💜bit(atom(bit))/🏢company/bass_vc/thesis]],
     
 - **Figure:** Theory Visualization (Experimentation cost vs. Information gain trade-offs)
 2025-04-03
-- theorizing from [[SAJ]], [[💭theorize(💸)]], [[📐produce(💭)]], [[def(💸Evaluate)]]
+- theorizing from [[SAJ]], [[💭theorize(💸)]], [[📐produce(💭)]], [[💸Evaluate()]]
 - productizing with
 - evaluating using [[tpe(🎵music)]]
 

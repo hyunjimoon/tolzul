@@ -97,3 +97,39 @@ In the product development context, when multiple projects compete for bottlenec
 In a research project at General Motors, we analyzed one of the key bottlenecks for the entire vehicle development process: the provision of stamping dies, large steel tools that provide the shape for all stamped metal body parts. 215
 
 ---
+
+# operations strategy
+
+from [[📖nigel18_operations strategy]]
+## **How Operational Excellence Pushes the Trade-off Frontier**
+
+The operations management document provides crucial support for your argument through the **efficient frontier** concept. Here's the key insight:
+
+### **Traditional View: Repositioning on the Frontier**
+
+Most strategic thinking assumes entrepreneurs must **reposition** along an existing trade-off curve:
+
+- **More prediction** → Better stakeholder understanding but slower response
+- **More prescription** → Faster action but higher misalignment risk
+
+This is like the document's example of airlines choosing between cost efficiency OR variety - accepting the trade-off as fixed.
+
+### **Operational Excellence: Pushing Out the Frontier**
+
+The document shows operations can **overcome trade-offs entirely** through enhanced capabilities. Key quote:
+
+> "operations performance improvement is achieved by overcoming trade-offs, which, in turn, is achieved through enhanced operations capabilities"
+
+**Example**: Operation B achieved better variety AND cost efficiency simultaneously through modular design, "pushing out the efficient frontier."
+
+### **Applied to Your Framework**
+
+Your push-pull integration represents **frontier-pushing operational excellence**:
+
+- **Traditional approaches** accept the prediction-prescription trade-off
+- **Your integrated approach** develops new capabilities that enable simultaneous learning AND betting
+- This overcomes the dilemma rather than just repositioning within it
+
+The document even mentions the **"tyranny of either/or"** vs **"and/also" approach** - perfectly capturing your integrated solution that achieves both robustness AND efficiency.
+
+**Bottom line**: Operational excellence doesn't just optimize within constraints - it develops new capabilities that transcend traditional trade-offs entirely.

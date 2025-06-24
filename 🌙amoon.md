@@ -1,12 +1,12 @@
-I'm a Ph.D. at MIT studying entrepreneurship and mobility with [Charles Fine](https://www.charles-fine.com/),  [Scott Stern](https://www.scott-stern.com/), [Vikash Mansinghka](http://probcomp.csail.mit.edu/principal-investigator/). My past and future in [resume](https://www.dropbox.com/scl/fi/fa14fcd5ihdq014k6v4h0/Angie-Moon-Resume.pdf?rlkey=y7eerk8e6yx028es2rq7vjmid&dl=0). 
+I'm a Ph.D. at MIT studying innovation and operations management with [Charles Fine](https://www.charles-fine.com/),  [Scott Stern](https://www.scott-stern.com/), [Vikash Mansinghka](http://probcomp.csail.mit.edu/principal-investigator/). My past and future in [resume](https://www.dropbox.com/scl/fi/fa14fcd5ihdq014k6v4h0/Angie-Moon-Resume.pdf?rlkey=y7eerk8e6yx028es2rq7vjmid&dl=0). 
 
-Presently, I'm exploring how probabilistic reasoning drives action across three orbits around my star **LIVING ERGODIC LIFE** – the gravitational center unifying my research on theorizing bayesian and evolutionary behavior in entrepreneurship, productizing theory as entrepreneuring style using probabilistic program, and evaluating the productized styel as entrepreneur.
+I use probability, statistics, optimization theory to model entrepreneurial decision making. My main tool is probabilistic program. 
 
-**[[💭theorize(💸)]]**: In the outer orbit, I bridge Bayesian and evolutionary entrepreneurship through probabilistic programming. My work on [Simulation-Based Calibration Checking for Bayesian Computation](https://hyunjimoon.github.io/SBC/) constructs new meaning for simulation-based experiments, helping evaluate [[16 styles of entrepreneur]].
-
-**[[📐produce(💭)]]**: In the middle orbit, I transform theories into computational tools assessing entrepreneurial quality. [[vision-of-my-startup-nextopt]] emerged from bridging theory and practice. Pain ingrained in me as a founder, fuels my theorizing act.
-
-**[[def(💸Evaluate)]]**: In the closest orbit, I embody living an ergodic life through rational assessment. I absorbed modeling philosophies of computational Bayesian modelers, stochastic modelers, system dynamics modelers, discrete choice modelers'. I feel alive when I expose these embodied modeling philosophies to students who evaluate their value.
+I'm eager to bring forth the world where every knows and acts to live an ergodic life, which I'm experimenting with my life:
+ 
+- **Outer orbit**: Bridging Bayesian methods with entrepreneurship evaluation ([[💭theorize(💸)]])
+- **Middle orbit**: Converting theory into practical computational assessment tools ([[📐produce(💭)]])
+- **Inner orbit**: Teaching embodied modeling philosophies through experiential learning ([[💸evaluate(💭)]])
 
 The crescent moon (🌙) traversing these orbits represents my journey—sometimes closer to theory, sometimes application, always guided by meaningful evaluation.
 

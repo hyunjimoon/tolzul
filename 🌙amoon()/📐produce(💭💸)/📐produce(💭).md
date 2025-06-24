@@ -24,6 +24,6 @@
 - Quality evaluation metrics for innovation processes
 - Statistical toolkits for business intelligence
 
-The productization domain serves as the crucial bridge between theoretical ideas from [[💭theorize(💸)]] and their ultimate value assessment in [[def(💸Evaluate)]]. As the middle orbit, it moves at a balanced pace, transforming abstract concepts into tangible tools.
+The productization domain serves as the crucial bridge between theoretical ideas from [[💭theorize(💸)]] and their ultimate value assessment in [[💸Evaluate()]]. As the middle orbit, it moves at a balanced pace, transforming abstract concepts into tangible tools.
 
 _"The value of an idea lies in the using of it."_

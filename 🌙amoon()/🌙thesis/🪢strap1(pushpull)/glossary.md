@@ -1,3 +1,11 @@
+- [[#Core Strategic Concepts|Core Strategic Concepts]]
+- [[#Cost Structure|Cost Structure]]
+- [[#Stakeholder Dynamics|Stakeholder Dynamics]]
+- [[#Mathematical Framework|Mathematical Framework]]
+- [[#Entrepreneurial Context|Entrepreneurial Context]]
+- [[#Dimensional Framework|Dimensional Framework]]
+- [[#Units|Units]]
+
 ## Core Strategic Concepts
 
 - **Push strategy**: Act first, learn second - make quality investment decisions (q*) then update understanding of stakeholder responsiveness (βc, βr) based on outcomes
@@ -47,3 +55,20 @@
 - prediction accuracy
 - prediction effectiveness
 - updated efficiency
+
+## Units
+
+|Variable|Unit|Tesla Roadster Example|Definition|
+|---|---|---|---|
+|**T**|months|24 months|Total development time available|
+|**r**|dimensionless|0.2|Fraction of time spent on learning vs building|
+|**q**|dimensionless [0,1]|0.85|Quality level achieved (fitness for use)|
+|**β_r**|dimensionless|0.3|Resource partner responsiveness to quality|
+|**β_c**|dimensionless|0.8|Customer responsiveness to quality|
+|**P_r**|probability [0,1]|0.745|Resource partner commitment probability|
+|**P_c**|probability [0,1]|0.68|Customer commitment probability|
+|**C_o**|$|$50M|Overage cost (unsold inventory, excess capacity)|
+|**C_u**|$|$200M|Underage cost (lost sales, reputation damage)|
+|**V**|$|$300M|Value when both stakeholders commit|
+|**L**|$|$85M|Expected loss from mismatches|
+
