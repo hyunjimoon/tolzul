@@ -1,3 +1,5 @@
+![[🖼️(effectiveness, 🟧🟧🟧) 2025-06-27-11.svg]]
+%%[[🖼️(effectiveness, 🟧🟧🟧) 2025-06-27-11.md|🖋 Edit in Excalidraw]]%%
 # Figure: Expected Cost Curves by Quality (G0, G1, G2)
 
 This figure shows how expected cost varies with quality choice q for the three model specifications.

@@ -1,5 +1,6 @@
 [[💭📐💸tpe]]
 2025-03-30's using [music recommendatino by genre cld](https://claude.ai/chat/68032aed-f56e-48d0-86e5-febb261d5fd7)
+2025-06-27 [summarizing masterclass composing](https://gemini.google.com/app/6fa98ea8d23767c5), [[compose(melody, tune, motif, rhythm, harmony)]]
 ## Short Version
 
 #### 🔭Discovery (💭Theorizing + 📐Productizing)

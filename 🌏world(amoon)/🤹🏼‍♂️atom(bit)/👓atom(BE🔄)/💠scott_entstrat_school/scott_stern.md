@@ -1,3 +1,5 @@
+2025-06-27
+- set aside 10mins collaborating on my career as i am certain that i'd be a great asset to your vision of bayesian entrepreneurship as you agreed from the mail to josh (move toward computational cognitive science)
 
 2024-12-03
 three questions to ask: 

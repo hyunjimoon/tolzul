@@ -8,7 +8,6 @@
    * Venture pitches: ~13 submissions × .25hr ~ 3.5 hr
    * Simulation reports: ~13 submissions × .5hr = 6.5 hr
    * Final exam: ~60 exams × .33hr = 20 hr
+* **Mail response** : 2hrs/w * 5w = 10hr
 
-**Total: 90 hr = 24 (learning) + 23 (teaching) + 43 (grading) over 5 weeks (~18 hours/week)**
-
-[[🗄️🧠scott]]
+**Total: 90 hr = 24 (learning) + 23 (teaching) + 43 (grading)  + 10 (mail) over 5 weeks (~20 hours/week)**

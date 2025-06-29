@@ -1,8 +1,10 @@
+
 2025-06-16
 1. express your insight using language  
 2. give voice? to what’s inside (skill - discovery - vision)  
 3. don't let tech creativity over-rule? artistic creativity
 matt as writing teacher thru [gdocs](https://docs.google.com/document/d/160MGPf4YnfM8WsmRyEcecCDDfam0PR29RsJgwKzT1S8/edit?usp=sharing)
+
 2024-12-03
 
 planning for a chat with matt
@@ -17,7 +19,6 @@ planning for a chat with matt
 7. third paragraph: 
 	1. Naming: 1) Programmatic vs Integrative Theory, 2) Strategic commitment vs framework (Kuhn), 3) Refine loop, 4) use of the word hypothesis?
 	2. connecting with meehl (TH) and understand the feedback loop (epigenetic, intertemporal uncertainty, risk vs uncertainty)
-
 
 
 AMR, human connection (lens)
