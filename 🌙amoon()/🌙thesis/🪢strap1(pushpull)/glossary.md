@@ -24,10 +24,12 @@
 
 ## Stakeholder Dynamics
 
+- **Stakeholder clockspeeds**: The different rates at which various stakeholders (e.g., customers, partners, investors) update their beliefs, make decisions, and require action. This temporal misalignment can amplify the complexity of degenerate decision problems.
 - **Stakeholder responsiveness (β)**: Sensitivity parameter measuring how stakeholder commitment probability changes with quality improvements (dimensionless)
 - **Commitment probability**: Likelihood that a stakeholder (customer or partner) will fulfill their role in value creation
 - **Joint optimization**: Decision-making framework that considers multiple stakeholder quality responses simultaneously
 - **Asymmetric sensitivity**: Stakeholders exhibiting different responsiveness patterns to the same quality investments (not conflicting preferences, but different quality sensitivity)
+
 
 ## Mathematical Framework
 
@@ -72,3 +74,12 @@
 |**V**|$|$300M|Value when both stakeholders commit|
 |**L**|$|$85M|Expected loss from mismatches|
 
+
+### The Degeneracy Canon (A0 → C0 → A0')
+
+|Analogy (The LEGO Pile)|Paper Construct & Key Objects|
+|---|---|
+|**The Problem:** A giant, messy pile of LEGOs that is confusing and overwhelming.|**The Degenerate Problem (`A0`):** A decision space where variables vastly outnumber constraints.|
+|**The "Seed":** The hidden insight that some pieces, like the big flat baseplates, are more important for starting a strong structure.|**The Economic Seed:** The underlying economic structure of `A0`, specifically the inherent existence of asymmetric mismatch costs: Underage Cost (`Cu`) and Overage Cost (`Co`).|
+|**The Solution:** Learning the "rules" of building—like starting with a strong base—that allow you to turn the mess into something cool.|**The Solution Framework (`C0`):** The integrated approach that uses Newsvendor logic to transform the `Cu`/`Co` seed into a navigational guide: the **optimality surface**.|
+|**Masterful Application:** You now want an even _bigger_ pile of LEGOs because you see the "mess" as pure opportunity for creating amazing things.|**Purposeful Degeneracy (`A0'`):** The entrepreneur now intentionally increases degeneracy (e.g., adds stakeholders or product features), using the `C0` framework to confidently manage the complexity and generate new opportunities.|
