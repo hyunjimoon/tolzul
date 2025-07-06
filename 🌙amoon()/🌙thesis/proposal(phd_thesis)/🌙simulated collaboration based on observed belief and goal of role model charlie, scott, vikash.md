@@ -321,4 +321,4 @@ I apologize for the error regarding Charlie Fine's examples. You're right, and I
 | xiodi?? |                                                                                                                                                                                                         |                     |                                                                                                                                                                                                                                            |                                           |
 
 ---
-this prompted [[🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash, moshe, jinhua]] which I'll send out to sync "goal and role prior" on Apr.11
+this prompted [[🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash]] which I'll send out to sync "goal and role prior" on Apr.11

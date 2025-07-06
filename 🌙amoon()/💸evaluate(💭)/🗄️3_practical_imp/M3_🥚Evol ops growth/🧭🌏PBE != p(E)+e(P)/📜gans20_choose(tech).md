@@ -11,7 +11,7 @@ using tesla's strategic evolution vis cld
 
 seems relevant with [[📜arora25_be_user]]'s ⭐️even entrepreneurs have low enough priors that the optimal experiment is a high-bar experiment.
 
-[[🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash, moshe, jinhua]]
+[[🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash]]
 
 2025-03-27
 

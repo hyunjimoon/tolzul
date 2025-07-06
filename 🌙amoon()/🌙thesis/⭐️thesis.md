@@ -1,5 +1,5 @@
 
-[[🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash, moshe, jinhua]]
+[[🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash]]
 
 
 
@@ -43,7 +43,7 @@ Entrepreneurial decision-making faces dual complexity challenges that render tra
 
 2025-04-21
 
-[[🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash, moshe, jinhua]]
+[[🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash]]
 
 | #                                                                                      | User                   | Sections                                                                        | 🛠️ NSS Tool                     | Basis                                                                                                                                                                                         | Collaborate                                     | Three Bullet Point Summary                                                                                                      | Subsections                                            | On Probabilistic Program                       | By Product                                                                                     | Relevant Paper                                                               | Example (EV Startup: "UrbanVolt")                                                                                                                                                                                                                                                                   |
 | -------------------------------------------------------------------------------------- | ---------------------- | ------------------------------------------------------------------------------- | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | ---------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

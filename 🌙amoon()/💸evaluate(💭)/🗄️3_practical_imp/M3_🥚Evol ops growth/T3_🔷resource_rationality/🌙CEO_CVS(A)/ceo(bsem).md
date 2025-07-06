@@ -1,4 +1,4 @@
-based on [[🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash, moshe, jinhua]] philosophy,
+based on [[🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash]] philosophy,
 
 
 paper2

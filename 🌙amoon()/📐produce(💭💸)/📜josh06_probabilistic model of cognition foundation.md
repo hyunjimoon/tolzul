@@ -29,4 +29,4 @@ The key insight is that cognitive systems can implement sophisticated probabilis
 | How to Grow a Mind (2011)                  | Bayesian Models of Cognition (2024)                       | Enabling Entrepreneurial Choice (2021)         | Impact of Uncertain IP Rights (2008)                            |
 | Human-Level Concept Learning (2015)        |                                                           | Theory-Based Search (2024)                     | Is There a Market for Ideas? (2010)                             |
 
-[[🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash, moshe, jinhua]]
+[[🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash]]

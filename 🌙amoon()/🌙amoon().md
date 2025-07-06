@@ -9,7 +9,7 @@
 | [[💸evaluate(💭)]] | Application domains, value propositions, use cases           | [[🗄️3Practical Implications]]                                                                          | Entrepreneurs, Investors, Policymakers |
 | [[📐produce(💭)]]  | Decision model, algorithms, implementation mechanisms        | [[🗄️2Comparison with Existing Theories]]<br>[[🗄️4Production Plan]]<br>🖼️2: Methodology Visualization | Tool Developers, Technical Teams       |
 | implementation     | [[💻genjax code]]                                            |                                                                                                         |                                        |
-starting with [[eval(vikash, probcomp_ent)]],  [[🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash, moshe, jinhua]]
+starting with [[eval(vikash, probcomp_ent)]],  [[🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash]]
 2025-03-30
 below was original [[🌙amoon]] which i updated using the idea of revolving around the three values.
 

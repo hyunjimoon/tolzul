@@ -1,7 +1,7 @@
  2025-04-10
 
 
-[[🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash, moshe, jinhua]]
+[[🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash]]
 2025-03-11
 
 ---

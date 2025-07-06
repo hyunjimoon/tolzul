@@ -73,4 +73,4 @@ music pool
 |정도전의 삶/Jeongdojeon's Life|Unknown composer for historical drama|KBS (broadcast producer)|Korean historians & drama audiences|[Listen](https://youtu.be/kgXOnYr9Qzs)|
 |불멸의 혼/Immortal Soul|Kim Dong Jin (composer)|KBS (broadcast producer)|Korean history scholars & audiences|[Listen](https://www.youtube.com/watch?v=5vPzw75D_rM)|
 
-[[정도전과 그의 시대 이덕일]], [[이순신]], [[불멸의 혼]], [[시가 될 이야기]]
+[[정도전과 그의 시대 이덕일]], [[🌏world(amoon)/🤹🏼‍♂️atom(bit)/👓atom(BE🔄)/이순신]], [[불멸의 혼]], [[시가 될 이야기]]

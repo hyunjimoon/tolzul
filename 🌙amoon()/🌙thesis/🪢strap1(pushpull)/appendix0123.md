@@ -180,7 +180,7 @@ L(q)
 - V\,P_c(q)\,P_r(q).
 $$
 
-#### A.2.2.2 First-Order Condition
+#### A.2.2.2 First-Order Condition 
 
 1. Compute the derivatives
    $$

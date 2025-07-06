@@ -7,7 +7,7 @@ longform:
   scenes:
     - 🗄️table_of_contents
     - IV Conclusion Integration and Evaluation
-    - 🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash, moshe, jinhua
+    - 🌙simulated collaboration based on observed belief and goal of role model charlie, scott, vikash
   ignoredFiles:
     - eval(charlie, manuscript)
     - eval(manuscript, charlie2)
