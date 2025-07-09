@@ -1,0 +1,12 @@
+Angie Propose 5/11/25:
+e.g. paragraph i came across - we need customer segment strategy / incentive structure to cross the chasm
+
+“For this vision to reach its full potential, I've designed a fair and simple way to work with others. Think of it like a recipe book: I've created the recipes (my startup guidance methods), but I need chefs (industry experts) to test them in real kitchens. My approach is straightforward: when experts help improve my methods by testing them with real startups, they get early access to use these improved tools with their own companies or investments. This creates a win-win situation. I get valuable feedback to make my tools better, while my collaborators gain special access to cutting-edge methods that help them make smarter decisions about which startups might succeed. It's like letting someone test-drive and improve a new car design, and in return, they get one of the first production models. This simple exchange ensures everyone benefits: startups get better guidance, experts get better tools, and I can continue developing methods that help more entrepreneurs succeed.”
+
+Pranit Reply 5/11/25:
+I like the sentiment behind it, however I think it sort of lacks the actual tangible incentive that might ‘nudge’ someone in the right direction towards entrepreneurship. If someone is already an expert what is the incentive for them to actually adopt this method? They have already tried and tested it so there is no need for them to use another method (this is basing it off the founders I know). On the contrary someone who is not an expert is more likely to use this startup ‘recipe’ because they are quite lost in the process. However, the feedback we get from them may not necessarily improve our tool as much because the non-experts are learning along the way themselves. Frankly speaking this is not very different from the recipe of disciplined entrepreneurship, plug and play and hope it works out. 
+
+What I think could be done is adopt a series of behavioral nudges or changes that motivates actions in startups not through the advice/mentorship of experts but through heuristics (frankly I don’t know how to do this, it would be another thesis on its own). Another thing is actually establishing your own VC firm that uses your theory and only invests in companies that applies this. Somehow forcing them to succeed?
+
+Angie Reply 5/11/25:
+![[🟧amoon/🟧grow/supplyR 1/Pasted image 20250511234053.png]]

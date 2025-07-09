@@ -49,3 +49,9 @@ _ref/
 🌏world(amoon)/🤹🏼‍♂️atom(bit)/🗺️atom(PC⬆️⬇️)/jun_youngbum/*.pdf
 🌏world(amoon)/🤹🏼‍♂️atom(bit)/🧭atom(PC🔃)/moshe_ben-akiva/*.pdf
 🌙amoon()/⚡️generate(tolzul)/operations/2🟩bayes_dec_game/optimization/*.key
+
+
+
+
+# Ignore Smart Environment folder
+.smart-env

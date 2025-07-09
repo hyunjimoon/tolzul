@@ -6,7 +6,7 @@ I'm eager to bring forth the world where every knows and acts to live an ergodic
  
 - **Outer orbit**: Bridging Bayesian methods with entrepreneurship evaluation ([[💭theorize(💸)]])
 - **Middle orbit**: Converting theory into practical computational assessment tools ([[📐produce(💭)]])
-- **Inner orbit**: Teaching embodied modeling philosophies through experiential learning ([[💸evaluate(💭)]])
+- **Inner orbit**: Teaching embodied modeling philosophies through experiential learning ([[♻️diagnose]])
 
 The crescent moon (🌙) traversing these orbits represents my journey—sometimes closer to theory, sometimes application, always guided by meaningful evaluation.
 
