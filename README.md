@@ -10,7 +10,7 @@ Three folders. One cycle. Simple.
 ## The Cycle
 
 ```
-     🔴 sun
+     ⭕ sun
       ↑  ↓
     ♻️ world
       ↑  ↓  

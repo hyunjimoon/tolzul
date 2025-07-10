@@ -1,4 +1,4 @@
-# 🔴 Sun - Future Pulling Me Forward
+# ⭕ Sun - Future Pulling Me Forward
 
 ## How Future Reality Shapes Me
 

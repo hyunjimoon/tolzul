@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"id":"alert-node","type":"file","file":"🟧amoon/🟪alert/🟪alert.md","x":400,"y":0,"width":200,"height":100,"color":"5"},
+		{"id":"discovery-text","type":"text","text":"**DISCOVERY**\n\nFinding new possibilities by imagining what else might be happening and verifying it\n\n*Experimenter (STP)*\nDetailed testing & iteration","x":100,"y":200,"width":180,"height":150,"color":"6"},
+		{"id":"vision-text","type":"text","text":"**VISION**\n\nEnvisioning better futures by imagining beneficial possibilities\n\n*Storyteller (NFJ)*\nVision-driven decisions inspiring teams","x":700,"y":200,"width":180,"height":150,"color":"4"},
+		{"id":"skill-text","type":"text","text":"**SKILL**\n\nCreating meaningful work by understanding operations and appropriate applications\n\n*Creator (SFJ)*\nStructured creativity with clear vision","x":400,"y":520,"width":200,"height":150,"color":"2"},
+		{"id":"center-text","type":"text","text":"# 🟧 Amoon Triangle\n\n**Three Modes of Active Creation**\n\n🟪 **Alert**: Identify anomalies (💭 Theorizing)\n♻️ **Diagnose**: Assess what's missing (💸 Evaluating)\n🟧 **Grow**: Build solutions (📐 Productizing)\n\n**Three Synthesis Combinations**\n\n🔍 **Discovery**: Alert + Grow\n🎯 **Vision**: Alert + Diagnose  \n🛠️ **Skill**: Grow + Diagnose","x":320,"y":220,"width":280,"height":240,"color":"0"},
+		{"id":"grow-node","type":"file","file":"🟧amoon/🟧grow/🟧grow.md","x":100,"y":545,"width":200,"height":100,"color":"1"},
+		{"id":"diagnose-node","type":"file","file":"🟧amoon/♻️diagnose/♻️diagnose.md","x":680,"y":545,"width":200,"height":100,"color":"3"}
+	],
+	"edges":[
+		{"id":"alert-discovery","fromNode":"alert-node","fromSide":"left","toNode":"discovery-text","toSide":"top","color":"5","label":"💭"},
+		{"id":"alert-vision","fromNode":"alert-node","fromSide":"right","toNode":"vision-text","toSide":"top","color":"5","label":"💭"},
+		{"id":"grow-discovery","fromNode":"grow-node","fromSide":"left","toNode":"discovery-text","toSide":"bottom","color":"1","label":"📐"},
+		{"id":"grow-skill","fromNode":"grow-node","fromSide":"right","toNode":"skill-text","toSide":"left","color":"1","label":"📐"},
+		{"id":"diagnose-vision","fromNode":"diagnose-node","fromSide":"right","toNode":"vision-text","toSide":"bottom","color":"3","label":"💸"},
+		{"id":"diagnose-skill","fromNode":"diagnose-node","fromSide":"left","toNode":"skill-text","toSide":"right","color":"3","label":"💸"},
+		{"id":"alert-center","fromNode":"alert-node","fromSide":"bottom","toNode":"center-text","toSide":"top","color":"5"},
+		{"id":"grow-center","fromNode":"grow-node","fromSide":"top","toNode":"center-text","toSide":"left","color":"1"},
+		{"id":"diagnose-center","fromNode":"diagnose-node","fromSide":"top","toNode":"center-text","toSide":"right","color":"3"}
+	]
+}

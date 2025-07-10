@@ -56,7 +56,29 @@ Translating statistical theory into practical applications for business and oper
 - **Theory Operationalization**: Convert frameworks into practical implementation
 - **Trade-off Analysis**: Balance costs of testing against informational value
 
-### Connection to TPE Framework
+### ADGC Framework Integration
+
+#### G0: Core Growth Template
+**🟧: The foundation we build upon**
+
+#### G1, G2: New Engines/Models
+**🟧1, 🟧2: The new engines/models we construct**
+
+#### G12: Integrated System
+**🟧12: The integrated system that emerges**
+
+### Academic Paper Integration
+- **Paper Sections**: Methodology, Results
+- **Key Components**: Theory operationalization, Key construct definitions, Analysis method explanation, Practical implementation guidance
+- **Core Questions**: 
+  - **How does theory work in practice?**
+  - **What are key implementation trade-offs?**
+  - **How can we create reproducible results?**
+
+### TPE Framework Answer
+In practice, the theory guides entrepreneurs to design experiments optimally by balancing the costs of testing against informational value, explicitly accounting for optimism, confidence, and resource constraints. Key trade-offs include experimentation cost versus information gain, and bias reduction versus variance management.
+
+### Connection to ADGC Framework
 This stage corresponds to the **📐 PRODUCTIZING** phase in the TPE framework, where theoretical insights are converted into practical, implementable solutions.
 
 ### Linkages

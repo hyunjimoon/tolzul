@@ -1,3 +1,25 @@
+[[2025-07-09|25-07-09-14]]
+
+- code is executing command
+- what's going on - philosophy (what's going on)
+- this is why not having an answer is a problem (as gap may mean - what ppl look at is not important) - these problem should be managemed
+- don't know when deviation, 
+- engineering is about how to do stuff - number theory is about how number related with each other
+- there's infinite number of gaps
+- methodology does this and  (theory-method match)
+- theory () - methods (analytical model + simualtion) - how the model manage
+
+- use two analogy simultaneously. A is like B, C is like B. easier for ppl to understand B.
+- artist scienctist - discover VS vision (spatial computing)
+
+engineers making models  -> how ppl think (assumptions)
+
+psychology 
+
+learn then act, act then learn 
+
+rubics cube (know solution, but not know how to get there ) VS winning a game tic tac toe (knowing solution matters)
+
 
 2025-06-16
 1. express your insight using language  

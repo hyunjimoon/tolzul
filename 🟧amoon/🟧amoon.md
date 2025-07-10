@@ -6,11 +6,15 @@ I use probability, statistics, optimization theory to model entrepreneurial deci
 
 I'm eager to bring forth the world where every knows and acts to live an ergodic life, which I'm experimenting with my life through three active creation stages:
 
-## Creation Stages
+## ADGC Framework
 
-- **🟪alert/** - Identify anomalies and tensions → [[🟪alert/🟪alert.md]]
-- **♻️diagnose/** - Assess what's missing → [[♻️diagnose/♻️diagnose.md]]  
-- **🟧grow/** - Build solutions → [[🟧grow/🟧grow.md]]
+**Visual Navigation**: [[amoon.canvas|🎨 Open Interactive Canvas]]
+
+**Four Academic Creation Modes:**
+- **🟪alert/** - (A) Identify anomalies and tensions → [[🟪alert/🟪alert.md]]
+- **♻️diagnose/** - (D) Assess what's missing → [[♻️diagnose/♻️diagnose.md]]  
+- **🟧grow/** - (G) Build solutions → [[🟧grow/🟧grow.md]]
+- **⏰time/** - (C) How insights get implemented across temporal scales → [[♻️world/time/time.md]]
 
 ## Three Orbits of Impact
 
