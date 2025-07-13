@@ -5,7 +5,7 @@ growth/commercialization - aware exploration
 
 ![[Pasted image 20231230172525.png]]
 
-- m2: how to decomposing evaluation in phase1,2,3 as described in [[⭕sun]]
+- m2: how to decomposing evaluation in phase1,2,3 as described in [[🔴sun]]
 	- how to map "ideation to growth" strategy: desirability (phase1), feasibility (tech. (context-free), operational (complentary assests (infra), context)), viability (efficiency) signal
 	- topic modeling
 - definition of innovation would differ according to how we think about its measurement

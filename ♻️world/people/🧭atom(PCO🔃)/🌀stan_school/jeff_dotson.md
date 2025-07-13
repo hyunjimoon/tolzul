@@ -1,8 +1,12 @@
+[[2025-07-10|25-07-10-23]] 🟪what is the problem, ♻️why is it important/difficult, 🟧what do we do, 🔴what's different
+
+ [[jeff(bayes vision, promise vendor).txt]]
+
 2025-06-12
 
 associate editor (lost cause) - field's perspective
 present at some place (set of reviewer)
-![[Angie and Jeff Updates_otter_ai (1).txt]]
+[[Angie and Jeff Updates_otter_ai (1).txt]]
 
 2025-03-09
 discussed differential visualization from [[⚙️(🗄️📝)]]

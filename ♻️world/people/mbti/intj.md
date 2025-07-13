@@ -1,3 +1,4 @@
+[[ocean_jangda]], [[박경린]], [[paul_hamilton]], [[peyman]]
 혼자 상상하느라 심각한 N
 무뚝뚝, 연애시작시 충성심 max
 겉차속따 (나머진 무관심)

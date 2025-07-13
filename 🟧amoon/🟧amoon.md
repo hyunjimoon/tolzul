@@ -13,13 +13,13 @@ I'm eager to bring forth the world where every knows and acts to live an ergodic
 **Four Academic Creation Modes:**
 - **🟪alert/** - (A) Identify anomalies and tensions → [[🟪alert/🟪alert.md]]
 - **♻️diagnose/** - (D) Assess what's missing → [[♻️diagnose/♻️diagnose.md]]  
-- **🟧grow/** - (G) Build solutions → [[🟧grow/🟧grow.md]]
+- **🟧grow/** - (G) Build solutions → [[🟧grow]]
 - **⏰time/** - (C) How insights get implemented across temporal scales → [[♻️world/time/time.md]]
 
 ## Three Orbits of Impact
 
 - **Outer orbit**: Bridging Bayesian methods with entrepreneurship evaluation → [[🟪alert/🟪alert.md]]
-- **Middle orbit**: Converting theory into practical computational assessment tools → [[🟧grow/🟧grow.md]]
+- **Middle orbit**: Converting theory into practical computational assessment tools → [[🟧grow]]
 - **Inner orbit**: Teaching embodied modeling philosophies through experiential learning → [[♻️diagnose/♻️diagnose.md]]
 
 ## Purpose

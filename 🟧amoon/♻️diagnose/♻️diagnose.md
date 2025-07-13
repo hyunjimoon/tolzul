@@ -57,4 +57,4 @@ This stage corresponds to the **💸 EVALUATING** phase in the TPE framework, wh
 
 ---
 
-*Previous stage: [[🟪alert.md]]* | *Next stage: [[🟧grow.md]]*
+*Previous stage: [[🟪alert.md]]* | *Next stage: [[🟧grow]]*

@@ -1,0 +1,116 @@
+<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#d32f2f"/>
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#1976d2"/>
+    </marker>
+    <marker id="arrowhead-gray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="500" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#000">
+    Three Conceptual Gaps: Where Classical OM Fails
+  </text>
+  
+  <!-- Gap 1: Temporal (RED) -->
+  <g transform="translate(50, 70)">
+    <rect x="0" y="0" width="250" height="350" fill="#fff" stroke="#d32f2f" stroke-width="2"/>
+    <text x="125" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#d32f2f">Temporal Gap</text>
+    
+    <!-- Classical OM -->
+    <rect x="20" y="45" width="210" height="100" fill="#f5f5f5" stroke="#999" stroke-width="1"/>
+    <text x="125" y="65" text-anchor="middle" font-size="12" font-weight="600" fill="#000">Classical OM</text>
+    <text x="30" y="85" font-size="11" fill="#333">• Past → Present</text>
+    <text x="30" y="100" font-size="11" fill="#333">• Historical data</text>
+    <text x="30" y="115" font-size="11" fill="#333">• Learn &amp; forecast</text>
+    <text x="30" y="130" font-size="11" fill="#333">• D determines profit</text>
+    
+    <!-- Arrow -->
+    <path d="M 125 155 L 125 185" stroke="#d32f2f" stroke-width="2" marker-end="url(#arrowhead-red)"/>
+    
+    <!-- Entrepreneurial -->
+    <rect x="20" y="195" width="210" height="100" fill="#fff" stroke="#d32f2f" stroke-width="2"/>
+    <text x="125" y="215" text-anchor="middle" font-size="12" font-weight="600" fill="#d32f2f">Entrepreneurial Reality</text>
+    <text x="30" y="235" font-size="11" fill="#333">• <tspan fill="#d32f2f" font-weight="600">Future → Present</tspan></text>
+    <text x="30" y="250" font-size="11" fill="#333">• Promise pulls funding</text>
+    <text x="30" y="265" font-size="11" fill="#333">• Vision shapes today</text>
+    <text x="30" y="280" font-size="11" fill="#333">• <tspan fill="#d32f2f" font-weight="600">P ← F</tspan> reversal</text>
+    
+    <!-- Math -->
+    <text x="125" y="320" text-anchor="middle" font-size="10" font-style="italic" fill="#666">
+      Time flow inverts causality
+    </text>
+  </g>
+  
+  <!-- Gap 2: Spatial (BLUE) -->
+  <g transform="translate(325, 70)">
+    <rect x="0" y="0" width="250" height="350" fill="#fff" stroke="#1976d2" stroke-width="2"/>
+    <text x="125" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#1976d2">Spatial Gap</text>
+    
+    <!-- Classical OM -->
+    <rect x="20" y="45" width="210" height="100" fill="#f5f5f5" stroke="#999" stroke-width="1"/>
+    <text x="125" y="65" text-anchor="middle" font-size="12" font-weight="600" fill="#000">Classical OM</text>
+    <text x="30" y="85" font-size="11" fill="#333">• Continuous (Q−D)⁺</text>
+    <text x="30" y="100" font-size="11" fill="#333">• Smooth optimization</text>
+    <text x="30" y="115" font-size="11" fill="#333">• Known parameters</text>
+    <text x="30" y="130" font-size="11" fill="#333">• Cost minimization</text>
+    
+    <!-- Arrow -->
+    <path d="M 125 155 L 125 185" stroke="#1976d2" stroke-width="2" marker-end="url(#arrowhead-blue)"/>
+    
+    <!-- Entrepreneurial -->
+    <rect x="20" y="195" width="210" height="100" fill="#fff" stroke="#1976d2" stroke-width="2"/>
+    <text x="125" y="215" text-anchor="middle" font-size="12" font-weight="600" fill="#1976d2">Entrepreneurial Reality</text>
+    <text x="30" y="235" font-size="11" fill="#333">• <tspan fill="#1976d2" font-weight="600">I(P&gt;D), I(P=D)</tspan></text>
+    <text x="30" y="250" font-size="11" fill="#333">• <tspan fill="#1976d2" font-weight="600">Value V emerges</tspan></text>
+    <text x="30" y="265" font-size="11" fill="#333">• Create new variables</text>
+    <text x="30" y="280" font-size="11" fill="#333">• Alignment rewards</text>
+    
+    <!-- Math -->
+    <text x="125" y="320" text-anchor="middle" font-size="10" font-style="italic" fill="#666">
+      − <tspan fill="#1976d2" font-weight="600">V I(P=D)</tspan> creates jumps
+    </text>
+  </g>
+  
+  <!-- Gap 3: Interaction -->
+  <g transform="translate(600, 70)">
+    <rect x="0" y="0" width="250" height="350" fill="#fff" stroke="#666" stroke-width="2"/>
+    <text x="125" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#000">Interaction Gap</text>
+    
+    <!-- Classical OM -->
+    <rect x="20" y="45" width="210" height="100" fill="#f5f5f5" stroke="#999" stroke-width="1"/>
+    <text x="125" y="65" text-anchor="middle" font-size="12" font-weight="600" fill="#000">Classical OM</text>
+    <text x="30" y="85" font-size="11" fill="#333">• Q ⊥ D independence</text>
+    <text x="30" y="100" font-size="11" fill="#333">• Exogenous uncertainty</text>
+    <text x="30" y="115" font-size="11" fill="#333">• One-way causality</text>
+    <text x="30" y="130" font-size="11" fill="#333">• Static optimization</text>
+    
+    <!-- Arrow -->
+    <path d="M 125 155 L 125 185" stroke="#666" stroke-width="2" marker-end="url(#arrowhead-gray)"/>
+    
+    <!-- Entrepreneurial -->
+    <rect x="20" y="195" width="210" height="100" fill="#fff" stroke="#666" stroke-width="2"/>
+    <text x="125" y="215" text-anchor="middle" font-size="12" font-weight="600" fill="#000">Entrepreneurial Reality</text>
+    <text x="30" y="235" font-size="11" fill="#333">• P shapes D</text>
+    <text x="30" y="250" font-size="11" fill="#333">• Resources → capability</text>
+    <text x="30" y="265" font-size="11" fill="#333">• Self-fulfilling promises</text>
+    <text x="30" y="280" font-size="11" fill="#333">• Dynamic feedback</text>
+    
+    <!-- Math -->
+    <text x="125" y="320" text-anchor="middle" font-size="10" font-style="italic" fill="#666">
+      Promises create reality
+    </text>
+  </g>
+  
+  <!-- Bottom synthesis -->
+  <text x="450" y="460" text-anchor="middle" font-size="12" font-weight="600" fill="#000">
+    Combined: <tspan fill="#d32f2f">Time Reversal</tspan> × <tspan fill="#1976d2">New State Space</tspan> × Endogeneity = Promise Vendor
+  </text>
+</svg>

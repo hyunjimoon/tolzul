@@ -6,7 +6,7 @@
 
 ---
 2025-04-03
-using [gpt](https://chatgpt.com/share/67ef3ef5-6d88-8002-b741-5659aa5d07d4), [[tpe(🎵music)]], [[todo(week)]]
+using [gpt](https://chatgpt.com/share/67ef3ef5-6d88-8002-b741-5659aa5d07d4), [[🟣♻️🟧🔴(🎵music)]], [[todo(week)]]
 # 🌈 Visual Weekly Thinking Planner 
 
 **Weekly Thinking Modes Table (Revised)**
