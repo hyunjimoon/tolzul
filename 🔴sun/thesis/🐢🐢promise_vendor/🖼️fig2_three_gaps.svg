@@ -1,4 +1,4 @@
-<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arrowhead-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
       <polygon points="0 0, 10 3, 0 6" fill="#d32f2f"/>
@@ -6,111 +6,86 @@
     <marker id="arrowhead-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
       <polygon points="0 0, 10 3, 0 6" fill="#1976d2"/>
     </marker>
-    <marker id="arrowhead-gray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-      <polygon points="0 0, 10 3, 0 6" fill="#666"/>
-    </marker>
   </defs>
   
   <!-- Background -->
-  <rect width="900" height="500" fill="#ffffff"/>
+  <rect width="700" height="500" fill="#ffffff"/>
   
   <!-- Title -->
-  <text x="450" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#000">
-    Three Conceptual Gaps: Where Classical OM Fails
+  <text x="350" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#000">
+    Two Core Transformations: Newsvendor → Promise Vendor
   </text>
   
-  <!-- Gap 1: Temporal (RED) -->
+  <!-- Transformation 1: Temporal (RED) -->
   <g transform="translate(50, 70)">
-    <rect x="0" y="0" width="250" height="350" fill="#fff" stroke="#d32f2f" stroke-width="2"/>
-    <text x="125" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#d32f2f">Temporal Gap</text>
+    <rect x="0" y="0" width="280" height="380" fill="#fff" stroke="#d32f2f" stroke-width="2"/>
+    <text x="140" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#d32f2f">⏰ Temporal Transformation</text>
     
-    <!-- Classical OM -->
-    <rect x="20" y="45" width="210" height="100" fill="#f5f5f5" stroke="#999" stroke-width="1"/>
-    <text x="125" y="65" text-anchor="middle" font-size="12" font-weight="600" fill="#000">Classical OM</text>
-    <text x="30" y="85" font-size="11" fill="#333">• Past → Present</text>
-    <text x="30" y="100" font-size="11" fill="#333">• Historical data</text>
-    <text x="30" y="115" font-size="11" fill="#333">• Learn &amp; forecast</text>
-    <text x="30" y="130" font-size="11" fill="#333">• D determines profit</text>
-    
-    <!-- Arrow -->
-    <path d="M 125 155 L 125 185" stroke="#d32f2f" stroke-width="2" marker-end="url(#arrowhead-red)"/>
-    
-    <!-- Entrepreneurial -->
-    <rect x="20" y="195" width="210" height="100" fill="#fff" stroke="#d32f2f" stroke-width="2"/>
-    <text x="125" y="215" text-anchor="middle" font-size="12" font-weight="600" fill="#d32f2f">Entrepreneurial Reality</text>
-    <text x="30" y="235" font-size="11" fill="#333">• <tspan fill="#d32f2f" font-weight="600">Future → Present</tspan></text>
-    <text x="30" y="250" font-size="11" fill="#333">• Promise pulls funding</text>
-    <text x="30" y="265" font-size="11" fill="#333">• Vision shapes today</text>
-    <text x="30" y="280" font-size="11" fill="#333">• <tspan fill="#d32f2f" font-weight="600">P ← F</tspan> reversal</text>
-    
-    <!-- Math -->
-    <text x="125" y="320" text-anchor="middle" font-size="10" font-style="italic" fill="#666">
-      Time flow inverts causality
-    </text>
-  </g>
-  
-  <!-- Gap 2: Spatial (BLUE) -->
-  <g transform="translate(325, 70)">
-    <rect x="0" y="0" width="250" height="350" fill="#fff" stroke="#1976d2" stroke-width="2"/>
-    <text x="125" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#1976d2">Spatial Gap</text>
-    
-    <!-- Classical OM -->
-    <rect x="20" y="45" width="210" height="100" fill="#f5f5f5" stroke="#999" stroke-width="1"/>
-    <text x="125" y="65" text-anchor="middle" font-size="12" font-weight="600" fill="#000">Classical OM</text>
-    <text x="30" y="85" font-size="11" fill="#333">• Continuous (Q−D)⁺</text>
-    <text x="30" y="100" font-size="11" fill="#333">• Smooth optimization</text>
-    <text x="30" y="115" font-size="11" fill="#333">• Known parameters</text>
-    <text x="30" y="130" font-size="11" fill="#333">• Cost minimization</text>
+    <!-- Newsvendor -->
+    <rect x="20" y="55" width="240" height="120" fill="#f5f5f5" stroke="#999" stroke-width="1"/>
+    <text x="140" y="75" text-anchor="middle" font-size="13" font-weight="600" fill="#000">Newsvendor</text>
+    <text x="30" y="95" font-size="11" fill="#333">• Past data → Present decision</text>
+    <text x="30" y="110" font-size="11" fill="#333">• Historical demand informs Q</text>
+    <text x="30" y="125" font-size="11" fill="#333">• Learn from yesterday's sales</text>
+    <text x="30" y="140" font-size="11" fill="#333">• Forecast forward in time</text>
+    <text x="30" y="160" font-size="10" font-style="italic" fill="#666">arg min E[Cost|past data]</text>
     
     <!-- Arrow -->
-    <path d="M 125 155 L 125 185" stroke="#1976d2" stroke-width="2" marker-end="url(#arrowhead-blue)"/>
+    <path d="M 140 185 L 140 225" stroke="#d32f2f" stroke-width="3" marker-end="url(#arrowhead-red)"/>
+    <text x="140" y="210" text-anchor="middle" font-size="12" fill="#d32f2f" font-weight="600">TIME REVERSAL</text>
     
-    <!-- Entrepreneurial -->
-    <rect x="20" y="195" width="210" height="100" fill="#fff" stroke="#1976d2" stroke-width="2"/>
-    <text x="125" y="215" text-anchor="middle" font-size="12" font-weight="600" fill="#1976d2">Entrepreneurial Reality</text>
-    <text x="30" y="235" font-size="11" fill="#333">• <tspan fill="#1976d2" font-weight="600">I(P&gt;D), I(P=D)</tspan></text>
-    <text x="30" y="250" font-size="11" fill="#333">• <tspan fill="#1976d2" font-weight="600">Value V emerges</tspan></text>
-    <text x="30" y="265" font-size="11" fill="#333">• Create new variables</text>
-    <text x="30" y="280" font-size="11" fill="#333">• Alignment rewards</text>
+    <!-- Promise Vendor -->
+    <rect x="20" y="235" width="240" height="120" fill="#fff" stroke="#d32f2f" stroke-width="2"/>
+    <text x="140" y="255" text-anchor="middle" font-size="13" font-weight="600" fill="#d32f2f">Promise Vendor</text>
+    <text x="30" y="275" font-size="11" fill="#333">• <tspan fill="#d32f2f" font-weight="600">Future vision → Present funding</tspan></text>
+    <text x="30" y="290" font-size="11" fill="#333">• Tomorrow's promise attracts capital</text>
+    <text x="30" y="305" font-size="11" fill="#333">• Share what doesn't exist yet</text>
+    <text x="30" y="320" font-size="11" fill="#333">• Pull resources backward</text>
+    <text x="30" y="340" font-size="10" font-style="italic" fill="#666">arg min E[Cost|future promise]</text>
     
-    <!-- Math -->
-    <text x="125" y="320" text-anchor="middle" font-size="10" font-style="italic" fill="#666">
-      − <tspan fill="#1976d2" font-weight="600">V I(P=D)</tspan> creates jumps
-    </text>
+    <!-- Key insight -->
+    <rect x="20" y="370" width="240" height="60" fill="#fff5f5" stroke="#d32f2f" stroke-width="1"/>
+    <text x="140" y="390" text-anchor="middle" font-size="11" font-weight="600" fill="#d32f2f">Key Insight</text>
+    <text x="30" y="405" font-size="10" fill="#333">Information flows against time's arrow:</text>
+    <text x="30" y="420" font-size="10" fill="#333">Future possibilities determine present actions</text>
   </g>
   
-  <!-- Gap 3: Interaction -->
-  <g transform="translate(600, 70)">
-    <rect x="0" y="0" width="250" height="350" fill="#fff" stroke="#666" stroke-width="2"/>
-    <text x="125" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#000">Interaction Gap</text>
+  <!-- Transformation 2: Spatial (BLUE) -->
+  <g transform="translate(370, 70)">
+    <rect x="0" y="0" width="280" height="380" fill="#fff" stroke="#1976d2" stroke-width="2"/>
+    <text x="140" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#1976d2">↕️ Spatial Transformation</text>
     
-    <!-- Classical OM -->
-    <rect x="20" y="45" width="210" height="100" fill="#f5f5f5" stroke="#999" stroke-width="1"/>
-    <text x="125" y="65" text-anchor="middle" font-size="12" font-weight="600" fill="#000">Classical OM</text>
-    <text x="30" y="85" font-size="11" fill="#333">• Q ⊥ D independence</text>
-    <text x="30" y="100" font-size="11" fill="#333">• Exogenous uncertainty</text>
-    <text x="30" y="115" font-size="11" fill="#333">• One-way causality</text>
-    <text x="30" y="130" font-size="11" fill="#333">• Static optimization</text>
+    <!-- Newsvendor -->
+    <rect x="20" y="55" width="240" height="120" fill="#f5f5f5" stroke="#999" stroke-width="1"/>
+    <text x="140" y="75" text-anchor="middle" font-size="13" font-weight="600" fill="#000">Newsvendor</text>
+    <text x="30" y="95" font-size="11" fill="#333">• Continuous: (Q−D)⁺ and (D−Q)⁺</text>
+    <text x="30" y="110" font-size="11" fill="#333">• Smooth cost curves</text>
+    <text x="30" y="125" font-size="11" fill="#333">• Calculus optimization</text>
+    <text x="30" y="140" font-size="11" fill="#333">• Two variables: Q and D</text>
+    <text x="30" y="160" font-size="10" font-style="italic" fill="#666">Min: Co·overage + Cu·underage</text>
     
     <!-- Arrow -->
-    <path d="M 125 155 L 125 185" stroke="#666" stroke-width="2" marker-end="url(#arrowhead-gray)"/>
+    <path d="M 140 185 L 140 225" stroke="#1976d2" stroke-width="3" marker-end="url(#arrowhead-blue)"/>
+    <text x="140" y="210" text-anchor="middle" font-size="12" fill="#1976d2" font-weight="600">STATE EXPLOSION</text>
     
-    <!-- Entrepreneurial -->
-    <rect x="20" y="195" width="210" height="100" fill="#fff" stroke="#666" stroke-width="2"/>
-    <text x="125" y="215" text-anchor="middle" font-size="12" font-weight="600" fill="#000">Entrepreneurial Reality</text>
-    <text x="30" y="235" font-size="11" fill="#333">• P shapes D</text>
-    <text x="30" y="250" font-size="11" fill="#333">• Resources → capability</text>
-    <text x="30" y="265" font-size="11" fill="#333">• Self-fulfilling promises</text>
-    <text x="30" y="280" font-size="11" fill="#333">• Dynamic feedback</text>
+    <!-- Promise Vendor -->
+    <rect x="20" y="235" width="240" height="120" fill="#fff" stroke="#1976d2" stroke-width="2"/>
+    <text x="140" y="255" text-anchor="middle" font-size="13" font-weight="600" fill="#1976d2">Promise Vendor</text>
+    <text x="30" y="275" font-size="11" fill="#333">• Discrete: <tspan fill="#1976d2" font-weight="600">I(P&gt;D), I(P&lt;D), I(P=D)</tspan></text>
+    <text x="30" y="290" font-size="11" fill="#333">• Discontinuous jumps</text>
+    <text x="30" y="305" font-size="11" fill="#333">• <tspan fill="#1976d2" font-weight="600">New variable V emerges</tspan></text>
+    <text x="30" y="320" font-size="11" fill="#333">• 4 outcomes × multiple parameters</text>
+    <text x="30" y="340" font-size="10" font-style="italic" fill="#666">Min: Co·I(P&gt;D) + Cu·I(P&lt;D) <tspan fill="#1976d2" font-weight="600">− V·I(P=D)</tspan></text>
     
-    <!-- Math -->
-    <text x="125" y="320" text-anchor="middle" font-size="10" font-style="italic" fill="#666">
-      Promises create reality
-    </text>
+    <!-- Key insight -->
+    <rect x="20" y="370" width="240" height="60" fill="#f0f7ff" stroke="#1976d2" stroke-width="1"/>
+    <text x="140" y="390" text-anchor="middle" font-size="11" font-weight="600" fill="#1976d2">Key Insight</text>
+    <text x="30" y="405" font-size="10" fill="#333">State space expands and discretizes:</text>
+    <text x="30" y="420" font-size="10" fill="#333">Alignment creates value that doesn't exist elsewhere</text>
   </g>
   
-  <!-- Bottom synthesis -->
-  <text x="450" y="460" text-anchor="middle" font-size="12" font-weight="600" fill="#000">
-    Combined: <tspan fill="#d32f2f">Time Reversal</tspan> × <tspan fill="#1976d2">New State Space</tspan> × Endogeneity = Promise Vendor
+  <!-- Bottom connection -->
+  <text x="350" y="475" text-anchor="middle" font-size="12" font-weight="600" fill="#000">
+    Promise Vendor = Newsvendor + <tspan fill="#d32f2f">Time Reversal</tspan> + <tspan fill="#1976d2">State Expansion</tspan>
   </text>
 </svg>
