@@ -80,25 +80,11 @@ golf cart: low desirability and high feasibility = low quality value proposition
 
 higher the quality = idea is (= PMF) ~ detailed execution plan (information richness of business plan)
 
-  
-
 tradeoff happening on 
 
 - option1: desirability vs feasibility (tension has been acknowledge; innovation vs invention - desirability but may not feasible) - customer s-curve (diffusion) vs technology s-curve
-    
-
-  
-
 - option2: commitment probability of customer vs commitment probability of resource partner
     
-
-- marketing: selling the value proposition 
-    
-- ops: delivering the value proposition  
-    
-- risking overselling vs risking under-delivering
-    
-- conditional tension given the value proposition 
     
 - adoption rate of customer (mu_c; invest in marketing) vs development speed of resource partner (mu_r; invest in operations)
     

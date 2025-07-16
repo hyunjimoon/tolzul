@@ -1,5 +1,14 @@
 ed anderson's perception of charlie (is known for): quality, game theory, flexible manufacturing, sd and simulation friendly, big thinker
 
+[[2025-07-16|25-07-16-15]]
+
+Logical response based [this slide](https://0599faed.streaklinks.com/CgRZ_A87u3K1EACPoQGH-25i/https%3A%2F%2Fwww.dropbox.com%2Fscl%2Ffi%2Fxe5pqswtcofsw4tdxf9xs%2FAngie25_promise-vendor.pdf%3Frlkey%3Dl00zuav8n5o1j5hiakca7pr1r%26dl%3D0) is to over promise -- _I'll make Charlie and Scott crazy🔥, not excited._
+
+But emotionally, I can only think of thanking you. I was struggling with homesickness and learning your excitement prevented burnout.
+
+
+----
+
 2025-05-14
 Dear Charlie,
 "First fall in love with your advisor, then find your research question" is the best advice i chose to follow.

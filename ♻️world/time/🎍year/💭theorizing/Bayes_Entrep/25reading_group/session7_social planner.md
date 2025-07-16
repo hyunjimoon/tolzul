@@ -20,7 +20,7 @@ excalidraw-open-md: true
 
 
 2025-02
-as i was preparing for NBER entrepreneurship camp [[tpe(NBER ENT)]]
+as i was preparing for NBER entrepreneurship camp [[day1 finance]]
 using https://claude.ai/chat/b22b9b97-4b74-4697-a33a-5a507d22ccd6
 
 ![[Pasted image 20250212083605.png]]

@@ -187,7 +187,7 @@
 ---
 
 # **Scott Stern (MIT & NBER)**  
-[[scott(Bayesian Entrepreneurship)]]
+[[day 4.5 scott(Bayesian Entrepreneurship)]]
 
 **Required Readings**
 

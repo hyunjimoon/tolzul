@@ -99,3 +99,7 @@ trauma of empire: violence, minor affect, and cold war transpacific (2014)
 [[김정하_문학정신분석(사랑의 윤리학)]]
 Love is not about making two wholenesses merge or smoothing over difference. Rather, it **embraces the fracture** within ourselves and in the Other—an unfillable gap that resists control. In giving without expecting return, in bearing each other’s unresolvable lack, love creates an **ethical space** beyond economy, law, or sovereign power.
 
+----
+[[2025-07-16|25-07-16-09]]
+
+당신 이론 소개하실때 쑥쓰러워하시던것도 매력이었다. 정확히 뭐라 하셨더라? [[day2.0 raffelea]]강의 들으며 겹치는 (i'm introducing biased and partial view) 적음

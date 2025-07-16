@@ -27,8 +27,8 @@ paul's recommendation
 - [ ] David Cronenberg (Eastern Promises)
 - [ ] Robert Eggers (The Witch)
 - [ ] Robert Eggers (The Lighthouse)
-- [ ] David Fincher (Seven)
-- [ ] David Fincher (Zodiac)
+- [x] David Fincher (Seven)
+- [x] David Fincher (Zodiac)
 - [ ] Terry Gilliam (Brazil)
 - [ ] Terry Gilliam (Twelve Monkeys)
 - [ ] Alfred Hitchcock (Rope)
@@ -42,7 +42,7 @@ paul's recommendation
 - [ ] John Huston (The African Queen)
 - [ ] George Roy Hill (Butch Cassidy and the Sundance Kid)
 - [ ] George Roy Hill (The Sting)
-- [ ] Jojo Rabbit
+- [x] Jojo Rabbit
 - [ ] Stanley Kubrick (2001: A Space Odyssey)
 - [ ] Stanley Kubrick (A Clockwork Orange)
 - [x] Stanley Kubrick (Full Metal Jacket)

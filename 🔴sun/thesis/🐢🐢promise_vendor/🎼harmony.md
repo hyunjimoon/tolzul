@@ -1,7 +1,7 @@
 # 🎼 Harmony: Narrative Chord Progressions
 
 First you write a sentence: Harmony weaves the nodes into a coherent flow—your paper's chords.
-
+[[🎹scale(🐢🐢promise vendor)]]
 ## 9-Line Symphony Structure
 
 | Emoji | Line | Progression Flow            | Role                                                                          |

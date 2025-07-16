@@ -1,3 +1,9 @@
+[[2025-07-16|25-07-16-17]]
+
+April from stanford recommended ziang? from michigan OM dept.
+she thought IS, technology management dept. would be a great job mk for me michigan OM dept., 
+
+
 2024-11-17
 - using [contact_merged](https://www.dropbox.com/scl/fi/w7ue0q0u909p9nzhhuyv6/contactlist_5merged.pdf?rlkey=y7abpbwg11e3nqqoitmamig43&dl=0) , i organized below table and thought i'd like an joint appointment of cognitive + optimization approach: [[🗄️_OMOR_CMUTepper]], [[🗄️_OMOR_Yale]], [[🗄️_OMOR_HBS_TOM]], 
 
