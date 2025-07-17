@@ -12,6 +12,7 @@
 
 **🟣⏰↕️⏰↕️:** μ2=2x market expansion drags sprint—F⊥̸D violated when cash flow pressure forced Thailand→UK→California outsourcing, showing spatial expansion may slow temporal acceleration.
 
+[[🍔PEER]]
 ## Full Section
 
 ### 🟣0: Phenomenon of Entrepreneurs' Overpromise and Success
@@ -37,3 +38,6 @@
 ### 🟣⏰↕️⏰↕️: μ2 - Scale Coefficient Expands Market Size
 
 **Point**: Market expansion through scale parameter μ2 affects delivery probability, but can create operational drag that undermines temporal advantages. **Evidence**: Tesla targeted ~2x larger market by including Europe alongside U.S. (μ2≈2), where expanded value V' = μ2V theoretically improves delivery probability through PD(P) = e^(μ2V)/(1+e^(μ2V)). However, the assumption F⊥D (funding independent of delivery) was violated—cash flow pressure from rapid scaling prevented proper vertical integration, forcing rushed outsourcing decisions (batteries: Thailand via Xcellent, PEM: Taiwan via Chroma, assembly: UK via Lotus, final: California). **Explanation**: Spatial expansion parameter μ2 captures how "sizing market twice larger doubles PD(P)" in theory, but in practice creates operational complexity that can drag the temporal sprint. The violated independence assumption F⊥̸D meant funding pressures directly impaired delivery capability, showing how spatial and temporal strategies can conflict. **Transition**: These alert signals—temporal asymmetry, spatial expansion, and their interaction—demand deeper analysis of the promise mechanism itself.
+
+
+[[2methods(📝🪢)]], [[appendix0123]]

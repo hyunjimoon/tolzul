@@ -303,3 +303,126 @@ But lacks:
 2. **Theory** relative to empirics (only 20% theory papers)
 
 This suggests the field is ready for synthesizing frameworks that integrate the rich empirical findings into actionable theory for policymakers.
+
+----
+[[2025-07-17|25-07-17-09]]
+# MANUSAL NOTE
+
+why government
+
+social >> private return don't match
+
+why should gov be involved - kwldg spillovers 
+
+capital constraints - esp. for smaller companies, less tangilbes (stiglets; capital rationing)
+
+endogenous entrepreneurs (statistical discrimination)
+
+supply of entrepreneurs change -> lead in (increasing return)
+
+government intervention - 
+copper, shell gas, coal 
+gov leapfrog to 21c - biotech (queensland)
+
+at the layouts (good idea) - sidney not in brids band (austrian vc and patent lawyers) - great ideas were doing
+
+lack of virtuous cycle 
+
+university (change attitude is one of their peers widely successful); supply is endogenous - increasing return 
+
+pairs of village in india - 
+
+i'm new to public policy domain but would like to learn more, but to justify government intervention, is government (social return, increasing scale)  enough? might some require 
+
+but fundamental challenges
+- incompetence : policy makers decide to do things
+
+summarize the logic of 
+"government should intervene" - alternatives
+1. social
+
+but challeng
+
+---
+### Summary of Government Intervention in Entrepreneurship
+
+| Category                         | Rationale / Framework                               | Key Details & Critical Questions                                                                                                                                                                                                                                                                                                                                                                              |
+| :------------------------------- | :-------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Reasons for Government Help**  | **A. Good Ideas Spread (Knowledge Spillovers)**     | • An entrepreneur's idea benefits all of society, but they can't capture the full profit. • Private investors are unwilling to fund it due to low private returns. • Government steps in because a successful business boosts the whole economy (jobs, taxes).                                                                                                                                                |
+|                                  | **B. Banks Fear New Ideas (Information Asymmetry)** | • Investors struggle to evaluate the risk of brand-new ventures. • This leads to funding gaps, especially for women and minority entrepreneurs. • Government provides capital when the private market is too cautious.                                                                                                                                                                                        |
+|                                  | **C. Success Creates More Success (Ecosystems)**    | • One successful company helps others by creating a supportive environment (investors, lawyers, talent). • Seeing peers succeed encourages more people to become entrepreneurs. • Government can invest to build this critical mass and start a positive cycle.                                                                                                                                               |
+|                                  | **D. Keeping Talent at Home (Competitiveness)**     | • Countries want to prevent "brain drain"—their best entrepreneurs leaving. • Government policies and funding can make it more attractive for startups to stay and grow locally.                                                                                                                                                                                                                              |
+| **How to Judge Government Help** | **Framework A: Is the Market Truly Broken?**        | • **Identify the Problem:** Is it a genuine market failure or just an outcome we don't like? • **Compare Options:** Is it better to do nothing, change regulations, give direct funding, or partner with private firms? • **Assess Government Capability:** Does the government have the expertise to pick winners without political bias?                                                                    |
+|                                  | **Framework B: Are Benefits Worth the Costs?**      | • **Consider the "What If":** What is the opportunity cost? What else could this money be used for? • **Add Up All Costs:** Include program funds, administrative overhead, and negative effects on private investment. • **Estimate All Benefits:** Include direct profits, spillover effects, and a stronger business community.                                                                            |
+|                                  | **Overall Key Questions for Analysis**              | • **Additionality:** Is this funding something that wouldn't happen otherwise? • **Targeting:** Can we effectively identify the right businesses to support? • **Exit Strategy:** When and how does the government support end to avoid dependency? • **Better Alternatives:** Is this more effective than tax reform, education, or infrastructure spending? • **Scale:** How much intervention is too much? |
+
+
+To justify government intervention, 
+1. first show that a government intervening to ent is valuable on its own by proving its social benefits will outweigh its costs. 
+2. i think a robust justification might be comparing this program to other alternatives use of government's, arguing that it is the most effective use of limited public money and resources.
+
+marginal value of this problem (tax payer) - goal is more scientific 
+medical paper (lives saved) - 10jobs
+
+targeting deficient market  "public policy for ent?" second tief market - raffelle (different financing mechanism - all the levels boost entrepreneurship - NOT THERE YET)
+
+
+better way to frame is, "leap of faith" that entrepreneruship is needed
+
+going to hubs is better than spreading out
+
+RELATIVE MARGINAL RETURN
+
+[[2025-07-17|25-07-17-09]]
+⭐️semiconductor 3b ; 50gallon -> 30k gallon tank (nonlinearity)
+npv of (RD stock and market capital firm) - GM,IBM, KODAK (market cap was lower than fd stock)
+
+articulating a problem (+ how to msr) is different from 
+
+namradin narain - time frames associated with new ideas being developed - gestation lags
+(how long does it get for ideas to put into practice?)
+
+
+relevant with the topic of "who to fund", are you aware of any empirical evidence that the more founder thinks their idea quality is good, the less window dressing they do for funding?
+
+i don't know how to define and measure idea quality, but 
+
+⭐️It was more a sociology study, and then we'll sort of get back to SBIR, but where it was more like social psych, but where they were like doing questions like, What is the population of Mozambique? They did to entrepreneurs. And then similar MBAs weren't entrepreneurs. And basically, the entrepreneurs were no better at picking population of Mozambique than the others. They then they said, What are your air bands around that estimate? And the entrepreneurs were all like, our air ban is between 14 point 2,000,014 point 8 million, as opposed to between 20 million and 80 million, right? They were just incredibly overconfident in terms of, yeah, but I don't think I have not seen anything that tries to relate the overconfidence to success.
+
+
+# military innovation
+henry ford and steve jobs - unanticipated stuff mk; 
+topdown: here's our problem set (competition of this element)
+bottomup: 
+
+bigger, heavier
+
+Top-down vs. Bottom-up (problem first or solution first?)
+
+- ﻿﻿Design of innovation incentives important  
+    Especially amid slowdown in productivity growth  
+    Decker et al. 2016, Syverson 2017
+- ﻿﻿Overlooked but crucial choice dimension in the search for ideas:
+- ﻿﻿Centralized "top-down" approach soliciting a particular technology  
+    "bottom-up"  
+    " approach in which innovators suggest ideas
+- ﻿﻿Bottom-up innovation policy
+- ﻿﻿Reflects uncertainty about what opportunities exist
+- ﻿﻿May be especially useful if, in a larger and more diverse economy, more difficult for technology-deploying institutions to find innovations
+- Jones 1995, Bloom et al. 2020
+
+open topic reforms
+experiment with open topics in sbir in 2018, 
+
+> let the flowers bloom - mao
+
+probability of tech adoption by rank around cutoff
+
+better ppl are participating 
+is the success of open due to bottom up opneness or selection
+- control for covariates (fir age, size, narrow tech)
+even within zeros, seemingly working
+- characterize topic specifcity using ML on application
+- 
+
+
