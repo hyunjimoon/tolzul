@@ -5,6 +5,7 @@
 -  **2025-06-22**: Added Elmachtoub & Grigas (2022), Bertsimas & Kallus (2020) to capture integrated prediction–prescription analytics frameworks and prescriptive analytics advances.
 -  _Log update added to literature review file:_   [[2025-06-22_alex_kimgpt(📝🪢strap1(pushpull))]] - Added recommended references (Chavda et al. 2024, Pich et al. 2002, Thomke & Bell 2001, Schweitzer & Cachon 2000) for entrepreneurial learning and decision integration.`
 - 2025-06-22 Added six foundational references on prescriptive analytics and entrepreneurial decision-making and updated the literature classification system to enhance the theoretical framework and clarity.
+- todo: add [[]] [[day3.0 josh(gov-ent)]], [[day4.0 antoinette(entfinance)]], [[day 4.5 scott(Bayesian Entrepreneurship)]]
 
 [[2methods(📝🪢)]]
 [[tom_griffith]]

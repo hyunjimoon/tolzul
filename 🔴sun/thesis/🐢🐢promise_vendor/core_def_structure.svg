@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="700" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="600" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50">
+    C Module (Core): D-E-F From Individual to Ecosystem Rationality
+  </text>
+  
+  <!-- D: Individual Entrepreneur -->
+  <g transform="translate(100, 100)">
+    <!-- Panel -->
+    <rect x="0" y="0" width="300" height="500" fill="white" stroke="#e74c3c" stroke-width="3" rx="10"/>
+    
+    <!-- Title -->
+    <text x="150" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#e74c3c">
+      D: Individual Rational Promise
+    </text>
+    
+    <!-- Optimization -->
+    <rect x="20" y="60" width="260" height="60" fill="#ffebee" stroke="#ef5350" stroke-width="2" rx="5"/>
+    <text x="150" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#c62828">
+      P*|(Co,Cu,V)
+    </text>
+    <text x="150" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      Given parameters, optimize P
+    </text>
+    
+    <!-- Single Agent -->
+    <g transform="translate(150, 200)">
+      <circle cx="0" cy="0" r="60" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="3"/>
+      <text x="0" y="-5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#c0392b">Agent n</text>
+      <text x="0" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#c0392b">at time t</text>
+      
+      <!-- Parameters -->
+      <rect x="-80" y="80" width="160" height="80" fill="#f5f5f5" stroke="#999" stroke-width="1" rx="5"/>
+      <text x="0" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+        Co = $100M
+      </text>
+      <text x="0" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+        Cu = $80M
+      </text>
+      <text x="0" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+        V = $300M
+      </text>
+    </g>
+    
+    <!-- Decision -->
+    <rect x="20" y="380" width="260" height="40" fill="#ffcdd2" stroke="#ef5350" stroke-width="1" rx="5"/>
+    <text x="150" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#c62828">
+      Result: P* = 0.85
+    </text>
+    <text x="150" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      (Bold promise rational)
+    </text>
+    
+    <!-- Key Insight -->
+    <rect x="20" y="440" width="260" height="40" fill="#ffebee" stroke="#e74c3c" stroke-width="1" rx="5"/>
+    <text x="150" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#c62828">
+      Each entrepreneur optimizes
+    </text>
+    <text x="150" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#c62828">
+      given their (Co,Cu,V)
+    </text>
+  </g>
+  
+  <!-- E: Temporal Evolution -->
+  <g transform="translate(450, 100)">
+    <!-- Panel -->
+    <rect x="0" y="0" width="300" height="500" fill="white" stroke="#3498db" stroke-width="3" rx="10"/>
+    
+    <!-- Title -->
+    <text x="150" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3498db">
+      E: Temporal Mixing
+    </text>
+    
+    <!-- Time Evolution -->
+    <rect x="20" y="60" width="260" height="60" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="5"/>
+    <text x="150" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1565c0">
+      P*_t|(Co,Cu,V)^n_t
+    </text>
+    <text x="150" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      Parameters evolve over time
+    </text>
+    
+    <!-- Evolution Path -->
+    <g transform="translate(150, 280)">
+      <!-- Timeline -->
+      <line x1="-100" y1="0" x2="100" y2="0" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+      
+      <!-- Stages -->
+      <circle cx="-80" cy="0" r="5" fill="#e74c3c"/>
+      <text x="-80" y="-15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Seed</text>
+      
+      <circle cx="-30" cy="0" r="5" fill="#f39c12"/>
+      <text x="-30" y="-15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">A</text>
+      
+      <circle cx="30" cy="0" r="5" fill="#3498db"/>
+      <text x="30" y="-15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">B</text>
+      
+      <circle cx="80" cy="0" r="5" fill="#27ae60"/>
+      <text x="80" y="-15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">C+</text>
+      
+      <!-- Promise Level Curve -->
+      <path d="M -80 -100 Q -30 -80 30 -40 T 80 -20" stroke="#e74c3c" stroke-width="3" fill="none"/>
+      
+      <!-- Parameter Changes -->
+      <text x="-80" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">P*=0.85</text>
+      <text x="-80" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Cu/Co>10</text>
+      
+      <text x="80" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">P*=0.35</text>
+      <text x="80" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Cu/Co<0.5</text>
+    </g>
+    
+    <!-- Key Changes -->
+    <rect x="20" y="380" width="260" height="40" fill="#e1f5fe" stroke="#03a9f4" stroke-width="1" rx="5"/>
+    <text x="150" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#0277bd">
+      Co ↑ 3.2x, Cu ↓ 0.4x per round
+    </text>
+    <text x="150" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      Natural moderation occurs
+    </text>
+    
+    <!-- Key Insight -->
+    <rect x="20" y="440" width="260" height="40" fill="#e3f2fd" stroke="#3498db" stroke-width="1" rx="5"/>
+    <text x="150" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1565c0">
+      Within-agent evolution:
+    </text>
+    <text x="150" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1565c0">
+      Bold → Careful over time
+    </text>
+  </g>
+  
+  <!-- F: Spatial Ecosystem -->
+  <g transform="translate(800, 100)">
+    <!-- Panel -->
+    <rect x="0" y="0" width="350" height="500" fill="white" stroke="#27ae60" stroke-width="3" rx="10"/>
+    
+    <!-- Title -->
+    <text x="175" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#27ae60">
+      F: Spatial Mixing → Ecosystem
+    </text>
+    
+    <!-- Social Planner -->
+    <rect x="20" y="60" width="310" height="60" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" rx="5"/>
+    <text x="175" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2e7d32">
+      (Co,Cu,V)*|P^{1..N}_{1..T}
+    </text>
+    <text x="175" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      Design parameters for diversity
+    </text>
+    
+    <!-- Ecosystem Visualization -->
+    <g transform="translate(175, 280)">
+      <!-- Population Distribution -->
+      <ellipse cx="0" cy="0" rx="140" ry="100" fill="#27ae60" fill-opacity="0.1" stroke="#27ae60" stroke-width="2"/>
+      
+      <!-- Different Agent Types -->
+      <!-- Bold Explorers -->
+      <circle cx="-80" cy="-40" r="25" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="2"/>
+      <text x="-80" y="-35" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#c0392b">Bold</text>
+      
+      <!-- Balanced -->
+      <circle cx="0" cy="0" r="25" fill="#f39c12" fill-opacity="0.3" stroke="#f39c12" stroke-width="2"/>
+      <text x="0" y="5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e65100">Mixed</text>
+      
+      <!-- Careful -->
+      <circle cx="80" cy="40" r="25" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="2"/>
+      <text x="80" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#2980b9">Careful</text>
+      
+      <!-- More agents -->
+      <circle cx="-40" cy="30" r="15" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="1"/>
+      <circle cx="40" cy="-30" r="15" fill="#95a5a6" fill-opacity="0.2" stroke="#95a5a6" stroke-width="1"/>
+    </g>
+    
+    <!-- Design Levers -->
+    <rect x="20" y="140" width="310" height="60" fill="#f5f5f5" stroke="#999" stroke-width="1" rx="5"/>
+    <text x="175" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      Cu: Funding availability (YC)
+    </text>
+    <text x="175" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      Co: Failure cost (acqui-hire)
+    </text>
+    <text x="175" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      V: Success rewards (unicorn)
+    </text>
+    
+    <!-- Convergence -->
+    <rect x="20" y="400" width="310" height="40" fill="#c8e6c9" stroke="#4caf50" stroke-width="1" rx="5"/>
+    <text x="175" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2e7d32">
+      → (P,Co,Cu,V)*_T
+    </text>
+    <text x="175" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      Rational ecosystem equilibrium
+    </text>
+    
+    <!-- Key Insight -->
+    <rect x="20" y="460" width="310" height="40" fill="#e8f5e9" stroke="#27ae60" stroke-width="1" rx="5"/>
+    <text x="175" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#2e7d32">
+      Across-agent diversity:
+    </text>
+    <text x="175" y="490" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#2e7d32">
+      Portfolio maintains innovation
+    </text>
+  </g>
+  
+  <!-- Flow Arrows -->
+  <path d="M 400 350 L 450 350" stroke="#666" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="425" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">Time</text>
+  
+  <path d="M 750 350 L 800 350" stroke="#666" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="775" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">Space</text>
+  
+  <!-- Dual Mixing Arrow -->
+  <path d="M 600 520 Q 600 560 600 600" stroke="#f9a825" stroke-width="4" marker-end="url(#arrowhead-large)"/>
+  
+  <!-- Bottom Summary -->
+  <rect x="200" y="620" width="800" height="60" fill="#fff9c4" stroke="#f9a825" stroke-width="3" rx="10"/>
+  <text x="600" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f57f17">
+    Rational Entrepreneurial Ecosystem
+  </text>
+  <text x="600" y="665" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#666">
+    D: Individual optimization → E: Temporal evolution within agents → F: Spatial diversity across agents
+  </text>
+  
+  <!-- Arrow Definitions -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666"/>
+    </marker>
+    <marker id="arrowhead-large" markerWidth="15" markerHeight="15" refX="12" refY="4.5" orient="auto">
+      <polygon points="0 0, 15 4.5, 0 9" fill="#f9a825"/>
+    </marker>
+  </defs>
+</svg>

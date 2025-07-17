@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="700" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="600" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50">
+    G Module (Grow): A-B-C Methods Evolution
+  </text>
+  
+  <!-- A: News Vendor Baseline -->
+  <g transform="translate(100, 100)">
+    <!-- Panel -->
+    <rect x="0" y="0" width="300" height="500" fill="white" stroke="#3498db" stroke-width="3" rx="10"/>
+    
+    <!-- Title -->
+    <text x="150" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3498db">
+      A: News Vendor Baseline
+    </text>
+    
+    <!-- Formula -->
+    <rect x="20" y="60" width="260" height="60" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="5"/>
+    <text x="150" y="95" text-anchor="middle" font-family="Courier, monospace" font-size="20" font-weight="bold" fill="#1565c0">
+      P* = Cu/(Cu+Co)
+    </text>
+    
+    <!-- Visual -->
+    <g transform="translate(150, 200)">
+      <!-- Balance Scale -->
+      <line x1="-100" y1="0" x2="100" y2="0" stroke="#34495e" stroke-width="3"/>
+      <line x1="0" y1="0" x2="0" y2="-50" stroke="#34495e" stroke-width="3"/>
+      
+      <!-- Cu Side -->
+      <rect x="-80" y="0" width="60" height="40" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="2" rx="5"/>
+      <text x="-50" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#c0392b">Cu</text>
+      
+      <!-- Co Side -->
+      <rect x="20" y="0" width="60" height="40" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="2" rx="5"/>
+      <text x="50" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2980b9">Co</text>
+      
+      <!-- Fulcrum -->
+      <polygon points="0,50 -10,70 10,70" fill="#34495e"/>
+    </g>
+    
+    <!-- Linear Assumption -->
+    <rect x="20" y="300" width="260" height="60" fill="#f5f5f5" stroke="#999" stroke-width="1" rx="5"/>
+    <text x="150" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">
+      Linear probabilities:
+    </text>
+    <text x="150" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">
+      PF = P, PD = 1-P
+    </text>
+    
+    <!-- Key Insight -->
+    <rect x="20" y="440" width="260" height="40" fill="#e3f2fd" stroke="#3498db" stroke-width="1" rx="5"/>
+    <text x="150" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1565c0">
+      Critical ratio:
+    </text>
+    <text x="150" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1565c0">
+      Higher Cu/Co → Promise more
+    </text>
+  </g>
+  
+  <!-- B: Nonlinear (Balance Loop) -->
+  <g transform="translate(450, 100)">
+    <!-- Panel -->
+    <rect x="0" y="0" width="300" height="500" fill="white" stroke="#f39c12" stroke-width="3" rx="10"/>
+    
+    <!-- Title -->
+    <text x="150" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f39c12">
+      B: Nonlinear Dynamics
+    </text>
+    
+    <!-- Formula -->
+    <rect x="20" y="60" width="260" height="60" fill="#fff3e0" stroke="#ff9800" stroke-width="2" rx="5"/>
+    <text x="150" y="95" text-anchor="middle" font-family="Courier, monospace" font-size="16" font-weight="bold" fill="#e65100">
+      P* = ln((2Cu+V)/(2Co+V))
+    </text>
+    
+    <!-- S-Curves Visual -->
+    <g transform="translate(150, 250)">
+      <!-- Axes -->
+      <line x1="-100" y1="100" x2="100" y2="100" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+      <line x1="-100" y1="100" x2="-100" y2="-100" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+      
+      <!-- S-Curve for PF(P) -->
+      <path d="M -90 80 Q -50 40 0 0 T 90 -80" stroke="#27ae60" stroke-width="3" fill="none"/>
+      <text x="70" y="-90" font-family="Arial, sans-serif" font-size="12" fill="#27ae60">PF(P)</text>
+      
+      <!-- S-Curve for PD(P) -->
+      <path d="M -90 -80 Q -50 -40 0 0 T 90 80" stroke="#e74c3c" stroke-width="3" fill="none"/>
+      <text x="70" y="90" font-family="Arial, sans-serif" font-size="12" fill="#e74c3c">PD(P)</text>
+      
+      <!-- Intersection -->
+      <circle cx="0" cy="0" r="5" fill="#f39c12"/>
+      <text x="15" y="5" font-family="Arial, sans-serif" font-size="11" fill="#666">P*</text>
+      
+      <!-- Labels -->
+      <text x="0" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">Promise Level</text>
+      <text x="-120" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666" transform="rotate(-90 -120 0)">Probability</text>
+    </g>
+    
+    <!-- Key Insight -->
+    <rect x="20" y="440" width="260" height="40" fill="#fff3e0" stroke="#f39c12" stroke-width="1" rx="5"/>
+    <text x="150" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e65100">
+      Logarithm bounds extremes:
+    </text>
+    <text x="150" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#e65100">
+      Natural saturation effects
+    </text>
+  </g>
+  
+  <!-- C: Clockspeed & Scale -->
+  <g transform="translate(800, 100)">
+    <!-- Panel -->
+    <rect x="0" y="0" width="350" height="500" fill="white" stroke="#9b59b6" stroke-width="3" rx="10"/>
+    
+    <!-- Title -->
+    <text x="175" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#9b59b6">
+      C: Clockspeed & Scale
+    </text>
+    
+    <!-- Full Formula -->
+    <rect x="20" y="60" width="310" height="100" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2" rx="5"/>
+    <text x="175" y="90" text-anchor="middle" font-family="Courier, monospace" font-size="12" font-weight="bold" fill="#6a1b9a">
+      P* = (1/μ₂)ln(
+    </text>
+    <text x="175" y="110" text-anchor="middle" font-family="Courier, monospace" font-size="12" font-weight="bold" fill="#6a1b9a">
+      (2Cu+V·δ^(1/μ₁))/
+    </text>
+    <text x="175" y="130" text-anchor="middle" font-family="Courier, monospace" font-size="12" font-weight="bold" fill="#6a1b9a">
+      (2Co·δ^(1/μ₁)+V·δ^(1/μ₁)))
+    </text>
+    
+    <!-- Effects Visualization -->
+    <g transform="translate(175, 250)">
+      <!-- μ1 Effect -->
+      <rect x="-140" y="-60" width="120" height="50" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="2" rx="5"/>
+      <text x="-80" y="-35" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2980b9">μ₁ ↑</text>
+      <text x="-80" y="-15" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">Speed up</text>
+      
+      <!-- μ2 Effect -->
+      <rect x="20" y="-60" width="120" height="50" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="2" rx="5"/>
+      <text x="80" y="-35" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#c0392b">μ₂ ↑</text>
+      <text x="80" y="-15" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">Scale up</text>
+      
+      <!-- Central Arrow Down -->
+      <line x1="0" y1="0" x2="0" y2="60" stroke="#666" stroke-width="3" marker-end="url(#arrowhead)"/>
+      
+      <!-- Result -->
+      <rect x="-80" y="70" width="160" height="50" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60" stroke-width="2" rx="5"/>
+      <text x="0" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#229954">P* ↓</text>
+      <text x="0" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#229954">Promise less</text>
+    </g>
+    
+    <!-- Example -->
+    <rect x="20" y="380" width="310" height="40" fill="#f5f5f5" stroke="#999" stroke-width="1" rx="5"/>
+    <text x="175" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      Tesla: μ₁=3x speed, μ₂=2x market
+    </text>
+    <text x="175" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      → Moderate promise optimal
+    </text>
+    
+    <!-- Key Insight -->
+    <rect x="20" y="440" width="310" height="40" fill="#f3e5f5" stroke="#9b59b6" stroke-width="1" rx="5"/>
+    <text x="175" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#6a1b9a">
+      Speed & scale are substitutes:
+    </text>
+    <text x="175" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6a1b9a">
+      Both reduce optimal promises
+    </text>
+  </g>
+  
+  <!-- Evolution Arrows -->
+  <path d="M 400 350 L 450 350" stroke="#666" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="425" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">Nonlinear</text>
+  
+  <path d="M 750 350 L 800 350" stroke="#666" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="775" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">Scale</text>
+  
+  <!-- Bottom Summary -->
+  <rect x="200" y="630" width="800" height="50" fill="#fff9c4" stroke="#f9a825" stroke-width="2" rx="10"/>
+  <text x="600" y="650" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f57f17">
+    Methods Evolution: From simple ratio to complex dynamics
+  </text>
+  <text x="600" y="668" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">
+    A: Linear baseline → B: S-curve reality (balance loops) → C: Speed/scale modulation
+  </text>
+  
+  <!-- Arrow Definitions -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+</svg>

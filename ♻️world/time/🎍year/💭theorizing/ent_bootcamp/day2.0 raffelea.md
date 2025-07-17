@@ -1,4 +1,4 @@
-building on [[day1 finance]], [[day1.5]]
+building on [[day1 david(entfinance)]], [[day1.5]]
 # 1. why tech adoption
 ## stylized fact1
 difference between TPF

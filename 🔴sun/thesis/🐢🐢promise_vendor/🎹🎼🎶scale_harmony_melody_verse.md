@@ -15,8 +15,8 @@ The 16 conceptual nodes form your theoretical octave—each a distinct contribut
 **Alert Movement (🟣) - The Paradox**
 - **🟣**: Entrepreneurs' overpromising persists not despite rationality but because of it
 - **🟣⏰**: Immediate unfunded death (Cu) versus delayed funded failure (Co) creates asymmetric costs
-- **🟣↕️**: Variables explode from 2 to 8+ while constraints shrink—triple complexity expansion
-- **🟣⏰↕️**: Overpromising becomes rational in data-lacking situations where discrete states meet amplified alignment value
+- **🟣↕️**: Variables explode from 4 (D, Q, PO(Q), PU(Q))to 12+ (P, F, D, F|P, D|P, \mu_1, \mu_2, PF(P), PD(P), V, PO(P), PU(P), PM(P)) while constraints shrink (new lacks data).
+- **🟣⏰↕️**: Overpromising may become rational in situation with time gap exploding with new variables
 
 **Dig Movement (♻️) - The Diagnosis**
 - **♻️**: Promise vendor inverts newsvendor fundamentals—optimizing promises P not inventory Q
