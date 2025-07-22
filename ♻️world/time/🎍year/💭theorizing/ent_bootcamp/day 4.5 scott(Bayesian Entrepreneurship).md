@@ -1,3 +1,200 @@
+1. develop a mathematical formulation for how   🚨  max_theta p(theta|angie), p(theta|charlie)🚨 
+2. 
+
+mail to scott
+given our shared vision for bayesian entrepreneurship and its synergy with my research agenda with charlie on operations for entrepreneurs (i earned his agreement), i'm sharing thoughts synthesized from feedbacks from five people (Angie, Jorge, Kristen, Ararat, Leke) after the session. feedback giver Angie (Jul.18) and feedback synthesizer Angie (Jul.20) have different priors as she calibrated her prior given the three choices angie and charlie made together. given the shared goal, which of the two options is better given our 🚨max_theta p(theta|angie), p(theta|charlie)🚨
+
+### direct quotes 
+- "optimal choice of entrepreneurial experiments seemed like a quite compelling framework and one that I plan to look more into"
+- ""
+### effective 
+- Mrs.Scott story, especially one cannot define bias in agent's level, nor do one need to
+- narrative structure of negating the first chunk of your research which gives credential to what you chose - i think revolution from inside is more effective
+
+### rooms for our growth
+- as i described in my bio attached, essence of bayes is viewing everything as random variable (and the number of variable itself is random and can expand)
+- focus on bayes rule which is one version of implementation, after we accept the idea
+	- root idea: every variable is random variable
+	- root idea branches to the need for algorithm to explore posterior space one of which is bayes rule, especially when the number of sample is limited, 
+- seeing bigger picture by taking one step back (from bayes rule to every variable is random) will allow discussions as below:
+	- mechanisms to falsify the prior? e.g. prior predictive checks which is generating p(y_tilde) using assumed prior p(theta) and likelihood model p(y|theta), simulation-based calibration, posterior predictive checks
+	- led by andrew gelman et al.'s recognition of the power of simulation in checking the assumptions, and i encourage you to develop definition around "statistical theory will be mostly about gaining a deep understanding of simulation as profitable abstraction of counter-factually repeatable phenomenon." from https://statmodeling.stat.columbia.edu/2020/08/05/somethings-do-not-seem-to-spread-easily-the-role-of-simulation-in-statistical-practice-and-perhaps-theory/. this is relevant to the discussion during bayesian reading group session on experiment. there's type of experiment where founders learn vs not learn. the former is persusion
+
+- that being said, three words i'm very unhappy about and would like to sharpen together:
+	- learning: if you create a new thing, is that learning? e.g. 
+		- what did i learn from attending your talk? 
+			- how scott thinks about subjective, proactive, 
+			- how scott's thought has evolved
+			- how econ-based students are thinking about your persuasion (they like modeling, fist half they weren't sure whether 🚨)
+			- what are we learning bayesian entrepreneurship? i feel like we're creating sth and shaping it. hart pozen said everything can be framed as learning and brought passive vs active learning to my attention, but  
+	- i really don't can  had different opinions on whether experiment can and cannot be the demonstra
+	- 
+	- 
+	- what are 
+ - subjective prior - multi-perspective
+ - game theory 
+
+----
+
+identify opportunity
+
+ideas are themselves important
+
+studying ppl they think they create value (have to learn)
+
+see the choices people make
+cannabis legalization meets internet
+
+had Post-Traumatic Stress Disorder
+
+ent finance is what happens - operating and finance decision - granual reality of what that statement means
+
+should socrates pursue this entrepreneurial opportunity
+
+what choices should he 
+
+1. 
+2. how do think about how do you track resource (supply chain, )
+
+don't tell you "what" to do (action oriented) VS don't tell you "how" to do (plan oriented)
+
+one's value system earns value when accepted by others so 
+
+valuable progress analytically 
+
+residual creativity
+
+people want to influence others and 
+
+
+environmental approach -> competitive advantage - > connect profit function with competitive advantage
+
+environment, strategy, performance
+
+env to strategy is commercialziation and disclosure env
+sell ideas to take best advanage of them 
+
+market for ideas shapes ; innovation reesatabilith for power
+
+no market for ideas > competition with them ; innovation serves schem
+
+relative 
+established barrier to entry, innovation 
+
+use innovation to overturn, established barriers to entry, established sources of competence, and that allows our innovation, career and entrepreneurs to basically, right, Usher, you know, kind of overturn establishment.
+
+competition in the product market
+
+is it correct to understand 
+1. sch. argued innovation is used to compete with encumbant, 
+2. but innnovation also happens via collaobration
+3. can't you frame the problem as competing two options - one you compete 
+
+creative destruction is good for society but not good for you ()
+barriers to entry
+🙋‍♀️can we frame the problem as competing two agents - one competing with incumbent and collaborating with incumbent ?
+
+acquisitions = failures 
+
+why isn't the only reason why we see cooperation? disclosure problem
+
+
+arrow's disclosure problem
+- figuring out the price for an idea requires info which intrisically reduce its value
+- 
+patent litigation (wind sheild wiper - showed to ford mortor company)
+
+
+verify 
+1. disclosure impairs the percentage of value you capture (o)
+
+2. the reason why we don't see collaboration is bc increase of value creation is smaller than the decrease of value capture percentage  (o)
+
+effective ip
+
+process of pivots for startup firms (first go to product market, prove work - meaningful threat, financing - pivot to cooperation)
+
+hard to both compete and collaborate at the same (both in the product and licencing)
+
+🙋‍♀️pivot from collaborate then compete? (learn)
+
+is it that the patents are so important, or that the patents are tied to a  regulatory system so that's why we see collaboration?
+
+you have written it down, but no property right before getting patent
+timing of the licenses relative to when they receive patent
+
+causal impact of ip rights on the market for ideas
+
+resolution of uncertainty
+
+⭐️perspective, kaplan josh,  john holtanwanger -mess aghion  macro economic consequences, 
+how ru we gonna figure out 
+
+intellecture move -> take the idea (ent are not animal - shared env where everyone agrees)
+
+ip, vc, commercialization costs
+
+env. about the env. that haven't been 
+- env. matters a lot but firms themselve don't () - ⭐️ed egan modular tech are bulkt to be inserted big players -> system are built to compete
+MODULAR vs INTEGRATED (
+
+app doesn't matter (value of idea doesn't matter) -> hustle
+- steal anyway -> hustle
+- no one even think of stealing (trust based)
+
+vank loan collatorize (home)
+
+distribution ideas that can be financed TYOE IF FINANCIAL CONTRACT PLEDGABILITY OF IDEA
+
+⭐️yal harbark -> patent collateral 
+
+
+ecomists (westglow) assumes shared prior -> game theory absence of it (cartel can't work without shared prior - > cheat )
+
+ different prior information, capabilities, incentive can cause same prior information, capabilities, incentive
+
+does it really matter whether it is right or wrong from animal's perspective? as long as humans agree isn't that what's important? entrepreneurship and economics share some element of religion - demand and supply curve.
+
+
+
+can't imagine the senses you don't have 
+
+choose a belief (= startup idea)
+- J bayesian agents each choose one of N actions
+- an action's probability of success is uncertain. All agents have subjective beliefs about this probability
+- since agent
+
+⭐️no one is biased from their own perspective
+
+⭐️innovation:=ideas creating value for market place
+no ground truth / opportunities
+
+willing to false positive, but removed false negative
+
+allow for false negative but  minimizing 
+
+maximize information value relative to your prior
+
+
+unpersuasive to seqoia, only when they got traction
+
+pure bayesian information sense
+
+angel to series A (cleaning term sheet- whose buying the experiment ; i don't want these true believer)
+
+environmental (recognizing) subjective nature of the environment - once you start grappling with this, more subtle bc not (scott finally agrees with the biased is a wrong framing) -> selection
+
+
+favorable distribution, 
+
+noisy learning - commitment free learning is limited to noisy
+
+🙋‍♀️can you choose to have different priors for different environments? i use different profile persona for tinder and bumble
+
+
+
+---
+
 🟪A12: How the components interact to amplify the anomaly: The decision is not a simple trade-off. The entrepreneur is incentivized to pursue the high-upside V, fundamentally altering the balance between the cost of over-promising (Co) and the cost of under-promising (Cu).  
 🟩D12: The integration challenge: The central task is to solve this new objective function to find an optimal "promise level" (q*) that balances these competing forces.  
 🟧G12: The integrated system that emerges: The solution to the model—an explicit formula for the optimal promise level: q* = ln((2Cu + V) / (2Co + V)). This is the core engine of our contribution.  
