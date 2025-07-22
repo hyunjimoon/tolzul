@@ -3,95 +3,55 @@
 **Date:** July 22  
 **Duration:** 1.5 hours  
 **Instructor:** Prof. Vivek Farias
-![[2♻️analyze(🔴capacity-variability, ✈️airline) 2025-07-21-9.svg]]
-%%[[2♻️analyze(🔴capacity-variability, ✈️airline) 2025-07-21-9.md|🖋 Edit in Excalidraw]]%%
-product managment cirriculum, 
-
-[[2025-07-21|25-07-21-08]]
-
-should have been more 
-- theme of better to be lucky rather than to be smart
-- quantative hedge fund, 
-- consulting (fixed income portion of the fund) - consider academia, two years at mit (vacation of mit continues), 
-- mens et manus (be able to build and do things)
-- nike's second largest compny (celect), seer bio (ai protein;), cimulate (customer gpt)
-- lp in different firms, care about deep intellectual idea -> but need to do things. ETHOS
-
----
-
-steve blank, epiphany (crm company - mid 90s), 
-
-agricultural startup 
-
-1. **Give funding and connections**: "Brilliant idea, you know, here's 50k right? And I'm going to write emails introducing you to a bunch of folks."
-2. **Pass/refer to others**: "You know what, not for me, but here's somebody else at, you know, thinks about agriculture and so on and so forth. Maybe, maybe they're interested."
-3.  **Ask them to reconsider and return**: "Well, you know, have you thought of x, right? And go, think of x, and then come back."
-
-survey is bullshit response (overly rosy). framer doesn't ;
-
-what do you want to do with cash? 50k, (doing one industry is difficult)
-
-go build bunch of drones 
-right season with the farmer (modular camera) ; how do we minize effort but maximize learning
-
-which problem are they solving?? prove low yeld 
-
-time unit of cost, increase yield is data; root cause analysis (soil, ) - 
-
-⭐️PROBLEM STATEMENT giving farmer data that improves yield
-
-collect all data manually and give it to farmer whether they can use it?
-
-manage products
-🙋‍♀️the data was the product, not drone (disagree)
-1. define product - how are you adding value? (selling signals (advice) that improves yield), why should the farmer come to you (strategic value positioning). WHAT & WHY ME?
-2. managing two bubbles - product (what's the problem and why should that come to you) and capabilities (my resources; financial organization, tech, supply chain, distribution)
-3. 🔄capability and product 
-	1. capability to product: unique product (novel for market place)
-	2. product to capability (make that investment in that capability); capability for product (resource change)
-	3. 
-one check per card (multiple checks)
-
-expressing added value consistent offering really fast VS 
-
-how'd you be aware of this 
-
-queue -> feeling, 
-
-time, quality, flexibility, price
-
-the way you experience time matters (mirrors behind the bartendar) 2,3,4 minutes it's ok
+![[2♻️analyze(🔴capacity-variability, ✈️airline) 2025-07-22-8.svg]]
+%%[[2♻️analyze(🔴capacity-variability, ✈️airline) 2025-07-22-8.md|🖋 Edit in Excalidraw]]%%
+product is dynamic (erode), capabilities and how to use capabilities (how to adjust)
 
 
-⭐️don't measure of time in units of time (but in utility; capability invested to lower time) -> should be mapped with dollars
+supply side levers: capacity and inventory widgets (physical), 
+demand side levers : choice modeling
 
-market share, money based utility metric, no fast food options, i'm ok to be slower
+make to stock then make to order 200, 100 (chain)
 
-shave off seven seconds, lower 3% for macdonalds, 
+shybird founder's 🧫experimented with chatgpt + note from shybird founder, tweak is chatgpt 
 
-🙋‍♀️why seven second rules leads to heavy price for flexbility ?
+redesign the process-> importance of D (hardship of changing process? replicated around 5k stores)
 
-being 30secs off (leaving money off the table) in the product they are putting together
+⭐️the more aggregated, the lower variability sigma / sqrt(T) 
+- clock precision asymmetry: customers in min suppliers in hr
+- hourly not min by min basis; no estimate for peak demand per min 
+- 💥burst causes delay
 
-1. 🔺triangle (inventory), 
-2. 🟧square(process - stead chain, mate, table (too long, trash), assembly (condamets ketcup),  micro, counter  ), 
-3. ↔️arrow (physical flows) 
-4. ↕️dashed line (information flows)
+paid for expensive machine and people and the utilization is 40% 
 
-macdonalds (human inventory manager)
-slips (i don't want pickle), lindy
+two flightes delay (four of them are in process)
 
-macdonald's local point is much earlier
+predictable variability and unpredictable variability
 
-mac don't have ♨️steam table (burger kingpull based )
+using jetblue, uber, 
 
-macdonald is make to stock, burger is hybrid (up to steam table, it's make to stock, but then it's mto) 
+- given no variability, 100 utilization (rho) is idea 
+- predictable variability: buildup diagram
+- unpredictable variability (queue theory)
+- catastrophic variability: war, sudden tariff, deep understanding (restsef levi) on risk management (framework company around the world use)
 
-burger king allows flexibility (whereas macdonalds makes cutomer stand aside for customized), 
+function of the process, capability, demand -> congestion
 
-how much capacity? - set up a 🧩puzzle for next time
+process flow, demand capacity, cogenstion, financial decision analysis
 
-🍾IDENTIFY BOTTLENECK. 8 burgers 480 burgers/hr , assembly (200 burgers per hr and 100 w) - capacity (200b/hr, 100w/hr VS peak demand (Friday lunch))
+demand and supply, work as being liquid
+
+step by step from 
+1. deterministic cases, 
+2. then adding SEASONAL FISHING 
+
+freshness of fish (delay experienced by fish), 
+on avg, how long the fish was in the freezer
+
+⭐️flights have ebb and flow, we have 1.7hr delay
+⭐️
+1. variability causes delays (quantified from burger king)
+2. increase demand by 36% but delay increased by 100% (NONLINEAR effect)
 
 ---
 ## Learning Objectives

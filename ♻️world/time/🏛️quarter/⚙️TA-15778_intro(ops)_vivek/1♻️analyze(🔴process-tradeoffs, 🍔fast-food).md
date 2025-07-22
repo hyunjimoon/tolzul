@@ -4,6 +4,96 @@
 **Duration:** 1.5 hours  
 **Instructor:** Prof. Vivek Farias
 
+%%[[2♻️analyze(🔴capacity-variability, ✈️airline) 2025-07-21-9.md|🖋 Edit in Excalidraw]]%%
+product managment cirriculum, 
+
+
+[[2025-07-21|25-07-21-08]]
+
+should have been more 
+- theme of better to be lucky rather than to be smart
+- quantative hedge fund, 
+- consulting (fixed income portion of the fund) - consider academia, two years at mit (vacation of mit continues), 
+- mens et manus (be able to build and do things)
+- nike's second largest compny (celect), seer bio (ai protein;), cimulate (customer gpt)
+- lp in different firms, care about deep intellectual idea -> but need to do things. ETHOS
+
+---
+
+steve blank, epiphany (crm company - mid 90s), 
+
+agricultural startup 
+
+1. **Give funding and connections**: "Brilliant idea, you know, here's 50k right? And I'm going to write emails introducing you to a bunch of folks."
+2. **Pass/refer to others**: "You know what, not for me, but here's somebody else at, you know, thinks about agriculture and so on and so forth. Maybe, maybe they're interested."
+3.  **Ask them to reconsider and return**: "Well, you know, have you thought of x, right? And go, think of x, and then come back."
+
+survey is bullshit response (overly rosy). framer doesn't ;
+
+what do you want to do with cash? 50k, (doing one industry is difficult)
+
+go build bunch of drones 
+right season with the farmer (modular camera) ; how do we minize effort but maximize learning
+
+which problem are they solving?? prove low yeld 
+
+time unit of cost, increase yield is data; root cause analysis (soil, ) - 
+
+⭐️PROBLEM STATEMENT giving farmer data that improves yield
+
+collect all data manually and give it to farmer whether they can use it?
+
+manage products
+🙋‍♀️the data was the product, not drone (disagree)
+1. define product - how are you adding value? (selling signals (advice) that improves yield), why should the farmer come to you (strategic value positioning). WHAT & WHY ME?
+2. managing two bubbles - product (what's the problem and why should that come to you) and capabilities (my resources; financial organization, tech, supply chain, distribution)
+3. 🔄capability and product 
+	1. capability to product: unique product (novel for market place)
+	2. product to capability (make that investment in that capability); capability for product (resource change)
+	3. 
+one check per card (multiple checks)
+
+expressing added value consistent offering really fast VS 
+
+how'd you be aware of this 
+
+queue -> feeling, 
+
+time, quality, flexibility, price
+
+the way you experience time matters (mirrors behind the bartendar) 2,3,4 minutes it's ok
+
+
+⭐️don't measure of time in units of time (but in utility; capability invested to lower time) -> should be mapped with dollars
+
+market share, money based utility metric, no fast food options, i'm ok to be slower
+
+shave off seven seconds, lower 3% for macdonalds, 
+
+🙋‍♀️why seven second rules leads to heavy price for flexbility ?
+
+being 30secs off (leaving money off the table) in the product they are putting together
+
+1. 🔺triangle (inventory), 
+2. 🟧square(process - stead chain, mate, table (too long, trash), assembly (condamets ketcup),  micro, counter  ), 
+3. ↔️arrow (physical flows) 
+4. ↕️dashed line (information flows)
+
+macdonalds (human inventory manager)
+slips (i don't want pickle), lindy
+
+macdonald's local point is much earlier
+
+mac don't have ♨️steam table (burger kingpull based )
+
+macdonald is make to stock, burger is hybrid (up to steam table, it's make to stock, but then it's mto) 
+
+burger king allows flexibility (whereas macdonalds makes cutomer stand aside for customized), 
+
+how much capacity? - set up a 🧩puzzle for next time
+
+🍾IDENTIFY BOTTLENECK. 8 burgers 480 burgers/hr , assembly (200 burgers per hr and 100 w) - capacity (200b/hr, 100w/hr VS peak demand (Friday lunch))
+
 ## Learning Objectives
 - Understand fundamental process analysis concepts
 - Identify trade-offs between efficiency and flexibility in operations
