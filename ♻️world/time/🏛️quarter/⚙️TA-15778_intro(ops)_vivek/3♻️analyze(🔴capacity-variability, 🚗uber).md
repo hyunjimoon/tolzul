@@ -4,6 +4,95 @@
 **Duration:** 1.5 hours  
 **Instructor:** Prof. Vivek Farias
 
+# manual note
+uber uncertainty is harder than jetblue (predictable)
+
+increase load from 58 flights to 75 flights
+
+
+|            | baseline | expansion w/o earhardt | expansion w earhardt |
+| ---------- | -------- | ---------------------- | -------------------- |
+| throughput | 2.5      | 3.25                   |                      |
+|            |          |                        |                      |
+icing, delay more than doubles (1.7hrs to 3.6hrs)
+
+should they be investing extra deicing (from brand perspective ), cons: other companies should also deice and we're running on tight margin
+
+we should be looking at
+
+sevend second macdonlad's market share 
+
+i know the cost, need to know the upside ; 
+instead of looking at the upside, look at downside of not doing (source of upside and downside?? )
+
+mechanism is delay - crew times out (time of customers)
+
+some idea raised, delay loose the customer (life time value)
+
+bureau of labor statistics ($37) horrible lower dollar
+investment of 2.14 * 78 * 100 * 23* 37 = $14m
+
+⭐️customer surplus (value generating for customer) -> how much value can we extract from ?
+
+as jetblue has pricing power from route types and timing, 50% can be 
+
+better product -> price more aggressively
+
+goal: nonlinear effect of demand mean on dealy and how think about capacity investment frontier (lowering delay increases )
+
+Q. take value from the mess what you created??
+where the market is delay of 3.5hrs?
+relative to what the standards might be (typically 3.5hr delay and saving is giving incremental value; expectations are built in)
+
+instead of cost, investment returning value 
+
+increased the delay for customers. impact??
+uber 8->24 min
+lyft 8->24 min
+uber cancelation from 8% to 28% VS lyft from 6.4% to 30%
+
+
+process utilitization 
+
+FORCED IDELNESS: i can only work on it only if there's demand
+
+variability is from 
+
+somebody in my 
+
+in any service, BOTH sides (queue and server) are variable is picking somebody up at A and 
+
+you can't inventory your work 
+
+🙋‍♀️what can't be inventoried in entreprenuership?
+
+increase in price would make utilization goes down. rho increase
+lambda/ (N mu)
+
+share but doubling up
+
+create two tiers
+- managing rho (couple servies)
+
+don't need to increase utilitization too much to lower delay
+how much should i change prices (should i do surges??) NO
+
+tiny change in utilitization, decrease 
+W = 1/lambda * rho^sqrt(N)/(1-rho) * (Ca^2 + C_s^2) /2
+
+|                             | burger                    | uber          |
+| --------------------------- | ------------------------- | ------------- |
+| rho utiliziation            |                           | 1. pooling    |
+| Ca                          |                           | 2. scheduling |
+| Cs (variability of service) | standardization, robotics | traffic       |
+time is money and variability and utilizations are key drivers with highly nonlinear impacts on delay
+
+⚒️tools: process flow, buildup , queing (unpredictabel )
+
+
+
+---
+
 ## Learning Objectives
 - Understand capacity management for unpredictable demand patterns
 - Analyze dynamic pricing as a demand-supply balancing mechanism

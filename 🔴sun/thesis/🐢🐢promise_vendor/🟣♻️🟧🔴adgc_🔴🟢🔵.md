@@ -6,8 +6,6 @@ How should entrepreneurs calibrate their promises to maximize success? This pape
 
 **Keywords:** entrepreneurship, newsvendor model, promise optimization, venture funding, strategic decision-making
 
-**JEL Classification:** L26, G24, D81, M13
-
 # 1. Introduction
 
 ## 1.1 The Puzzle of Finding Optimal Promise Levels
@@ -72,48 +70,54 @@ This critical fractile formula shows that optimal inventory increases with under
 
 ## 2.2 The Promise Vendor Model
 
-Now we transform this framework for entrepreneurial promises. The entrepreneur chooses promise level φ to optimize expected outcomes:
+Now we transform this framework for entrepreneurial promises using a hierarchical formulation (see Figure 1).
 
-**Step 1: Define the costs**
-- Cost of too bold promise (Co): Failure cost when funded but unable to deliver
-- Cost of too timid promise (Cu): Opportunity cost when viable but unfunded
+**[Figure 1 about here: Promise Vendor Model - Final Formulation]**
 
-For Tesla's Roadster:
-- Co = V + L = $300M + $100M = $400M (success value plus liability)
-- Cu = V = $300M (missed success value)
+### Hierarchical Structure
 
-**Step 2: Model how promises affect outcomes**
+**Hyperparameter Level**: φ ~ Beta(α, β)
+- φ ∈ [0,1] represents promise boldness (0=timid, 1=bold)
+- For Tesla: φ=0.3 means promising 150-mile range, φ=0.7 means 250-mile range
 
-Unlike newsvendor where P(D|Q) = P(D), here promise level directly affects outcomes:
+**Observable Level**: Y|φ ~ Categorical(π₀(φ), π₁(φ), π₂(φ))
 
-**Funding probability**: P(F=1|φ) follows Beta(α=φ, β=1-φ)
-- Timid promise (φ=0.2): P(F=1) ≈ 0.2 (low investor interest)
-- Bold promise (φ=0.8): P(F=1) ≈ 0.8 (high investor interest)
+Where Y represents the venture outcome:
+- Y=0: Funded failure (F=1, D=0) - secured funding but couldn't deliver
+- Y=1: Missed opportunity (F=0, D=1) - could deliver but didn't get funded
+- Y=2: Funded success (F=1, D=1) - got funded and delivered
 
-**Delivery probability given funding**: P(D=1|F,φ) = 1 - φ
-- Timid promise (φ=0.2): P(D=1|F) = 0.8 (easy to deliver)
-- Bold promise (φ=0.8): P(D=1|F) = 0.2 (hard to deliver)
+### Conditional Independence Property of Deliverability     
 
-**Marginal delivery probability**: 
-P(D=1|φ) = ∫ P(D=1|F,φ) × P(F|φ) dF = φ(1-φ)
+The key structural assumption is conditional independence:
 
-This quadratic form peaks at φ=0.5, revealing an interior optimum.
+**P(D|F,φ) = P(D|φ) = 1 - φ**
 
-**Step 3: Find the optimal promise**
+This equation means delivery capability is inherent to the promise level, not dependent on funding. Ambitious promises are inherently harder to deliver regardless of resources.
 
-The entrepreneur minimizes expected cost:
-EC(φ) = Co × P(F=1,D=0|φ) + Cu × P(F=0,D=1|φ)
+### Probability Structure
 
-Where:
-- P(F=1,D=0|φ) = P(F=1|φ) × P(D=0|F,φ) = φ × φ = φ²
-- P(F=0,D=1|φ) = P(F=0|φ) × P(D=1|F̄,φ) = (1-φ) × (1-φ) = (1-φ)²
+Given conditional independence:
+- π₀(φ) = P(F=1|φ) × P(D=0|φ) = φ × φ = φ²
+- π₁(φ) = P(F=0|φ) × P(D=1|φ) = (1-φ) × (1-φ) = (1-φ)²
+- π₂(φ) = P(F=1|φ) × P(D=1|φ) = φ × (1-φ)
 
-Therefore: EC(φ) = Co × φ² + Cu × (1-φ)²
+Figure 2 shows how these probabilities vary with promise level.
 
-Taking the derivative and setting to zero:
-dEC/dφ = 2Co × φ - 2Cu × (1-φ) = 0
+**[Figure 2 about here: Promise Vendor - Probability Trade-offs]**
 
-**Optimal promise level: φ* = Cu/(Cu + Co)**
+### Cost Structure and Optimization
+
+Define payoffs V₀, V₁, V₂ for outcomes Y=0, Y=1, Y=2:
+- Overage cost: Co = V₂ - V₀ (failure cost)
+- Underage cost: Cu = V₂ - V₁ (opportunity cost)
+
+Expected cost: EC(φ) = Co × φ² + Cu × (1-φ)²
+
+Taking the derivative and solving:
+**φ* = Cu/(Cu + Co)**
+
+Remarkably, this recovers the newsvendor critical fractile formula!
 
 ## 2.3 Three Illustrative Cases
 
