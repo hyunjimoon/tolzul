@@ -1,4 +1,4 @@
-# ⭕ Sun - Future Pulling Me Forward
+# Sun - Future Pulling Me Forward
 
 ## How Future Reality Shapes Me
 
@@ -59,4 +59,4 @@ The sun creates forward momentum by:
 
 ---
 
-*This provides directional guidance for: [[🟧amoon/🟪alert/🟪alert.md]] | [[🟧amoon/♻️diagnose/♻️diagnose.md]] | [[🟧grow]]*
+*This provides directional guidance for: [[🟧amoon/🟪alert/🟪alert.md]] | [[♻️diagnose]] | [[🟧grow]]*

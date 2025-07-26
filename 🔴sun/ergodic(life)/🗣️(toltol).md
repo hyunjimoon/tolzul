@@ -34,7 +34,7 @@ From C.Robert's [review](https://xianblog.wordpress.com/2014/03/28/bayesian-data
 
 "I skate to where the puck is going to be, not where it has been." - Wayne Gretzky, a legendary ice hockey player
 
-- fashionists get inspired from 4 history, geography, nature, art, geography (hgan)
+- fashionists get inspired from 4 history, geography, art, nature (hgan)
 
 
 - [박찬욱 감독은 김태리와 마주한 순간을 떠올리며 “눈빛이 _똘똘_했다. 어디엔가 딱 박힌 느낌이었다. 전체적인 인상이 마치 차돌처럼 단단했다”고 회상했다](https://sports.donga.com/article/all/20160613/78636822/2)

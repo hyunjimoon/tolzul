@@ -5,6 +5,39 @@
 **Instructor:** Prof. Vivek Farias  
 **Assignment:** GRADED CASE WRITE-UP DUE AT 8:30 AM (TEAM)
 
+----
+
+[[2025-07-25|25-07-25-08]]
+
+[[paradox of entrepreneurship]]
+
+- product strategy in service industry (process flow diagram and process utlitization, tool: buildup diagram for predictable variability, queuing theory (unpredictable variablity )
+- smoothing out process - better prediction
+- teaching [[style]] - case discussion, 
+	- patient 🟧checks in, wait, 🟧🟧vitals + ekg in lab, 🟧🟧🟧rn (review, writesup),🟧🟧🟧🟧 md visit (reviews, chat, write chart), 🟠 blodd work in lab,  🟠🟧check out
+- staggering over lunch (2.8pt/hr; rho = 1)
+- evaluation on task force recommendation
+
+- which unpredictable variablity is contributing the most ?
+- service time? if CV = 1,  can contribute 
+
+⭐️bottleneck at RY -> build up -> translate build up to delay, 
+
+fluid proces -> lose integrality (goal is capture first order effect)
+
+peak delay will be higher, avg delay will be lower
+
+not give process diagram
+
+⭐️run this simulation, ppl are waiting for the room. 현상적으로 기다리는 건 병목과 다르다. what are the rooms in the first place? [[2025-07-25|25-07-25-09]]
+
+room became glorified waiting room?? rooms are not meant to wait but 
+
+why [[vivek_ferias]] likes teaching
+
+annual leaked revneue per employed physician
+
+---
 ## Learning Objectives
 - Apply capacity analysis tools to service operations
 - Use queuing theory to diagnose bottlenecks and wait times

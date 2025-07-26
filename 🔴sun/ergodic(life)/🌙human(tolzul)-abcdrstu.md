@@ -9,7 +9,6 @@
 | **G** | 🟧 **Growing**            | Pursues opportunities boldly   | Takes risks, pitches visions | Grow = expanding possibilities | [[feedback from matt, abdullah]] |
 | **C** | 🔴 **Caring**             | Values others equally          | Thoughtful actions           | Core = moral foundation        | [[feedback from matt, abdullah]] |
 | **E** | 🔴 **Ethical**            | Authentic beliefs              | Changes mind with evidence   | Core = truth anchor            |                                  |
-|       |                           |                                |                              |                                |                                  |
 
 ----
 

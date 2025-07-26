@@ -58,4 +58,4 @@ plus 4 estimated params (:= external to loop)
 
 its equation can be extended to as follows:
 - ![[SpaceTimeHier.excalidraw.svg]]
-[[🟧amoon/♻️diagnose/🗄️3_practical_imp/🟩moshe_vikash/💻simulation-based calibraton/Does nuisance parameter inconsistency justify lenient calibration of hyperparameter in hierarchical model_|Does nuisance parameter inconsistency justify lenient calibration of hyperparameter in hierarchical model_]]
+[[♻️world/♻️dig/🗄️3_practical_imp/🟩moshe_vikash/💻simulation-based calibraton/Does nuisance parameter inconsistency justify lenient calibration of hyperparameter in hierarchical model_|Does nuisance parameter inconsistency justify lenient calibration of hyperparameter in hierarchical model_]]

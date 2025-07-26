@@ -1,232 +1,289 @@
-# The Promise Vendor: Finding the Optimal Level of Entrepreneurial Promises
+# uncertainty making under promise, promise making under uncertainty
 
 ## Abstract
 
-How should entrepreneurs calibrate their promises to maximize success? This paper develops a "promise vendor" model that prescribes optimal promise levels by adapting the newsvendor framework to entrepreneurial contexts. Unlike inventory decisions facing exogenous demand, entrepreneurial promises endogenously create the deliverability they must satisfy through the funding mechanism. We formalize two key costs: the failure cost of bold promises (funded but undelivered) and the opportunity cost of timid promises (deliverable but unfunded). The model shows how promise level φ affects deliverability through P(D|φ) = ∫ P(D|F,φ) × P(F|φ) dF, violating Modigliani-Miller by making operations inseparable from finance. Using Tesla's choice between promising 150-mile (timid) versus 300-mile (bold) range in 2008, we derive conditions for optimal promises: bold when opportunity costs exceed failure costs (Cu > Co), timid when reversed (Co > Cu), and moderate when balanced (Cu ≈ Co). The promise vendor framework provides entrepreneurs quantitative guidance for this fundamental strategic choice.
+How should entrepreneurs calibrate their promises to maximize success? This paper develops a "promise vendor" model that prescribes optimal promise levels by adapting the newsvendor framework to entrepreneurial contexts. Unlike inventory decisions facing exogenous demand, entrepreneurial promises create the market conditions they must satisfy. We formalize two key costs: the failure cost of ambitious promises (sold but undelivered) and the opportunity cost of modest promises (deliverable but unsold). The model shows how promise level φ affects market response through P(Sell|φ) = φ and delivery capability through P(Deliver|φ) = 1-φ. Using Tesla's choice between promising 150-mile versus 300-mile range in 2008, we derive conditions for optimal promises: ambitious when opportunity costs exceed failure costs (Cu > Co), modest when reversed (Co > Cu), and moderate when balanced (Cu ≈ Co). The promise vendor framework provides entrepreneurs quantitative guidance for this fundamental strategic choice.
+
+## 1. Introduction
+
+### 1.1 Promises to Prison or Power
+
+Ambitious promises create surprising outcomes: spectacular success or spectacular failure. Elon Musk promised 300-mile range electric vehicles when battery costs exceeded $1,000/kWh; Tesla now commands an $800 billion valuation. Elizabeth Holmes promised instant blood diagnostics from a single drop; she serves an eleven-year sentence. Steve Jobs promised 1,000 songs in your pocket when flash memory cost $400 per gigabyte; Apple became history's most valuable company. Billy McFarland promised luxury festival experiences on a Bahamian island; he entered federal prison for fraud.
+
+Analyzing broader patterns reveals consistent dynamics. Jeff Bezos promised one-hour delivery when logistics networks could barely support two-day shipping; Amazon revolutionized commerce. Sam Bankman-Fried promised revolutionary trading infrastructure; FTX collapsed in spectacular fashion. Each entrepreneur made ambitious promises that strained contemporary technological capabilities. Success and failure diverged not in promise boldness but in navigating the consequences of those promises.
+
+Assessing these observations raises a fundamental question: What determines the optimal level of entrepreneurial promises? Promise too modestly and fail to attract customers or investors. Promise too ambitiously and risk catastrophic delivery failure. Between these extremes lies an optimal promise level that maximizes expected success.
+
+### 1.2 Promises Create What They Must Satisfy
+
+Analyzing traditional operations research reveals how firms match supply to demand. A newspaper vendor observes market signals, forecasts demand, then stocks inventory accordingly. Demand exists independently; the vendor's decision affects only how well supply matches it. This separation between decision and uncertainty enables classical optimization techniques.
+
+Alternatively, entrepreneurs face a fundamentally different problem. Before Tesla's promise of a luxury electric vehicle, no such market existed. The promise itself created customer interest, attracted investor capital, and motivated supplier partnerships. Abstracting secondary effects such as decreasing marginal return and stationary customer and capabilities, bolder promise has higher market potential and is more challenging to deliver compared to modest promise. Example of bold promises are: flying car, 300 mile range electric vehicle (EV), $2 cost per mile autonomous truck; as opposed to modest promises, electric golf cart, 150 mile range EV, $10 cost per mile autonomous truck. We capture this tradeoff on promise level to formulate optimization problem.
+
+Accordingly, this endogeneity transforms the optimization landscape. A newsvendor chooses inventory quantity q to match exogenous demand D. An entrepreneur chooses promise level φ that generates both market demand and delivery challenge. The decision variable constructs the probability space within which success or failure occurs.
+
+### 1.3 Asymmetric Costs Drive Bold Promises
+
+Asymmetric consequences of modest versus ambitious promises arrive at different times with different magnitudes. Consider Tesla in 2008 choosing between a 150-mile range (φ = 0.3) and 300-mile range (φ = 0.7) promise:
+
+**Modest promise (150 miles)**: Few customers find this compelling for a $100,000 sports car. The venture dies immediately from lack of market interest. Underpromise cost Cu equals the entire venture value lost when sellable technology goes unfunded.
+
+**Ambitious promise (300 miles)**: Many customers want this breakthrough capability. Capital flows in, development proceeds, but technical challenges mount. If delivery fails after years of effort, overpromise cost Co includes reputation damage, lawsuits, and refunds.
+
+Acute timing differences emerge: Cu strikes immediately at t=0 when customers ignore modest promises. Co arrives later at t=T when ambitious promises fail delivery, discounted by factor δ^T. This temporal structure systematically favors ambition. Even with equal nominal costs, time value makes Cu > Co·δ^T, tilting optimal promises toward boldness.
+
+### 1.4 Toward a Quantitative Framework
+
+Addressing these tradeoffs, we develop the promise vendor model for quantification. By adapting newsvendor logic to entrepreneurial contexts, we derive closed-form solutions for optimal promise levels. The framework reveals when entrepreneurs should promise boldly (high Cu/Co), modestly (high Co/Cu), or moderately (balanced costs).
+
+The model contributes to three literatures. First, it extends operations research by analyzing decisions that create rather than match uncertainty. Second, it provides entrepreneurship research with quantitative tools for strategic promise decisions. Third, it bridges behavioral and rational perspectives by showing how apparent overconfidence emerges from optimal responses to asymmetric costs.
+
+## 2. Literature Review
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Vendor: Dual Perspectives</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: white;
+            padding: 40px;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        .perspective {
+            margin: 30px 0;
+            padding: 25px;
+            border-radius: 8px;
+        }
+        .founder-view {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+        }
+        .society-view {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+        }
+        h3 {
+            margin-top: 0;
+            font-size: 1.1em;
+        }
+        pre {
+            font-size: 14px;
+            margin: 15px 0;
+        }
+        .insight {
+            font-style: italic;
+            color: #555;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
 
-**Keywords:** entrepreneurship, newsvendor model, promise optimization, venture funding, strategic decision-making
+<h2 style="text-align: center;">Promise Vendor: Two Views of Ps and Pd</h2>
 
-# 1. Introduction
+<div class="perspective founder-view">
+<h3>Founder's Perspective</h3>
+<pre>
+         ┌──── 1-Ps ───→ Not Sold
+         │
+   φ ────┤
+         │         ┌───── Pd ────→ Delivered
+         └─── Ps ──┤
+                   └──── 1-Pd ───→ Not Delivered
+</pre>
+<div class="insight">
+"Ps and Pd are market response functions I must navigate"
+</div>
+</div>
 
-## 1.1 The Puzzle of Finding Optimal Promise Levels
+<div class="perspective society-view">
+<h3>Society's Perspective</h3>
+<pre>
+         ┌──── 1-Ps ───→ Not Sold → Future Ps↓
+         │
+   φ ────┤
+         │         ┌───── Pd ────→ Delivered → Future Pd↑
+         └─── Ps ──┤
+                   └──── 1-Pd ───→ Not Delivered → Future Pd↓
+</pre>
+<div class="insight">
+"Today's promises and outcomes determine tomorrow's Ps and Pd"
+</div>
+</div>
 
-Entrepreneurs face a fundamental calibration challenge. Elon Musk promised 300-mile range electric vehicles when battery costs exceeded $1000/kWh. Steve Jobs promised "1000 songs in your pocket" when flash memory cost $8/MB. Jeff Bezos promised one-day delivery when logistics networks couldn't support it. Each succeeded spectacularly. Yet Elizabeth Holmes promised instant blood diagnostics that sent her to prison. Billy McFarland promised luxury festival experiences that ended in fraud charges. Sam Bankman-Fried promised revolutionary trading that collapsed in scandal.
+</body>
+</html>
 
-This pattern reveals a critical puzzle: **How do we find the optimal level of entrepreneurial promises?** As my advisor noted, "We can find examples of very bold promises that have proven to be successful, and some examples of bold promises that ended up in jail. This suggests that an infinitely bold promise is not appropriate for every entrepreneur."
+### 2.1 Time: From Inventory-Then-Sell to Promise-Then-Deliver
 
-The answer matters. Promise too boldly and risk Theranos-style failure after burning investor capital. Promise too timidly and risk never getting funded despite viable technology. Somewhere between these extremes lies an optimal promise level that maximizes the probability of entrepreneurial success.
+Developing from classical newsvendor theory, the model anchors stochastic inventory decisions (Scarf, 1958; Porteus, 2002). A vendor observes historical demand patterns, forecasts future demand, then stocks inventory before demand realizes. Information flows from past to present to future. Decisions respond to but do not influence uncertainty.
 
-This paper provides a quantitative framework for finding that optimum. By adapting the newsvendor model to entrepreneurial contexts, we show how to balance the failure cost of overly bold promises against the opportunity cost of overly timid ones. The resulting "promise vendor" model prescribes optimal promise levels based on specific cost structures, offering entrepreneurs a decision tool for this critical strategic choice.
+Dramatically, entrepreneurial ventures invert this temporal sequence. Promises precede capability development. Tesla announced 300-mile range before securing battery technology. Apple promised 1,000 songs before miniaturizing storage. Amazon promised one-day delivery before building fulfillment infrastructure. The promise attracts resources that enable delivery, reversing causality from observe-then-act to promise-then-create.
 
-## 1.2 From Newsvendor to Promise Vendor
+Documented throughout entrepreneurship literature, this temporal inversion transforms decision-making. Sarasvathy (2001) contrasts predictive (causal) with creative (effectual) logics. Baker and Nelson (2005) document how entrepreneurs create resources through bricolage. Our model formalizes this insight: promises at t=0 determine probabilities that realize across time.
 
-The newsvendor model provides our analytical foundation. A newspaper vendor must decide how many papers to stock before knowing demand. Order too many and unsold papers become waste (overage cost). Order too few and miss profitable sales (underage cost). The optimal order quantity balances these opposing costs.
+### 2.2 Cost Parameters: Asymmetric Penalties Transform Optimization
 
-Entrepreneurs face an analogous but distinct problem. Before knowing their true delivery capability, they must promise a performance level to attract funding. Promise too boldly and risk failing after securing investment (failure cost). Promise too timidly and risk not getting funded despite having viable technology (opportunity cost).
+Distinguishing from newsvendor's balanced structure, entrepreneurial costs exhibit fundamental asymmetry. Overage cost co equals unit cost minus salvage value when inventory exceeds demand. Underage cost cu equals price minus cost when demand exceeds inventory. Both represent marginal economic losses realized simultaneously when demand arrives.
 
-The key difference: **promises create the uncertainty they must satisfy**. While newspaper inventory doesn't affect customer demand, entrepreneurial promises directly influence both funding probability and delivery difficulty. This endogeneity transforms the optimization problem and violates traditional finance assumptions about the separation of financing and operations.
+Diverging fundamentally in magnitude and timing, promise vendor costs create new dynamics:
 
-## 1.3 The Promise Vendor Framework
+**Underpromise cost Cu**: The entire venture value vanishes when modest promises fail to attract customers. This existential cost hits immediately at t=0. No customers means no funding, no development, no future. The venture dies unknown.
 
-We model the entrepreneur's choice of promise level φ ∈ [0,1], where 0 represents a timid promise and 1 represents a bold promise. For Tesla in 2008:
-- φ = 0: Promise 150-mile range (easily achievable with existing battery technology)
-- φ = 1: Promise 300-mile range (requires breakthrough in battery cost and density)
+**Overpromise cost Co**: Reputation damage and financial penalties when ambitious promises fail delivery. These costs arrive at t=T after development attempts, discounted by δ^T. The venture dies known, but only after existing.
 
-The promise level generates two stochastic outcomes:
-1. **Funding outcome F ∈ {0,1}**: Whether the venture secures investment
-2. **Delivery outcome D ∈ {0,1}**: Whether the venture successfully delivers on its promise
+Driving systematic patterns, this asymmetry shapes venture evolution. Early-stage ventures face extreme Cu (huge opportunities foregone) and modest Co (limited assets at risk), making Cu/Co >> 1. The mathematics then prescribe bold promises (high φ*). As ventures mature, accumulated assets increase Co while proven models reduce Cu, shifting Cu/Co toward 1 and moderating optimal promises.
 
-These create four possible states with associated payoffs:
-- (F=1, D=1): Funded and delivered → Payoff = V (success value)
-- (F=1, D=0): Funded but failed → Payoff = -L (liability/reputation loss)  
-- (F=0, D=1): Unfunded but viable → Payoff = 0 (missed opportunity)
-- (F=0, D=0): Unfunded and unviable → Payoff = 0 (no loss)
+### 2.3 Uncertainty: Endogenous Variables Violate Classical Assumptions
 
-This payoff structure defines our two key costs:
-- **Cost of too bold promise (Co)**: V - (-L) = V + L (failure cost)
-- **Cost of too timid promise (Cu)**: V - 0 = V (opportunity cost)
+Departing from traditional stochastic optimization's independence assumption, promise vendors face endogenous uncertainty. Newsvendor inventory q does not affect demand distribution D. This separation enables elegant mathematical analysis through critical fractile formulas (Arrow et al., 1951).
 
-# 2. Model Development
+Decisions about promises fundamentally violate this independence. Promise level φ determines both sellability P(Sell=1|φ) = φ and deliverability P(Deliver=1|φ) = 1-φ. The decision variable parameterizes the uncertainty space. This endogeneity creates mathematical complexity but also strategic opportunity.
 
-## 2.1 Building Intuition: From Newsvendor Basics
+Directly challenging finance theory, this violation undermines classical assumptions. Modigliani and Miller (1958) proved capital structure irrelevance under perfect markets, assuming operational and financial decisions separate. Promise vendors integrate these realms: promises attract funding that enables operations. The promise mechanism makes operations and finance inseparable, explaining why entrepreneurial finance differs qualitatively from corporate finance.
 
-We begin with the canonical newsvendor problem to establish baseline intuition. A vendor faces uncertain demand D and chooses order quantity Q to minimize expected mismatch costs:
+### 2.4 Capital-Capability Endogeneity: What We Exclude but Matters
 
-**Step 1: Define the costs**
-- Overage cost co: Loss per unit of unsold inventory
-- Underage cost cu: Lost profit per unit of unmet demand
+Deliberately, our model assumes conditional independence P(Sell|φ) ⊥ P(Deliver|φ) given promise level φ, though reality violates this through capital-mediated effects. When sellability generates funding that enhances deliverability, the true relationship becomes P(Deliver|φ) = ∫ P(Deliver|Fund,φ) × P(Fund|φ) dFund, where P(Fund|φ) increases with φ through investor attraction.
 
-**Step 2: Set up the trade-off**
-The vendor increases Q until marginal expected revenue equals marginal cost:
-- Marginal revenue = cu × P(D > Q)
-- Marginal cost = co × P(D ≤ Q)
+Demonstrating self-fulfilling dynamics, this endogeneity can drive unbounded promise escalation. Entrepreneurs recognizing that bold promises attract capital which improves delivery capability face incentives to continuously increase φ. Without natural bounds, this positive feedback loop pushes promises toward infinity—explaining phenomena like theranos's ever-expanding claims or crypto projects' astronomical projections.
 
-**Step 3: Find the optimal quantity**
-At optimum: cu × P(D > Q*) = co × P(D ≤ Q*)
+Deep pocket effects compound this unfairness systematically. When P(Deliver|Fund,φ) increases with funding level, wealthy entrepreneurs enjoy a "cash shield" against technological uncertainty. Tesla's survival through production delays exemplifies this: Musk's personal wealth and funding access transformed a 1-φ delivery probability into near-certainty through capital infusion. This violates both Arrow et al.'s (1951) newsvendor independence and Modigliani-Miller's (1958) separation theorem.
 
-Rearranging: P(D ≤ Q*) = cu/(cu + co)
+Declining to model these dynamics preserves analytical tractability while acknowledging their importance. Our static framework cannot capture how funding flows evolve delivery capabilities over time. Section 6 discusses implications of this simplification, particularly regarding entrepreneurial inequality and policy interventions. For now, we maintain P(Sell|φ) ⊥ P(Deliver|φ) to derive baseline insights about promise optimization.
 
-This critical fractile formula shows that optimal inventory increases with underage cost and decreases with overage cost.
+## 3. Model Development
 
-## 2.2 The Promise Vendor Model
+### 3.1 From Newsvendor to Promise Vendor
 
-Now we transform this framework for entrepreneurial promises using a hierarchical formulation (see Figure 1).
+Generalizing from newsvendor's inventory optimization given uncertain demand D:
 
-**[Figure 1 about here: Promise Vendor Model - Final Formulation]**
+**Minimize**: E[Cost] = co·E[(q-D)⁺] + cu·E[(D-q)⁺]
 
-### Hierarchical Structure
+Where (x)⁺ = max(0,x). The optimal quantity q* satisfies:
 
-**Hyperparameter Level**: φ ~ Beta(α, β)
-- φ ∈ [0,1] represents promise boldness (0=timid, 1=bold)
-- For Tesla: φ=0.3 means promising 150-mile range, φ=0.7 means 250-mile range
+P(D ≤ q*) = cu/(cu + co)
 
-**Observable Level**: Y|φ ~ Categorical(π₀(φ), π₁(φ), π₂(φ))
+This critical fractile formula balances marginal overage against underage costs.
 
-Where Y represents the venture outcome:
-- Y=0: Funded failure (F=1, D=0) - secured funding but couldn't deliver
-- Y=1: Missed opportunity (F=0, D=1) - could deliver but didn't get funded
-- Y=2: Funded success (F=1, D=1) - got funded and delivered
+Given endogenous uncertainties, the promise vendor optimizes promise level φ ∈ [0,1]:
 
-### Conditional Independence Property of Deliverability     
+**Minimize**: E[Cost] = Co·P(Sell=1|φ)·P(Deliver=0|φ) + Cu·P(Sell=0|φ)
 
-The key structural assumption is conditional independence:
+Where:
+- P(Sell=1|φ) = φ (sellability increases with promise ambition)
+- P(Deliver=1|φ) = 1-φ (deliverability decreases with promise ambition)
 
-**P(D|F,φ) = P(D|φ) = 1 - φ**
+Substituting these probability functions:
 
-This equation means delivery capability is inherent to the promise level, not dependent on funding. Ambitious promises are inherently harder to deliver regardless of resources.
+E[Cost] = Co·φ·φ + Cu·(1-φ) = Co·φ² + Cu·(1-φ)
 
-### Probability Structure
+### 3.2 Linear Model with Match Value
 
-Given conditional independence:
-- π₀(φ) = P(F=1|φ) × P(D=0|φ) = φ × φ = φ²
-- π₁(φ) = P(F=0|φ) × P(D=1|φ) = (1-φ) × (1-φ) = (1-φ)²
-- π₂(φ) = P(F=1|φ) × P(D=1|φ) = φ × (1-φ)
+Generating insights through first-order conditions:
 
-Figure 2 shows how these probabilities vary with promise level.
+dE[Cost]/dφ = 2Co·φ - Cu = 0
 
-**[Figure 2 about here: Promise Vendor - Probability Trade-offs]**
+Therefore: φ* = Cu/(2Co)
 
-### Cost Structure and Optimization
+Gaining realism by incorporating value V when promises successfully match delivery transforms the analysis. The complete objective function becomes:
 
-Define payoffs V₀, V₁, V₂ for outcomes Y=0, Y=1, Y=2:
-- Overage cost: Co = V₂ - V₀ (failure cost)
-- Underage cost: Cu = V₂ - V₁ (opportunity cost)
+E[Net Cost] = Co·φ² + Cu·(1-φ) - V·φ·(1-φ) (1)
 
-Expected cost: EC(φ) = Co × φ² + Cu × (1-φ)²
+The third term captures match value: revenue earned when customer buys (probability φ) AND partner delivers (probability 1-φ).
 
-Taking the derivative and solving:
-**φ* = Cu/(Cu + Co)**
+Taking the first-order condition:
 
-Remarkably, this recovers the newsvendor critical fractile formula!
+dE[Net Cost]/dφ = 2Co·φ - Cu - V(1-2φ) = 0
 
-## 2.3 Three Illustrative Cases
+Solving for optimal promise level:
 
-### Case 1: Balanced Costs (Co = Cu)
-**Example**: Early-stage biotech with high success value
-- Co = $400M (large liability if drug fails after funding)
-- Cu = $400M (large market opportunity if viable)
-- φ* = 400/(400+400) = 0.5 (moderate promise)
+φ* = (Cu + V)/(2Co + 2V)
 
-**Prescription**: Promise in the middle range - ambitious enough to attract funding but achievable enough to deliver.
+Governing entrepreneurial behavior, this closed-form solution reveals the cost-priority principle: optimal promise level increases with underpromise cost Cu while decreases with overpromise cost Co. When match value is large V >> Co, Cu, optimal promise level φ* converge to .5 implying a balance between selling and delivering. In fact this can be derived without solving for φ* as the probability for matching and selling the promise is maximized when φ = .5 (see φ·(1-φ) from (1)).
 
-### Case 2: High Opportunity Cost (Co << Cu)  
-**Example**: Software platform with network effects
-- Co = $100M (limited liability, "fail fast" culture)
-- Cu = $900M (winner-take-all market)
-- φ* = 900/(900+100) = 0.9 (bold promise)
+### 3.3 Sigmoid Response Functions (need recalculation)
 
-**Prescription**: Promise aggressively - the opportunity cost of missing the market window far exceeds failure costs.
+Generalizing beyond linear probability functions P(Sell|φ) = φ captures realistic stakeholder psychology. Real customers exhibit threshold effects: indifference below φ₀, enthusiasm above φ₁. Similarly, partners show commitment cliffs when promises exceed capabilities.
 
-### Case 3: High Failure Cost (Co >> Cu)
-**Example**: Medical device in regulated market
-- Co = $900M (regulatory penalties, lawsuits)
-- Cu = $100M (moderate market, many competitors)
-- φ* = 100/(100+900) = 0.1 (timid promise)
+We generalize to sigmoid response functions:
 
-**Prescription**: Promise conservatively - the failure costs from overpromising exceed the opportunity costs of modest targets.
+P(Sell|φ) = 1/(1 + e^(-βc(φ-0.5)))
+P(Deliver|φ) = 1/(1 + e^(βr(φ-0.5)))
 
-## 2.4 Violation of Modigliani-Miller
+Where βc and βr control response steepness. Larger β creates sharper transitions between rejection and acceptance.
 
-The condition P(D|F,φ) ≠ P(D|φ) reveals a fundamental violation of Modigliani-Miller's capital structure irrelevance theorem. In our model, funding affects operational outcomes - ventures with funding have different delivery probabilities than those without, even conditional on promise level.
+Gauging different quality sensitivities reveals stakeholder heterogeneity. Tech-savvy early adopters (large βc) react dramatically to feature improvements. Conservative partners (small βr) change gradually. This asymmetry can override cost considerations.
 
-This interdependence reflects entrepreneurial reality:
-- Funded ventures access resources, expertise, and networks that improve delivery odds
-- The promise level that attracts funding also determines the technical challenge
-- Operations and finance become inseparable through the promise mechanism
+### 3.4 Temporal Dynamics and Strategic Implications
 
-For Tesla, securing funding didn't just provide capital - it enabled battery partnerships, manufacturing expertise, and market credibility that made 300-mile range achievable. The promise vendor model captures this operations-finance nexus that Modigliani-Miller assumes away.
+Governing temporal effects, differential cost timing creates systematic biases. Underpromise cost Cu strikes immediately when customers ignore modest promises. Overpromise cost Co arrives later when delivery fails, discounted by factor δ^T:
 
-# 3. Practical Application: Tesla's Promise Decision
+φ*(t) = Cu/(2Co·δ^T)
 
-## 3.1 Setting Up Tesla's Choice (2008)
+As time horizon T increases, δ^T decreases, raising φ*. Longer development timelines systematically favor bolder promises—a mathematical explanation for why breakthrough innovations require patient capital.
 
-Tesla faced a critical promise decision for the Roadster:
-- **Timid promise (φ=0.3)**: 150-mile range using proven battery technology
-- **Bold promise (φ=0.8)**: 300-mile range requiring battery cost breakthroughs
+Guiding strategic decisions, the model prescribes context-specific promise levels:
 
-**Cost parameters**:
-- Success value V = $300M (market opportunity for luxury electric sports car)
-- Liability L = $100M (reputation damage, lawsuits if funded venture fails)
-- Co = V + L = $400M (failure cost)
-- Cu = V = $300M (opportunity cost)
+**Case 1: Early-stage ventures (Cu >> Co)**
+Underpromise cost dominates when unfunded ideas represent massive foregone opportunities. With Cu = $10M potential and Co = $100K reputation risk, φ* ≈ 1 prescribes maximum ambition.
 
-**Optimal promise**: φ* = 300/(300+400) = 0.43
+**Case 2: Mature ventures (Co >> Cu)**  
+Overpromise cost dominates when established firms risk accumulated brand value. With Co = $1B reputation and Cu = $10M opportunity, φ* ≈ 0 prescribes conservative promises.
 
-This suggests a moderate promise around 220-mile range would optimize Tesla's expected outcome.
+**Case 3: Balanced ventures (Cu ≈ Co)**
+Equal costs yield φ* = 0.5, prescribing moderate promises that balance market excitement against delivery risk.
 
-## 3.2 Why Tesla Promised Boldly
+## 4. Discussion and Implications
 
-Tesla actually promised 244-mile range (later achieving 245 miles), slightly above our model's prescription. Several factors may explain this:
+### 4.1 Temporal Reversal: When Capability Precedes Customers
 
-1. **Elon Musk's track record** reduced effective failure costs through reputation insurance
-2. **Electric vehicle market dynamics** increased opportunity costs of conservative promises
-3. **Technical confidence** from early prototypes shifted delivery probability estimates
+Challenging our promise-then-deliver framework, certain contexts exhibit "deliver-then-sell" dynamics where capability development precedes market creation. Deep tech ventures developing fundamental technologies (quantum computing, fusion energy, CRISPR) often achieve technical breakthroughs before identifying commercial applications. Here, the optimization inverts: minimize the salvage cost of unutilized capability while searching for market fit.
 
-The framework still provided valuable guidance - Tesla avoided both extremes of 150-mile (too timid) and 300-mile (too bold) promises.
+Consider pharmaceutical development where compounds exist before diseases are targetable, or Bell Labs' transistor invention preceding its market applications by decades. These scenarios require a dual-phase model: Phase 1 optimizes capability development under technical uncertainty, Phase 2 optimizes promise calibration given existing capabilities. The salvage cost of "delivered but unsold" capability—unutilized patents, idle manufacturing capacity, stranded R&D investments—becomes the primary loss function.
 
-# 4. Managerial Implications
+Critical insight: The promise vendor framework assumes customer pull dominates technology push. When reversed, entrepreneurs face a fundamentally different optimization—not "what should we promise?" but "what can we promise given what we've built?" This capability-first pathway explains why technical founders often struggle with commercialization: they optimize for deliverability (1-φ) rather than sellability (φ), systematically under-promising relative to their capabilities. Future work should develop a unified framework encompassing both promise-first and capability-first innovation pathways.
 
-## 4.1 A Decision Tool for Entrepreneurs
+### 4.2 Cost Architecture: Who Sets Parameters and Why
 
-The promise vendor model provides a quantitative framework for promise calibration:
+Constructing entrepreneurial ecosystems requires understanding how society shapes the cost parameters (Cu, Co, V) that drive promise decisions. These parameters emerge from multiple actors with conflicting objectives: entrepreneurs maximize personal returns, investors seek portfolio performance, regulators protect consumers, and society desires innovation with minimal negative externalities.
 
-**Step 1**: Estimate your parameters
-- What's your venture's success value (V)?
-- What's your liability if you fail after funding (L)?
-- Calculate Co = V + L and Cu = V
+Consider how different institutional designs create distinct parameter regimes. Silicon Valley's ecosystem minimizes Co through forgiving bankruptcy laws, normalized failure narratives, and rapid re-employment opportunities—enabling bold promises. Conversely, German Mittelstand culture amplifies Co through reputational permanence and community accountability, favoring incremental innovation. Singapore manipulates V through generous R&D tax credits and innovation prizes, while maintaining moderate Co through efficient courts that swiftly resolve commercial disputes.
 
-**Step 2**: Apply the formula
-- Optimal promise level: φ* = Cu/(Cu + Co) = V/(V + V + L) = V/(2V + L)
+Critical design principles emerge: (1) **Asymmetry preservation**—maintaining Cu > Co ensures entrepreneurial dynamism; (2) **Dynamic calibration**—parameters should evolve with venture maturity to prevent excessive risk-taking by established firms; (3) **Stakeholder alignment**—V should incorporate social returns beyond private gains. Society faces a fundamental tradeoff: lower Co encourages breakthrough innovation but enables fraud (Theranos), while higher Co ensures accountability but stifles transformation. Optimal parameter design likely requires sector-specific calibration—low Co for software where failure costs are contained, high Co for biotech where lives are at stake.
 
-**Step 3**: Interpret the prescription
-- φ* > 0.7: Make bold promises (high opportunity cost environment)
-- 0.3 < φ* < 0.7: Make moderate promises (balanced cost environment)
-- φ* < 0.3: Make conservative promises (high failure cost environment)
+### 4.3 Catastrophic Uncertainty: When Promise Spaces Collapse
 
-## 4.2 Sector-Specific Guidance
+Catastrophic events—COVID-19, financial crises, wars, AI breakthroughs—fundamentally redefine the promise landscape by simultaneously shifting customer needs and delivery capabilities. Our model assumes stable probability functions P(Sell|φ) and P(Deliver|φ), but catastrophes create discontinuous jumps where entire promise categories become obsolete (travel during COVID) or suddenly viable (remote work technologies).
 
-**Software/Platform Ventures**: Generally face Cu > Co due to network effects and winner-take-all dynamics. Prescription: Promise boldly to capture market position.
+Consider three catastrophe types and their effects on promise optimization. **Demand shocks** (COVID lockdowns) instantly reset P(Sell|φ) functions—promises of "premium dining experiences" became unsellable overnight while "contactless delivery" surged. **Supply shocks** (chip shortages, war disruptions) collapse P(Deliver|φ) across entire sectors, forcing mass promise recalibration. **Paradigm shifts** (ChatGPT's emergence) create new promise dimensions previously unconsidered—suddenly every software company could promise "AI-powered" features.
 
-**Healthcare/Regulated Ventures**: Generally face Co > Cu due to regulatory penalties and patient safety. Prescription: Promise conservatively to avoid catastrophic failures.
+Critical modeling challenges emerge: (1) **Non-stationarity**—parameters Cu, Co, V become time-varying stochastic processes rather than constants; (2) **Correlation breakdown**—previously independent stakeholder responses become highly correlated during crises; (3) **Option value**—maintaining promise flexibility gains importance relative to optimization. Catastrophic uncertainty suggests entrepreneurs should optimize for adaptability rather than specific promise levels. Future work must develop robust optimization techniques that perform well across multiple regime shifts, potentially using scenario planning or real options frameworks to value promise flexibility during turbulent periods.
 
-**Hardware/Manufacturing Ventures**: Often face Cu ≈ Co with balanced opportunities and liabilities. Prescription: Promise moderately, calibrating to specific market conditions.
+### 4.4 Capital-Capability Spiral: Self-Fulfilling Promises and Deep Pockets
 
-# 5. Conclusion
+Capital-capability endogeneity—where funding directly improves delivery probability—creates self-fulfilling dynamics that fundamentally alter promise optimization. When P(Deliver|φ) = ∫ P(Deliver|Fund,φ) × P(Fund|φ) dFund with P(Deliver|Fund,φ) increasing in Fund, bold promises attract capital that enables their own fulfillment. This positive feedback can drive unbounded promise escalation, as entrepreneurs rationally increase φ knowing that the promise itself generates resources for delivery.
 
-The promise vendor framework transforms entrepreneurial promise decisions from gut feelings to quantitative optimization. By adapting the newsvendor model's cost-balancing logic to entrepreneurial contexts, we provide a practical tool for finding optimal promise levels.
+Consider the deep pocket effect exemplified by Elon Musk's ventures. Tesla's survival through "production hell" depended critically on Musk's ability to inject personal capital during crisis moments—transforming P(Deliver|Fund=∞,φ=0.7) ≈ 1 despite P(Deliver|Fund=0,φ=0.7) ≈ 0.1. This cash shield against technological uncertainty creates profound unfairness: identical promises carry different failure probabilities depending on founder wealth. The poor entrepreneur's bold promise remains genuinely risky; the wealthy entrepreneur's identical promise becomes self-fulfilling prophecy.
 
-The key insight: promises create the uncertainty they must satisfy. This endogeneity makes entrepreneurial decisions fundamentally different from inventory optimization, violating Modigliani-Miller and creating an operations-finance nexus unique to new ventures.
+Critical modeling requirements for capturing these dynamics include: (1) **Stochastic differential equations** tracking how capital accumulation affects capability evolution d(Capability) = α(Fund)dt + σdW; (2) **Fixed point analysis** identifying stable promise equilibria where φ* = f(φ*) through funding feedback; (3) **Inequality measures** quantifying how initial wealth W₀ affects terminal success probability P(Success|W₀). Without modeling this endogeneity, we systematically underestimate optimal promises for wealthy entrepreneurs and overestimate them for resource-constrained founders. Future work must develop dynamic models where promises, funding, and capabilities co-evolve, potentially revealing multiple equilibria—virtuous cycles for the wealthy, vicious cycles for the poor—that explain persistent inequality in entrepreneurial outcomes despite equal talent and effort.
 
-For practitioners, the message is clear. Don't promise blindly - calculate. Estimate your failure costs and opportunity costs, apply the critical fractile formula, and calibrate your promises accordingly. In a world where the difference between Musk and Holmes often comes down to promise calibration, this framework provides essential guidance for entrepreneurial success.
+## References
 
-# References
+Arrow, K., Harris, T., & Marschak, J. (1951). Optimal inventory policy. Econometrica, 19(3), 250-272.
 
-Cachon, G., & Terwiesch, C. (2013). Matching supply with demand: An introduction to operations management. McGraw-Hill.
+Baker, T., & Nelson, R. E. (2005). Creating something from nothing: Resource construction through entrepreneurial bricolage. Administrative Science Quarterly, 50(3), 329-366.
 
 Modigliani, F., & Miller, M. H. (1958). The cost of capital, corporation finance and the theory of investment. American Economic Review, 48(3), 261-297.
 
 Porteus, E. L. (2002). Foundations of stochastic inventory theory. Stanford University Press.
 
-Silver, E. A., Pyke, D. F., & Peterson, R. (1998). Inventory management and production planning and scheduling. John Wiley & Sons.
+Sarasvathy, S. D. (2001). Causation and effectuation: Toward a theoretical shift from economic inevitability to entrepreneurial contingency. Academy of Management Review, 26(2), 243-263.
 
-Zipkin, P. H. (2000). Foundations of inventory management. McGraw-Hill.
+Scarf, H. (1958). A min-max solution of an inventory problem. Studies in the Mathematical Theory of Inventory and Production, 201-209.

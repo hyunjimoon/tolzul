@@ -85,4 +85,4 @@ _"Theory without application is hollow, but application without theory is blind.
 
 ---
 
-*Link to next stage: [[♻️diagnose.md]]*
+*Link to next stage: [[♻️diagnose]]*

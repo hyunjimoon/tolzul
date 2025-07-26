@@ -25,7 +25,7 @@ and to answer  what measures can be taken from both agent and institutional pers
 | 20  | Serials                    |                             |                                                                                      |
 | 21  | Slapstick                  |                             |                                                                                      |
 | 22  | Stunts                     |                             |                                                                                      |
-| 23  | The Star System            | Selling the dream           | method acting in movei                                                               |
+| 23  | The Star System            | Selling the dream           | method acting in movie                                                               |
 | 24  | Hollywood                  |                             |                                                                                      |
 | 25  | Movie Moguls               |                             |                                                                                      |
 | 26  | Block Booking              | It's a seller's market      |                                                                                      |

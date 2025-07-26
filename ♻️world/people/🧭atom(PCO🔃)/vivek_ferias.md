@@ -1,3 +1,8 @@
+[[2025-07-25|25-07-25-09]]
+
+i asked why he likes teaching - vivek answer he like people learning and thinks it creates impact and is a good way to scale 
+
+
 2025-06-06
 using [team vivek role descripton and time allocation proposal cld](https://claude.ai/chat/39bd6e8a-ea64-4607-9cf0-8f2c7773ebf6)
 

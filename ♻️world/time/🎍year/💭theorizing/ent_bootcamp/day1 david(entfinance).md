@@ -1,5 +1,11 @@
 # day1
-
+[[2025-07-25|25-07-25-04]]
+while writing [[투자자의 마음 AI]],
+- **Differing Beliefs**: Entrepreneurs often believe the likelihood of a high-value outcome is strong and the risk is low, being "certain that they're going to knock it out of the park". In contrast, the venture capitalist (VC) understands that failure is a common outcome.
+    
+- **Enabling Collaboration**: The term sheet is structured to allow for these differing beliefs to coexist. It enables the entrepreneur to maintain their optimistic outlook while allowing the VC to operate with a more cautious, risk-aware perspective, so they can "continue to work fruitfully together".
+    
+- **Uniting "Distant Tribes"**: Ultimately, the speaker views the term sheet's role in "bringing people with distant tribes together" as a crucial, and perhaps underappreciated, function of the document.
 
 <svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
   <!-- Background -->
