@@ -2,7 +2,7 @@
 ## How to Use Your Theoretical Soundtracks
 
 [[2025-07-13]]
-connecting [[📝first you write a sentence]] with [[🎹scale]] and music
+connecting [[📝first you write a sentence]] with [[🔴sun/thesis/🐢🐢promise_vendor/🎹scale]] and music
 
 ### Your Available Soundtracks
 1. **🟣♻️🟧🔴_movie_table.md** - General movie themes by key/mood

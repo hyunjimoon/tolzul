@@ -6,6 +6,11 @@ tags:
   - jinhu
   - vikash
 ---
+[[2025-07-28|25-07-28-03]]
+- 👾 **Alert (Scott Stern)**: Entrepreneurial alertness to market opportunities; endogenous uncertainty creation through promises; Bayesian equilibrium with heterogeneous beliefs; real options perspective on promise-making
+- 🐢 **Dig (Moshe Ben-Akiva)**: Decomposing promise decisions into structural components; discrete choice between promise levels; latent class models for entrepreneur types; threshold response functions P(Sell|φ)
+- 🐅 **Gen (Vikash Mansinghka)**: Generative world models for business scenarios; probabilistic programming implementation; ADEV optimization for promise calibration; human-AI collaboration in entrepreneurial reasoning
+- 🐙 **Calib (Charlie Fine)**: Dynamic promise calibration across venture phases; operational timing optimization; clock speed matching between promise evolution and capability development; processification of entrepreneurial learning
 [[2025-07-26|25-07-26-14]]
 
 **👾 Alienate (Scott Stern)**: Entrepreneurs rationally choose bold promises because underpromise cost Cu strikes immediately while overpromise cost Co arrives discounted by δ^T. What appears as overconfidence reflects optimal response to temporal asymmetry where being forgotten costs more than failing famously.

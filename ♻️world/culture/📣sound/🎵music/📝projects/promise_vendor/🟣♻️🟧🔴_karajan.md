@@ -3,7 +3,7 @@
 
 [[2025-07-13]]
 based on [[Karajan practice 🐢🐢promise vendor]]
-using [[🎹scale]] and [[🎹🎼🎶scale_harmony_melody_verse]]
+using [[🔴sun/thesis/🐢🐢promise_vendor/🎹scale]] and [[🎹🎼🎶scale_harmony_melody_verse]]
 
 ### Karajan's Method Applied to Promise Vendor
 Herbert von Karajan (1908-1989) transformed conducting through:

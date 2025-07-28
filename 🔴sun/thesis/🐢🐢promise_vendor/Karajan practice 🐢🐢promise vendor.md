@@ -25,7 +25,7 @@ Daily operational guide for maintaining theoretical consistency—the HOW of con
 
 ## Required Reading
 - Theory: [[🎹🎼🎶scale_harmony_melody_verse.md]]
-- Current nodes: [[🎹scale.md]]
+- Current nodes: [[🔴sun/thesis/🐢🐢promise_vendor/🎹scale]]
 - Progressions: [[🎼harmony.md]]
 - Phrases: [[🎶melody.md]]
 

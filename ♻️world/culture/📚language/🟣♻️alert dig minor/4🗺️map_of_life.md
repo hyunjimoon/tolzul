@@ -27,3 +27,5 @@ Better talent won’t beat effort that intentionally tries not to win.
 At the moment of resignation, it would be better to completely turn all responsibilities to ourselves.
 
 The grief will be much bigger than the pain caused by regret or anger, but it will leave room for us to keep going toward the future.
+
+[[🎯🧱💻marr 3lev]]

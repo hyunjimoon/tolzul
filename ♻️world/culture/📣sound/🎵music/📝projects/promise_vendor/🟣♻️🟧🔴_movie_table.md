@@ -1,5 +1,5 @@
 [[2025-07-12|25-07-12-11]]
-using [[🎹scale]]
+using [[🔴sun/thesis/🐢🐢promise_vendor/🎹scale]]
 
 [[paradox of entrepreneurship]]
 ### 🟪 **A: Alert – The Anomaly (Mood: A minor)**

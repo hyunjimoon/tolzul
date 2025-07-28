@@ -1,6 +1,6 @@
 # 🎹 Scale: Conceptual Nodes and Narrative Templates
 
-using [[🎹scale]] template, updated on [[2025-07-14|25-07-14]], [[2025-07-24|25-07-24-21]]
+using [[🔴sun/thesis/🐢🐢promise_vendor/🎹scale]] template, updated on [[2025-07-14|25-07-14]], [[2025-07-24|25-07-24-21]]
 
 # main
 

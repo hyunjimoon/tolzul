@@ -2,7 +2,7 @@
 ## John Williams as Theoretical Conductor
 
 [[2025-07-13]]
-using [[🎹scale]] and [[Karajan practice 🐢🐢promise vendor]]
+using [[🔴sun/thesis/🐢🐢promise_vendor/🎹scale]] and [[Karajan practice 🐢🐢promise vendor]]
 
 ### Williams' Compositional Method Applied to Theory
 John Williams (1932–) transforms narrative through:
