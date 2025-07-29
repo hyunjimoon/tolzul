@@ -4,6 +4,64 @@
 **Duration:** 1.5 hours  
 **Instructor:** Prof. Vivek Farias
 
+communicate with [[coTA-adam_jozefiak]]
+
+
+
+
+---
+tldr
+- **Pros and Cons:** The primary pros of carrying inventory are ensuring customer access, hedging against supply risk, and achieving economies of scale, while the cons include significant financing costs, the risk of obsolescence, and expenses from storage and shrinkage.
+- **CCC's Main Message:** The Cash Conversion Cycle is a critical indicator of a company's financial performance that directly impacts its stock price, not just a minor operational metric.
+- **Amazon's Mention:** Amazon was mentioned as an extreme case because it claims a negative Cash Conversion Cycle by collecting payment from customers before paying suppliers, illustrating ultimate operational efficiency.
+- 
+---
+
+- science of coordinating goals and capabilites to offer your customer a compelling offering
+- nonlinearity of utilization and variability, MD+RN (taking lots of time from spread; no consistency) , efficacious system in country (per capita; MGH vs intermoutain; 1/5 - readmission is better for interMT)
+
+
+🚨todo1 from [[prep(recitation)]] 
+- financing cost (lending machines to produce), buy inventory hedge you 
+- supply risk 
+- auto industry hit from supply stuff from electronics
+- economics of scale, shrinkage, increase 
+
+contrarian deliberate scarcity are good; 💎i'm rich
+
+
+•⁠  ⁠total assets=current assets (cash, cash equivalents, receivables, inventory, prepaid assets, total non-current assets) 
+•⁠  ⁠total liabilities net minority
+•⁠  ⁠total equity gross minority
+total capitalization
+
+L and lambda, inventory turnover time = inventory value (balance sheet) / cogs (earnings or P&L)
+
+WMT = 56435 (L)/514625 (lambda) = 5.75 weeks
+TGT = 12740 (L)/76159 (lambda) = 8.68 weeks
+
+cost scale with time
+
+why this matters? wait time macrofinance (cash conversion cycle CCC - start with dollars back plus margine; higher returns on underlying stock; zero-investment portfolio that buys the lowest); 
+
+- first order mover (stock prices)
+- 🙋‍♀️ppl pay merchant business (amazon example)
+
+instant pod, fisher sandal, aldo shoes
+
+margin structure + how confident are we on this forecast (variability)
+
+median was 35k before knowing the margina structure and normal variation
+
+portfolio management expected profit maximizing 
+- risk
+marginal cost = marginal revenue
+
+as the tree increase, the probability of selling tree lowers
+
+----
+
+
 ## Learning Objectives
 - Understand the fundamental role of inventory in operations
 - Learn basic inventory models and optimization techniques
