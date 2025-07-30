@@ -229,6 +229,40 @@ as the tree increase, the probability of selling tree lowers
 - Emergency supplies (high shortage costs)
 - Equipment maintenance parts
 
+## 🔺 The Six Questions Framework
+
+```
+        1. Capabilities?          2. Customer?
+              🟢                      🟣
+       Capital for inventory    Expect availability
+       Storage capacity         Demand variability
+                \                    /
+                 \                  /
+                  \                /
+        5. Coordinate? ←→ 6. Compel?
+                  /                \
+                 /                  \
+                /                    \
+              🟠                      🔴
+       Optimize costs           Product when needed
+       Cash efficiency          Service reliability
+```
+
+### Inventory Management Analysis
+1. **🟢 Capabilities:** Working capital, warehouse space, forecasting systems
+2. **🟣 Customer:** End users expecting product availability, varying demand patterns
+3. **🟠 Goals:** Minimize total cost (holding + ordering), maximize cash flow
+4. **🔴 Offering:** Right product, right time, right quantity
+5. **Coordinate:** Balance capital investment with service requirements
+6. **Compel:** Consistent availability builds customer loyalty
+
+### Core Trade-offs
+- **Holding costs** (capital, storage, obsolescence) vs. **Ordering costs** (setup, transport)
+- **Service level** (availability) vs. **Investment** (inventory value)
+- **EOQ insight:** Q* = √(2DK/h) - square root relationship
+- **Newsvendor:** Critical ratio = (p-c)/(p-s) - one-shot decision
+- Shows how uncertainty drives safety stock requirements
+
 ## Key Takeaways
 - **Economic Principle:** Inventory decisions involve balancing competing costs
 - **Model Selection:** Different models apply to different operational contexts

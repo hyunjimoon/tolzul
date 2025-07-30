@@ -6,6 +6,8 @@
 
 your hands are cold는 darcy가 liz에게 마지막으로 한 대사로 기억한다. 비 맞으며 처음 거절당해본 darcy의 감정이 가장 추울텐데ㅎㅎ 배우들 감기 안 걸렸길
 
+classified to Systematic calibration of a relationship from cold to warm
+
  2. [A Postcard to Henry Purcell](https://www.youtube.com/watch?v=gYuk_Moy_4A&list=OLAK5uy_m73JmqkHKmPlWoH45I1t0RHiVbjf7HN1c&index=8&ab_channel=Jean-YvesThibaudet-Topic)
  liz와 darcy가 춤추는 장면에서 배경이 된 음악인데, 제목이 왜 henry purcell일까.
 

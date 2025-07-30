@@ -151,6 +151,38 @@ how much capacity? - set up a 🧩puzzle for next time
 
 4. **Trade-off Analysis:** What are the fundamental trade-offs each company faces? How do they manage these trade-offs?
 
+## 🔺 The Six Questions Framework
+
+```
+        1. Capabilities?          2. Customer?
+              🟢                      🟣
+       Standardized line         Price-conscious
+       Make-to-stock            Speed-seekers
+                \                    /
+                 \                  /
+                  \                /
+        5. Coordinate? ←→ 6. Compel?
+                  /                \
+                 /                  \
+                /                    \
+              🟠                      🔴
+       Low cost leader          Fast, cheap food
+       Consistency              No customization
+```
+
+### McDonald's Analysis
+1. **🟢 Capabilities:** Highly standardized equipment, pre-made inventory, specialized layout
+2. **🟣 Customer:** Families seeking quick, affordable, predictable meals
+3. **🟠 Goals:** Maximize throughput, minimize cost, ensure consistency
+4. **🔴 Offering:** Limited menu, fast service, low prices
+5. **Coordinate:** Standardization enables cost leadership
+6. **Compel:** Speed and price attract value-conscious customers
+
+### Burger King's Tension
+- Trying to offer customization ("Have it your way") within line flow process
+- Creates operational conflict: customization slows speed, increases complexity
+- Shows the difficulty of serving two masters: efficiency AND flexibility
+
 ## Key Takeaways
 - **Strategic Message:** A standardized, make-to-stock process (line flow) delivers low cost and speed, but struggles to accommodate customization, creating a core strategic trade-off.
 

@@ -149,6 +149,39 @@ on avg, how long the fish was in the freezer
 - **Recovery planning:** Rebooking and compensation procedures
 - **Crew management:** Avoiding duty time violations
 
+## 🔺 The Six Questions Framework
+
+```
+        1. Capabilities?          2. Customer?
+              🟢                      🟣
+       Low-cost carrier         Value seekers
+       High utilization         Business + leisure
+                \                    /
+                 \                  /
+                  \                /
+        5. Coordinate? ←→ 6. Compel?
+                  /                \
+                 /                  \
+                /                    \
+              🟠                      🔴
+       Efficiency focus         "Humanity" promise
+       Lean operations          Low fares + service
+```
+
+### JetBlue Analysis
+1. **🟢 Capabilities:** Point-to-point network, high aircraft utilization, lean staffing
+2. **🟣 Customer:** Price-sensitive travelers wanting better experience than ultra-low-cost
+3. **🟠 Goals:** Maximize asset utilization, minimize costs, maintain service quality
+4. **🔴 Offering:** Affordable fares with amenities, "bringing humanity back to air travel"
+5. **Coordinate:** Lean operations enable low fares but create vulnerability
+6. **Compel:** Better service than competitors at similar price points
+
+### The De-icing Bottleneck
+- **Predictable variability:** Winter weather creates recurring capacity constraint
+- **Cascade effect:** 4 de-icing positions serve 58→75 flights
+- **Nonlinear impact:** 30% demand increase → 100% delay increase
+- Shows how efficiency focus (high utilization) reduces resilience
+
 ## Key Takeaways
 - **Strategic Message:** In a tightly coupled operational network, localized capacity constraints and disruptions can cascade into system-wide failure; proactive risk management and robust recovery plans are critical.
 

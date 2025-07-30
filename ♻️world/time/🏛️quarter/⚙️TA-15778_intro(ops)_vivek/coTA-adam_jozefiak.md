@@ -4,7 +4,7 @@
 3. i won't respond to mail promptly 2hr -> 1hr
 4. prep time 6hr; can i just solve problems from final exam during recitation + office hr?; 
 5. tips for efficient grading?
-[[allocate(time)]]
+![[allocate(time)]]
 
 ubc computer science, interested in probabilistic program
 

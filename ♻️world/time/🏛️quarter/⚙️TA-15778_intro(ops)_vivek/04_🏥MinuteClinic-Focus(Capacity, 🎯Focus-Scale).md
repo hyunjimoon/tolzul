@@ -169,6 +169,40 @@ The provided process flow diagram shows:
 - **Capacity pooling:** Flexible resources, cross-training
 - **Technology:** EMR integration, real-time tracking
 
+## 🔺 The Six Questions Framework
+
+```
+        1. Capabilities?          2. Customer?
+              🟢                      🟣
+       Hospital resources       Pre-surgery patients
+       Multiple specialists     Anxious, time-pressed
+                \                    /
+                 \                  /
+                  \                /
+        5. Coordinate? ←→ 6. Compel?
+                  /                \
+                 /                  \
+                /                    \
+              🟠                      🔴
+       Patient safety           Medical clearance
+       Efficient throughput     One-stop service
+```
+
+### PATA Analysis  
+1. **🟢 Capabilities:** Nurses, physicians, exam rooms, testing equipment
+2. **🟣 Customer:** Patients needing pre-surgical clearance, often elderly/anxious
+3. **🟠 Goals:** Ensure surgical safety, minimize wait times, maximize throughput
+4. **🔴 Offering:** Comprehensive pre-admission testing in single visit
+5. **Coordinate:** Resource scheduling must match variable patient flow
+6. **Compel:** Convenience of one-stop testing vs. multiple appointments
+
+### Bottleneck Insights
+- **Problem:** Long waits despite adequate resources
+- **Root cause:** RN assessment creating queues
+- **Variability impact:** Service time CV contributes significantly
+- **Solution space:** Smooth arrivals, standardize processes, flexible staffing
+- Classic example of how utilization × variability = delays
+
 ## Key Takeaways
 - **Strategic Message:** Process analysis, particularly managing variability in arrivals and service times, is critical for identifying and alleviating bottlenecks in service operations to reduce customer wait times.
 

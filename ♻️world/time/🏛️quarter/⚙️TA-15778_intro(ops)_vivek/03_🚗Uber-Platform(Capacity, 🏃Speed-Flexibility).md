@@ -201,6 +201,40 @@ According to the case study, surge pricing delivers:
 - **Algorithm optimization:** Continuous improvement of matching
 - **Data analytics:** Demand forecasting and supply planning
 
+## 🔺 The Six Questions Framework
+
+```
+        1. Capabilities?          2. Customer?
+              🟢                      🟣
+       Platform technology      Riders + Drivers
+       Network algorithms       Two-sided market
+                \                    /
+                 \                  /
+                  \                /
+        5. Coordinate? ←→ 6. Compel?
+                  /                \
+                 /                  \
+                /                    \
+              🟠                      🔴
+       Market efficiency        Reliable matches
+       Asset-light scale        Transparent pricing
+```
+
+### Uber Analysis
+1. **🟢 Capabilities:** Real-time matching algorithms, mobile platform, data analytics
+2. **🟣 Customer:** Urban riders (convenience) + Drivers (flexible income)
+3. **🟠 Goals:** Maximize matches, minimize wait times, grow network
+4. **🔴 Offering:** On-demand rides with price transparency and reliability
+5. **Coordinate:** Technology enables massive scale without owning vehicles
+6. **Compel:** Better availability than taxis, income flexibility for drivers
+
+### Dynamic Pricing Mechanism
+- **Problem:** Unpredictable demand spikes (weather, events)
+- **Solution:** Surge pricing as market signal
+- **Effect:** 8 min → 24 min wait WITHOUT surge
+- **Result:** Higher completion rates, faster service WITH surge
+- Shows price as operational tool, not just revenue generator
+
 ## Key Takeaways
 - **Strategic Message:** Dynamic pricing can be a powerful tool to balance supply and demand in a two-sided market, improving overall system efficiency (e.g., higher completion rates, lower wait times).
 
