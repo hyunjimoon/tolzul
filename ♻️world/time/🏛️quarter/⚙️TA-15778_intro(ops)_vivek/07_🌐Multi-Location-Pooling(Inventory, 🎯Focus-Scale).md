@@ -6,6 +6,8 @@
 
 ---
 ## manual notes
+[[2025-07-31|25-07-31-09]]
+
 not loosing customer but item, but moving onto next item
 
 - underage cost is not $60, as customer profile is 
@@ -33,8 +35,9 @@ being exposed to supply risk is esp. bad fast turning business models
 I HAVE QUESTION AND OBSERVATION.
 
 long term customer behavior (substitue over time), tractically important
+super sexy, they just flow out of the tounge
 
-
+understanding the levers of supply chain costs
 
 ---
 

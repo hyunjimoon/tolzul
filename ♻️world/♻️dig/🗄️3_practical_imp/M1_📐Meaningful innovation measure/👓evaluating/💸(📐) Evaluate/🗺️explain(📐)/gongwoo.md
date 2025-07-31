@@ -25,6 +25,7 @@ p. 62 오타 페이팔의) -> 페이팔의
 
 
 
+
 [gongwoo_ai_research_intro cld](https://claude.ai/chat/21f8d28f-5c4a-444e-8542-25a87feaf9cd)
 ai https://docs.google.com/document/d/1dCCGIq4j8ijRnMA0xSLsF80z2DeZ92Bvgq4U63wbAlU/edit?usp=sharing
 

@@ -1,4 +1,5 @@
-
+[[2025-07-31|25-07-31-11]]
+MAKE IT VIVID.
 
 2025-07-06
 applying chapter 6, 7 on flow ([[95]]) and knowing its end ([[104]]), 
