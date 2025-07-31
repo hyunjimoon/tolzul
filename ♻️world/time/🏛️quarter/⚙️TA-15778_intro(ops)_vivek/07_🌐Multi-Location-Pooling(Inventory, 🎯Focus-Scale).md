@@ -4,6 +4,40 @@
 **Duration:** 1.5 hours  
 **Instructor:** Prof. Vivek Farias
 
+---
+## manual notes
+not loosing customer but item, but moving onto next item
+
+- underage cost is not $60, as customer profile is 
+- 1 product match with each customer (different size)
+
+same thing in the positive direction ()
+
+compelling assortment so you'll buy another, if you don't see compelling one, 
+
+👗60$ multiplied by probability of you won't buy anything from me (due to repeated visit and assortment)
+
+virtuous cycle: rapid rotation, 
+
+⭐️formula modularize thoughts
+
+portfolio existis in particular point of time, 
+
+long term value thinking (opportunity to calibrate numbers)
+
+🔄rapid rotation -(reason to revisit)-> revisits  -(lower u, lower safety stock)-> understock   -()->
+
+being exposed to supply risk is esp. bad fast turning business models
+질문할때 짧고 핵심을.
+
+I HAVE QUESTION AND OBSERVATION.
+
+long term customer behavior (substitue over time), tractically important
+
+
+
+---
+
 ## Learning Objectives
 - Master advanced inventory models under uncertainty
 - Understand risk pooling concepts and benefits
