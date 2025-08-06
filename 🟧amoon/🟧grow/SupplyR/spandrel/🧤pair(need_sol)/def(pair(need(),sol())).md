@@ -1,1 +1,0 @@
-- algorithm and workflow of how angie moon process information to create and claim value

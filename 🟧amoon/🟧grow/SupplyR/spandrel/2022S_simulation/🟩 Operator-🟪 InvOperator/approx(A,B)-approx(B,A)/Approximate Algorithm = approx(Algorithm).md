@@ -1,1 +1,0 @@
-Algorithm can be a operand. What is the inverse of this operand? (deConv(Algorithm))^{-1} = $(f(g))^{-1} = g^{-1}(f^{-1})$
