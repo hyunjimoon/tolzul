@@ -1,0 +1,27 @@
+{
+	"nodes":[
+		{"id":"acculturate","type":"text","text":"🐢 acculturate","x":-200,"y":-200,"width":180,"height":60,"color":"4"},
+		{"id":"evaluate","type":"text","text":"evaluate","x":100,"y":-200,"width":180,"height":60,"color":"4"},
+		{"id":"professionalize","type":"text","text":"🐅 professionalize","x":100,"y":-50,"width":180,"height":60,"color":"2"},
+		{"id":"processify","type":"text","text":"processify","x":100,"y":100,"width":180,"height":60,"color":"2"},
+		{"id":"automate","type":"text","text":"automate","x":100,"y":250,"width":180,"height":60,"color":"1"},
+		{"id":"segment","type":"text","text":"👾 segment","x":700,"y":-50,"width":180,"height":60,"color":"6"},
+		{"id":"replicate","type":"text","text":"replicate","x":700,"y":100,"width":180,"height":60,"color":"6"},
+		{"id":"collaborate","type":"text","text":"🐙 collaborate","x":-200,"y":250,"width":180,"height":60,"color":"1"},
+		{"id":"capitalize","type":"text","text":"capitalize","x":700,"y":250,"width":180,"height":60,"color":"6"},
+		{"id":"quality","type":"text","text":"quality","x":420,"y":60,"width":120,"height":50},
+		{"id":"platformize","type":"text","text":"platformize","x":390,"y":250,"width":180,"height":60,"color":"1"},
+		{"id":"process","type":"text","text":"process","x":-140,"y":60,"width":120,"height":50}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"acculturate","fromSide":"right","toNode":"evaluate","toSide":"left","color":"4"},
+		{"id":"e2","fromNode":"evaluate","fromSide":"bottom","toNode":"professionalize","toSide":"top","color":"2"},
+		{"id":"e3","fromNode":"professionalize","fromSide":"bottom","toNode":"processify","toSide":"top","color":"2"},
+		{"id":"e4","fromNode":"processify","fromSide":"bottom","toNode":"automate","toSide":"top","color":"2"},
+		{"id":"e5","fromNode":"collaborate","fromSide":"right","toNode":"automate","toSide":"left","color":"1"},
+		{"id":"e7","fromNode":"platformize","fromSide":"right","toNode":"capitalize","toSide":"left","color":"1"},
+		{"id":"e8","fromNode":"segment","fromSide":"bottom","toNode":"replicate","toSide":"top","color":"6"},
+		{"id":"e9","fromNode":"replicate","fromSide":"bottom","toNode":"capitalize","toSide":"top","color":"6"},
+		{"id":"4e28161a6b01509b","fromNode":"automate","fromSide":"right","toNode":"platformize","toSide":"left","color":"1"}
+	]
+}
