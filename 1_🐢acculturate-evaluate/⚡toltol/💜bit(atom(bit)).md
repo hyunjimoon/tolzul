@@ -1,4 +1,0 @@
-- class, clustered information made by groups of people. 
-- seven arts: [[def(🎵music)]], dance, painting, literature ([[language]]), architecture, sculpture, [[def(🎥film)]]
-- Three forms "pattern" based on [[23signal]].
-- 

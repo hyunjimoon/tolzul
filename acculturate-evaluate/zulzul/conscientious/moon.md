@@ -1,0 +1,1 @@
+friend conditions: loves self and others as much
