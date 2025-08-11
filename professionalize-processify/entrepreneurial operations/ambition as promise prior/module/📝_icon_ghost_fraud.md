@@ -33,7 +33,7 @@ An icon, a ghost, and a fraud. Tesla, Better Place, and Nikola all launched with
 [[🐢(icon_ghost_fraud)]]
 
 ## 3. 방법론
-[[🐅(icon_ghost_fraud)]]
+[[34(icon_ghost_fraud)]]
 ### 3.1 모델 설정과 네 단계 진행
 
 창업가적 의사결정의 독특한 도전을 포착하기 위해, 우리는 정적 세계에서 완전한 동적 프레임워크로 점진적으로 구축하는 네 가지 모델을 개발한다. 이 진행은 왜 전통적 접근이 실패하는지, 그리고 성공한 창업가가 어떻게 사기에 빠지지 않고 "될 때까지 속이는" 현상을 탐색하는지를 밝힌다.

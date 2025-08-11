@@ -5,6 +5,118 @@
 **Instructor:** Prof. Vivek Farias  
 **Assignment:** VENTURE PITCH DUE (TEAM)
 
+---
+# manual note
+guide inventory so that we sell out in the last week
+
+---
+if i had a crystal ball of demand, i could have (95%)
+
+derek: could have run the last four weeks slower
+
+optimization: principled discussion on objective and constraints
+mike: 
+- re-optimize at week 5, 10 (hit solver three times)
+- two benefit of re-optimize (data source)
+	- historical data from w1~5 (allows me to build better demand model)
+	- actual inventory (unpredictable variability; i might have sold; account for natural variation)
+	- hold on to that 80% longer
+	- stick with 80% one week more (as demand is healthier)
+
+🗣️ i'm beginning to think multiple period condition of 
+
+updating demand model rather than using the original regression
+
+redo the w5 solver, how does this change
+- pricing at $80 (x_80, x_90 would disapper as we ); i
+- x_80 + x_60 <=11 (week count), data from the first five weeks to update the 84, 111, 180
+- you expected to solve 90, but you sold 95 - adjust 
+- ![[12_🥗BlueApron-Lifecycle(Demand, 🎯Focus-Scale) 2025-08-11-8.svg]]
+%%[[12_🥗BlueApron-Lifecycle(Demand, 🎯Focus-Scale) 2025-08-11-8.md|🖋 Edit in Excalidraw]]%%
+
+using [llm](https://poe.com/s/YWZWU1fDoRUwDMuxoMG0), d is the output of updated demand prediction model which becomes coefficient that included in both objective (revenue =  price * count) and count constraint
+
+|**Aspect**|**No Re-optimization**|**Re-optimization**|
+|---|---|---|
+|**Objective Function**|Fixed coefficients for revenue:|Coefficients updated based on observed sales data:|
+||`Maximize: 100(64x₁₀₀) + 90(84x₉₀) + 80(111x₈₀) + 60(180x₆₀)`|`Maximize: 100(d₁₀₀x₁₀₀) + 90(d₉₀x₉₀) + 80(d₈₀x₈₀) + 60(d₆₀x₆₀)`|
+||where `d₁₀₀ = 64`, `d₉₀ = 84`, etc.|where `d₁₀₀`, `d₉₀`, etc., are updated demand rates based on observed data.|
+|**Time Constraint**|Static: `x₁₀₀ + x₉₀ + x₈₀ + x₆₀ ≤ 16`|Adjusted: Remaining weeks only: `x₈₀ + x₆₀ ≤ T_remaining`|
+|**Inventory Constraint**|Static: `64x₁₀₀ + 84x₉₀ + 111x₈₀ + 180x₆₀ ≤ 2000`|Dynamic: Real-time inventory update: `d₁₀₀x₁₀₀ + d₉₀x₉₀ + d₈₀x₈₀ + d₆₀x₆₀ ≤ Inventory_remaining`|
+|**Demand (Coefficients)**|Fixed: Assumes constant demand rates over time.|Dynamic: Updates demand coefficients (`d₁₀₀`, `d₉₀`, etc.) based on observed weekly sales.|
+|**Solver Execution**|Single run at the start of the 16-week period.|Re-run periodically (e.g., every 5 weeks) using updated coefficients and constraints.|
+
+---
+
+### **Steps for Re-optimization in Gurobi**
+
+1. **Initial Optimization (Week 0):**
+    
+    - Define the model with:
+        - Objective: `Maximize: 100(64x₁₀₀) + 90(84x₉₀) + 80(111x₈₀) + 60(180x₆₀)`
+        - Constraints:
+            - Time: `x₁₀₀ + x₉₀ + x₈₀ + x₆₀ ≤ 16`
+            - Inventory: `64x₁₀₀ + 84x₉₀ + 111x₈₀ + 180x₆₀ ≤ 2000`
+2. **Observe Weekly Sales:**
+    
+    - After each week (or batch of weeks), collect:
+        - **Units Sold**: Actual sales data for each
+
+----
+
+diff in diff design ()
+
+profit logic (scott frank; sold oracle and first; partner in bain)
+
+training customer to devalue your brand
+
+owned ; overpriced jacket (patch); super short season - discount (brand losing its shine); tradeoff = short vs long run; 
+
+even for bablan goods, we have sensitivity to price
+
+if it's inventory issue, why don't we diminish inventor risk in the first place?? that more tightly (diminishing inventory risk); reason of pricing is 
+
+price -> portfolio as a lever?
+
+assortment
+pool, customer experience more options (capture more market share)
+
+reinforce zara's buy now 
+(-) more cannibalization - eating away from each other (high correlation) -
+SKU bloat
+
+lots of choices is not good
+
+[sheena iyengar](https://business.columbia.edu/faculty/people/sheena-iyengar); blind made her introspection - w1 (20 jams), w2 (4 jams) - cognitive overload (paradox of choice)
+- expecting to get more market and at some point it's crap (just explanation)
+- easier to add a product then subtracting a product
+
+⭐️capture market, pooling from substitution, complementary drive cross shopping vs sku bloat and cann
+managing product (entire discussion was on price (shirt, ?)) to managing pr
+
+michael: TO SANDRA's point, 
+
+⭐️portfolio is complicated as we have mix of substitution, cannibalation, pooling
+this complexity on different effects lead to focus on one person profile
+manage lifetime value
+
+CAC: netflix's price to get customer (20yrs ago) was $100
+how long she sticks around and how valuable she is  (retention drives how long she sticks around)
+
+how did amazon figure out to (easy to use, broadest product assortments, fast and free shipping, great prices) via customer centricity logic?
+
+⭐️amazon was focused on gathering data on affluent educated shoppers - price close to cost (understand what makes this folks tick)
+get constant feedback
+
+leaky bucket (filling in a bucket that's leaking)
+
+CLV  to CAC ratio high loyalty 
+
+⭐️hello fresh did (distinct needs) blue apron
+
+
+----
+
 ## Learning Objectives
 - Understand customer choice modeling and its operational implications
 - Analyze subscription business models and unit economics
