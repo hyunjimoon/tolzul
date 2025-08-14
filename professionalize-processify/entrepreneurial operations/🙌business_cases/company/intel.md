@@ -1,3 +1,11 @@
+[[2025-08-13|25-08-13]]
+as i cooked exam question on newsvendor and rq policy on chips with [[asml]] using [cld](https://claude.ai/chat/6a8c9a67-221c-4ca0-9e1e-3550e163776a)
+
+### From Intel's Story:
+
+1. **The Mobile Chip Decision (2006)**: Intel CEO rejected Steve Jobs' request to make iPhone chips because the volume seemed too small and margins too low—a "rational" decision that became a $500B mistake. This perfectly illustrates newsvendor thinking: one-time decision with massive opportunity cost.
+2. **Technology Lead Evaporation**: Intel's 2-year manufacturing advantage disappeared when they prioritized short-term profits over R&D investment. They're now 2-3 generations behind TSMC, showing how lead time advantages compound.
+
 
 2025-06-06
 using [compare(research progress alg) cld](https://claude.ai/chat/b3f89d50-ea4b-448f-b873-5f40493696dd)

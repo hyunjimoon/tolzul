@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Success and Failure Regions in μ-τ Space</text>
+
+  <!-- Main plot area -->
+  <rect x="100" y="60" width="600" height="450" fill="white" stroke="black" stroke-width="2"/>
+
+  <!-- Shaded regions -->
+  <!-- Adaptive zone (green) - left side -->
+  <rect x="100" y="60" width="240" height="450" fill="#90EE90" fill-opacity="0.3"/>
+  
+  <!-- Fraud temptation zone (red) - top right -->
+  <polygon points="340,60 700,60 700,255 340,255" fill="#FFB6C1" fill-opacity="0.3"/>
+  
+  <!-- Operational rigidity zone (orange) - bottom right -->
+  <polygon points="340,255 700,255 700,510 340,510" fill="#FFE4B5" fill-opacity="0.3"/>
+
+  <!-- Learning threshold curve -->
+  <path d="M 340 510 Q 450 350 600 150 L 700 60" 
+        fill="none" stroke="#FF4500" stroke-width="2" stroke-dasharray="8,4"/>
+
+  <!-- Axes -->
+  <line x1="100" y1="510" x2="700" y2="510" stroke="black" stroke-width="2"/>
+  <line x1="100" y1="510" x2="100" y2="60" stroke="black" stroke-width="2"/>
+  
+  <!-- Axis labels -->
+  <text x="400" y="550" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold">τ (Precision)</text>
+  <text x="50" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" transform="rotate(-90 50 285)">μ (Aspiration)</text>
+  
+  <!-- X-axis values -->
+  <text x="100" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">0</text>
+  <text x="220" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">20</text>
+  <text x="340" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">40</text>
+  <text x="460" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">60</text>
+  <text x="580" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">80</text>
+  <text x="700" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">100</text>
+  
+  <!-- Y-axis values -->
+  <text x="85" y="515" text-anchor="end" font-family="Arial, sans-serif" font-size="14">0</text>
+  <text x="85" y="420" text-anchor="end" font-family="Arial, sans-serif" font-size="14">0.2</text>
+  <text x="85" y="330" text-anchor="end" font-family="Arial, sans-serif" font-size="14">0.4</text>
+  <text x="85" y="240" text-anchor="end" font-family="Arial, sans-serif" font-size="14">0.6</text>
+  <text x="85" y="150" text-anchor="end" font-family="Arial, sans-serif" font-size="14">0.8</text>
+  <text x="85" y="65" text-anchor="end" font-family="Arial, sans-serif" font-size="14">1.0</text>
+
+  <!-- Zone labels -->
+  <text x="220" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#006400">Adaptive Zone</text>
+  
+  <text x="520" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#8B0000">Fraud Temptation</text>
+  
+  <text x="520" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FF8C00">Operational Rigidity</text>
+
+  <!-- Company trajectories -->
+  <!-- Tesla -->
+  <circle cx="130" cy="285" r="5" fill="#006400"/>
+  <circle cx="190" cy="270" r="5" fill="#006400"/>
+  <circle cx="250" cy="255" r="5" fill="#006400"/>
+  <line x1="130" y1="285" x2="190" y2="270" stroke="#006400" stroke-width="2"/>
+  <line x1="190" y1="270" x2="250" y2="255" stroke="#006400" stroke-width="2"/>
+  <path d="M 250 255 L 265 252 L 260 245" fill="none" stroke="#006400" stroke-width="2"/>
+  <text x="130" y="310" font-family="Arial, sans-serif" font-size="14" fill="#006400" font-weight="bold">Tesla</text>
+
+  <!-- BetterPlace -->
+  <circle cx="460" cy="420" r="5" fill="#FF8C00"/>
+  <circle cx="550" cy="420" r="5" fill="#FF8C00"/>
+  <line x1="460" y1="420" x2="550" y2="420" stroke="#FF8C00" stroke-width="2"/>
+  <path d="M 550 420 L 565 420 L 560 413" fill="none" stroke="#FF8C00" stroke-width="2"/>
+  <text x="505" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#FF8C00" font-weight="bold">BetterPlace</text>
+
+  <!-- Nikola -->
+  <circle cx="420" cy="140" r="5" fill="#8B0000"/>
+  <circle cx="500" cy="120" r="5" fill="#8B0000"/>
+  <line x1="420" y1="140" x2="500" y2="120" stroke="#8B0000" stroke-width="2"/>
+  <path d="M 500 120 L 515 117 L 510 110" fill="none" stroke="#8B0000" stroke-width="2"/>
+  <text x="540" y="125" font-family="Arial, sans-serif" font-size="14" fill="#8B0000" font-weight="bold">Nikola</text>
+
+  <!-- Learning threshold label -->
+  <text x="450" y="280" font-family="Arial, sans-serif" font-size="12" fill="#FF4500" transform="rotate(-30 450 280)">Learning threshold</text>
+  <text x="430" y="300" font-family="Arial, sans-serif" font-size="10" fill="#FF4500" font-style="italic" transform="rotate(-30 430 300)">τ = μ(1-μ)/ε - 2</text>
+</svg>

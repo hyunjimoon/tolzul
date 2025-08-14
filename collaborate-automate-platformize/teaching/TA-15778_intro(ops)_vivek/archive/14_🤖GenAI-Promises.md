@@ -4,6 +4,20 @@
 **Duration:** 1.5 hours  
 **Instructor:** Prof. Vivek Farias
 
+----
+# manual note
+
+virtue of (push the number; making average ); blue embedding i have helps disambiguate (separate train station and radio station) - how do i know what to pay attention to; 
+- the animal didn't cross the street because it was too tired VS the animal didn't cross the street because it was too wide
+
+
+new in gpt 5 (bigger model and more data) - getting a model think more (test time)
+
+siting: does this slow down the knowledge creation??
+
+
+----
+
 ## Learning Objectives
 - Understand the evolution of AI/ML technologies and their operational applications
 - Critically evaluate GenAI applications in business operations
