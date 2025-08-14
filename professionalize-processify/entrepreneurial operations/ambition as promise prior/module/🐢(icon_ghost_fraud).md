@@ -1,3 +1,46 @@
+## 문단별 요약
+
+### **서두**
+
+- 창업의 핵심 역설은 “벤처가 자신이 속한 현실을 어떻게 만들어내는가”라는 문제.
+- 네 가지 지적 전통이 이를 다루었으나 각자 일부만 포착.
+
+---
+
+### **# charlie**
+
+- 전통적 운영관리는 안정적 조건에서 효율을 극대화하는 데 최적화됨.
+- 그러나 창업은 기존 현실에 맞추는 것이 아니라, 조정이 가능하도록 불확실성 구조를 설계하는 과정.
+- 질문은 “효율적으로 생산하는 방법”에서 “집단 행동을 이끌 신념 분포 설계”로 전환.
+
+---
+
+### **# moshe**
+
+- 통계·의사결정과학은 위험과 불확실성을 구분하고, 기대효용 극대화를 제시했으나 이는 안정된 확률/선호를 전제로 함.
+- 행동의사결정이론은 선호가 맥락에 따라 변하고, 창업에서는 신념과 효용이 동시에 변하는 ‘공진화’ 현상이 나타남.
+- 창업 현실을 설명하려면 이 공진화를 수학적으로 포착할 새로운 틀이 필요.
+
+---
+
+### **# vikash**
+
+- 창업과 인지과학을 베이즈 관점에서 통합.
+- 창업자의 약속을 ‘행동을 고취하고 신뢰성을 유지하는 불확실성 구조’로 모델링.
+- Beta(μ, τ) 분포를 활용해 창업자가 새로운 세계를 설계하는 과정을 설명.
+- 자원-합리성 관점에서, 실패 원인은 종종 ‘조기 정밀화’에 있으며, 성공은 정밀도 조율 능력에 달림.
+- 창업 성공은 신념과 가치의 공진화를 조율하는 데 있음.
+
+---
+
+### **# scott**
+
+- 창업 이론은 ‘기회 발견’ → ‘기회 창출’ → ‘약속 설계’로 진화.
+- Stern은 창업자가 다양한 이해관계자에게 작동할 수 있는 신념 분포를 설계한다고 주장.
+- 이는 전략경영의 ‘계획’ → ‘의미형성’ 전환과 연결됨.
+- Beta(μ, τ) 분포는 대담한 약속(μ)과 전략적 모호성(τ)을 동시에 설명하는 수학적 도구로 기능.
+
+
 Four intellectual traditions have grappled with entrepreneurship's fundamental paradox—how ventures create the realities they inhabit—yet each captures only fragments of this phenomenon. 
 # charlie
 Operations management, from Taylor's (1911) scientific management to the Toyota Production System (Womack, Jones, & Roos, 1990), perfected coordination within stable constraints, achieving remarkable efficiency when inputs and outputs are well-defined. Yet as Skinner (1969) presaged, strategic alignment assumes an existing reality to align with; entrepreneurship inverts this logic, requiring founders to architect the uncertainty structures that make coordination possible. The operational question transforms from "how do we efficiently produce X?" to "what belief distribution about X enables the collective action necessary to manifest X?"
