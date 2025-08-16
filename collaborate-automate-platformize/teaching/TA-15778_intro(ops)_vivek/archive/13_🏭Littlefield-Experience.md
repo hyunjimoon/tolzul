@@ -1,9 +1,31 @@
-# Simulation Exercise: Littlefield Technologies
+# Simulation Exercise: Littlefield Technologies + venture pitch
+
 
 **Duration:** August 6 (9:00 AM) - August 8 (8:30 AM)  
 **Simulation URL:** opy.responsive.net/lf/farias/  
 **Report Due:** August 14  
 **Assignment Type:** Team (Graded)
+
+----
+i was proud that alexandra, gary, kwame, dereck's team nailed both simulation and venture pitch
+- their kpi for "revenue per job" was interesting
+- proactive planning beats reactive decision making 
+
+Marco's Q: preanalysis vs trying new things
+- contract 2 would be better (lead time and prioritization)
+- there were experimentation phase (machine purchase (dropping to 40k to 900))
+- someone didn't sleep (no monitor 4hr block)
+
+
+### team 2 
+day of demand (500k), 1.2k kits (1.2m); more inventory rather than loosing demand (total revenue 384m)
+
+gpu capacity for token
+
+
+
+-----
+
 
 ## Learning Objectives
 - Apply operations management concepts in dynamic environment

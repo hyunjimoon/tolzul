@@ -45,15 +45,15 @@ While entrepreneurs choose (μ,τ), they operate within a parameter space shaped
 
 #### 2.2.3 The Complete Decision Table
 
-| **Decision Maker** | **Variable**           | **Nature**              | **Control Mechanism**          | **Links to Propositions**                    |
-|--------------------|------------------------|-------------------------|--------------------------------|----------------------------------------------|
-| **Entrepreneur**   | μ (aspiration)         | Strategic choice        | Vision calibration             | Props 2,4: μ* = 1/(n+1)                      |
-|                    | τ (precision)          | Communication choice    | Specificity design             | Props 3,4: τ < μ(1-μ)/ε - 2                  |
-| **Technology**     | n (complexity)         | Physical constraint     | Operations difficulty          | Props 2,4: Determines μ*,τ*                  |
-|                    | c (information cost)   | Market structure        | Due diligence infrastructure   | Prop 4: Shapes τ*                            |
-| **Institution**    | V_sd (success reward)  | Market incentive        | Exit multiples                 | Props 1,4: Drives promise escalation         |
-|                    | V_snd (fraud penalty)  | Legal deterrent         | Criminal sanctions             | Constrains high τ choices                    |
-|                    | V_ns (failure cost)    | Safety net              | Bankruptcy protection          | Enables experimentation                      |
+| **Variable**          | **Links to Propositions** | **Links to Propositions**            | **Nature**           | **Control Mechanism**        |
+| --------------------- | ------------------------- | ------------------------------------ | -------------------- | ---------------------------- |
+| μ (aspiration)        |                           | Props 2,4: μ* = 1/(n+1)              | Strategic choice     | Vision calibration           |
+| τ (precision)         |                           | Props 3,4: τ < μ(1-μ)/ε - 2          | Communication choice | Specificity design           |
+| n (complexity)        |                           | Props 2,4: Determines μ*,τ*          | Physical constraint  | Operations difficulty        |
+| c (information cost)  |                           | Prop 4: Shapes τ*                    | Market structure     | Due diligence infrastructure |
+| V_sd (success reward) |                           | Props 1,4: Drives promise escalation | Market incentive     | Exit multiples               |
+| V_snd (fraud penalty) |                           | Constrains high τ choices            | Legal deterrent      | Criminal sanctions           |
+| V_ns (failure cost)   |                           | Enables experimentation              | Safety net           | Bankruptcy protection        |
 
 This architecture reveals why entrepreneurial success requires more than good intentions or bold vision. The interplay between choice variables (μ,τ) and environmental parameters (n,c,V_sd,V_snd,V_ns) creates a complex optimization landscape where naive strategies—whether maximally bold or maximally precise—lead to predictable failure modes.
 
