@@ -1,3 +1,9 @@
+[[09-03|25-09-03]]
+Berlant의 '정동적 소진'이 제가 창업 과정에서 겪은 관계의 상실과 정확히 맞아떨어집니다
+
+
+---
+
 from https://news.uchicago.edu/podcasts/big-brains/why-chasing-good-life-holding-us-back-lauren-berlant
 - entrepreneurial subjectivity
 

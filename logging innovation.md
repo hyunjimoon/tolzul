@@ -11,4 +11,4 @@
 		2. i noticed 
 		3. replacement effect - if you have someone to compete with, it's most efficient (as all models are wrong, and good for scott as he can )
 
-진짜 사랑하면 신경쓰고, 잘해주고 싶고, 잘해주려면 내가 잘하는 걸 잘하고 싶은 사람을 만나야하고
+[[09-03|25-09-03]]
