@@ -1,5 +1,15 @@
 [[09-04|25-09-04]]
 
+
+assume prior is exogenous (= from the past), propose the prior
+# 🔑key 
+1. there's no commitment free information as we follow "differences that makes differences"
+2. optimality and choice 
+3. 
+
+
+----
+
 ## Refuting Irreversibility: A Systematic Deconstruction
 
 ### Against Eric Van den Steen's Irreversibility Framework

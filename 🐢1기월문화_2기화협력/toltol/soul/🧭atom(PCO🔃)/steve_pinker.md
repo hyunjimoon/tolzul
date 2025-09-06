@@ -6,6 +6,31 @@
 ![[Pasted image 20241201082114.png|100]]
 ## out
 
+ Cognitive and Behavioral Genetics
+
+  30th - your encouragement genuinely brightened my research trajectory. I've been applying your work on language and reason to my research that bridges evolutionary and Bayesian entrepreneurship. 
+
+I'm writing with an update that connects to our conversation. My chapter in a new Korean book, "AI 내부자들" (AI Insiders), applies your rationality principles to a puzzle: **why did investors see completely opposite futures in the same Tesla prototype?** The answer reveals how conflicting beliefs can accelerate innovation rather than hinder it.
+
+**The Book's Mission** Following your work on making complex ideas accessible, we're bringing rational thinking about AI to Korean readers. Our 19 authors discovered that **true AI innovation requires philosophical depth, not technical mastery** - essentially applying your "rationality as means to ends" to AI adoption.
+
+**Why This Matters** That Han Kang quote I shared about conscience being "the most terrifying thing in the world" resonates here. Just as she wrote about collective courage, Korea needs collective rationality about AI - separating hype from reality, understanding what AI can and cannot do.
+
+**The Request** Would you consider a brief endorsement (3-4 lines)? Your voice would mean enormously to Korean readers who need, as you put it, "cognitive tools to navigate an uncertain world." All royalties support disadvantaged students pursuing engineering.
+
+**Quick Context:**
+
+- Expected reach: 50,000+ copies (significant in Korea)
+- Co-endorsers: Jungwoo Ha (NAVER AI), Sung Kim (Upstage CEO)
+- My chapter shows how Bayesian reasoning turns investor disagreement into strategic advantage
+
+  
+
+With gratitude for your influence on my thinking,
+
+Angie Moon
+
+
 | Publication Year | Book Title                                              | Key Message                                                                                               | three relevant to [[🌏(🧭)E(bp).environment affecting belief and prior]]                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | ---------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1984             | Language Learnability and Language Development          | Language acquisition in children follows systematic patterns and is guided by innate linguistic abilities |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |

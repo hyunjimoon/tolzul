@@ -7,7 +7,7 @@
 MIT 박사과정생 문현지입니다. 창업 생태계에서 약속의 구조를 연구하고 있습니다.
 
 교수님께서 2024년 2학기 11주차(11/12, 11/14)에 다루신 Lauren Berlant의 
-<Cruel Optimism> 강의자료를 요청드리고자 연락드립니다.
+Cruel Optimism 강의자료를 요청드리고자 연락드립니다.
 
 제 연구는 창업자들이 과도한 정밀도의 약속으로 스스로 학습 능력을 
 차단하는 현상을 다룹니다. 시장 신호를 무시하게 되는 이 구조적 경직성이 
@@ -27,11 +27,12 @@ Berlant의 "promise of the promise" 개념과 깊이 연결된다고 생각합�
 
 https://claude.ai/share/efba389d-8bf3-4a16-8929-02d49da87ced
 
-- [[harbermas]]' "inheritance becomes the promise of the promise, of a technical optimism; it sutures them both to life lived without risk"
-Looking at these interconnected texts, I can trace a fascinating theoretical lineage around promises, technical systems, and hidden costs.
+- [[harbermas]]' "inheritance becomes the promise of the promise, of a technical optimism; it sutures them both to life lived without risk" Looking at these interconnected texts, I can trace a fascinating theoretical lineage around promises, technical systems, and hidden costs.
 
 [[andrew(bayesian cringe)]]
-## 1. "Technical" in Berlant's "Technical Optimism"
+
+
+##  1. "Technical" in Berlant's "Technical Optimism"
 
 In "Exchange Value," when Berlant writes about "the promise of the promise, of a technical optimism," the word "technical" carries specific critical theory weight. The inheritance transforms into pure exchange potential - not promising specific satisfactions but promising the eternal availability of promising itself. "Technical" here evokes:
 
@@ -41,6 +42,7 @@ In "Exchange Value," when Berlant writes about "the promise of the promise, of a
 
 The reference likely draws from critical theory's longstanding critique of technical rationality (Habermas, Marcuse) where "technical" denotes systems that operate according to their own logic, independent of human flourishing.
 
+----- 
 ## 2. The Self-Referential "Promise of Promise"
 
 This recursive structure - a promise that promises only the ability to continue promising - creates what systems theorists would call a "strange loop." In Berlant's story, the inheritance doesn't promise specific goods but rather infinite potential for exchange. This self-referentiality:
@@ -49,7 +51,9 @@ This recursive structure - a promise that promises only the ability to continue 
 - Generates a trap where the maintenance of potential becomes the sole activity
 - Parallels what Luhmann called "autopoietic systems" - systems that produce their own reproduction
 
-The concept extends to any system where the meta-level operation (maintaining the ability to operate) consumes the system's actual purpose.
+The concept extends to any system where the ⭐️meta-level operation (maintaining the ability to operate) consumes the system's actual purpose.⭐️
+
+---
 
 ## 3. Hidden Technical Debt as Promise Pathology
 
@@ -60,6 +64,10 @@ Sculley et al.'s "hidden technical debt" maps perfectly onto this framework. ML 
 - **The trap**: Systems become frozen by their own complexity, where maintaining the promise prevents delivering on it
 
 Like Berlant's characters who can't spend their wealth, ML systems accumulate debt that prevents the very improvements they were meant to enable.
+
+can't do what they were meant to do (e.g. 창업의 본질 - 가치설득, 창출, 측정가능한건 본질이 아니다. )
+
+----
 
 ## 4. Information Cost and Entrepreneurial Feedback Loops
 
@@ -120,7 +128,11 @@ Bateson suggested that all evolution is driven by the double bind, whenever circ
 
 Most significant here is Bateson's exploration of what he later came to call "the pattern that connects"[[10]](https://en.wikipedia.org/wiki/Double_bind#cite_note-10)—that problems of communication which span more than one level (e.g., the relationship between the individual and the family) should also be expected to be found spanning other pairs of levels in the hierarchy (e.g. the relationship between the genotype and the phenotype):
 
-> We are very far … from being able to pose specific questions for the geneticist; but I believe that the wider implications of what I have been saying modify somewhat the philosophy of genetics. Our approach to the problems of schizophrenia by way of a theory of levels or logical types has disclosed first that the problems of adaptation and learning and their pathologies must be considered in terms of a hierarchic system in which stochastic change occurs at the boundary points between the segments of the hierarchy. We have considered three such regions of stochastic change—the level of genetic mutation, the level of learning, and the level of change in family organization. We have disclosed the possibility of a relationship of these levels which orthodox genetics would deny, and we have disclosed that at least in human societies the evolutionary system consists not merely in the selective survival of those persons who happen to select appropriate environments but also in the modification of family environment in a direction which might enhance the phenotypic and genotypic characteristics of the individual members.[[11]](https://en.wikipedia.org/wiki/Double_bind#cite_note-11)
+> We are very far … from being able to pose specific questions for the geneticist; but I believe that the wider implications of what I have been saying modify somewhat the philosophy of genetics. Our approach to the problems of schizophrenia by way of a theory of levels or logical types has disclosed first that the problems of adaptation and learning and their pathologies must be considered in terms of a ⭐️hierarchic system in which stochastic change occurs at the boundary points between the segments of the hierarchy⭐️. 
+> 
+> We have considered three such regions of stochastic change—the level of genetic mutation, the level of learning (??), and the level of change in family organization. 
+> 
+> We have disclosed the possibility of a relationship of these levels which orthodox genetics would deny, and we have disclosed that at least in human societies the evolutionary system consists not merely in the selective survival of those persons who happen to select appropriate environments but also in the modification of family environment in a direction which might enhance the phenotypic and genotypic characteristics of the individual members.[[11]](https://en.wikipedia.org/wiki/Double_bind#cite_note-11)
 
 ### Positive double binds
 

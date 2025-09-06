@@ -1,7 +1,14 @@
+[[09-05|25-09-05]]
+
+1. there's one tool in research, which is synthesize, not just being able to give you mechanically what happened in a prior research study, but synthesize that in a way that allows you to be generative, to exposit a model that's simple and you know, that's as complex as it needs to be, But no more complex
+
+2. 기존 이론의 제약을 완화하여 놀라운 현상을 설명하거나 새로운 예측을 만들되, 기존 문헌 대비 정확한 기여를 명확히 하라.
+
 [[09-04|25-09-04]]
 1. irreversible -> choice in sub level can be formulated as optimization in higher level, discovered
 2. 
 
+[[📜gleick11_information]]
 2025-06-27
 - set aside 10mins collaborating on my career as i am certain that i'd be a great asset to your vision of bayesian entrepreneurship as you agreed from the mail to josh (move toward computational cognitive science)
 - critical reason for choosing my research topic is bc you said bayes talent is need, but we didn't know at that time meaning of bayes btw you and me and that's ok. i just needed to propagate that learning into action

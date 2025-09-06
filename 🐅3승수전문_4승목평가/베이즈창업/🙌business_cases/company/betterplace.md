@@ -1,4 +1,4 @@
-2025-05-19
+ 2025-05-19
 
 | Company          | Market Validation Experiment (SKU)             | Operational Verification Experiment (SKU)       | Market Validation Experiment (MKU)                                                    | Operational Verification Experiment (MKU)                                                                                          |
 | ---------------- | ---------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -8,3 +8,7 @@
 
 2025-05-13
 [[tesla_betterplace.png]]
+
+[[Shai Agassi Better Place HBR.pdf]]
+
+![[Better Place Failure FastCo 2014.pdf]]
