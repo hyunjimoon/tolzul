@@ -1,3 +1,9 @@
+[[09-08|25-09-08]]
+
+find character's sacred flaw (Fake it till you make it: Trick or Tragedy)
+
+----
+
 ### Decoding "Humiliation is Acid"
 
 This metaphor captures **how humiliation violently strips characters of their delusions**, forcing transformative self-reckoning. 

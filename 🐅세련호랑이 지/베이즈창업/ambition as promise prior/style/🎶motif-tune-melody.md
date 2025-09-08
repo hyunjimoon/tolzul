@@ -6,7 +6,7 @@
 |:---:|:---:|:---|:---|
 | 🎵 | **Motif** | **"A prior is not a belief to be held, but a lever to be pulled"** | Captures the paradigm shift from viewing promises as predictions to understanding them as architectural choices that determine venture fate |
 | 🎶 | **Tune** | **"Tesla's adaptive τ trajectory vs Better Place's rigid precision"** Tesla evolved τ from 5→12→25→40, preserving learning capacity μ(1-μ)/(τ+1) ≈ 0.02. Better Place locked at τ≈80, reducing learning to 0.003. Tesla made production hell the price of learning; Better Place made precision their prison. Nikola at τ≈100 made honest updating mathematically impossible. | Concrete illustration of how promise architecture determines venture destiny through mathematical mechanisms |
-| 🎼 | **Melody** | **"From M0 to M3: The Evolution of Promise Architecture"** Success probability evolves from constant (M0) through linear persuasion (M1) to regularized reliability (M2) and finally hierarchical adaptation (M3). The journey from P(s)=P₀ to P(s)=∫φ(1-φ)ⁿ·Beta(φ;μτ,(1-μ)τ)dφ represents the entrepreneur's transformation from promise slave to promise master. Optimal architecture: μ*=1/(n+1), τ* varies with validation. | Complete narrative arc showing model progression and mathematical evolution of entrepreneurial decision-making |
+| 🎼 | **Melody** | **"From M0 to M4: The Evolution of Promise Architecture"** Success probability evolves from constant (M0) through PRHC: Parameterize (M1), Regularize (M2), Hierarchize (M3), and Calibrate (M4). The journey from P(s)=P₀ to P(s|data)=∫∫φ(1-φ)ⁿ·Beta(φ;μτ,(1-μ)τ)·p(τ|data)dφdτ represents endogenizing success probability. Optimal architecture: μ*=1/(n+1), τ* initially low to preserve learning capacity. | Complete narrative arc showing how we endogenize P(s) while V remains exogenous |
 
 ## The Three Forking Paths
 
@@ -33,9 +33,9 @@
 **"The Mathematical Architecture"** (Paragraphs 7-18)
 - Core parameters: φ (promise), μ (aspiration), τ (precision)
 - Complexity n from reliability engineering
-- Value V vs Cost C(τ) = c·ln(τ+1)
+- Value V (exogenous) vs Cost C(τ) = c·ln(τ+1)
 - Four perspectives: Statistical, Financial, Evolutionary, Literary
-- Model progression: M0→M1→M2→M3
+- Model progression: M0→M1→M2→M3→M4 (PRHC)
 
 ### ⚡ Module 3 - Show/Examples
 **"Three Fates"** (Paragraphs 19-26)
@@ -100,4 +100,4 @@ Each committee member contributes to the 32-paragraph symphony:
 
 **"We describe, prescribe, and enable ventures to scale through calibrated promise architectures"**
 
-From slaves to masters of promise. From M0 to M3. From point estimates to distributions. The 32 paragraphs teach us that entrepreneurial success requires evolving from objects of market forces to evolutionary subjects capable of adapting while maintaining strategic direction.
+We endogenize success probability P(s) through promise architecture while value V remains market-determined. From M0 to M4 via PRHC framework. From point estimates to distributions. The 32 paragraphs teach us that entrepreneurs maximize E[U] = P(s)·V - C(τ) by transforming success from exogenous parameter to strategic choice variable.

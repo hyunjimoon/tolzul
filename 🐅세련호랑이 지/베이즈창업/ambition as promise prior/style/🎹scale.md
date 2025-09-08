@@ -4,18 +4,20 @@
 **Ambition as Promise Prior: How Entrepreneurial Promises Architecture Future Success**
 
 ## Core Thesis
-Entrepreneurs evolve from slaves of their promises (fixed precision) to masters of promise (designed uncertainty), transforming from objects of market forces to evolutionary subjects capable of adapting while maintaining strategic direction. The success probability evolution progresses from M0 (constant) through M1 (linear) to M2 (regularized) and finally M3 (hierarchical), with optimal promise architecture at μ* = 1/(n+1) and τ* varying with validation milestones.
+We endogenize success probability P(s) through promise architecture design. Entrepreneurs maximize expected utility E[U] = P(s)·V - C(τ), where P(s) is strategically chosen via (φ, μ, τ) while value V remains market-determined. The PRHC framework evolves from M0 (no agency) through M4 (full calibration), with optimal μ* = 1/(n+1) and τ* initially low to preserve learning capacity (one-step optimization with built-in flexibility).
 
-## Core Formula Summary
+## Core Formula Summary (PRHC Framework)
 **Success Probability Evolution:**
-- M0: P(s) = P₀ (constant)
-- M1 parameterize: P(s) = φ (linear in promise)
-- M2 regularize: P(s) = φ(1-φ)ⁿ (sell × deliver)
-- M3 hierarchize: P(s) = ∫φ(1-φ)ⁿ·Beta(φ; μτ, (1-μ)τ)dφ
+- M0 baseline: P(s) = P₀ (constant, no agency)
+- M1 parameterize: P(s) = φ (linear in promise level)
+- M2 regularize: P(s) = φ(1-φ)ⁿ (sell × deliver constraint)
+- M3 hierarchize: P(s) = ∫φ(1-φ)ⁿ·Beta(φ; μτ, (1-μ)τ)dφ (distributional flexibility)
+- M4 calibrate: P(s|data) = ∫∫φ(1-φ)ⁿ·Beta(φ; μτ, (1-μ)τ)·p(τ|data)dφdτ (market feedback)
 
 **Optimal Promise Architecture:**
-- μ* = 1/(n+1)
-- τ* = max{0, V·n/[c(n+1)²] - 1}
+- μ* = 1/(n+1) (endogenizes success probability)
+- τ* initially low (broad ignorance prior, preserves learning capacity)
+- Note: One-step optimization with built-in flexibility, not multi-step adaptation
 
 ## Key Insight
 The history of electrification reveals a fundamental tension: Nikola Tesla lost to Edison despite superior technology, Better Place failed despite $800M funding, yet Tesla Motors succeeded by mastering the balance between promise and delivery. Our key contribution is endogenizing success probability, transforming it from an exogenous parameter to a strategic choice variable shaped by promise design.

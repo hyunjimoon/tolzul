@@ -19,7 +19,7 @@
 2. **Module 2: Intellectual/Theory** (12 paragraphs)
    - Model parameters (φ, μ, τ, n, V, C)
    - Multiple perspectives: Statistical, Financial, Evolutionary, Literary
-   - Model progression: M0→M1→M2→M3
+   - Model progression: M0→M1→M2→M3→M4 (PRHC framework)
 
 3. **Module 3: Show/Examples** (8 paragraphs)
    - Tesla vs Better Place vs Nikola comparison
@@ -50,7 +50,8 @@
 - 4개 모듈 구조 유지 (Romance→Intellectual→Show→Predictive)
 - 32개 단락 순서 준수
 - 수학적 표기법 일관성: φ (promise level), μ (aspiration), τ (precision), n (complexity)
-- 핵심 공식: P(s) = φ(1-φ)ⁿ, μ* = 1/(n+1)
+- 핵심 공식: PRHC 프레임워크로 P(s) 내생화, μ* = 1/(n+1)
+- 최적화: E[U] = P(s)·V - C(τ), V는 외생적
 
 ## 🎶 motif-tune-melody.md - 논문의 핵심 메시지 압축
 
@@ -116,7 +117,7 @@
 - Tesla: 적응적 τ 궤적 (5→12→25→40)
 - Nikola: 경직된 높은 τ (~100)
 - BetterPlace: 정직한 높은 τ → 운영 실패
-- WeWork: 전략적 모호성의 성공
+- 핵심: 성공확률 P(s)를 내생화, 가치 V는 외생적 (시장 결정)
 
 ### 5. 위원회 관점 통합
 - **Charlie Fine**: 운영 관리와 가치사슬 관점 (Module 2: complexity parameter n)
@@ -146,7 +147,7 @@
 ### Module 2: Intellectual/Theory [Paragraphs 7-18]
 - Core parameters 정의 (φ, μ, τ, n, V, C)
 - Multiple theoretical perspectives 통합
-- Model progression (M0→M1→M2→M3)
+- Model progression (M0→M1→M2→M3→M4 via PRHC)
 
 ### Module 3: Show/Examples [Paragraphs 19-26]
 - Tesla, Better Place, Nikola 비교 분석

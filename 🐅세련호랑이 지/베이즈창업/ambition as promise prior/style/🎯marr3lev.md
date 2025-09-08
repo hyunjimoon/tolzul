@@ -1,65 +1,68 @@
-# 🎯 Marr's Three Levels: Promise Paradoxes and Exaptation Architecture
+# 🎯 Marr's Three Levels: Ambition as Promise Prior
 
-## Overview: Marr's Levels Applied to Promise Paradoxes
+## Overview: Marr's Levels Applied to Promise Architecture
 
-- **Computational Level** (What & Why) → Resolving two paradoxes through distributional design
-- **Algorithm Level** (How) → Optimizing (μ,τ) to preserve exaptation space  
-- **Implementation Level** (With What) → Natural language analysis and empirical validation
+- **Computational Level** (What & Why) → Endogenizing success probability through promise design
+- **Algorithm Level** (How) → Four-step PRHC methodology with (φ, μ, τ) optimization  
+- **Implementation Level** (With What) → 32-paragraph framework with empirical validation
 
-## 1. Computational Level - What and Why [기: Opening]
+## 1. Computational Level - What and Why [Module 1: Romance]
 
-### The Dual Paradox Problem
+### The Core Problem
 
-**Core Computational Challenge**: Resolve two simultaneous paradoxes:
+**Fundamental Tension**: Nikola Tesla lost to Edison despite superior technology, Better Place failed despite $800M funding, yet Tesla Motors succeeded—why?
 
-**Paradox 1 - Revolution vs Increment**:
-- **Sell Side**: Markets fund revolutionary visions
-- **Deliver Side**: Operations enable incremental progress
-- **Constraint**: p(Fund|Promise) ∝ Revolutionary BUT p(Success|Promise) ∝ Incremental
+**Core Computational Challenge**: Transform success probability from exogenous parameter to strategic choice variable
 
-**Paradox 2 - Specific vs Vague**:
-- **Trust Side**: Stakeholders require specificity
-- **Pivot Side**: Learning requires flexibility
-- **Constraint**: p(Trust|Promise) ∝ Specific BUT p(Adapt|Promise) ∝ Vague
+**Three Forking Paths**:
+1. **Fake it till you make it** (without checking) → Fraud
+2. **Check before making** (excessive verification) → Paralysis
+3. **Designed uncertainty** (optimal path) → Success
 
-### Computational Goal: Exaptation Preservation
+### Computational Goal: Optimal Promise Architecture
 
-**Objective**: Design promise architecture (μ,τ) that preserves exaptation space—capacity for value creation through unintended applications
+**Objective**: Design promise parameters (φ, μ, τ) that endogenize success probability P(s) while value V remains exogenous
 
-**Exaptation Examples**:
-- Tesla batteries → Powerwall, grid storage (unplanned)
-- Amazon servers → AWS cloud platform (unexpected)
-- Slack game company → Team communication (pivoted)
+**Success Probability Evolution (PRHC):**
+- M0 baseline: P(s) = P₀ (constant, no agency)
+- M1 parameterize: P(s) = φ (linear persuasion)
+- M2 regularize: P(s) = φ(1-φ)ⁿ (sell × deliver)
+- M3 hierarchize: P(s) = ∫φ(1-φ)ⁿ·Beta(φ; μτ, (1-μ)τ)dφ
+- M4 calibrate: P(s|data) = ∫∫φ(1-φ)ⁿ·Beta(φ; μτ, (1-μ)τ)·p(τ|data)dφdτ
 
 **Mathematical Formulation**:
 ```
-Maximize: E[Value] = V_intended + V_exaptation(σ²)
-Subject to: σ² = μ(1-μ)/(τ+1) > ε_min
-Where: V_exaptation increases with preserved variance
+Maximize: E[U] = P(s)·V - C(τ)
+Where: P(s) is endogenous (choice variable)
+       V is exogenous (market-determined)
+       C(τ) = c·ln(τ+1)
+Subject to: Learning capacity > ε/(n+1)
 ```
 
-**Key Insight**: Tomorrow's innovation emerges from today's uncertainty—variance isn't noise but option value.
+**Key Insight**: We endogenize success probability through promise architecture, transforming it from exogenous parameter to strategic choice.
 
-## 2. Algorithm Level - How [승: Development]
+## 2. Algorithm Level - How [Module 2: Intellectual]
 
-### Algorithm for Paradox Resolution
+### Algorithm: PRHC Methodology
 
-**Core Algorithm**: Distributional Promise Design
+**Core Algorithm**: Four-step promise architecture design
 
-**Step 1 - Complexity Assessment**:
+**Step 1 - Parameterize**:
 ```python
-def assess_complexity(venture):
+def parameterize_promise(venture):
     n = count_critical_components()
     # Software: n ≈ 2-3
     # Manufacturing: n ≈ 5-6  
     # Deep tech: n ≈ 10+
-    return n
+    φ = set_promise_level()  # Based on market requirements
+    return φ, n
 ```
 
-**Step 2 - Ambition Calibration**:
+**Step 2 - Regularize**:
 ```python
-def set_optimal_ambition(n):
-    μ_star = 1/(n+1)
+def regularize_with_delivery(n):
+    μ_star = 1/(n+1)  # Optimal aspiration
+    # Delivery constraint: P(deliver|φ) = (1-φ)ⁿ
     # Yields promise levels:
     # Software: 30-50% improvement
     # Manufacturing: 15-20%
@@ -67,40 +70,52 @@ def set_optimal_ambition(n):
     return μ_star
 ```
 
-**Step 3 - Precision Management**:
+**Step 3 - Hierarchize**:
 ```python
-def manage_precision(stage, evidence):
+def hierarchize_with_distribution(μ, stage):
+    # Embed distributional flexibility
     if stage == "early":
         τ = random.uniform(3, 10)  # Start low
     else:
         τ_max = μ*(1-μ)/ε - 1  # Learning bound
-        τ = min(τ_previous + 5*evidence, τ_max)
+        τ = min(τ_previous + 5, τ_max)
+    # Create Beta(φ; μτ, (1-μ)τ) distribution
     return τ
 ```
 
-**Step 4 - Exaptation Space Monitoring**:
+**Step 4 - Calibrate**:
 ```python
-def preserve_exaptation_space(μ, τ):
-    variance = μ*(1-μ)/(τ+1)
-    if variance < 0.02:
-        warning("Innovation space critically low")
-    return variance > threshold
+def calibrate_with_feedback(market_data, μ, τ):
+    # Simulate and adjust based on market feedback
+    learning_capacity = μ*(1-μ)/(τ+1)
+    if learning_capacity < 0.02:
+        warning("Learning capacity critically low")
+    # Update beliefs: Beta posterior with market data
+    μ_new, τ_new = bayesian_update(μ, τ, market_data)
+    return μ_new, τ_new
 ```
 
-### Paradox Resolution Mechanisms
+### Model Progression Mechanisms (PRHC)
 
-**Mechanism 1 - Revolution/Increment**:
-- Promise distribution spans both revolutionary vision (right tail) and incremental milestones (mode)
-- Beta(μτ, (1-μ)τ) captures aspiration and achievability simultaneously
+**M0 → M1**: Parameterize
+- Recognize that promise level φ affects success
+- P(s) transforms from constant P₀ to φ
 
-**Mechanism 2 - Specific/Vague**:
-- Low τ provides vagueness for pivoting
-- Sufficient μτ provides specificity for trust
-- Balance: τ < 10 early, increasing with validation
+**M1 → M2**: Regularize
+- Add delivery constraint (1-φ)ⁿ
+- P(s) = φ(1-φ)ⁿ balances sell and deliver
 
-## 3. Implementation Level - With What [전 + 결]
+**M2 → M3**: Hierarchize
+- Embed distributional flexibility through Beta(φ; μτ, (1-μ)τ)
+- Preserve learning capacity μ(1-μ)/(τ+1)
 
-### 전1: Measurement Implementation
+**M3 → M4**: Calibrate
+- Integrate market feedback through p(τ|data)
+- Update posterior beliefs based on observed outcomes
+
+## 3. Implementation Level - With What [Modules 3 & 4]
+
+### Module 3: Empirical Implementation
 
 **Natural Language to Mathematics**:
 
@@ -132,9 +147,9 @@ const extractPromiseArchitecture = (text) => {
 };
 ```
 
-### 전2: Empirical Validation
+### Module 4: Predictive Implementation
 
-**Implementation Results**:
+**Implementation Results for 32 Paragraphs**:
 
 | Company | Promise Architecture | Learning Capacity | Outcome | Module |
 |---------|---------------------|-------------------|---------|--------|
@@ -145,38 +160,41 @@ const extractPromiseArchitecture = (text) => {
 
 **Critical Finding**: Ventures with σ² < 0.02 showed 80% failure rate and zero exaptation value
 
-### 결: Implementation Synthesis
+### Implementation Synthesis for 32 Paragraphs
 
-**Complete System Architecture**:
+**Complete Paper Architecture**:
 
 ```python
-class PromiseArchitecture:
-    def __init__(self, venture_type):
-        self.n = self.assess_complexity(venture_type)
-        self.μ_optimal = 1/(self.n + 1)
-        self.τ_current = 5  # Start low
-        self.milestones = []
+class AmbitionAsPromisePrior:
+    def __init__(self, module_structure):
+        # Module 1: Romance (6 paragraphs)
+        self.historical_framing = paragraphs[1]
+        self.core_contribution = paragraphs[2]  # Endogenizing P(s)
+        self.three_paths = paragraphs[3]
+        self.prhc_method = paragraphs[4]
         
-    def update_precision(self, evidence):
-        """Progressive precision refinement"""
-        if evidence.validated:
-            self.τ_current = min(self.τ_current + 5, self.max_tau())
-            self.milestones.append(evidence)
-            
-    def max_tau(self):
-        """Learning constraint boundary"""
-        ε = 0.01  # Minimum learning capacity
-        return self.μ_optimal*(1-self.μ_optimal)/ε - 1
+        # Module 2: Theory (12 paragraphs)
+        self.parameters = {φ, μ, τ, n, V:exogenous, C}
+        self.models = [M0, M1, M2, M3, M4]  # PRHC progression
         
-    def exaptation_space(self):
-        """Current innovation capacity"""
-        return self.μ_optimal*(1-self.μ_optimal)/(self.τ_current + 1)
+        # Module 3: Examples (8 paragraphs)
+        self.cases = {Tesla, BetterPlace, Nikola}
         
-    def check_paradox_resolution(self):
-        """Verify both paradoxes addressed"""
-        revolution_increment = self.μ_optimal > 0.1 and self.μ_optimal < 0.5
-        specific_vague = self.τ_current < 10 or len(self.milestones) > 3
-        return revolution_increment and specific_vague
+        # Module 4: Implications (6 paragraphs)
+        self.implications = {scholars, practitioners, ecosystem}
+        
+    def evolve_success_probability(self, stage):
+        """Progress through M0→M1→M2→M3→M4 (PRHC)"""
+        if stage == 'M0':
+            return P_0  # No agency
+        elif stage == 'M1':
+            return φ  # Parameterize
+        elif stage == 'M2':
+            return φ * (1-φ)**n  # Regularize
+        elif stage == 'M3':
+            return integrate_beta_distribution()  # Hierarchize
+        elif stage == 'M4':
+            return calibrate_with_data()  # Calibrate
 ```
 
 **Statistical Validation (Gelman's Critique)**:
@@ -193,23 +211,23 @@ Andrew Gelman's perspective reveals critical robustness concerns:
 - Posterior predictive checks on promise evolution
 - Multi-analyst concordance on precision coding
 
-## Integration: Marr Meets 기승전결
+## Integration: Marr Meets 4 Modules
 
-| Level | Stage | Focus | Key Implementation |
-|-------|-------|-------|-------------------|
-| **Computational** | 기 (Opening) | Dual paradox identification | Exaptation space as objective |
-| **Algorithm** | 승 (Development) | Resolution through distributions | (μ,τ) optimization protocol |
-| **Implementation** | 전 (Turn) | Empirical measurement | Natural language analysis |
-| **Implementation** | 결 (Conclusion) | Validation & critique | Robustness per Gelman |
+| Level | Module | Paragraphs | Key Implementation |
+|-------|--------|------------|-------------------|
+| **Computational** | Module 1 | 1-6 | Problem identification, core contribution |
+| **Algorithm** | Module 2 | 7-18 | PRHC methodology, model progression |
+| **Implementation** | Module 3 | 19-26 | Empirical cases and validation |
+| **Implementation** | Module 4 | 27-32 | Implications and tools |
 
-## Committee Contributions to Implementation
+## Committee Contributions Across 32 Paragraphs
 
-- **Scott Stern**: Paradox identification and theoretical framing
-- **Charlie Fine**: Operational complexity assessment (n parameter)
-- **Moshe Ben-Akiva**: Choice modeling for stakeholder responses
-- **Vikash Mansinghka**: Probabilistic programming for inference
-- **Andrew Gelman**: Statistical criticism ensuring robust conclusions
+- **Scott Stern**: Module 1 (Paragraphs 1-6) - Paradox framing
+- **Charlie Fine**: Module 2 (Paragraphs 7-18) - Complexity parameter n
+- **Moshe Ben-Akiva**: Module 3 (Paragraphs 19-26) - Choice modeling
+- **Vikash Mansinghka**: Module 3 (Paragraphs 19-26) - Probabilistic validation
+- **Andrew Gelman**: Module 4 (Paragraphs 27-32) - Statistical criticism
 
 ## Final Implementation Wisdom
 
-**"Roughly right beats exactly wrong"**—Tesla's imprecise promise created $100B in unexpected value, while Better Place's precision created a perfect prison. The implementation shows promises aren't communication but architecture, and the variance preserved becomes tomorrow's innovation space.
+**"From M0 to M4 via PRHC"**—The 32 paragraphs trace how we endogenize success probability P(s) while value V remains market-determined. Entrepreneurs maximize E[U] = P(s)·V - C(τ) by progressing through Parameterize (M1), Regularize (M2), Hierarchize (M3), and Calibrate (M4), transforming success from exogenous luck to strategic choice.

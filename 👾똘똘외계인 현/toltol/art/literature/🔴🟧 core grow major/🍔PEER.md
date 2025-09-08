@@ -122,5 +122,3 @@ Every academic paragraph follows the PEER structure - like a hamburger with clea
 4. **Develop Explanation** - Interpret evidence thoroughly
 5. **Craft transitions** - Link paragraphs with R sentences
 6. **Final skip test** - Verify logical flow remains clear
-
-This PEER system transforms academic writing from unclear rambling into precise, powerful communication that guides readers effortlessly through complex arguments.

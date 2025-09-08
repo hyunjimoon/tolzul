@@ -5,6 +5,52 @@ categories:
   - "blog"
 ---
 
+
+-----
+
+[[09-08|25-09-08]]
+
+- 👁️read opponent's shoulder
+    
+    - miss front swing: limited angle + ?
+        
+- racket as my extended body
+    
+    - 👍wrap thumb, ☝️triggering index
+        
+        - 🤠indiana johnes whip hand, not ⚒️thor hammer hand
+            
+        - 85~90% jab power like 🥊 boxing
+            
+        - keep calm and don't go crazy
+            
+
+- step:
+    
+    - service line 🦀crab chest front
+        
+    - baseline 🐅tiger calm
+        
+    
+
+todo: more how to translate 🪬
+
+낭만거북이 의
+
+
+----
+
+[[09-01|25-09-01]]
+
+space
+
+front
+
+balance
+
+----
+
+
 ![[2025-07-20-17]]
 Fig. Angie serves in A,C.
 
