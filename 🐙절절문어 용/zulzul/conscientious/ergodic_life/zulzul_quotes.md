@@ -1,6 +1,15 @@
-절절 (zulzul) in korean means desperate and sincere.
+절절 (zulzul) in korean means desperate, sincere, and earnest.
 https://www.commonreader.co.uk/p/aiming-at-something-noble-resolutions
 
+[[09-09|25-09-09]]
+
+
+Northrop Frye의 "Anatomy of Criticism"에서:
+
+- Comedy: 봄의 mythos - 갈등에서 화해로
+- Tragedy: 가을의 mythos - 영웅의 고립과 패배
+
+-----
 - list of things you have opinions about but which, if you are being honest, you don't really know a lot about
 
 - Mill's thinking revolves around the idea that we do not have to choose between reforming the world and reforming ourselves. Mill can teach us that if you want to change the world, you have to change yourself.

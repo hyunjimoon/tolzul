@@ -1,14 +1,13 @@
 1. how to balance sell and deliver 
-2. when visual (color coding, graphic) helps or harms?
+2. [[when visual (color coding, graphic) helps or harms]]?
 3. how to push without pricking?
-4. how to speak directly and gently?
-5. how to live an ergodic life? 
+4. how to live an ergodic life? 
 	1. articulate and concise inputs (experience) and outputs (choices)
 	2. predictably unique
 	3. consistent revealed preference and stated preference
 	4. algorithm: define diagnostics sharpen my life's value around unified uniqueness that earns consensus so that values in my obituary are equivalent with that of my diary?, theory, model, use of my life converge?
-6. what are relationship and or tradeoff between three metrics: effectiveness, efficiency, satisfiability?
-7. mindset for social participation? weight in objective function as weighted average of myself and the others
+5. what are relationship and or tradeoff between three metrics: effectiveness, efficiency, satisfiability?
+6. mindset for social participation? weight in objective function as weighted average of myself and the others
 
 - **Feynman's Original Method for Genius**: Nobel Prize-winning physicist Richard Feynman made it a practice to keep about a dozen "favorite problems" constantly in his mind. [[1]](https://www.artofmanliness.com/character/advice/think-like-feynman-why-you-should-have-12-favorite-problems/) These were not necessarily urgent tasks, but big, open-ended questions he was deeply curious about, such as "How can I accurately keep track of time in my head?" or "What is the unifying principle underlying light, radio, magnetism, and electricity?". [[2]](https://fortelabs.com/blog/12-favorite-problems-how-to-spark-genius-with-the-power-of-open-questions/)[[3]](https://favoriteproblems.com/) The idea, as described by his contemporary Gian-Carlo Rota, was that every time Feynman encountered a new piece of information or "trick," he would test it against his twelve problems to see if it offered a new angle or a potential solution. [[2]](https://fortelabs.com/blog/12-favorite-problems-how-to-spark-genius-with-the-power-of-open-questions/)[[4]](https://www.developgoodhabits.com/12-favorite-problems/) This created a fertile ground for making unexpected connections and led to breakthroughs that others often attributed to sheer genius. [[5]](https://www.youtube.com/watch?v=1GhC1Exo50U)
     
