@@ -1,6 +1,0 @@
-- industry
-	- eugenia (thursday)
-- m3s members (men manus machina)
-	- niklas (Mar.30, sun)
-	- yuebing
-	- xinyu

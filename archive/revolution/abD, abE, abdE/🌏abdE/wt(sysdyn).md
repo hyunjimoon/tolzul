@@ -1,2 +1,0 @@
-- https://github.com/Data4DM/BayesSD/discussions tom, ozge, zeynep, nathaniel, cathy, alexander, jason
-- bob horn

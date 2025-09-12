@@ -1,0 +1,1 @@
+- not think then act ([[📜Gershman15_comp_rationality]], [[📜Vul14_one_done]]) but think or act on metacognition level
