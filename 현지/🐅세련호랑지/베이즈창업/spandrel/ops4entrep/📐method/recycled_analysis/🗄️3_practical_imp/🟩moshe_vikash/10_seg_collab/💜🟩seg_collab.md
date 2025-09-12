@@ -1,0 +1,1 @@
+[[📝🧭Vectorizing Adaptation]] and [[🪵(📝product1)]]

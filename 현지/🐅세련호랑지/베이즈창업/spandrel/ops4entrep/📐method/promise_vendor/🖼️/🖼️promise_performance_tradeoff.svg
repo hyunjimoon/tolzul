@@ -1,0 +1,69 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- White background -->
+  <rect width="800" height="600" fill="white"/>
+  
+  <!-- Grid lines -->
+  <g stroke="#e0e0e0" stroke-width="1">
+    <!-- Horizontal grid lines -->
+    <line x1="80" y1="50" x2="700" y2="50"/>
+    <line x1="80" y1="146" x2="700" y2="146"/>
+    <line x1="80" y1="242" x2="700" y2="242"/>
+    <line x1="80" y1="338" x2="700" y2="338"/>
+    <line x1="80" y1="434" x2="700" y2="434"/>
+    <line x1="80" y1="530" x2="700" y2="530"/>
+    
+    <!-- Vertical grid lines -->
+    <line x1="80" y1="50" x2="80" y2="530"/>
+    <line x1="204" y1="50" x2="204" y2="530"/>
+    <line x1="328" y1="50" x2="328" y2="530"/>
+    <line x1="452" y1="50" x2="452" y2="530"/>
+    <line x1="576" y1="50" x2="576" y2="530"/>
+    <line x1="700" y1="50" x2="700" y2="530"/>
+  </g>
+  
+  <!-- Axes -->
+  <g stroke="black" stroke-width="2">
+    <line x1="80" y1="530" x2="700" y2="530"/> <!-- X-axis -->
+    <line x1="80" y1="50" x2="80" y2="530"/> <!-- Y-axis -->
+  </g>
+  
+  <!-- P(Sell|φ) = φ line (blue) -->
+  <path d="M 80 530 L 700 50" stroke="#2E86AB" stroke-width="3" fill="none"/>
+  
+  <!-- P(Deliver|φ) = 1-φ line (red) -->
+  <path d="M 80 50 L 700 530" stroke="#A23B72" stroke-width="3" fill="none"/>
+  
+  <!-- Intersection point at φ = 0.5 -->
+  <circle cx="390" cy="290" r="6" fill="black"/>
+  
+  <!-- Labels -->
+  <g font-family="Arial, sans-serif" font-size="14" fill="black">
+    <!-- X-axis labels -->
+    <text x="80" y="550" text-anchor="middle">0.0</text>
+    <text x="204" y="550" text-anchor="middle">0.2</text>
+    <text x="328" y="550" text-anchor="middle">0.4</text>
+    <text x="452" y="550" text-anchor="middle">0.6</text>
+    <text x="576" y="550" text-anchor="middle">0.8</text>
+    <text x="700" y="550" text-anchor="middle">1.0</text>
+    
+    <!-- Y-axis labels -->
+    <text x="70" y="55" text-anchor="end">1.0</text>
+    <text x="70" y="151" text-anchor="end">0.8</text>
+    <text x="70" y="247" text-anchor="end">0.6</text>
+    <text x="70" y="343" text-anchor="end">0.4</text>
+    <text x="70" y="439" text-anchor="end">0.2</text>
+    <text x="70" y="535" text-anchor="end">0.0</text>
+  </g>
+  
+  <!-- Axis titles -->
+  <g font-family="Arial, sans-serif" font-size="18" fill="black">
+    <text x="390" y="580" text-anchor="middle">φ (Promise Level)</text>
+    <text x="25" y="290" text-anchor="middle" transform="rotate(-90 25 290)">Probability</text>
+  </g>
+  
+  <!-- Function labels -->
+  <g font-family="Arial, sans-serif" font-size="16">
+    <text x="500" y="150" fill="#2E86AB">P(Sell|φ) = φ</text>
+    <text x="480" y="400" fill="#A23B72">P(Deliver|φ) = 1-φ</text>
+  </g>
+</svg>

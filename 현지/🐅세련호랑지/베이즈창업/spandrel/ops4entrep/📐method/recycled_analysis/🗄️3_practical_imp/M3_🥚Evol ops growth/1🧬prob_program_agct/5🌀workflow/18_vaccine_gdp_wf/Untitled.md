@@ -1,0 +1,1 @@
+ analogy of "theory:phenomena:measurement = speed:movement:size" elaborated here useful. As speed is an imagined concept to understand movement, Physics use different theorise

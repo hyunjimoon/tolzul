@@ -1,0 +1,173 @@
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+    // Data preparation
+    const episodes = Array.from({length: 53}, (_, i) => i + 1);
+    
+    // Sample data conversion from original to new taxonomy
+    // This would require re-coding the original data
+    const investorState = [1, 2, 2, 1, 1, 0, 1, 3, 2, 1, 2, 1, 0, 2, 3, 1, 0, 2, 1, 0, 0, 2, 1, 0, 2, 2, 0, 0, 1, 0, 2, 3, 2, 2, 1, 2, 3, 2, 1, 2, 1, 2, 1, 1, 3, 2, 4, 3, 2, 3, 2, 2, 4];
+    const productState = [2, 2, 2, 1, 2, 1, 2, 3, 3, 2, 3, 3, 2, 3, 3, 2, 1, 3, 2, 2, 2, 3, 2, 2, 3, 3, 2, 2, 2, 2, 3, 3, 3, 3, 2, 3, 3, 4, 4, 4, 3, 4, 3, 3, 4, 4, 4, 4, 3, 4, 3, 5, 4];
+    const customerState = [1, 1, 1, 0, 1, 1, 2, 3, 3, 2, 2, 2, 1, 2, 3, 2, 1, 2, 2, 1, 1, 2, 2, 2, 3, 3, 0, 0, 1, 0, 1, 1, 1, 2, 2, 3, 4, 4, 3, 3, 2, 3, 2, 2, 3, 4, 3, 3, 2, 2, 1, 3, 2];
+    
+    // Episodes titles (shortened for space)
+    const titles = [
+        "MVP", "Cap Table", "Articles", "Duties", "Risk", "Insourcing", "Proof", "Tip-to-Tip", 
+        "Sand Hill", "Devaluation", "Bad Money", "Lady", "Server", "Homicide", "Adult", "Hat/Hat", 
+        "Arbitration", "Condor", "Founder", "Box", "Haversack", "Maleant", "Chair", "Bachmanity", 
+        "Beta", "Earnings", "DAU", "Uptick", "Success", "Terms", "IP", "Team", "Blood Boy", 
+        "Service", "Patent", "Keenan", "Hooli-Con", "Error", "Grow", "Reorientation", "COO", 
+        "Evangelist", "Recognition", "Intelligence", "ICO", "51%", "AI Lack", "Money", 
+        "Hooli", "Alpha", "Tethics", "RussFest", "Exit"
+    ];
+    
+    // Sample investor actions (would need recoding)
+    const investorActions = episodes.map(() => Math.random() > 0.5 ? 1 : 0);
+    const supplyActions = episodes.map(() => Math.random() > 0.5 ? 1 : 0);
+    const demandActions = episodes.map(() => Math.random() > 0.5 ? 1 : 0);
+
+    // Create the state plot
+    const statePlot = {
+        type: 'scatter',
+        x: episodes,
+        y: investorState,
+        mode: 'lines+markers',
+        name: 'Investor State',
+        line: {color: 'red', width: 2},
+        marker: {size: 8, symbol: 'circle'}
+    };
+    
+    const productStrategyPlot = {
+        type: 'scatter',
+        x: episodes,
+        y: productState,
+        mode: 'lines+markers',
+        name: 'Product Strategy State',
+        line: {color: 'green', width: 2},
+        marker: {size: 8, symbol: 'circle'}
+    };
+    
+    const customerPlot = {
+        type: 'scatter',
+        x: episodes,
+        y: customerState,
+        mode: 'lines+markers',
+        name: 'Customer Explanation State',
+        line: {color: 'purple', width: 2},
+        marker: {size: 8, symbol: 'circle'}
+    };
+
+    // Create action plots
+    const iaMarkers = episodes.map((ep, i) => investorActions[i] === 1 ? 'x' : null);
+    const iaY = episodes.map(() => 'IA');
+    
+    const saMarkers = episodes.map((ep, i) => supplyActions[i] === 1 ? 'x' : null);
+    const saY = episodes.map(() => 'SA');
+    
+    const daMarkers = episodes.map((ep, i) => demandActions[i] === 1 ? 'x' : null);
+    const daY = episodes.map(() => 'DA');
+    
+    const iaPlot = {
+        type: 'scatter',
+        x: episodes,
+        y: iaY,
+        mode: 'markers',
+        name: 'Investor Actions',
+        marker: {
+            size: 10,
+            symbol: 'x',
+            color: 'red'
+        },
+        showlegend: false
+    };
+    
+    const saPlot = {
+        type: 'scatter',
+        x: episodes,
+        y: saY,
+        mode: 'markers',
+        name: 'Supply Actions',
+        marker: {
+            size: 10,
+            symbol: 'x',
+            color: 'green'
+        },
+        showlegend: false
+    };
+    
+    const daPlot = {
+        type: 'scatter',
+        x: episodes,
+        y: daY,
+        mode: 'markers',
+        name: 'Demand Actions',
+        marker: {
+            size: 10,
+            symbol: 'x',
+            color: 'purple'
+        },
+        showlegend: false
+    };
+
+    const layout = {
+        title: 'Silicon Valley Startup Journey (Updated Framework)',
+        grid: {rows: 2, columns: 1, pattern: 'independent'},
+        xaxis: {
+            title: 'Episode Number',
+            tickvals: episodes,
+            ticktext: titles,
+            tickangle: 90
+        },
+        yaxis: {
+            title: 'State Values',
+            range: [-0.5, 5.5]
+        },
+        xaxis2: {
+            title: 'Episode Number',
+            tickvals: episodes,
+            ticktext: titles,
+            tickangle: 90
+        },
+        yaxis2: {
+            title: 'Actions',
+            categoryorder: 'array',
+            categoryarray: ['IA', 'SA', 'DA']
+        },
+        margin: {
+            l: 50,
+            r: 50,
+            b: 150,
+            t: 50,
+            pad: 4
+        },
+        legend: {
+            orientation: 'h',
+            y: 1.1
+        },
+        height: 800,
+        width: 1000
+    };
+
+    const stateData = [statePlot, productStrategyPlot, customerPlot];
+    const actionData = [iaPlot, saPlot, daPlot];
+    
+    Plotly.newPlot('state-plot', stateData, {
+        ...layout,
+        subplot: 'xy',
+        title: 'State Plot'
+    });
+    
+    Plotly.newPlot('action-plot', actionData, {
+        ...layout,
+        subplot: 'xy2',
+        title: 'Action Plot',
+        yaxis: {
+            title: 'Actions',
+            categoryorder: 'array',
+            categoryarray: ['IA', 'SA', 'DA']
+        }
+    });
+});
+</script>
+
+<div id="state-plot" style="width: 100%; height: 400px;"></div>
+<div id="action-plot" style="width: 100%; height: 300px;"></div>

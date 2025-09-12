@@ -1,0 +1,1 @@
+when you have excluded the impossible whatever remains, however improbable, must be the truth

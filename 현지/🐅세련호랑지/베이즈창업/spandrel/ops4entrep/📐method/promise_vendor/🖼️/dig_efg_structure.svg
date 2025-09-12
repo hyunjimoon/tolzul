@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="700" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="600" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50">
+    D Module (Dig): E-F-G Literature Review Structure
+  </text>
+  
+  <!-- E: Cost Minimization -->
+  <g transform="translate(100, 100)">
+    <!-- Panel -->
+    <rect x="0" y="0" width="300" height="500" fill="white" stroke="#3498db" stroke-width="3" rx="10"/>
+    
+    <!-- Title -->
+    <text x="150" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3498db">
+      E: Cost Minimization
+    </text>
+    
+    <!-- Objective Function -->
+    <rect x="20" y="60" width="260" height="80" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="5"/>
+    <text x="150" y="85" text-anchor="middle" font-family="Courier, monospace" font-size="14" font-weight="bold" fill="#1565c0">
+      min Co·Po + Cu·Pu
+    </text>
+    <text x="150" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">
+      Po = PF(P)·(1-PD(P))
+    </text>
+    <text x="150" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">
+      Pu = (1-PF(P))·PD(P)
+    </text>
+    
+    <!-- Visual Representation -->
+    <g transform="translate(150, 250)">
+      <!-- Overage Cost -->
+      <rect x="-120" y="-50" width="100" height="100" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="2"/>
+      <text x="-70" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2980b9">Co·Po</text>
+      <text x="-70" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#2980b9">Funded</text>
+      <text x="-70" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#2980b9">Not Delivered</text>
+      
+      <!-- Underage Cost -->
+      <rect x="20" y="-50" width="100" height="100" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="2"/>
+      <text x="70" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#c0392b">Cu·Pu</text>
+      <text x="70" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#c0392b">Not Funded</text>
+      <text x="70" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#c0392b">Delivered</text>
+    </g>
+    
+    <!-- Trade-off Arrow -->
+    <path d="M 80 250 L 220 250" stroke="#f39c12" stroke-width="3" stroke-dasharray="5,5"/>
+    <text x="150" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#d68910">Trade-off</text>
+    
+    <!-- Key Insight -->
+    <rect x="20" y="440" width="260" height="40" fill="#e3f2fd" stroke="#3498db" stroke-width="1" rx="5"/>
+    <text x="150" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1565c0">
+      Promise ↑ → Po ↑, Pu ↓
+    </text>
+    <text x="150" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1565c0">
+      Temporal tension emerges
+    </text>
+  </g>
+  
+  <!-- F: Add Value -->
+  <g transform="translate(450, 100)">
+    <!-- Panel -->
+    <rect x="0" y="0" width="300" height="500" fill="white" stroke="#27ae60" stroke-width="3" rx="10"/>
+    
+    <!-- Title -->
+    <text x="150" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#27ae60">
+      F: Add Value V
+    </text>
+    
+    <!-- Extended Objective -->
+    <rect x="20" y="60" width="260" height="80" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" rx="5"/>
+    <text x="150" y="85" text-anchor="middle" font-family="Courier, monospace" font-size="13" font-weight="bold" fill="#2e7d32">
+      min Co·Po + Cu·Pu - V·Pm
+    </text>
+    <text x="150" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">
+      Pm = PF(P)·PD(P)
+    </text>
+    <text x="150" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      (Joint success probability)
+    </text>
+    
+    <!-- 2x2 Grid -->
+    <g transform="translate(150, 280)">
+      <line x1="-100" y1="0" x2="100" y2="0" stroke="#666" stroke-width="2"/>
+      <line x1="0" y1="-100" x2="0" y2="100" stroke="#666" stroke-width="2"/>
+      
+      <!-- Quadrants -->
+      <!-- Funded + Delivered -->
+      <rect x="5" y="-95" width="90" height="90" fill="#27ae60" fill-opacity="0.3"/>
+      <text x="50" y="-50" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#229954">+V</text>
+      
+      <!-- Funded + Not Delivered -->
+      <rect x="5" y="5" width="90" height="90" fill="#3498db" fill-opacity="0.3"/>
+      <text x="50" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2980b9">-Co</text>
+      
+      <!-- Not Funded + Delivered -->
+      <rect x="-95" y="-95" width="90" height="90" fill="#e74c3c" fill-opacity="0.3"/>
+      <text x="-50" y="-50" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#c0392b">-Cu</text>
+      
+      <!-- Not Funded + Not Delivered -->
+      <rect x="-95" y="5" width="90" height="90" fill="#95a5a6" fill-opacity="0.1"/>
+      <text x="-50" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#7f8c8d">0</text>
+      
+      <!-- Labels -->
+      <text x="0" y="-115" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">Delivered</text>
+      <text x="0" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">Not Del.</text>
+      <text x="-115" y="5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666" transform="rotate(-90 -115 5)">Not Funded</text>
+      <text x="115" y="5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666" transform="rotate(-90 115 5)">Funded</text>
+    </g>
+    
+    <!-- Key Insight -->
+    <rect x="20" y="440" width="260" height="40" fill="#e8f5e9" stroke="#27ae60" stroke-width="1" rx="5"/>
+    <text x="150" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#229954">
+      Value creation requires
+    </text>
+    <text x="150" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#229954">
+      joint F∩D success
+    </text>
+  </g>
+  
+  <!-- G: Self-Fulfilling (Out of Scope) -->
+  <g transform="translate(800, 100)">
+    <!-- Panel -->
+    <rect x="0" y="0" width="350" height="500" fill="white" stroke="#95a5a6" stroke-width="3" rx="10" stroke-dasharray="10,5" opacity="0.8"/>
+    
+    <!-- Title -->
+    <text x="175" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#95a5a6">
+      G: Self-Fulfilling (Excluded)
+    </text>
+    
+    <!-- Reinforcement Loop -->
+    <g transform="translate(175, 200)">
+      <ellipse cx="0" cy="0" rx="140" ry="80" fill="none" stroke="#e74c3c" stroke-width="3" stroke-dasharray="5,5" opacity="0.5"/>
+      
+      <!-- P increases -->
+      <circle cx="0" cy="-60" r="30" fill="#f39c12" fill-opacity="0.3" stroke="#f39c12" stroke-width="2"/>
+      <text x="0" y="-55" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#d68910">P↑</text>
+      
+      <!-- F|P increases -->
+      <circle cx="-100" cy="30" r="30" fill="#9b59b6" fill-opacity="0.3" stroke="#9b59b6" stroke-width="2"/>
+      <text x="-100" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#8e44ad">F|P↑</text>
+      
+      <!-- Resources increase -->
+      <circle cx="0" cy="60" r="30" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="2"/>
+      <text x="0" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#229954">Resources↑</text>
+      
+      <!-- D|P increases -->
+      <circle cx="100" cy="30" r="30" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="2"/>
+      <text x="100" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#c0392b">D|P↑</text>
+      
+      <!-- Arrows -->
+      <path d="M -20 -40 Q -60 -10 -80 10" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.5"/>
+      <path d="M -70 40 Q -35 50 -30 50" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.5"/>
+      <path d="M 30 50 Q 65 50 70 40" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.5"/>
+      <path d="M 80 10 Q 60 -10 20 -40" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.5"/>
+    </g>
+    
+    <!-- Why Excluded -->
+    <rect x="20" y="340" width="310" height="80" fill="#ffebee" stroke="#ef5350" stroke-width="1" rx="5"/>
+    <text x="175" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#c62828">
+      We assume: F|P ⊥ D|P
+    </text>
+    <text x="175" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      Reality: Funding enables delivery
+    </text>
+    <text x="175" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      (Tesla's "deep pocket effect")
+    </text>
+    
+    <!-- Key Insight -->
+    <rect x="20" y="440" width="310" height="40" fill="#f5f5f5" stroke="#95a5a6" stroke-width="1" rx="5"/>
+    <text x="175" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#7f8c8d">
+      Endogeneity requires
+    </text>
+    <text x="175" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d">
+      dynamic analysis (future work)
+    </text>
+  </g>
+  
+  <!-- Flow Arrows -->
+  <line x1="400" y1="350" x2="450" y2="350" stroke="#666" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="425" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">Add V</text>
+  
+  <line x1="750" y1="350" x2="800" y2="350" stroke="#666" stroke-width="3" marker-end="url(#arrowhead)" stroke-dasharray="5,5" opacity="0.5"/>
+  <text x="775" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#999">Exclude</text>
+  
+  <!-- Bottom Summary -->
+  <rect x="200" y="630" width="800" height="50" fill="#fff9c4" stroke="#f9a825" stroke-width="2" rx="10"/>
+  <text x="600" y="650" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f57f17">
+    Literature Review Progression: From simple cost trade-offs to value creation
+  </text>
+  <text x="600" y="668" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">
+    E: Temporal tension (Co·Po vs Cu·Pu) → F: Spatial expansion (add V·Pm) → G: Dynamic feedback (excluded)
+  </text>
+  
+  <!-- Arrow Definitions -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+</svg>

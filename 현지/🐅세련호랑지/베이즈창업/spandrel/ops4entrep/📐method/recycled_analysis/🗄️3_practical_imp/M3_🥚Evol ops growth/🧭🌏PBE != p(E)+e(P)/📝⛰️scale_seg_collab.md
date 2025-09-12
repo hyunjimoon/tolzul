@@ -1,0 +1,3 @@
+- pivoting (experiment) for segment and collaborate as in [[📝M3S Poster Angie Charlie v3.pdf]]
+- [[📝Programmatic Theory in Entrepreneurship with Integrated Reasoning and Rational Meaning Construction]]
+- [[📝🪶Sequential Evolutionary and Parallel Bayesian Startup Adaptations]]

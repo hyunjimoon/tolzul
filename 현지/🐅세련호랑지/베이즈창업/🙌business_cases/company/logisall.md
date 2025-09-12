@@ -1,0 +1,2 @@
+- started from pallet company entering to digital platform
+- 

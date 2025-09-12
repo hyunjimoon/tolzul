@@ -1,0 +1,3 @@
+- [[def(pool())]]+[[mng(bit))]]
+- [[def(pool())]]+[[mng(energy)]]
+- [[def(pool())]]+[[mng(atom)]]

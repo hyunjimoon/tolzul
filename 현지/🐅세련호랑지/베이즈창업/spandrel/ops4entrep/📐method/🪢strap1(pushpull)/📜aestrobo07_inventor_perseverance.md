@@ -1,0 +1,3 @@
+[[2025-07-10|25-07-10-07]]
+
+We ﬁnd that approximately one third (29%) of independent inventors continue to spend money and 51% continue to spend time on projects after receiving highly diagnostic advice to cease effort. Using survey data from actual inventors, this paper studies the role of overconﬁdence, optimism, and the sunk-cost bias in these decisions. We ﬁnd that inventors are more overconﬁdent and optimistic than the general population. We also ﬁnd that optimism and past expenditures increased perseverance after being told to quit, while overconﬁdence in judgment ability had no effect. After being told to quit, optimists spend 166% more than pessimists and those having already spent, for example, $10 000 spend another $10 000.

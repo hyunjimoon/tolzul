@@ -1,0 +1,28 @@
+{
+	"nodes":[
+		{"id":"7b0bda6b3d93f702","type":"text","text":"How is Google Trends data normalized?\nGoogle Trends normalizes search data to make comparisons between terms easier. Search results are normalized to the time and location of a query by the following process:\n\nEach data point is divided by the total searches of the geography and time range it represents to compare relative popularity. Otherwise, places with the most search volume would always be ranked highest.\n\nThe resulting numbers are then scaled on a range of 0 to 100 based on a topic’s proportion to all searches on all topics.\n\nDifferent regions that show the same search interest for a term don't always have the same total search volumes.\n\n","x":-125,"y":-30,"width":698,"height":652},
+		{"id":"f96d57e6ab502a44","type":"file","file":"_ref/orgbeh.png","x":1106,"y":672,"width":340,"height":400},
+		{"id":"5b8ed7ca47d368e2","type":"file","file":"_ref/2mot.png","x":1488,"y":500,"width":341,"height":400},
+		{"id":"f54e27c7e0d2b991","type":"file","file":"_ref/3behavdec.png","x":1505,"y":987,"width":339,"height":400},
+		{"id":"af418591706e5f25","type":"file","file":"_ref/4soccog.png","x":1465,"y":1438,"width":342,"height":400},
+		{"id":"7b8dedd207dab15d","type":"file","file":"_ref/selfpres.png","x":1909,"y":320,"width":341,"height":400},
+		{"id":"8d7e309e3ea1bec8","type":"text","text":"normalization throughout entire period is murky due to normalization","x":772,"y":1024,"width":250,"height":414},
+		{"id":"7f5e982f8c5f9e45","type":"file","file":"_ref/Pasted image 20230117113719.png","x":1022,"y":1583,"width":339,"height":400},
+		{"id":"c71650bbef5e115b","type":"text","text":"past 5 years","x":466,"y":1756,"width":250,"height":60},
+		{"id":"37d51bc2c7c4ecf1","type":"file","file":"_ref/Pasted image 20230117114601.png","x":591,"y":1786,"width":339,"height":400},
+		{"id":"67969fa930bce0d4","type":"file","file":"_ref/Pasted image 20230117114647.png","x":587,"y":1776,"width":342,"height":400},
+		{"id":"885c18a3241512a2","type":"file","file":"_ref/behavioral_decision.png","x":-99,"y":2410,"width":400,"height":176},
+		{"id":"8176b67be5e68671","type":"file","file":"_ref/self_representation.png","x":-99,"y":2844,"width":399,"height":141},
+		{"id":"73e009b74d77a362","type":"file","file":"_ref/negotiate_conflict.png","x":561,"y":2807,"width":399,"height":142},
+		{"id":"92682129dc83beca","type":"file","file":"_ref/attribution_stereotype_social_cognition.png","x":561,"y":2615,"width":400,"height":136},
+		{"id":"f96a10b515a1b84b","type":"file","file":"_ref/emotion_motivation_cognition.png","x":561,"y":3026,"width":399,"height":126}
+	],
+	"edges":[
+		{"id":"20b64239e21e25e3","fromNode":"8d7e309e3ea1bec8","fromSide":"right","toNode":"f96d57e6ab502a44","toSide":"left"},
+		{"id":"e0747b0dd7214de0","fromNode":"8d7e309e3ea1bec8","fromSide":"right","toNode":"f54e27c7e0d2b991","toSide":"left"},
+		{"id":"2d4aadc2272140cf","fromNode":"8d7e309e3ea1bec8","fromSide":"right","toNode":"af418591706e5f25","toSide":"left"},
+		{"id":"aff172dbdeb79e2d","fromNode":"8d7e309e3ea1bec8","fromSide":"right","toNode":"7f5e982f8c5f9e45","toSide":"left"},
+		{"id":"cc8b467a26f13ec9","fromNode":"8d7e309e3ea1bec8","fromSide":"right","toNode":"5b8ed7ca47d368e2","toSide":"left"},
+		{"id":"b9bea126d8600923","fromNode":"8d7e309e3ea1bec8","fromSide":"right","toNode":"7b8dedd207dab15d","toSide":"left"}
+	]
+}

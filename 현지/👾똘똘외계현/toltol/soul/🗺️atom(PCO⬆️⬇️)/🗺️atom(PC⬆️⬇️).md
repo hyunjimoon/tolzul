@@ -1,0 +1,4 @@
+- benchmark for [[🗺️explain(entrepreneuring)]]
+- measurement, econometrics, causal inference
+- resonate with simulation in business school, installed vensim in one's computer 
+- use system dynamics or simulation daily 

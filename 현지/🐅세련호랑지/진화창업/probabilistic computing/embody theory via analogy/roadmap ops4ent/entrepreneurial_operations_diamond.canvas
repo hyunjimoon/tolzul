@@ -1,0 +1,21 @@
+{
+	"nodes":[
+		{"id":"title","type":"text","text":"# 🎯 창업가를 위한 운영관리\n## 불확실성 구조 설계를 통한 현실 개선","x":-150,"y":-400,"width":300,"height":100,"color":"0"},
+		{"id":"cap_node","type":"text","text":"### 1. Capabilities?\n🐢\n\nBayesian Framework\nPromise-Vendor Model","x":-300,"y":-200,"width":200,"height":150,"color":"3"},
+		{"id":"cust_node","type":"text","text":"### 2. Customer?\n👾\n\nConfused Entrepreneurs\n(Tesla/BP/Nikola)","x":100,"y":-200,"width":200,"height":150,"color":"5"},
+		{"id":"center","type":"text","text":"## 중앙 허브\n\n← **Coordinate** →\n\"정밀도는 독약이다\"\n\n← **Compel** →\n\"사기 없이 성공하기\"","x":-100,"y":0,"width":200,"height":150,"color":"0"},
+		{"id":"goal_node","type":"text","text":"### 3. Goals?\n🐅\n\nUncertainty Design\nAdaptive Ambition","x":-300,"y":200,"width":200,"height":150,"color":"4"},
+		{"id":"off_node","type":"text","text":"### 4. Offering?\n🐙\n\nBusiness Model Paper\n[[📝_icon_ghost_fraud]]","x":100,"y":200,"width":240,"height":258,"color":"6"},
+		{"id":"key_insight","type":"text","text":"## 핵심 통찰\n\n**정리 1**: ∂E/∂τ > 0 (정밀도 벌칙)\n**정리 2**: μ* ∝ V/C (가치-비용 비례)\n\n→ 낮은 τ로 시작, 증거에 따라 점진 증가","x":-150,"y":400,"width":300,"height":200,"color":"2"}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"cap_node","fromSide":"bottom","toNode":"center","toSide":"left","color":"3"},
+		{"id":"e2","fromNode":"cust_node","fromSide":"bottom","toNode":"center","toSide":"right","color":"5"},
+		{"id":"e3","fromNode":"center","fromSide":"left","toNode":"goal_node","toSide":"top","color":"3"},
+		{"id":"e4","fromNode":"center","fromSide":"right","toNode":"off_node","toSide":"top","color":"5"},
+		{"id":"e5","fromNode":"cap_node","fromSide":"right","toNode":"cust_node","toSide":"left","color":"0","label":"현재 상황"},
+		{"id":"e6","fromNode":"goal_node","fromSide":"right","toNode":"off_node","toSide":"left","color":"0","label":"미래 방향"},
+		{"id":"e7","fromNode":"off_node","fromSide":"bottom","toNode":"key_insight","toSide":"right","color":"6"},
+		{"id":"e8","fromNode":"goal_node","fromSide":"bottom","toNode":"key_insight","toSide":"left","color":"4"}
+	]
+}

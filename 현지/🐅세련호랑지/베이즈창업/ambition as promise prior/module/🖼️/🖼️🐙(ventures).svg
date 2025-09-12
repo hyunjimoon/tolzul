@@ -1,0 +1,269 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800">
+  <defs>
+    <!-- Simple gradients for each quadrant -->
+    <linearGradient id="failureGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c70039;stop-opacity:0.05" />
+      <stop offset="100%" style="stop-color:#c70039;stop-opacity:0.15" />
+    </linearGradient>
+    <linearGradient id="rigidGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e94560;stop-opacity:0.05" />
+      <stop offset="100%" style="stop-color:#e94560;stop-opacity:0.15" />
+    </linearGradient>
+    <linearGradient id="flexibleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#533483;stop-opacity:0.05" />
+      <stop offset="100%" style="stop-color:#533483;stop-opacity:0.15" />
+    </linearGradient>
+    <linearGradient id="adaptiveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0652dd;stop-opacity:0.05" />
+      <stop offset="100%" style="stop-color:#0652dd;stop-opacity:0.15" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Clean background -->
+  <rect width="1400" height="800" fill="white"/>
+  
+  <!-- Title -->
+  <text x="700" y="45" font-family="Arial, sans-serif" font-size="24" font-weight="600" text-anchor="middle" fill="#1a1a2e">
+    Venture Promise Architecture Matrix
+  </text>
+  <text x="700" y="70" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666">
+    Classification of Ventures by Promise Design Models
+  </text>
+  
+  <!-- Axes -->
+  <line x1="150" y1="400" x2="1250" y2="400" stroke="#333" stroke-width="2"/>
+  <line x1="700" y1="150" x2="700" y2="650" stroke="#333" stroke-width="2"/>
+  
+  <!-- Axis labels -->
+  <text x="1280" y="405" font-family="Arial, sans-serif" font-size="13" font-weight="600" text-anchor="end" fill="#333">
+    High Precision (τ → ∞)
+  </text>
+  <text x="120" y="405" font-family="Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start" fill="#333">
+    Low Precision (τ → 0)
+  </text>
+  <text x="700" y="135" font-family="Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#333">
+    High Promise Level (φ → 1)
+  </text>
+  <text x="700" y="675" font-family="Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#333">
+    Low Promise Level (φ → 0)
+  </text>
+  
+  <!-- Quadrant backgrounds -->
+  <rect x="150" y="150" width="550" height="250" fill="url(#flexibleGrad)"/>
+  <rect x="700" y="150" width="550" height="250" fill="url(#failureGrad)"/>
+  <rect x="150" y="400" width="550" height="250" fill="url(#rigidGrad)"/>
+  <rect x="700" y="400" width="550" height="250" fill="url(#adaptiveGrad)"/>
+  
+  <!-- Quadrant labels -->
+  <g transform="translate(425, 190)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#533483">
+      M3: PRODUCTIVE AMBIGUITY
+    </text>
+    <text x="0" y="25" font-family="Consolas, monospace" font-size="11" text-anchor="middle" fill="#666">
+      P = ∫φ(1-φ)ⁿp(φ|μ)dφ
+    </text>
+    <text x="0" y="45" font-size="11" text-anchor="middle" fill="#666">
+      Strategic flexibility with learnable uncertainty
+    </text>
+  </g>
+  
+  <g transform="translate(975, 190)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#c70039">
+      M1: LINEAR FANTASY
+    </text>
+    <text x="0" y="25" font-family="Consolas, monospace" font-size="11" text-anchor="middle" fill="#666">
+      P = φ
+    </text>
+    <text x="0" y="45" font-size="11" text-anchor="middle" fill="#666">
+      Unconstrained promises without delivery
+    </text>
+  </g>
+  
+  <g transform="translate(425, 490)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#e94560">
+      M2: FIXED OPTIMIZATION
+    </text>
+    <text x="0" y="25" font-family="Consolas, monospace" font-size="11" text-anchor="middle" fill="#666">
+      P = φ(1-φ)ⁿ
+    </text>
+    <text x="0" y="45" font-size="11" text-anchor="middle" fill="#666">
+      Single optimum with rigid infrastructure
+    </text>
+  </g>
+  
+  <g transform="translate(975, 490)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#0652dd">
+      M4: SAMPLE APPROXIMATION
+    </text>
+    <text x="0" y="25" font-family="Consolas, monospace" font-size="11" text-anchor="middle" fill="#666">
+      P = ∫φ(1-φ)ⁿp(φ|μ,τ)dφdτ
+    </text>
+    <text x="0" y="45" font-size="11" text-anchor="middle" fill="#666">
+      Continuous refinement through sampling
+    </text>
+  </g>
+  
+  <!-- Company placements -->
+  
+  <!-- M3: Tesla Early & Google Early -->
+  <g transform="translate(350, 300)">
+    <circle r="30" fill="white" stroke="#533483" stroke-width="2"/>
+    <text y="-8" font-size="13" font-weight="600" text-anchor="middle" fill="#533483">
+      Tesla
+    </text>
+    <text y="6" font-size="10" text-anchor="middle" fill="#666">
+      (2006-2016)
+    </text>
+    <text y="18" font-family="Consolas, monospace" font-size="9" text-anchor="middle" fill="#666">
+      μ=0.3, τ=5
+    </text>
+  </g>
+  
+  <g transform="translate(500, 320)">
+    <circle r="30" fill="white" stroke="#533483" stroke-width="2"/>
+    <text y="-8" font-size="13" font-weight="600" text-anchor="middle" fill="#533483">
+      Google
+    </text>
+    <text y="6" font-size="10" text-anchor="middle" fill="#666">
+      (1998-2004)
+    </text>
+    <text y="18" font-family="Consolas, monospace" font-size="9" text-anchor="middle" fill="#666">
+      μ=0.4, τ=3
+    </text>
+  </g>
+  
+  <!-- M1: Theranos & Nikola -->
+  <g transform="translate(950, 270)">
+    <circle r="30" fill="white" stroke="#c70039" stroke-width="2"/>
+    <text y="-8" font-size="13" font-weight="600" text-anchor="middle" fill="#c70039">
+      Theranos
+    </text>
+    <text y="6" font-size="10" text-anchor="middle" fill="#666">
+      (2003-2018)
+    </text>
+    <text y="18" font-family="Consolas, monospace" font-size="9" text-anchor="middle" fill="#666">
+      μ=0.9, τ=60
+    </text>
+  </g>
+  
+  <g transform="translate(1100, 290)">
+    <circle r="30" fill="white" stroke="#c70039" stroke-width="2"/>
+    <text y="-8" font-size="13" font-weight="600" text-anchor="middle" fill="#c70039">
+      Nikola
+    </text>
+    <text y="6" font-size="10" text-anchor="middle" fill="#666">
+      (2014-2020)
+    </text>
+    <text y="18" font-family="Consolas, monospace" font-size="9" text-anchor="middle" fill="#666">
+      μ=0.85, τ=55
+    </text>
+  </g>
+  
+  <!-- M2: Better Place, Local Restaurant, Toyota Old -->
+  <g transform="translate(850, 300)">
+    <circle r="30" fill="white" stroke="#e94560" stroke-width="2"/>
+    <text y="-8" font-size="13" font-weight="600" text-anchor="middle" fill="#e94560">
+      Better Place
+    </text>
+    <text y="6" font-size="10" text-anchor="middle" fill="#666">
+      (2007-2013)
+    </text>
+    <text y="18" font-family="Consolas, monospace" font-size="9" text-anchor="middle" fill="#666">
+      μ=0.8, τ=45
+    </text>
+  </g>
+  
+  <g transform="translate(350, 550)">
+    <circle r="25" fill="white" stroke="#e94560" stroke-width="2"/>
+    <text y="-5" font-size="12" font-weight="600" text-anchor="middle" fill="#e94560">
+      Restaurant
+    </text>
+    <text y="8" font-family="Consolas, monospace" font-size="9" text-anchor="middle" fill="#666">
+      μ=0.1, τ=3
+    </text>
+  </g>
+  
+  <g transform="translate(500, 570)">
+    <circle r="30" fill="white" stroke="#e94560" stroke-width="2"/>
+    <text y="-8" font-size="13" font-weight="600" text-anchor="middle" fill="#e94560">
+      Toyota
+    </text>
+    <text y="6" font-size="10" text-anchor="middle" fill="#666">
+      (1970-90s)
+    </text>
+    <text y="18" font-family="Consolas, monospace" font-size="9" text-anchor="middle" fill="#666">
+      μ=0.1, τ=30
+    </text>
+  </g>
+  
+  <!-- M4: Tesla Now, Google Now, Toyota New -->
+  <g transform="translate(850, 570)">
+    <circle r="35" fill="white" stroke="#0652dd" stroke-width="3"/>
+    <text y="-10" font-size="14" font-weight="600" text-anchor="middle" fill="#0652dd">
+      Tesla
+    </text>
+    <text y="4" font-size="10" text-anchor="middle" fill="#666">
+      (2017+)
+    </text>
+    <text y="18" font-size="10" font-weight="600" text-anchor="middle" fill="#0652dd">
+      $1T
+    </text>
+  </g>
+  
+  <g transform="translate(1000, 590)">
+    <circle r="35" fill="white" stroke="#0652dd" stroke-width="3"/>
+    <text y="-10" font-size="14" font-weight="600" text-anchor="middle" fill="#0652dd">
+      Google
+    </text>
+    <text y="4" font-size="10" text-anchor="middle" fill="#666">
+      (2005+)
+    </text>
+    <text y="18" font-size="10" font-weight="600" text-anchor="middle" fill="#0652dd">
+      $2T
+    </text>
+  </g>
+  
+  <g transform="translate(1150, 570)">
+    <circle r="30" fill="white" stroke="#0652dd" stroke-width="2"/>
+    <text y="-8" font-size="13" font-weight="600" text-anchor="middle" fill="#0652dd">
+      Toyota
+    </text>
+    <text y="6" font-size="10" text-anchor="middle" fill="#666">
+      (2000s+)
+    </text>
+    <text y="18" font-size="9" text-anchor="middle" fill="#666">
+      Adaptive
+    </text>
+  </g>
+  
+  <!-- Evolution arrows -->
+  <defs>
+    <marker id="evolutionArrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" fill="#666">
+      <polygon points="0 0, 8 3, 0 6"/>
+    </marker>
+  </defs>
+  
+  <!-- Tesla evolution path -->
+  <path d="M 380 300 Q 550 400, 815 570" 
+        stroke="#666" stroke-width="1.5" fill="none" 
+        stroke-dasharray="4,2" marker-end="url(#evolutionArrow)" opacity="0.5"/>
+  
+  <!-- Google evolution path -->
+  <path d="M 530 320 Q 700 420, 965 590" 
+        stroke="#666" stroke-width="1.5" fill="none" 
+        stroke-dasharray="4,2" marker-end="url(#evolutionArrow)" opacity="0.5"/>
+  
+  <!-- Toyota evolution path -->
+  <path d="M 530 570 Q 800 570, 1120 570" 
+        stroke="#666" stroke-width="1.5" fill="none" 
+        stroke-dasharray="4,2" marker-end="url(#evolutionArrow)" opacity="0.5"/>
+  
+  <!-- Learning Capacity formula -->
+  <rect x="450" y="720" width="500" height="40" fill="#f5f5f5" rx="2"/>
+  <text x="700" y="740" font-family="Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">
+    Learning Capacity (LC) = μ(1-μ)/(τ+1)
+  </text>
+  <text x="700" y="755" font-size="11" text-anchor="middle" fill="#666">
+    Critical threshold: LC &gt; 0.01 for survival | LC &gt; 0.03 for growth
+  </text>
+</svg>

@@ -1,0 +1,89 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <!-- Title -->
+    <text x="400" y="30" font-size="20" font-weight="bold" text-anchor="middle" font-family="Arial, sans-serif">Figure 3: 학습 역학과 정밀도의 함정</text>
+    
+    <!-- Background zones (simplified) -->
+    <rect x="100" y="50" width="600" height="200" fill="#f0fff0" opacity="0.3" />
+    <rect x="100" y="250" width="600" height="200" fill="#fff0f0" opacity="0.3" />
+    
+    <!-- Learning threshold line -->
+    <line x1="100" y1="250" x2="700" y2="250" stroke="#ff6600" stroke-width="3" stroke-dasharray="5,5" />
+    <text x="400" y="240" font-size="12" text-anchor="middle" fill="#ff6600" font-family="Arial">학습 임계선 (5%)</text>
+    
+    <!-- Data points with clear spacing -->
+    <!-- PayPal -->
+    <g transform="translate(140, 120)">
+        <circle cx="0" cy="0" r="8" fill="#00aa00" stroke="#00aa00" stroke-width="2" fill-opacity="0.7"/>
+        <text x="15" y="5" font-size="12" font-weight="bold" fill="#00aa00" font-family="Arial">PayPal</text>
+        <text x="15" y="20" font-size="11" fill="#666" font-family="Arial">τ=8</text>
+    </g>
+    
+    <!-- Tesla -->
+    <g transform="translate(220, 140)">
+        <circle cx="0" cy="0" r="10" fill="#00aa00" stroke="#00aa00" stroke-width="3"/>
+        <text x="20" y="5" font-size="14" font-weight="bold" fill="#00aa00" font-family="Arial">Tesla</text>
+        <text x="20" y="20" font-size="11" fill="#666" font-family="Arial">τ=12, 피보팅 성공</text>
+    </g>
+    
+    <!-- Instagram -->
+    <g transform="translate(300, 100)">
+        <circle cx="0" cy="0" r="8" fill="#00aa00" stroke="#00aa00" stroke-width="2" fill-opacity="0.7"/>
+        <text x="15" y="5" font-size="12" font-weight="bold" fill="#00aa00" font-family="Arial">Instagram</text>
+        <text x="15" y="20" font-size="11" fill="#666" font-family="Arial">τ=15</text>
+    </g>
+    
+    <!-- BetterPlace -->
+    <g transform="translate(460, 340)">
+        <circle cx="0" cy="0" r="10" fill="#ff8800" stroke="#ff8800" stroke-width="3"/>
+        <text x="20" y="5" font-size="14" font-weight="bold" fill="#ff8800" font-family="Arial">Better Place</text>
+        <text x="20" y="20" font-size="11" fill="#666" font-family="Arial">τ=56, 피보팅 실패</text>
+    </g>
+    
+    <!-- Segway -->
+    <g transform="translate(580, 380)">
+        <circle cx="0" cy="0" r="8" fill="#ff8800" stroke="#ff8800" stroke-width="2" fill-opacity="0.7"/>
+        <text x="15" y="5" font-size="12" font-weight="bold" fill="#ff8800" font-family="Arial">Segway</text>
+        <text x="15" y="20" font-size="11" fill="#666" font-family="Arial">τ=80</text>
+    </g>
+    
+    <!-- Nikola -->
+    <g transform="translate(700, 400)">
+        <circle cx="0" cy="0" r="10" fill="#ff0000" stroke="#ff0000" stroke-width="3"/>
+        <!-- Text positioned left to avoid edge -->
+        <text x="-100" y="5" font-size="14" font-weight="bold" fill="#ff0000" font-family="Arial" text-anchor="end">Nikola</text>
+        <text x="-100" y="20" font-size="11" fill="#666" font-family="Arial" text-anchor="end">τ=100, 사기 전환</text>
+        <line x1="-95" y1="0" x2="-10" y2="0" stroke="#ff0000" stroke-width="1" stroke-dasharray="2,2"/>
+    </g>
+    
+    <!-- Axes -->
+    <g stroke="#333" stroke-width="2" fill="#333">
+        <line x1="100" y1="450" x2="700" y2="450" />
+        <line x1="100" y1="450" x2="100" y2="50" />
+        
+        <!-- Arrow heads -->
+        <path d="M 700 450 L 710 445 L 710 455 Z" fill="#333" />
+        <path d="M 100 50 L 95 60 L 105 60 Z" fill="#333" />
+        
+        <!-- X-axis -->
+        <text x="400" y="490" font-size="16" text-anchor="middle" font-weight="bold" font-family="Arial">τ (정밀도)</text>
+        <text x="100" y="475" font-size="12" text-anchor="middle" font-family="Arial">0</text>
+        <text x="300" y="475" font-size="12" text-anchor="middle" font-family="Arial">20</text>
+        <text x="500" y="475" font-size="12" text-anchor="middle" font-family="Arial">50</text>
+        <text x="700" y="475" font-size="12" text-anchor="middle" font-family="Arial">100</text>
+        
+        <!-- Y-axis -->
+        <text x="30" y="250" font-size="16" text-anchor="middle" font-weight="bold" font-family="Arial" transform="rotate(-90 30 250)">신념 업데이트 (%)</text>
+        <text x="80" y="455" font-size="12" text-anchor="end" font-family="Arial">0</text>
+        <text x="80" y="355" font-size="12" text-anchor="end" font-family="Arial">1</text>
+        <text x="80" y="255" font-size="12" text-anchor="end" font-family="Arial">5</text>
+        <text x="80" y="155" font-size="12" text-anchor="end" font-family="Arial">10</text>
+        <text x="80" y="55" font-size="12" text-anchor="end" font-family="Arial">20</text>
+    </g>
+    
+    <!-- Zone labels -->
+    <text x="400" y="120" font-size="18" font-weight="bold" text-anchor="middle" fill="#00aa00" font-family="Arial">학습 가능 영역</text>
+    <text x="400" y="350" font-size="18" font-weight="bold" text-anchor="middle" fill="#ff0000" font-family="Arial">학습 함정</text>
+    
+    <!-- Key insight -->
+    <text x="400" y="550" font-size="14" text-anchor="middle" font-weight="bold" font-family="Arial">핵심: 낮은 정밀도 = 높은 적응성</text>
+</svg>

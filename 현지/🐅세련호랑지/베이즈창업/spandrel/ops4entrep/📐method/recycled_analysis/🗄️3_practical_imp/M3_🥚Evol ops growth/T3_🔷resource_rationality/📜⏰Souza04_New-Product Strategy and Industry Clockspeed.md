@@ -1,0 +1,5 @@
+We study how industry clockspeed, internal ﬁrm factors, such as product development, production, and inventory costs, and competitive factors determine a ﬁrm’s optimal new-product introduction timing and product-quality decisions. We explicitly model market demand uncertainty, a ﬁrm’s internal cost structure, and competition, using an inﬁnite-horizon Markov decision process. Based on a large-scale numerical analysis, we ﬁnd that more frequent new-product introductions are optimal under faster clockspeed conditions. In addition, we ﬁnd that a ﬁrm’s optimal product-quality decision is governed by a ﬁrm’s relative costs of introducing new products with incremental versus more substantial improvements. We show that a time-pacing product introduction strategy results in a production policy with a simple base-stock form and performs well relative to the optimal policy. Our results thus provide analytical support for the managerial belief that industry clockspeed and time to market are closely related.
+
+Key words: speed to market; time pacing; Markov decision processes
+
+[[souza-et-al-2004-new-product-strategy-and-industry-clockspeed.pdf]]

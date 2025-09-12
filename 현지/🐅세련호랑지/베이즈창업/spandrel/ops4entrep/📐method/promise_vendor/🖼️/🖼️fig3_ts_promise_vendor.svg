@@ -1,0 +1,90 @@
+<svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow-black" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#000" />
+    </marker>
+    <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#d32f2f" />
+    </marker>
+  </defs>
+  
+  <!-- White background -->
+  <rect width="1000" height="500" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="500" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#000">
+    Temporal and Spatial Transformations in Promise Vendor
+  </text>
+  
+  <!-- Grid lines -->
+  <line x1="100" y1="60" x2="900" y2="60" stroke="#000" stroke-width="2"/>
+  <line x1="100" y1="60" x2="100" y2="440" stroke="#000" stroke-width="2"/>
+  <line x1="100" y1="250" x2="900" y2="250" stroke="#000" stroke-width="1"/>
+  <line x1="300" y1="60" x2="300" y2="440" stroke="#000" stroke-width="1"/>
+  
+  <!-- Headers -->
+  <text x="200" y="90" text-anchor="middle" font-family="Arial" font-size="14" font-weight="600" fill="#000">present</text>
+  <text x="600" y="90" text-anchor="middle" font-family="Arial" font-size="14" font-weight="600" fill="#000">future</text>
+  
+  <!-- Newsvendor -->
+  <g transform="translate(0, 120)">
+    <text x="50" y="35" text-anchor="middle" font-family="Arial" font-size="14" font-weight="600" fill="#000" transform="rotate(-90 50 35)">newsvendor</text>
+    
+    <!-- Present side -->
+    <g transform="translate(120, 0)">
+      <text x="0" y="60" font-family="Arial" font-size="12" fill="#666">demand data</text>
+      <path d="M 90 55 L 250 55" stroke="#000" stroke-width="1.5" marker-end="url(#arrow-black)"/>
+      
+      <text x="0" y="100" font-family="Arial" font-size="14" font-weight="600" fill="#000">inventory Q</text>
+    </g>
+    
+    <!-- Future side -->
+    <g transform="translate(450, 0)">
+      <text x="0" y="60" font-family="Arial" font-size="14" font-weight="600" fill="#000">demand D</text>
+    </g>
+    
+    <!-- Optimization -->
+    <text x="500" y="35" text-anchor="middle" font-family="Arial" font-size="12" font-style="italic" fill="#000">
+      arg min Co (Q − D)⁺ + Cu (D − Q)⁺
+    </text>
+    <text x="505" y="50" text-anchor="middle" font-family="Arial" font-size="10" font-style="italic" fill="#666">Q</text>
+  </g>
+  
+  <!-- Promise Vendor -->
+  <g transform="translate(0, 310)">
+    <text x="50" y="40" text-anchor="middle" font-family="Arial" font-size="14" font-weight="600" fill="#000" transform="rotate(-90 50 40)">promise vendor</text>
+    
+    <!-- Present side -->
+    <g transform="translate(120, 0)">
+      <text x="0" y="60" font-family="Arial" font-size="14" font-weight="600" fill="#000">funding F</text>
+    </g>
+    
+    <!-- Future side -->
+    <g transform="translate(450, 0)">
+      <text x="0" y="30" font-family="Arial" font-size="14" font-weight="600" fill="#000">promise P</text>
+      <text x="0" y="80" font-family="Arial" font-size="14" font-weight="600" fill="#000">deliver D</text>
+    </g>
+    
+    <!-- Red arrow: time reversal -->
+    <path d="M 430 30 L 250 50" stroke="#d32f2f" stroke-width="2" marker-end="url(#arrow-red)"/>
+    
+    <!-- Dashed line: F enables D -->
+    <path d="M 220 60 Q 350 70 430 75" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3"/>
+    
+    <!-- Optimization with color coding -->
+    <text x="500" y="15" text-anchor="middle" font-family="Arial" font-size="12" font-style="italic" fill="#000">
+      arg min Co <tspan fill="#1976d2" font-weight="600">I(P &gt; D)</tspan> + Cu <tspan fill="#1976d2" font-weight="600">I(P &lt; D)</tspan> − <tspan fill="#1976d2" font-weight="600">V I(P = D)</tspan>
+    </text>
+    <text x="505" y="30" text-anchor="middle" font-family="Arial" font-size="10" font-style="italic" fill="#666">P</text>
+  </g>
+  
+  <!-- Key insights at bottom -->
+  <g transform="translate(100, 460)">
+    <text x="0" y="0" font-family="Arial" font-size="11" fill="#000">
+      <tspan fill="#d32f2f" font-weight="600">Red:</tspan> Temporal inversion — future promise pulls present funding
+    </text>
+    <text x="500" y="0" font-family="Arial" font-size="11" fill="#000">
+      <tspan fill="#1976d2" font-weight="600">Blue:</tspan> New state space — discrete indicators and value V emerge
+    </text>
+  </g>
+</svg>

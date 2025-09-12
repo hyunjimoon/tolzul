@@ -1,0 +1,5 @@
+- the activity of setting up a business or businesses, taking on financial risks in the hope of profit
+- creation or extraction of economic value
+- entrepreneurship is viewed as change, generally entailing risk beyond what is normally encountered in starting a business, which may include other values than simply economic ones
+- entrepreneur is commonly seen as an innovator, a source of new ideas, goods, services, and business/or procedures
+- process of designing, launching and running a new business, which is often similar to a small business, or as the "capacity and willingness to develop, organize and manage a business venture along with any of its risks to make a profit

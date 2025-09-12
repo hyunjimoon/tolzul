@@ -1,0 +1,1 @@
+Graves, S. C. (2021). Reflections on the evolution of operations management. _Management Science_, _67_(9), 5379-5388.[]

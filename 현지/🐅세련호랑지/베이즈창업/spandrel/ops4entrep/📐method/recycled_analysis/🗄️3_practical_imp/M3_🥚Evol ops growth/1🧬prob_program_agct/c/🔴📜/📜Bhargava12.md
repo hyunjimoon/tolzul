@@ -1,0 +1,1 @@
+Bhargava, H. K., Kim, B. C., & Sun, D. (2013). Commercialization of platform technologies: Launch timing and versioning strategy. _Production and Operations Management_, _22_(6), 1374-1388.

@@ -1,0 +1,1 @@
+Changi airport adopted four AVs after testing its technical feasibility. gradual testing frameworks to adopt technology is needed and i attempt to synthesize innovation metric (weighted average of utility from passenger, crew duty limit, time urgency)

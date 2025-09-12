@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angie Moon's Tranquil Galaxy</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #0a0a2a; /* Deeper blue for tranquility */
+        }
+        canvas {
+            display: block;
+        }
+        .title {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: white;
+            font-size: 24px;
+            font-weight: normal; /* Less bold for tranquility */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            z-index: 100;
+            font-family: Georgia, serif; /* More elegant font */
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Angie Moon's Galaxy</div>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        // Wait for window to fully load before starting
+        window.onload = function() {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Make canvas full screen
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            // Simple resize handler
+            window.addEventListener('resize', function() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+            
+            // Basic variables
+            let time = 0;
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const scale = Math.min(canvas.width, canvas.height) / 1000; // Larger scale for visibility
+            
+            // Draw the three main planets
+            const planets = [
+                { name: 'THEORIZE', color: 'rgba(22, 163, 74, 0.6)', angle: 0, distance: 230 * scale },
+                { name: 'PRODUCTIZE', color: 'rgba(234, 88, 12, 0.6)', angle: 2.09, distance: 170 * scale },
+                { name: 'EVALUATE', color: 'rgba(124, 58, 237, 0.6)', angle: 4.18, distance: 110 * scale }
+            ];
+            
+            // Moon trail
+            const moonTrail = [];
+            const trailLength = 15;
+            
+            // Animation loop
+            function animate() {
+                // Clear canvas
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw background gradient for more tranquil feel
+                const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                gradient.addColorStop(0, '#0a0a2a');
+                gradient.addColorStop(1, '#0f0f40');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Update time (slower for tranquility)
+                time += 0.005;
+                
+                // Draw stars (gentler twinkling)
+                for (let i = 0; i < 150; i++) {
+                    // Deterministic positions for stars so they don't jump around
+                    const idx = i * 10;
+                    const x = Math.sin(idx) * canvas.width/2 + centerX;
+                    const y = Math.cos(idx * 0.7) * canvas.height/2 + centerY;
+                    const size = (0.5 + Math.sin(idx * 0.3) * 0.5) * scale;
+                    
+                    // Gentle twinkling
+                    const brightness = 0.3 + 0.2 * Math.sin(time + i * 0.2);
+                    
+                    ctx.beginPath();
+                    ctx.arc(x, y, size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, 255, 255, ${brightness})`;
+                    ctx.fill();
+                }
+                
+                // Draw center with soft glow
+                const centerGlow = ctx.createRadialGradient(
+                    centerX, centerY, 0,
+                    centerX, centerY, 60 * scale
+                );
+                centerGlow.addColorStop(0, 'rgba(255, 255, 255, 0.1)');
+                centerGlow.addColorStop(1, 'rgba(255, 255, 255, 0)');
+                
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, 60 * scale, 0, Math.PI * 2);
+                ctx.fillStyle = centerGlow;
+                ctx.fill();
+                
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, 40 * scale, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+                ctx.fill();
+                
+                // Draw center text with gentle glow
+                ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
+                ctx.shadowBlur = 10;
+                ctx.font = `${18 * scale}px Georgia, serif`;
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('LIVING', centerX, centerY - 15 * scale);
+                ctx.fillText('ERGODIC', centerX, centerY);
+                ctx.fillText('LIFE', centerX, centerY + 15 * scale);
+                ctx.shadowBlur = 0;
+                
+                // Draw planets with softer appearance
+                planets.forEach((planet, i) => {
+                    // Update planet angle (slower for tranquility)
+                    planet.angle += 0.002;
+                    
+                    // Calculate position
+                    const x = centerX + planet.distance * Math.cos(planet.angle);
+                    const y = centerY + planet.distance * Math.sin(planet.angle);
+                    
+                    // Draw orbit with faded dotted lines for tranquility
+                    ctx.beginPath();
+                    ctx.setLineDash([5 * scale, 10 * scale]);
+                    ctx.arc(centerX, centerY, planet.distance, 0, Math.PI * 2);
+                    ctx.strokeStyle = `rgba(255, 255, 255, 0.1)`;
+                    ctx.lineWidth = scale;
+                    ctx.stroke();
+                    ctx.setLineDash([]);
+                    
+                    // Draw planet with gradient for softer look
+                    const planetGradient = ctx.createRadialGradient(
+                        x, y, 0,
+                        x, y, 25 * scale
+                    );
+                    planetGradient.addColorStop(0, planet.color);
+                    planetGradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+                    
+                    ctx.beginPath();
+                    ctx.arc(x, y, 25 * scale, 0, Math.PI * 2);
+                    ctx.fillStyle = planetGradient;
+                    ctx.fill();
+                    
+                    // Label with gentle glow
+                    ctx.shadowColor = 'rgba(255, 255, 255, 0.3)';
+                    ctx.shadowBlur = 5;
+                    ctx.font = `${14 * scale}px Georgia, serif`;
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+                    ctx.fillText(planet.name, x, y);
+                    ctx.shadowBlur = 0;
+                });
+                
+                // Draw Moon with more emphasis and visibility
+                // Moon follows a gentle figure-8 path (Lissajous curve)
+                const moonAngle = time * 0.15;
+                const moonX = centerX + 150 * scale * Math.sin(moonAngle * 2);
+                const moonY = centerY + 80 * scale * Math.sin(moonAngle * 3);
+                
+                // Add point to moon trail
+                moonTrail.push({x: moonX, y: moonY});
+                if (moonTrail.length > trailLength) {
+                    moonTrail.shift();
+                }
+                
+                // Draw trail as fading path
+                if (moonTrail.length > 2) {
+                    ctx.beginPath();
+                    ctx.moveTo(moonTrail[0].x, moonTrail[0].y);
+                    
+                    for (let i = 1; i < moonTrail.length; i++) {
+                        ctx.lineTo(moonTrail[i].x, moonTrail[i].y);
+                    }
+                    
+                    ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+                    ctx.lineWidth = 2 * scale;
+                    ctx.stroke();
+                }
+                
+                // Draw moon glow for emphasis
+                const moonGlow = ctx.createRadialGradient(
+                    moonX, moonY, 0,
+                    moonX, moonY, 40 * scale
+                );
+                moonGlow.addColorStop(0, 'rgba(255, 255, 255, 0.3)');
+                moonGlow.addColorStop(1, 'rgba(255, 255, 255, 0)');
+                
+                ctx.beginPath();
+                ctx.arc(moonX, moonY, 40 * scale, 0, Math.PI * 2);
+                ctx.fillStyle = moonGlow;
+                ctx.fill();
+                
+                // Draw actual moon (larger and more visible)
+                ctx.font = `${70 * scale}px Arial`;
+                ctx.fillStyle = 'white';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('🌙', moonX, moonY);
+                
+                // Moon label with glow
+                ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
+                ctx.shadowBlur = 10;
+                ctx.font = `${16 * scale}px Georgia, serif`;
+                ctx.fillStyle = 'white';
+                ctx.fillText('Angie Moon', moonX, moonY + 45 * scale);
+                ctx.shadowBlur = 0;
+                
+                // Continue animation
+                requestAnimationFrame(animate);
+            }
+            
+            // Start animation
+            animate();
+        };
+    </script>
+</body>
+</html>

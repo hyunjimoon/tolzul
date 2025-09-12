@@ -1,0 +1,2 @@
+  angie's relationship and conversation with [[charlie_fine]]  led to inferring his mental model as [[🗄️🧠charlie]]
+angie's relationship and conversation with [[scott_stern]] led to inferring his mental model as [[🗄️🧠moshe]]

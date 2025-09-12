@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEAM Tennis Strategic System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background: #f5f5f0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border: 2px solid #2c3e50;
+            padding: 40px;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            font-weight: normal;
+            letter-spacing: 4px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+        
+        .philosophy {
+            text-align: center;
+            color: #34495e;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+        
+        .court-container {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            background: #527a52;
+            border: 3px solid white;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .court-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .baseline {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: white;
+            bottom: 30px;
+        }
+        
+        .service-line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: white;
+            bottom: 170px;
+        }
+        
+        .net {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: white;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .center-line {
+            position: absolute;
+            width: 2px;
+            height: 280px;
+            background: white;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+        }
+        
+        .animal-zone {
+            position: absolute;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .animal-zone:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        
+        .turtle-zone {
+            width: 110px;
+            height: 110px;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 3px solid #2e7d32;
+            color: #2e7d32;
+        }
+        
+        .tiger-zone {
+            width: 90px;
+            height: 90px;
+            bottom: 150px;
+            left: 25%;
+            border: 3px solid #d84315;
+            color: #d84315;
+        }
+        
+        .octopus-zone {
+            width: 90px;
+            height: 90px;
+            bottom: 150px;
+            right: 25%;
+            border: 3px solid #1565c0;
+            color: #1565c0;
+        }
+        
+        .alien-zone {
+            width: 80px;
+            height: 80px;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 3px solid #6a1b9a;
+            color: #6a1b9a;
+        }
+        
+        .animal-icon {
+            font-size: 2.2em;
+            margin-bottom: 5px;
+        }
+        
+        .animal-label {
+            font-size: 0.75em;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .info-panel {
+            display: none;
+            padding: 25px;
+            background: #fafafa;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .info-panel.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .info-title {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #2c3e50;
+            border-bottom: 2px solid;
+            padding-bottom: 10px;
+        }
+        
+        .info-title.turtle { border-color: #2e7d32; }
+        .info-title.tiger { border-color: #d84315; }
+        .info-title.octopus { border-color: #1565c0; }
+        .info-title.alien { border-color: #6a1b9a; }
+        
+        .info-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .info-box {
+            padding: 20px;
+            background: white;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .info-box h3 {
+            margin-bottom: 12px;
+            color: #2c3e50;
+            font-size: 1.1em;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .info-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .info-box li {
+            padding: 5px 0;
+            color: #555;
+            font-size: 0.95em;
+            border-bottom: 1px dotted #e0e0e0;
+        }
+        
+        .info-box li:last-child {
+            border-bottom: none;
+        }
+        
+        .info-box li:before {
+            content: "• ";
+            color: #999;
+            margin-right: 5px;
+        }
+        
+        .strategic-wisdom {
+            text-align: center;
+            padding: 25px;
+            background: #2c3e50;
+            color: white;
+            margin-top: 30px;
+            font-size: 1.15em;
+            line-height: 1.8;
+            letter-spacing: 1px;
+        }
+        
+        .wisdom-title {
+            font-size: 0.8em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            opacity: 0.8;
+            letter-spacing: 2px;
+        }
+        
+        .command-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .command-card {
+            text-align: center;
+            padding: 20px 10px;
+            background: white;
+            border: 2px solid;
+            transition: all 0.2s;
+        }
+        
+        .command-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .command-card.turtle { border-color: #2e7d32; color: #2e7d32; }
+        .command-card.tiger { border-color: #d84315; color: #d84315; }
+        .command-card.octopus { border-color: #1565c0; color: #1565c0; }
+        .command-card.alien { border-color: #6a1b9a; color: #6a1b9a; }
+        
+        .command-icon {
+            font-size: 2em;
+            margin-bottom: 8px;
+        }
+        
+        .command-text {
+            font-size: 0.85em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .command-sub {
+            font-size: 0.75em;
+            margin-top: 5px;
+            opacity: 0.8;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .info-content {
+                grid-template-columns: 1fr;
+            }
+            .command-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">BEAM SYSTEM</h1>
+        <p class="subtitle">Base • Eyes • Arms • Mind</p>
+        <p class="philosophy">"Victory through Righteous Strategy"</p>
+        
+        <div class="court-container">
+            <div class="court-lines">
+                <div class="baseline"></div>
+                <div class="service-line"></div>
+                <div class="net"></div>
+                <div class="center-line"></div>
+            </div>
+            
+            <div class="animal-zone turtle-zone" onclick="showInfo('turtle')">
+                <span class="animal-icon">🐢</span>
+                <span class="animal-label">BASE</span>
+            </div>
+            
+            <div class="animal-zone tiger-zone" onclick="showInfo('tiger')">
+                <span class="animal-icon">🐅</span>
+                <span class="animal-label">EYES</span>
+            </div>
+            
+            <div class="animal-zone octopus-zone" onclick="showInfo('octopus')">
+                <span class="animal-icon">🐙</span>
+                <span class="animal-label">ARMS</span>
+            </div>
+            
+            <div class="animal-zone alien-zone" onclick="showInfo('alien')">
+                <span class="animal-icon">👾</span>
+                <span class="animal-label">MIND</span>
+            </div>
+        </div>
+        
+        <div id="turtle-info" class="info-panel">
+            <div class="info-title turtle">
+                <span>🐢</span> BASE — The Righteous Foundation
+            </div>
+            <div class="info-content">
+                <div class="info-box">
+                    <h3>Technical Discipline</h3>
+                    <ul>
+                        <li>Stance: 1.5x shoulder width</li>
+                        <li>Knee bend: 45 degrees</li>
+                        <li>Weight transfer: back to front</li>
+                        <li>Split step: 0.3 sec before contact</li>
+                        <li>Center recovery: within 2 steps</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3>Strategic Wisdom</h3>
+                    <ul>
+                        <li><strong>Command: "Low and Slow"</strong></li>
+                        <li>Maintain 85-90% power reserve</li>
+                        <li>Patience defeats haste</li>
+                        <li>Foundation precedes victory</li>
+                        <li>Every shot returns to center</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="tiger-info" class="info-panel">
+            <div class="info-title tiger">
+                <span>🐅</span> EYES — The Wise Observer
+            </div>
+            <div class="info-content">
+                <div class="info-box">
+                    <h3>Technical Discipline</h3>
+                    <ul>
+                        <li>3-Point tracking system</li>
+                        <li>Shoulder angle reading</li>
+                        <li>0.5 sec anticipation window</li>
+                        <li>Spin detection at 3m</li>
+                        <li>Zone coverage mapping</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3>Strategic Wisdom</h3>
+                    <ul>
+                        <li><strong>Command: "Track and Attack"</strong></li>
+                        <li>Observe deeply, strike precisely</li>
+                        <li>30° shoulder = crosscourt</li>
+                        <li>0° shoulder = down the line</li>
+                        <li>The eye commands the body</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="octopus-info" class="info-panel">
+            <div class="info-title octopus">
+                <span>🐙</span> ARMS — The Brave Executor
+            </div>
+            <div class="info-content">
+                <div class="info-box">
+                    <h3>Technical Discipline</h3>
+                    <ul>
+                        <li>Grip pressure: 3→7→5 sequence</li>
+                        <li>Grip transition: 0.2 seconds</li>
+                        <li>Wrist lag to snap timing</li>
+                        <li>Racket face precision</li>
+                        <li>Spin variation control</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3>Strategic Wisdom</h3>
+                    <ul>
+                        <li><strong>Command: "Grip and Rip"</strong></li>
+                        <li>Whip motion, not hammer</li>
+                        <li>Racket extends the spirit</li>
+                        <li>Economy in motion</li>
+                        <li>Touch reveals mastery</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="alien-info" class="info-panel">
+            <div class="info-title alien">
+                <span>👾</span> MIND — The Strategic Genius
+            </div>
+            <div class="info-content">
+                <div class="info-box">
+                    <h3>Technical Discipline</h3>
+                    <ul>
+                        <li>Pattern recognition system</li>
+                        <li>80% routine, 20% surprise</li>
+                        <li>Weakness identification</li>
+                        <li>Momentum shift timing</li>
+                        <li>Multiple strategy preparation</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3>Strategic Wisdom</h3>
+                    <ul>
+                        <li><strong>Command: "Break and Make"</strong></li>
+                        <li>Disrupt patterns strategically</li>
+                        <li>Create from chaos</li>
+                        <li>Victory through innovation</li>
+                        <li>The unexpected prevails</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="strategic-wisdom">
+            <div class="wisdom-title">The Way of Strategic Tennis</div>
+            "Base like a Turtle — steady as mountains<br>
+            Eyes like a Tiger — seeing all patterns<br>
+            Arms like an Octopus — flowing like water<br>
+            Mind like an Alien — boundless as space"
+        </div>
+        
+        <div class="command-grid">
+            <div class="command-card turtle">
+                <div class="command-icon">🐢</div>
+                <div class="command-text">Low & Slow</div>
+                <div class="command-sub">Righteous Foundation</div>
+            </div>
+            <div class="command-card tiger">
+                <div class="command-icon">🐅</div>
+                <div class="command-text">Track & Attack</div>
+                <div class="command-sub">Wise Observation</div>
+            </div>
+            <div class="command-card octopus">
+                <div class="command-icon">🐙</div>
+                <div class="command-text">Grip & Rip</div>
+                <div class="command-sub">Brave Execution</div>
+            </div>
+            <div class="command-card alien">
+                <div class="command-icon">👾</div>
+                <div class="command-text">Break & Make</div>
+                <div class="command-sub">Strategic Innovation</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentInfo = null;
+        
+        function showInfo(animal) {
+            const allPanels = document.querySelectorAll('.info-panel');
+            allPanels.forEach(panel => panel.classList.remove('active'));
+            
+            const selectedPanel = document.getElementById(animal + '-info');
+            if (currentInfo === animal) {
+                currentInfo = null;
+            } else {
+                selectedPanel.classList.add('active');
+                currentInfo = animal;
+            }
+        }
+    </script>
+</body>
+</html>
