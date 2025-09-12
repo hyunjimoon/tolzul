@@ -1,1 +1,0 @@
-took class (transportation methods) two years and admired her question answering skills as she predicts the intention of the question well and resolves (e.g. why would anyone care about simplex algorithm)

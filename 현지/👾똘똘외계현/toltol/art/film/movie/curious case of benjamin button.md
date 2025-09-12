@@ -1,3 +1,0 @@
-my favorite movie, "The Curious Case of Benjamine Button." The main character Benjamine ages in reverse - he is born as an old man, wrinkled and wise, and becomes younger, and dies as a baby. This movie gave me an idea on how to measure my life quality as I'm living through it - mover's measure. I think the choice I make with older body-soul is equivalent with the choices I make with my younger body-soul, 
-
-This requires meta-theory on how fast I should update my world model and make choices within that world model alternatively, in what frequency. However, one challenge is scoping should be  growth of my world model and decision within that world I found local detailed balance to be a useful heuristic to check

@@ -1,1 +1,0 @@
-- [[def(daily_diary)]] of interaction with johan

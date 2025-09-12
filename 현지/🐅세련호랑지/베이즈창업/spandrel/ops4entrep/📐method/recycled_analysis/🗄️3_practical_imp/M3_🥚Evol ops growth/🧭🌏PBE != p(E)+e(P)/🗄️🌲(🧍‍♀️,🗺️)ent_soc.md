@@ -1,6 +1,0 @@
-| **Dimension**                    | **🌲(🧍‍♀️): Entrepreneur's Uncertainty Hierarchy**                                   | **🌲(🗺️): Society's Uncertainty Hierarchy**                                             |
-| -------------------------------- | ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| Terminal Node                    | Operational options chosen by the entrepreneur                                        | The entrepreneur (among many) as a node in the broader system                            |
-| What Can Be Measured?            | E/A ratio *within* that single entrepreneur's hierarchy                               | Not directly measurable by that one entrepreneur; depends on societal-level knowledge    |
-| Prescriptive Focus               | Guides the entrepreneur's *own* sampling algorithm and decisions                      | Shapes how multiple entrepreneurs might appear, merge, or fail in the broader market     |
-| Role of "High-Class" Opportunity | Defined by p closer to 0.5, thus higher E/A ratio from the *entrepreneur's* viewpoint | Could be invisible or ignored in society's tree if insufficient signals exist for others |

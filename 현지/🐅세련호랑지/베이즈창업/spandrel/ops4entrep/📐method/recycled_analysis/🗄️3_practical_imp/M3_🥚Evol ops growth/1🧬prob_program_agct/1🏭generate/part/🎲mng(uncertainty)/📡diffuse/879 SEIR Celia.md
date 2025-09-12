@@ -1,1 +1,0 @@
-- estimated parameter: ifr, sensitivity to death, initial attack rate, pwrisk, time to reduce risk, time to perceive, patient zero arrival time, 

@@ -1,2 +1,0 @@
-- economic effect of low precision in building one's hypothesis space and managing https://github.com/Data4DM/BayesSD/discussions/250#discussioncomment-11060731 on 👁️ (L) = 💡 (I) * 🔢 (R)
-- [[🪵(📝product1)]]

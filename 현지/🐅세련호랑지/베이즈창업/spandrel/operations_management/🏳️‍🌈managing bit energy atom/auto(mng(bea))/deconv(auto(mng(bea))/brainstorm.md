@@ -1,3 +1,0 @@
-- bit is harder to fact check
-	- **5 China has had enough of AI-driven fraud**  Its tight internet restrictions mean it could be relatively successful in cracking down on it, too. ([WSJ](https://technologyreview.us11.list-manage.com/track/click?u=47c1a9cec9749a8f8cbc83e78&id=72bd33fac0&e=d3b4c3c36c) $)
-- [[amoon(world)/jungle🌳/comp(mng(bea))/_def(comp(mng(bea)))/off_def(bea)|off_def(bea)]]

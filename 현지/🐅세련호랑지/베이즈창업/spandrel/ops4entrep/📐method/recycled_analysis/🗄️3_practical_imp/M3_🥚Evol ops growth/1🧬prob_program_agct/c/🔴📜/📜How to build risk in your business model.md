@@ -1,6 +1,0 @@
-https://hbr.org/2011/05/how-to-build-risk-into-your-business-model
-To create value, companies typically focus on revenue, cost structure, and resource velocity. Improving those factors is the main focus of management literature. But all of them are vulnerable to sharp changes in demand and supply.
-
-Companies can innovate their business models to reduce the impact of such swings. But they can also create value by adding some risk. For instance, more than 30 years ago Rolls-Royce identified a major pain point in the aircraft industry: maintenance of airplane engines. An engine breakdown grounds the plane while the airline pays for repair time and materials. So Rolls-Royce offered a service contract whereby the airline would pay for an engine’s flight hours rather than for time and materials. The new contract triggered a completely new value creation dynamic, because Rolls-Royce was motivated to improve its own products and maintenance processes.
-
-Business model innovations are much cheaper than product and technology innovations, and they can be approached in a systematic way. Furthermore, nearly all the big ones have already been done—so you can simply adapt them to suit your own situation.

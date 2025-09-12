@@ -1,1 +1,0 @@
-social reasoning, agent's reasoning on reasoning, who recognized the value of [[🌙amoon()/💭 theorize/🌙thesis/M2_🐓Bayes strategic experiment/💻simulation-based calibraton/calibration_theory/SBCextension|SBCextension]]

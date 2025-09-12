@@ -1,1 +1,0 @@
-ADMARES is **redefining homebuilding** by introducing the world’s first fully digitalized, industrialized, and productized approach to construction. Our automated and robotized manufacturing processes enable entire buildings to be mass-produced in a factory with unparalleled speed, precision, and quality **— eliminating the need for traditional construction labor.**

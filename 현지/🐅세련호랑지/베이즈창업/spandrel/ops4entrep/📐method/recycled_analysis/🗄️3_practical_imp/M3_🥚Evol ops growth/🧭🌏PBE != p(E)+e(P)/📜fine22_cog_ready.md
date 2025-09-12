@@ -1,4 +1,0 @@
-Cognitive readiness is the mental preparation (including skills, knowledge, abilities, motivations, and personal disposition) that a person needs to establish and sustain competent performance in our complex and unpredictable environment. Smart cognitively-ready leaders invest constantly in knowledge, skills, and attributes that give them the tools to respond to constant disruption.
-
-- "But the action part is critical. You can’t just learn smart skills by reading the theory of smart skills. You have to get out there and try it."
-- "systems thinking, aided by such models, helps you consider and plan for scenarios for which you need to be cognitively ready."

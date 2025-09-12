@@ -1,1 +1,0 @@
-Supermartingale convergence theorem

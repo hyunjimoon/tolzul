@@ -1,2 +1,0 @@
-- bottom up,[[def(open_sys)]] 
-- jungle, agile, 

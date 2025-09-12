@@ -1,1 +1,0 @@
-![[sparkcharge_beta_tusimple_botauto.png|100]]

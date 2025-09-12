@@ -1,1 +1,0 @@
-![[bimodalizing_network_effect.png]]

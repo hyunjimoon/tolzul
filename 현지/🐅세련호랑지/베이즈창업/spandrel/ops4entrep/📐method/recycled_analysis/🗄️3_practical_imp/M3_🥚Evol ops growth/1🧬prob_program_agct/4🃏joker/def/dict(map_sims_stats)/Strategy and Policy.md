@@ -1,1 +1,0 @@
-Given state, return action; include exogenous variable;  longer term (not heuristic)

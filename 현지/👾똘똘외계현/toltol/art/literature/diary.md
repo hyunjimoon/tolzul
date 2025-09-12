@@ -1,1 +1,0 @@
-- if i raise my voice and show emotion, the other would perceive higher dissatisfaction for the conversation. so even if you feel dissatisfied and annoyed, don't show this as much as possible

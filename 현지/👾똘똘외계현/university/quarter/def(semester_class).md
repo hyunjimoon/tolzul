@@ -1,2 +1,0 @@
-- add new axis to my knowledge system
-- current six topics of [[def(walkie-talkie)]] all have one 

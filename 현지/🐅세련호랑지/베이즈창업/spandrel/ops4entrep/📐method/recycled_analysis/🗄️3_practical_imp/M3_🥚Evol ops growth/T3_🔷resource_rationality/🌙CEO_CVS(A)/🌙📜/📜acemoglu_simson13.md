@@ -1,1 +1,0 @@
-Acemoglu, D., & Robinson, J. A. (2013). _Why nations fail: The origins of power, prosperity, and poverty_. Crown Currency.

@@ -1,1 +1,0 @@
-Series of fundings acknowledge startup is dynamic, not static. Amount of funds are: pre-seed < 2m, seed: 10m , series a:20-50m, series b:50-100m 

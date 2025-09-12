@@ -1,2 +1,0 @@
-- forward (simluator) model and backward (posterior) model are not well-balanced
-- 

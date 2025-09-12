@@ -1,1 +1,0 @@
-implementation of [[cto1(eq(rational_agent))]] which provides computational framework for strategy formulation under uncertainty leveraging rational agency equation. this optimal decision-making algorithm for entrepreneurs implements transformation of complex business environments inflow to decision outflow.

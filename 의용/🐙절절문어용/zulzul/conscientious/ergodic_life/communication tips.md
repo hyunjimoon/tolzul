@@ -1,5 +1,0 @@
-- "Is there anything else I should have asked?": Rule of thumb: People want to help you, but will rarely do so unless you give them an excuse to do so.
-- "Who else should I talk to?"
-- "Where does the money come from?"
-- "How are you dealing with it now?"
-- •  Why this problem? Why my product? Why now?

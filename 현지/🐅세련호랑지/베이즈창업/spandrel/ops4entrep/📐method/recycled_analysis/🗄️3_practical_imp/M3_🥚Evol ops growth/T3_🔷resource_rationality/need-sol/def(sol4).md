@@ -1,4 +1,0 @@
-- social planner and government agent's approach, which solves Warlasian optimality
-- divided into 
-	- [[def(sol4.g)]] which is in sailing stage, focusing on financial, employment, monetary stability 
-	- [[def(sol4.l)]] which is in nailing, scaling stage focusing on growth and uses growth diagnostics as its tool 

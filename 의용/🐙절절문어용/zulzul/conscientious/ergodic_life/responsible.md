@@ -1,1 +1,0 @@
-third condition from [[교양있는 엔지니어 감상문]] - becoming responsible engineer

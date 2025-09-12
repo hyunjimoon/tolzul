@@ -1,2 +1,0 @@
-- know member's goal
-- relational leadership ([[문옥경]]), principle-based leadership (강소복)

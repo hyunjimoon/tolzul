@@ -1,1 +1,0 @@
-- resource allocation to capability supply chain, solution-need development chain, fulfillment supply chain

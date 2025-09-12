@@ -1,2 +1,0 @@
--  <mark class="blue">augmented intelligence </mark> to <mark class="purple">innovative augemented intelligence </mark>
-- innovation references are visualized in [[econ(idea_innov_entrep).pdf]], pick a look: ![[Pasted image 20240104092044.png]]

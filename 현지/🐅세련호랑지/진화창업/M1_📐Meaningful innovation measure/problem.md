@@ -1,8 +1,0 @@
-current scott's measure is static sufficient statistics and its explanability can be improved with rational meaning construction so that this index is more meaningful
-
----
-
-> Modeling quality in entrepreneurship and its dynamic improvement process
-Modeling an entrepreneur’s mind to improve quality of ideas and execution plans is of great interest to entrepreneurship scholars (Gans et al., 2025). We focus on termsheet negotiation as a starting point, using probabilistic programming to interpret belief statements (Ying et al., 2024). This approach helps understand the founder’s perception of contribution, value creation, delivery, and capture (Gans et al., 2021; Fine et al., 2022; Gans and Stern, 2017). The hierarchical nature of mind (Griﬀiths et al., 2024) is observed in the founder’s noisy learning (Gans et al., 2019) and during negotiation. We define term sheet quality as the optimal allocation of rights and terms fostering mutual understanding and long-term value creation, and term sheet negotiation process quality as the eﬀicient progression towards an optimal agreement while building trust. With the goal of maximizing term sheet product quality, the negotiation process uses collaborative and competitive probabilistic reasoning of technical, organizational, and market uncertainties.
-
-from [[AngieMoon_conversational termsheet advisor.pdf]] which vikash gave feedback to focus on inferring financial value. i'm curious whether with updated information on the access to scott's startup categrophy project data, his interest to quality index would differ (todo: ask and update [[🗄️🧠vikash]] ) 

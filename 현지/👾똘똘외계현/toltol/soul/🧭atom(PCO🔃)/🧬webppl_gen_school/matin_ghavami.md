@@ -1,2 +1,0 @@
-- best supporter of [[bepc]]
-- great friend + squash ⚫️ player

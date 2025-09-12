@@ -1,1 +1,0 @@
-processes that lead towards individual versus group outcomes are decoupled in time but often coupled causally via the decisions made.

@@ -1,1 +1,0 @@
-ed kaplan (counter-terrorism)

@@ -1,1 +1,0 @@
-Almaatouq, A., Griffiths, T. L., Suchow, J. W., Whiting, M. E., Evans, J., & Watts, D. J. (2024). Beyond playing 20 questions with nature: Integrative experiment design in the social and behavioral sciences. _Behavioral and Brain Sciences_, _47_, e33.

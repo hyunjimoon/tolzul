@@ -1,1 +1,0 @@
-[conjugate gradient update](https://scholar.google.com/citations?user=7zf7xGkAAAAJ&hl=en)

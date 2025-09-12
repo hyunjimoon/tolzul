@@ -1,1 +1,0 @@
-- compared to [[def(mng(operation))]], which is long time horizon resource allocation of one company, managing innovation is more of societal level. The process of how ideas goes through intermediate capital and transformed to final capital to be commercialized, for the mankind's progress. 

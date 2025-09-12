@@ -1,1 +1,0 @@
-cristina values people and experience

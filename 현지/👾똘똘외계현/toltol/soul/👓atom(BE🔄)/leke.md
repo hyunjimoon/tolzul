@@ -1,1 +1,0 @@
-- leke shared [[jalal_rumi]]'s poem

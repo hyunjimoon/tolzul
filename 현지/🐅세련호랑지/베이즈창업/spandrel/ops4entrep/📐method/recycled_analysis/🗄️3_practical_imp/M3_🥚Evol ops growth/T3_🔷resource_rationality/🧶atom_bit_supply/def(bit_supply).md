@@ -1,2 +1,0 @@
-- development chain of [design, develop, launch]
-- 3d concurrent engineering of product, process, organization

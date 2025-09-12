@@ -1,1 +1,0 @@
-application of [[🌙amoon()/💭 theorize/🌙thesis/M2_🐓Bayes strategic experiment/💻simulation-based calibraton/calibration_theory/System calibration|System calibration]]

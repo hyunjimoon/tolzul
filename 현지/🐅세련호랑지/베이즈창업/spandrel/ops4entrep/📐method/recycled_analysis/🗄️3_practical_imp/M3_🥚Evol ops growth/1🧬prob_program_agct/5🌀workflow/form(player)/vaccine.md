@@ -1,7 +1,0 @@
-- behavioral response
-- using variation to measure explainability and " heterogeneous death rates was not the policy responses themselves but rather variation in responsiveness" 
-[Why Similar Policies Resulted In Different COVID-19 Outcomes: How Responsiveness And Culture Influenced Mortality Rates](https://mj-lab.mgh.harvard.edu/wp-content/uploads/2023/12/lim-et-al-2023-HealthAffairs.pdf)
-```
-In the first two years of the COVID-19 pandemic, per capita mortality varied by more than a hundredfold across countries, despite most implementing similar nonpharmaceutical interventions. Factors such as policy stringency, gross domestic product, and age distribution explain only a small fraction of mortality variation. To address this puzzle, we built on a previously validated pandemic model in which perceived risk altered societal responses affecting SARS-CoV-2 transmission. Using data from more than 100 countries, we found that a key factor explaining heterogeneous death rates was not the policy responses themselves but rather variation in responsiveness. Responsiveness measures how sensitive communities are to evolving mortality risks and how readily they adopt nonpharmaceutical interventions in response, to curb transmission. We further found that responsiveness correlated with two cultural constructs across countries: uncertainty avoidance and power distance. Our findings show that more responsive adoption of similar policies saves many lives, with important implications for the design and implementation of responses to future outbreaks.
-```
-
