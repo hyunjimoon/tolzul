@@ -2,6 +2,9 @@
 # Bayesian Evolution Assessment: Andrew & Josh Policy Lens
 ## 👾 Space Food Literature Review
 
+![[bayes_evol(andrew_josh) 2025-09-12-21.svg]]
+%%[[bayes_evol(andrew_josh) 2025-09-12-21.md|🖋 Edit in Excalidraw]]%%
+
 | Paper                                                           | Core Concept                                          | 🟢 AGREE                                                 | 🔴 DISAGREE                       | 🔵 Our Bayesian Extension                      | ⚡️manual                                                                                                                                         |
 | --------------------------------------------------------------- | ----------------------------------------------------- | -------------------------------------------------------- | --------------------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **[[📜👾_gans23_choose(entrepreneurship, experimentation)]]** | High-bar vs low-bar experiments based on priors       | **Strongly agree**: Experimental design reflects beliefs | -                                 | Maps directly to our τ choice mechanism        |                                                                                                                                                  |

@@ -1,5 +1,6 @@
 # 🎹 약속설계의 음계: Entrepreneurial Promise as Bayesian Adaptation
 
+[[0(약속설계)]]
 Bayesian and Evolutionary entrepreneurship with double binding promise
 ## 논문의 3대 기여 아키텍처
 
@@ -8,7 +9,7 @@ Bayesian and Evolutionary entrepreneurship with double binding promise
 
 ### 🌀 Contribution 2: ENDOGENIZATION through Two Reparameterizations (두 번의 재매개변수화를 통한 내생화)
 **Cascading Transformation**: 
-- **First**: Success probability → Promise level (φ) + Nature's complexity (n)
+- **First**: Success probability → Promise level (φ) + Nature's complexity (c)
 - **Second**: Promise level → Aspiration level (μ) + Concentration level (τ)
 
 ### 🌉 Contribution 3: BRIDGING (가교)
@@ -23,9 +24,11 @@ Bayesian and Evolutionary entrepreneurship with double binding promise
 | 모델 | 유형 | 재매개변수화 | 불확실성 추가 | 핵심 통찰 |
 |:---:|:---:|:---|:---|:---|
 | **M1** | Base | Success → Promise (φ) | - | 약속이 성공확률을 매개 |
-| **M1'** | +Nature | Success → Promise (φ) | n (complexity) | φ* = 1/(n+1) |
+| **M1'** | +Nature | Success → Promise (φ) | c (complexity) | φ* = 1/(c+1) |
 | **M2** | Base | Promise → Aspiration (μ) | - | 약속도 분포를 가짐 |
 | **M2'** | +Founder | Promise → Aspiration (μ) | τ (concentration) | Learning trap vs Rational ignorance |
+
+
 
 ---
 
@@ -34,9 +37,9 @@ Bayesian and Evolutionary entrepreneurship with double binding promise
 | 모듈 | 🐢낭만거북의<br>**철학적 탐구** | 🐅세련호랑지의<br>**수학적 정교화** | 🐙절절문어용의<br>**실증적 포착** | 👾똘똘외계현의<br>**통합적 지혜** |
 |:---:|:---|:---|:---|:---|
 | **M1**<br>📐Base Model 1<br>*Reparameterize I* | **성공의 재정의**<br>• P(success) → P(promise)<br>• 약속이 곧 성공의 언어<br>• "말이 씨가 된다" | **첫 번째 재매개변수화**<br>• s,d ~ Bernoulli(φ)<br>• φ ∈ [0,1]: 약속수준<br>• 단순 변환 모델 | **초기 스타트업의 선언**<br>• "We will revolutionize..."<br>• 구체성 없는 비전<br>• 순수한 의지의 표현 | **분리의 시작**<br>• 창업가의 말 ≠ 벤처의 현실<br>• 약속이라는 인터페이스 발견<br>• 측정 가능한 구조 창출 |
-| **M1'**<br>🌿Extended 1<br>*+Nature's Uncertainty* | **자연의 개입**<br>• 복잡성이 약속을 제약<br>• "Man proposes, God disposes"<br>• 겸손의 필요성 | **자연 불확실성 추가**<br>• φ* = 1/(n+1)<br>• n: 운영 복잡도<br>• **Proposition 1** 도출 | **Better Place의 교훈**<br>• n=∞에서 φ=1 선택<br>• "정확히 5분" → $850M 손실<br>• 자연을 무시한 대가 | **첫 번째 지혜**<br>• 복잡할수록 보수적으로<br>• 자연은 통제 불가능<br>• Reliability engineering 원리 |
+| **M1'**<br>🌿Extended 1<br>*+Nature's Uncertainty* | **자연의 개입**<br>• 복잡성이 약속을 제약<br>• "Man proposes, God disposes"<br>• 겸손의 필요성 | **자연 불확실성 추가**<br>• φ* = 1/(c+1)<br>• c: 운영 복잡도<br>• **Proposition 1** 도출 | **Better Place의 교훈**<br>• c=∞에서 φ=1 선택<br>• "정확히 5분" → $850M 손실<br>• 자연을 무시한 대가 | **첫 번째 지혜**<br>• 복잡할수록 보수적으로<br>• 자연은 통제 불가능<br>• Reliability engineering 원리 |
 | **M2**<br>📈Base Model 2<br>*Reparameterize II* | **약속의 약속**<br>• 메타 레벨 상승<br>• "나는 얼마나 약속할 것인가"<br>• 열망의 도입 | **두 번째 재매개변수화**<br>• φ ~ Beta(μ,τ)<br>• μ: 열망수준<br>• 분포적 사고 시작 | **산업별 패턴 관찰**<br>• Biotech: 높은 열망<br>• Software: 적응적 열망<br>• 생태계의 영향 | **계층적 사고**<br>• Promise about promise<br>• 불확실성의 불확실성<br>• Hierarchical Bayes 구조 |
-| **M2'**<br>🎯Extended 2<br>*+Founder's Uncertainty* | **의도적 무지**<br>• Rational ignorance<br>• "모르는 것이 힘"<br>• 정보 vs 지식 구별 | **창업가 불확실성 추가**<br>• τ: 집중도<br>• C: 소화비용<br>• **Proposition 2a,b** 도출 | **Tesla vs Nikola**<br>• Tesla: 적응적 τ<br>• Nikola: τ→∞ (함정)<br>• Slack: 15번 피봇 (τ 조절) | **최종 통합**<br>• τ→∞: Learning trap<br>• τ→0 조건: V↑∨C↓∨n↓<br>• Designed uncertainty의 가치 |
+| **M2'**<br>🎯Extended 2<br>*+Founder's Uncertainty* | **의도적 무지**<br>• Rational ignorance<br>• "모르는 것이 힘"<br>• 정보 vs 지식 구별 | **창업가 불확실성 추가**<br>• τ: 집중도<br>• i: 정보통합비용<br>• **Proposition 2a,b** 도출 | **Tesla vs Nikola**<br>• Tesla: 적응적 τ<br>• Nikola: τ→∞ (함정)<br>• Slack: 15번 피봇 (τ 조절) | **최종 통합**<br>• τ→∞: Learning trap<br>• τ→0 조건: V↑∨i↓∨c↓<br>• Designed uncertainty의 가치 |
 
 ---
 
@@ -46,12 +49,12 @@ Bayesian and Evolutionary entrepreneurship with double binding promise
 
 | 구분 | 자연 (M1') | 창업가 (M2') |
 |:---:|:---|:---|
-| **매개변수** | n (complexity) | τ (concentration) |
+| **매개변수** | c (complexity) | τ (concentration) |
 | **원천** | 외부 환경 | 내부 선택 |
 | **통제** | ❌ 불가능 | ✅ 가능 |
 | **대응** | 수용과 적응 | 설계와 조절 |
-| **실패 사례** | Better Place (n 무시) | Nikola (τ=∞) |
-| **성공 사례** | 모든 성공 기업 (n 인정) | Tesla (τ 조절) |
+| **실패 사례** | Better Place (c 무시) | Nikola (τ=∞) |
+| **성공 사례** | 모든 성공 기업 (c 인정) | Tesla (τ 조절) |
 
 ---
 
@@ -59,13 +62,13 @@ Bayesian and Evolutionary entrepreneurship with double binding promise
 
 ```mermaid
 graph LR
-    I[Information] -->|+C| K[Knowledge]
+    I[Information] -->|+i| K[Knowledge]
     K -->|Integration| M[Model Update]
     M -->|if τ high| T[Trap]
     M -->|if τ optimal| A[Adaptation]
 ```
 
-**C = Rational Meaning Construction Cost**
+**i = Information Integration Cost**
 - 새 정보 이해 비용
 - 기존 모델과의 일관성 회복
 - 조직 문화 업데이트 (채용 비유)
@@ -76,8 +79,8 @@ graph LR
 
 |  | 자연 관련 | 창업가 관련 |
 |:---:|:---|:---|
-| **최적화** | **Proposition 1**<br>φ* = 1/(n+1)<br>*복잡도 대응* | **Proposition 2a**<br>τ* = f(V,C,n)<br>*집중도 최적화* |
-| **경고** | **Corollary 1**<br>n 무시 → 실패<br>*Better Place* | **Proposition 2b**<br>τ→∞ → Learning Trap<br>*Nikola* |
+| **최적화** | **Proposition 1**<br>φ* = 1/(c+1)<br>*복잡도 대응* | **Proposition 2a**<br>τ* = f(V/i×c)<br>*집중도 최적화* |
+| **경고** | **Corollary 1**<br>c 무시 → 실패<br>*Better Place* | **Proposition 2b**<br>τ→∞ → Learning Trap<br>*Nikola* |
 
 ---
 
@@ -98,13 +101,13 @@ graph LR
 ## 실천 가이드: Cascading Strategy
 
 ### First Cascade (M1→M1'): 자연과의 대화
-1. **n 추정**: 산업 복잡도 파악
-2. **φ 조정**: 1/(n+1) 규칙 적용
+1. **c 추정**: 산업 복잡도 파악
+2. **φ 조정**: 1/(c+1) 규칙 적용
 3. **검증**: 시장 피드백 수집
 
 ### Second Cascade (M2→M2'): 자아와의 대화
 1. **τ 설정**: 초기 낮게, 후기 높게
-2. **C 관리**: 정보 소화 능력 구축
+2. **i 관리**: 정보 통합 능력 구축
 3. **균형**: Learning과 Commitment 사이
 
 ---
@@ -122,6 +125,8 @@ graph LR
 ### 💡 실무적 통찰
 - 창업가는 두 번 선택한다: φ와 τ
 - 각 선택이 다른 유형의 위험 관리
+
+- V/i×c이 오르면 τ를 올려라
 
 ---
 

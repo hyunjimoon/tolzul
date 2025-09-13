@@ -19,20 +19,20 @@
 		{"id":"acc7eeef109f8783","type":"text","text":"2Collaborate-Segment화","x":-65,"y":2600,"width":250,"height":60,"color":"5"},
 		{"id":"0c1690b22f8b9363","type":"text","text":"6Platformize토","x":815,"y":3620,"width":250,"height":60,"color":"1"},
 		{"id":"07a382e8d5254646","type":"text","text":"5Capitalize금","x":815,"y":3240,"width":250,"height":60,"color":"1"},
-		{"id":"179b9395a3c44f98","type":"file","file":"의용/🐢낭만거북의/🐢1기월문화.md","x":373,"y":3929,"width":400,"height":400,"color":"4"},
-		{"id":"34252ac8fe86ca2e","type":"file","file":"의용/🐢낭만거북의/🐢2기화협력.md","x":373,"y":4560,"width":400,"height":400,"color":"4"},
-		{"id":"0f29e604f486d13e","type":"file","file":"의용/🐙절절문어용/🐙6전토플랫폼.md","x":2240,"y":4560,"width":400,"height":400,"color":"1"},
 		{"id":"25799fbe4e42d870","type":"file","file":"의용/🐢낭만거북의/🐢낭만거북의.md","x":-665,"y":2202,"width":400,"height":58},
 		{"id":"a82883b13891ddb8","type":"file","file":"현지/👾똘똘외계현/👾똘똘외계인 현.md","x":1145,"y":2200,"width":400,"height":50},
 		{"id":"5500e5e2328eed39","type":"text","text":"7Replicate일","x":1220,"y":2980,"width":250,"height":50,"color":"1"},
 		{"id":"a6552c7a47c2270f","type":"file","file":"의용/🐙절절문어용/🐙절절문어 용.md","x":1190,"y":3633,"width":400,"height":50},
 		{"id":"1aa69e4ff572e0f5","type":"file","file":"현지/🐅세련호랑지/🐅세련호랑이 지.md","x":-665,"y":3629,"width":400,"height":58},
 		{"id":"c27e6e1f66847e5a","type":"text","text":"1Acculturate월","x":-65,"y":2280,"width":250,"height":60,"color":"5"},
-		{"id":"045f79da27dba295","type":"file","file":"현지/👾똘똘외계현/👾7결일복제.md","x":2240,"y":3929,"width":400,"height":400,"color":"6"},
-		{"id":"5a289a42ee7cd3ea","type":"text","text":"🐢기월문화-기화협력: 낭만거북 의\n🐅승수전문-승목평가: 세련호랑이 지\n🐙전금자본-전토플랫폼: 절절문어 용 \n👾결일복제: 똘똘외계인 현 [cld](https://claude.ai/public/artifacts/144f0bce-2f74-4c7e-880b-961a148556a3)\n![[Pasted image 20250907235457.png|1000]] \n\nhttps://claude.ai/public/artifacts/d185c382-3dbf-46e7-bbbe-5cc11683531e\n\n\n![[Pasted image 20250902042147.png]]","x":840,"y":4200,"width":1400,"height":1000},
-		{"id":"98f57781d6c11434","type":"file","file":"현지/🐅세련호랑지/🐅3승수전문.md","x":373,"y":5680,"width":400,"height":400,"color":"2"},
-		{"id":"b85dd48be342ccd9","type":"file","file":"현지/🐅세련호랑지/🐅4승목평가.md","x":1320,"y":5680,"width":400,"height":400,"color":"2"},
-		{"id":"c95eadf1c3ce9317","type":"file","file":"의용/🐙절절문어용/🐙5전금자본.md","x":2240,"y":5680,"width":400,"height":400,"color":"1"}
+		{"id":"b85dd48be342ccd9","type":"file","file":"문현지/🐅세련호랑지/🐅4승목평가.md","x":2520,"y":3840,"width":400,"height":400,"color":"2"},
+		{"id":"5a289a42ee7cd3ea","type":"text","text":"🐢기월문화-기화협력: 낭만거북 의\n🐅승수전문-승목평가: 세련호랑이 지\n🐙전금자본-전토플랫폼: 절절문어 용 \n👾결일복제: 똘똘외계인 현 [cld](https://claude.ai/public/artifacts/144f0bce-2f74-4c7e-880b-961a148556a3)\n![[Pasted image 20250907235457.png|1000]] \n\nhttps://claude.ai/public/artifacts/d185c382-3dbf-46e7-bbbe-5cc11683531e\n\n\n![[Pasted image 20250902042147.png]]","x":1500,"y":4680,"width":300,"height":129},
+		{"id":"c95eadf1c3ce9317","type":"file","file":"탐의용/🐙절절문어용/🐙5전금자본.md","x":320,"y":4880,"width":400,"height":400,"color":"1"},
+		{"id":"045f79da27dba295","type":"file","file":"문현지/👾똘똘외계현/👾7결일복제.md","x":2520,"y":4880,"width":400,"height":400,"color":"6"},
+		{"id":"0f29e604f486d13e","type":"file","file":"탐의용/🐙절절문어용/🐙6전토플랫폼.md","x":1450,"y":4880,"width":400,"height":400,"color":"1"},
+		{"id":"98f57781d6c11434","type":"file","file":"문현지/🐅세련호랑지/🐅3승수전문.md","x":1960,"y":3840,"width":400,"height":400,"color":"2"},
+		{"id":"179b9395a3c44f98","type":"file","file":"탐의용/🐢낭만거북의/🐢1기월문화.md","x":320,"y":3840,"width":400,"height":400,"color":"4"},
+		{"id":"34252ac8fe86ca2e","type":"file","file":"탐의용/🐢낭만거북의/🐢2기화협력.md","x":940,"y":3840,"width":400,"height":400,"color":"4"}
 	],
 	"edges":[
 		{"id":"fd93e9391ab8f515","fromNode":"eee60de02c5b1665","fromSide":"bottom","toNode":"7f9436f64f64bf95","toSide":"top","color":"4"},
@@ -67,12 +67,11 @@
 		{"id":"1aa8c6f4c7296fa4","fromNode":"c27e6e1f66847e5a","fromSide":"bottom","toNode":"acc7eeef109f8783","toSide":"top","color":"4"},
 		{"id":"11ec34316a51da78","fromNode":"0c1690b22f8b9363","fromSide":"right","toNode":"5500e5e2328eed39","toSide":"bottom","toEnd":"none","color":"1"},
 		{"id":"17f407cd20bfe9b6","fromNode":"07a382e8d5254646","fromSide":"bottom","toNode":"0c1690b22f8b9363","toSide":"top","toEnd":"none","color":"1"},
-		{"id":"4e842f019455dcf4","fromNode":"179b9395a3c44f98","fromSide":"bottom","toNode":"34252ac8fe86ca2e","toSide":"top","color":"4"},
+		{"id":"4e842f019455dcf4","fromNode":"179b9395a3c44f98","fromSide":"right","toNode":"34252ac8fe86ca2e","toSide":"left","color":"4"},
 		{"id":"00d9b13bd4a56fb2","fromNode":"98f57781d6c11434","fromSide":"right","toNode":"b85dd48be342ccd9","toSide":"left","color":"2"},
-		{"id":"e6f0b77c3427a6a0","fromNode":"b85dd48be342ccd9","fromSide":"right","toNode":"c95eadf1c3ce9317","toSide":"left","color":"2"},
-		{"id":"cb882c03b2d8553d","fromNode":"045f79da27dba295","fromSide":"left","toNode":"179b9395a3c44f98","toSide":"right","color":"6"},
-		{"id":"9f943b6d3926d690","fromNode":"34252ac8fe86ca2e","fromSide":"bottom","toNode":"98f57781d6c11434","toSide":"top","color":"4"},
-		{"id":"38263152bef519be","fromNode":"c95eadf1c3ce9317","fromSide":"top","toNode":"0f29e604f486d13e","toSide":"bottom"},
-		{"id":"2acb1087453e5cc0","fromNode":"0f29e604f486d13e","fromSide":"top","toNode":"045f79da27dba295","toSide":"bottom"}
+		{"id":"e6f0b77c3427a6a0","fromNode":"b85dd48be342ccd9","fromSide":"bottom","toNode":"c95eadf1c3ce9317","toSide":"top","color":"2"},
+		{"id":"9f943b6d3926d690","fromNode":"34252ac8fe86ca2e","fromSide":"right","toNode":"98f57781d6c11434","toSide":"left","color":"4"},
+		{"id":"38263152bef519be","fromNode":"c95eadf1c3ce9317","fromSide":"right","toNode":"0f29e604f486d13e","toSide":"left"},
+		{"id":"2acb1087453e5cc0","fromNode":"0f29e604f486d13e","fromSide":"right","toNode":"045f79da27dba295","toSide":"left"}
 	]
 }

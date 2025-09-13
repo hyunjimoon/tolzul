@@ -1,15 +1,15 @@
 # Bayesian Evolution Assessment: Nanda & Lo Finance Lens
 ## 🐅 Prairie Food Literature Review
 
-| Paper | Core Concept | 🟢 AGREE | 🔴 DISAGREE | 💰 Finance Application |
-|-------|-------------|-----------|-------------|------------------------|
-| **📜🐅_kerr14**<br>*systematize(experimentation, entrepreneurship)* | Entrepreneurship = experimentation with unknowable probabilities | **Strongly agree**: Captures venture uncertainty | - | Each funding round = experiment with capital at risk |
-| **📜🐅_granovetter78**<br>*model(collective-behavior, thresholds)* | Individual thresholds → collective outcomes | Threshold models useful for herding | Too deterministic for markets | Explains funding cascades and crashes |
-| **📜👾_bolton24**<br>*moral_hazard* | Entrepreneurs design uninformative experiments | **Perfect fit**: Explains adverse selection | - | High τ = manipulating investor signals |
-| **📜🐅_loch02**<br>*optimize(portfolio, selection)* | Marginal analysis for portfolio optimization | Portfolio thinking essential | Misses active uncertainty management | VCs optimize across (n,τ) space |
-| **📜🐅_kavadias03**<br>*sequence(projects, optimization)* | cμ rule for project sequencing | Sequencing matters | Too rigid, assumes fixed parameters | Founders manipulate perceived urgency via φ |
-| **📜🐅_dada07**<br>*diversify(sourcing, suppliers)* | Diversification for risk management | Standard portfolio theory applies | Sometimes concentration optimal | High τ justified when C > diversification benefit |
-| **📜hume**<br>*enquiry_human_understanding* | No necessary causation, instinct over reason | Philosophical foundation for uncertainty | - | Justifies why markets price "unknown unknowns" |
+| Paper                                                               | Core Concept                                                     | 🟢 AGREE                                         | 🔴 DISAGREE                          | 💰 Finance Application                               |
+| ------------------------------------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------ | ------------------------------------ | ---------------------------------------------------- |
+| **📜🐅_kerr14**<br>*systematize(experimentation, entrepreneurship)* | Entrepreneurship = experimentation with unknowable probabilities | **Strongly agree**: Captures venture uncertainty | -                                    | Each funding round = experiment with capital at risk |
+| **📜🐅_granovetter78**<br>*model(collective-behavior, thresholds)*  | Individual thresholds → collective outcomes                      | Threshold models useful for herding              | Too deterministic for markets        | Explains funding cascades and crashes                |
+| **📜👾_bolton24**<br>*moral_hazard*                                 | Entrepreneurs design uninformative experiments                   | **Perfect fit**: Explains adverse selection      | -                                    | High τ = manipulating investor signals               |
+| **📜🐅_loch02**<br>*optimize(portfolio, selection)*                 | Marginal analysis for portfolio optimization                     | Portfolio thinking essential                     | Misses active uncertainty management | VCs optimize across (n,τ) space                      |
+| **📜🐅_kavadias03**<br>*sequence(projects, optimization)*           | cμ rule for project sequencing                                   | Sequencing matters                               | Too rigid, assumes fixed parameters  | Founders manipulate perceived urgency via φ          |
+| **📜🐅_dada07**<br>*diversify(sourcing, suppliers)*                 | Diversification for risk management                              | Standard portfolio theory applies                | Sometimes concentration optimal      | High τ justified when C > diversification benefit    |
+| **📜hume**<br>*enquiry_human_understanding*                         | No necessary causation, instinct over reason                     | Philosophical foundation for uncertainty         | -                                    | Justifies why markets price "unknown unknowns"       |
 
 ## Financial Mechanisms Mapped to Our Model
 
