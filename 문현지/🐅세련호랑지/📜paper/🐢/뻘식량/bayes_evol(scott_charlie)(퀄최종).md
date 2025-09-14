@@ -1,3 +1,4 @@
+from [[bayes_evol(scott_charlie)]]
 # Bayesian Evolution Literature Classification (Scott & Charlie Perspective)
 ## Based on 🗣️bayes_evol Framework
 
@@ -32,29 +33,25 @@
 
 ---
 
-## Synthesis Patterns
+## 🌊 Synthesis: From Entrepreneurial Determinism to Uncertainty Design
 
-### **Supporters of Our Framework**
-- **Endogenous Learning**: Yoo (2021)
-- **Constructivist Uncertainty**: Alvarez & Porac (2020)
-- **Integrative Modeling**: Yarkoni (2024)
-- **Uncertainty Transformation**: Packard (2017)
+### 🤠 채찍과거: The Operations Determinism Era
+**What Operations Management Forced on Entrepreneurship:**
+- **Unknown Unknowns as Curse** (Phan & Chambers 2018): Treating uncertainty as purely exogenous plague
+- **Discovery vs Creation False Dichotomy** (Alvarez 2007): Endless debates without operational mechanism
+- **Newsvendor Analogies** (Corbett 2007): Forcing entrepreneurship into inventory models
+- **Tournament Myopia** (Terwiesch 2009): Designing competitions ignoring participant adaptation
+- **Deterministic Feedback Loops** (Sterman 2000): System dynamics without stochastic choice
+- **Qualitative Ambidexterity** (Tushman 1996): "Success syndrome" without mathematical formalization
 
-### **Philosophical Opponents**  
-- **Phan & Chambers (2018)**: Treats uncertainty as purely exogenous
-- **Terwiesch (2009)**: Ignores founder's response to designed uncertainty
-
-### **Partial Alignments Needing Extension**
-- **Sterman (2000)**: Needs stochastic τ
-- **Corbett (2007)**: Needs formalization of behavioral patterns
-- **Tushman (1996)**: Needs mathematical formalization
-
-### **Our Unique Contributions**
-1. **τ parameter**: Founder's chosen uncertainty (absent in all reviewed work)
-2. **Digestion cost C**: Explains rational ignorance economically
-3. **Double Reparameterization**: Dynamic Success → Promise → Aspiration cascade
-4. **Learning trap formalization**: τ→∞ leads to adaptation failure
-5. **Conditions for rational ignorance**: τ→0 when V↑ ∨ C↓ ∨ n↓
+### 🥕 당근미래: The Endogenous Uncertainty Revolution
+**What Our Double Reparameterization Enables:**
+- **τ as Strategic Variable**: Founder's chosen uncertainty (absent in ALL prior work)
+- **Rational Ignorance Conditions**: τ* = 0 when V/ic < 1 (mathematically proven optimality)
+- **Learning Trap Formalization**: τ→∞ causes adaptation failure (Better Place's $850M proof)
+- **Digestion Cost C**: Why information isn't free (rational meaning construction)
+- **Build-Test-Learn 2.0** (Yoo 2021): Endogenous learning with φ as design variable
+- **Epistemic Modesty** (Yarkoni 2024): Bridge explanation and prediction through productive ambiguity
 
 ---
 

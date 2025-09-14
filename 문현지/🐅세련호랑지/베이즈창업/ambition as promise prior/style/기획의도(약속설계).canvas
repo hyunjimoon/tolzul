@@ -1,6 +1,10 @@
 {
 	"nodes":[
-		{"id":"5bc98c4d559f97e0","x":-200,"y":-200,"width":800,"height":920,"color":"2","type":"link","url":"https://claude.ai/public/artifacts/e9fb3169-0008-4d00-a6a5-5fb9b39b6e21"}
+		{"id":"5bc98c4d559f97e0","type":"link","url":"https://claude.ai/public/artifacts/e9fb3169-0008-4d00-a6a5-5fb9b39b6e21","x":-200,"y":-200,"width":800,"height":920,"color":"2"},
+		{"id":"1ad1ad6659592f91","x":-157,"y":1680,"width":714,"height":919,"type":"link","url":"https://claude.ai/public/artifacts/a4d6ca85-19f4-4443-981d-539c8d7d4642"},
+		{"id":"013e9d3f13ee77a2","x":-1280,"y":-140,"width":400,"height":400,"type":"file","file":"문현지/🐅세련호랑지/베이즈창업/ambition as promise prior/module/🐅2.12🌱.md"},
+		{"id":"c4942ab35a8b0cd2","x":-880,"y":-140,"width":400,"height":400,"type":"file","file":"문현지/🐅세련호랑지/베이즈창업/ambition as promise prior/module/🐅2.34🗺️🧭.md"},
+		{"id":"9309ba9f71175552","x":-1280,"y":260,"width":400,"height":400,"type":"file","file":"문현지/🐅세련호랑지/베이즈창업/ambition as promise prior/module/🐅2.56🧮.md"}
 	],
 	"edges":[]
 }

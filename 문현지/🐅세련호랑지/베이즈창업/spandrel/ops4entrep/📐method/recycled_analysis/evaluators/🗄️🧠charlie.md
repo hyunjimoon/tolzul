@@ -1,3 +1,8 @@
+[[🐙👾charlie-vikash]] as sibiling pair of [[🐢👾scott-josh]]
+
+---
+
+
 - [[#Table 4: Nail, Scale, Sail|Table 4: Nail, Scale, Sail]]
 - [[#Table 9: Clockspeed|Table 9: Clockspeed]]
 - [[#Table 10: product vs process|Table 10: product vs process]]

@@ -1,85 +1,119 @@
-# Bayesian Evolution Literature Classification (Andrew & Josh Perspective)
-## Based on 🗣️bayes_evol Framework - Bayesian Statistics & Innovation Policy Lens
+from [[bayes_evol(andrew_josh)]]
+# Bayesian Evolution Literature Classification (우리 논문 "불확실한 약속설계" 관점)
+## Based on Double Reparameterization Framework: P(success) → φ(promise) → (μ, τ)
 
-### Core Framework Through Bayesian-Policy Bridge
-- **Double Reparameterization**: P(success) → φ(promise) + n → φ(μ,τ) with founder's choice
-- **Prior Predictive Checks**: Testing model assumptions before data collection
-- **Simulation-Based Calibration**: Validating the entire inference pipeline
-- **Policy as Uncertainty Management**: Government interventions as n-reducers, markets as τ-optimizers
+### 핵심 프레임워크: 창업가의 불확실성 설계
+- **첫 번째 재매개변수화**: P(success) → φ(promise) + n (자연의 복잡성)
+- **두 번째 재매개변수화**: φ → (μ, τ) where μ = aspiration, τ = concentration
+- **Strategic Ignorance**: τ* = max(0, V/ic - 1) when information cost exceeds value
+- **From Player to Designer**: 불확실성을 제약에서 자원으로 전환
 
 ---
 
-## 🐅 Prairie Food (초원식량) Literature Classification
+## 🚀 Space Food (우주식량) Literature Classification
 
 | Paper | Core Concept | 🟢 AGREE | 🔴 DISAGREE | 🔵 Our Extension |
 |-------|--------------|----------|-------------|------------------|
-| **[[📜🐅_kerr14_systematize(experimentation, entrepreneurship)]]** | Entrepreneurship IS experimentation with unknowable probabilities | Experimentation = sequential updating of φ through PRHC | - | Our τ captures why some avoid informative experiments |
-| **[[📜🐅_granovetter78_model(collective-behavior, thresholds)]]** | Individual thresholds aggregate to collective patterns | Threshold distribution = prior over population (mathematical beauty) | - | τ allows founders to manipulate threshold position |
-| **[[📜👾_bolton24_moral_hazard]]** | Entrepreneurs design experiments to maximize positive results | **Strong Agreement**: Uninformative experiments = our high τ | - | Their P_E, P_I functions map directly to our uncertainty parameters |
-| **[[📜🐅_loch02_optimize(portfolio, selection)]]** | Marginal analysis optimizes resource allocation | Stochastic dynamic programming parallels our sequential updating | Lacks founder's active uncertainty management | Ignoring correlations loses 20-35% value (supports hierarchy) |
-| **[[📜🐅_kavadias03_sequence(projects, optimization)]]** | cμ rule assumes fixed delay costs and processing times | Sequencing important | Fixed parameters unrealistic; no promise manipulation | Promise level φ allows strategic urgency manipulation |
-| **[[📜🐅_dada07_diversify(sourcing, suppliers)]]** | Diversification for risk reduction | Standard diversification theory | Sometimes concentration (high τ) optimal when C is high | Diversification assumes independence; we model correlation |
-| **[[📜hume_an_enquiry_concerning_human_understanding]]** | No necessary connection between events; instinct over reason | **Deep Resonance**: Inductive reasoning unjustifiable (supports τ→0) | - | "Digestion cost" C captures instinctual thinking cost |
+| **[[📜👾_vul14_one_done]]** | 1-3 samples sufficient for near-optimal decision | **Strong Agreement**: Low τ (sparse sampling) = adaptive optimality | Oversampling always better (우리: τ→∞ causes learning trap) | Our τ* formula explains when to stop sampling |
+| **[[📜👾_stern24_model(beliefs, experimentation)]]** | Entrepreneurs test low-prior strategies first for better signals | Heterogeneous priors drive contrarian experiments | All experiments equally informative | τ modulates experiment informativeness |
+| **[[📜👾_gans23_choose(entrepreneurship, experimentation)]]** | Entrepreneurial choice under uncertainty with strategic experiments | Experiments reveal both idea quality and strategy fit | Experiments are neutral (우리: τ affects bias) | Promise design (φ, τ) shapes what experiments reveal |
+| **[[📜👾_tenenbaum11_grow(minds, cognition)]]** | Hierarchical Bayesian models of cognitive development | **Deep Resonance**: Learning as hierarchical prior updates | Learning is passive reception | τ controls active forgetting vs integration |
+| **[[📜👾_gershman15_compute(rationality, resources)]]** | Bounded rationality as optimal given computational constraints | **Perfect Match**: Resource-rational = our V/ic framework | More computation always better | Strategic ignorance (τ=0) can be optimal |
+| **[[📜👾_busenitz97_recognize(entrepreneurs, biases)]]** | Entrepreneurs use heuristics and biases more than managers | Biases as features not bugs when τ low | Biases are mistakes to eliminate | "Biases" = rational low-τ strategies |
+| **[[📜👾_arrow69_classify(production, knowledge)]]** | Learning by doing creates knowledge spillovers | Production generates information (reduces n) | Knowledge always reduces uncertainty | Sometimes preserving uncertainty (low τ) valuable |
+| **[[📜👾_meehl67_test(theory, method)]]** | Theory testing requires strong inference | Strong tests need precise predictions (high τ) | Always maximize test precision | Optimal τ depends on V/ic ratio |
+| **[[📜👾_peng21_overload(information, decisions)]]** | Information overload degrades decision quality | **Strong Support**: High i (integration cost) → lower τ optimal | More information always helps | Rational ignorance when i > V/c |
+| **[[📜👾_johnston02_caution(startups, scaling)]]** | Premature scaling is #1 cause of startup failure | High τ too early = scaling trap | Fast scaling always good if funded | τ should increase gradually with V/ic |
+| **[[📜👾_nejad22_model(mentorship, accelerators)]]** | Accelerators help calibrate entrepreneurial beliefs | External calibration of μ and τ | One-size-fits-all mentorship | Mentors help optimize personal τ* |
+| **[[📜👾_bhui21_optimize(decisions, resources)]]** | Resource-rational decision-making under constraints | Optimization given cognitive costs = our framework | Unbounded rationality ideal | Bounded optimality through τ choice |
+| **[[📜👾_mansinghka25_automate(formalization, programming)]]** | Probabilistic programming automates Bayesian inference | Reduces i (integration cost) dramatically | Automation eliminates uncertainty | Lower i → higher optimal τ, not elimination |
+| **[[📜👾_xuan24_plan(instruction, cooperation)]]** | Planning helps coordinate but constrains adaptation | Planning = high τ for coordination | Always plan thoroughly | τ* depends on coordination needs |
 
 ---
 
-## Andrew-Josh Specific Contributions
+## 🎯 Bayesian Statistical Methods Integration
 
-### Bayesian Statistical Rigor (Andrew's Lens)
-
-| Method | Application | Implementation |
-|--------|-------------|----------------|
-| **Prior Predictive Checks** | Validate φ distributions generate reasonable success rates | Check if promise distributions match industry patterns |
-| **Posterior Predictive** | Ensure updated beliefs match observed pivot rates | Compare predicted vs actual founder adaptations |
-| **Simulation-Based Calibration** | Recover true (n,τ) from observed promises | Generate synthetic founders, validate inference pipeline |
-| **Hierarchical Modeling** | Industry → Founder → Venture structure | Partial pooling across levels for sparse data |
-| **Model Comparison** | Test double reparameterization vs simpler models | WAIC, LOO-CV for model selection |
-
-### Innovation Policy Applications (Josh's Lens)
-
-| Stage | Policy Tool | Parameter Effect | Example |
-|-------|------------|------------------|---------|
-| **Pre-promise** | Incubators | Calibrate initial φ | Y Combinator MVP advice |
-| **Post-promise** | Accelerators | Optimize τ trajectory | Techstars mentorship |
-| **Growth** | Grants/Patents | Reduce n uncertainty | SBIR validation, IP protection |
-| **Scale** | Regulations | Force τ→0 transparency | SEC disclosure requirements |
-| **Exit** | Public markets | Require full disclosure | IPO prospectus |
-
-### Market Failures from Uncertainty Misalignment
-
-| Failure Type | Cause | Our Model's Diagnosis | Policy Solution |
-|--------------|-------|----------------------|-----------------|
-| **Under-investment** | High n | Excessive nature uncertainty | Government R&D, infrastructure |
-| **Adverse selection** | High τ | Information withholding | Certification, standards |
-| **Inefficient allocation** | Misaligned (n,τ) | Wrong uncertainty for stage | Stage-appropriate funding |
-| **Learning traps** | τ→∞ | Over-commitment to promise | Forced pivots, sunset clauses |
+| Method | Application to Promise Design | Our Innovation |
+|--------|-------------------------------|----------------|
+| **Prior Predictive Check** | Test if φ ~ Beta(μτ, (1-μ)τ) generates realistic success rates | Before promising, simulate outcomes |
+| **Posterior Predictive** | Validate updated beliefs match observed pivots | τ controls update magnitude |
+| **Simulation-Based Calibration** | Recover true (μ, τ) from observed promises | Validate double reparameterization |
+| **Hierarchical Modeling** | Industry → Founder → Venture nested structure | τ varies across hierarchy levels |
+| **Model Comparison** | Test double vs single reparameterization | WAIC shows double superior |
 
 ---
 
-## Synthesis: Mathematical Elegance Meets Policy Relevance
+## 🌊 Synthesis: From Decision Under to On Uncertainty
 
-### **Falsifiable Predictions**
-1. Industries with higher n → lower average τ
-2. Policy reducing n → increase in τ variance  
-3. Lower C → bimodal τ distribution (all-or-nothing learning)
-4. V/C×n ratio determines optimal τ*
+### 🤠 채찍과거: The Tyranny of Information Maximization
+**What We Must Destroy:**
+- "More information = better decisions" dogma that created analysis paralysis
+- Prediction-Based Prescription's rigid "predict then prescribe" sequence ignoring endogeneity
+- Prior Predictive Checks that validate but never question the prior itself
+- The delusion that uncertainty is always the enemy to be eliminated
+- Better Place's $850M funeral: the price of information addiction
 
-### **Our Unique Bridge**
-- **Statistical Rigor + Entrepreneurial Reality**: Prior predictive checks for promise distributions
-- **Policy Mechanisms Through Uncertainty**: Governments manipulate n, markets optimize τ
-- **Computational Tractability**: Double reparameterization enables MCMC implementation
-- **Heterogeneous Effects**: Same policy affects different (n,τ) types differently
+### 🥕 당근미래: The Dawn of Uncertainty Design
+**What We Must Build:**
+- **Bayesian Cringe** (Gelman): Healthy skepticism of over-precision
+- **Strategic Ignorance**: τ* = max(0, V/ic - 1) mathematically defines when not knowing beats knowing
+- **Endogenous PBP**: Prediction and prescription become one when τ is chosen
+- **Prior as Design**: Not what you believe but what you choose to believe
+- **Tesla's Triumph**: "Roughly 200 miles" beats "Exactly 5 minutes"
 
-### **Philosophical Foundation (Hume)**
-- No rational justification for induction → Supports τ→0 option
-- Instinct over reason → Justifies digestion cost C
-- Freedom within determinism → Promise determines trajectory but τ preserves agency
+### Key Falsifiable Predictions
+1. **Industries with higher n → lower average τ** (complexity forces flexibility)
+2. **Lower i (e.g., AI era) → bimodal τ distribution** (all-or-nothing strategies)
+3. **V/ic ratio determines optimal promise precision** (not market maturity)
+4. **Successful founders show τ trajectory: low → high** (not monotonic increase)
 
 ---
 
-## 🌙 Methodological Style
-Your approach uniquely bridges:
-- Rigorous Bayesian computation (Andrew's focus)
-- Policy-relevant institutional design (Josh's perspective)
-- Deep philosophical grounding (Humean empiricism)
-- Mathematical beauty through dimension reduction (1-D projections of complex spaces)
+## 💡 Philosophical Foundation: Negative Capability
+
+Building on Keats's "negative capability" - the ability to remain comfortable in uncertainty:
+
+**NC = 1/(τ+1)**
+
+- High NC (low τ): Tesla's "roughly 200 miles"
+- Low NC (high τ): Better Place's "exactly 5 minutes"
+- Zero NC (τ→∞): Theranos's impossible precision
+
+This quantifies what poets knew intuitively: **comfort with uncertainty is strength, not weakness**.
+
+---
+
+## 🔬 Methodological Contributions
+
+### For Bayesian Statistics (Andrew's Lens)
+- **Endogenous uncertainty**: τ as chosen parameter
+- **Double reparameterization**: Computational elegance
+- **Rational meaning construction cost**: i as digestion cost
+
+### For Innovation Policy (Josh's Lens)  
+- **Stage-appropriate τ**: Different policies for different V/ic
+- **Market failures from τ mismatch**: Over/under-specification
+- **Policy as n-reducer, markets as τ-optimizer**: Clear roles
+
+### For Entrepreneurship Theory (Scott's Lens)
+- **Unifies Planning vs Action schools**: Both right at different τ
+- **Explains contrarian success**: Low τ preserves option value
+- **Strategic ignorance as capability**: Not bias but feature
+
+---
+
+## 🎭 The Promise Paradox Resolution
+
+우리의 핵심 역설: **정밀한 약속은 왜 실패하고 모호한 약속은 왜 성공하는가?**
+
+해답: **τ* = max(0, V/ic - 1)**
+
+- Better Place: High τ despite high c → Learning trap → Failure
+- Tesla: Low initial τ → Adaptive evolution → Success
+- Optimal strategy: Let τ grow with V/ic ratio
+
+**"불확실성은 극복할 제약이 아니라 설계할 자원이다"**
+
+---
+
+*Last updated: Based on deep synthesis of Space Food papers and our double reparameterization framework*

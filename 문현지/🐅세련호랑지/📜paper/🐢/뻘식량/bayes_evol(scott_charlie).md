@@ -31,3 +31,11 @@
 1. **Supporters**: Focus on endogenous learning, constructivist approaches
 2. **Opponents**: Treat uncertainty as purely exogenous (nature-only)
 3. **Gap We Fill**: No existing work captures founder's strategic uncertainty choice (τ)
+
+# 🌀marginnote(bayes_evol(scott_charlie)) 
+
+
+![[bayes_evol(scott_charlie) 2025-09-14-6.svg]]
+%%[[bayes_evol(scott_charlie) 2025-09-14-6.md|🖋 Edit in Excalidraw]]%%
+- marginnote3app://note/DE9BB630-50DA-43B5-941A-A17A0637A95C
+
