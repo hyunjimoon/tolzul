@@ -1,0 +1,183 @@
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: -apple-system, 'SF Pro Display', sans-serif; font-size: 16px; font-weight: 500; fill: #2c3e50; }
+      .subtitle { font-family: -apple-system, 'SF Pro Text', sans-serif; font-size: 12px; fill: #7f8c8d; }
+      .label { font-family: -apple-system, 'SF Pro Text', sans-serif; font-size: 10px; fill: #546e7a; }
+      .equation { font-family: 'Georgia', serif; font-size: 11px; font-style: italic; fill: #34495e; }
+      .axis { stroke: #34495e; stroke-width: 0.8; }
+      .grid { stroke: #ecf0f1; stroke-width: 0.4; stroke-dasharray: 2,2; }
+      .arrow { stroke: #34495e; stroke-width: 1.2; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#34495e"/>
+    </marker>
+    
+    <!-- Gradient definitions for shaded areas -->
+    <linearGradient id="natureGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#2ecc71;stop-opacity:0"/>
+    </linearGradient>
+    
+    <linearGradient id="founderGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#9b59b6;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect x="0" y="0" width="600" height="400" fill="#fafafa"/>
+  
+  <!-- Title -->
+  <text x="300" y="30" text-anchor="middle" class="title">Model Evolution: From Linear Hope to Realized Learning</text>
+  <text x="300" y="48" text-anchor="middle" class="subtitle">How uncertainty transforms entrepreneurial promise</text>
+  
+  <!-- M1 → M1' Panel: Nature's Complexity -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="220" height="280" fill="white" stroke="#bdc3c7" stroke-width="0.5" rx="6"/>
+    
+    <!-- Title -->
+    <text x="110" y="20" text-anchor="middle" class="label" font-weight="600">Nature's Complexity (C)</text>
+    
+    <!-- M1: Linear Model -->
+    <g transform="translate(20, 40)">
+      <text x="90" y="0" text-anchor="middle" class="label" fill="#2ecc71">Model M1: Linear</text>
+      
+      <!-- Coordinate system -->
+      <rect x="10" y="10" width="160" height="80" fill="none" stroke="#ecf0f1" stroke-width="0.5"/>
+      <line x1="20" y1="80" x2="160" y2="80" class="axis"/>
+      <line x1="20" y1="80" x2="20" y2="20" class="axis"/>
+      
+      <!-- Linear relationship P = φ -->
+      <line x1="20" y1="80" x2="160" y2="20" stroke="#2ecc71" stroke-width="2"/>
+      <circle cx="90" cy="50" r="2" fill="#2ecc71"/>
+      
+      <!-- Equation -->
+      <text x="90" y="105" text-anchor="middle" class="equation">P(S|φ) = φ</text>
+      
+      <!-- Labels -->
+      <text x="10" y="95" class="label" font-size="9">0</text>
+      <text x="160" y="95" class="label" font-size="9">1</text>
+      <text x="90" y="120" class="label" font-size="9">Promise Level</text>
+    </g>
+    
+    <!-- Arrow -->
+    <g transform="translate(110, 175)">
+      <path d="M 0,-5 L 0,20" class="arrow"/>
+      <text x="15" y="10" class="label" font-size="9">Add delivery constraint</text>
+    </g>
+    
+    <!-- M1': Constrained Model -->
+    <g transform="translate(20, 200)">
+      <text x="90" y="0" text-anchor="middle" class="label" fill="#27ae60">Model M1': S∧D</text>
+      
+      <!-- Coordinate system -->
+      <rect x="10" y="10" width="160" height="80" fill="none" stroke="#ecf0f1" stroke-width="0.5"/>
+      <line x1="20" y1="80" x2="160" y2="80" class="axis"/>
+      <line x1="20" y1="80" x2="20" y2="20" class="axis"/>
+      
+      <!-- Concave curve with shading -->
+      <path d="M 20,80 Q 60,35 90,30 Q 120,35 160,80 L 160,80 L 20,80 Z" 
+            fill="url(#natureGrad)"/>
+      <path d="M 20,80 Q 60,35 90,30 Q 120,35 160,80" 
+            stroke="#27ae60" stroke-width="2" fill="none"/>
+      
+      <!-- Optimal point -->
+      <circle cx="90" cy="30" r="3" fill="#27ae60"/>
+      <text x="90" y="25" text-anchor="middle" class="label" font-size="9">φ* = 1/(C+1)</text>
+      
+      <!-- Equation -->
+      <text x="90" y="105" text-anchor="middle" class="equation">P(S∧D|φ) = φ(1-φ)^C</text>
+      
+      <!-- Complexity parameter -->
+      <text x="90" y="120" text-anchor="middle" class="label" font-size="9">C = Nature's complexity</text>
+    </g>
+  </g>
+  
+  <!-- M2 → M2' Panel: Founder's Concentration -->
+  <g transform="translate(330, 80)">
+    <rect x="0" y="0" width="220" height="280" fill="white" stroke="#bdc3c7" stroke-width="0.5" rx="6"/>
+    
+    <!-- Title -->
+    <text x="110" y="20" text-anchor="middle" class="label" font-weight="600">Founder's Concentration (τ)</text>
+    
+    <!-- M2: Continuous Integration -->
+    <g transform="translate(20, 40)">
+      <text x="90" y="0" text-anchor="middle" class="label" fill="#9b59b6">Model M2: Integration</text>
+      
+      <!-- Coordinate system -->
+      <rect x="10" y="10" width="160" height="80" fill="none" stroke="#ecf0f1" stroke-width="0.5"/>
+      <line x1="20" y1="80" x2="160" y2="80" class="axis"/>
+      <line x1="20" y1="80" x2="20" y2="20" class="axis"/>
+      
+      <!-- Beta distribution curve -->
+      <path d="M 20,80 Q 50,40 90,35 Q 130,40 160,80" 
+            stroke="#9b59b6" stroke-width="2" fill="none" stroke-dasharray="3,2"/>
+      
+      <!-- Shaded area under curve -->
+      <path d="M 20,80 Q 50,40 90,35 Q 130,40 160,80 L 160,80 L 20,80 Z" 
+            fill="#9b59b6" fill-opacity="0.1"/>
+      
+      <!-- Equation -->
+      <text x="90" y="105" text-anchor="middle" class="equation">∫ P(S∧D|φ)p(φ|μ)dφ</text>
+      
+      <text x="90" y="120" text-anchor="middle" class="label" font-size="9">Continuous beliefs</text>
+    </g>
+    
+    <!-- Arrow -->
+    <g transform="translate(110, 175)">
+      <path d="M 0,-5 L 0,20" class="arrow"/>
+      <text x="15" y="10" class="label" font-size="9">Sample-based approx</text>
+    </g>
+    
+    <!-- M2': Sampled Model -->
+    <g transform="translate(20, 200)">
+      <text x="90" y="0" text-anchor="middle" class="label" fill="#8e44ad">Model M2': τ Samples</text>
+      
+      <!-- Coordinate system -->
+      <rect x="10" y="10" width="160" height="80" fill="none" stroke="#ecf0f1" stroke-width="0.5"/>
+      <line x1="20" y1="80" x2="160" y2="80" class="axis"/>
+      <line x1="20" y1="80" x2="20" y2="20" class="axis"/>
+      
+      <!-- Sample points with different τ values -->
+      <!-- Low τ (Tesla) - Red -->
+      <g opacity="0.8">
+        <circle cx="40" cy="50" r="3" fill="#e74c3c"/>
+        <circle cx="90" cy="40" r="3" fill="#e74c3c"/>
+        <text x="65" y="35" class="label" font-size="9" fill="#e74c3c">τ=2</text>
+      </g>
+      
+      <!-- Mid τ (Amazon) - Gray -->
+      <g opacity="0.8">
+        <circle cx="60" cy="45" r="2" fill="#7f8c8d"/>
+        <circle cx="90" cy="40" r="2" fill="#7f8c8d"/>
+        <circle cx="120" cy="45" r="2" fill="#7f8c8d"/>
+        <text x="90" y="55" class="label" font-size="9" fill="#7f8c8d">τ=5</text>
+      </g>
+      
+      <!-- High τ (Better Place) - Blue -->
+      <g opacity="0.8">
+        <circle cx="85" cy="38" r="1.5" fill="#3498db"/>
+        <circle cx="88" cy="37" r="1.5" fill="#3498db"/>
+        <circle cx="91" cy="36" r="1.5" fill="#3498db"/>
+        <circle cx="94" cy="37" r="1.5" fill="#3498db"/>
+        <circle cx="97" cy="38" r="1.5" fill="#3498db"/>
+        <text x="120" y="30" class="label" font-size="9" fill="#3498db">τ=10</text>
+      </g>
+      
+      <!-- Equation -->
+      <text x="90" y="105" text-anchor="middle" class="equation">(1/τ) Σ P(S∧D|φ_k)</text>
+      
+      <text x="90" y="120" text-anchor="middle" class="label" font-size="9">φ_k ~ Beta(μτ, (1-μ)τ)</text>
+    </g>
+  </g>
+  
+  <!-- Bottom insight panel -->
+  <g transform="translate(50, 370)">
+    <rect x="0" y="0" width="500" height="25" fill="#ecf0f1" rx="3"/>
+    <text x="250" y="17" text-anchor="middle" class="label" font-weight="500">
+      Key Insight: τ controls learning speed | Low τ (Tesla) adapts quickly | High τ (Better Place) resists change
+    </text>
+  </g>
+</svg>

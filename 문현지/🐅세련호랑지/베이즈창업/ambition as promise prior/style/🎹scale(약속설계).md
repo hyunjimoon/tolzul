@@ -18,30 +18,30 @@
 
 | #   | Section     | 주제문장                                                                                                                                    | 핵심 개념                              | 연결 파일        |
 | --- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | ------------ |
-| 7   | 🐅2.1       | 창업자의 벤처 비즈니스 모델 품질관리가 tau 설정의 핵심 배경이다                                                                                                   | 제안배경                               | [[🐅2.12🏇]] |
-| 8   | 🐅2.2       | tau는 action-plan, explore-exploit등을 스펙트럼상에 놓는다. beta-binomial conjugate, beta, binomial distribution설명, concentration parameterization | [[🙋‍♀️chalire_scott_noubar(tau)]] | [[🐅2.12🏇]] |
+| 7   | 🐅2.1       | 창업자의 벤처 비즈니스 모델 품질관리가 tau 설정의 핵심 배경이다                                                                                                   | 제안배경                               | [[🐅2.12🏇분리연결]] |
+| 8   | 🐅2.2       | tau는 action-plan, explore-exploit등을 스펙트럼상에 놓는다. beta-binomial conjugate, beta, binomial distribution설명, concentration parameterization | [[🙋‍♀️chalire_scott_noubar(tau)]] | [[🐅2.12🏇분리연결]] |
 |     | [[🗄️🐢🐅]] |                                                                                                                                         |                                    |              |
 
 ### 🐅2.34🔥 Firebreak 전략 은유 [2 문단]
 
 |#|Section|주제문장|핵심 개념|연결 파일|
 |---|---|---|---|---|
-|9|🐅2.3|Firebreak의 narrowness가 tau의 전략적 유연성을 은유적으로 표현한다|🧠접근: strategic ambiguity|[[🐅2.34🔥]]|
-|10|🐅2.4|Exaptation possibility space가 tau의 적응 공간을 정의한다|🤜접근: adaptation space|[[🐅2.34🔥]]|
+|9|🐅2.3|Firebreak의 narrowness가 tau의 전략적 유연성을 은유적으로 표현한다|🧠접근: strategic ambiguity|[[🐅2.34🔥불공_C]]|
+|10|🐅2.4|Exaptation possibility space가 tau의 적응 공간을 정의한다|🤜접근: adaptation space|[[🐅2.34🔥불공_C]]|
 
 ### 🐅2.56🧬 DNA 구조 은유 [2 문단]
 
 |#|Section|주제문장|핵심 개념|연결 파일|
 |---|---|---|---|---|
-|11|🐅2.5|DNA double strand의 꼬임 정도가 promise의 sellability와 deliverability 균형을 표현한다|🧠접근: 구조적 팽팽함|[[🐅2.56🧬]]|
-|12|🐅2.6|Mutation 허용 정도가 주어진 제약 하에서 tau의 진화 가능성을 결정한다|🤜접근: 변이 허용도|[[🐅2.56🧬]]|
+|11|🐅2.5|DNA double strand의 꼬임 정도가 promise의 sellability와 deliverability 균형을 표현한다|🧠접근: 구조적 팽팽함|[[🐅2.56🧬최무_I]]|
+|12|🐅2.6|Mutation 허용 정도가 주어진 제약 하에서 tau의 진화 가능성을 결정한다|🤜접근: 변이 허용도|[[🐅2.56🧬최무_I]]|
 
 ### 🐅2.78💸 실증 방법론 [2 문단]
 
 |#|Section|주제문장|핵심 개념|연결 파일|
 |---|---|---|---|---|
-|13|🐅2.7|계층모델과 잠재변수에 substantial meaning을 부여하는 방식이 실증의 핵심이다|방법론적 기초|[[🐅2.78💸]]|
-|14|🐅2.8|Essential heterogeneity는 founder-venture의 group-individual 구조로 진화한다|계층적 변동|[[🐅2.78💸]]|
+|13|🐅2.7|계층모델과 잠재변수에 substantial meaning을 부여하는 방식이 실증의 핵심이다|방법론적 기초|[[🐅2.78🐣알까실증]]|
+|14|🐅2.8|Essential heterogeneity는 founder-venture의 group-individual 구조로 진화한다|계층적 변동|[[🐅2.78🐣알까실증]]|
 
 ### 🐅2.91011112 성공확률 인식 진화 [4 문단]
 
@@ -71,29 +71,29 @@
 
 |#|Section|주제문장|핵심 개념|연결 파일|확장원|
 |---|---|---|---|---|---|
-|25|👾4.1.1|Partial pooling의 "study variation" 효과가 tau 매개변수의 이론적 기초를 제공한다|McElreath 연결|[[👾4.1🏇]]|🐅2.12|
-|26|👾4.1.2|Action school(no pooling)과 planning school(full pooling)의 중간지점이 최적이다|학파 통합|[[👾4.1🏇]]|🐅2.12|
+|25|👾4.1.1|Partial pooling의 "study variation" 효과가 tau 매개변수의 이론적 기초를 제공한다|McElreath 연결|[[👾4.1🏇분리연결]]|🐅2.12|
+|26|👾4.1.2|Action school(no pooling)과 planning school(full pooling)의 중간지점이 최적이다|학파 통합|[[👾4.1🏇분리연결]]|🐅2.12|
 
 ### 👾4.2🔥 전략적 모호성의 가치 [2 문단] (← 🐅2.34🔥 확장)
 
 |#|Section|주제문장|핵심 개념|연결 파일|확장원|
 |---|---|---|---|---|---|
-|27|👾4.2.1|Strategic ambiguity가 정보 통합 비용을 낮춰 학습을 촉진한다|모호성의 가치|[[👾4.2🔥]]|🐅2.34|
-|28|👾4.2.2|Firebreak의 폭이 적응 공간의 크기를 결정한다|적응 유연성|[[👾4.2🔥]]|🐅2.34|
+|27|👾4.2.1|Strategic ambiguity가 정보 통합 비용을 낮춰 학습을 촉진한다|모호성의 가치|[[👾4.2🔥불공_C]]|🐅2.34|
+|28|👾4.2.2|Firebreak의 폭이 적응 공간의 크기를 결정한다|적응 유연성|[[👾4.2🔥불공_C]]|🐅2.34|
 
 ### 👾4.3🧬 Cleverly Brute Force 전략 [2 문단] (← 🐅2.56🧬 확장)
 
 |#|Section|주제문장|핵심 개념|연결 파일|확장원|
 |---|---|---|---|---|---|
-|29|👾4.3.1|Rejection option과 probability space 제한이 높은 tau의 위험을 완화한다|리스크 관리|[[👾4.3🧬]]|🐅2.56|
-|30|👾4.3.2|Camuffo(2024)의 실험이 제한된 탐색의 효과성을 입증한다|실증 근거|[[👾4.3🧬]]|🐅2.56|
+|29|👾4.3.1|Rejection option과 probability space 제한이 높은 tau의 위험을 완화한다|리스크 관리|[[👾4.3🧬최적무지]]|🐅2.56|
+|30|👾4.3.2|Camuffo(2024)의 실험이 제한된 탐색의 효과성을 입증한다|실증 근거|[[👾4.3🧬최적무지]]|🐅2.56|
 
 ### 👾4.4💸 미래 연구 방향 [2 문단] (← 🐅2.78💸 확장)
 
 |#|Section|주제문장|핵심 개념|연결 파일|확장원|
 |---|---|---|---|---|---|
-|31|👾4.4.1|Hierarchical Bayes 방법론이 tau 추정의 새로운 가능성을 연다|방법론적 확장|[[👾4.4💸]]|🐅2.78|
-|32|👾4.4.2|Equity valuation 연구와의 통합이 실무적 적용을 강화한다|실무 연결|[[👾4.4💸]]|🐅2.78|
+|31|👾4.4.1|Hierarchical Bayes 방법론이 tau 추정의 새로운 가능성을 연다|방법론적 확장|[[👾4.4🐣알까실증]]|🐅2.78|
+|32|👾4.4.2|Equity valuation 연구와의 통합이 실무적 적용을 강화한다|실무 연결|[[👾4.4🐣알까실증]]|🐅2.78|
 
 ---
 
@@ -158,6 +158,7 @@ Bayesian and Evolutionary entrepreneurship with double binding promise
 
 ---
 
+# [[🐅2.56🧬최무_I]]
 ## 정보 → 지식 전환 메커니즘
 
 ```mermaid

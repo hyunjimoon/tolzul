@@ -1,11 +1,13 @@
 {
 	"nodes":[
 		{"id":"5bc98c4d559f97e0","type":"link","url":"https://claude.ai/public/artifacts/e9fb3169-0008-4d00-a6a5-5fb9b39b6e21","x":-200,"y":-200,"width":800,"height":920,"color":"2"},
-		{"id":"1ad1ad6659592f91","type":"link","url":"https://claude.ai/public/artifacts/a4d6ca85-19f4-4443-981d-539c8d7d4642","x":-157,"y":1680,"width":2037,"height":1160},
-		{"id":"013e9d3f13ee77a2","type":"file","file":"문현지/🐅세련호랑지/베이즈창업/ambition as promise prior/module/🐅2.12🏇.md","x":-1280,"y":-140,"width":400,"height":400},
-		{"id":"c4942ab35a8b0cd2","type":"file","file":"문현지/🐅세련호랑지/베이즈창업/ambition as promise prior/module/🐅2.34🔥.md","x":-880,"y":-140,"width":400,"height":400},
-		{"id":"9309ba9f71175552","type":"file","file":"문현지/🐅세련호랑지/베이즈창업/ambition as promise prior/module/🐅2.56🧬.md","x":-1280,"y":260,"width":400,"height":400},
-		{"id":"2b13b4e0c954b969","x":-80,"y":800,"width":1760,"height":826,"type":"link","url":"https://claude.ai/share/1a840a2c-4742-4213-bfeb-69cc6c37f909"}
+		{"id":"1ad1ad6659592f91","type":"link","url":"https://claude.ai/public/artifacts/a4d6ca85-19f4-4443-981d-539c8d7d4642","x":-80,"y":1680,"width":1960,"height":1040},
+		{"id":"013e9d3f13ee77a2","type":"file","file":"문현지/🐅세련호랑지/베이즈창업/ambition as promise prior/module/🐅2.12🏇분리연결.md","x":-1280,"y":-140,"width":400,"height":400},
+		{"id":"c4942ab35a8b0cd2","type":"file","file":"문현지/🐅세련호랑지/베이즈창업/ambition as promise prior/module/🐅2.34🔥불공_C.md","x":-880,"y":-140,"width":400,"height":400},
+		{"id":"9309ba9f71175552","type":"file","file":"문현지/🐅세련호랑지/베이즈창업/ambition as promise prior/module/🐅2.56🧬최무_I.md","x":-1280,"y":260,"width":400,"height":400},
+		{"id":"2b13b4e0c954b969","type":"link","url":"https://claude.ai/share/1a840a2c-4742-4213-bfeb-69cc6c37f909","x":-80,"y":800,"width":1760,"height":826},
+		{"id":"5532311464367634","x":-914,"y":1267,"width":400,"height":142,"type":"file","file":"_ref/Pasted image 20250917012847.png"},
+		{"id":"5c376dc61b23bed8","x":-914,"y":1060,"width":400,"height":86,"type":"file","file":"_ref/Pasted image 20250917012853.png"}
 	],
 	"edges":[]
 }

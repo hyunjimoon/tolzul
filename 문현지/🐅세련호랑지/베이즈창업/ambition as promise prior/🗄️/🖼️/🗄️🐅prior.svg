@@ -1,0 +1,80 @@
+<svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: -apple-system, 'SF Pro Display', sans-serif; font-size: 14px; font-weight: 500; fill: #2c3e50; }
+      .label { font-family: -apple-system, 'SF Pro Text', sans-serif; font-size: 10px; fill: #546e7a; }
+      .axis { stroke: #34495e; stroke-width: 0.8; }
+      .grid { stroke: #ecf0f1; stroke-width: 0.4; stroke-dasharray: 2,2; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="250" y="25" text-anchor="middle" class="title">Prior Distribution: Beta(ατ, βτ)</text>
+  
+  <!-- Grid -->
+  <g opacity="0.3">
+    <line x1="50" y1="220" x2="50" y2="50" class="grid"/>
+    <line x1="150" y1="220" x2="150" y2="50" class="grid"/>
+    <line x1="250" y1="220" x2="250" y2="50" class="grid"/>
+    <line x1="350" y1="220" x2="350" y2="50" class="grid"/>
+    <line x1="450" y1="220" x2="450" y2="50" class="grid"/>
+    
+    <line x1="50" y1="220" x2="450" y2="220" class="grid"/>
+    <line x1="50" y1="170" x2="450" y2="170" class="grid"/>
+    <line x1="50" y1="120" x2="450" y2="120" class="grid"/>
+    <line x1="50" y1="70" x2="450" y2="70" class="grid"/>
+  </g>
+  
+  <!-- Axes -->
+  <line x1="50" y1="220" x2="450" y2="220" class="axis"/>
+  <line x1="50" y1="220" x2="50" y2="50" class="axis"/>
+  
+  <!-- X-axis labels -->
+  <text x="50" y="240" text-anchor="middle" class="label">0</text>
+  <text x="250" y="240" text-anchor="middle" class="label">0.5</text>
+  <text x="450" y="240" text-anchor="middle" class="label">1</text>
+  <text x="250" y="260" text-anchor="middle" class="label" font-style="italic">Promise Level (φ)</text>
+  
+  <!-- Y-axis label -->
+  <text x="30" y="135" text-anchor="middle" class="label" transform="rotate(-90 30 135)">Probability Density</text>
+  
+  <!-- Beta(0,0) - Uniform (τ=0) - Tesla Red -->
+  <line x1="50" y1="150" x2="450" y2="150" stroke="#e74c3c" stroke-width="2" opacity="0.8"/>
+  <circle cx="50" cy="150" r="2" fill="#e74c3c"/>
+  <text x="460" y="153" class="label" fill="#e74c3c">τ=0</text>
+  
+  <!-- Beta(1,1) - Slight curve (τ=1) - Tesla Red -->
+  <path d="M 50,200 Q 150,180 250,170 Q 350,180 450,200" 
+        stroke="#e74c3c" stroke-width="2" fill="none" opacity="0.6"/>
+  <circle cx="250" cy="170" r="2" fill="#e74c3c"/>
+  <text x="460" y="203" class="label" fill="#e74c3c">τ=1</text>
+  
+  <!-- Beta(2,2) - Moderate curve (τ=2) - Gray -->
+  <path d="M 50,220 Q 150,140 250,120 Q 350,140 450,220" 
+        stroke="#7f8c8d" stroke-width="2" fill="none" opacity="0.8"/>
+  <circle cx="250" cy="120" r="2" fill="#7f8c8d"/>
+  <text x="460" y="223" class="label" fill="#7f8c8d">τ=2</text>
+  
+  <!-- Beta(4,4) - Sharp peak (τ=4) - Better Place Blue -->
+  <path d="M 50,220 L 150,210 Q 200,100 250,70 Q 300,100 350,210 L 450,220" 
+        stroke="#3498db" stroke-width="2.5" fill="none" opacity="0.9"/>
+  <circle cx="250" cy="70" r="3" fill="#3498db"/>
+  <text x="460" y="223" class="label" fill="#3498db">τ=4</text>
+  
+  <!-- Legend Box -->
+  <g transform="translate(60, 55)">
+    <rect x="0" y="0" width="140" height="90" fill="white" opacity="0.95" stroke="#bdc3c7" stroke-width="0.5" rx="4"/>
+    <text x="70" y="15" text-anchor="middle" class="label" font-weight="600">Concentration Parameter</text>
+    
+    <line x1="10" y1="30" x2="30" y2="30" stroke="#e74c3c" stroke-width="2"/>
+    <text x="35" y="34" class="label">Low τ: Exploration</text>
+    
+    <line x1="10" y1="45" x2="30" y2="45" stroke="#7f8c8d" stroke-width="2"/>
+    <text x="35" y="49" class="label">Mid τ: Balance</text>
+    
+    <line x1="10" y1="60" x2="30" y2="60" stroke="#3498db" stroke-width="2"/>
+    <text x="35" y="64" class="label">High τ: Exploitation</text>
+    
+    <text x="10" y="80" class="label" font-size="9" fill="#95a5a6">Higher τ → Stronger prior belief</text>
+  </g>
+</svg>
