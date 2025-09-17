@@ -55,7 +55,7 @@ Aleatoric probabilistic models are used to represent epistemic uncertainty about
 
 Unless the probabilistic model is perfectly, perfectly tractable, how can we guarantee that "this model and its computation suite correctly and faithfully computes the aleatoric uncertainty of interest"?
 
-Diagnostic tools, such as SBC, an aleatoric "model" of epistemic uncertainty within model computation. [[QnA]]
+Diagnostic tools, such as SBC, an aleatoric "model" of epistemic uncertainty within model computation. [[_ref/QnA]]
 
 
 ## Introduction

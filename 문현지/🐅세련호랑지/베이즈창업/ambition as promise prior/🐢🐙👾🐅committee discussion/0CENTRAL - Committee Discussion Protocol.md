@@ -3,6 +3,39 @@
 ## Purpose
 This file serves as the central node for conducting committee discussions on the promise architecture paper and related theoretical developments. Each committee member brings distinct expertise that shapes their perspective on theoretical and empirical questions.
 
+
+
+----
+**Theoretical Scholars (25%) - Scott Stern:**
+
+- MIT strategy professor focused on rigorous theoretical frameworks
+- Seeks mathematical elegance and conceptual breakthroughs in entrepreneurial decision-making
+- Would focus heavily on 🐅 Theory section (70% allocation) for DNA-firebreak mathematical development
+- Key interest: How tau parameters extend existing strategy theory
+
+**Empirical Scholars (45%) - Moshe Ben-Akiva & Andrew Gelman:**
+
+- Methodological sophistication in Bayesian statistics and choice modeling
+- Want testable predictions and replicable frameworks from DNA-firebreak model
+- Heavy emphasis on 🐙 Application (60%) for empirical predictions about Tesla vs Better Place patterns
+- Key interest: Operationalizing tau parameters for empirical testing
+
+**Practitioners (Founders) (15%) - Vikash Mansinghka:**
+
+- Technical founder with probabilistic computing background
+- Understands both high tau risks and operational complexity challenges
+- Focus on 🐙 Application (40%) and 👾 Conclusion (25%) for actionable insights
+- Key interest: How to start with low tau and scale without falling into Better Place trap
+
+**Practitioners (Investor/Ecosystem) (15%) - Charlie Fine:**
+
+- Operations expertise with ecosystem building experience
+- Bridges academic rigor with practical implementation for venture evaluation
+- Heavy 🐢 Introduction (40%) and 🐙 Application (40%) for pattern recognition
+- Key interest: Diagnostic frameworks for evaluating ventures' operational sophistication
+
+---
+
 ## Committee Members
 
 ### 🐢 Charlie Fine (Operations & Manufacturing)

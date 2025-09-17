@@ -16,7 +16,7 @@ Here's what everyone misses: success probability isn't given by the market—it'
 
 The following figure visualizes how these three companies navigated the three-dimensional space of promise level (φ), precision (τ), and survival probability. Notice how Tesla's trajectory starts with low precision and gradually increases it, while Better Place and Nikola began with high precision that trapped them:
 
-![Promise Evolution Paths](🖼️🐢(nikola_betterplace_tesla).svg)
+![Promise Evolution Paths](🖼️🐙(betterplace_tesla).svg)
 *Figure 1: Promise Evolution Paths showing three distinct trajectories. Tesla (green) demonstrates successful evolution from low to high precision. Better Place (orange) shows the precision trap—high initial τ leading to inability to adapt. Nikola (red) illustrates the fraud path—high promises with high precision but no deliverability.*
 
 **P5. Mathematical Foundation**
