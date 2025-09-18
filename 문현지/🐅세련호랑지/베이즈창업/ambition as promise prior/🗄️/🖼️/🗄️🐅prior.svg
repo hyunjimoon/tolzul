@@ -1,80 +1,125 @@
-<svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      .title { font-family: -apple-system, 'SF Pro Display', sans-serif; font-size: 14px; font-weight: 500; fill: #2c3e50; }
-      .label { font-family: -apple-system, 'SF Pro Text', sans-serif; font-size: 10px; fill: #546e7a; }
-      .axis { stroke: #34495e; stroke-width: 0.8; }
-      .grid { stroke: #ecf0f1; stroke-width: 0.4; stroke-dasharray: 2,2; }
+      .title { font-family: 'Times New Roman', serif; font-size: 14px; font-weight: 400; fill: #1a1a1a; }
+      .subtitle { font-family: 'Times New Roman', serif; font-size: 11px; font-style: italic; fill: #4a4a4a; }
+      .label { font-family: 'Helvetica Neue', sans-serif; font-size: 9px; font-weight: 300; fill: #6a6a6a; }
+      .math { font-family: 'Times New Roman', serif; font-size: 10px; font-style: italic; fill: #2a2a2a; }
+      .axis { stroke: #b0b0b0; stroke-width: 0.25; }
     </style>
   </defs>
   
-  <!-- Title -->
-  <text x="250" y="25" text-anchor="middle" class="title">Prior Distribution: Beta(ατ, βτ)</text>
+  <rect x="0" y="0" width="900" height="320" fill="white"/>
   
-  <!-- Grid -->
-  <g opacity="0.3">
-    <line x1="50" y1="220" x2="50" y2="50" class="grid"/>
-    <line x1="150" y1="220" x2="150" y2="50" class="grid"/>
-    <line x1="250" y1="220" x2="250" y2="50" class="grid"/>
-    <line x1="350" y1="220" x2="350" y2="50" class="grid"/>
-    <line x1="450" y1="220" x2="450" y2="50" class="grid"/>
+  <text x="450" y="25" text-anchor="middle" class="title">Prior Distributions</text>
+  
+  <!-- Panel 1: Beta(0.5, 0.5) - Tesla -->
+  <g transform="translate(100, 60)">
+    <text x="85" y="0" text-anchor="middle" class="subtitle">Beta(½, ½)</text>
+    <text x="85" y="15" text-anchor="middle" class="label">τ = 1</text>
     
-    <line x1="50" y1="220" x2="450" y2="220" class="grid"/>
-    <line x1="50" y1="170" x2="450" y2="170" class="grid"/>
-    <line x1="50" y1="120" x2="450" y2="120" class="grid"/>
-    <line x1="50" y1="70" x2="450" y2="70" class="grid"/>
+    <g transform="translate(0, 30)">
+      <!-- Minimal axes -->
+      <line x1="0" y1="120" x2="170" y2="120" class="axis"/>
+      <line x1="0" y1="0" x2="0" y2="120" class="axis"/>
+      
+      <!-- U-shaped curve - Tesla Red (smooth Beta distribution) -->
+      <path d="M 0.00,18.00 L 1.70,87.60 L 3.40,96.97 L 5.10,101.10 L 6.80,103.55 L 8.50,105.21 L 10.20,106.42 L 11.90,107.36 L 13.60,108.12 L 15.30,108.73 L 17.00,109.25 L 18.70,109.70 L 20.40,110.08 L 22.10,110.41 L 23.80,110.71 L 25.50,110.97 L 27.20,111.21 L 28.90,111.42 L 30.60,111.61 L 32.30,111.78 L 34.00,111.94 L 35.70,112.08 L 37.40,112.22 L 39.10,112.34 L 40.80,112.45 L 42.50,112.55 L 44.20,112.65 L 45.90,112.74 L 47.60,112.82 L 49.30,112.90 L 51.00,112.96 L 52.70,113.03 L 54.40,113.09 L 56.10,113.14 L 57.80,113.19 L 59.50,113.24 L 61.20,113.28 L 62.90,113.32 L 64.60,113.36 L 66.30,113.39 L 68.00,113.42 L 69.70,113.45 L 71.40,113.47 L 73.10,113.49 L 74.80,113.51 L 76.50,113.52 L 78.20,113.53 L 79.90,113.54 L 81.60,113.55 L 83.30,113.55 L 85.00,113.55 L 86.70,113.55 L 88.40,113.55 L 90.10,113.54 L 91.80,113.53 L 93.50,113.52 L 95.20,113.51 L 96.90,113.49 L 98.60,113.47 L 100.30,113.45 L 102.00,113.42 L 103.70,113.39 L 105.40,113.36 L 107.10,113.32 L 108.80,113.28 L 110.50,113.24 L 112.20,113.19 L 113.90,113.14 L 115.60,113.09 L 117.30,113.03 L 119.00,112.96 L 120.70,112.90 L 122.40,112.82 L 124.10,112.74 L 125.80,112.65 L 127.50,112.55 L 129.20,112.45 L 130.90,112.34 L 132.60,112.22 L 134.30,112.08 L 136.00,111.94 L 137.70,111.78 L 139.40,111.61 L 141.10,111.42 L 142.80,111.21 L 144.50,110.97 L 146.20,110.71 L 147.90,110.41 L 149.60,110.08 L 151.30,109.70 L 153.00,109.25 L 154.70,108.73 L 156.40,108.12 L 158.10,107.36 L 159.80,106.42 L 161.50,105.21 L 163.20,103.55 L 164.90,101.10 L 166.60,96.97 L 168.30,87.60 L 170.00,18.00" 
+            stroke="#CC0000" stroke-width="1.5" fill="none" opacity="0.9"/>
+      
+      <!-- Minimal labels -->
+      <text x="85" y="145" text-anchor="middle" class="label">φ</text>
+      <text x="-10" y="60" text-anchor="end" class="label">p</text>
+      
+      <!-- X-axis tick marks -->
+      <line x1="0" y1="120" x2="0" y2="124" stroke="#b0b0b0" stroke-width="0.5"/>
+      <line x1="42.5" y1="120" x2="42.5" y2="124" stroke="#b0b0b0" stroke-width="0.5"/>
+      <line x1="85" y1="120" x2="85" y2="124" stroke="#b0b0b0" stroke-width="0.5"/>
+      <line x1="127.5" y1="120" x2="127.5" y2="124" stroke="#b0b0b0" stroke-width="0.5"/>
+      <line x1="170" y1="120" x2="170" y2="124" stroke="#b0b0b0" stroke-width="0.5"/>
+      
+      <!-- X-axis labels -->
+      <text x="0" y="132" text-anchor="middle" class="label" font-size="8">0</text>
+      <text x="42.5" y="132" text-anchor="middle" class="label" font-size="8">0.25</text>
+      <text x="85" y="132" text-anchor="middle" class="label" font-size="8">0.5</text>
+      <text x="127.5" y="132" text-anchor="middle" class="label" font-size="8">0.75</text>
+      <text x="170" y="132" text-anchor="middle" class="label" font-size="8">1</text>
+    </g>
+    
+    <text x="85" y="180" text-anchor="middle" class="label" fill="#CC0000">Tesla: τ = 1</text>
   </g>
   
-  <!-- Axes -->
-  <line x1="50" y1="220" x2="450" y2="220" class="axis"/>
-  <line x1="50" y1="220" x2="50" y2="50" class="axis"/>
-  
-  <!-- X-axis labels -->
-  <text x="50" y="240" text-anchor="middle" class="label">0</text>
-  <text x="250" y="240" text-anchor="middle" class="label">0.5</text>
-  <text x="450" y="240" text-anchor="middle" class="label">1</text>
-  <text x="250" y="260" text-anchor="middle" class="label" font-style="italic">Promise Level (φ)</text>
-  
-  <!-- Y-axis label -->
-  <text x="30" y="135" text-anchor="middle" class="label" transform="rotate(-90 30 135)">Probability Density</text>
-  
-  <!-- Beta(0,0) - Uniform (τ=0) - Tesla Red -->
-  <line x1="50" y1="150" x2="450" y2="150" stroke="#e74c3c" stroke-width="2" opacity="0.8"/>
-  <circle cx="50" cy="150" r="2" fill="#e74c3c"/>
-  <text x="460" y="153" class="label" fill="#e74c3c">τ=0</text>
-  
-  <!-- Beta(1,1) - Slight curve (τ=1) - Tesla Red -->
-  <path d="M 50,200 Q 150,180 250,170 Q 350,180 450,200" 
-        stroke="#e74c3c" stroke-width="2" fill="none" opacity="0.6"/>
-  <circle cx="250" cy="170" r="2" fill="#e74c3c"/>
-  <text x="460" y="203" class="label" fill="#e74c3c">τ=1</text>
-  
-  <!-- Beta(2,2) - Moderate curve (τ=2) - Gray -->
-  <path d="M 50,220 Q 150,140 250,120 Q 350,140 450,220" 
-        stroke="#7f8c8d" stroke-width="2" fill="none" opacity="0.8"/>
-  <circle cx="250" cy="120" r="2" fill="#7f8c8d"/>
-  <text x="460" y="223" class="label" fill="#7f8c8d">τ=2</text>
-  
-  <!-- Beta(4,4) - Sharp peak (τ=4) - Better Place Blue -->
-  <path d="M 50,220 L 150,210 Q 200,100 250,70 Q 300,100 350,210 L 450,220" 
-        stroke="#3498db" stroke-width="2.5" fill="none" opacity="0.9"/>
-  <circle cx="250" cy="70" r="3" fill="#3498db"/>
-  <text x="460" y="223" class="label" fill="#3498db">τ=4</text>
-  
-  <!-- Legend Box -->
-  <g transform="translate(60, 55)">
-    <rect x="0" y="0" width="140" height="90" fill="white" opacity="0.95" stroke="#bdc3c7" stroke-width="0.5" rx="4"/>
-    <text x="70" y="15" text-anchor="middle" class="label" font-weight="600">Concentration Parameter</text>
+  <!-- Panel 2: Beta(1, 1) -->
+  <g transform="translate(365, 60)">
+    <text x="85" y="0" text-anchor="middle" class="subtitle">Beta(1, 1)</text>
+    <text x="85" y="15" text-anchor="middle" class="label">τ = 2</text>
     
-    <line x1="10" y1="30" x2="30" y2="30" stroke="#e74c3c" stroke-width="2"/>
-    <text x="35" y="34" class="label">Low τ: Exploration</text>
+    <g transform="translate(0, 30)">
+      <line x1="0" y1="120" x2="170" y2="120" class="axis"/>
+      <line x1="0" y1="0" x2="0" y2="120" class="axis"/>
+      
+      <!-- Uniform distribution -->
+      <line x1="0" y1="60" x2="170" y2="60" stroke="#1a1a1a" stroke-width="1.5"/>
+      
+      <text x="85" y="145" text-anchor="middle" class="label">φ</text>
+      <text x="-10" y="60" text-anchor="end" class="label">p</text>
+      
+      <!-- X-axis tick marks -->
+      <line x1="0" y1="120" x2="0" y2="124" stroke="#b0b0b0" stroke-width="0.5"/>
+      <line x1="42.5" y1="120" x2="42.5" y2="124" stroke="#b0b0b0" stroke-width="0.5"/>
+      <line x1="85" y1="120" x2="85" y2="124" stroke="#b0b0b0" stroke-width="0.5"/>
+      <line x1="127.5" y1="120" x2="127.5" y2="124" stroke="#b0b0b0" stroke-width="0.5"/>
+      <line x1="170" y1="120" x2="170" y2="124" stroke="#b0b0b0" stroke-width="0.5"/>
+      
+      <!-- X-axis labels -->
+      <text x="0" y="132" text-anchor="middle" class="label" font-size="8">0</text>
+      <text x="42.5" y="132" text-anchor="middle" class="label" font-size="8">0.25</text>
+      <text x="85" y="132" text-anchor="middle" class="label" font-size="8">0.5</text>
+      <text x="127.5" y="132" text-anchor="middle" class="label" font-size="8">0.75</text>
+      <text x="170" y="132" text-anchor="middle" class="label" font-size="8">1</text>
+    </g>
     
-    <line x1="10" y1="45" x2="30" y2="45" stroke="#7f8c8d" stroke-width="2"/>
-    <text x="35" y="49" class="label">Mid τ: Balance</text>
+    <text x="85" y="180" text-anchor="middle" class="label">uniform prior</text>
+  </g>
+  
+  <!-- Panel 3: Beta(2, 2) - Better Place -->
+  <g transform="translate(630, 60)">
+    <text x="85" y="0" text-anchor="middle" class="subtitle">Beta(2, 2)</text>
+    <text x="85" y="15" text-anchor="middle" class="label">τ = 4</text>
     
-    <line x1="10" y1="60" x2="30" y2="60" stroke="#3498db" stroke-width="2"/>
-    <text x="35" y="64" class="label">High τ: Exploitation</text>
+    <g transform="translate(0, 30)">
+      <line x1="0" y1="120" x2="170" y2="120" class="axis"/>
+      <line x1="0" y1="0" x2="0" y2="120" class="axis"/>
+      
+      <!-- Bell curve - Better Place Sky Blue (smooth Beta distribution) -->
+      <path d="M 0.00,119.59 L 1.70,115.96 L 3.40,112.00 L 5.10,108.13 L 6.80,104.33 L 8.50,100.62 L 10.20,96.99 L 11.90,93.44 L 13.60,89.97 L 15.30,86.58 L 17.00,83.28 L 18.70,80.06 L 20.40,76.92 L 22.10,73.86 L 23.80,70.88 L 25.50,67.98 L 27.20,65.16 L 28.90,62.43 L 30.60,59.78 L 32.30,57.21 L 34.00,54.72 L 35.70,52.31 L 37.40,49.99 L 39.10,47.74 L 40.80,45.58 L 42.50,43.50 L 44.20,41.50 L 45.90,39.58 L 47.60,37.75 L 49.30,35.99 L 51.00,34.32 L 52.70,32.73 L 54.40,31.22 L 56.10,29.79 L 57.80,28.44 L 59.50,27.18 L 61.20,26.00 L 62.90,24.90 L 64.60,23.88 L 66.30,22.94 L 68.00,22.08 L 69.70,21.30 L 71.40,20.61 L 73.10,20.00 L 74.80,19.47 L 76.50,19.02 L 78.20,18.65 L 79.90,18.37 L 81.60,18.16 L 83.30,18.04 L 85.00,18.00 L 86.70,18.04 L 88.40,18.16 L 90.10,18.37 L 91.80,18.65 L 93.50,19.02 L 95.20,19.47 L 96.90,20.00 L 98.60,20.61 L 100.30,21.30 L 102.00,22.08 L 103.70,22.94 L 105.40,23.88 L 107.10,24.90 L 108.80,26.00 L 110.50,27.18 L 112.20,28.44 L 113.90,29.79 L 115.60,31.22 L 117.30,32.73 L 119.00,34.32 L 120.70,35.99 L 122.40,37.75 L 124.10,39.58 L 125.80,41.50 L 127.50,43.50 L 129.20,45.58 L 130.90,47.74 L 132.60,49.99 L 134.30,52.31 L 136.00,54.72 L 137.70,57.21 L 139.40,59.78 L 141.10,62.43 L 142.80,65.16 L 144.50,67.98 L 146.20,70.88 L 147.90,73.86 L 149.60,76.92 L 151.30,80.06 L 153.00,83.28 L 154.70,86.58 L 156.40,89.97 L 158.10,93.44 L 159.80,96.99 L 161.50,100.62 L 163.20,104.33 L 164.90,108.13 L 166.60,112.00 L 168.30,115.96 L 170.00,119.59" 
+            stroke="#5DADE2" stroke-width="1.5" fill="none" opacity="0.9"/>
+      
+      <text x="85" y="145" text-anchor="middle" class="label">φ</text>
+      <text x="-10" y="60" text-anchor="end" class="label">p</text>
+      
+      <!-- X-axis tick marks -->
+      <line x1="0" y1="120" x2="0" y2="124" stroke="#b0b0b0" stroke-width="0.5"/>
+      <line x1="42.5" y1="120" x2="42.5" y2="124" stroke="#b0b0b0" stroke-width="0.5"/>
+      <line x1="85" y1="120" x2="85" y2="124" stroke="#b0b0b0" stroke-width="0.5"/>
+      <line x1="127.5" y1="120" x2="127.5" y2="124" stroke="#b0b0b0" stroke-width="0.5"/>
+      <line x1="170" y1="120" x2="170" y2="124" stroke="#b0b0b0" stroke-width="0.5"/>
+      
+      <!-- X-axis labels -->
+      <text x="0" y="132" text-anchor="middle" class="label" font-size="8">0</text>
+      <text x="42.5" y="132" text-anchor="middle" class="label" font-size="8">0.25</text>
+      <text x="85" y="132" text-anchor="middle" class="label" font-size="8">0.5</text>
+      <text x="127.5" y="132" text-anchor="middle" class="label" font-size="8">0.75</text>
+      <text x="170" y="132" text-anchor="middle" class="label" font-size="8">1</text>
+    </g>
     
-    <text x="10" y="80" class="label" font-size="9" fill="#95a5a6">Higher τ → Stronger prior belief</text>
+    <text x="85" y="180" text-anchor="middle" class="label" fill="#5DADE2">Better Place: τ = 4</text>
+  </g>
+  
+  <!-- Mathematical notation -->
+  <g transform="translate(450, 250)">
+    <line x1="-100" y1="0" x2="100" y2="0" stroke="#e0e0e0" stroke-width="0.25"/>
+    <text x="0" y="25" text-anchor="middle" class="math">σ² = μ(1-μ)/(τ+1)</text>
+    <text x="0" y="45" text-anchor="middle" class="label">variance decreases with precision</text>
   </g>
 </svg>

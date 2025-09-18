@@ -1,3 +1,4 @@
+# [[09-18|25-09-18]]
 ## 🐢 Introduction - Grammar (현상 정의) [6 문단]
 
 | #   | Section   | 주제문장                                                    | 핵심 개념                          | 연결 파일          |
@@ -31,10 +32,10 @@
 
 ### 🐅2.56🧬 DNA 구조 은유 [2 문단]
 
-|#|Section|주제문장|핵심 개념|연결 파일|
-|---|---|---|---|---|
-|11|🐅2.5|DNA double strand의 꼬임 정도가 promise의 sellability와 deliverability 균형을 표현한다|🧠접근: 구조적 팽팽함|[[🐅2.56🧬최무_I]]|
-|12|🐅2.6|Mutation 허용 정도가 주어진 제약 하에서 tau의 진화 가능성을 결정한다|🤜접근: 변이 허용도|[[🐅2.56🧬최무_I]]|
+| #   | Section | 주제문장                                                                    | 핵심 개념         | 연결 파일            |
+| --- | ------- | ----------------------------------------------------------------------- | ------------- | ---------------- |
+| 11  | 🐅2.5   | DNA double strand의 꼬임 정도가 promise의 sellability와 deliverability 균형을 표현한다 | 🧠접근: 구조적 팽팽함 | [[🐅2.56🧬최무_I]] |
+| 12  | 🐅2.6   | Mutation 허용 정도가 주어진 제약 하에서 tau의 진화 가능성을 결정한다                            | 🤜접근: 변이 허용도  | [[🐅2.56🧬최무_I]] |
 
 ### 🐅2.78💸 실증 방법론 [2 문단]
 
@@ -56,14 +57,14 @@
 
 ## 🐙 Application - Rhetoric (설득적 사례) [6 문단]
 
-|#|Section|주제문장|핵심 개념|연결 파일|
-|---|---|---|---|---|
-|19|🐙3.1|Better Place와 Tesla의 M1'→M2 전환이 concave에서 random variable로의 진화를 보여준다|실증 사례 1|[[🐙3.123456]]|
-|20|🐙3.2|M2' 기준에서 두 기업의 approximation 전략이 극명하게 대조된다|실증 사례 2|[[🐙3.123456]]|
-|21|🐙3.3|Complexity 관리 측면에서 Tesla의 낮은 tau가 우위를 보였다|복잡성 관리|[[🐙3.123456]]|
-|22|🐙3.4|c_t < c_b이고 i_t < i_b여서 tau__t > tau__b. Tesla는 높은 tau_로 유연했으나, Better Place는 낮은 tau_에도 정밀 약속 고수로 실패|정보 통합 비용|[[🐙3.123456]]|
-|23|🐙3.5|tau* = max(0, V/ic - 1) 공식이 최적 불확실성 수준을 정의한다|최적화 공식|[[🐙3.123456]]|
-|24|🐙3.6|Founders의 "prediction-based prescription" 패턴이 tau 선택을 예측한다|경험적 예측|[[🐙3.123456]]|
+| #   | Section | 주제문장                                                                                                 | 핵심 개념    | 연결 파일          |
+| --- | ------- | ---------------------------------------------------------------------------------------------------- | -------- | -------------- |
+| 19  | 🐙3.1   | Better Place와 Tesla의 M1'→M2 전환이 concave에서 random variable로의 진화를 보여준다                                 | 실증 사례 1  | [[🐙3.123456]] |
+| 20  | 🐙3.2   | M2' 기준에서 두 기업의 approximation 전략이 극명하게 대조된다                                                           | 실증 사례 2  | [[🐙3.123456]] |
+| 21  | 🐙3.3   | Complexity 관리 측면에서 Tesla의 낮은 tau가 우위를 보였다                                                            | 복잡성 관리   | [[🐙3.123456]] |
+| 22  | 🐙3.4   | c_t < c_b이고 i_t < i_b여서 tau__t > tau__b. Tesla는 높은 tau_로 유연했으나, Better Place는 낮은 tau_에도 정밀 약속 고수로 실패 | 정보 통합 비용 | [[🐙3.123456]] |
+| 23  | 🐙3.5   | tau* = max(0, V/ic - 1) 공식이 최적 불확실성 수준을 정의한다                                                         | 최적화 공식   | [[🐙3.123456]] |
+| 24  | 🐙3.6   | Founders의 "prediction-based prescription" 패턴이 tau 선택을 예측한다                                           | 경험적 예측   | [[🐙3.123456]] |
 
 ## 👾 Conclusion - 확장과 함의 [8 문단]
 
@@ -96,7 +97,180 @@
 |32|👾4.4.2|Equity valuation 연구와의 통합이 실무적 적용을 강화한다|실무 연결|[[👾4.4🐣알까실증]]|🐅2.78|
 
 ---
+# [[09-17|25-09-17]]
 
+# 🎹 약속설계의 음계: Entrepreneurial Promise as Bayesian Adaptation
+
+## Paper Structure: 32 Paragraphs in 4 Sections
+
+### 🐢 Introduction - Grammar (현상 정의) [6 paragraphs]
+
+| # | Section | Main Message | Key Concepts | Evidence/Examples | Figures/Tables |
+|---|---------|--------------|--------------|-------------------|----------------|
+| 1 | 🐢1.1 | Tesla and Better Place shared identical visions of electrifying automobiles, yet diverged due to tau approaches | Same vision, different fate | Tesla adaptive tau vs BP rigid tau | Fig: Company trajectories |
+| 2 | 🐢1.2 | τ* = max(0, 1/(ic) - 1) with three meanings: tightness, samples, width | Core equation | 4 interpretations of tau | Table: Tau meanings |
+| 3 | 🐢1.3 | DNA tension and firebreak width metaphors explain flexibility-efficiency tradeoff | Biological & strategic metaphors | DNA mutation, firebreak containment | Fig: Metaphors |
+| 4 | 🐢1.4 | Founder-venture separation enables simulation and calibration via HBM | Methodological innovation | Principal-agent, hierarchical Bayes | Fig: Separation model |
+| 5 | 🐢1.5 | Framework bridges action school (τ→0) and planning school (τ→∞) | Theoretical contribution | False dichotomy resolution | Table: School comparison |
+| 6 | 🐢1.6 | Paper follows what-why-how-so what structure across 4 sections | Roadmap | 🐢🐅🐙👾 structure | Fig: Paper structure |
+
+### 🐅 Theory & Modeling - Logic (수학적 논리) [12 paragraphs]
+
+#### 🐅2.12🏇 Founder-Venture Separation [2 paragraphs]
+| # | Section | Main Message | Key Concepts | Evidence | Figures |
+|---|---------|--------------|--------------|----------|---------|
+| 7 | 🐅2.1 | Founders' business model quality control through tau is undertheorized capability | Theoretical background | Quality control literature | - |
+| 8 | 🐅2.2 | Beta-binomial conjugate unifies action-planning spectrum | Mathematical foundation | Beta(μ,τ) structure | Fig: Beta distributions |
+
+#### 🐅2.34🔥 Firebreak Strategy [2 paragraphs]
+| # | Section | Main Message | Key Concepts | Evidence | Figures |
+|---|---------|--------------|--------------|----------|---------|
+| 9 | 🐅2.3 | Firebreak width expresses strategic flexibility metaphorically | Strategic ambiguity | Containment vs contraction | Fig: Firebreak strategies |
+| 10 | 🐅2.4 | Exaptation space defines adaptation possibilities | Adaptation space | Slack's 15 pivots | - |
+
+#### 🐅2.56🧬 DNA Structure [2 paragraphs]
+| # | Section | Main Message | Key Concepts | Evidence | Figures |
+|---|---------|--------------|--------------|----------|---------|
+| 11 | 🐅2.5 | DNA tightness balances sellability-deliverability | Structural tension | Replication fidelity | Fig: DNA tightness |
+| 12 | 🐅2.6 | Mutation tolerance determines evolutionary possibility | Variation tolerance | Evolutionary constraints | - |
+
+#### 🐅2.78💸 Empirical Methodology [2 paragraphs]
+| # | Section | Main Message | Key Concepts | Evidence | Figures |
+|---|---------|--------------|--------------|----------|---------|
+| 13 | 🐅2.7 | Substantial meaning to latent variables enables identification | Methodological foundation | Hierarchical Bayes | - |
+| 14 | 🐅2.8 | Essential heterogeneity evolves through hierarchical structure | Hierarchical variation | Group-individual effects | Fig: Hierarchy |
+
+#### 🐅2.91011112 Model Evolution [4 paragraphs]
+| # | Section | Main Message | Key Concepts | Evidence | Figures |
+|---|---------|--------------|--------------|----------|---------|
+| 15 | 🐅2.9 | M1→M1': Monotonic to concave perception with complexity | Model evolution 1 | φ* = 1/(c+1) | Fig: M1→M1' |
+| 16 | 🐅2.10 | M1'→M2: Concave to random variable thinking | Model evolution 2 | φ ~ Beta(μ,τ) | Fig: M1'→M2 |
+| 17 | 🐅2.11 | M2→M2': Random to approximated implementation | Model evolution 3 | Sample-based MCMC | Fig: M2→M2' |
+| 18 | 🐅2.12 | Information integration cost mediates tau-learning relationship | Integration cost | i = understanding cost | Table: Cost factors |
+
+### 🐙 Application - Rhetoric (설득적 사례) [6 paragraphs]
+
+| # | Section | Main Message | Key Concepts | Evidence | Figures/Tables |
+|---|---------|--------------|--------------|----------|----------------|
+| 19 | 🐙3.1 | BP and Tesla demonstrate M1'→M2 evolution differently | Case comparison 1 | BP stuck at M1', Tesla at M2 | Table: Comparison |
+| 20 | 🐙3.2 | M2' reveals stark approximation strategy contrast | Case comparison 2 | Adaptive vs rigid tau | Fig: Tau paths |
+| 21 | 🐙3.3 | Tesla's complexity reduction enabled flexibility | Complexity management | 5 vs 15 subsystems | Table: Complexity |
+| 22 | 🐙3.4 | Despite higher optimal tau, Tesla stayed flexible while BP stayed rigid | Integration paradox | 270 vs 700 employees | Fig: i-c-tau |
+| 23 | 🐙3.5 | τ* = max(0, V/ic - 1) defines optimal uncertainty | Optimization formula | Mathematical derivation | Table: Calculation |
+| 24 | 🐙3.6 | "Prediction-based prescription" predicts success | Empirical pattern | Pitch analysis data | Fig: Correlation |
+
+### 👾 Conclusion - 확장과 함의 [8 paragraphs]
+
+#### 👾4.1🏇 Separation Implications [2 paragraphs]
+| # | Section | Main Message | Key Concepts | Evidence | Figures |
+|---|---------|--------------|--------------|----------|---------|
+| 25 | 👾4.1.1 | Partial pooling provides tau's theoretical foundation | Statistical theory | McElreath's framework | - |
+| 26 | 👾4.1.2 | Optimal point between action and planning schools | School synthesis | Pooling spectrum | Fig: Spectrum |
+
+#### 👾4.2🔥 Strategic Ambiguity Value [2 paragraphs]
+| # | Section | Main Message | Key Concepts | Evidence | Figures |
+|---|---------|--------------|--------------|----------|---------|
+| 27 | 👾4.2.1 | Strategic ambiguity facilitates learning | Ambiguity value | Delayed convergence benefits | - |
+| 28 | 👾4.2.2 | Firebreak width determines pivot capacity | Adaptation flexibility | Strategic options | - |
+
+#### 👾4.3🧬 Cleverly Brute Force [2 paragraphs]
+| # | Section | Main Message | Key Concepts | Evidence | Figures |
+|---|---------|--------------|--------------|----------|---------|
+| 29 | 👾4.3.1 | Rejection options mitigate high-tau risks | Risk management | Bounded search strategy | - |
+| 30 | 👾4.3.2 | Camuffo's experiments validate constrained search | Empirical validation | RCT results 2024 | - |
+
+#### 👾4.4💸 Future Research [2 paragraphs]
+| # | Section | Main Message | Key Concepts | Evidence | Figures |
+|---|---------|--------------|--------------|----------|---------|
+| 31 | 👾4.4.1 | Hierarchical Bayes opens tau estimation possibilities | Methodological extension | Bayesian workflow | - |
+| 32 | 👾4.4.2 | Equity valuation integration strengthens practice | Practice connection | VC applications | - |
+
+---
+
+## Core Architecture
+
+### 🌲 Three Contributions
+1. **SEPARATION**: Founder ≠ Venture (simulation/calibration enabled)
+2. **DOUBLE REPARAMETERIZATION**: Success → Promise (φ) → Aspiration (μ) + Concentration (τ)
+3. **BRIDGING**: Action ↔ Planning via rational ignorance
+
+### 📊 Model Evolution Matrix
+
+| Model | Type | Reparameterization | Uncertainty Addition | Key Insight |
+|:---:|:---:|:---|:---|:---|
+| **M1** | Base | Success → Promise (φ) | - | Promise mediates success |
+| **M1'** | +Nature | Success → Promise (φ) | c (complexity) | φ* = 1/(c+1) |
+| **M2** | Base | Promise → Aspiration (μ) | - | Promise has distribution |
+| **M2'** | +Founder | Promise → Aspiration (μ) | τ (concentration) | Learning trap vs Rational ignorance |
+
+### 🎯 Key Formula
+**τ* = max(0, V/(i×c) - 1)**
+- V: Venture value
+- i: Information integration cost
+- c: Environmental complexity
+
+### 💡 Core Prescription
+"Earn your precision by adding samples under controlled information integration cost and complexity"
+
+---
+
+## Figure List
+
+1. **🐢 Introduction Figures**
+   - Company trajectories (Tesla vs Better Place)
+   - DNA & Firebreak metaphors
+   - Founder-venture separation model
+   - Paper structure diagram
+
+2. **🐅 Theory Figures**
+   - Beta distributions comparison
+   - Firebreak strategies
+   - DNA tightness illustration
+   - Hierarchical structure
+   - Model evolution M1→M1'→M2→M2'
+
+3. **🐙 Application Figures**
+   - Tau evolution paths
+   - i-c-tau relationship
+   - Success correlation patterns
+
+4. **👾 Conclusion Figures**
+   - Pooling spectrum
+
+## Table List
+
+1. **🐢 Introduction Tables**
+   - Four meanings of tau
+   - School comparison
+
+2. **🐅 Theory Tables**
+   - Integration cost factors
+
+3. **🐙 Application Tables**
+   - Company comparison
+   - Complexity metrics
+   - Optimal tau calculation
+
+---
+
+## Reading Guide
+
+### For Theorists
+Focus on sections 7-18 (🐅 Theory) and 25-32 (👾 Extensions)
+
+### For Practitioners
+Focus on sections 1-6 (🐢 Introduction) and 19-24 (🐙 Application)
+
+### For Empiricists
+Focus on sections 13-14 (Methodology), 19-24 (Application), and 31-32 (Future research)
+
+---
+
+*"The first reparameterization is a contract with nature,*
+*The second reparameterization is a contract with oneself."*
+
+
+---
 
 # 🎹 약속설계의 음계: Entrepreneurial Promise as Bayesian Adaptation
 
