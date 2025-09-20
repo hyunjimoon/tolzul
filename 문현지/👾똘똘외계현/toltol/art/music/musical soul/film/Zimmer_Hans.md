@@ -1,4 +1,4 @@
-- [The last samurai](https://youtu.be/rUD0GOYlKoc)
+- [The last samurai](https://youtu.be/rUD0GOYlKoc) [[last samurai]]
 - [Gladiator](https://youtu.be/q8wj7EjOX9A)
 - [The prince of Egypt](https://youtu.be/5GE6hZqHByE)
 - [The lion king](https://youtu.be/q50LsFOXNZE)

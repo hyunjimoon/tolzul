@@ -1,3 +1,72 @@
+
+[[09-19|25-09-19]]
+
+## 2. Tesla vs Better Place: Two Experiments, Two Meanings
+
+### Better Place: Experiment as Demonstration
+
+```
+Purpose: "Demonstrate a known fact"
+- The 5-minute battery swap was THE answer
+- Experiments were theatrical performances for investors
+- Each test was designed to confirm, not discover
+- 700 employees running one giant demonstration
+
+Result: When reality diverged, they had no pivot mechanism
+```
+
+### Tesla: Experiment as Discovery
+
+```
+Purpose: "Make a discovery"
+- Each car model was a hypothesis test
+- Roadster: "Can we make electric sexy?"
+- Model S: "Can we make it practical?"
+- Supercharger: "What if charging were free?"
+
+Result: 15+ pivots, each experiment revealed new paths
+```
+
+## 3. The Cycle: Ignorance → Promise → Experiment
+ignorance promise experiment
+
+## 현지의 종합 표: The Common Knowledge Trap
+
+| Dimension                 | Tesla (Success)                            | Better Place (Failure)        | Key Insight                                 |
+| :------------------------ | :----------------------------------------- | :---------------------------- | :------------------------------------------ |
+| **Epistemological Path**  | 무지→약속→실험<br>(Ignorance→Promise→Experiment) | 약속→실험<br>(Promise→Experiment) | Missing ignorance stage = $850M loss        |
+| **Initial τ (Precision)** | τ ≈ 0.1 (very loose)                       | τ ≈ ∞ (completely rigid)      | Start with low precision, earn it gradually |
+| **Promise Nature**        | "Someday, somehow"                         | "5 minutes exactly"           | Strategic ambiguity preserves options       |
+| **Experiment Type**       | Discovery-oriented                         | Demonstration-oriented        | Experiments should reveal, not confirm      |
+| **Pivots**                | 15+ strategic adaptations                  | 0 pivots                      | Adaptation signals learning                 |
+| **Initial Team**          | 270 employees                              | 700 employees                 | Smaller teams = lower integration cost (i)  |
+| **Complexity (c)**        | 5 core subsystems                          | 15 interdependent systems     | Deliberately simplify complexity            |
+| **Integration Cost (i)**  | Low (lean structure)                       | High (heavy organization)     | i×c must stay manageable                    |
+| **Common Knowledge**      | Strategically delayed                      | Prematurely crystallized      | Prevent ignorance from becoming public      |
+| **DNA Metaphor**          | Loose→Gradually tightening                 | Tight from start→Snapped      | Dynamic tension management                  |
+| **Optimal τ Formula**     | τ* = V/(i×c) - 1 ≈ 2                       | τ* = V/(i×c) - 1 ≈ 0.05       | Actual τ must match optimal τ               |
+| **Information Strategy**  | Selective absorption                       | Complete information pursuit  | "통합비용과 복잡도 관리 후 정보 흡수"                      |
+| **Result**                | $1 trillion value                          | $850 million loss             | 1000x+ difference                           |
+
+### 핵심 공식과 원칙
+
+__τ_ = V/(i×c) - 1_*
+
+- V = Venture value potential
+- i = Information integration cost
+- c = Environmental complexity
+- τ = Optimal precision level
+
+**창업가의 원칙:** "통합비용(i)과 복잡도(c)를 먼저 낮춘 후에야 정밀도(τ)를 높여라"
+
+**Four Principles:**
+
+1. Embrace private ignorance
+2. Maintain public ambiguity
+3. Delay consensus formation
+4. Preserve pivot options
+---
+
 ## PRHC Evidence Matrix: 실증적 약속 설계의 해부
 
 | **단계**                             | **Tesla Motors (2006-2008)**                                                                                               | **Better Place (2007-2010)**                                                                     | **이론적 함의**                             |

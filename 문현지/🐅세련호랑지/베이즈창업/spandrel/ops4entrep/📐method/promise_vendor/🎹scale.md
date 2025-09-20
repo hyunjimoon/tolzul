@@ -1,7 +1,8 @@
 # 🎹 Scale: Octave of Conceptual Nodes
 
-examples in [[🎹scale(🐢🐢promi se vendor)]]
+examples in [[🐢(🎹scale(약속설계))]], [[🦓elacs(약속설계)]]
 
+inverse prompt of integral to modular in [[🦓elacs]]
 # 논문 구조 템플릿
 
 | 구조        | 동물 기호 | 역할                             | 템플릿 패턴                                                                                    | 예시                                                                                                                                                                                      |
