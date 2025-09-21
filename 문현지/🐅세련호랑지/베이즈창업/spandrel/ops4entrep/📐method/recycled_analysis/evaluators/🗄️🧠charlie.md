@@ -1,6 +1,25 @@
 [[🐙👾charlie-vikash]] as sibiling pair of [[🐢👾scott-josh]]
 
 ---
+[[09-21|25-09-21]]
+
+# fiedelity of replication
+
+Replication: For many business models, scaling requires replication and reproducibility. Once a process has been reﬁned, it may need to be replicated in many locations and settings, sometimes identically, and sometimes with modiﬁcations for localized needs for a different market segment. Organizations need to document and train and measure the capabilities and outcomes of replication efforts. Illustrative cases: Unity Homes, VFA.
+
+Unity Homes was conceived to offer lower-priced homes but with a similar value proposition with regard to quality and energy efﬁciency. Unity homes were custom designed on a modular platform but offered less variety, less complexity, and smaller footprints than the typical Bensonwood home. Unity initially produced its panels in the Bensonwood factory, but that facility was not optimized for lower costs or lower variety required for the mid-tier market. In 2018, Unity opened a second factory in New Hampshire, designed for higher volume, lower variety, and lower cost, and had plans for replication of this factory design in different locations across the United States. The desire to maintain family control and expand through internally generated cash only slowed the growth as compared with what might be possible with a broader capitalization strategy.
+
+VFA deployed a platformization strategy to create a business and management internship “fellows” program to match high-capability US millennials with startup companies that might not otherwise have ready access to such talent. Inspired in part by Teach for America, VFA aimed to recruit the best and brightest from the top universities, with a culturalization strategy to instill common innovation and entrepreneurship values throughout their network. VFA targeted small, entrepreneurial ventures in “second tier” entrepreneurial US cities (i.e., outside places like Silicon Valley, Boston, etc.) and deployed its elite troops into those ﬁrms, providing these startups with ﬁrst-class, albeit raw talent, and providing its recruits with a worm’s eye, hands-on experience in building a business. The ﬁrst cities selected, Detroit, New Orleans, and Providence, had existing entrepreneurial ecosystems in place but had a high need for exceptional talent. VFA then scaled their model with a replication strategy, copying the initial model for many other cities. The startups paid salaries to the fellows, but much of the organization’s overhead was covered by benefactors, whose donations represented charitable contributions for the sake of driving an industrial renaissance in some of America’s bygone business centers.
+# organizational clockspeed
+Further, all manufacturing leaders rotate positions, geographically and functionally, every two or three years. These steps have helped reduce organizational clockspeed to about six months and prevent the formation of “silos” or proprietary internal functions.
+
+Thus, we can see that ASP has responded to increases in clockspeeds across its products, process, and organization structures. Building on these insights, I next present a systematic methodology for dynamic clockspeed analysis of the chains and illustrate it with examples from defense aerospace and information-entertainment.
+
+----
+
+One tack for assessing organizational clockspeed is suggested by a 1997 article in the New York Times, which observed that in the 1990s, increased stockholder activism and impatient corporate boards seem to have led to an decrease in the average tenure of CEOs in large, publicly-held companies.22 Closely related, a research study at Stanford University measured organizational clockspeed by looking at the frequency of organizational restructurings. 23 That study found that industry sectors where the product clockspeed was higher tend also to have faster organizational clockspeeds.
+
+Next I look at universities, a traditionally slow-clockspeed sector, and observe that their main activities -- education and research as information commodities -- may see their organizational clockspeeds driven to dizzying rates.
 
 
 - [[#Table 4: Nail, Scale, Sail|Table 4: Nail, Scale, Sail]]

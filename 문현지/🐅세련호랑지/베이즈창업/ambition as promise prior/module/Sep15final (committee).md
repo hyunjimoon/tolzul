@@ -1,29 +1,32 @@
-# Fake It Till You Approximate It: Earn Your Precision 
+# Growing Success through Precision
 
 ## Abstract
 
-[[evolutionary vs bayesian entrepreneurship]]
-Bayesian entrepreneur's success stems not from innate traits but from how founders translate environmental challenges into adaptive capabilities. I develop a framework where entrepreneurs act as modelers who continuously update their venture designs based on environmental feedback. Two principles emerge: ventures must limit operational complexity to maintain bold aspirations, and must reduce information-integration costs to earn strategic precision. Simplify to aspire, acculturate to concentrate. These principles explain why some ventures adapt while others fail. Tesla succeeded by starting flexible and earning precision through systematic experimentation; Better Place failed by committing to rigid precision despite high complexity. Our model shows that success probability isn't given—it's constructed through deliberate choices about how much to know and when. This transforms entrepreneurship from a game of prediction to one of calibrated adaptation, where the ability to manage uncertainty becomes the core capability. 
+Prior research in entrepreneurship and strategy often treats either venture success probability (P) or the informativeness of evidence as exogenous. I develop an endogenous mechanism for both. I reparameterize P as an aspiration–precision prior, where aspiration is passively constrained by subsystem complexity, while precision (τ) is the founder’s design lever. Choosing τ determines how strongly evidence updates the prior distribution of P, thereby endogenizing **prior-driven informativeness**.This mechanism closes the gap between **micro experimentation and macro selection**. At the micro level, ventures differ in how much they allow evidence to move them; at the macro level, markets select across these trajectories. Ventures that assume high τ prematurely resist adaptation and collapse (Better Place), while staged low→high τ trajectories absorb evidence and survive (Tesla).Theoretically, τ has **three nested meanings**: as a concentration parameter (probability level), a pseudo–sample size (sampling level), and a variation–selection balance (evolutionary level). Linking these levels shows that ventures mirror natural selection: they begin with variation (low τ) and move toward selection (high τ). I define **growth** as this increase in τ, achieved not automatically but through deliberate actions—lowering information-integration cost (i) and raising venture value (V). The contribution is both conceptual and prescriptive: success probability and informativeness are **designed, not given**. Founders are not merely quixotic opportunity pursuer but **uncertainty engineer** who manage τ dynamically, earning precision through culture and capital.
 
-***Keywords**: Bayesian and Evolutionary entrepreneurship, Hierarchical Model, Calibration, Flexibility*
+Keyword: Bayesian and Evolutionary Entrepreneurship
 
 *It appears to be a general principle that, whenever there is a randomized way of doing something, then there is a nonrandomized way that delivers better performance but requires more thought. \- E.T. Jaynes.*
 
-So we beat on, boats against the current, borne back ceaselessly into the past.  -  The Great Gatsby
+# 1. Introduction (Final Polished Draft)
 
-🚨todo1: imagine you're 공자 who knows english. translate 견리사의 in english so that its meaning is not lost in translation
-🚨🚨todo2: lsyntax and semantics
-🚨🚨🚨todo3: replace firebreak's width as openspace related with dna - 
-🚨🚨🚨🚨todo4: extract from 🗣️chat with leke 🚨🚨🚨🚨
-🚨🚨🚨🚨🚨todo5: after inferring the systematic design of the paper, update its roadmap. 유기적 구성과 논리적 전개에 특히 신경쓰라 🚨🚨🚨🚨🚨
-✋🚨 todo6: motivate more connection on ✋🚨
-✋🚨🚨 todo7: add full citation for An et.al., (2025) AI insiders, in # 5. References ✋🚨🚨
-✋🚨🚨🚨  todo8: ✋🚨🚨🚨
-# 1. Introduction
+Prior research in entrepreneurship and strategy has treated either **venture success probability (P)** or the **informativeness of evidence** as exogenous. This leaves a central puzzle unresolved: why do ventures facing the same environment and signals diverge so sharply in outcomes? If P is fixed, all ventures share the same odds, reducing differences in survival to luck or innate talent. If informativeness is fixed, all ventures learn at the same rate from the same signals, leaving no explanation for heterogeneous adaptation. What is missing is a mechanism by which founders _design their own capacity to learn_.
 
-Tesla and Better Place shared a vision to electrify the automobile, yet their fates diverged dramatically because they differed in one initial choice: promise precision. Both promised a sustainable transportation future, but their strategies sat at opposite poles of the confidence spectrum. Better Place committed to a tightly integrated, highly precise system of battery-swap stations—a highly specific promise requiring the entire ecosystem to conform at once. Tesla, by contrast, began with a low-τ promise—a premium sports car for a niche market—and increased precision gradually while learning from the market, expanding both its product line and charging infrastructure. I argue that the capability to dynamically manage the level of aspiration and concentration explains this fork in outcomes.
+Consider Tesla and Better Place. Both confronted failures early in their journeys. Tesla’s Roadster suffered production delays and recalls; Better Place faced sluggish sales and uncertain charging standards. Yet Tesla pivoted and survived, while Better Place collapsed. Why did the same type of negative evidence trigger adaptation in one case but rigidity in the other? The answer lies in how each venture set its prior beliefs.
 
-[[📜gleick11_information]]
+A simple Beta–Binomial model illustrates this mechanism. Let ϕ denote the probability that a promise succeeds. The prior is parameterized as ϕ∼Beta(μτ,(1−μ)τ) where μ is the prior mean (**aspiration**) and τ is its precision. After observing n trials with xx successes, the posterior becomes Beta(μτ+x,(1−μ)τ+n−x). When a single failure is observed (x=0,n=1), the posterior mean updates to: E[ϕ∣x=0,n=1]=μτ / (τ+1)
+
+This expression makes informativeness concrete: with **low τ**, beliefs fall sharply after failure, reflecting high responsiveness to evidence; with **high τ**, beliefs barely move, reflecting rigidity.
+
+**Figure Phenomena** visualizes this logic. The top panel shows a loose prior (τ=1) that shifts nearly 50% after one failure—precisely the responsiveness that enabled Tesla’s rapid pivots. The bottom panel shows a tight prior (τ=4) that shifts only 20% after the same failure—an update too small to change course, locking ventures into rigid commitments as in Better Place. Precision τ thus determines whether failure becomes a catalyst for adaptation or a trigger for collapse.
+![[fig(phenomena).png]]
+
+This mechanism closes the gap between **micro experimentation and macro selection**. At the micro level, ventures differ in how much evidence can move them; at the macro level, markets select across these trajectories. Better Place exemplified premature high τ, collapsing in rigidity. Tesla exemplified staged low→high τ, beginning with variation, gradually raising fidelity as information-integration cost fell and venture value increased, ultimately achieving scale.
+
+Theoretically, τ has **three nested meanings**. At the probability level, τ is a concentration parameter. At the sampling level, τ is a pseudo–sample size approximating bounded rationality. At the evolutionary level, τ represents a **variation–selection balance**: ventures begin with variation (low τ) and evolve toward replication fidelity (high τ). Linking these levels shows that ventures mirror natural selection. Growth is defined as this staged increase in τ, achieved not automatically but through deliberate organizational design: lowering **information-integration cost (i)**—the inverse of organizational clockspeed—and raising venture value (V).
+
+ The paper is engineered as follows. **Section 2 develops the theoretical framework (what)** by reparameterizing venture success probability as an aspiration–precision prior and showing why τ endogenizes informativeness. It explains why existing accounts are incomplete and how τ connects micro experimentation to macro selection. **Section 3 applies the framework (how)** through the contrasting cases of Tesla and Better Place, distilling a single prescription—_acculturate to concentrate_—and advancing a testable _Staged Precision Hypothesis_ that links τ trajectories to venture survival. **Section 4 concludes (so what)** by outlining implications for theory, practice, and future research, reframing founders not as passive or quixotic pursuers of opportunity (Stevenson, 1983) but as **uncertainty engineers** who deliberately design their learning capacity.
+
 ## 1.1 Three Meanings of τ
 
 In my model, promise precision τ is defined as **a measure of the specificity and rigidity of a venture's promise, acting as a control knob for flexibility vs. efficiency.** Three meanings of this core decision variable carries are:
@@ -182,7 +185,7 @@ Table 3\. Key Model Variables
 | I | Information-integration cost | Marginal cost to raise τ by one | Tesla: prototype iteration. Better Place: nationwide swap network. |
 | V | Venture value | Value upon successful delivery | E.g., market cap or TAM. |
 
-​​2.4 Model: From “Fake It Till Make It” to “Approximate It”
+​​# 2.4 Model: From “Fake It Till Make It” to “Approximate It”
 ![[🗄️🐅likelihood_updated.svg]]
 
 **Figure1.** This figure makes transparent how an founder’s epistemology matures: In M1, the promise φ is monotonically linked to success probability; in M1′, nature’s complexity c bends that monotonicity into a concave shape, so the same promise has different effective impact. By M2, I treat promises as a distribution by reparameterizing venture's promise with founder's aspiration μ; in M2′, the founder chooses the design variable τ to approximate that distribution, adopting rational ignorance as a strategy by balancing it against the meaning-construction cost i. Ultimately, it offers a grammar for deciding scientifically not “to know more,” but “when and what to leave unknown,” and that grammar is the bridge that reunifies the planning school and the action school along a single continuum.
@@ -234,6 +237,55 @@ $$
 - $\tau^\star$ also decreases as complexity $c$ rises, because each additional subsystem multiplies the downside of bold promises, so the marginal payoff from further precision is diluted.
 
 
+---
+
+
+# 3. Practice: Case, Prescription, Prediction
+
+This section validates the theory from sec.2 across three layers: Figure of Theory develops the logic (τ as endogenous lever), Table of Practice distills it into managerial guidance, and Figure of Prediction illustrates survival consequences. Analyzing cases functions as a Bayesian retrodictive check, while making predictions under intervention offers a forward-looking predictive check.
+
+## 3.1 Case: Better Place vs. Tesla
+
+Tesla and Better Place provide a natural experiment showing how precision (τ) design shapes venture trajectories. Better Place assumed high τ from the outset—rigid promises about swap times, sales targets, and infrastructure—despite high complexity (c) and high information-integration cost (i). This deterministic posture created a **learning trap**: new evidence could not shift commitments, leading to collapse.
+
+Tesla, by contrast, began with low τ—broad but legitimate promises (“200+ miles”)—and used staged products as sequential experiments. Each launch generated evidence, lowered i through tighter organizational routines, and raised V by proving demand. Only then did Tesla raise τ, gradually tightening commitments. In Bayesian terms, Tesla preserved the ability to learn before concentrating promises, whereas Better Place foreclosed learning by committing too tightly too early.
+
+Panels (a–c) of Figure of Theory formalize this contrast: μ falls with complexity c (control variable), while τ rises only as i falls and V rises (design lever). Tesla managed τ dynamically; Better Place assumed it.
+
+![[fig(theory).png]]
+**Figure of Theory. Bayesian foundations of entrepreneurial adaptation.**  
+Panel (a) shows aspiration μ is passively constrained by complexity c; (b) shows precision τ∗ rises only as information-integration cost i falls and value V increases; (c) shows posterior updating depends on τ—low τ allows learning, high τ blocks it. **Together these panels illustrate that aspiration is limited by environment, but precision is actively earned—τ is the founder’s design lever for turning evidence into adaptation.
+
+
+---
+
+## 3.2 Prescription: Acculturate to Concentrate
+
+The central prescription is straightforward:
+
+> **Acculturate to concentrate.** Precision must be earned by lowering information-integration cost (i) and raising venture value (V).
+
+**Table of Practice. Precision Management Checklist**
+
+| Lever                                | Diagnostic Question                                                                               | How to Reduce                                                         | Success (Tesla)                                                                                                                                          | Failure (Better Place)                                          |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| **Information-integration cost (i)** | _When the organization chooses to absorb new information, how quickly can it coordinate and act?_ | Flatten structures; unify vocabulary; codify heuristics for iteration | During “production hell,” Tesla emphasized speed over perfection, kept gates open, corrected errors quickly, and created a shared language across teams. | Fragmented teams and inconsistent vocabularies slowed response. |
+| **Precision (τ)**                    | Is specificity matched to earned reductions in i and increases in V?                              | Stage commitments; raise τ only after organizational readiness        | Tesla staged promises: broad → “200+ miles” → Model 3 forecasts, increasing τ only after i↓ and V↑.                                                      | Better Place launched with rigid swaps unsupported by i or V.   |
+
+Tesla reduced i and increased V before raising τ; Better Place did the opposite. This checklist helps investors and educators diagnose whether founders are **earning precision** or prematurely locking it in.
+
+## 3.3 Prediction: Staged Precision Hypothesis
+
+From cases and theory emerges a testable hypothesis:
+
+> _Ventures that start with low τ under high complexity and high information-integration cost, and raise τ only as i↓ and V↑, will outperform those that assume high τ prematurely._
+
+Founder language provides a measurable proxy: rigid, quantified promises signal high τ; broad, flexible claims signal low τ. A hierarchical Bayesian model applied to pitch decks and communications can estimate τ trajectories, then link them to survival, funding, and pivots.
+
+**Figure of Prediction** visualizes this: Tesla-like “earned precision” trajectories sustain survival, while Better Place–like “premature precision” trajectories collapse.
+
+
+
 # 3. Practice: Case, Prescription, Prediction
 
 Section 3 validates theory developed in sec.2. links our contribution across three layers: Figure of Theory develops the theory (μ vs. c, τ vs. i, deterministic vs. probabilistic, all-in vs. sequential), Table of Practice distills this into practice (a checklist of managerial actions), and Figure Y delivers prediction (ventures that manage τ as prescribed achieve higher survival probabilities). Analyzing cases correspond to Bayesian retrodictive check while making predictions under intervention in yet unseen situation (Hoffman )is predictive check predicting is predictive check, testing the prescription is 
@@ -254,7 +306,7 @@ Tesla, by contrast, approximated uncertainty through **sequential sampling**. Mu
 Panel (c) of Figure of theory illustrates these dynamics. A high-τ prior, like Better Place’s, barely shifts after observing failure, leading to **containment and rigidity**. A low-τ prior, like Tesla’s, shifts substantially, allowing **contraction and adaptation**. This visualization clarifies why both extremes of the traditional schools are maladaptive: the **action school** risks remaining under-committed with perpetually low τ, while the **planning school** locks in prematurely with high τ. Our synthesis shows that τ should neither remain low nor be set high a priori, but should **grow only as ventures simplify complexity and acculturate integration.**
 
 ---
-![[Pasted image 20250920090028.png]]
+![[fig(theory).png]]
 
 **Figure of Theory. Bayesian foundations of entrepreneurial adaptation.**  
 Panel (a) shows that optimal aspiration $\mu^*$ declines with complexity (c): Tesla, with fewer subsystem interdependencies, could aspire higher than Better Place.  
@@ -288,7 +340,8 @@ This approach builds on prior work showing that strategy must be studied at the 
 From these foundations, our propositions yield straightforward hypotheses: ventures that start with low τ and raise it gradually as c and i decline will outperform those that begin with high τ despite high c and i. **Figure of Prediction** visualizes these predictions: Tesla-like “earned precision” trajectories sustain higher survival probabilities, while Better Place–like “premature precision” paths collapse quickly.
 
  Problem remains how to gather optimal entrepreneurs who behaves (1) **simplify to aspire**: aspiration falls as complexity (c) rises; (2) **acculturate to concentrate**: precision rises only as integration cost, acknowledged as "Bayesian Entrepreneurs are not commonly found in the wild" (Arora, 2025). 
-![[Fig(predict).png]]
+ ![[Pasted image 20250921032129.png]]
+ 
 
 **Figure of Prediction. Predicted venture survival under different precision trajectories.**  
 This figure visualizes our prediction: ventures that manage precision as prescribed—**simplifying to sustain aspiration and acculturating to earn concentration—exhibit higher survival probabilities** (red, Tesla-like trajectory). Ventures that assume high precision prematurely despite high complexity and integration cost collapse quickly (skyblue, Better Place-like trajectory). This completes the sequence: **Figure of Theory shows the theory, Table of Practice distills it into practice, and the Figure of Prediction demonstrates the expected performance consequences.**
@@ -381,7 +434,7 @@ Jake M. Hofman 1,17 ✉ , Duncan J. Watts 2,3,4,17 ✉ , Susan Athey5 , Filiz Ga
 *Zellweger, T., & Zenger, T. (2023). founders as scientists: A pragmatist approach to producing value out of uncertainty. Academy of Management Review, 48(3), 379-408.*
 
 
-    
+    Stevenson, H. H. (1983). A perspective on entrepreneurship. KAO, John J. The.
 - Sanborn, A. N., & Chater, N. (2016). Bayesian brains without probabilities. _Trends in cognitive sciences_, _20_(12), 883-893.
     
 - Mackey, T. B., Barney, J. B., & Dotson, J. P. (2017). Corporate diversification and the value of individual firms: A Bayesian approach. _Strategic Management Journal, 38_(3), 322–341.
@@ -392,6 +445,7 @@ Jake M. Hofman 1,17 ✉ , Duncan J. Watts 2,3,4,17 ✉ , Susan Athey5 , Filiz Ga
 ---
 
 👉 Would you like me to also **sketch Figure Y** (the prediction figure) so that it mirrors Figures X and Table X — i.e., theory → practice → prediction — with Tesla-like and Better Place–like survival curves side by side?
+
 # Appendix A. Dictionary of Key Terms
 
 **Aspiration–precision prior.** A Beta distribution parameterized by mean $\mu$ (aspiration) and precision $\tau$. Encodes how bold ($\mu$) and how rigid ($\tau$) a founder’s promise is.
@@ -417,6 +471,7 @@ Jake M. Hofman 1,17 ✉ , Duncan J. Watts 2,3,4,17 ✉ , Susan Athey5 , Filiz Ga
 **Optimal ignorance.** The principle that precision should only be raised until its marginal value equals its marginal cost; beyond that, it is optimal to remain ignorant (low $\tau$).
 
 
+[[🗄️🧠charlie]]
 # Appendix B
 
 ### Proof of Proposition 1

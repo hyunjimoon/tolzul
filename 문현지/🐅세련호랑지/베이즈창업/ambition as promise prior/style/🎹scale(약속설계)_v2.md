@@ -3,14 +3,14 @@
 
 ## 🐢 Introduction - Grammar (현상 정의) [6 문단]
 
-| #   | Section | 주제문장                                                    | 핵심 개념                       | 연결 파일             |
-| --- | ------- | ------------------------------------------------------- | --------------------------- | ----------------- |
-| 1   | 🐢1.1   | Tesla와 Better Place는 동일한 전기차 비전을 가졌지만 τ 관리 차이로 운명이 갈렸다 | puzzle: same vision, different fates | [[🐢1.123456]]    |
-| 2   | 🐢1.2   | τ는 promise precision으로 세 의미를 갖는다: precision, pseudo-sample size, open space | three meanings of τ | [[🐢1.123456]]    |
-| 3   | 🐢1.3   | 기존 문헌은 성공확률을 외생변수로 봤으나, τ를 통해 내생적으로 구축 가능하다 | P: exogenous → endogenous | [[🐢1.123456]]    |
-| 4   | 🐢1.4   | Planning school (τ→∞)과 Action school (τ→0)을 스펙트럼으로 통합한다 | bridging false dichotomies | [[🐢1.123456]]    |
-| 5   | 🐢1.5   | DNA metaphor와 firebreak metaphor가 τ의 전략적 의미를 직관적으로 전달한다 | biological/strategic metaphors | [[🐢1.123456]]    |
-| 6   | 🐢1.6   | "Simplify to aspire, acculturate to concentrate"가 핵심 처방이다 | core prescription | [[🎹scale(약속설계)]] |
+| #   | Section | 주제문장                                                                        | 핵심 개념                                | 연결 파일             |
+| --- | ------- | --------------------------------------------------------------------------- | ------------------------------------ | ----------------- |
+| 1   | 🐢1.1   | Tesla와 Better Place는 동일한 전기차 비전을 가졌지만 τ 관리 차이로 운명이 갈렸다                      | puzzle: same vision, different fates | [[🐢1.123456]]    |
+| 2   | 🐢1.2   | τ는 promise precision으로 세 의미를 갖는다: precision, pseudo-sample size, open space | three meanings of τ                  | [[🐢1.123456]]    |
+| 3   | 🐢1.3   | 기존 문헌은 성공확률을 외생변수로 봤으나, τ를 통해 내생적으로 구축 가능하다                                 | P: exogenous → endogenous            | [[🐢1.123456]]    |
+| 4   | 🐢1.4   | Planning school (τ→∞)과 Action school (τ→0)을 스펙트럼으로 통합한다                     | bridging false dichotomies           | [[🐢1.123456]]    |
+| 5   | 🐢1.5   | DNA metaphor와 firebreak metaphor가 τ의 전략적 의미를 직관적으로 전달한다                     | biological/strategic metaphors       | [[🐢1.123456]]    |
+| 6   | 🐢1.6   | "Simplify to aspire, acculturate to concentrate"가 핵심 처방이다                   | core prescription                    | [[🎹scale(약속설계)]] |
 
 ## 🐅 Theory & Modeling - Logic (수학적 논리) [12 문단]
 
