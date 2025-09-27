@@ -1,239 +1,273 @@
-🐢1 + 🐅(🏇🔥🧬🐣)4 + 🐅1 + 🐙1 + 👾(🏇🔥🧬🐣)4 = 12개
-# [[12-20|24-12-20]] 최종 업데이트
+[[checklist]]
+1. 서론에 약속수준에 대한 내용이 없어도 되는가?
+2. how explicit i should be about my choice to focus on precision, but less on aspiration.
 
-## 🐢 Introduction - Grammar (현상 정의) [6 문단]
+[[📜Walters23_invest_beh_epis_alea]]
+- 🎥티저, [[🎞️포스터]], [[🏷️todo(약속설계)]]
 
-| #   | Section | 주제문장                                                                                                                       | 핵심 개념                                                                                                                                                      | 연결 파일             |
-| --- | ------- | -------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
-| 1   | 🐢1.1   | Entrepreneurship literature debates planning vs. action but **lacks an endogenous mechanism for success probability (P).** | 기존 문헌은 discovery vs. creation, planning vs. action에 머물렀지만 모두 P를 외생적이라고 간주함                                                                                 | [[🐢1.123456]]    |
-| 2   | 🐢1.2   | I reconceptualize P as **endogenously designed** through aspiration (μ) and precision (τ).                                 | P = f(μ, τ). μ는 aspiration (boldness), τ는 concentration (rigidity). 두 변수로 venture promise distribution 설계                                                  | [[🐢1.123456]]    |
-| 3   | 🐢1.3   | Both μ and τ are important, but here I **focus on τ** because it provides the missing mechanism.                           | τ = concentration parameter, pseudo–sample size, variation control. 세 레벨 framework                                                                         | [[🐢1.123456]]    |
-| 4   | 🐢1.4   | This perspective **extends and bridges literatures.**                                                                      | Entrepreneurship theory (Alvarez & Barney), experimentation (Kerr, Nanda & Rhodes-Kropf), finance (Nanda & Rhodes-Kropf; Bolton et al.), OM (Thomke, Fine) | [[🐢1.123456]]    |
-| 5   | 🐢1.5   | Core insight: ventures fail not due to low aspiration but **due to premature high precision under complexity.**            | Tesla vs. Better Place case → high τ trap vs. low τ adaptive staging                                                                                       | [[🐢1.123456]]    |
-| 6   | 🐢1.6   | Contribution: I transform founders from “alert discoverers” into **uncertainty architects.**                               | Conceptual (mechanism), empirical (cases), prescriptive (lesson: never start with high τ, precision must be acculturated)                                  | [[🎹scale(약속설계)]] |
+## 📊 논문 구조 요약: 최적 무지 수준(OIL) 프레임워크 
+전문: [[🏔️scaling(약속설계)_pap]]
+영문: [[🎹scale(약속설계)_eng]]
+
+[[🐙👾]]확률구조가 인지와 의지기능 수행
+
+| 섹션             | 내용                          | 핵심 메시지                                | 표/도구                    |
+| -------------- | --------------------------- | ------------------------------------- | ----------------------- |
+| [[📚🐢ms(서론)]] |                             |                                       |                         |
+| 1.1            | 테슬라는 정밀도를 획득, 베터플레이스는 가정    | 🚗 테슬라는 모호함으로 생존, 베터플레이스는 구체성 방어하다 실패 |                         |
+| 1.2            | 문제: 외생적 P와 정보성              | ⚠️ 기존 이론은 성공확률을 주어진 것으로 취급            |                         |
+| 1.3            | 해결: τ를 내생변수로                | 🎯 창업가가 정밀도 선택으로 학습능력 설계              |                         |
+| 1.4            | OIL 공식                      | 📐 τ* = max{0, √(V/4i) - 1}           |                         |
+| 1.5            | 창업가에게 중요한 이유                | 🪤 정밀도 함정 + 🔧 못박기-확장 도구상자            |                         |
+| 1.6            | 학자에게 중요한 이유                 | 🔬 τ를 통한 P 내생화가 미시-거시 연결              |                         |
+| 1.7            | 세 가지 기여                     | 🚙 내생성 + 🐣 공식/도구 + 👨‍👩‍👧 섹터별 이질성  |                         |
+| [[📚🐅ms(이론)]] |                             |                                       |                         |
+| 2.1            | 파트 I: 내생성 [이론가용]            | 🚙 τ → Δ(μ;τ) = μ/(1+τ) → P 메커니즘      | [[🗄️MT]]: 지형 vs 지도     |
+| 2.3            | 파트 III: 이질성 [투자자용]          | 👨‍👩‍👧 R&D (인식적) vs 소비자 (무작위적)      | [[🗄️UT]]: 불확실성 유형      |
+| 2.2            | 파트 II: 공식 [실무자용]            | 🐣 V<4i일 때: τ=0; V≥4i일 때: 정밀도 획득      | [[🗄️OT]]: 운영 도구        |
+|                |                             |                                       | [[🗄️IT]]               |
+| [[📚🦓ms(모델)]] |                             |                                       | [[🗄️🦓likelihood.svg]] |
+| 3.1            | M1: simulation              | φ* = 1/(c+1) - 복잡성이 약속 제약             |                         |
+| 3.2            | M2: calibration <br>경험적 베이즈 | μ* = 1/(log c + γ) - 열망 보정            |                         |
+| 3.3            | M2': optional ignorance     | τ를 선택변수로 하는 완전 모델                     |                         |
+| [[📚🐙ms(응용)]] |                             |                                       |                         |
+| 4.1            | 테슬라 사례                      | ✅ 낮은 τ → 점진적 증가 → 높은 τ                |                         |
+| 4.2            | 베터플레이스 사례                   | ❌ 처음부터 높은 τ → 학습 함정                   |                         |
+| 4.3            | 비교 분석                       | 📈 3차원 진화 경로 (τ, V, i)                |                         |
+| [[📚👾ms(결론)]] |                             |                                       |                         |
+| 5.1            |                             |                                       |                         |
+|                |                             |                                       |                         |
+
+### 🎯 핵심 공식과 개념
+
+|개념|공식/정의|의미|
+|---|---|---|
+|**정밀도 (τ)**|사전분포 집중도|약속의 경직성|
+|**업데이트 능력**|Δ(μ;τ) = μ/(1+τ)|학습 능력|
+|**OIL 공식**|τ* = max{0, √(V/4i) - 1}|최적 정밀도 규칙|
+|**상전이**|V = 4i 경계|못박기 → 확장 임계점|
+|**성공 확률**|P = φ(1-φ)^c|판매 × 전달 긴장|
+
+### 📑 세 가지 표 (MOUT)
+
+| 표         | 파일명                           | 목적                 | 타겟 독자 |
+| --------- | ----------------------------- | ------------------ | ----- |
+| [[🗄️MT]] | `table_mountain_terrain.tex`  | 문헌 비교: 내생 vs 외생    | 이론가   |
+| [[🗄️OT]] | `table_operational_tool.tex`  | 단계별 V/i 관리 도구      | 실무자   |
+|           |                               |                    |       |
+| 🗄️UT     | `table_uncertainty_types.tex` | 인식적/무작위적 × R&D/소비자 | 투자자   |
+| [[🗄️IT]] |                               |                    |       |
+
+이 구조는 정밀도(τ)가 창업가의 결정과 벤처 성과를 연결하는 중심 메커니즘으로 논문 전체를 관통함을 보여줍니다.
 
 
 
-## 🐅 Theory & Modeling - Logic (수학적 논리) [12 문단]
-| #   | Section | 주제문장                                                      | 핵심 개념                                                                                                                                | 연결                    |
-| --- | ------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | --------------------- |
-| 1   | 🐢2.1   | 기존 문헌은 P를 주어진 값으로 취급했으며, informativeness를 exogenous로 두었다. | Planning vs. action, experimentation (Kerr), finance (Nanda), contracting (Bolton), OM (Thomke). 모두 mechanism 부재.                    | [[literature_review]] |
-| 2   | 🐢2.2   | 나는 P를 aspiration (μ)와 precision (τ)로 재파라미터화한다.            | Double reparameterization: P→φ(1−φ)cP \to φ(1-φ)^c, φ→(μ,τ)φ \to (μ,τ). 그림(Figure X)으로 직관 제시.                                        | [[diagram]]           |
-| 3   | 🐢2.3   | Precision τ는 세 가지 레벨에서 기능한다.                              | Probability level (concentration), Sampling level (pseudo–sample size), Evolutionary level (variation control). 계산비용 ↑ 시 하위가 상위를 근사. | [[three_levels]]      |
-| 4   | 🐢2.4   | 최적화 문제를 통해 (μ*, τ*)의 선택조건을 도출한다.                          | Proposition 1–2: comparative statics (V, c, i). Proposition 3: learning trap vs. negative capability.                                | [[propositions]]      |
-### 🐅2.12🏇 Founder-Venture 분리구조 [2 문단]
+
+----
+
+### **제목**: Endogenizing Venture Growth through Founder's Optimal Ignorance Level
+
+### **1. Introduction** (3 pages):
+
+|     |                                                              | 핵심문장                                                                                                        |
+| --- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- |
+| 1.1 | [[Tesla earned precision, Better Place assumed it]]          | 테슬라는 모호함을 유지했기에 살아남았고, 베터플레이스는 구체성을 방어하다 파멸했다.                                                              |
+| 1.2 | [[Problem is Exogenous P and Informativeness]]               | 이 두 기업의 운명을 가른 ‘약속의 정밀성(τ)’이라는 변수는, 기존 이론이 간과했던 바로 그 ‘사각지대’에 해답이 있었음을 명확히 보여준다.                             |
+| 1.3 | Solution (Preview): OIL as Decision Framework (Hooking back) | \textbf{'약속의 정밀성(τ)'이 어떻게 창업가에 의해 설정되는 내생변수인지, 그리고 그것이 어떻게 성공 확률(P)과 정보의 가치를 결정하는지는 두 기업의 행위에서 직접적으로 증명된다.} |
+| 1.4 | Solution (Preview): OIL as Decision Framework (How)          | 본 논문은 언제 유연성을 유지하고 언제 약속에 헌신할지를 결정하는 ‘최적 정밀도(τ*)’ 공식을 다음과 같이 제시한다: *\textit{τ} = max\{0, √(V/4i) - 1\}**    |
+| 1.5 | [[Why This Matters For Founder]]                             | 1. **정밀도의 덫 (The precision trap)**<br>2. **검증에서 확장으로 가는 공식과 도구상자 (nail-to-scale formula and toolkit)**      |
+| 1.6 | [[Why This Matters For Scholars]]                            |                                                                                                             |
+| 1.7 | [[contribution]]                                             |                                                                                                             |
+
+- **1.4 Why Entrepreneurs Should Care:**
+		
+		1. "Fake it till you make it"의 한계: 과도한 약속은 학습 마비 초래
+		2. Learning-Resource Mobilization 긴장의 최적화 가능성
+		3. 창업 교육의 분열 해결: MIT만 해도 21개 프로그램에 143개 과목이 practice vs theory로 양분
+-  **1.4' Why Scholars Should Care:**
+		1. Micro 실험과 Macro 선택의 단절된 연결고리
+		2. Bayesian modeling의 핵심인 prior 선택 논리 부재
+ 
+- 1.5 Three Contributions:
+	- **Choose** and **Grow**: 동태적 τ 관리 프레임워크
+		- OIL **공식**: τ* 규범적 의사결정 규칙  τ* = max{0, √(V/4i) - 1} 
+		- OIL**개념**: strategic ignorance,
+		- OIL**프레임워크**: earned precision 관리 체계 
+	- **Synthesize**: Prior→Likelihood→Posterior로 Act과 Plan 통합
+	
+- 1.6 Roadmap
+### **2. Theory: OIL Integration** (4 pages)
+
+
+**2.1 What: Choosing OIL**
+- OIL 정의와 공식:박스: "OIL = 전략적 일시적 무지"
+- - τ* 공식 시각화:  **[Figure 1: OIL Decision Rule]** 
+
+**2.2 Why: Synthesizing Act vs Plan**
+- Prior p(φ|τ): Promise flexibility
+- Likelihood φ(1-φ): Sell×Deliver balance
+- Posterior: Market selection
+- Effectuation(τ=0) ← → Causal(τ=∞) 연속체
+
+**2.3 How: Growing Precision**
+
+- Operational levers for i and V: **[Table 1: Operational Levers]** - i와 V 관리도구
+
+### **3. Model** (3 pages)
+
+- 3.1 Setup: Beta-Binomial framework
+- 3.2 Model Evolution
+    - **[Figure 3: M1→M1'→M2→M2' Comparison]**
+- 3.3 Derivation: c=1 special case
+- 3.4 Interpretation: Nail (V<4i) vs Scale (V≥4i)
+
+### **4. Application** (3 pages) [🐙predict and prescribe(🧴) cld](https://claude.ai/share/f722ada6-0e25-4608-aa7b-e3f36ea40931) 
+- 4.1 Predictive: Staged OIL Hypothesis **[Figure 4: 3D Evolution Paths]** - (τ, V, i) 공간
+- 4.2 Prescriptive: Implementation Guide
+
+
+|Lever|Tesla Success|Better Place Failure|Principle (i & V dynamics)|
+|---|---|---|---|
+|**Segment**|Luxury sports enthusiasts가 evangelist가 되어 배송 지연시 직접 차량 인도 지원|이스라엘 전체 시장 동시 타겟팅으로 focus 상실|**Beachhead first (i↓)**: 단일 segment로 시작해 i를 낮춘 후 인접 시장 진출. 조기 다각화는 i 폭발|
+|**Collaborate**|JB Straubel과 알루미늄 호일 회사의 배터리 합작 - 상호 학습하며 leverage 구축|Renault 의존도 과다로 협상력 상실|**Mutual learning (i↓)**: 초기엔 작은 파트너와 상호 학습. Scale 후 큰 파트너와 협상|
+|**Acculturate**|"Production hell is real" - 투명한 위기 공유로 전사적 alignment|과도한 낙관주의로 현실 인식 격차|**Shared reality (i↓)**: 공유 현실 인식이 정보 통합 가속화|
+|**Processify**|Model 3까지는 "hack", 이후 점진적 표준화|배터리 교환소를 처음부터 표준화|**Earn before freeze (i↓)**: 검증 전 표준화는 학습 마비 초래|
+|**Replicate**|California → Nevada → Texas 순차 확대|덴마크, 이스라엘, 호주 동시 진출|**Prove then scale (V↑)**: 한 지역 완전 검증 후 복제|
+|**Capitalize**|Bootstrap 최대한 + 필요시에만 조달 (2003년 $7.5M → 2010년 IPO)|초기 $850M으로 flexibility 상실|**Capital discipline**: 과도한 자본은 premature scaling 유발. Ownership 보존 위해 bootstrap 선호|
+
+**핵심 통찰**:
+
+- **병렬 진행**: 이 활동들은 순서가 아니라 동시다발적으로 진행
+- **Nail 단계 (V<4i)**: Segment & Collaborate로 i 낮추기에 집중
+- **Scale 단계 (V≥4i)**: 검증된 것만 Processify & Replicate
+- **Capital은 별개**: 단계와 무관하게 최소한으로 유지
+
+### **5. Discussion** (2 pages)
+
+- 5.1 For Practitioners: Earn before you commit
+- 5.2 For Scholars: Micro-macro bridge
+- 5.3 Limitations & Future Research
+
+### **6. Conclusion** (0.5 page)
+
+
+---
+🐢6 + 🐅7 + 🐙4 + 🦓3 + 👾4 = 24개 섹션
+[[5 real gpt feedback from charlie]]
+# [[12-24|24-12-24]] 최종 업데이트 - OIL(Optimal Ignorance Level) 논문 구조
+
+## 🐢 Introduction - Tale of Two Ventures [6 섹션]
+
+| #   | Section             | 주제문장                                                              | 핵심 개념                                                                                | 연결 파일                 |
+| --- | ------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------ | --------------------- |
+| 1   | 🐢1.1 Hook          | Tesla와 Better Place는 같은 비전(리튬이온 배터리로 자동차 산업 전기화)을 가졌지만 다른 운명을 맞았다 | 1조원 가치 vs 10억 소진 후 소멸, τ(정밀도) 관리의 차이                                                 | [[🐢tale_two_ventures]] |
+| 2   | 🐢1.2 Problem       | 기존 문헌은 벤처 성공 확률(P)이나 증거의 정보성(informativeness)을 외생적으로 취급한다         | Bayesian Entrepreneurship: 업데이트 크기 미고려, 실험/금융: 우도 중심                                 | [[🐢exogenous_problem]] |
+| 3   | 🐢1.3 Solution      | OIL(Optimal Ignorance Level)은 τ* = max{0, √(V/4i) - 1}로 정의된다      | V: 벤처 가치, i: 정보 통합 비용, τ: 정밀도(약속의 구체성/경직성)                                           | [[OIL_solution]]      |
+| 4   | 🐢1.4 Why Care      | "Fake it till you make it" 모델은 정밀도 긴장을 간과한다                       | 너무 높으면 학습 불가, 너무 낮으면 자원 동원 불가                                                        | [[why_care]]          |
+| 5   | 🐢1.5 Contributions | 본 논문은 세 가지 공헌을 제시한다                                               | Prescriptive Theory(τ 최적화), Multi-Level Theory(3층 의미), Dynamic Framework(nail→scale) | [[contributions]]     |
+| 6   | 🐢1.6 Structure     | 논문 구조는 이론, 모델, 적용, 비전으로 구성된다                                      | Section 2: 이론적 배경, Section 3: 모델, Section 4: 적용, Section 5: 비전                       | [[paper_structure]]   |
+
+## 🐅 Theory - OIL Integration [7 섹션]
 
 | # | Section | 주제문장 | 핵심 개념 | 연결 파일 |
 |---|---------|---------|----------|-----------|
-| 7 | 🐅2.1 | 창업가-벤처 분리가 tau 조절의 주체를 명확히 한다 | separation enables control | [[🐅2.12🏇분리연결]] |
-| 8 | 🐅2.2 | Action school (τ→0)과 Planning school (τ→∞)이 스펙트럼의 양 극단이다 | false dichotomy resolution | [[🐅2.12🏇분리연결]] |
+| 7 | 🐅2.1 Selecting OIL | Beta-Binomial 모델로 정밀도 선택을 모델링한다 | ϕ ~ Beta(μτ, (1-μ)τ), 업데이트 용량: Δ(μ; τ) = μ/(1 + τ) | [[selecting_precision]] |
+| 8 | 🐅2.2 Literature Gap | 기존 문헌과의 차별점은 업데이트 크기를 내생화하는 것이다 | Bayesian Entrepreneurship vs Experimentation/Finance vs Operations/Learning | [[literature_diff]] |
+| 9 | 🐅2.3 Integrating (Spectrum) | τ는 인식론적 논리 스펙트럼을 통합한다 | τ=0: Effectuation, τ↓: Design thinking, τ중: Scientific, τ→∞: Causal logic | [[tau_spectrum]] |
+| 10 | 🐅2.4 Integrating (Hierarchy) | τ는 3층 의미 구조를 가진다 | 확률층(정밀도 모수), 표본층(유사-표본 크기), 진화층(변이-선택 균형) | [[tau_hierarchy]] |
+| 11 | 🐅2.5 Growing OIL | Nail it → Scale it 전환은 τ의 단계적 증가이다 | 병렬 성장: 시장 규모(V)와 역량(1/i) 동시 증가 | [[growing_precision]] |
+| 12 | 🐅2.6 Operational Tools (i↓) | i 감소를 위한 운영 도구가 있다 | Acculturate, Processify, Simplify, (Automate 주의), (Platformize) | [[reduce_i]] |
+| 13 | 🐅2.7 Strategic Tools (V↑) | V 증가를 위한 전략 도구가 있다 | Segment, Collaborate, Replicate, Capitalize, (Platformize) | [[increase_v]] |
 
-### 🐅2.34🧬 DNA of Venture Success [2 문단]
+## 🐙 Model - From Complexity to Optimal Ignorance [4 섹션]
 
-| # | Section | 주제문장 | 핵심 개념 | 연결 파일 |
-|---|---------|---------|----------|-----------|
-| 9 | 🐅2.3 | DNA의 느슨함(low τ)이 변이와 적응을 가능케 한다 | mutation tolerance | [[🐅2.34🧬DNA]] |
-| 10 | 🐅2.4 | DNA의 조임(high τ)이 복제 충실도를 높이지만 적응을 제한한다 | replication fidelity | [[🐅2.34🧬DNA]] |
+| #   | Section                  | 주제문장                                              | 핵심 개념                                                           | 연결 파일                    |
+| --- | ------------------------ | ------------------------------------------------- | --------------------------------------------------------------- | ------------------------ |
+| 14  | 🐙3.1 M1&M1': Complexity | M1 & M1': Deterministic vs Probabilistic 모델링      | M1(Naive): ϕ*=1, M1'(Complexity): ϕ*=1/(c+1), 복잡성이 열망을 규율       | [[model_complexity]]     |
+| 15  | 🐙3.2 M2: Aspiration     | M2: 경험적 베이지안으로 불확실성을 도입한다                         | ϕ ~ Beta(μ, 1)으로 사전분포 도입, μ* ≈ 1/(log c + γ)                    | [[model_aspiration]]     |
+| 16  | 🐙3.3 M2': OIL           | M2': Optimal Ignorance를 설계변수로 추가한다                | ϕ ~ Beta(μτ, (1-μ)τ), max V·E[ϕ(1-ϕ)^c] - iτ                    | [[model_precision]]      |
+| 17  | 🐙3.4 Proposition        | Proposition: c=1일 때, μ*=1/2, τ*=max{√(V/4i)-1, 0} | 🛩️ 비행기 은유: 양 날개 균형(sellability = deliverability), 고정 τ vs 동적 τ | [[model_interpretation]] |
 
-### 🐅2.56🧬 동적 조절 전략 [2 문단]
-
-| # | Section | 주제문장 | 핵심 개념 | 연결 파일 |
-|---|---------|---------|----------|-----------|
-| 11 | 🐅2.5 | τ는 시간에 따라 동적으로 조절되어야 한다: 초기 낮게, 점진적 증가 | dynamic management | [[🐅2.56🧬동적]] |
-| 12 | 🐅2.6 | 환경 변화 시 DNA를 다시 풀어야 하는 유연성이 필요하다 | adaptive flexibility | [[🐅2.56🧬동적]] |
-
-### 🐅2.78💸 실증 방법론 [2 문단]
-
-| # | Section | 주제문장 | 핵심 개념 | 연결 파일 |
-|---|---------|---------|----------|-----------|
-| 13 | 🐅2.7 | τ, i, c 매개변수가 측정 가능한 실질적 의미를 갖는다 | measurable parameters | [[🐅2.78🐣알까실증]] |
-| 14 | 🐅2.8 | 언어 분석과 피봇 빈도가 τ를 예측한다 | empirical measurement | [[🐅2.78🐣알까실증]] |
-
-### 🐅2.91011112 Anatomy of Success Probability [4 문단]
-
-| #   | Section              | 주제문장                                   | 핵심 개념                               | 연결 파일            |
-| --- | -------------------- | -------------------------------------- | ----------------------------------- | ---------------- |
-| 15  | 🐅2.9                | M1→M1': 단순 성공에서 복잡도 고려로 (φ* = 1/(c+1)) | complexity awareness                | [[🐅2.91011112]] |
-| 16  | 🐅2.10               | M1'→M2: 고정값에서 확률변수로 (φ ~ Beta(μ,τ))    | stochastic thinking                 | [[🐅2.91011112]] |
-| 17  | 🐅2.11               | M2→M2': 이론에서 실행으로 (MCMC approximation) | implementation                      | [[🐅2.91011112]] |
-| 18  | 🐅2.12               | 정보통합비용 i가 τ와 학습 관계를 매개한다               | i = cognitive + organizational cost | [[🐅2.91011112]] |
-|     | [[🗄️🐅]]            |                                        |                                     |                  |
-|     | [[🖼️🐅(M1234).svg]] | Model Evolution Diagram                | M1→M1'→M2→M2' visualization         |                  |
-
-
-
-| #   | Section              | 주제문장                                   | 핵심 개념                               | 연결 파일            |
-| --- | -------------------- | -------------------------------------- | ----------------------------------- | ---------------- |
-| 15  | 🐅2.9                | M1→M1': 단순 성공에서 복잡도 고려로 (φ* = 1/(c+1)) | complexity awareness                | [[🐅2.91011112]] |
-| 16  | 🐅2.10               | M1'→M2: 고정값에서 확률변수로 (φ ~ Beta(μ,τ))    | stochastic thinking                 | [[🐅2.91011112]] |
-| 17  | 🐅2.11               | M2→M2': 이론에서 실행으로 (MCMC approximation) | implementation                      | [[🐅2.91011112]] |
-| 18  | 🐅2.12               | 정보통합비용 i가 τ와 학습 관계를 매개한다               | i = cognitive + organizational cost | [[🐅2.91011112]] |
-|     | [[🗄️🐅]]            |                                        |                                     |                  |
-|     | [[🖼️🐅(M1234).svg]] | Model Evolution Diagram                | M1→M1'→M2→M2' visualization         |                  |
-
-
-## 🐙 Application - Rhetoric (설득적 사례) [6 문단]
+## 🦓 Test - Tesla vs Better Place Case [3 섹션]
 
 | # | Section | 주제문장 | 핵심 개념 | 연결 파일 |
 |---|---------|---------|----------|-----------|
-| 19 | 🐙3.1 | Better Place는 M1'에 머물렀지만 Tesla는 M2로 완전 진화했다 | cognitive evolution difference | [[🐙3.123456]] |
-| 20 | 🐙3.2 | Tesla는 실험을 discovery로, Better Place는 demonstration으로 접근했다 | experiment purpose divergence | [[🐙3.123456]] |
-| 21 | 🐙3.3 | Tesla c=5, Better Place c=15로 3배 복잡도 차이를 보였다 | complexity management | [[🐙3.123456]] |
-| 22 | 🐙3.4 | Tesla i=270명, Better Place i=700명으로 통합비용이 달랐다 | integration cost comparison | [[🐙3.123456]] |
-| 23 | 🐙3.5 | τ*_Tesla ≈ 2, τ*_BP ≈ 0.05지만 실제는 정반대였다 | optimal vs actual mismatch | [[🐙3.123456]] |
-| 24 | 🐙3.6 | Common knowledge의 전략적 지연이 Tesla 성공의 숨은 요인이었다 | strategic ambiguity maintenance | [[🐙3.123456]] |
+| 18 | 🦓4.1 Describe: Better Place | Better Place는 "unearned OIL"(high τ start)로 실패했다 | τ=4로 시작, 배터리 교환 고정, 이스라엘 긴밀 결합, c≈10, i≈700 | [[case_better_place]] |
+| 19 | 🦓4.2 Describe: Tesla | Tesla는 "earned OIL"(low τ → high τ)로 성공했다 | τ≈1로 시작, Master Plan (2006): 1.Sports car→2.Affordable car→3.More affordable car, Production hell로 i 감소(≈270), 문화로 c≈5 통제 | [[case_tesla]] |
+| 20 | 🦓4.3 Prescribe & Predict | Staged OIL Hypothesis: τ* 증가 궤적이 선택된다 | Nail(V<4i): τ=0 실험, Scale(V≥4i): τ*=√(V/4i)-1, Automate 실패 교훈 | [[staged_precision]] |
 
-## 👾 Conclusion - 확장과 함의 [8 문단]
+## 👾 Vision - Implications and Future [4 섹션]
 
-### 👾4.1🏇 Founder-Venture 분리의 함의 [2 문단]
-
-| # | Section | 주제문장 | 핵심 개념 | 연결 파일 | 확장원 |
-|---|---------|---------|----------|-----------|---------|
-| 25 | 👾4.1.1 | McElreath의 partial pooling이 τ 조절의 이론적 기초를 제공한다 | no pooling ↔ full pooling spectrum | [[👾4.1🏇분리연결]] | 🐅2.12 |
-| 26 | 👾4.1.2 | 최적점은 V/(i×c) 비율에 의해 동적으로 결정된다 | contextual optimization | [[👾4.1🏇분리연결]] | 🐅2.12 |
-
-### 👾4.2🧬 DNA 동적 관리의 가치 [2 문단]
-
-| # | Section | 주제문장 | 핵심 개념 | 연결 파일 | 확장원 |
-|---|---------|---------|----------|-----------|---------|
-| 27 | 👾4.2.1 | DNA 텐션의 동적 관리가 창업가의 핵심 역량이다 | molecular biology metaphor | [[👾4.2🧬DNA]] | 🐅2.34 |
-| 28 | 👾4.2.2 | 거북이처럼 천천히, 점진적으로 정밀도를 획득하라 | gradual precision earning | [[👾4.2🧬DNA]] | 🐅2.34 |
-
-### 👾4.3💡 실무 원칙 [2 문단]
-
-| # | Section | 주제문장 | 핵심 개념 | 연결 파일 | 확장원 |
-|---|---------|---------|----------|-----------|---------|
-| 29 | 👾4.3.1 | "Lower integration costs and complexity first, only then increase precision" | earn your right to precision | [[👾4.3💡실무]] | 🐅2.56 |
-| 30 | 👾4.3.2 | 4원칙: 사적 무지 수용, 공적 모호성, 합의 지연, 피봇 보존 | four practical principles | [[👾4.3💡실무]] | 🐅2.56 |
-
-### 👾4.4🔮 미래 연구 방향 [2 문단]
-
-| # | Section | 주제문장 | 핵심 개념 | 연결 파일 | 확장원 |
-|---|---------|---------|----------|-----------|---------|
-| 31 | 👾4.4.1 | τ 측정 방법론의 정교화가 필요하다 | measurement innovation needed | [[👾4.4🔮미래]] | 🐅2.78 |
-| 32 | 👾4.4.2 | 산업별 최적 τ 패턴 연구가 후속 과제다 | industry-specific patterns | [[👾4.4🔮미래]] | 🐅2.78 |
+| # | Section | 주제문장 | 핵심 개념 | 연결 파일 |
+|---|---------|---------|----------|-----------|
+| 21 | 👾5.1 For Practitioners | 실무자: "Simplify to aspire, acculturate to concentrate" | OIL=정보 통합 비용 대비 벤처 가치의 함수, 자원 동원-학습 균형 | [[practitioners]] |
+| 22 | 👾5.2 For Scholars | 학자: 미시 실험과 거시 선택을 연결하는 이론 | Simulated Lamarckian 진화: 의도와 시뮬레이션으로 가치 창출, 베이지안 모델링 에이전트로서의 창업가 | [[scholars_theory]] |
+| 23 | 👾5.3 Empirical Opportunities | 실증: 창업자 언어에서 τ 측정 가능 | 계층적 베이지안 모델, 생존과 τ 궤적 검증, Steven Pinker의 optimal vagueness | [[empirical_opportunities]] |
+| 24 | 👾5.4 Core Message | 핵심 메시지: "성장은 OIL의 단계적 증가이며, 이는 벌어들여야 한다" | 약속은 벌어들이는 것(earned OIL), 모호함은 초기 전략적 자산 | [[core_message]] |
 
 ---
 
-## 핵심 원칙 요약
+## 📌 주요 시사점
 
-### The Core Formula
-**τ* = V/(i×c) - 1**
+### 투자자를 위한 체크리스트
+- 창업자의 약속 구체성 평가 (earned vs unearned)
+- i 감소 노력의 증거 (문화 구축, 프로세스화)
+- V/i 비율 추적 및 τ 증가 궤적 모니터링
+- Staged experiment/Master Plan 존재 여부
 
-### The Core Principle
-**"Earn your right to precision by first reducing complexity and integration costs"**
+### 창업자를 위한 원칙
+- "Simplify to aspire, acculturate to concentrate"
+- 약속은 벌어들이는 것(earned OIL)
+- 모호함은 초기 단계의 전략적 자산
+- 복잡성(c)과 i를 먼저 낮추고, V를 키워서 OIL(τ*)을 벌어들여라
+- 🛩️ 비행기 은유: 양 날개(sellability & deliverability) 균형 유지
 
-### The Core Insight
-**무지→약속→실험 (Ignorance→Promise→Experiment)**
-- Tesla followed all three stages → $1T value
-- Better Place skipped ignorance → $850M loss
+### Staged OIL Hypothesis 예측
+- **예측 1**: OIL 궤적을 따른 벤처가 시장에서 선택됨 (τ*=0 → τ*>0 = 생존)
+- **예측 2**: 양면 균형(sellability = deliverability) 시 더 빠른 τ 증가
+- **예측 3**: Simulated Lamarckian 메커니즘으로 quality control과 variation 생성
+  - 순수 다윈적 선택이 아닌 의도와 시뮬레이션이 있는 진화
+  - 미래 시뮬레이션 자체가 가치 창출
 
-### The Core Metaphor
-**DNA Double Helix**
-- Loose initially (low τ) = high mutation tolerance
-- Gradually tighten (increase τ) = earned precision
-- Dynamic adjustment = survival capability
+---
+
+## 🎯 Problem-Solution Framework: High Precision Trap
+
+| Step                                     | Substep             | High Precision Promise Trap in Venture Capital System                                                                                                   |
+| ---------------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1. Problem**                           |                     | 현재 벤처 생태계는 창업가의 조기 고정밀 약속(high τ)을 조장하여 학습 함정을 만든다                                                                                                      |
+| **2. Root Cause**                        |                     |                                                                                                                                                         |
+|                                          | **2.1 Nature**      | Computational irreducibility, aleatoric & Knightian uncertainty가 창업/혁신의 본질<br>• 미래 예측 불가능성<br>• 인과관계의 높은 밀도                                             |
+|                                          | **2.2 Individual**  | 창업가들이 Optimal Ignorance Level(OIL)을 준수하지 않음<br>• "Fake it till you make it" 압박<br>• 학습 능력과 자원 동원의 trade-off 무시                                          |
+|                                          | **2.3 Institution** | 시스템이 premature precision (unearned high τ)를 incentivize<br>• VC의 focal point 형성 메커니즘<br>• "Mind reading the mind readers" 동학<br>• Better Place 같은 실패 반복 |
+| **3. Solution**                          |                     | 창업가 주체적 OIL 기반 정밀도 관리                                                                                                                                   |
+|                                          | **3.1 Nature**      | 불확실성을 인정하고 단계적으로 관리<br>• τ*=max{0,√(V/4i)-1} 공식 활용<br>• Nail(V<4i) vs Scale(V≥4i) 구분                                                                    |
+|                                          | **3.2 Individual**  | Earned OIL 원칙 교육<br>• 복잡성(c)과 통합비용(i) 먼저 감소<br>• 이후 점진적 τ 증가                                                                                            |
+|                                          | **3.3 Institution** | Investment 구조 개선<br>• High identification cost 방지<br>• Staged OIL (τ* trajectory)을 평가하는 새로운 지표<br>• 모호함의 전략적 가치 인정                                      |
+| **4. How solution addresses root cause** |                     | OIL은 불확실성 하에서 학습과 자원동원의 균형을 제공하며, "mind reading" 게임에서 벗어나 실질적 가치 창출에 집중하게 함                                                                             |
+| **5. Production plan**                   |                     | • OIL 기반 창업 교육 프로그램 개발<br>• τ 측정 도구 및 대시보드 구축<br>• VC-창업가 간 shared world model 플랫폼<br>• Staged OIL 평가 체계 도입                                             |
 
 ---
 
-*Last updated: 2024-12-20*
-*Based on comprehensive discussion of Tesla vs Better Place case study*
+### 🔑 핵심 통찰: Unearned vs Earned OIL
 
----
-🐢1 + 🐅(🏇🔥🧬🐣)4 + 🐅1 +  🐙1 + 👾4 = 11
-# [[09-18|25-09-18]]
-## 🐢 Introduction - Grammar (현상 정의) [6 문단]
+**Unearned OIL (Better Place)**
+- 시작부터 높은 τ → 학습 불가능
+- 외부 압력에 의한 조기 구체화
+- 실패 시 대안 없음
 
-| #   | Section   | 주제문장                                                    | 핵심 개념                          | 연결 파일             |
-| --- | --------- | ------------------------------------------------------- | ------------------------------ | ----------------- |
-| 1   | 🐢1.1     | 창업자-벤처 분리 현상이 tau 매개변수를 통해 전략적 불확실성을 주입한다               | tau as heterogeneity parameter | [[🐢1.123456]]    |
-| 2   | 🐢1.2     | Tesla의 낮은 tau 접근과 Better Place의 높은 tau 접근이 극명한 대조를 보여준다 | tau의 실제 사례                     | [[🐢1.123456]]    |
-| 3   | 🐢1.3     | 현재 경영과학 문헌은 이러한 불확실성 주입의 정량화 프레임워크가 부족하다                | 연구 gap 식별                      | [[🐢1.123456]]    |
-| 4   | 🐢1.4     | 베타 분포의 concentration parameter를 통해 이 분리 역학을 수학적으로 모델링한다 | 수학적 기초                         | [[🐢1.123456]]    |
-| 5   | 🐢1.5     | DNA-firebreak 생물학적 은유가 이 프레임워크를 직관적으로 만든다               | 은유적 이해                         | [[🐢1.123456]]    |
-| 6   | 🐢1.6     | 불확실성 주입을 통한 전략적 의사결정에 대한 실행 가능한 통찰을 제공한다                | 논문의 기여                         | [[🎹scale(약속설계)]] |
-|     | [[🗄️🐢]] |                                                         |                                |                   |
-|     | [[🖼️🐢]] |                                                         |                                |                   |
+**Earned OIL (Tesla)**  
+- 낮은 τ로 시작 → 점진적 증가
+- 복잡성과 통합비용 먼저 관리
+- 실험과 피벗을 통한 학습
+- **Tesla Master Plan (2006)**: "The Secret Tesla Motors Master Plan (just between you and me)"
+  1. Build sports car
+  2. Use that money to build an affordable car
+  3. Use that money to build an even more affordable car
+  4. While doing above, also provide zero emission electric power generation
+  - 문화 구축으로 complexity 통제
+  - Staged experiment로 V 증가
+  - OIL을 "벌어들임" (τ*=0 → τ*>0)
 
-## 🐅 Theory & Modeling - Logic (수학적 논리) [12 문단]
+> "The current venture capital system creates an 'unearned OIL trap' where entrepreneurs are incentivized to make overly specific promises before earning the right to that precision through reducing complexity and integration costs."
 
-### 🐅2.12🏇 Founder-Venture 분리구조 [2 문단]
-
-| #   | Section     | 주제문장                                                                                                                                    | 핵심 개념                              | 연결 파일        |
-| --- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | ------------ |
-| 7   | 🐅2.1       | 창업자의 벤처 비즈니스 모델 품질관리가 tau 설정의 핵심 배경이다                                                                                                   | 제안배경                               | [[🐅2.12🏇분리연결_T]] |
-| 8   | 🐅2.2       | tau는 action-plan, explore-exploit등을 스펙트럼상에 놓는다. beta-binomial conjugate, beta, binomial distribution설명, concentration parameterization | [[🙋‍♀️chalire_scott_noubar(tau)]] | [[🐅2.12🏇분리연결_T]] |
-|     | [[🗄️🐢🐅]] |                                                                                                                                         |                                    |              |
-
-### 🐅2.34🔥 Firebreak 전략 은유 [2 문단]
-
-|#|Section|주제문장|핵심 개념|연결 파일|
-|---|---|---|---|---|
-|9|🐅2.3|Firebreak의 narrowness가 tau의 전략적 유연성을 은유적으로 표현한다|🧠접근: strategic ambiguity|[[🐅2.34🔥불공_C]]|
-|10|🐅2.4|Exaptation possibility space가 tau의 적응 공간을 정의한다|🤜접근: adaptation space|[[🐅2.34🔥불공_C]]|
-
-### 🐅2.56🧬 DNA 구조 은유 [2 문단]
-
-| #   | Section | 주제문장                                                                    | 핵심 개념         | 연결 파일            |
-| --- | ------- | ----------------------------------------------------------------------- | ------------- | ---------------- |
-| 11  | 🐅2.5   | DNA double strand의 꼬임 정도가 promise의 sellability와 deliverability 균형을 표현한다 | 🧠접근: 구조적 팽팽함 | [[🐅2.56🧬최무_I]] |
-| 12  | 🐅2.6   | Mutation 허용 정도가 주어진 제약 하에서 tau의 진화 가능성을 결정한다                            | 🤜접근: 변이 허용도  | [[🐅2.56🧬최무_I]] |
-
-### 🐅2.78💸 실증 방법론 [2 문단]
-
-|#|Section|주제문장|핵심 개념|연결 파일|
-|---|---|---|---|---|
-|13|🐅2.7|계층모델과 잠재변수에 substantial meaning을 부여하는 방식이 실증의 핵심이다|방법론적 기초|[[🐅2.78🐣알까실증]]|
-|14|🐅2.8|Essential heterogeneity는 founder-venture의 group-individual 구조로 진화한다|계층적 변동|[[🐅2.78🐣알까실증]]|
-
-### 🐅2.91011112 성공확률 인식 진화 [4 문단]
-
-| #   | Section              | 주제문장                                                 | 핵심 개념  | 연결 파일            |
-| --- | -------------------- | ---------------------------------------------------- | ------ | ---------------- |
-| 15  | 🐅2.9                | 창업가 인식이 monotonic에서 concave로 진화한다                    | M1→M1' | [[🐅2.91011112]] |
-| 16  | 🐅2.10               | Concave 인식이 random variable로 확장된다                    | M1'→M2 | [[🐅2.91011112]] |
-| 17  | 🐅2.11               | Random variable이 approximated random variable로 실용화된다 | M2→M2' | [[🐅2.91011112]] |
-| 18  | 🐅2.12               | 정보 통합 비용이 학습 능력과 tau의 관계를 매개한다                       | ic의 역할 | [[🐅2.91011112]] |
-|     | [[🗄️🐅]]            |                                                      |        |                  |
-|     | [[🖼️🐅(M1234).svg]] |                                                      |        |                  |
-
-## 🐙 Application - Rhetoric (설득적 사례) [6 문단]
-
-| #   | Section | 주제문장                                                                                                 | 핵심 개념    | 연결 파일          |
-| --- | ------- | ---------------------------------------------------------------------------------------------------- | -------- | -------------- |
-| 19  | 🐙3.1   | Better Place와 Tesla의 M1'→M2 전환이 concave에서 random variable로의 진화를 보여준다                                 | 실증 사례 1  | [[🐙3.123456]] |
-| 20  | 🐙3.2   | M2' 기준에서 두 기업의 approximation 전략이 극명하게 대조된다                                                           | 실증 사례 2  | [[🐙3.123456]] |
-| 21  | 🐙3.3   | Complexity 관리 측면에서 Tesla의 낮은 tau가 우위를 보였다                                                            | 복잡성 관리   | [[🐙3.123456]] |
-| 22  | 🐙3.4   | c_t < c_b이고 i_t < i_b여서 tau__t > tau__b. Tesla는 높은 tau_로 유연했으나, Better Place는 낮은 tau_에도 정밀 약속 고수로 실패 | 정보 통합 비용 | [[🐙3.123456]] |
-| 23  | 🐙3.5   | tau* = max(0, V/ic - 1) 공식이 최적 불확실성 수준을 정의한다                                                         | 최적화 공식   | [[🐙3.123456]] |
-| 24  | 🐙3.6   | Founders의 "prediction-based prescription" 패턴이 tau 선택을 예측한다                                           | 경험적 예측   | [[🐙3.123456]] |
-
-## 👾 Conclusion - 확장과 함의 [8 문단]
-
-### 👾4.1🏇 Founder-Venture 분리의 함의 [2 문단] (← 🐅2.12🏇 확장)
-
-| #   | Section | 주제문장                                                                 | 핵심 개념        | 연결 파일           | 확장원    |
-| --- | ------- | -------------------------------------------------------------------- | ------------ | --------------- | ------ |
-| 25  | 👾4.1.1 | Partial pooling의 "study variation" 효과가 tau 매개변수의 이론적 기초를 제공한다        | McElreath 연결 | [[👾4.1🏇분리연결]] | 🐅2.12 |
-| 26  | 👾4.1.2 | Action school(no pooling)과 planning school(full pooling)의 중간지점이 최적이다 | 학파 통합        | [[👾4.1🏇분리연결]] | 🐅2.12 |
-
-### 👾4.2🔥 전략적 모호성의 가치 [2 문단] (← 🐅2.34🔥 확장)
-
-|#|Section|주제문장|핵심 개념|연결 파일|확장원|
-|---|---|---|---|---|---|
-|27|👾4.2.1|Strategic ambiguity가 정보 통합 비용을 낮춰 학습을 촉진한다|모호성의 가치|[[👾4.2🔥불공_C]]|🐅2.34|
-|28|👾4.2.2|Firebreak의 폭이 적응 공간의 크기를 결정한다|적응 유연성|[[👾4.2🔥불공_C]]|🐅2.34|
-
-### 👾4.3🧬 Cleverly Brute Force 전략 [2 문단] (← 🐅2.56🧬 확장)
-
-|#|Section|주제문장|핵심 개념|연결 파일|확장원|
-|---|---|---|---|---|---|
-|29|👾4.3.1|Rejection option과 probability space 제한이 높은 tau의 위험을 완화한다|리스크 관리|[[👾4.3🧬최적무지]]|🐅2.56|
-|30|👾4.3.2|Camuffo(2024)의 실험이 제한된 탐색의 효과성을 입증한다|실증 근거|[[👾4.3🧬최적무지]]|🐅2.56|
-
-### 👾4.4💸 미래 연구 방향 [2 문단] (← 🐅2.78💸 확장)
-
-| #   | Section | 주제문장                                        | 핵심 개념   | 연결 파일           | 확장원    |
-| --- | ------- | ------------------------------------------- | ------- | --------------- | ------ |
-| 31  | 👾4.4.1 | Hierarchical Bayes 방법론이 tau 추정의 새로운 가능성을 연다 | 방법론적 확장 | [[👾4.4🐣알까실증]] | 🐅2.78 |
-| 32  | 👾4.4.2 | Equity valuation 연구와의 통합이 실무적 적용을 강화한다      | 실무 연결   | [[👾4.4🐣알까실증]] | 🐅2.78 |

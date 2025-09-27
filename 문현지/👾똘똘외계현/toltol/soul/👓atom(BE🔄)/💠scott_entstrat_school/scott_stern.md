@@ -1,3 +1,4 @@
+[[🗄️🧠scott]]
 [[09-05|25-09-05]]
 
 1. there's one tool in research, which is synthesize, not just being able to give you mechanically what happened in a prior research study, but synthesize that in a way that allows you to be generative, to exposit a model that's simple and you know, that's as complex as it needs to be, But no more complex

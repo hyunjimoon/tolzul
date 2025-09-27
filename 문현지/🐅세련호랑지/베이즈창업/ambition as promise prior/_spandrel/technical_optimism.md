@@ -1,4 +1,4 @@
-# Technical Optimism - Key Concepts
+    # Technical Optimism - Key Concepts
 
 ## Core Phrases (🪵 logged)
 

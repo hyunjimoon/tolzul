@@ -1,3 +1,23 @@
+[[09-23|25-09-23]]
+analysis of josh's selling RMC in [[pc2_tennanbaum24w2w 1.txt]]
+
+Looking at the Word to Worlds model diagram and Josh's presentation, I can see several key rhetorical strategies he uses:
+
+1. **Concrete grounding before abstraction**: He starts with tangible examples (ChatGPT stacking objects) before diving into theory
+2. **Personal narrative threads**: He weaves in stories about students, colleagues, and research evolution
+3. **Progressive complexity**: Each concept builds naturally on the previous one
+4. **Visual anchoring**: Complex ideas are always tied to specific visual examples or experiments
+5. **Bridging phrases**: He uses phrases like "So what's going on here?" and "Now how does that work?" to create natural transitions
+6. **Acknowledging limitations**: He's upfront about what the models can and can't do
+7. **Recursive return**: He circles back to earlier examples with deeper understanding
+
+For the Tesla example, I should connect it to the four types of reasoning while maintaining Josh's accessible yet rigorous style.
+
+
+[[🗄️🧠charlie]]
+
+
+
 [[966 Computational Cognitive Science]]
 2024-11-05
 Do or do not. There's no try.

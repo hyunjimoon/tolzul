@@ -1,3 +1,5 @@
+[[09-27|25-09-27]]
+
 # Zoo Keeper's Guide
 
 You run a special zoo with four animals:

@@ -79,3 +79,6 @@
 ---
 
 *"Capital doesn't flow to the best ideas but to the best-designed uncertainties"*
+
+
+To flesh out this point, it is important to separate two frames of reference regarding experimentation. The first relates to economic experimentation in a Darwinian sense, which is the natural starting point for most economists. In this conceptual model, new ventures compete with existing products and technologies, and the ensuing competition leads to the survival of the fittest, just as Google surpassed its early rivals due to its superior technology.

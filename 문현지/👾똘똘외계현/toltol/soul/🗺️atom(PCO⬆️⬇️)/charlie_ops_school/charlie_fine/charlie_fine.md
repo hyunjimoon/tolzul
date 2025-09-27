@@ -1,3 +1,9 @@
+[[09-24|25-09-24]]
+
+Ideally, in my opinion, for each strand of relevant literature, you should briefly explain the thread of idea development, from the “classical” origin of the idea, to the relevant, current follow-on work. 
+
+---
+
 i failed to find time to update the progress but kept my focus intensity evidenced by the frequency of commits in ~70 commits since May 15th from https://github.com/hyunjimoon/tolzul/commits/master/
 
 [[09-11|25-09-11]]

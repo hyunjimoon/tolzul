@@ -7,13 +7,17 @@ However, numerous concerns were also expressed, including:
 2.  The introduction is also weak and doesn’t communicate well what the paper will contribute.  
 
 3.  Qualitatively, the results are not particularly surprising.  Where is the “aha” and core contribution?  To deliver on this, you would need a much more fine-grained review of the literature, identify what has and hasn’t been done in adjacent papers (e.g., Bolton, et al, and others), and then slot in your contribution.  But, you would also need results that would likely influence the thinking of others who have worked in this space.  
+
+4.  The paper does not show an appreciation of what constitutes a PhD-level contribution the field.  The paper is stronger than an undergraduate paper, but below the bar of what is expected for doctoral work.  The abstract claims "contributions to both theory and practice" which seems grandiose relative to what is delivered, especially given the absence of any empirical support for the theory.  Also, the writing is self-referential and playful in surprising ways that seem "out of genre" for an academic paper, e.g. "Given the bold and precise promise of this paper, we plan to pay for precision as follows.”
+
+5.  Overall, the paper is well below the bar of what is expected.  One path to get over the bar might be to use the baseline model in some interesting/creative way, develop the literature in a precise way that characterizes the "contribution" clearly, and elaborate on potential empirical predictions that could be validated (at least in principle) with data.
+
+
+
 > I'm persuading charlie the language "bayesian entrepreneurship" has potential to include the "menus" portion of "operations for entrepreneurs". The idea of bayesian computation and sampling algorithms are what I've been using to introduce 
 
 
-4.  The paper does not show an appreciation of what constitutes a PhD-level contribution the field.  The paper is stronger than an undergraduate paper, but below the bar of what is expected for doctoral work.  The abstract claims "contributions to both theory and practice" which seems grandiose relative to what is delivered, especially given the absence of any empirical support for the theory.  Also, the writing is self-referential and playful in surprising ways that seem "out of genre" for an academic paper, e.g. "Given the bold and precise promise of this paper, we plan to pay for precision as follows.”
 > disagree with the self-referential and playful -> the two are what i recognize as a sign of intelligence so i can't help including them. i.e. it's my faith to let the paper be the first user of its invention (self-referential) and contain inconsistency (playful)
-
-5.  Overall, the paper is well below the bar of what is expected.  One path to get over the bar might be to use the baseline model in some interesting/creative way, develop the literature in a precise way that characterizes the "contribution" clearly, and elaborate on potential empirical predictions that could be validated (at least in principle) with data.
 
 ----
 

@@ -8,6 +8,10 @@
 
 [[scott_stern]] with backgroud/belief/expertise in [[scott23🛠️_econ_idea_innov_ent.pdf]], [[scott24👓_Bayesian_Entrepreneurship.pdf]] have value hypothesis as [[val(scott).png]]
 
+[[📜stern06_tech_org_econ_exp]]
+
+---
+
 mobility ventures from scott's book analyzed via [gpt](https://chatgpt.com/c/681391f4-3b88-8002-ba68-83b9ea9b3d5d)
 ![[Pasted image 20250514112204.png|400]]
 ## Table 1: Definition and example of Four Axioms of Entrepreneurial Strategy

@@ -1,0 +1,2 @@
+   \item \textbf{Endogenizing Learning via the Founder:}
+     This paper endogenizes venture learning by separating the founder from the venture. The founder becomes the agent who designs a venture's learning capacity by choosing $\tau$ as a function of V and i. Consequently, success probability and informativeness are no longer exogenous givens but outcomes of this choice, bridging the founder's micro-level decisions with market's macro-level selection of venture. \textbackslash{}citep\{stern2006economic, KerrNandaRhodesKropf2014JEP\}.

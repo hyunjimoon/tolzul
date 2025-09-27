@@ -1,6 +1,39 @@
+[[09-25|25-09-25]]
+
+\subsection{Hook: Tale of Two Ventures}\label{sec:intro-hook}
+
+In 2008, two ventures set out to reinvent the automobile with electric vehicles: one would rise to become a trillion-dollar icon, the other vanish into obscurity, though at the outset both looked equally promising with elite teams, proven founders, and massive funding ($60 million and $200 million, respectively). Tesla soon faced a 10-week supply chain delay that stranded $17,000 batteries as defective inventory, yet instead of paralysis they pivoted overnight, embracing what became “production hell” by localizing production, relaxing rigid specifications, and revising promises from “250 miles” to “200+,” thereby turning constraint into survival. Better Place, by contrast, seemed blessed at first as its Denmark pilot reached 15\% adoption and executives declared victory, doubling down on “3-minute battery swaps,” securing 100,000 Renault commitments, and building 38 identical stations, only to discover that while Danish pilots parked on open ground accessible to robots, Israeli customers parked underground where the system failed—success in Copenhagen collapsing in Tel Aviv. The contrast reflected management philosophy: Tesla’s VP Dunlay emphasized “perfect is the enemy of good; our gates are always open,” while Better Place’s CEO Agassi dismissed rivals like GM’s Volt as “stupid” and surrounded himself with loyalists, even hiring his girlfriend’s friends. In practice, Tesla’s $60 million cultivated learning velocity, whereas Better Place’s $850 million fueled rigidity, with capital amplifying opposite instincts—constraint forcing rapid experimentation, abundance funding fatal certainty. Ultimately, the divergence traces to $\tau$, the precision of initial promises: high precision locks beliefs and resists updating, while low precision enables adaptation; Tesla survived by staying vague, and Better Place perished by defending specifics.
+
+
+**1. Evidence from Better Place FastCo article:**
+
+**Supporting OIL thesis:**
+
+- "Better Place formally committed to order 100,000 Renault cars between 2011 and 2016" while actual sales: 1,500 total. High τ locked them into impossible commitments.
+- Battery swap stations "projected to cost no more than $500,000 each; they cost $2 million." When precision exceeded reality by 4x, they couldn't adapt infrastructure design.
+
+**Criticizing OIL thesis:**
+
+- "There was profligacy, marketing problems, hiring problems, problems with every conceivable part" suggests execution failures, not precision issues.
+- "Agassi brought Chotoveli to meetings and hired some of her friends to top positions"—cronyism and narcissism, not τ, killed the company.
+
+**2. Tesla vs Better Place Comparison Table:**
+
+|**Dimension**|**Tesla (Low τ)**|**Better Place (High τ)**|
+|---|---|---|
+|**Initial Capital**|$60M by 2007|$200M seed (3.3x Tesla)|
+|**Promise Precision**|"200+ miles"|"3-minute swaps, anytime, anywhere"|
+|**Infrastructure Cost**|Avoided commitment|$500K → $2M per station (4x overrun)|
+|**Supply Chain Response**|10-week pipeline killed → pivoted to local|Locked into Denmark design → couldn't adapt for Israel|
+|**Customer Promises**|"Emotional relationship" forgave defects|"Half the price" → Same price as Toyota Corolla|
+|**Market Entry**|100 Roadsters → Learn → Model S|100,000 cars committed → 1,500 delivered|
+|**Burn Rate**|$78M loss on $60M capital|$500K/day ($180M/year)|
+|**Final Status**|$1 trillion market cap|$850M burned, bankrupt|
+
+**Key insight:** Tesla's vague promises ("gates always open") enabled iteration through crisis. Better Place's precise commitments ("100,000 cars," "3-minute swaps") created contracts and infrastructure that couldn't bend when apartment dwellers couldn't access underground swaps.
 
 [[09-19|25-09-19]]
-
+비아오텍 사람들에게 내 이론 소개할땐 [[🐙practice(moderna, theranos)]] 가 직방
 ## 2. Tesla vs Better Place: Two Experiments, Two Meanings
 
 ### Better Place: Experiment as Demonstration

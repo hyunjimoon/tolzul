@@ -6,10 +6,12 @@ applying chapter 6, 7 on flow ([[95]]) and knowing its end ([[104]]),
 - Identify variations in belief state-> Need to Predict Uncertain Commitments (Recognize Diversity: Adagio)   -> 
 - Identify variations in action speed to synchronize commitment -> Need to Construct Clockspeed Coordinates (Allegro molt)
 
-|Ch.|Core craft problem|Moran’s remedy|Practical self‑check|
-|---|---|---|---|
-|**6 – “Foolish Like a Trout”**|Flow: how do sentences _stick_ to one another without obvious glue?|**Consecution** (Gordon Lish). Each sentence ends with a half‑open door whose unanswered tension invites the next. Make every line “a lonely place” yet leave “invisible thread” for the reader to follow.|_Print a paragraph, draw boxes round individual sentences._ Can you reorder them without breaking sense? If yes, tighten the “door‑hinge” at the end of each sentence.|
-|**7 – “A Small, Good Thing”**|Bloat: writers overstay the reader’s finite life.|Treat every sentence as **a gift**—brief, proportionate, courteous. Love the full stop; white space is hospitality; quit while the reader is “putting on her coat.”|_Delete the last 15 % of a draft._ Does anything essential vanish? If not, you have found the encore you should cut.|
+[[scott_stern]]
+
+| Ch.                            | Core craft problem                                                  | Moran’s remedy                                                                                                                                                                                             | Practical self‑check                                                                                                                                                   |
+| ------------------------------ | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **6 – “Foolish Like a Trout”** | Flow: how do sentences _stick_ to one another without obvious glue? | **Consecution** (Gordon Lish). Each sentence ends with a half‑open door whose unanswered tension invites the next. Make every line “a lonely place” yet leave “invisible thread” for the reader to follow. | _Print a paragraph, draw boxes round individual sentences._ Can you reorder them without breaking sense? If yes, tighten the “door‑hinge” at the end of each sentence. |
+| **7 – “A Small, Good Thing”**  | Bloat: writers overstay the reader’s finite life.                   | Treat every sentence as **a gift**—brief, proportionate, courteous. Love the full stop; white space is hospitality; quit while the reader is “putting on her coat.”                                        | _Delete the last 15 % of a draft._ Does anything essential vanish? If not, you have found the encore you should cut.                                                   |
 
 2025-07-01
  [[joe_moran]], recommended by [[pranit]]
