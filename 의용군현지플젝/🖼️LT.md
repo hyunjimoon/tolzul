@@ -1,0 +1,1 @@
+![[sec2_2_1_precision_spectrum.png]]

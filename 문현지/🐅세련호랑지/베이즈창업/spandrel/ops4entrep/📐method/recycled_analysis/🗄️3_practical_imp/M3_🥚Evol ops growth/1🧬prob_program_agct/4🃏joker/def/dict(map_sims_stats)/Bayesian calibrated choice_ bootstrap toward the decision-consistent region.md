@@ -1,6 +1,6 @@
 tags: #decision #calibration`
 
-
+[[mike_betancourt]]
 Goal: Apply Bayesian calibration to Bayesian decision theory and to find its application
 # Introduction to Bayesian calibration
 ## 1. Inference

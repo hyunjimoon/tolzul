@@ -1,3 +1,6 @@
+[[09-29|25-09-29]]
+[[3.2 bayesian_calibration]]
+
 abstract: Simulation-based calibration checking (SBC) is a practical method to validate computationally derived posterior distributions or their approximations. In this paper, we introduce a new variant of SBC to alleviate several known problems. Our variant allows the user to in principle detect any possible issue with the posterior, while previously reported implementations could never detect large classes of problems including when the posterior is equal to the prior. This is made possible by including additional data-dependent test quantities when running SBC. We argue and demonstrate that the joint likelihood of the data is an especially useful test quantity. Some other types of test quantities and their theoretical and practical benefits are also investigated. We support our recommendations with numerical case studies on a multivariate normal example and theoretical analysis of SBC, thereby providing a more complete understanding of the underlying statistical mechanisms. From the theoretical side, we also bring attention to a relatively common mistake in the literature and clarify the difference between SBC and checks based on the dataaveraged posterior. The SBC variant introduced in this paper is implemented in the SBC R package.
 
 TEST QUANTITIES ARE DESIRE-DEPENDENT

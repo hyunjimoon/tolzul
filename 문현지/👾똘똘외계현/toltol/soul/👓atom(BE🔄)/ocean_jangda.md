@@ -1,3 +1,10 @@
+level of novelty
+
+steve jobs (customer don't know what they want - once you give them then you work from there; n=1) -> against lean scholars ()
+
+
+
+
 [[2025-07-13|25-07-13-01]]
 - business vs investment risk
 - small amount of money 

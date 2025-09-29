@@ -1,3 +1,12 @@
+[[09-28|25-09-28]]
+
+
+
+
+
+
+---
+
 Abstract. A central premise of research in the strategic management of innovation is that start-ups are able to leverage emerging technological trajectories as a source of competitive advantage. But, if the potential for a technology is given by the fundamental character of a given technological trajectory, then why does entrepreneurial strategy matter? Or, put another way, if the evolution of technology is largely shaped by the strategic choices entrepreneurs make, then why do technological trajectories exhibit systematic patterns such as the technology S-curve? Taking a choice-based perspective, this paper illuminates the choices confronting a start-up choosing their technology by resolving the paradox of the technology S-curve through a reformulation of the foundations of the technology S-curve. Speciﬁcally, we reconceptualize the technology S-curve not as a technological given but as an envelope of potential outcomes reﬂecting differing strategic choices by the entrepreneur in exploration versus exploitation. Taking this lens, we are able to clarify the role of technological uncertainty on start-up strategy, the impact of constraints on technological evolution, and how technology choice is shaped by the possibility of imitation. Our ﬁndings suggest that staged exploration may stall innovation as a result of the replacement effect, increasing the strategic importance of commitment.
 ![[📜gans20_choose(tech) 2025-09-11-10.svg]]
 %%[[📜gans20_choose(tech) 2025-09-11-10.md|🖋 Edit in Excalidraw]]%%

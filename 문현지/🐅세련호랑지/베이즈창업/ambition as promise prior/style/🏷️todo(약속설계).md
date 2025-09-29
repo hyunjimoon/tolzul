@@ -1,3 +1,11 @@
+[[09-27|25-09-27]]
+
+[[checklist]]
+1. 서론에 약속수준에 대한 내용이 없어도 되는가?
+2. how explicit i should be about my choice to focus on precision, but less on aspiration.
+3. 
+
+
 1. todo🏷️리스팅하자. 현재  
     🏷️1:
 

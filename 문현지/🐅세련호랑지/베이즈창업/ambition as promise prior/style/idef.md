@@ -1,0 +1,21 @@
+Here's the English translation in markdown format:
+
+## Table T_i_Def: In-depth Definition of i
+
+### Organizational Integration Cost (**i**): In-depth Definition of Strategic Friction
+
+| **Dimension**                            | **Definition and Strategic Implications**                                                                                                                                                                                                                     | Practitioners                                                                                                                                                                                                        |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Economic Definition (Cost)**           | The **marginal cost (MC_τ)** that an organization must pay to increase precision τ by 1 unit. <br>For τ investment to be justified, V/4i ≥ 1 must hold                                                                                                        | The price an organization pays to become more precise. <br>Think of it as: "How much does it cost to get better at what we do?" <br>The investment only makes sense if the value created is at least 4x the cost.    |
+| **Organizational Definition (Friction)** | The sum of **friction, delays, and coordination costs** required to convert **external signals** into **actionable behaviors**. The lower the i, the higher the organization's **learning efficiency**                                                        | The effort, time, and resources needed to turn information into action. <br>**Lower friction = faster learning** <br>Think of it as: "How quickly can we respond to new information?"                                |
+| **Growth Driver (Lever)**                | When expanding organizational scale, i inevitably increases. <br>Growth is the act of managing so that the **rate of increase** of **i** is **slower than** the rate of increase of **V**, and it is the fundamental driving force for acquiring **τ**        | As companies grow, coordination costs naturally increase. <br>**Successful growth** = keeping costs from rising as fast as value creation. <br>Think of it as: "Can we grow revenue faster than we grow complexity?" |
+| **External Influence**                   | Beyond internal levers, i is influenced by external factors such as **technology/innovation pressure, customer attraction, and regulations**. Entrepreneurs must respond to **external environmental i upward pressure** with internal i reduction strategies | Outside forces that increase costs: <br>• New technology demands <br>• Customer expectations <br>• Regulatory requirements <br>**Strategy:** Use internal improvements to offset external pressures.                 |
+
+
+
+|**Dimension**|**Technical Definition**|**Practical Meaning**|
+|---|---|---|
+|**Economic Cost**|Marginal cost (MC_τ) to increase precision τ by 1 unit. <br>Investment justified when **V/4i ≥ 1**|"What's the price of getting better?" <br>✓ Only invest if value > 4x cost|
+|**Organizational Friction**|Sum of friction, delays, coordination costs to convert signals → actions. <br>**Lower i = Higher learning efficiency**|"How fast can we act on information?" <br>✓ Less friction = Faster adaptation|
+|**Growth Challenge**|Scale inevitably increases i. <br>Success = **i growth rate < V growth rate**|"Can revenue grow faster than complexity?" <br>✓ Win by scaling value faster than costs|
+|**External Pressures**|External forces: tech disruption, customer demands, regulations. <br>**Counter with internal i reduction**|Forces raising costs: <br>• Tech changes <br>• Market shifts <br>• New rules <br>✓ Fight external pressure with internal efficiency|
