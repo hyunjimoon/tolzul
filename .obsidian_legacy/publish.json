@@ -1,0 +1,18 @@
+{
+  "siteId": "7e1cb6e52672d9e220ba6c5081f1cb09",
+  "host": "publish-01.obsidian.md",
+  "included": [
+    "_ref/publication_repo",
+    "_ref",
+    "♻️world",
+    "🟧amoon",
+    "🔴sun"
+  ],
+  "excluded": [
+    "_ref/nopublish_spandrel",
+    "spandrel",
+    "♻️world/people",
+    "3_🐅professionalize-processify/🫀bayes/angie/🏛️quarter",
+    "_ref/spandrel"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+	"nodes":[
+		{"id":"a6e2ca6d334798ed","type":"text","text":"<mark class=\"green\">artificial intelligence </mark>  ","x":-660,"y":-60,"width":250,"height":120},
+		{"id":"c4b0588f90141133","type":"text","text":"<mark class=\"red\">artificial intelligence </mark>  ","x":-180,"y":-60,"width":250,"height":120},
+		{"id":"eb614482543bafd2","type":"text","text":"<mark class=\"blue\">augmented intelligence </mark>  ","x":320,"y":-60,"width":250,"height":120},
+		{"id":"d628d1662d7836bb","type":"text","text":"<mark class=\"purple\">innovative augmented intelligence </mark>  ","x":820,"y":-80,"width":250,"height":160},
+		{"id":"bf6ea2f6872dc683","type":"file","file":"iai/iai3.md","x":545,"y":140,"width":400,"height":400},
+		{"id":"fd029db3dfec85e3","type":"file","file":"iai/iai1_angie.md","x":-500,"y":140,"width":400,"height":400},
+		{"id":"4f9a1f0dc4652ecb","type":"file","file":"iai/iai2_angie.md","x":0,"y":140,"width":400,"height":400},
+		{"id":"9270132890ee4d58","x":0,"y":-560,"width":400,"height":400,"type":"file","file":"iai/iai2_m2.md"},
+		{"id":"b4274305b10a03c4","x":-720,"y":700,"width":1790,"height":466,"type":"file","file":"iai/def(iai).md"}
+	],
+	"edges":[
+		{"id":"abd3dda2ff29870a","fromNode":"a6e2ca6d334798ed","fromSide":"right","toNode":"c4b0588f90141133","toSide":"left"},
+		{"id":"a5091f46fb861c9a","fromNode":"c4b0588f90141133","fromSide":"right","toNode":"eb614482543bafd2","toSide":"left"},
+		{"id":"d99f0629641a9f23","fromNode":"eb614482543bafd2","fromSide":"right","toNode":"d628d1662d7836bb","toSide":"left"}
+	]
+}

@@ -1,0 +1,357 @@
+{
+  "main": {
+    "id": "74d72a1604ab774b",
+    "type": "split",
+    "children": [
+      {
+        "id": "45d2c6f85894ede7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "eacf213448cea96b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Atlas/2-한산-전략/베이즈창업/ambition as promise prior/🐢🐙👾🐅committee discussion/competing scott and eric.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "competing scott and eric"
+            }
+          },
+          {
+            "id": "afd4edfcc59b8dc8",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "전장.base",
+                "viewName": "Table"
+              },
+              "icon": "lucide-table",
+              "title": "전장"
+            }
+          },
+          {
+            "id": "4bf9ae87911cfa2b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Atlas/4-노량-임팩트/toltol/soul/👓atom(BE🔄)/문옥경.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "문옥경"
+            }
+          },
+          {
+            "id": "15978201c9f66a44",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Atlas/Maps/이슬.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "이슬"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d202e938d18d679a",
+    "type": "split",
+    "children": [
+      {
+        "id": "a42c5bd223742ac1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "78eac07cfc625ddf",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": true
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "3034aebb7f09d93c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "\bzulzul",
+                "matchingCase": true,
+                "explainSearch": true,
+                "collapseAll": true,
+                "extraContext": true,
+                "sortOrder": "byModifiedTime"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "dcb87b99d72912f5",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 267.5041847229004
+  },
+  "right": {
+    "id": "d45901c627f066f3",
+    "type": "split",
+    "children": [
+      {
+        "id": "8e9c45232bd81bc2",
+        "type": "tabs",
+        "dimension": 31.274900398406373,
+        "children": [
+          {
+            "id": "bd53819819ded85d",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "Atlas/Maps/이슬.md"
+              },
+              "icon": "lucide-info",
+              "title": "File properties for 이슬"
+            }
+          },
+          {
+            "id": "267440b1320349e4",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          },
+          {
+            "id": "75d68ae65042007d",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          },
+          {
+            "id": "62ef0bf1de92bd98",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          }
+        ],
+        "currentTab": 3
+      },
+      {
+        "id": "fe4f5cca318dfe3a",
+        "type": "tabs",
+        "dimension": 28.15405046480744,
+        "children": [
+          {
+            "id": "8aec24d334e309af",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Atlas/Maps/이슬.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 이슬"
+            }
+          }
+        ]
+      },
+      {
+        "id": "8a9904764db5d927",
+        "type": "tabs",
+        "dimension": 40.571049136786186,
+        "children": [
+          {
+            "id": "fabadf9de76ae4ff",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "전장.base",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 전장"
+            }
+          },
+          {
+            "id": "ec6b673ca227491a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Atlas/Maps/이슬.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 이슬"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 232.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "command-palette:Open command palette": false,
+      "templates:Insert template": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-git:Open Git source control": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "publish:Publish changes...": false,
+      "obsidian-stille:Toggle Stille": false,
+      "workspaces:Manage workspace layouts": false,
+      "periodic-notes:Open today": false
+    }
+  },
+  "active": "15978201c9f66a44",
+  "lastOpenFiles": [
+    "Atlas/Maps/학자.md",
+    "Atlas/Maps/이슬.md",
+    "Atlas/Maps/군인.md",
+    "Atlas/Maps/Scott Stern.md",
+    "Atlas/4-노량-임팩트/toltol/soul/👓atom(BE🔄)/벗 지도.md",
+    "Atlas/4-노량-임팩트/toltol/soul/👓atom(BE🔄)/문옥경.md",
+    "Atlas/4-노량-임팩트/toltol/soul/⚡️atom(BE⬇️⬆️)/박경린.md",
+    "Atlas/2-한산-전략/🐅한산리듬.md",
+    "전장.base",
+    "Atlas/4-노량-임팩트/toltol/process-innovation.md",
+    "Atlas/4-노량-임팩트/toltol/presentation tips.md",
+    "Atlas/4-노량-임팩트/toltol/soul/👓atom(BE🔄)/희렌최.md",
+    "Calendar/Daily/daily to be classified/Untitled.base",
+    "Calendar/Daily/daily to be classified/🌙amoon() 2025-04-26-10.md",
+    "Calendar/Daily/daily to be classified/📜gans20_choose(tech) 2025-04-21-20.md",
+    "Calendar/Daily/daily to be classified/feras_sadd 2025-04-23-8.md",
+    "Calendar/Daily/daily to be classified/fine_cases 2025-04-23-15.md",
+    "Calendar/Daily/daily to be classified/📜scott_ 2025-05-04-3.md",
+    "Calendar/Daily/daily to be classified/🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep 2025-05-11-8.md",
+    "Calendar/Daily/daily to be classified/📜SS_granovetter78_model(collective-behavior, thresholds) 2025-05-30-9.md",
+    "Calendar/Daily/daily to be classified/📜CS_mitchell97_identify(stakeholders, salience) 2025-06-13-18.md",
+    "Calendar/Daily/daily to be classified/🗺️map(🎻viola, 📝paper) 2025-06-17-13.md",
+    "Calendar/Daily/daily to be classified/🧲flow(magnetic, 📝) 2025-06-20-17.md",
+    "Calendar/Daily/daily to be classified/2♻️analyze(🔴capacity-variability, ✈️airline) 2025-07-22-8.md",
+    "Calendar/Daily/daily to be classified/yedioth 2025-06-26-11.md",
+    "Calendar/Daily/daily to be classified/littlefield 2025-06-26-13.md",
+    "Calendar/Daily/daily to be classified/🌲hbm_pred_exp_irrec 2025-04-11-22.md",
+    "Calendar/Daily/daily to be classified/flagship_pioneering 2025-04-13-4.md",
+    "x/_ref/한산.png",
+    "x/_ref/사천.png",
+    "x/_ref/명량.png",
+    "x/_ref/노량.png",
+    "_ref/노량.png",
+    "_ref/명량.png",
+    "_ref/사천.png",
+    "_ref/한산.png",
+    "_ref/Pasted image 20251010205448.png",
+    "_ref",
+    "x/_ref/archive/four_chains_control_tower.canvas",
+    "x/_ref/archive/revolution/🎍year/💭theorizing/Bayes_Entrep/TBV",
+    "x/_ref/archive/revolution/🎍year/💭theorizing/Bayes_Entrep/25reading_group",
+    "x/_ref/archive/revolution/🎍year/💭theorizing/ent_bootcamp/NBER ENT",
+    "x/_ref/archive/revolution/🎍year/💭theorizing/AOM/2024",
+    "x/_ref/spandrel/nopublish_spandrel/johan_dominance💫🔭/angie/winners curse with SD.docx",
+    "x/_ref/spandrel/nopublish_spandrel/johan_dominance💫🔭/angie/~$nners curse with SD.docx",
+    "x/_ref/spandrel/nopublish_spandrel/SVD2Parameter/RealizedData/AssumedParam🌱",
+    "x/_ref/attachments/Pasted image 20220528100337.png",
+    "Atlas/4-노량-임팩트/toltol/soul/벗/대학정하/사제동행의 꿈.canvas",
+    "Atlas/4-노량-임팩트/university/quarter/😐👨‍👩‍👧🏘️15.341_individuals_groups_organizations/trend.canvas",
+    "Atlas/2-한산-전략/베이즈창업/spandrel/ops4entrep/📐method/recycled_analysis/🗄️3_practical_imp/M3_🥚Evol ops growth/1🧬prob_program_agct/5🌀workflow/18_vaccine_gdp_wf/_def/vaccine_value_workflow.canvas",
+    "Atlas/2-한산-전략/베이즈창업/spandrel/ops4entrep/📐method/recycled_analysis/🗄️3_practical_imp/M3_🥚Evol ops growth/1🧬prob_program_agct/3🌲inf(gen)/def/diagram(inf(gen)).canvas",
+    "Atlas/2-한산-전략/베이즈창업/spandrel/ops4entrep/📐method/recycled_analysis/🗄️3_practical_imp/M3_🥚Evol ops growth/T3_🔷resource_rationality/need-sol/NSP.canvas",
+    "Atlas/2-한산-전략/베이즈창업/spandrel/ops4entrep/📐method/recycled_analysis/🗄️3_practical_imp/M3_🥚Evol ops growth/1🧬prob_program_agct/def/playbook.canvas",
+    "Atlas/2-한산-전략/베이즈창업/spandrel/ops4entrep/📐method/recycled_analysis/🗄️3_practical_imp/M3_🥚Evol ops growth/1🧬prob_program_agct/optimization/ip_roadmap.canvas",
+    "Atlas/2-한산-전략/베이즈창업/spandrel/ops4entrep/📐method/recycled_analysis/🗄️3_practical_imp/M3_🥚Evol ops growth/operations.canvas",
+    "Atlas/2-한산-전략/베이즈창업/spandrel/ops4entrep/📐method/recycled_analysis/🗄️3_practical_imp/M3_🥚Evol ops growth/agent_concept_technology.canvas"
+  ]
+}

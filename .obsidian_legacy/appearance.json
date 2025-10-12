@@ -1,0 +1,15 @@
+{
+  "baseFontSize": 16,
+  "enabledCssSnippets": [
+    "centerImg",
+    "media-grid-snippet",
+    "edge-commons-colors"
+  ],
+  "translucency": true,
+  "cssTheme": "AnuPpuccin",
+  "accentColor": "#f55c5c",
+  "theme": "system",
+  "textFontFamily": "Roboto,Apple Color Emoji",
+  "interfaceFontFamily": "Inter,Optima",
+  "showViewHeader": false
+}

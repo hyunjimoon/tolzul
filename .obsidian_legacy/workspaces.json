@@ -1,0 +1,1772 @@
+{
+  "workspaces": {
+    "용의지현": {
+      "main": {
+        "id": "74d72a1604ab774b",
+        "type": "split",
+        "children": [
+          {
+            "id": "3cdd91b99c9d4cfc",
+            "type": "split",
+            "children": [
+              {
+                "id": "4b3967555b72dab9",
+                "type": "split",
+                "children": [
+                  {
+                    "id": "22d459d16c15ef23",
+                    "type": "tabs",
+                    "children": [
+                      {
+                        "id": "d7cb4f257e09969d",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "file": "🐢낭만의/🐢1기월문화.md",
+                            "mode": "source",
+                            "source": false,
+                            "backlinks": true,
+                            "backlinkOpts": {
+                              "collapseAll": false,
+                              "extraContext": false,
+                              "sortOrder": "alphabetical",
+                              "showSearch": false,
+                              "searchQuery": "",
+                              "backlinkCollapsed": false,
+                              "unlinkedCollapsed": true
+                            }
+                          },
+                          "icon": "lucide-file",
+                          "title": "🐢1기월문화"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "8c8db1011c3f74eb",
+                    "type": "tabs",
+                    "children": [
+                      {
+                        "id": "533bd02021c9bddd",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "file": "🐢낭만의/🐢2기화협력.md",
+                            "mode": "source",
+                            "source": false,
+                            "backlinks": true,
+                            "backlinkOpts": {
+                              "collapseAll": false,
+                              "extraContext": false,
+                              "sortOrder": "alphabetical",
+                              "showSearch": false,
+                              "searchQuery": "",
+                              "backlinkCollapsed": false,
+                              "unlinkedCollapsed": true
+                            }
+                          },
+                          "icon": "lucide-file",
+                          "title": "🐢2기화협력"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "800a9a9ad83ca29b",
+                    "type": "tabs",
+                    "children": [
+                      {
+                        "id": "e5c165578a019e6c",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "file": "🐅세련지/🐅3승수전문.md",
+                            "mode": "source",
+                            "source": false,
+                            "backlinks": true,
+                            "backlinkOpts": {
+                              "collapseAll": false,
+                              "extraContext": false,
+                              "sortOrder": "alphabetical",
+                              "showSearch": false,
+                              "searchQuery": "",
+                              "backlinkCollapsed": false,
+                              "unlinkedCollapsed": true
+                            }
+                          },
+                          "icon": "lucide-file",
+                          "title": "🐅3승수전문"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "cbe3ea7542a10460",
+                    "type": "tabs",
+                    "children": [
+                      {
+                        "id": "f9fe7f49dd04a340",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "file": "🐅세련지/🐅4승목평가.md",
+                            "mode": "source",
+                            "source": false,
+                            "backlinks": true,
+                            "backlinkOpts": {
+                              "collapseAll": false,
+                              "extraContext": false,
+                              "sortOrder": "alphabetical",
+                              "showSearch": false,
+                              "searchQuery": "",
+                              "backlinkCollapsed": false,
+                              "unlinkedCollapsed": true
+                            }
+                          },
+                          "icon": "lucide-file",
+                          "title": "🐅4승목평가"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "direction": "vertical"
+              },
+              {
+                "id": "29b7f1a46917abfd",
+                "type": "split",
+                "children": [
+                  {
+                    "id": "d2f4806de41fb0a1",
+                    "type": "tabs",
+                    "dimension": 25.145180023228804,
+                    "children": [
+                      {
+                        "id": "34f249378534270c",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "file": "🐙절절용/🐙5전금자본.md",
+                            "mode": "source",
+                            "source": false,
+                            "backlinks": true,
+                            "backlinkOpts": {
+                              "collapseAll": false,
+                              "extraContext": false,
+                              "sortOrder": "alphabetical",
+                              "showSearch": false,
+                              "searchQuery": "",
+                              "backlinkCollapsed": false,
+                              "unlinkedCollapsed": true
+                            }
+                          },
+                          "icon": "lucide-file",
+                          "title": "🐙5전금자본"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "6548e4a1d4cdda78",
+                    "type": "tabs",
+                    "dimension": 24.390243902439025,
+                    "children": [
+                      {
+                        "id": "8dd399016b18ec5c",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "file": "🐙절절용/🐙6전토플랫폼.md",
+                            "mode": "source",
+                            "source": false,
+                            "backlinks": true,
+                            "backlinkOpts": {
+                              "collapseAll": false,
+                              "extraContext": false,
+                              "sortOrder": "alphabetical",
+                              "showSearch": false,
+                              "searchQuery": "",
+                              "backlinkCollapsed": false,
+                              "unlinkedCollapsed": true
+                            }
+                          },
+                          "icon": "lucide-file",
+                          "title": "🐙6전토플랫폼"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "1f28e129535415b5",
+                    "type": "tabs",
+                    "dimension": 50.46457607433217,
+                    "children": [
+                      {
+                        "id": "8c34f8ba5f15bd36",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "file": "👾똘똘현/👾7결일복제.md",
+                            "mode": "source",
+                            "source": false,
+                            "backlinks": true,
+                            "backlinkOpts": {
+                              "collapseAll": false,
+                              "extraContext": false,
+                              "sortOrder": "alphabetical",
+                              "showSearch": false,
+                              "searchQuery": "",
+                              "backlinkCollapsed": false,
+                              "unlinkedCollapsed": true
+                            }
+                          },
+                          "icon": "lucide-file",
+                          "title": "👾7결일복제"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "direction": "vertical"
+              }
+            ],
+            "direction": "horizontal"
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "d202e938d18d679a",
+        "type": "split",
+        "children": [
+          {
+            "id": "a42c5bd223742ac1",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "6f013bdfca987c0d",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "byCreatedTime",
+                    "autoReveal": true
+                  },
+                  "icon": "lucide-folder-closed",
+                  "title": "Files"
+                }
+              },
+              {
+                "id": "3034aebb7f09d93c",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "\belacs",
+                    "matchingCase": false,
+                    "explainSearch": true,
+                    "collapseAll": true,
+                    "extraContext": true,
+                    "sortOrder": "byModifiedTime"
+                  },
+                  "icon": "lucide-search",
+                  "title": "Search"
+                }
+              },
+              {
+                "id": "dcb87b99d72912f5",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {},
+                  "icon": "lucide-bookmark",
+                  "title": "Bookmarks"
+                }
+              },
+              {
+                "id": "ab54dbfd12f51920",
+                "type": "leaf",
+                "state": {
+                  "type": "VIEW_TYPE_LONGFORM_EXPLORER",
+                  "state": {},
+                  "icon": "longform",
+                  "title": "Longform"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 200,
+        "collapsed": true
+      },
+      "right": {
+        "id": "d45901c627f066f3",
+        "type": "split",
+        "children": [
+          {
+            "id": "8e9c45232bd81bc2",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "7613e1d4c3d7d897",
+                "type": "leaf",
+                "state": {
+                  "type": "advanced-tables-toolbar",
+                  "state": {},
+                  "icon": "spreadsheet",
+                  "title": "Advanced Tables"
+                }
+              },
+              {
+                "id": "ec6b673ca227491a",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "🔴sun/thesis/🐢🐢promise_vendor/Karajan 🐢🐢promise vendor.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-coming-in",
+                  "title": "Backlinks for Karajan 🐢🐢promise vendor"
+                }
+              },
+              {
+                "id": "267440b1320349e4",
+                "type": "leaf",
+                "state": {
+                  "type": "git-view",
+                  "state": {},
+                  "icon": "git-pull-request",
+                  "title": "Source Control"
+                }
+              },
+              {
+                "id": "8aec24d334e309af",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "_ref/archive/revolution/🎍year/💭theorizing/ent_bootcamp/day1 david(entfinance).md",
+                    "followCursor": false,
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-list",
+                  "title": "Outline of day1 david(entfinance)"
+                }
+              },
+              {
+                "id": "75d68ae65042007d",
+                "type": "leaf",
+                "state": {
+                  "type": "calendar",
+                  "state": {},
+                  "icon": "calendar-with-checkmark",
+                  "title": "Calendar"
+                }
+              }
+            ],
+            "currentTab": 2
+          }
+        ],
+        "direction": "horizontal",
+        "width": 309.5,
+        "collapsed": true
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "bases:Create new base": false,
+          "obsidian-git:Open Git source control": false,
+          "daily-notes:Open today's daily note": false,
+          "switcher:Open quick switcher": false,
+          "graph:Open graph view": false,
+          "canvas:Create new canvas": false,
+          "command-palette:Open command palette": false,
+          "templates:Insert template": false,
+          "table-editor-obsidian:Advanced Tables Toolbar": false,
+          "templater-obsidian:Templater": false,
+          "obsidian-excalidraw-plugin:New drawing": false,
+          "publish:Publish changes...": false,
+          "obsidian-stille:Toggle Stille": false,
+          "workspaces:Manage workspace layouts": false,
+          "periodic-notes:Open today": false
+        }
+      },
+      "active": "8c34f8ba5f15bd36",
+      "mtime": "2025-10-03T12:43:56-04:00"
+    },
+    "전장": {
+      "main": {
+        "id": "74d72a1604ab774b",
+        "type": "split",
+        "children": [
+          {
+            "id": "bc152aa12448bf01",
+            "type": "split",
+            "children": [
+              {
+                "id": "45d2c6f85894ede7",
+                "type": "tabs",
+                "dimension": 50,
+                "children": [
+                  {
+                    "id": "eacf213448cea96b",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "1 어깨고통 잊는 몰입/사천리듬.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "사천리듬"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "c7bb336ff792b0b8",
+                "type": "tabs",
+                "dimension": 50,
+                "children": [
+                  {
+                    "id": "6b43c49978363ff0",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "3이해하고/한산리듬.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "한산리듬"
+                    }
+                  }
+                ]
+              }
+            ],
+            "direction": "horizontal"
+          },
+          {
+            "id": "1284fe0ee97b9495",
+            "type": "split",
+            "children": [
+              {
+                "id": "d79ffd9c4face732",
+                "type": "tabs",
+                "children": [
+                  {
+                    "id": "10bd0d9d27d6c1bf",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "3절절용/의지용현/🐢🐅🐙👾의용군현지스타일.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "🐢🐅🐙👾의용군현지스타일"
+                    }
+                  },
+                  {
+                    "id": "bac6c9ab778e2c53",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "4똘똘현/toltol/soul/데미안/대학정하/jungha_kim.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "jungha_kim"
+                    }
+                  },
+                  {
+                    "id": "40ba19c6ddc0dc5c",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "4똘똘현/toltol/soul/데미안/대학정하/이은정.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "이은정"
+                    }
+                  },
+                  {
+                    "id": "5a8e29821f5be727",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "3절절용/daily/06-16.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "06-16"
+                    }
+                  },
+                  {
+                    "id": "b1aa463e84429d06",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "4똘똘현/toltol/soul/데미안/고등수진/hsj.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "hsj"
+                    }
+                  },
+                  {
+                    "id": "255793e01fd44cb0",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "4똘똘현/toltol/soul/데미안/대학정하/이은정.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "이은정"
+                    }
+                  },
+                  {
+                    "id": "9056e747efb9ee20",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "4똘똘현/toltol/soul/데미안/대학정하/jungha_kim.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "jungha_kim"
+                    }
+                  },
+                  {
+                    "id": "590a342fc34393c4",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "3절절용/daily/10-08.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "10-08"
+                    }
+                  },
+                  {
+                    "id": "f6c40dbee2449bcd",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "3절절용/의지용현/의용과 현지의 사랑.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "의용과 현지의 사랑"
+                    }
+                  },
+                  {
+                    "id": "5dad4c27663e8a84",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "2 손발이 저절로/toltol/soul/⚡️atom(BE⬇️⬆️)/박경린.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "박경린"
+                    }
+                  },
+                  {
+                    "id": "4d1d6a08cf5ffd75",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "2 손발이 저절로/toltol/art/literature/🟣♻️alert dig minor/9거꾸로 강을 거슬러 오르는 저 힘찬 연어들처럼.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "9거꾸로 강을 거슬러 오르는 저 힘찬 연어들처럼"
+                    }
+                  },
+                  {
+                    "id": "90c0497930427573",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "4 믿는 사람들/명량화음.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "명량화음"
+                    }
+                  },
+                  {
+                    "id": "9aafd3a1b43ebca6",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "2 손발이 저절로/toltol/art/literature/🟣♻️alert dig minor/10 참나라니 참나.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "10 참나라니 참나"
+                    }
+                  },
+                  {
+                    "id": "da8ba09e7303a1ef",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "4 믿는 사람들/daily/10-09.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "10-09"
+                    }
+                  },
+                  {
+                    "id": "e07086825a0fbc6e",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "4 믿는 사람들/명량화음.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "명량화음"
+                    }
+                  }
+                ],
+                "currentTab": 14
+              },
+              {
+                "id": "b8389e93d75de8ef",
+                "type": "tabs",
+                "children": [
+                  {
+                    "id": "ae2649ea81745c94",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "2 손발이 저절로/노량멜로디.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "노량멜로디"
+                    }
+                  }
+                ]
+              }
+            ],
+            "direction": "horizontal"
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "d202e938d18d679a",
+        "type": "split",
+        "children": [
+          {
+            "id": "a42c5bd223742ac1",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "78eac07cfc625ddf",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical",
+                    "autoReveal": false
+                  },
+                  "icon": "lucide-folder-closed",
+                  "title": "Files"
+                }
+              },
+              {
+                "id": "3034aebb7f09d93c",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "",
+                    "matchingCase": true,
+                    "explainSearch": true,
+                    "collapseAll": true,
+                    "extraContext": true,
+                    "sortOrder": "byModifiedTime"
+                  },
+                  "icon": "lucide-search",
+                  "title": "Search"
+                }
+              },
+              {
+                "id": "dcb87b99d72912f5",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {},
+                  "icon": "lucide-bookmark",
+                  "title": "Bookmarks"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 200,
+        "collapsed": true
+      },
+      "right": {
+        "id": "d45901c627f066f3",
+        "type": "split",
+        "children": [
+          {
+            "id": "8e9c45232bd81bc2",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "7613e1d4c3d7d897",
+                "type": "leaf",
+                "state": {
+                  "type": "advanced-tables-toolbar",
+                  "state": {},
+                  "icon": "spreadsheet",
+                  "title": "Advanced Tables"
+                }
+              },
+              {
+                "id": "ec6b673ca227491a",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "3절절용/daily/10-08.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-coming-in",
+                  "title": "Backlinks for 10-08"
+                }
+              },
+              {
+                "id": "267440b1320349e4",
+                "type": "leaf",
+                "state": {
+                  "type": "git-view",
+                  "state": {},
+                  "icon": "git-pull-request",
+                  "title": "Source Control"
+                }
+              },
+              {
+                "id": "8aec24d334e309af",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "3이해하고/한산리듬.md",
+                    "followCursor": false,
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-list",
+                  "title": "Outline of 한산리듬"
+                }
+              },
+              {
+                "id": "75d68ae65042007d",
+                "type": "leaf",
+                "state": {
+                  "type": "calendar",
+                  "state": {},
+                  "icon": "calendar-with-checkmark",
+                  "title": "Calendar"
+                }
+              },
+              {
+                "id": "fabadf9de76ae4ff",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "3이해하고/한산리듬.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-going-out",
+                  "title": "Outgoing links from 한산리듬"
+                }
+              },
+              {
+                "id": "62ef0bf1de92bd98",
+                "type": "leaf",
+                "state": {
+                  "type": "all-properties",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-archive",
+                  "title": "All properties"
+                }
+              },
+              {
+                "id": "bd53819819ded85d",
+                "type": "leaf",
+                "state": {
+                  "type": "file-properties",
+                  "state": {
+                    "file": "3이해하고/한산리듬.md"
+                  },
+                  "icon": "lucide-info",
+                  "title": "File properties for 한산리듬"
+                }
+              }
+            ],
+            "currentTab": 7
+          }
+        ],
+        "direction": "horizontal",
+        "width": 285.5,
+        "collapsed": true
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "bases:Create new base": false,
+          "daily-notes:Open today's daily note": false,
+          "switcher:Open quick switcher": false,
+          "graph:Open graph view": false,
+          "canvas:Create new canvas": false,
+          "command-palette:Open command palette": false,
+          "templates:Insert template": false,
+          "table-editor-obsidian:Advanced Tables Toolbar": false,
+          "obsidian-git:Open Git source control": false,
+          "templater-obsidian:Templater": false,
+          "obsidian-excalidraw-plugin:New drawing": false,
+          "publish:Publish changes...": false,
+          "obsidian-stille:Toggle Stille": false,
+          "workspaces:Manage workspace layouts": false,
+          "periodic-notes:Open today": false,
+          "random-note:Open random note": false
+        }
+      },
+      "active": "6b43c49978363ff0",
+      "mtime": "2025-10-09T12:25:19-04:00"
+    },
+    "전장2": {
+      "main": {
+        "id": "74d72a1604ab774b",
+        "type": "split",
+        "children": [
+          {
+            "id": "bc152aa12448bf01",
+            "type": "split",
+            "children": [
+              {
+                "id": "45d2c6f85894ede7",
+                "type": "tabs",
+                "dimension": 50,
+                "children": [
+                  {
+                    "id": "eacf213448cea96b",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "1 어깨고통 잊는 몰입/🐢사천리듬.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "🐢사천리듬"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "c7bb336ff792b0b8",
+                "type": "tabs",
+                "dimension": 50,
+                "children": [
+                  {
+                    "id": "6b43c49978363ff0",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "3이해하고/🐅한산리듬.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "🐅한산리듬"
+                    }
+                  }
+                ]
+              }
+            ],
+            "direction": "horizontal"
+          },
+          {
+            "id": "1284fe0ee97b9495",
+            "type": "split",
+            "children": [
+              {
+                "id": "d79ffd9c4face732",
+                "type": "tabs",
+                "children": [
+                  {
+                    "id": "10bd0d9d27d6c1bf",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "3절절용/의지용현/🐢🐅🐙👾의용군현지스타일.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "🐢🐅🐙👾의용군현지스타일"
+                    }
+                  },
+                  {
+                    "id": "bac6c9ab778e2c53",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "4똘똘현/toltol/soul/데미안/대학정하/jungha_kim.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "jungha_kim"
+                    }
+                  },
+                  {
+                    "id": "40ba19c6ddc0dc5c",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "4똘똘현/toltol/soul/데미안/대학정하/이은정.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "이은정"
+                    }
+                  },
+                  {
+                    "id": "5a8e29821f5be727",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "3절절용/daily/06-16.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "06-16"
+                    }
+                  },
+                  {
+                    "id": "b1aa463e84429d06",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "4똘똘현/toltol/soul/데미안/고등수진/hsj.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "hsj"
+                    }
+                  },
+                  {
+                    "id": "255793e01fd44cb0",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "4똘똘현/toltol/soul/데미안/대학정하/이은정.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "이은정"
+                    }
+                  },
+                  {
+                    "id": "9056e747efb9ee20",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "4똘똘현/toltol/soul/데미안/대학정하/jungha_kim.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "jungha_kim"
+                    }
+                  },
+                  {
+                    "id": "590a342fc34393c4",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "3절절용/daily/10-08.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "10-08"
+                    }
+                  },
+                  {
+                    "id": "f6c40dbee2449bcd",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "3절절용/의지용현/의용과 현지의 사랑.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "의용과 현지의 사랑"
+                    }
+                  },
+                  {
+                    "id": "5dad4c27663e8a84",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "2 손발이 저절로/toltol/soul/⚡️atom(BE⬇️⬆️)/박경린.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "박경린"
+                    }
+                  },
+                  {
+                    "id": "4d1d6a08cf5ffd75",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "2 손발이 저절로/toltol/art/literature/🟣♻️alert dig minor/9거꾸로 강을 거슬러 오르는 저 힘찬 연어들처럼.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "9거꾸로 강을 거슬러 오르는 저 힘찬 연어들처럼"
+                    }
+                  },
+                  {
+                    "id": "90c0497930427573",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "4 믿는 사람들/명량화음.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "명량화음"
+                    }
+                  },
+                  {
+                    "id": "9aafd3a1b43ebca6",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "2 손발이 저절로/toltol/art/literature/🟣♻️alert dig minor/10 참나라니 참나.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "10 참나라니 참나"
+                    }
+                  },
+                  {
+                    "id": "da8ba09e7303a1ef",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "4 믿는 사람들/daily/10-09.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "10-09"
+                    }
+                  },
+                  {
+                    "id": "e07086825a0fbc6e",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "4 믿는 사람들/🐙명량화음.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "🐙명량화음"
+                    }
+                  }
+                ],
+                "currentTab": 14
+              },
+              {
+                "id": "b8389e93d75de8ef",
+                "type": "tabs",
+                "children": [
+                  {
+                    "id": "ae2649ea81745c94",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "2 손발이 저절로/👾노량멜로디.md",
+                        "mode": "source",
+                        "source": false,
+                        "backlinks": true,
+                        "backlinkOpts": {
+                          "collapseAll": false,
+                          "extraContext": false,
+                          "sortOrder": "alphabetical",
+                          "showSearch": false,
+                          "searchQuery": "",
+                          "backlinkCollapsed": false,
+                          "unlinkedCollapsed": true
+                        }
+                      },
+                      "icon": "lucide-file",
+                      "title": "👾노량멜로디"
+                    }
+                  }
+                ]
+              }
+            ],
+            "direction": "horizontal"
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "d202e938d18d679a",
+        "type": "split",
+        "children": [
+          {
+            "id": "a42c5bd223742ac1",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "78eac07cfc625ddf",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical",
+                    "autoReveal": false
+                  },
+                  "icon": "lucide-folder-closed",
+                  "title": "Files"
+                }
+              },
+              {
+                "id": "3034aebb7f09d93c",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "",
+                    "matchingCase": true,
+                    "explainSearch": true,
+                    "collapseAll": true,
+                    "extraContext": true,
+                    "sortOrder": "byModifiedTime"
+                  },
+                  "icon": "lucide-search",
+                  "title": "Search"
+                }
+              },
+              {
+                "id": "dcb87b99d72912f5",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {},
+                  "icon": "lucide-bookmark",
+                  "title": "Bookmarks"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 200,
+        "collapsed": true
+      },
+      "right": {
+        "id": "d45901c627f066f3",
+        "type": "split",
+        "children": [
+          {
+            "id": "8e9c45232bd81bc2",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "7613e1d4c3d7d897",
+                "type": "leaf",
+                "state": {
+                  "type": "advanced-tables-toolbar",
+                  "state": {},
+                  "icon": "spreadsheet",
+                  "title": "Advanced Tables"
+                }
+              },
+              {
+                "id": "ec6b673ca227491a",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "3절절용/daily/10-08.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-coming-in",
+                  "title": "Backlinks for 10-08"
+                }
+              },
+              {
+                "id": "267440b1320349e4",
+                "type": "leaf",
+                "state": {
+                  "type": "git-view",
+                  "state": {},
+                  "icon": "git-pull-request",
+                  "title": "Source Control"
+                }
+              },
+              {
+                "id": "8aec24d334e309af",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "3이해하고/한산리듬.md",
+                    "followCursor": false,
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-list",
+                  "title": "Outline of 한산리듬"
+                }
+              },
+              {
+                "id": "75d68ae65042007d",
+                "type": "leaf",
+                "state": {
+                  "type": "calendar",
+                  "state": {},
+                  "icon": "calendar-with-checkmark",
+                  "title": "Calendar"
+                }
+              },
+              {
+                "id": "fabadf9de76ae4ff",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "3이해하고/한산리듬.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-going-out",
+                  "title": "Outgoing links from 한산리듬"
+                }
+              },
+              {
+                "id": "62ef0bf1de92bd98",
+                "type": "leaf",
+                "state": {
+                  "type": "all-properties",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-archive",
+                  "title": "All properties"
+                }
+              },
+              {
+                "id": "bd53819819ded85d",
+                "type": "leaf",
+                "state": {
+                  "type": "file-properties",
+                  "state": {
+                    "file": "3이해하고/한산리듬.md"
+                  },
+                  "icon": "lucide-info",
+                  "title": "File properties for 한산리듬"
+                }
+              }
+            ],
+            "currentTab": 7
+          }
+        ],
+        "direction": "horizontal",
+        "width": 285.5,
+        "collapsed": true
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "bases:Create new base": false,
+          "daily-notes:Open today's daily note": false,
+          "switcher:Open quick switcher": false,
+          "graph:Open graph view": false,
+          "canvas:Create new canvas": false,
+          "command-palette:Open command palette": false,
+          "templates:Insert template": false,
+          "table-editor-obsidian:Advanced Tables Toolbar": false,
+          "obsidian-git:Open Git source control": false,
+          "templater-obsidian:Templater": false,
+          "obsidian-excalidraw-plugin:New drawing": false,
+          "publish:Publish changes...": false,
+          "obsidian-stille:Toggle Stille": false,
+          "workspaces:Manage workspace layouts": false,
+          "periodic-notes:Open today": false,
+          "random-note:Open random note": false
+        }
+      },
+      "active": "ae2649ea81745c94",
+      "mtime": "2025-10-09T17:20:31-04:00"
+    }
+  },
+  "active": "전장2"
+}

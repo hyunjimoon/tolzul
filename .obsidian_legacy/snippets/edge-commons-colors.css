@@ -1,0 +1,42 @@
+/* Edge Commons Animal Colors */
+
+/* Ali - Purple/Violet (Revolutionary) */
+.tag[href="#👾ali"] {
+    background-color: #8B00FF;
+    color: white;
+}
+
+/* Dig - Green (Deep Analysis) */
+.tag[href="#🐢dig"] {
+    background-color: #228B22;
+    color: white;
+}
+
+/* Gen - Orange (Synthesis) */
+.tag[href="#🐅gen"] {
+    background-color: #FF8C00;
+    color: white;
+}
+
+/* Cal - Red (Execution) */
+.tag[href="#🐙cal"] {
+    background-color: #DC143C;
+    color: white;
+}
+
+/* Graph Node Colors */
+.graph-view.color-fill-tag[data-tag="#👾ali"] {
+    fill: #8B00FF;
+}
+
+.graph-view.color-fill-tag[data-tag="#🐢dig"] {
+    fill: #228B22;
+}
+
+.graph-view.color-fill-tag[data-tag="#🐅gen"] {
+    fill: #FF8C00;
+}
+
+.graph-view.color-fill-tag[data-tag="#🐙cal"] {
+    fill: #DC143C;
+}

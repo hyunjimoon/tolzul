@@ -1,0 +1,22 @@
+{
+  "readableLineLength": false,
+  "alwaysUpdateLinks": true,
+  "promptDelete": false,
+  "fileSortOrder": "byModifiedTime",
+  "attachmentFolderPath": "x/_ref",
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 93
+  },
+  "newFileLocation": "current",
+  "newLinkFormat": "shortest",
+  "livePreview": true,
+  "userIgnoreFilters": [
+    "x/"
+  ],
+  "showLineNumber": true,
+  "showInlineTitle": true
+}

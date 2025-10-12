@@ -1,0 +1,51 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": true,
+  "showOrphans": false,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "tag:👾",
+      "color": {
+        "a": 1,
+        "rgb": 7885536
+      }
+    },
+    {
+      "query": "tag:🐢",
+      "color": {
+        "a": 1,
+        "rgb": 2128219
+      }
+    },
+    {
+      "query": "tag:🐅",
+      "color": {
+        "a": 1,
+        "rgb": 16744448
+      }
+    },
+    {
+      "query": "tag:🐙",
+      "color": {
+        "a": 1,
+        "rgb": 15998762
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.5,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 0.18585054289628564,
+  "close": false
+}

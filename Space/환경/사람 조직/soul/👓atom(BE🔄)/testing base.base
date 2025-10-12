@@ -1,0 +1,8 @@
+views:
+  - type: table
+    name: Table
+  - type: cards
+    name: View
+    groupBy:
+      property: file.size
+      direction: ASC

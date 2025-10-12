@@ -1,0 +1,120 @@
+{
+  "main": {
+    "id": "74d72a1604ab774b",
+    "type": "split",
+    "children": [
+      {
+        "id": "fa3d690da2109497",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "MoonVolve🌀/1NewMoon🌑/draws2data2draws_AttractMode/def(draws2data2draws_AttractMode).md",
+            "mode": "source",
+            "backlinks": true,
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d202e938d18d679a",
+    "type": "split",
+    "children": [
+      {
+        "id": "735f619c40dd0f2c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6f013bdfca987c0d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "3034aebb7f09d93c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "stan workflow talk",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": true,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3b47cff9c3abc23d",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 351.5121879577637
+  },
+  "right": {
+    "id": "d45901c627f066f3",
+    "type": "split",
+    "children": [
+      {
+        "id": "8e9c45232bd81bc2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7613e1d4c3d7d897",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "ec6b673ca227491a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "MoonVolve🌀/1NewMoon🌑/draws2data2draws_AttractMode/def(draws2data2draws_AttractMode).md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "6f013bdfca987c0d",
+  "lastOpenFiles": [
+    "MoonVolve🌀/1NewMoon🌑/durable_dominance/README.md",
+    "MoonVolve🌀/6MoonDoc/Legends of the fall.md",
+    "MoonVolve🌀/6MoonDoc/Moon21_Workflow.md",
+    "MoonVolve🌀/6MoonDoc/iter(lift, project).md",
+    "👁🧠🌲🏭 Digital Twin/deConv(Digital Twin)/🏭 Generator/eg(Generator)/Computational Bayesian Statistics/def(Prior).md",
+    "MoonVolve🌀/4Gibbous/Untitled.md",
+    "BayesSD/README.md",
+    "BayesSD/SeasonalSeminar/2022Fall/OneTimeSeminar/VickyYang.md",
+    "BayesSD/SeasonalSeminar/2022Fall/OneTimeSeminar/DerekBrown.md",
+    "BayesSD/ContinuousCode/Stanify readme.md"
+  ]
+}

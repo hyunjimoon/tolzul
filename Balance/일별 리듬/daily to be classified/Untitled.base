@@ -1,0 +1,10 @@
+filters:
+  and:
+    - '!note["excalidraw-plugin"].isEmpty()'
+views:
+  - type: table
+    name: Table
+  - type: cards
+    name: 🖼️📜research poster
+  - type: table
+    name: View
