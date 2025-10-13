@@ -1,0 +1,244 @@
+<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="1000" fill="#f8f9fa"/>
+  
+  <!-- Title Section -->
+  <rect x="20" y="20" width="760" height="80" fill="#1a1a2e" rx="10"/>
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="white">Optimal Ignorance: The Paradox of Earned Precision</text>
+  <text x="400" y="80" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#ffd700">τ* = max{0, √(V/4i) - 1}</text>
+  
+  <!-- Grid Layout 2x2 -->
+  <!-- 🐢 낭만거북: Introduction (Top Left) -->
+  <g transform="translate(20,120)">
+    <rect width="370" height="420" fill="#e8f5e9" stroke="#4caf50" stroke-width="3" rx="10"/>
+    <text x="20" y="35" font-size="24" fill="#2e7d32">🐢 낭만거북: 패러독스</text>
+    
+    <!-- Tesla vs Better Place Visual -->
+    <g transform="translate(20,60)">
+      <!-- Timeline -->
+      <line x1="30" y1="150" x2="320" y2="150" stroke="#666" stroke-width="2"/>
+      <text x="30" y="140" font-size="12" fill="#666">2008</text>
+      <text x="320" y="140" font-size="12" fill="#666">2025</text>
+      
+      <!-- Tesla Path -->
+      <path d="M 30 150 Q 100 140, 180 100, 320 20" stroke="#4caf50" stroke-width="3" fill="none"/>
+      <circle cx="30" cy="150" r="5" fill="#4caf50"/>
+      <text x="30" y="170" font-size="14" font-weight="bold" fill="#4caf50">Tesla</text>
+      <text x="250" y="20" font-size="12" fill="#4caf50">$1T 시가총액</text>
+      
+      <!-- Better Place Path -->
+      <path d="M 30 150 Q 100 160, 180 180, 250 250" stroke="#f44336" stroke-width="3" fill="none"/>
+      <circle cx="30" cy="150" r="5" fill="#f44336"/>
+      <text x="30" y="190" font-size="14" font-weight="bold" fill="#f44336">Better Place</text>
+      <text x="200" y="250" font-size="12" fill="#f44336">2013 파산</text>
+    </g>
+    
+    <!-- Core Question -->
+    <rect x="20" y="320" width="330" height="80" fill="#fff" stroke="#4caf50" stroke-width="2" rx="5"/>
+    <text x="185" y="345" font-size="14" font-weight="bold" text-anchor="middle" fill="#1a1a2e">핵심 질문:</text>
+    <text x="185" y="365" font-size="13" text-anchor="middle" fill="#333">왜 성공 확률을 외생변수로 취급하는가?</text>
+    <text x="185" y="385" font-size="13" text-anchor="middle" fill="#333">벤처는 스스로 운명을 개척하는 주체다!</text>
+    
+    <!-- Literature Links -->
+    <text x="20" y="430" font-size="12" font-weight="bold" fill="#666">🧱 기존 문헌의 한계:</text>
+    <text x="20" y="450" font-size="11" fill="#666">• Shane (2003): 성공 확률 = 외부 환경 요인</text>
+    <text x="20" y="470" font-size="11" fill="#666">• Kerr et al. (2014): 벤처 = 복권</text>
+    <text x="20" y="490" font-size="11" fill="#666">• Gans (2020): 기술 선택의 딜레마</text>
+    <text x="20" y="510" font-size="11" fill="#f44336">→ 모두 학습 능력의 변화를 간과!</text>
+  </g>
+  
+  <!-- 🐅 세련호랑: Theory (Top Right) -->
+  <g transform="translate(410,120)">
+    <rect width="370" height="420" fill="#fff3e0" stroke="#ff9800" stroke-width="3" rx="10"/>
+    <text x="20" y="35" font-size="24" fill="#e65100">🐅 세련호랑: 3층 이론</text>
+    
+    <!-- 3-Floor Building Visual -->
+    <g transform="translate(50,60)">
+      <!-- Building Structure -->
+      <rect x="0" y="200" width="270" height="80" fill="#ffecb3" stroke="#ff9800" stroke-width="2"/>
+      <rect x="0" y="110" width="270" height="80" fill="#ffe0b2" stroke="#ff9800" stroke-width="2"/>
+      <rect x="0" y="20" width="270" height="80" fill="#ffd54f" stroke="#ff9800" stroke-width="2"/>
+      
+      <!-- Floor Labels -->
+      <text x="10" y="40" font-size="14" font-weight="bold" fill="#333">3F: Application</text>
+      <text x="10" y="60" font-size="11" fill="#666">• Scaling Tools (Fine)</text>
+      <text x="10" y="75" font-size="11" fill="#666">• Decision Use Cases</text>
+      <text x="10" y="90" font-size="11" fill="#666">• τ 조절 전략</text>
+      
+      <text x="10" y="130" font-size="14" font-weight="bold" fill="#333">2F: Synthesis</text>
+      <text x="10" y="150" font-size="11" fill="#666">• Behavioral ↔ Planning</text>
+      <text x="10" y="165" font-size="11" fill="#666">• Individual-Org-Market</text>
+      <text x="10" y="180" font-size="11" fill="#666">• τ 스펙트럼 통합</text>
+      
+      <text x="10" y="220" font-size="14" font-weight="bold" fill="#333">1F: Foundation</text>
+      <text x="10" y="240" font-size="11" fill="#666">• Bayesian Model</text>
+      <text x="10" y="255" font-size="11" fill="#666">• Beta-Binomial</text>
+      <text x="10" y="270" font-size="11" fill="#666">• τ* = √(V/4i) - 1</text>
+    </g>
+    
+    <!-- Key Formula -->
+    <rect x="20" y="360" width="330" height="60" fill="#fff" stroke="#ff9800" stroke-width="2" rx="5"/>
+    <text x="185" y="385" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">최적 정밀도 공식:</text>
+    <text x="185" y="405" font-size="16" text-anchor="middle" fill="#333" font-family="monospace">τ* = max{0, √(V/4i) - 1}</text>
+    
+    <!-- Legend -->
+    <text x="20" y="450" font-size="11" fill="#666">V = 벤처 가치 (Value)</text>
+    <text x="20" y="470" font-size="11" fill="#666">i = 정보 통합 비용 (Integration cost)</text>
+    <text x="20" y="490" font-size="11" fill="#666">τ = 약속의 정밀성 (Precision)</text>
+    <text x="20" y="510" font-size="11" fill="#e65100">→ 가치↑ 비용↓ 일 때만 정밀해져라!</text>
+  </g>
+  
+  <!-- 🐙 절절문어: Cases (Bottom Left) -->
+  <g transform="translate(20,560)">
+    <rect width="370" height="420" fill="#ffebee" stroke="#f44336" stroke-width="3" rx="10"/>
+    <text x="20" y="35" font-size="24" fill="#c62828">🐙 절절문어: 실전 증거</text>
+    
+    <!-- Tesla Strategy Evolution -->
+    <g transform="translate(20,60)">
+      <text x="0" y="20" font-size="14" font-weight="bold" fill="#4caf50">Tesla의 진화 전략</text>
+      
+      <!-- Phase 1 -->
+      <rect x="0" y="30" width="100" height="60" fill="#c8e6c9" stroke="#4caf50" stroke-width="2" rx="5"/>
+      <text x="50" y="50" font-size="11" text-anchor="middle" fill="#333">Phase 1</text>
+      <text x="50" y="65" font-size="10" text-anchor="middle" fill="#333">Roadster</text>
+      <text x="50" y="80" font-size="10" text-anchor="middle" fill="#333">τ ≈ 0</text>
+      
+      <!-- Arrow -->
+      <path d="M 100 60 L 115 60" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+      
+      <!-- Phase 2 -->
+      <rect x="115" y="30" width="100" height="60" fill="#a5d6a7" stroke="#4caf50" stroke-width="2" rx="5"/>
+      <text x="165" y="50" font-size="11" text-anchor="middle" fill="#333">Phase 2</text>
+      <text x="165" y="65" font-size="10" text-anchor="middle" fill="#333">Model S/X</text>
+      <text x="165" y="80" font-size="10" text-anchor="middle" fill="#333">τ ↑ (V증명)</text>
+      
+      <!-- Arrow -->
+      <path d="M 215 60 L 230 60" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+      
+      <!-- Phase 3 -->
+      <rect x="230" y="30" width="100" height="60" fill="#66bb6a" stroke="#4caf50" stroke-width="2" rx="5"/>
+      <text x="280" y="50" font-size="11" text-anchor="middle" fill="#fff">Phase 3</text>
+      <text x="280" y="65" font-size="10" text-anchor="middle" fill="#fff">Model 3/Y</text>
+      <text x="280" y="80" font-size="10" text-anchor="middle" fill="#fff">τ* 달성</text>
+    </g>
+    
+    <!-- Better Place Failure -->
+    <g transform="translate(20,170)">
+      <text x="0" y="20" font-size="14" font-weight="bold" fill="#f44336">Better Place의 실패</text>
+      
+      <!-- High Precision Trap -->
+      <rect x="0" y="30" width="330" height="50" fill="#ffcdd2" stroke="#f44336" stroke-width="2" rx="5"/>
+      <text x="165" y="50" font-size="12" text-anchor="middle" fill="#333">"정확히 5분 안에 배터리 교체"</text>
+      <text x="165" y="70" font-size="11" text-anchor="middle" fill="#c62828">τ = ∞ → 학습 능력 제로 → 파산</text>
+    </g>
+    
+    <!-- Data Table -->
+    <g transform="translate(20,270)">
+      <rect x="0" y="0" width="330" height="100" fill="#fff" stroke="#666" stroke-width="1"/>
+      <!-- Headers -->
+      <line x1="110" y1="0" x2="110" y2="100" stroke="#666" stroke-width="1"/>
+      <line x1="220" y1="0" x2="220" y2="100" stroke="#666" stroke-width="1"/>
+      <line x1="0" y1="25" x2="330" y2="25" stroke="#666" stroke-width="1"/>
+      
+      <text x="55" y="18" font-size="11" font-weight="bold" text-anchor="middle" fill="#333">지표</text>
+      <text x="165" y="18" font-size="11" font-weight="bold" text-anchor="middle" fill="#4caf50">Tesla</text>
+      <text x="275" y="18" font-size="11" font-weight="bold" text-anchor="middle" fill="#f44336">Better Place</text>
+      
+      <!-- Row 1 -->
+      <text x="5" y="45" font-size="10" fill="#333">초기 약속</text>
+      <text x="115" y="45" font-size="10" fill="#333">"전기차 가능"</text>
+      <text x="225" y="45" font-size="10" fill="#333">"5분 교체"</text>
+      
+      <!-- Row 2 -->
+      <line x1="0" y1="50" x2="330" y2="50" stroke="#eee" stroke-width="1"/>
+      <text x="5" y="70" font-size="10" fill="#333">V 증명</text>
+      <text x="115" y="70" font-size="10" fill="#333">단계적 확장</text>
+      <text x="225" y="70" font-size="10" fill="#333">초기 실패</text>
+      
+      <!-- Row 3 -->
+      <line x1="0" y1="75" x2="330" y2="75" stroke="#eee" stroke-width="1"/>
+      <text x="5" y="95" font-size="10" fill="#333">i 감소</text>
+      <text x="115" y="95" font-size="10" fill="#333">지속적 개선</text>
+      <text x="225" y="95" font-size="10" fill="#333">비용 폭증</text>
+    </g>
+    
+    <!-- Tools Used -->
+    <text x="20" y="400" font-size="12" font-weight="bold" fill="#666">🔧 Tesla가 사용한 도구:</text>
+    <text x="20" y="420" font-size="11" fill="#666">• Segment: 프리미엄 → 대중 시장</text>
+    <text x="20" y="440" font-size="11" fill="#666">• Processify: Production Hell 극복</text>
+    <text x="20" y="460" font-size="11" fill="#666">• Acculturate: 비전 공유</text>
+  </g>
+  
+  <!-- 👾 똘똘외계: Conclusion (Bottom Right) -->
+  <g transform="translate(410,560)">
+    <rect width="370" height="420" fill="#f3e5f5" stroke="#9c27b0" stroke-width="3" rx="10"/>
+    <text x="20" y="35" font-size="24" fill="#6a1b9a">👾 똘똘외계: 통합 지혜</text>
+    
+    <!-- For Scholars -->
+    <g transform="translate(20,60)">
+      <rect x="0" y="0" width="160" height="140" fill="#e1bee7" stroke="#9c27b0" stroke-width="2" rx="5"/>
+      <text x="80" y="20" font-size="14" font-weight="bold" text-anchor="middle" fill="#4a148c">학자를 위한 함의</text>
+      
+      <text x="10" y="40" font-size="11" fill="#333">1. 행동주의-계획주의</text>
+      <text x="20" y="55" font-size="10" fill="#666">→ τ 스펙트럼 통합</text>
+      
+      <text x="10" y="75" font-size="11" fill="#333">2. 미시-거시 연결</text>
+      <text x="20" y="90" font-size="10" fill="#666">→ Founder-Market</text>
+      
+      <text x="10" y="110" font-size="11" fill="#333">3. 새 연구 방향</text>
+      <text x="20" y="125" font-size="10" fill="#666">→ 동적 τ 최적화</text>
+    </g>
+    
+    <!-- For Practitioners -->
+    <g transform="translate(190,60)">
+      <rect x="0" y="0" width="160" height="140" fill="#ce93d8" stroke="#9c27b0" stroke-width="2" rx="5"/>
+      <text x="80" y="20" font-size="14" font-weight="bold" text-anchor="middle" fill="#4a148c">실무자를 위한 전략</text>
+      
+      <text x="10" y="40" font-size="11" fill="#333">1. Precision Trap 회피</text>
+      <text x="20" y="55" font-size="10" fill="#fff">→ 검증 없는 약속 X</text>
+      
+      <text x="10" y="75" font-size="11" fill="#333">2. Earned Precision</text>
+      <text x="20" y="90" font-size="10" fill="#fff">→ V↑ i↓ 후 τ↑</text>
+      
+      <text x="10" y="110" font-size="11" fill="#333">3. 의사결정 원칙</text>
+      <text x="20" y="125" font-size="10" fill="#fff">→ τ* 공식 활용</text>
+    </g>
+    
+    <!-- Core Insight -->
+    <rect x="20" y="220" width="330" height="80" fill="#fff" stroke="#9c27b0" stroke-width="2" rx="5"/>
+    <text x="185" y="245" font-size="14" font-weight="bold" text-anchor="middle" fill="#6a1b9a">핵심 통찰</text>
+    <text x="185" y="265" font-size="12" text-anchor="middle" fill="#333">성공은 불확실성을 피하는 것이 아니라</text>
+    <text x="185" y="285" font-size="12" text-anchor="middle" fill="#333">'획득된 정밀성'으로 관리하는 능력이다</text>
+    
+    <!-- Visual Metaphor -->
+    <g transform="translate(100,310)">
+      <!-- From Fake to Make -->
+      <circle cx="30" cy="30" r="25" fill="#ffcdd2" stroke="#f44336" stroke-width="2"/>
+      <text x="30" y="35" font-size="11" text-anchor="middle" fill="#333">Fake it</text>
+      
+      <path d="M 60 30 L 100 30" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+      <text x="80" y="25" font-size="10" text-anchor="middle" fill="#666">❌</text>
+      
+      <circle cx="130" cy="30" r="25" fill="#c8e6c9" stroke="#4caf50" stroke-width="2"/>
+      <text x="130" y="35" font-size="11" text-anchor="middle" fill="#333">Earn it</text>
+      
+      <text x="80" y="70" font-size="11" text-anchor="middle" fill="#666">'될 때까지 속이기' → '자격 증명하기'</text>
+    </g>
+    
+    <!-- Call to Action -->
+    <text x="20" y="410" font-size="12" font-weight="bold" fill="#666">📚 Must Read:</text>
+    <text x="20" y="430" font-size="11" fill="#666">• March (1991): Exploration vs Exploitation</text>
+    <text x="20" y="450" font-size="11" fill="#666">• Fine (1998): Clockspeed</text>
+    <text x="20" y="470" font-size="11" fill="#666">• Gans et al. (2019): Entrepreneurial Strategy</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+  
+  <!-- Footer -->
+  <text x="400" y="990" font-size="10" text-anchor="middle" fill="#666">© 2025 탐의용 & 문현지 | Playful Rigor in Academic Synthesis</text>
+</svg>

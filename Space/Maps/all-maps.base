@@ -1,0 +1,75 @@
+views:
+  - type: table
+    name: All Maps
+    filters:
+      and:
+        - map == true
+    sort:
+      - property: rank
+        direction: DESC
+    columns:
+      - property: file
+        label: Map
+      - property: rank
+        label: Rank
+      - property: file.inlinks
+        label: Inlinks
+        function: count
+      - property: file.outlinks
+        label: Outlinks
+        function: count
+      - property: file.folder
+        label: Folder
+  - type: table
+    name: High Priority
+    filters:
+      and:
+        - map == true
+        - rank > 3
+    sort:
+      - property: rank
+        direction: DESC
+    columns:
+      - property: file
+        label: Map
+      - property: rank
+        label: Rank
+      - property: file.inlinks
+        label: Links
+        function: count
+  - type: table
+    name: Most Connected
+    filters:
+      and:
+        - map == true
+    sort:
+      - property: file.inlinks
+        direction: DESC
+    limit: 25
+    columns:
+      - property: file
+        label: Note
+      - property: file.inlinks
+        label: Inlinks
+        function: count
+      - property: file.outlinks
+        label: Outlinks
+        function: count
+      - property: rank
+        label: Rank
+  - type: table
+    name: Recent Maps
+    filters:
+      and:
+        - map == true
+    sort:
+      - property: file.mtime
+        direction: DESC
+    limit: 10
+    columns:
+      - property: file
+        label: Map
+      - property: file.mtime
+        label: Modified
+      - property: rank
+        label: Rank

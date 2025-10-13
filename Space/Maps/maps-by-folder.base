@@ -1,0 +1,68 @@
+views:
+  - type: table
+    name: Pattern
+    filters:
+      and:
+        - map == true
+        - file.folder.contains("Pattern")
+    sort:
+      - property: rank
+        direction: DESC
+    columns:
+      - property: file
+        label: Map
+      - property: rank
+        label: Rank
+      - property: file.folder
+        label: Subfolder
+  - type: table
+    name: Arts
+    filters:
+      and:
+        - map == true
+        - file.folder.contains("Arts")
+    sort:
+      - property: rank
+        direction: DESC
+    columns:
+      - property: file
+        label: Map
+      - property: rank
+        label: Rank
+      - property: file.folder
+        label: Subfolder
+  - type: table
+    name: People
+    filters:
+      and:
+        - map == true
+        - file.folder.contains("People")
+    sort:
+      - property: rank
+        direction: DESC
+    columns:
+      - property: file
+        label: Map
+      - property: rank
+        label: Rank
+      - property: file.folder
+        label: Subfolder
+  - type: table
+    name: All Folders
+    filters:
+      and:
+        - map == true
+    sort:
+      - property: file.folder
+        direction: ASC
+      - property: rank
+        direction: DESC
+    columns:
+      - property: file
+        label: Map
+      - property: file.folder
+        label: Folder
+      - property: rank
+        label: Rank
+    group:
+      - property: file.folder

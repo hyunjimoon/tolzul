@@ -1,0 +1,65 @@
+views:
+  - type: table
+    name: By Inlinks
+    filters:
+      and:
+        - map == true
+    sort:
+      - property: file.inlinks
+        direction: DESC
+    limit: 50
+    columns:
+      - property: file
+        label: Map
+      - property: file.inlinks
+        label: Inlinks
+        function: count
+      - property: file.outlinks
+        label: Outlinks
+        function: count
+      - property: rank
+        label: Rank
+      - property: file.folder
+        label: Folder
+  - type: table
+    name: By Outlinks
+    filters:
+      and:
+        - map == true
+    sort:
+      - property: file.outlinks
+        direction: DESC
+    limit: 50
+    columns:
+      - property: file
+        label: Map
+      - property: file.outlinks
+        label: Outlinks
+        function: count
+      - property: file.inlinks
+        label: Inlinks
+        function: count
+      - property: rank
+        label: Rank
+      - property: file.folder
+        label: Folder
+  - type: table
+    name: Most Connected
+    filters:
+      and:
+        - map == true
+    sort:
+      - property: file.inlinks
+        direction: DESC
+    limit: 30
+    columns:
+      - property: file
+        label: Map
+      - property: file.inlinks
+        label: In
+        function: count
+      - property: file.outlinks
+        label: Out
+        function: count
+      - property: rank
+        label: Rank

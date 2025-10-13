@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600">
+  <!-- Title -->
+  <text x="400" y="40" font-size="24" text-anchor="middle" fill="#333">Comparison of Evolution Patterns</text>
+  
+  <!-- Functional Shift -->
+  <g transform="translate(100,100)">
+    <text x="150" y="0" font-size="20" fill="#333">🦅 Functional Shift Pattern</text>
+    
+    <!-- Observable -->
+    <circle cx="150" cy="100" r="30" fill="#87CEEB"/>
+    <text x="150" y="105" text-anchor="middle" fill="#333">👁️</text>
+    
+    <!-- Theories -->
+    <circle cx="50" cy="200" r="30" fill="#90EE90"/>
+    <text x="50" y="205" text-anchor="middle" fill="#333">🧠₁</text>
+    
+    <circle cx="250" cy="200" r="30" fill="#90EE90"/>
+    <text x="250" y="205" text-anchor="middle" fill="#333">🧠₂</text>
+    
+    <!-- Connections -->
+    <path d="M150,130 L50,170" stroke="#333" fill="none"/>
+    <path d="M150,130 L250,170" stroke="#333" fill="none"/>
+    
+    <!-- Description -->
+    <text x="150" y="280" text-anchor="middle" font-size="14" fill="#666">
+      Single observable leads to multiple theories
+    </text>
+  </g>
+  
+  <!-- Co-option -->
+  <g transform="translate(550,100)">
+    <text x="150" y="0" font-size="20" fill="#333">🐠 Co-option Pattern</text>
+    
+    <!-- Observables -->
+    <circle cx="50" cy="100" r="30" fill="#87CEEB"/>
+    <text x="50" y="105" text-anchor="middle" fill="#333">👁️₁</text>
+    
+    <circle cx="250" cy="100" r="30" fill="#87CEEB"/>
+    <text x="250" y="105" text-anchor="middle" fill="#333">👁️₂</text>
+    
+    <!-- Theories -->
+    <circle cx="50" cy="200" r="30" fill="#90EE90"/>
+    <text x="50" y="205" text-anchor="middle" fill="#333">🧠₁</text>
+    
+    <circle cx="250" cy="200" r="30" fill="#90EE90"/>
+    <text x="250" y="205" text-anchor="middle" fill="#333">🧠₂</text>
+    
+    <!-- Connections -->
+    <path d="M50,130 L50,170" stroke="#333" fill="none"/>
+    <path d="M250,130 L250,170" stroke="#333" fill="none"/>
+    <path d="M50,130 L250,170" stroke="#333" stroke-dasharray="5,5" fill="none"/>
+    <path d="M250,130 L50,170" stroke="#333" stroke-dasharray="5,5" fill="none"/>
+    
+    <!-- Description -->
+    <text x="150" y="280" text-anchor="middle" font-size="14" fill="#666">
+      Multiple observables cross-connect to multiple theories
+    </text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(200,450)">
+    <text x="300" y="-20" font-size="18" text-anchor="middle" fill="#333">Legend</text>
+    
+    <!-- Legend items -->
+    <circle cx="30" cy="30" r="15" fill="#87CEEB"/>
+    <text x="60" y="35">Observable (Prior Knowledge)</text>
+    
+    <circle cx="30" cy="70" r="15" fill="#90EE90"/>
+    <text x="60" y="75">Theory (Perceptual Program)</text>
+    
+    <line x1="300" y1="30" x2="350" y2="30" stroke="#333" fill="none"/>
+    <text x="370" y="35">Direct Connection</text>
+    
+    <line x1="300" y1="70" x2="350" y2="70" stroke="#333" stroke-dasharray="5,5" fill="none"/>
+    <text x="370" y="75">Cross-Connection</text>
+  </g>
+  
+  <!-- Examples -->
+  <g transform="translate(100,370)">
+    <text x="400" y="0" font-size="16" text-anchor="middle" fill="#666">
+      Example: Tesla Powerwall (Functional Shift) vs BYD Blade Battery (Co-option)
+    </text>
+  </g>
+</svg>
