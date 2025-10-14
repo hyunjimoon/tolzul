@@ -1,0 +1,16 @@
+views:
+  - type: table
+    name: Balance Rhythms
+    filters:
+      and:
+        - file.folder.contains("Balance")
+        - '!file.folder.endsWith("Balance")'
+    sort:
+      - property: file.name
+        direction: ASC
+    limit: 10
+    columns:
+      - property: file
+        label: Rhythm
+      - property: file.folder
+        label: Path

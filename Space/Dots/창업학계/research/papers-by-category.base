@@ -1,0 +1,69 @@
+views:
+  - type: table
+    name: Cognitive Science
+    filters:
+      and:
+        - collection == "Papers"
+        - category == "👾"
+    sort:
+      - property: rank
+        direction: DESC
+    limit: 10
+    columns:
+      - property: file
+        label: 논문
+      - property: rank
+        label: ★
+      - property: year
+        label: 년도
+  - type: table
+    name: Operations
+    filters:
+      and:
+        - collection == "Papers"
+        - category == "🐙"
+    sort:
+      - property: rank
+        direction: DESC
+    limit: 10
+    columns:
+      - property: file
+        label: 논문
+      - property: rank
+        label: ★
+      - property: year
+        label: 년도
+  - type: table
+    name: Entrepreneurship Theory
+    filters:
+      and:
+        - collection == "Papers"
+        - category == "🐢"
+    sort:
+      - property: rank
+        direction: DESC
+    limit: 10
+    columns:
+      - property: file
+        label: 논문
+      - property: rank
+        label: ★
+      - property: year
+        label: 년도
+  - type: table
+    name: Entrepreneurship Experiment
+    filters:
+      and:
+        - collection == "Papers"
+        - category == "🐅"
+    sort:
+      - property: rank
+        direction: DESC
+    limit: 10
+    columns:
+      - property: file
+        label: 논문
+      - property: rank
+        label: ★
+      - property: year
+        label: 년도

@@ -7,12 +7,26 @@ rank: 1
 deadline: 2025-10-20
 성장:
   - 2025-10-11T19:35:47-04:00
+market: 🐢Operations
+tools:
+  최적손: 50
+  확률눈: 30
+  통계귀: 20
+journal_target: Management Science
+audience: Operations researchers, Entrepreneurs
+first_principle: Framework Design
+status: active
 ---
 
 # Oil Framework 논문 최종 제출
 
 ## 🎯 목표
 Oil Framework 논문을 완성하여 Management Science에 제출
+
+## 📊 도구 배합 분석
+- **최적손 50%**: Framework 구조 설계, 의사결정 모델
+- **확률눈 30%**: 불확실성 하의 전략적 선택, Bayesian updating
+- **통계귀 20%**: 케이스 스터디 검증, 패턴 발견
 
 ## 📍 현재 상태
 - ✅ 초고 완성
