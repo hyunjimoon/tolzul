@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2024-05-05'
+---
+
 2024-05-04
 
 | Parameter                                                       | Hypothesis on Time to Change Market over Change product (T2CMP) w.r.t. Parameter                                                                                                          | Examples in EV                                                                                                                                                                                                                                             |

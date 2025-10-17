@@ -1,0 +1,9 @@
+id: papers-andrew
+type: card
+filter: (collection contains Papers) and (file.name starts with 📜) and (author_ids contains andrew_gelman)
+sort:
+  - property: year
+    direction: desc
+views:
+  - type: table
+    name: Table

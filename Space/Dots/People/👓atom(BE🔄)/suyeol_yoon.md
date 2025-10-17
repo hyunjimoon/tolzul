@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2023-07-27'
+---
+
 2025-01-29
 
 define the problem more generally so that we can flexibly apply our finding to more detailed situation.

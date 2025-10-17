@@ -1,3 +1,11 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2025-01-04'
+---
 
 ![[📜zhao09_shape-accom(pref) 2025-04-26-20.svg]]
 %%[[📜zhao09_shape-accom(pref) 2025-04-26-20|🖋 Edit in Excalidraw]]%%

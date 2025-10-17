@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2022-09-22'
+---
+
 Remaining questinos: 3. discrete event simulation ?
 
 agent-based modeling (complex feature of system, special-geo, heterog, )

@@ -1,4 +1,12 @@
-
+---
+collection:
+- '[[People]]'
+field:
+- 🐢inv
+- 👾cog
+atom: ⚡️atom(BE⬇️⬆️)
+created: '2024-07-23'
+---
 
 ---
 

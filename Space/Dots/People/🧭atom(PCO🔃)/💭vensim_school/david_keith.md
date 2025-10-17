@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2023-07-19'
+---
+
 co2 emission as a result (hybrid - battery material)
 six scenarios for gas tax
 

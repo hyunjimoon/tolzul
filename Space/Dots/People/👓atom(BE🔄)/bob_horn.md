@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2024-10-11'
+---
+
 2024-11-07
 introduced mural work [next of this](https://github.com/Data4DM/BayesSD/discussions/23#discussioncomment-11169421)
 

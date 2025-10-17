@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2024-11-30'
+---
+
 using [processify(🗄️👁️2🗄️🧠, pinker, zizek) cld](https://claude.ai/chat/146e4f00-4f0b-437b-be7c-0e4f0ba247dd)
 ## Table 🗄️👁️: Žižek's Comments on Other Philosophers/Works
 

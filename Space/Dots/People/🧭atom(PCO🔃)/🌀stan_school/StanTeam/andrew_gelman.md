@@ -2,7 +2,16 @@
 이름: Andrew Gelman
 출생: 2020-12-06
 언어교환:
-  - persons
+- persons
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2024-11-12'
+---
+
 ---
 [[09-11|25-09-11]]
 

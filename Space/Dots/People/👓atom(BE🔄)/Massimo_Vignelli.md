@@ -1,5 +1,14 @@
 ---
 출생: 2018-12-31
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2024-08-31'
+---
+
 ---
 
 > If you do it right, it will last forever.

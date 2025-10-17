@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2024-01-15'
+---
+
 2024-01-16
 - Angie shared her interest in using proxy reward function to model entrepreneurial decision making which proceeds with three phases:
 	- phase1 (nail): learning the structure of internal (organization's productivity) and external (market, technological and customer's evolution over time) 

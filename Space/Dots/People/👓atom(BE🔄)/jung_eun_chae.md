@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2024-10-27'
+---
+
 [[10-04|25-10-04]]
 [2017 고요한 단언 인터뷰](https://www.marieclairekorea.com/celebrity/2017/09/%EA%B3%A0%EC%9A%94%ED%95%9C-%EB%8B%A8%EC%96%B8/)
 

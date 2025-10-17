@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2024-05-02'
+---
+
 2025-06-03
 - detail of math equation interpretation : economics > computational statistics > computational cognitive science
 - math to code/figure ratio:   economics > computational statistics > computational cognitive science

@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2022-09-26'
+---
+
 ## 0926
 q. full flow info ~ full stock info?? (no; stock involve accumulation)
 do we need to care whether the variance increase or decrease? (lognormal likelihood)

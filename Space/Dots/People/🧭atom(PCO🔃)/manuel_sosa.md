@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2025-06-03'
+---
+
 2025-06-03
 
 |            | in                                                    | out                               |

@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐢inv
+- 👾cog
+atom: ⚡️atom(BE⬇️⬆️)
+created: '2024-04-18'
+---
+
 2024-04-18
 1. beautify of failure
 2. life is full of interruption

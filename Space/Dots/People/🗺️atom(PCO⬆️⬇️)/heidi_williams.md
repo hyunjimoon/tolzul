@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+- 👾cog
+atom: 🗺️atom(PCO⬆️⬇️)
+created: '2023-11-21'
+---
 
 heidi chooses research topic with three standards:
 

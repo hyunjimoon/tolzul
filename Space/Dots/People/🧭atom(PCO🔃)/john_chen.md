@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2024-12-03'
+---
+
 | Dimension                           | Direct Adaptation 🌱                                                                   | Co-opted Adaptation 🦅                                                                 | Co-opted Nonadaptation 🐟                                                                   |
 | ----------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | **Core Definition**                 | Direct selection shapes features for immediate functional benefit                      | Previously selected feature gains additional use while maintaining original function   | Non-functional trait becomes useful through novel combinations                              |

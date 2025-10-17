@@ -1,0 +1,9 @@
+id: papers-cba-cards
+type: card
+filter: (collection contains Papers) and (file.name starts with 📜) and (field contains 🐅cba)
+sort:
+  - property: rank
+    direction: desc
+views:
+  - type: table
+    name: Table

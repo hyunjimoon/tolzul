@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2025-04-24'
+---
+
 2025-04-24
 i prompted below to katie as we have shared interest on model synthesis & entrepreneurship and angie would like to get advice on building domain specific language for entrepreneurial operations from katie
 

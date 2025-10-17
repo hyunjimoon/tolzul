@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2025-06-11'
+---
+
 [[2025-08-06|25-08-06-18]]
 논문쓸때 팁: A,B,C,D,E -> A에서 B로 가는데 C,D,E도 고려사항이다
 

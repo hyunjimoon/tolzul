@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2025-04-27'
+---
 
 | Section                                                                   |                                                                              | Title                                                                   | Page    |
 | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ------- |
@@ -75,4 +84,4 @@
 |                                                                           |                                                                              | 10.6 Metatheoretic Analysis and Verification for Probabilistic Programs | 215     |
 |                                                                           |                                                                              | 10.7 Broader Applications to the Social and Natural Sciences            | 216     |
 
- [[🗄️1Table of Contents (Q&A&B)]]
+ [[Space/Sources/Papers/🐅CompBayes/💻Mansinghka25_9.s/🗄️1Table of Contents (Q&A&B)]]

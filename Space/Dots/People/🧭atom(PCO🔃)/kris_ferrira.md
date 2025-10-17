@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2024-04-26'
+---
+
 [[10-04|25-10-04]]
 
 You always have the most creative and unique questions and analysis, and I'm honored this one is about my work!! :)

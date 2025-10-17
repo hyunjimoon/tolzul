@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2025-06-21'
+---
+
 2025-06-21
 
 The speaker's research was summarized as **optimizing the priority of stakeholders and one's own quality simultaneously**. This concise summary prompted several key follow-up questions and their defenses:

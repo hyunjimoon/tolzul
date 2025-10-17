@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2025-10-03'
+---
 
 ### **Soul, Spirit, Charm의 개념적 분석 및 정리**
 

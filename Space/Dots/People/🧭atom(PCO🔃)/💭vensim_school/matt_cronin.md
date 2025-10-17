@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2024-05-02'
+---
+
 [[2025-07-09|25-07-09-14]]
 
 - code is executing command

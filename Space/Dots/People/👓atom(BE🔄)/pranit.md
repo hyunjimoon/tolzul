@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2024-12-12'
+---
+
 2025-04-03
 [[delta_v]]
 2024-12-11

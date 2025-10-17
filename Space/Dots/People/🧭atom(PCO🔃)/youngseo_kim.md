@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2025-04-19'
+---
+
 **
 
 (Thanks to Dr. Sean Sinclair and Dr. Chara Podimata for the inspiration for this document, and thanks to Dr. Aditya Dave for pointing out the references.) 

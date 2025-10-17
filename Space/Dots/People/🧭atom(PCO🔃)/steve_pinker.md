@@ -1,5 +1,16 @@
+---
+collection:
+  - "[[People]]"
+field:
+  - 👾cog
+atom: 🧭atom(PCO🔃)
+created: 2024-10-28
+성장:
+  - 2025-10-14T14:14:55-04:00
+---
+
 - language instinct
-- better angel in our nature
+- [[The Better Angels of Our Nature]]
 - rationality - what it is, why it seems scare, why it matters
 - [[🛝explaining away rationality]]
 - used this to construct 🗄️🧠 of [[zizek]]

@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2025-05-22'
+---
+
 to celebrate our fifth week-verasry, i organized teja's communication tips :  
 
 - Front-load your core message in the first sentence of each slide or paragraph.

@@ -45,7 +45,7 @@ While others saw a car part, Pam saw a revolution in home energy. She didn't jus
 
 A comparative analysis of innovation theories in Table 1 and their manifestations in Table 2 reveals two fundamental tensions in how organizations innovate. First, between deterministic optimization and emergent discovery - whether innovations come from improving known functions or finding unexpected uses. Second, between sequential and parallel discovery - whether innovation happens step by step or through simultaneous exploration.
 
-The first tension emerges from contrasting theoretical perspectives on innovation's purpose. Dennett argues that functions evolve for specific, predetermined purposes through optimization - like Tesla's original EV battery development, where each iteration directly improved propulsion performance. In contrast, Felin and Kauffman propose that objects possess "functional excess" awaiting discovery ([[📜Felin23_disrupt_evol]])- as seen in BYD's Blade Battery, where a safety-focused design unexpectedly yielded manufacturing cost advantages and structural benefits. With [[📜Kauffman22_theory_of_adj_possible]]'s lens,  [[📜Felin23_disrupt_evol]] focuses more on the second term of Mt+1 = (1-$\mu$)Mt + ∑αi(Mt choose i) which captures how new combinations create unexpected value.
+The first tension emerges from contrasting theoretical perspectives on innovation's purpose. Dennett argues that functions evolve for specific, predetermined purposes through optimization - like Tesla's original EV battery development, where each iteration directly improved propulsion performance. In contrast, Felin and Kauffman propose that objects possess "functional excess" awaiting discovery ([[📜Felin23_disrupt_evol 1]])- as seen in BYD's Blade Battery, where a safety-focused design unexpectedly yielded manufacturing cost advantages and structural benefits. With [[📜Kauffman22_theory_of_adj_possible]]'s lens,  [[📜Felin23_disrupt_evol 1]] focuses more on the second term of Mt+1 = (1-$\mu$)Mt + ∑αi(Mt choose i) which captures how new combinations create unexpected value.
 
 The second tension reflects different views on innovation process. Dennett advocates a linear progression (observation → theory → implementation), exemplified by traditional step-by-step product development. Von Hippel instead proposes that needs and solutions can be discovered simultaneously when search costs are low, expressed mathematically as (👁️ + 🧠 + 👓) ∀ → 🤜. This is complemented by Gershenfeld's "Ready-Fire-Aim" approach, suggesting valuable innovation often emerges from implementing before full understanding. Tesla's Powerwall development demonstrates this parallel approach - they developed home energy storage solutions while simultaneously discovering residential market needs, rather than completing one phase before beginning another.
 
@@ -235,7 +235,7 @@ need checking:
 
 - ⭐️1: 🚫rejecting improves 🔄revising
 
-using [[📜Felin23_disrupt_evol]], [[🗄️SD(🚰tap-atp🗺️)]], [[📜Kauffman22_theory_of_adj_possible]],  [[🗄️👓👆💨TID]] , [[🗄️💊]]
+using [[📜Felin23_disrupt_evol 1]], [[🗄️SD(🚰tap-atp🗺️)]], [[📜Kauffman22_theory_of_adj_possible]],  [[🗄️👓👆💨TID]] , [[🗄️💊]]
 
 
 ### 3.1 Pattern Evolution from Sequential to Complex Systems

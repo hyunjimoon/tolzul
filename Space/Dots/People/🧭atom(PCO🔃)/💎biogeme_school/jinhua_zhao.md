@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2023-07-26'
+---
+
 - [[prep(11.478)]]
 - norm, law, price matters
 - from [here](https://docs.google.com/document/d/10ZMkWwJhfayy0p6M3_SazeOcBQeTXDfXedaTPv-gNs8/edit)

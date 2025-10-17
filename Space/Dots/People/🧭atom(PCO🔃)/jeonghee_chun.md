@@ -1,3 +1,11 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2024-05-01'
+---
 
 [Words of Praise] The Impenetrable Shield, "Father of Homomorphic Encryption"
 February 19, 2023, 08:00

@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2025-01-17'
+---
+
 2025-01-17
 
 선생님 잘 지내시죠? 이 맘때면 선생님 생각이 더 자주 나요.

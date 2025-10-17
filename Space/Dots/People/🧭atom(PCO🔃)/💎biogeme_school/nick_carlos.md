@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2023-08-01'
+---
+
 thesis defense
 
 "you all know what happened" (1/12)

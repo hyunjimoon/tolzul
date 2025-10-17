@@ -1,3 +1,14 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+- 👾cog
+atom: 🗺️atom(PCO⬆️⬇️)
+created: '2022-10-17'
+---
+
 - health care market, sd product
 
 ![[Pasted image 20221025214814.png]]

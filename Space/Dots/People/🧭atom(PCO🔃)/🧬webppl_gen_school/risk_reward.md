@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2025-04-27'
+---
 
 Differences in demand and supply timelines are key- supply cannot rampup very fast, demand grew more than expected
 
@@ -180,5 +189,5 @@ where $V_i$ are **systematic utility** components.
 |Table of Contents|Utility-focused|Uncertainty-focused|
 |Connection to Random Utility Models|Compatible but hard|Compatible and easier for online learning|
 
-[[federated_learning]]
-[[eval(vikash, probcomp_ent)]]
+[[Space/Sources/Papers/🐅CompBayes/💻Mansinghka25_9.s/federated_learning]]
+[[Space/Sources/Papers/🐅CompBayes/💻Mansinghka25_9.s/eval(vikash, probcomp_ent)]]

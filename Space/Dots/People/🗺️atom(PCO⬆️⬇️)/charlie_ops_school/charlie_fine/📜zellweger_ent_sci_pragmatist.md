@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+- 👾cog
+atom: 🗺️atom(PCO⬆️⬇️)
+created: '2025-03-09'
+---
 
 Building on pragmatism, we advance an entrepreneur-as-scientist perspective and depict entrepreneurs as engaging in causally inferential action by forming beliefs, testing these beliefs, and responding to the feedback received. However, this sequence of entrepreneurial actions arrives with a set of companion doubts: namely, doubt about productmarket fit, because the entrepreneurs’ beliefs are self-chosen; doubt about feedback validity from false positives or false negatives; and doubt about over- and under-fitting in responses to feedback. We discuss the rationality of heuristics deployed by the entrepreneur to overcome these doubts. Our insights contribute to the microfoundations of entrepreneurial action and strategy by explaining how entrepreneurs generate the information to produce value out of uncertainty.
 

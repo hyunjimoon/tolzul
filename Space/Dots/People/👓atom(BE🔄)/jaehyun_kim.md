@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2025-04-20'
+---
+
 2025-05-06
 [[Entrepreneurship Optimization Proposal - jae's feedback_otter_ai.txt]] using understanding innovation ecosystem managem
 

@@ -1,3 +1,14 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+- 👾cog
+atom: 🗺️atom(PCO⬆️⬇️)
+created: '2024-04-14'
+---
+
 jewish
 - https://www.munhaknews.com/news/articleView.html?idxno=73740
 - ashkanazi or mizrahi

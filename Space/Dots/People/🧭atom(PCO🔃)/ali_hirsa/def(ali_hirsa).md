@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2022-12-14'
+---
+
 - visualization, generative, neural network, finance
 - [[Howard Elman]]'s student
 

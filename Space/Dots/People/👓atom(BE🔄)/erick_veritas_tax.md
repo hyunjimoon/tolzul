@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2025-04-10'
+---
+
 [[💸capitalize]]
 2025-04-10
 1. 모기지 이자는 as deductible expense로 잡혀 taxable income줄어듬

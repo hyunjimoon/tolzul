@@ -1,0 +1,37 @@
+---
+collection:
+  - "[[Papers]]"
+author_ids:
+field:
+  - 🐙ops
+year: 2018
+created: 2025-05-18
+---
+
+==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠== You can decompress Drawing data with the command palette: 'Decompress current Excalidraw file'. For more info check in plugin settings under 'Saving'
+
+
+# Excalidraw Data
+
+## Text Elements
+## Embedded Files
+b4dae9cee55cbfca8d505f398f980c7f40920534: [[Pasted Image 20250518091942_551.png]]
+
+%%
+## Drawing
+```compressed-json
+N4KAkARALgngDgUwgLgAQQQDwMYEMA2AlgCYBOuA7hADTgQBuCpAzoQPYB2KqATLZMzYBXUtiRoIACyhQ4zZAHoFAc0JRJQgEYA6bGwC2CgF7N6hbEcK4OCtptbErHALRY8RMpWdx8Q1TdIEfARcZgRmBShcZQUebQBGAAYEmjoghH0EDihmbgBtcDBQMBKIEm4IAE0AYQA2CgA1OAArADkAaWUeSWVK0gAZfAAlAFUAMxhUkshYRArCfWikflLM
+
+bmcAFniATm1EgA4Adnj4gFZTng2N7cPDlchJtGcb0+1aw9PtxIBmb54f+I8U73CAUEjqbjvWraHhJbYbb61banDaHG4gyQIQjKaTcfaneIg6zKYLcRIg5hQUhsADWCGqbHwbFIFSp1mYcFwgWyU1Kmlw2BpympQg4xAZTJZEjZHA5XKyUF5kDGhHw+AAyrBSRJBB4lRBKdS6QB1cGSbh8QoCKm0hCamDa9C68ogkU4jjhXJoQlWiBsTnYNSPVBJc
+
+m+4XCOAASWIXtQeQAuiCxuRMjHuBwhGqQYQxVgKrhEvqRWKPcw45ns76wghiNxATwbokNrVESDGCx2Fw0MDfR3WJxWpwxPXvltLrUDhsc8wACLpKC17hjAhhEGaYRigCiwUy2QrWfwIKEcGIuEXde9h1Rp2v30Ovx2IKIHBpGcPz7YgqXaBX+DX1ZRFAQhxhAiBirmyj6iqwTphImgbGeCDbGICDnNgmhjHg+zEKciSnGM3zbPsYzEYk2CHGMGyJ
+
+Ns/ynGO+rMO44jxlaYA+tM7FWkmvrYNScDvmqhQAL7gDxkC4HAcCaueLHFDMmKZBUZ6kG+KwMIQCAUAAQgKQoluKjLMhUADEYzmRZvIQNgIjclAUaLvompGvSRlSugJnxAgXleVZNmkHZDkZLpgoRqKhmSqy5Cypydl+bZCpBfoABiqoalqLEGoyLqFNZCXZElzm2qaxAQmglqlP5gWOUVdL2o6WV6upVWJY5QzCO6nr1s1+X2Y5ADyAZBvWiRhp
+
+VvVJclnBQMluD6Kqwa9uNAWtRkU3ZOqhBGCx/w9StBWOQAKlgUAAIJEMo3boMEYyKnt1UZDJpBnQFbAUJiuCXqglZHrlLUHRkW5iqdr3vSEX0QFy1JUPdq36CD0OHfAmUGVZTHUmqAAa3AIskaJXPRPAfJ8iQ8N86no4y+CVPWE7aFs17EX87zfD86lGGwBjcPJkD0AQQgsXjPC1PE1wibDAP6O14VlqBqPqcKJCbdtFpjZAivEJqCACT2CukCQA
+
+CybDEAgQO4JowRfX+AGlBrErGWgPMQNpjIQ6Qyj8gAFLCdy8PEvs+9QqDJKcACU+pDAgyhZlyFTu17ZPkrwrNB4nQch+H4t/b1tUIINUBdgeValCmc0IJHeb6xwUGO76WTm5b3BUgLILYEQOuoM3CAghwZdN6QLe+sIUAvixXdZ6UdjNAg2A5OqvdwEbJtmxbP6oNb3e5QKBeMIdnP4NzvqzJlYTBLPXb6jZlIGEjcxoD9n7flbq6b9MEApgY6rp
+
+OfnDLi/z6hDOufXe+9BL4BEuAYS/B36qnCNzUSwkgA==
+```
+%%

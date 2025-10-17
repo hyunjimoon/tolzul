@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2025-01-13'
+---
+
 sfrom https://link.springer.com/content/pdf/10.1007/BF02838887.pdf
 - 🎞️: marginnote3app://note/E8CD1932-B727-4DD2-A176-7B9A71C75578
 

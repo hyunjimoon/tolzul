@@ -1,6 +1,15 @@
 ---
 tags:
-  - vikash
+- vikash
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2023-06-06'
+---
+
 ---
 Something that cannot be done with parameteric model can be done with nonparameteric (new idea search!)
 

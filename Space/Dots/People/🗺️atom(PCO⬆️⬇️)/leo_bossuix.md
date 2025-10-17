@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+- 👾cog
+atom: 🗺️atom(PCO⬆️⬇️)
+created: '2023-05-05'
+---
 
 collecting stamps; student inflenced students
 

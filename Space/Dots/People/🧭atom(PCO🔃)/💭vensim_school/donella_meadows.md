@@ -1,3 +1,11 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2022-10-28'
+---
 
 Places to Intervene in a System (in increasing order of effectiveness)
 

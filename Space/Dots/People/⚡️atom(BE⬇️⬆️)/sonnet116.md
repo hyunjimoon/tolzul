@@ -1,3 +1,16 @@
+---
+collection:
+  - "[[People]]"
+field:
+  - 🐢inv
+  - 👾cog
+atom: ⚡️atom(BE⬇️⬆️)
+created: 2025-07-12
+성장:
+  - 2025-10-15T13:40:24-04:00
+---
+innovation, operations, cognition, 
+
 "그리운 순간과 조우"라는 강의를 공유했고,  [[박경린]]이가 좋아하는 시를 선물받음. [gpt](https://chatgpt.com/share/6872d67d-e3c0-8002-bbb7-8c2d3fe5bb85)로 해석시도. 
 
 Here’s the heart of Sonnet 116 in plain, easy words:

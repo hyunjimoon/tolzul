@@ -1,0 +1,38 @@
+id: books-all
+type: table
+columns:
+  - property: year
+    label: Year
+    width: 60
+  - property: image
+    label: Cover
+    width: 80
+  - property: file.name
+    label: Title
+    width: 200
+  - property: by
+    label: Author
+    width: 150
+  - property: rating
+    label: Rating
+    width: 60
+filter: collection contains Books
+sort:
+  - property: rating
+    direction: desc
+  - property: year
+    direction: asc
+---
+id: books-cards
+type: card
+filter: collection contains Books
+sort:
+  - property: rating
+    direction: desc
+---
+id: books-top
+type: card
+filter: (collection contains Books) and (rating >= 4)
+sort:
+  - property: rating
+    direction: desc

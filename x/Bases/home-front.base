@@ -1,0 +1,41 @@
+views:
+  - type: table
+    name: On
+    filters:
+      and:
+        - file.folder.contains("Front/On")
+    sort:
+      - property: rank
+        direction: DESC
+    limit: 10
+    columns:
+      - property: file
+        label: 전투
+      - property: rank
+        label: 화력
+  - type: table
+    name: Ongoing
+    filters:
+      and:
+        - file.folder.contains("Front/Ongoing")
+    sort:
+      - property: rank
+        direction: DESC
+    limit: 10
+    columns:
+      - property: file
+        label: 작전
+      - property: rank
+        label: 속도
+  - type: table
+    name: Simmering
+    filters:
+      and:
+        - file.folder.contains("Front/Simmering")
+    sort:
+      - property: file.name
+        direction: ASC
+    limit: 10
+    columns:
+      - property: file
+        label: 준비

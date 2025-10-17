@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2024-09-10'
+---
+
 [[09-23|25-09-23]]
 analysis of josh's selling RMC in [[pc2_tennanbaum24w2w 1.txt]]
 

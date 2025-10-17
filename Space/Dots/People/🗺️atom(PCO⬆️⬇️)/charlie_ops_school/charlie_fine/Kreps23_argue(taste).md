@@ -1,3 +1,14 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+- 👾cog
+atom: 🗺️atom(PCO⬆️⬇️)
+created: '2025-05-14'
+---
+
 Preface  
 Introduction: Gary Becker on Prenups  
 1. De Gustibus Non Est Disputandum: The Mainstream Economic Account of Individual Behavior  

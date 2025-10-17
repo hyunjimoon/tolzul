@@ -2,7 +2,16 @@
 이름: Person 14
 출생: 2019-06-12
 언어교환:
-  - blog
+- blog
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2024-08-31'
+---
+
 ---
 
 O Captain! My Captain! our fearful trip is done;  

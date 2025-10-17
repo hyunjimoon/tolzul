@@ -1,3 +1,14 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+- 👾cog
+atom: 🗺️atom(PCO⬆️⬇️)
+created: '2025-03-11'
+---
+
 https://kbookstore.com/9791185093710
 
 

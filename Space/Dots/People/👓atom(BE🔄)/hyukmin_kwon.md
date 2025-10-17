@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2025-04-05'
+---
+
 2025-04-05
 [[25mit_harvard_networking]]
 vc investor, mit phd, startup advisor

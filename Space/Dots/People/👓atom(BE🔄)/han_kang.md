@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2024-10-14'
+---
+
 2025-01-05
 https://www.nobelprize.org/prizes/literature/2024/han/lecture/
 ## Light and Thread

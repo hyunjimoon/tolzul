@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2022-09-19'
+---
 
 - The author of Bayesian Choice
  ![[Pasted image 20220831102010.png]]

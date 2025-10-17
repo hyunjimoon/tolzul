@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2023-09-03'
+---
+
 ## integrating the universe of sd tools
 - better data architecture (code based tool)
 - Bob, Billy (loops that matter) - research project (always the product in mind)

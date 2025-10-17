@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2024-11-11'
+---
+
 [[09-20|25-09-20]]
 
 # leke- ubering to red eye- Entrepreneurship Nature vs Nurture

@@ -1,3 +1,14 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+- 👾cog
+atom: 🗺️atom(PCO⬆️⬇️)
+created: '2024-12-15'
+---
+
 [[2025-07-13|25-07-13-16]]
 
 # eval(yichen, 📝(🐢))

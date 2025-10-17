@@ -1,3 +1,14 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+- 👾cog
+atom: 🗺️atom(PCO⬆️⬇️)
+created: '2025-07-22'
+---
+
 # Alvin Toffler
 
 ## Key Works and Temporal Concepts

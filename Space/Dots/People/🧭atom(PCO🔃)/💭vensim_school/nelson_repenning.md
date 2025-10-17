@@ -1,4 +1,13 @@
-  capability trap
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2024-04-08'
+---
+
+capability trap
   
 ![Useful Doesn't Always Mean Used - Nelson Repenning](https://media.licdn.com/dms/image/D5622AQFW6l8SXhAiYQ/feedshare-shrink_800/0/1712508379898?e=1715212800&v=beta&t=bIuE9LXEiEKwEY2SpaFWI631DqeUk861O48wKukWCqQ)
 

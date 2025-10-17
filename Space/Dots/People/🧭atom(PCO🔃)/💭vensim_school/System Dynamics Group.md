@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2022-06-01'
+---
+
 #dynamics #system
 
 [Keith, David](https://mitsloan.mit.edu/faculty/directory/david-r-keith)

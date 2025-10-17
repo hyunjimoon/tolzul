@@ -1,4 +1,12 @@
-
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2024-10-04'
+---
 
 세일즈포스 일본 (salesforce 자회사 ventures), 한국회사, 
 

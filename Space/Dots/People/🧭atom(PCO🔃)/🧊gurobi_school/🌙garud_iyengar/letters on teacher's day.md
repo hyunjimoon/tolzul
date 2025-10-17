@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2024-05-16'
+---
+
 2024-05-18
 hi garud, there is a word called 달콤씁쓸 in korean. it is bitter sweet in english, but in fact it's the order is changed so it's sweet bitter.
 

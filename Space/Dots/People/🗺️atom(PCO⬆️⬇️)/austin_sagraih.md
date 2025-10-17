@@ -1,3 +1,14 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+- 👾cog
+atom: 🗺️atom(PCO⬆️⬇️)
+created: '2024-04-12'
+---
+
 2024-04-12
 
 - austin had a table that compares profit and recycle rate of two existing methods with his novel method which considers decision endogeneity

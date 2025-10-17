@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2024-04-29'
+---
+
 2024-04-29
 - startup, 영업이익, 고객 (관계자), 
 

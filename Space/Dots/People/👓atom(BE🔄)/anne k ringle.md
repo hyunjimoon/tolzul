@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2025-03-03'
+---
 
 2025-03-03
 anne k

@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2023-06-15'
+---
+
 2025-06-04
 - prioritize resources partners first for high underage cost and low RP's acceptance probability 
 - sequential decision making and multi agent 

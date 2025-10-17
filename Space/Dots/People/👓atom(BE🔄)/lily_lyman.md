@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2024-05-01'
+---
+
 2024-05-01
 https://underscore.vc/?s=how+to+pivot
 ability, attitude, athelete, attractor

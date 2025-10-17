@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐢inv
+- 👾cog
+atom: ⚡️atom(BE⬇️⬆️)
+created: '2023-06-05'
+---
 
 Pragmatic theory of truth
 - Truth _happens_ to an idea, he said, when it succeeds in predicting new sense experiences

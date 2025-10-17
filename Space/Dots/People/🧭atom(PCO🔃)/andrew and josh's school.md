@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2025-04-13'
+---
+
 1. Josh's school doesn't distinguish between (belief, prior distribution) or  (desire, utility) but Andrew Gelman's school has higher precision [here](https://statmodeling.stat.columbia.edu/2015/07/15/prior-information-not-prior-belief/),
 
 

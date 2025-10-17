@@ -1,3 +1,19 @@
+---
+collection:
+  - "[[People]]"
+field:
+  - 🐙ops
+  - 🐢inv
+  - 👾cog
+atom: 🗺️atom(PCO⬆️⬇️)
+affiliation: MIT Sloan
+created: 2025-10-14
+성장:
+  - 2025-10-14T14:30:32-04:00
+---
+
+---
+
 [[09-24|25-09-24]]
 
 Ideally, in my opinion, for each strand of relevant literature, you should briefly explain the thread of idea development, from the “classical” origin of the idea, to the relevant, current follow-on work. 
@@ -24,7 +40,7 @@ with LLM's touch: https://poe.com/s/kFqB7Ib9Vdl4lLxLUW3h
 
 angie's energy source was 
 
-based on intuitive evidence collected from hearts of andrew gelman, josh tenenbaum, steve pinker, that this is rich problem space and how
+based on intuitive evidence collected from hearts of andrew gelman, josh tenanbaum, steve pinker, that this is rich problem space and how
 
 [[의용과 현지의 사랑]]
 

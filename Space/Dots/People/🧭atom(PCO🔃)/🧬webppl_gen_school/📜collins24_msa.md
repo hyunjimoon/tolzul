@@ -1,6 +1,15 @@
 ---
 tags:
-  - josh
+- josh
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2025-04-13'
+---
+
 ---
 
 ![[📜collins24_msa 2025-04-13-6]]

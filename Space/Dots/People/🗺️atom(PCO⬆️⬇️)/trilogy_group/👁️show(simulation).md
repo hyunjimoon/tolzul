@@ -1,3 +1,14 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+- 👾cog
+atom: 🗺️atom(PCO⬆️⬇️)
+created: '2024-11-16'
+---
+
 from [[hart_posen]]'s trilogy paper3
 
 [[2025-07-09|06:46]]

@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2023-01-20'
+---
+
 [Space Debris: Assessing Risk and Responsibility](https://cs.stanford.edu/~ambrad/debris_asr.pdf)
 
 https://www.gsb.stanford.edu/insights/how-avoid-space-catastrophe

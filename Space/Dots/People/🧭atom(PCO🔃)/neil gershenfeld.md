@@ -1,3 +1,11 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2024-11-28'
+---
 
 [[Ready-Fire-Aim _ Neil Gershenfeld _ TEDxMIT Salon - English (auto-generated).txt]]
  softer solutions are more adhesive to needs in different domain (ready, fire, aim by Neil Gershenfeld)

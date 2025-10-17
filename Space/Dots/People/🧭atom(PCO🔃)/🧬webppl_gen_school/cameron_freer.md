@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2025-04-27'
+---
+
 2025-04-27
 
 Posterior distributions are computable from predictive distributions https://cfreer.org/papers/FreerRoyAISTATS2010.pdf

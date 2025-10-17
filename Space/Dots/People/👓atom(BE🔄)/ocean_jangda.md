@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2025-04-03'
+---
+
 [[09-30|25-09-30]]
 
 fire, crops, wind/water, coal, oil/gas, electricity

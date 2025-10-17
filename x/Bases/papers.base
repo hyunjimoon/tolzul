@@ -1,0 +1,108 @@
+id: papers-all
+type: table
+columns:
+  - property: file.name
+    label: Title
+    width: 300
+  - property: field
+    label: Field
+    width: 120
+  - property: year
+    label: Year
+    width: 60
+  - property: author_ids
+    label: Authors
+    width: 180
+filter: collection contains Papers
+sort:
+  - property: year
+    direction: desc
+---
+id: papers-cards
+type: card
+filter: collection contains Papers
+sort:
+  - property: year
+    direction: desc
+---
+id: papers-top
+type: card
+filter: (collection contains Papers) and (rank >= 4)
+sort:
+  - property: rank
+    direction: desc
+---
+id: papers-by-field
+type: table
+columns:
+  - property: field
+    label: Field
+    width: 100
+  - property: file.name
+    label: Title
+    width: 280
+  - property: year
+    label: Year
+    width: 60
+filter: collection contains Papers
+sort:
+  - property: field
+    direction: asc
+  - property: year
+    direction: desc
+---
+id: papers-cog
+type: table
+columns:
+  - property: file.name
+    label: Title
+    width: 350
+  - property: year
+    label: Year
+    width: 60
+filter: (collection contains Papers) and (field contains 👾cog)
+sort:
+  - property: year
+    direction: desc
+---
+id: papers-inv
+type: table
+columns:
+  - property: file.name
+    label: Title
+    width: 350
+  - property: year
+    label: Year
+    width: 60
+filter: (collection contains Papers) and (field contains 🐢inv)
+sort:
+  - property: year
+    direction: desc
+---
+id: papers-ops
+type: table
+columns:
+  - property: file.name
+    label: Title
+    width: 350
+  - property: year
+    label: Year
+    width: 60
+filter: (collection contains Papers) and (field contains 🐙ops)
+sort:
+  - property: year
+    direction: desc
+---
+id: papers-cba
+type: table
+columns:
+  - property: file.name
+    label: Title
+    width: 350
+  - property: year
+    label: Year
+    width: 60
+filter: (collection contains Papers) and (field contains 🐅cba)
+sort:
+  - property: year
+    direction: desc

@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2025-02-03'
+---
+
 2025-02-03
 human health (micro biology),  (gut health - how we feel unity btw) educational psychology (socioemotional health - how to improve students belong in student)
 

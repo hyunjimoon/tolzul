@@ -1,3 +1,14 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+- 👾cog
+atom: 🗺️atom(PCO⬆️⬇️)
+created: '2023-01-13'
+---
+
 Davis’s research is broadly concerned with the **corporation as a social and economic vehicle.** 
 [Recent writings](https://sites.google.com/a/umich.edu/jerrydavis/articles?authuser=0) examine 
 - why corporations have so little insight into their global supply chains and the moral dilemmas this poses

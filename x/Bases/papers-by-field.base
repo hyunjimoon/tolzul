@@ -1,0 +1,21 @@
+id: papers-by-field
+type: table
+columns:
+  - property: field
+    label: Field
+    width: 100
+  - property: file.name
+    label: Title
+    width: 280
+  - property: year
+    label: Year
+    width: 60
+filter: (collection contains Papers) and (file.name starts with 📜)
+sort:
+  - property: field
+    direction: asc
+  - property: year
+    direction: desc
+views:
+  - type: table
+    name: Table

@@ -1,0 +1,6 @@
+id: papers-top
+type: card
+filter: (collection contains Papers) and (file.name starts with 📜) and (rank >= 4)
+sort:
+  - property: rank
+    direction: desc

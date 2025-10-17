@@ -1,4 +1,14 @@
-[[module5 automating math]]
+---
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2025-03-04'
+---
+
+[[Space/Sources/Papers/🐅CompBayes/💻Mansinghka25_9.s/module5 automating math]]
 
 
 2025-05-18

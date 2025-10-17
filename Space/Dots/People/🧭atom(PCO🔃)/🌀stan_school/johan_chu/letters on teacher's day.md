@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2024-05-16'
+---
+
 #tolzul
 2024-05-15
 추요한 교수님께,

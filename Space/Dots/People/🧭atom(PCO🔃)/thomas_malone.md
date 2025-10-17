@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2023-07-26'
+---
+
 input:
 > **1. ![👀](https://fonts.gstatic.com/s/e/notoemoji/15.0/1f440/72.png) ![🙉](https://fonts.gstatic.com/s/e/notoemoji/15.0/1f649/72.png) Sensory diagnostics for collaboration** 
 > After sharing my slide above which maps roles of diagnostics with orchestrate's definition (:=arrange elements of situation to surreptitiously produce desired effect), Andrew Gelman shared his [article (delivering data differently)](https://streaklinks.com/BmKMuhJ19YUCxJEGGgDvM4og/http%3A%2F%2Fwww.stat.columbia.edu%2F~gelman%2Fresearch%2Funpublished%2Fdelivering_data_differently.pdf) that describes sensification, statistical graphics, visualization, vivification. I'm curious about tools that I can use (from today!) that aid collaboration based on sensory diagnostics. For one, Charlie (cc-ed) and I are starting a blog for operations and innovation management. A collaboration tool that combines [interactive](https://streaklinks.com/BmKMuhJ6uo9_IIxN-wgHVjl7/https%3A%2F%2Famoon.world%2Fdef%28amoon%29) [graph of my research blog](https://streaklinks.com/BmKMuhJmpsGbSZZGUw0aS4sg/https%3A%2F%2Famoon.world%2Fdef%28amoon%29) with generative AI, can perhaps recommend what topics to write about. e.g. (haven’t been covered or expressed as “future work”) && (trending or important). 

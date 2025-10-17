@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2025-06-27'
+---
+
 2025-06-27
 I shared [[teja]] Bacon's "On Studies," is: "Reading makes a full man; conference (speaking) a ready man; and writing an exact man."  
 

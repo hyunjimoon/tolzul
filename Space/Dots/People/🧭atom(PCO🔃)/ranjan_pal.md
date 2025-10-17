@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2023-01-28'
+---
+
 2023
 research on cyber risk/resilience management through CAMS using the interplay of computer science and decision science. 
 

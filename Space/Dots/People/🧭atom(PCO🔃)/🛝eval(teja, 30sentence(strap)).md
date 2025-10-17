@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2025-06-07'
+---
+
 using [[🌱2🌲doubling🧬(📝)_old|🌱2🌲doubling🧬(📝)_old]]), [[🗄️(📝🪢🔴)]]
 
 Fine et al.'s Non-Integration Problem

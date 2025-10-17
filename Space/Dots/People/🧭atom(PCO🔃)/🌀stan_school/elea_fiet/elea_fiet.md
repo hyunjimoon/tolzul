@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2023-06-03'
+---
+
 - hypothesis testing doesn't make sense for AB testing
 - marketing, information system (the role of info.s)
 - David prosperio, Georgios Zervos BU (application), Ryan Dew at Wharton

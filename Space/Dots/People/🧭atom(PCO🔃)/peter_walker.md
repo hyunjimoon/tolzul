@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2025-03-04'
+---
+
 2025-03-04
 
 - longer time for ipo; 8-10 yrs to 15yrs to ipo

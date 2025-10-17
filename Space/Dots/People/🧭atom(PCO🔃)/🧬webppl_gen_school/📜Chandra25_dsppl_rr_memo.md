@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2025-04-13'
+---
+
 # memo: A Domain-Specific PPL for Reasoning about Reasoning (QA🗄️3🖼️2)
 
 ![[📜Chandra25_dsppl_rr_memo 2025-04-13-15.svg]]

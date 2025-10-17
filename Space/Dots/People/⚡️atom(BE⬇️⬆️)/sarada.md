@@ -1,3 +1,15 @@
+---
+collection:
+  - "[[People]]"
+field:
+  - 🐢inv
+  - 👾cog
+atom: ⚡️atom(BE⬇️⬆️)
+created: 2024-06-12
+성장:
+  - 2025-10-14T14:30:57-04:00
+---
+
 [[2025-07-16|25-07-16-13]]
 
 - asked how she had to switch advisors (First advisor tried to steal idea), 
@@ -15,7 +27,7 @@ The conversation revolves around entrepreneurship, academic challenges, and pers
 
 - [ ] Follow up with the speaker about their "promise vendor" research model.
 - [ ] Attend the friend center conference at UCLA and connect with the speaker.
-- [ ] Review the speaker's YouTube video on the discussion between them and Josh Tenenbaum.
+- [ ] Review the speaker's YouTube video on the discussion between them and Josh tenanbaum.
 
 ## Outline
 

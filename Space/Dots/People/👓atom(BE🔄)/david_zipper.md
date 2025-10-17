@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2024-12-09'
+---
+
 [[mmi2024]]
 
 | Metric Category     | Current Usage                                   | Issues Identified                                                                                                                                                                                                |

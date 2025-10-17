@@ -6,4 +6,4 @@
 ![[🗄️🧠moshe 2025-04-23-7.svg]]
 %%[[🗄️🧠moshe 2025-04-23-7|🖋 Edit in Excalidraw]]%%
 
-[[module9]]
+[[Space/Sources/Papers/🐅CompBayes/💻Mansinghka25_9.s/module9]]

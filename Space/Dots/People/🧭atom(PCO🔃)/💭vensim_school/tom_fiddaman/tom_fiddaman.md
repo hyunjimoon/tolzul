@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2023-01-28'
+---
+
 #TF
 Corresponds to [[Andrew Gelman]] in Bayes world in that he writes a blog that subsumes diverse domain.
 

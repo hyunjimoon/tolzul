@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2023-08-08'
+---
+
 찰리 파인 (pi) / Bruce cameron, mmi, 과제 시 찰리 교수님이 
 
 mit media lab (연구원) - 일할 때 discussion (과제 진행)

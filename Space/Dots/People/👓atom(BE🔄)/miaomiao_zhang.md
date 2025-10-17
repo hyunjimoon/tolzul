@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2025-05-25'
+---
+
 - who i'd like to lead [[scott(🧭🗺️selling entrepreneurial choice-map as Bayes.Entrep)]] together
 
 2025-05-25

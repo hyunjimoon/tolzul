@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2025-03-14'
+---
+
 [[nick_chater]] seems closest to [[scott_stern]]
 
 | Chapter Number | Chapter Title                            | Key Message Summary                                                                                                                                                               |

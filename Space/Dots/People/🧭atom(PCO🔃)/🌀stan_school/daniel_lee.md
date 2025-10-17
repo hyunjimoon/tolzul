@@ -1,3 +1,16 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+affiliation: Stan Development Team
+created: '2025-10-14'
+---
+
+---
+
 
 
 ### You are a Stan devloper

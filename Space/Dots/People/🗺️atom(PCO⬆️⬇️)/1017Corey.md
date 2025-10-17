@@ -1,3 +1,14 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+- 👾cog
+atom: 🗺️atom(PCO⬆️⬇️)
+created: '2024-08-31'
+---
+
 Corey
 - opting out: some parameter that is not binding - we don't need market data
 - haven't seen any model where we estimate all parameters

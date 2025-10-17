@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2023-06-05'
+---
+
 failure function, spare parts
 - cornell john mocstead, mit stephen graves, stanford [[lawrence_wein]]
 - stylized storytelling

@@ -1,0 +1,11 @@
+id: papers-cog-cards
+type: card
+filter: (collection contains Papers) and (file.name starts with 📜) and (field contains 👾cog)
+sort:
+  - property: rank
+    direction: desc
+  - property: year
+    direction: desc
+views:
+  - type: table
+    name: Table

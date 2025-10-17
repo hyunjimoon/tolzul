@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+- 👾cog
+atom: 🗺️atom(PCO⬆️⬇️)
+created: '2024-11-05'
+---
 
 This study examines the tradeoffs in sourcing and sales strategies (i.e., upstream and downstream supply chain strategies) by considering them as components of an integral end-to-end supply chain strategy. We evaluate four end-to-end supply chain strategies under various scenarios using a newsvendor model, and compare the model’s predictions against the prescriptions in Fisher’s (1997) framework, which recommends “cost-efﬁcient” supply chains for “functional” products and “responsive” supply chains for “innovative” products. We considered combinations of offshore vs. nearshore sourcing, and online vs. brick-and-mortar retailing. This study’s key ﬁnding is that sourcing and sales strategies are not completely modular: an integral end-to-end strategy may not decompose into an optimal sourcing strategy and a separately computed optimal sales strategy. Our analyses sharpen strategic supply chain thinking by identifying realistic conditions in which an end-to-end strategy with cost-efﬁcient components could outperform one with responsive components for innovative products, or when one with responsive components could be more proﬁtable than one with cost-efﬁcient components for functional products.
 

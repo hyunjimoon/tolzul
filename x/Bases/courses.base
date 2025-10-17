@@ -1,0 +1,23 @@
+id: courses-all
+type: table
+columns:
+  - property: yearXP
+    label: YearXP
+    width: 80
+  - property: file.name
+    label: Title
+    width: 250
+  - property: by
+    label: By
+    width: 150
+filter: collection contains Courses
+sort:
+  - property: yearXP
+    direction: desc
+---
+id: courses-cards
+type: card
+filter: collection contains Courses
+sort:
+  - property: yearXP
+    direction: desc

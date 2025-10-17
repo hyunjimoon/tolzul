@@ -1,3 +1,14 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+- 👾cog
+atom: 🗺️atom(PCO⬆️⬇️)
+created: '2024-11-15'
+---
+
 2025-07-08
 [[hart__angie_eval(framing123, model)_otter_ai.txt]]
 

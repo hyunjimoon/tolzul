@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+atom: 👓atom(BE🔄)
+created: '2025-04-05'
+---
+
 [magnendo](https://www.magnendo.com/)
 Advancing Neurovascular Care  with Robotic Technologies
 

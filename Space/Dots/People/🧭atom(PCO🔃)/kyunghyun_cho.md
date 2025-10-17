@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2023-01-31'
+---
+
 0131_2022
 
 boltman, kernel, research group, postdoc, 

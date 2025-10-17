@@ -1,3 +1,16 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐢inv
+- 👾cog
+atom: ⚡️atom(BE⬇️⬆️)
+affiliation: MIT
+created: 2025-01-21
+---
+
+---
+
 2025-05-23
 mail advocating students so that they can get a better grade
 

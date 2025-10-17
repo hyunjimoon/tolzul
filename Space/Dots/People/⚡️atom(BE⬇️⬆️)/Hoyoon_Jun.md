@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐢inv
+- 👾cog
+atom: ⚡️atom(BE⬇️⬆️)
+created: '2025-01-21'
+---
+
 > We are what we repeatedly do.
 > Excellence then is not an act but a habit. 
 > Mediocrity [ ] then is not an act but a habit. 

@@ -2,6 +2,6 @@ The literatures on bounded and ecological rationality are built on adaptationism
 
 Keywords: exaptation, embodied rationality, bounded rationality, heuristics, neural reuse, spandrels
 
-[[📜Felin23_disrupt_evol]]
+[[📜Felin23_disrupt_evol 1]]
 
 [[🪵log(jb_charlie, abE)]]

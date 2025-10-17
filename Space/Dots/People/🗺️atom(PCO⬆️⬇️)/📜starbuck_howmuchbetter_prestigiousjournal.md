@@ -1,3 +1,14 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+- 👾cog
+atom: 🗺️atom(PCO⬆️⬇️)
+created: '2025-04-09'
+---
+
 ### 🧱🗄️3🖼️3 Key Resources Summary:
 
 #### 🗄️2: Comparison with existing literature

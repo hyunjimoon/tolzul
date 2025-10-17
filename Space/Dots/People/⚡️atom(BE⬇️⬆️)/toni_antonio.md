@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐢inv
+- 👾cog
+atom: ⚡️atom(BE⬇️⬆️)
+created: '2024-04-26'
+---
+
 Dear Toni, 
 
 Thanks for Toni-fying me!

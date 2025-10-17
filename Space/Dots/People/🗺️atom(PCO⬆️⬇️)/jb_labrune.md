@@ -1,3 +1,14 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+- 👾cog
+atom: 🗺️atom(PCO⬆️⬇️)
+created: '2024-11-22'
+---
+
 Galileo Galilei died the same winter Isaac Newton was born (1642). Albert Einstein was born the same date Newton died (March 31).
 
 Joy was killed but there were meaningful rebirths (2024 Dec 20).

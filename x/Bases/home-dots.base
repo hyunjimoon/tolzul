@@ -1,0 +1,16 @@
+views:
+  - type: table
+    name: Dots Folders
+    filters:
+      and:
+        - file.folder.contains("Space/Dots")
+        - '!file.folder.endsWith("Space/Dots")'
+    sort:
+      - property: file.name
+        direction: ASC
+    limit: 10
+    columns:
+      - property: file
+        label: Folder
+      - property: file.folder
+        label: Path

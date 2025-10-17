@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2023-01-28'
+---
+
 - Nathaniel (sequential Monte Carlo)
 - hybrid modeling (ventity; network has a matrix - lots of zeros; dynamic memory allocation - cannot erase agents) vs discrete event simulation? (agent-based modeling; dicrete, factory; no encomy or school) - hybrid is continuous; state is estimation of failure times
 

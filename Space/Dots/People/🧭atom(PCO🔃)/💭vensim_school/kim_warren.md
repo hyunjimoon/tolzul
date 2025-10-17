@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2024-10-22'
+---
+
 ### Dynamic Business Models for Marketing and Sales
 
 Video title: Dynamic Business Models for Marketing and Sales

@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2022-12-14'
+---
+
 Codeveloping [SBC library](https://hyunjimoon.github.io/SBC)
 
 

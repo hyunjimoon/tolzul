@@ -1,3 +1,12 @@
+---
+collection:
+- '[[People]]'
+field:
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2022-09-19'
+---
+
 His paper on best practice for SD modeling recommends model reliability check in three aspects:
 ## 1. Problem definition
 

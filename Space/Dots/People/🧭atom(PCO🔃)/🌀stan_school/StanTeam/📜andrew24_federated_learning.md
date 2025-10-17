@@ -1,3 +1,13 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐅cba
+- 👾cog
+atom: 🧭atom(PCO🔃)
+created: '2025-04-17'
+---
+
 ![[📜andrew24_federated_learning 2025-04-17-14.svg]]
 %%[[📜andrew24_federated_learning 2025-04-17-14|🖋 Edit in Excalidraw]]%%
 

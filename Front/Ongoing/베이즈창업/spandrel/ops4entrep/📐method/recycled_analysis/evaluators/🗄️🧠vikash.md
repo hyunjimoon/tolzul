@@ -55,12 +55,12 @@ eight concepts on hypothesis, observation/example of concept, prior of hypothesi
 
 |     | Name                                         | paper (vikash pick)           | notes                                                            |
 | --- | -------------------------------------------- | ----------------------------- | ---------------------------------------------------------------- |
-| 1   |                                              |                               | [[module1 scaling behavior of intelligence vs machine learning]] |
-| 2   |                                              |                               | [[module2]]                                                      |
-| 3   | ![[Vikash Seminar Modeling Inference 1.txt]] |                               | [[module3-modeling and inference]]                               |
-| 4   | ![[vikash seminar_alex_automate_math.txt]]   |                               | [[module4]]                                                      |
-| 5   |                                              |                               | [[module5 automating math]]                                      |
-| 6   | ![[vikash seminar learning probprog.txt]]    |                               | [[module6]]                                                      |
+| 1   |                                              |                               | [[Space/Sources/Papers/🐅CompBayes/💻Mansinghka25_9.s/module1 scaling behavior of intelligence vs machine learning]] |
+| 2   |                                              |                               | [[Space/Sources/Papers/🐅CompBayes/💻Mansinghka25_9.s/module2]]                                                      |
+| 3   | ![[Vikash Seminar Modeling Inference 1.txt]] |                               | [[Space/Sources/Papers/🐅CompBayes/💻Mansinghka25_9.s/module3-modeling and inference]]                               |
+| 4   | ![[vikash seminar_alex_automate_math.txt]]   |                               | [[Space/Sources/Papers/🐅CompBayes/💻Mansinghka25_9.s/module4]]                                                      |
+| 5   |                                              |                               | [[Space/Sources/Papers/🐅CompBayes/💻Mansinghka25_9.s/module5 automating math]]                                      |
+| 6   | ![[vikash seminar learning probprog.txt]]    |                               | [[Space/Sources/Papers/🐅CompBayes/💻Mansinghka25_9.s/module6]]                                                      |
 | 7   | language                                     | [[📜syn_sem_ctrl_llm_smc]]    |                                                                  |
 |     | image perception as inverse graph            | [[📜vikash13_appx_bayes_img]] |                                                                  |
 

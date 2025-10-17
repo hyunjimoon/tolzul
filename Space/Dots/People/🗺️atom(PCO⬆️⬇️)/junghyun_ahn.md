@@ -1,3 +1,14 @@
+---
+collection:
+- '[[People]]'
+field:
+- 🐙ops
+- 🐢inv
+- 👾cog
+atom: 🗺️atom(PCO⬆️⬇️)
+created: '2024-12-14'
+---
+
 2024-12-14
 https://docs.google.com/document/d/1XT8Wbu1kqR-Scmejgewz2Vpn4i360mEUxbBLl1IlSPA/edit?usp=sharing
   

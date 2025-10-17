@@ -1,0 +1,22 @@
+id: papers-all
+type: table
+columns:
+  - property: file.name
+    label: Title
+    width: 300
+  - property: field
+    label: Field
+    width: 120
+  - property: year
+    label: Year
+    width: 60
+  - property: author_ids
+    label: Authors
+    width: 180
+filter: (collection contains Papers) and (file.name starts with 📜)
+sort:
+  - property: year
+    direction: desc
+views:
+  - type: table
+    name: Table

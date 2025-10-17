@@ -1,0 +1,33 @@
+id: movies-all
+type: table
+columns:
+  - property: year
+    label: Year
+    width: 60
+  - property: image
+    label: Poster
+    width: 80
+  - property: file.name
+    label: Title
+    width: 200
+  - property: rating
+    label: Rating
+    width: 60
+filter: collection contains Movies
+sort:
+  - property: year
+    direction: asc
+---
+id: movies-cards
+type: card
+filter: collection contains Movies
+sort:
+  - property: rating
+    direction: desc
+---
+id: movies-top
+type: card
+filter: (collection contains Movies) and (rating >= 4)
+sort:
+  - property: rating
+    direction: desc
