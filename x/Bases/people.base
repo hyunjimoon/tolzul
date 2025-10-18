@@ -1,24 +1,4 @@
-id: people-all
-type: table
-columns:
-  - property: file.name
-    label: Name
-    width: 200
-  - property: field
-    label: Field
-    width: 150
-  - property: atom
-    label: Atom
-    width: 100
-  - property: affiliation
-    label: Affiliation
-    width: 200
-filter: collection contains People
-sort:
-  - property: file.name
-    direction: asc
----
-id: people-by-field
+id: people-field
 type: table
 columns:
   - property: field
@@ -26,69 +6,16 @@ columns:
     width: 120
   - property: file.name
     label: Name
+    width: 180
+  - property: affiliation
+    label: Affiliation
     width: 200
   - property: atom
     label: Atom
     width: 100
-filter: collection contains People
+filter: type = "person"
 sort:
   - property: field
     direction: asc
-  - property: file.name
-    direction: asc
----
-id: people-cog
-type: table
-columns:
-  - property: file.name
-    label: Name
-    width: 250
-  - property: affiliation
-    label: Affiliation
-    width: 200
-filter: (collection contains People) and (field contains 👾cog)
-sort:
-  - property: file.name
-    direction: asc
----
-id: people-inv
-type: table
-columns:
-  - property: file.name
-    label: Name
-    width: 250
-  - property: affiliation
-    label: Affiliation
-    width: 200
-filter: (collection contains People) and (field contains 🐢inv)
-sort:
-  - property: file.name
-    direction: asc
----
-id: people-ops
-type: table
-columns:
-  - property: file.name
-    label: Name
-    width: 250
-  - property: affiliation
-    label: Affiliation
-    width: 200
-filter: (collection contains People) and (field contains 🐙ops)
-sort:
-  - property: file.name
-    direction: asc
----
-id: people-cba
-type: table
-columns:
-  - property: file.name
-    label: Name
-    width: 250
-  - property: affiliation
-    label: Affiliation
-    width: 200
-filter: (collection contains People) and (field contains 🐅cba)
-sort:
   - property: file.name
     direction: asc

@@ -95,7 +95,7 @@ define functions I'd like to adopt. this helps detecting people with this functi
 |                        | [[🗺️explain(entrepreneuring)]]      |                            |     | <mark class  = "purple">NSP1()              |                                                                                                 | [[🗺️explain(entrepreneuring)]]                                                                                                                    |
 |                        | [[🧭predict(entrepreneuring)]]        |                            |     | <mark class  = "purple">NSP2()              | what ownership structure is useful? (given industry), how to allocate resource (given industry) | [[🧭predict(entrepreneuring)]]                                                                                                                      |
 
-After defining my life goal with five functions,  interacting with amazing people ([[🤹‍♀️atom(bit)]]) in allowed me to set object as [[🌙human(tolzul)]], [[🗺️explain(entrepreneuring)]], [[👓synthesize(ops4innov)]], [[🧭predict(entrepreneuring)]]. [[def(walkie-talkie)]] is my ritual to exchange bits and atoms with the [[🤹‍♀️atom(bit)]] I feel attached to.
+After defining my life goal with five functions,  interacting with amazing people ([[def(people)]]) in allowed me to set object as [[🌙human(tolzul)]], [[🗺️explain(entrepreneuring)]], [[👓synthesize(ops4innov)]], [[🧭predict(entrepreneuring)]]. [[def(walkie-talkie)]] is my ritual to exchange bits and atoms with the [[def(people)]] I feel attached to.
 
 - 2024 summer, i'm delving into: how to detect people who has absorptive capacity? (JB>Charlie>Matt>Josh>Scott)
 ----

@@ -2,6 +2,8 @@
 map: true
 rank: 3
 collection: Maps
+성장:
+  - 2025-10-17T12:34:55-04:00
 ---
 
 # Maps by Folder
@@ -11,10 +13,9 @@ collection: Maps
 ## 📂 Folder Overview
 
 ### Space/Pattern/뿌리
-- 확률눈 (직관·철학)
 - 통계귀 (관찰·학습)  
 - 최적손 (실행·표현)
-
+- 확률눈 (직관·철학)
 ### Space/Dots
 - People (사람)
 - Arts (예술)

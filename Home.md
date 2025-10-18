@@ -1,224 +1,223 @@
 ---
-created: 2025-10-11
-collection:
-  - "[[Maps]]"
-rank: 5.2
-mapState:
-  - 🟩
+created: 2025-10-16
+type: map
+rank: 5
 성장:
-  - 2025-10-15T07:21:49-04:00
+  - 2025-10-17T14:50:14-04:00
 ---
 
+# 🏠 Home - Tolzul
 
-|구조|단계|해당 전투|핵심 내용|
-|---|---|---|---|
-|**기 (起)**|**도입**|**사천 해전**|임진왜란 발발 후, 이순신이 거북선을 앞세워 첫 승리를 거두며 **반격의 시작**을 알림.|
-|**승 (承)**|**전개**|**한산도 대첩**|학익진 전술로 왜 수군을 궤멸, 해상권을 장악하며 **전쟁의 판도를 역전**시킴.|
-|**전 (轉)**|**위기/절정**|**명량 해전**|12척의 배로 수백 척의 왜군을 막아내며 **조선 전체의 운명을 구원한 기적**.|
-|**결 (結)**|**결말**|**노량 해전**|도망치는 왜군을 섬멸, **7년 전쟁의 종지부**를 찍으나, 이순신 장군은 장렬히 전사.|
+> *"뉴런이 함께 발화하면 함께 묶인다"*  
+> **Neurons that fire together, wire together**
 
-# 🌊 Tolzul - 난중일기
-
-> *"義로운 어깨, 智혜로운 머리, 勇감한 손, 賢명한 가슴"*  
-> **義智勇賢 - 사천·한산·명량·노량**
-
----
-[[여행지]]
-## 🎯 네 개의 전장 (Four Battlefields)
-
-### 🐙 사천(巳川) - 義(의로운 어깨)
-**Operations Management | 최적손 60% + 확률눈 30% + 통계귀 10%**
-
-손의 협력으로 체계를 세우다. 노 젓는 수병들의 일사불란한 움직임.
-
-**핵심 질문:** *"How to do things right?"*  
-**대표 저널:** Management Science, Operations Research  
-**특징:** 반복 가능한 시스템, 손보탬의 조화, 효율성 극대화
-
-→ [[Space/Markets/🐙Operations|사천 전장 입장]]
+![[귀손눈.png]]
 
 ---
 
-### 🐅 한산(閑山) - 智(지혜로운 머리)
-**Strategy & Entrepreneurship | 통계귀 50% + 확률눈 30% + 최적손 20%**
+## 🧠 三位一體 - 귀손눈
 
-학익진의 전략. 데이터 기반 의사결정으로 적을 포위하다.
+| 감각 | 레이어 | 음악 | 진리 |
+|:---:|:---:|:---:|:---:|
+| 👂 **귀** | [[Space\|Space]] | 화음 | 공간의 동시성 |
+| ✋ **손** | [[Balance\|Balance]] | 리듬 | 시간의 반복 |
+| 👁 **눈** | [[Front\|Front]] | 멜로디 | 경로의 일관성 |
 
-**핵심 질문:** *"What are the right things to do?"*  
-**대표 저널:** Strategic Management Journal, AMJ  
-**특징:** 전략적 균형, 증거 기반 선택
-
-→ [[Space/Markets/🐅Strategy|한산 전장 입장]]
-
----
-
-### 🐢 명량(鳴梁) - 勇(용감한 손)
-**Innovation & Technology | 확률눈 50% + 통계귀 30% + 최적손 20%**
-
-거북선의 첫 실전 투입. 12척으로 330척을 막는 급진적 혁신.
-
-**핵심 질문:** *"How to create new possibilities?"*  
-**대표 저널:** Organization Science, Research Policy  
-**특징:** 필사즉생, 거북선 혁신, 적응적 실험
-
-→ [[Space/Markets/🐢Innovation|명량 전장 입장]]
+→ [[Space/Dots/귀손눈 프레임워크|프레임워크 전체 보기]]
 
 ---
 
-### 👾 노량(露梁) - 賢(현명한 가슴)
-**Computational Social Science | 통계귀 40% + 최적손 40% + 확률눈 20%**
+## 🎯 論文 作成 三質問
 
-전쟁 후를 내다보는 현명함. 복잡한 시스템에서 패턴을 발견하다.
+### 👂 What is the gap? (Space에서 듣기)
+**전체 지형을 한눈에** - 학계가 믿는 것은? 못 설명하는 것은?
 
-**핵심 질문:** *"What patterns exist in complexity?"*  
-**대표 저널:** Information Systems Research, MIS Quarterly  
-**특징:** 미래 통찰, 알고리즘 설계, 데이터 기반 발견
+- Papers by Conversation → [[Space/Maps/Papers by Conversation]]
+- 전체 조망 → [[Space/Maps/Maps]]
 
-→ [[Space/Markets/👾Computational|노량 전장 입장]]
+### ✋ Why should we care? (Balance에서 잡기)
+**매일 반복하며 다듬기** - 누구에게 중요? 왜 중요?
 
----
+- 오늘 일기 → `Cmd-d` / `Ctrl-d`
+- 주간 회고 → [[Balance/주별 멜로디]]
 
-## 🛠️ 세 개의 도구
+### 👁 Does it fill? (Front에서 보기)
+**프로젝트 흐름 속에서** - 어떻게 증명? 내 위치는?
 
-| 도구 | 역할 | 사용 시점 |
-|:---:|:---|:---|
-| ✋ **최적손** | Mathematical programming, 최적화 | 제약 하의 최적 해가 필요할 때 |
-| 🎲 **확률눈** | Bayesian inference, 불확실성 정량화 | 불확실성이 본질적일 때 |
-| 👂 **통계귀** | Data analysis, 인과 추론 | 패턴 발견과 검증이 필요할 때 |
-
-→ [[Space/Dots/창업학계/Fields/README|도구 배합 전략 보기]]
+- 진행 상황 → [[Front/Ongoing]]
+- 예시 → [[Space/Sources/Papers/Cohen1989]]
 
 ---
 
-## 📊 현재 전황 (Project Dashboard)
+## 🎵 Space - 화音 (공간의 울림)
 
-### 🔥 활성 전투 (Active Projects)
-![[home-front.base#On]]
+> **"귀로 듣는다 = 여러 소리가 동시에"**
 
-### ♻️ 진행 중인 작전 (Ongoing)
-![[home-front.base#Ongoing]]
+### I want to... 지식의 전체 지형을 보고 싶다
 
-### 〰️ 준비 중 (Simmering)
-![[home-front.base#Simmering]]
+**논문**:
+- Conversation threads → [[Space/Maps/Papers by Conversation]]
+- 전체 논문 → [[Space/Maps/Papers MOC]]
+- 새 논문 추가 → [[x/Templates/Paper Template]]
 
-→ [[Front|전투 상황 상세보기]]
+**지식**:
+- 지도 시스템 → [[Space/Maps/Maps]]
+- 연결점 → [[Space/Dots]]
+- 컬렉션 → [[Space/Maps/Collections]]
 
----
+**자료**:
+- 논문 → [[Space/Sources/Papers]]
+- 책 → [[Space/Sources/Books]]
+- 강의 → [[Space/Sources/Courses]]
 
-## 🎼 세 개의 실행 레이어
-
-> *"진리에는 두 가지가 있다. 하나는 '정적(static)'인 진리이고*  
-> *다른 하나는 '동적(dynamic)'인 진리다"* - 하이젠베르크
-
-### 🎵 화음(和音) - Space, 공간의 울림
-
-> [!map] **🗺️ Space - 순간의 전체 파악**
-> 
-> **화음은 공간의 산물입니다.** 순간순간을 한꺼번에 포착하는 것, 마치 항공사진처럼 지형 전체를 동시에 울리게 합니다.
-> 
-> Maps of Content를 통해 지식의 지형을 파악하고, 여러 음들이 동시에 울리듯 전체 구조를 조망합니다.
-> 
-> - [[Space/Maps/Maps|Maps]] - 지식 지도 시스템
-> - [[Space/Dots/창업학계/Fields/README|Markets]] - 4대 전장 상세
-> - [[Space/Dots|Dots]] - 연결점 탐색
-> 
-> *"순간을 포착하는 눈, 공간 속 위치를 측정하는 정적 진리"*
-> 
-> → [[Space|화음의 공간 입장하기]]
+→ [[Space|🎵 Space 입장하기]]
 
 ---
 
-### 🥁 리듬(律動) - Balance, 시간의 분절
+## 🥁 Balance - 律動 (시간의 분절)
 
-> [!balance] **⚖️ Balance - 주어진 시간을 쪼개기**
-> 
-> **리듬은 시간 위에 성립합니다.** 주어진 시간을 잘게 쪼개며, 일별·주별·월별의 규칙적인 박자를 만듭니다.
-> 
-> 하루하루의 일기, 주간의 회고, 월간의 점검. 이 반복되는 리듬이 삶의 기본 박자를 형성합니다.
-> 
-> - **오늘의 일기:** `Cmd-d` / `Ctrl-d` - 하루의 박자
-> - **주간 전황:** 매주 일요일 회고 - 주의 박자
-> - **월간 병력 점검:** 매월 말일 점검 - 월의 박자
-> 
-> ![[home-balance.base#Balance Rhythms]]
-> 
-> *"시간을 쪼개는 규칙적 박자, 삶의 기본 리듬"*
-> 
-> → [[Balance|리듬의 균형 입장하기]]
+> **"손으로 잡는다 = 시간을 쪼개며 반복"**
 
----
+### I want to... 규칙적인 루틴을 만들고 싶다
 
-### 🎶 멜로디(旋律) - Front, 시·공간의 기억 장치
+**일일**:
+- 오늘 일기 → `Cmd-d` / `Ctrl-d`
+- 하루의 박자 → [[Balance/일별 리듬]]
 
-> [!fire] **🔥 Front - Ergodic Life의 선율**
-> 
-> **멜로디는 시간과 공간 사이의 기억 장치입니다.** 리듬(시간의 산물)과 화음(공간의 산물), 그 양쪽을 일치시키는 인식 경로입니다.
-> 
-> On, Ongoing, Simmering... 구체적인 프로젝트들이 쌓여 만드는 일관된 선율. 어느 순간을 잘라봐도 당신이라는 사람의 본질적 멜로디가 들립니다. 사람들이 당신에게 기대하는 일관된 패턴, 그것이 바로 **Ergodic Life**입니다.
-> 
-> - [[Front/On|On]] - 맹렬한 진격, 화력 집중
-> - [[Front/Ongoing|Ongoing]] - 지속 작전, 꾸준한 진행
-> - [[Front/Simmering|Simmering]] - 준비 중, 전략 수립
-> 
-> *"시간과 공간을 잇는 기억, 귀로 들어오는 동적 진리"*
-> 
-> → [[Front|멜로디의 전선 입장하기]]
+**주간**:
+- 주간 회고 → [[Balance/주별 멜로디]]
+- 주의 박자
+
+**월간**:
+- 월간 점검 → [[Balance/월별 화음]]
+- 월의 박자
+
+→ [[Balance|🥁 Balance 입장하기]]
 
 ---
 
-## 🗡️ 이순신의 심법
+## 🎶 Front - 旋律 (기억 장치)
 
-> [!quote] **심안(心眼) - 마음의 눈**
-> "무인이 심안을 뜨면 감도는 공기만으로  
-> 적의 움직임과 나아가 적의 마음까지 감지할 수 있는 법"
+> **"눈으로 본다 = 경로를 기억하며 걷기"**
 
-> [!quote] **무념무상(無念無想) - 비움의 경지**
-> "무념무상이야말로 무인이 가져야 할 수 있는 최고의 경지니라"
+### I want to... 프로젝트를 관리하고 싶다
 
-> [!quote] **음악의 형이상학**
-> "리듬은 주어진 시간을 잘게 쪼개는 것이니 시간 위에 성립하지요.  
-> 화음은 울림입니다. 순간순간을 한꺼번에 포착하는 것으로, 공간의 파악이에요.  
-> 그러면 멜로디란 무엇일까요?  
-> 멜로디는 시간과 공간 사이의 '기억 장치'입니다."
+**상태별**:
+- 활성 전투 → [[Front/On]]
+- 진행 작전 → [[Front/Ongoing]]
+- 준비 중 → [[Front/Simmering]]
 
----
+**현재 상황**:
+```dataview
+TABLE file.folder as "Stage"
+FROM "Front"
+WHERE file.name != "Front"
+SORT file.folder ASC
+LIMIT 10
+```
 
-## 💫 Quick Access
-
-**전장 선택:**  
-[[Space/Markets/🐙Operations|🐙 사천]] · [[Space/Markets/🐅Strategy|🐅 한산]] · [[Space/Markets/🐢Innovation|🐢 명량]] · [[Space/Markets/👾Computational|👾 노량]]
-
-**레이어 이동:**  
-[[Space|🎵 화음-공간]] · [[Balance|🥁 리듬-시간]] · [[Front|🎶 멜로디-기억]]
-
-**시스템:**  
-[[Space/Maps/Maps|지도]] · [[Space/Dots/창업학계/Fields/README|시장]] · [[Recently Modified|최근 수정]]
+→ [[Front|🎶 Front 입장하기]]
 
 ---
 
-## 🌌 불확정성 원리와 지식의 탐험
+## 🔄 Engram 형성: 함께 발화하기
 
-> *"소립자의 공간 속 위치를 정확하게 측정하면 운동량을 계산할 수 없고,*  
-> *운동량을 정확하게 측정하려 하면 그 입자가 어디에 있는지 알 수 없다."*  
-> **- 하이젠베르크의 불확정성 원리**
+### 논문 읽을 때
 
-**정적 진리 (눈):** 항공사진처럼 전체 지형을 한눈에 → **화음·Space**  
-**시간의 분절 (손):** 주어진 시간을 잘게 쪼개며 → **리듬·Balance**  
-**동적 진리 (귀):** 그 지역을 걸어 다니며 체험, 일관된 경로 → **멜로디·Front**
+```
+1. 👂 귀로 듣는다 (Space)
+   Papers by Conversation에서 위치 파악
+   학계의 Null assumption 찾기
 
-*칸트: "시간과 공간은 인간 인식의 아 프리오리(a priori)이다"*
+2. ✋ 손으로 잡는다 (Balance)
+   오늘 일기에 Important 한 문장
+   주간 회고에서 다시 보기
+
+3. 👁 눈으로 본다 (Front)
+   내 프로젝트와 연결
+   Cohen89 → [내 논문] 흐름 확인
+```
+
+**결과**: 세 뉴런 동시 발화 → 강력한 기억 형성
 
 ---
 
-> [!note] 難中日記 (난중일기)
-> "큰 부담을 느낄 때마다 끼고 있는 게 난중일기.  
-> 희한하게 난중일기를 보고 있으면 위안받아요."
-> 
-> 이 vault는 현대의 난중일기입니다.  
-> 화음으로 전체를 보고, 리듬으로 시간을 쪼개며, 멜로디로 기억합니다.
+## 🎓 예시: Cohen1989
+
+![[귀손눈.png|200]]
+
+**👂 Space (듣기)**:
+- Conversation: Absorptive Capacity
+- Null: "R&D는 창조 전용"
+
+**✋ Balance (잡기)**:
+- Important: "Open innovation 전략"
+- Consequence: R&D 투자 재해석
+
+**👁 Front (보기)**:
+- Valid: 제약 산업 증거
+- My project: Supply chain AC
+
+→ [[Space/Sources/Papers/Cohen1989|전체 예시]]
+
+---
+
+## 💫 빠른 접근
+
+### 자주 사용하는 경로
+
+**Space (공간)**:
+- [[Space/Maps/Papers by Conversation|Conversation]]
+- [[Space/Maps/Maps|Maps]]
+- [[Space/Dots/논문 3질문 프레임워크|3질문]]
+
+**Balance (시간)**:
+- Daily note: `Cmd-d`
+- [[Balance/주별 멜로디|Weekly]]
+- [[Balance/월별 화음|Monthly]]
+
+**Front (경로)**:
+- [[Front/On|On]]
+- [[Front/Ongoing|Ongoing]]
+- [[Front/Simmering|Simmering]]
+
+---
+
+## 🌊 물의 세 가지 상태
+
+```
+👂 氷 (얼음) - Space
+   고정된 지식 구조
+   화음의 안정성
+   
+✋ 水 (물) - Balance
+   흐르는 일상
+   리듬의 순환
+   
+👁 氣 (수증기) - Front
+   자유로운 이동
+   멜로디의 변주
+```
+
+---
+
+## 🎯 시작하기
+
+### 새 사용자
+1. [[Space/QUICK_START|5분 가이드]] 읽기
+2. [[Space/Dots/귀손눈 프레임워크|프레임워크]] 이해
+3. 첫 논문 추가
+
+### 일상 루틴
+```
+아침: 👂 Space 5분 훑기
+낮:   ✋ Balance 일기 쓰기
+저녁: 👁 Front 상태 점검
+```
 
 ---
 
 ![[pale-blue-dot-banner.jpg]]
 
-*의지용현(義智勇賢) - 네 개의 전장에서, 세 개의 음악 레이어로, 세 가지 도구를 휘두르며*
+> *"함께 발화하는 뉴런은 함께 묶인다"*  
+> **👂 Space · ✋ Balance · 👁 Front**
