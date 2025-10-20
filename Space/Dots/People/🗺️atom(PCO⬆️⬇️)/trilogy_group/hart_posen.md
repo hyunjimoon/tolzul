@@ -1,18 +1,27 @@
 ---
 collection:
-- '[[People]]'
+  - "[[People]]"
 field:
-- 🐙ops
-- 🐢inv
-- 👾cog
+  - 🐙ops
+  - 🐢inv
+  - 👾cog
 atom: 🗺️atom(PCO⬆️⬇️)
-created: '2024-11-15'
+created: 2024-11-15
+성장:
+  - 2025-10-20T11:48:26-04:00
 ---
+
+q to hart
+1. what should i know before choosing theorist as my scholarly career?
+	1. pros?
+	2. cons?
+2. who are theorist in operations management that i can follow or reach out for more specific advice?
+3. i recall you saying 
 
 2025-07-08
 [[hart__angie_eval(framing123, model)_otter_ai.txt]]
 
-
+[[coase to culture x strategic ambiguity]]
 ---
 
 [[⚙️(🗄️📝)]]

@@ -16,7 +16,7 @@ cssclasses: []
 ---
 ~ [[Sources]]
 
-> [!kindling] [[Books]] | **[[Movies]]** | [[Series]] | [[Courses]] 
+> [!kindling] [[Books]] | **[[Movies]]** | [[Series]] | [[Courses]] | [[Papers]] 
 
 This note collects all notes where the `collection` property says `Movies`.
 

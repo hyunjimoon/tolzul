@@ -1,0 +1,168 @@
+views:
+  - type: table
+    name: books-all
+    filters:
+      and:
+        - file.folder.contains("Sources/언어/Books")
+        - file.name != ".md"
+    sort:
+      - property: file.mtime
+        direction: DESC
+    columns:
+      - property: file
+        label: Title
+      - property: by
+        label: Author
+      - property: year
+        label: Year
+      - property: rating
+        label: Rating
+      - property: bookCategory
+        label: Category
+      - property: file.mtime
+        label: Modified
+  - type: cards
+    name: books-cards
+    filters:
+      and:
+        - file.folder.contains("Sources/언어/Books")
+        - file.name != ".md"
+    sort:
+      - property: rating
+        direction: DESC
+      - property: year
+        direction: DESC
+    image_property: image
+    image_fit: cover
+    columns:
+      - property: file
+        label: Title
+      - property: by
+        label: Author
+      - property: year
+        label: Year
+      - property: rating
+        label: Rating
+  - type: table
+    name: books-by-rating
+    filters:
+      and:
+        - file.folder.contains("Sources/언어/Books")
+        - file.name != ".md"
+        - rating != null
+    sort:
+      - property: rating
+        direction: DESC
+      - property: year
+        direction: ASC
+    columns:
+      - property: file
+        label: Title
+      - property: by
+        label: Author
+      - property: year
+        label: Year
+      - property: rating
+        label: Rating
+      - property: bookCategory
+        label: Category
+  - type: table
+    name: books-by-category
+    filters:
+      and:
+        - file.folder.contains("Sources/언어/Books")
+        - file.name != ".md"
+    sort:
+      - property: bookCategory
+        direction: ASC
+      - property: year
+        direction: DESC
+    columns:
+      - property: file
+        label: Title
+      - property: bookCategory
+        label: Category
+      - property: year
+        label: Year
+      - property: rating
+        label: Rating
+    group:
+      - property: bookCategory
+  - type: table
+    name: books-recent
+    filters:
+      and:
+        - file.folder.contains("Sources/언어/Books")
+        - file.name != ".md"
+    sort:
+      - property: file.mtime
+        direction: DESC
+    limit: 20
+    columns:
+      - property: file
+        label: Title
+      - property: file.mtime
+        label: Last Modified
+      - property: bookCategory
+        label: Category
+  - type: cards
+    name: books-high-rated-cards
+    filters:
+      and:
+        - file.folder.contains("Sources/언어/Books")
+        - file.name != ".md"
+        - rating >= 4
+    sort:
+      - property: rating
+        direction: DESC
+    image_property: image
+    image_fit: cover
+    columns:
+      - property: file
+        label: Title
+      - property: by
+        label: Author
+      - property: rating
+        label: Rating
+  - type: table
+    name: books-reading
+    filters:
+      and:
+        - file.folder.contains("Sources/언어/Books")
+        - file.name != ".md"
+        - bookStatus == "읽는중"
+    sort:
+      - property: file.mtime
+        direction: DESC
+    columns:
+      - property: file
+        label: Title
+      - property: by
+        label: Author
+      - property: file.mtime
+        label: Modified
+  - type: table
+    name: books-high-rated
+    filters:
+      and:
+        - file.folder.contains("Sources/언어/Books")
+        - file.name != ".md"
+        - rating >= 4
+    sort:
+      - property: rating
+        direction: DESC
+      - property: year
+        direction: DESC
+    columns:
+      - property: file
+        label: Title
+      - property: by
+        label: Author
+      - property: year
+        label: Year
+      - property: rating
+        label: Rating
+  - type: cards
+    name: View
+  - type: cards
+    name: View 2

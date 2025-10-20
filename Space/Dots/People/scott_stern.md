@@ -1,6 +1,8 @@
 ---
 성장:
   - 2025-10-11T21:36:29-04:00
+  - 2025-10-19T21:39:39-04:00
+  - 2025-10-20T04:13:11-04:00
 ---
 Here is a synthesized summary of the meetings between Scott Stern and Angie over the last two years, organized to help you map their dynamic along the “toltol” (intellectual/relational acceleration) and “zulzul” (emotional depth) axes. Each summary is based on the 100-word meeting summaries and is cited with the relevant recording ID.
 

@@ -7,18 +7,8 @@ field:
 year: 2020
 created: 2024-12-24
 성장:
-  - 2025-10-16T21:52:52-04:00
+  - 2025-10-18T14:31:18-04:00
 ---
-
-
-
-As I simulate different adjectives to linguistically approximate my message of entrepreneurial promise spirit, I struggle to know how **right, wise, good** differ. I would appreciate any guidance.
-
-As the english translation of 의병 that fought for korean independence in early 19th century is righteous army, personal preference is this but some con
-
-so we beat on, boats against the current, borne back ceaselessly into the past
-
-
 
 [[09-28|25-09-28]]
 

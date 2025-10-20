@@ -7,6 +7,7 @@ rank: 1
 deadline: 2025-10-20
 성장:
   - 2025-10-11T19:35:47-04:00
+  - 2025-10-18T07:21:16-04:00
 market: 🐢Operations
 tools:
   최적손: 50
@@ -17,6 +18,10 @@ audience: Operations researchers, Entrepreneurs
 first_principle: Framework Design
 status: active
 ---
+
+[[bob_gibbons]] 에게 [[coase to culture x strategic ambiguity]]
+
+
 
 # Oil Framework 논문 최종 제출
 
@@ -74,31 +79,3 @@ Oil Framework 논문을 완성하여 Management Science에 제출
 - Abstract에는 4가지 필요: What, Why, How, So What
 - Scholars와 Entrepreneurs 두 청중 모두 고려
 - Impact 문장이 가장 중요 - 이것이 hook!
-
-### Charlie의 주요 피드백
-- Introduction 순서: What → Impact를 먼저 → Why → How
-- Theory-driven하되 실용적으로
-- 케이스를 더 강조
-
-### 다음 논문을 위한 메모
-- 더 많은 케이스 필요
-- 정량적 분석 강화
-- 산업별 차이 탐구
-
----
-
-## 💪 오늘의 전투 구호
-
-> **"아직 싸움이 끝나지 않았다!"**
-
-이 논문은 3개월의 전투입니다.  
-- 🐢 사천에서 문제를 발견했고
-- 🐅 한산에서 모델을 만들었고  
-- 🐙 명량에서 케이스를 분석했고
-- 👾 노량에서 이제 의미를 완성합니다
-
-**마지막 일격, 집중!**
-
----
-
-[[Home|← 사령부로]] | [[현지 멜로디|노량 전장으로]]

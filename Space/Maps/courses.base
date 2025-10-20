@@ -1,0 +1,251 @@
+views:
+  - type: cards
+    name: courses-current
+    filters:
+      and:
+        - file.folder.contains("Sources/Courses")
+        - file.name != ".md"
+        - courseStatus == "진행중"
+    sort:
+      - property: yearXP
+        direction: DESC
+    image_property: image
+    image_fit: cover
+    columns:
+      - property: file
+        label: Title
+      - property: by
+        label: Instructor
+      - property: semester
+        label: Semester
+      - property: courseCategory
+        label: Category
+  - type: cards
+    name: courses-all-cards
+    filters:
+      and:
+        - file.folder.contains("Sources/Courses")
+        - file.name != ".md"
+    sort:
+      - property: yearXP
+        direction: DESC
+      - property: semester
+        direction: DESC
+    image_property: image
+    image_fit: cover
+    columns:
+      - property: file
+        label: Title
+      - property: by
+        label: Instructor
+      - property: yearXP
+        label: Year
+      - property: courseCategory
+        label: Category
+  - type: table
+    name: courses-all
+    filters:
+      and:
+        - file.folder.contains("Sources/Courses")
+        - file.name != ".md"
+    sort:
+      - property: yearXP
+        direction: DESC
+    columns:
+      - property: file
+        label: Title
+      - property: by
+        label: Instructor
+      - property: yearXP
+        label: Year
+      - property: semester
+        label: Semester
+      - property: courseCategory
+        label: Category
+      - property: courseStatus
+        label: Status
+      - property: file.mtime
+        label: Modified
+  - type: cards
+    name: courses-cognition
+    filters:
+      and:
+        - file.folder.contains("Sources/Courses")
+        - file.name != ".md"
+        - courseCategory.contains("Cognition")
+    sort:
+      - property: yearXP
+        direction: DESC
+    image_property: image
+    image_fit: cover
+    columns:
+      - property: file
+        label: Title
+      - property: by
+        label: Instructor
+      - property: semester
+        label: Semester
+  - type: cards
+    name: courses-innovation
+    filters:
+      and:
+        - file.folder.contains("Sources/Courses")
+        - file.name != ".md"
+        - courseCategory.contains("Innovation")
+    sort:
+      - property: yearXP
+        direction: DESC
+    image_property: image
+    image_fit: cover
+    columns:
+      - property: file
+        label: Title
+      - property: by
+        label: Instructor
+      - property: semester
+        label: Semester
+  - type: cards
+    name: courses-operations
+    filters:
+      and:
+        - file.folder.contains("Sources/Courses")
+        - file.name != ".md"
+        - courseCategory.contains("Operations")
+    sort:
+      - property: yearXP
+        direction: DESC
+    image_property: image
+    image_fit: cover
+    columns:
+      - property: file
+        label: Title
+      - property: by
+        label: Instructor
+      - property: semester
+        label: Semester
+  - type: cards
+    name: courses-compbayes
+    filters:
+      and:
+        - file.folder.contains("Sources/Courses")
+        - file.name != ".md"
+        - courseCategory.contains("CompBayes")
+    sort:
+      - property: yearXP
+        direction: DESC
+    image_property: image
+    image_fit: cover
+    columns:
+      - property: file
+        label: Title
+      - property: by
+        label: Instructor
+      - property: semester
+        label: Semester
+  - type: table
+    name: courses-by-category
+    filters:
+      and:
+        - file.folder.contains("Sources/Courses")
+        - file.name != ".md"
+    sort:
+      - property: courseCategory
+        direction: ASC
+      - property: yearXP
+        direction: DESC
+    columns:
+      - property: file
+        label: Title
+      - property: by
+        label: Instructor
+      - property: yearXP
+        label: Year
+      - property: semester
+        label: Semester
+    group:
+      - property: courseCategory
+  - type: table
+    name: courses-by-instructor
+    filters:
+      and:
+        - file.folder.contains("Sources/Courses")
+        - file.name != ".md"
+    order:
+      - file.name
+      - year
+    sort:
+      - property: by
+        direction: ASC
+      - property: yearXP
+        direction: DESC
+    columns:
+      - property: file
+        label: Title
+      - property: yearXP
+        label: Year
+      - property: semester
+        label: Semester
+      - property: courseCategory
+        label: Category
+    group:
+      - property: by
+  - type: table
+    name: courses-recent
+    filters:
+      and:
+        - file.folder.contains("Sources/Courses")
+        - file.name != ".md"
+    sort:
+      - property: file.mtime
+        direction: DESC
+    limit: 15
+    columns:
+      - property: file
+        label: Title
+      - property: by
+        label: Instructor
+      - property: file.mtime
+        label: Last Modified
+      - property: courseStatus
+        label: Status
+  - type: cards
+    name: courses-completed
+    filters:
+      and:
+        - file.folder.contains("Sources/Courses")
+        - file.name != ".md"
+        - courseStatus == "완료"
+    sort:
+      - property: yearXP
+        direction: DESC
+    image_property: image
+    image_fit: cover
+    columns:
+      - property: file
+        label: Title
+      - property: by
+        label: Instructor
+      - property: yearXP
+        label: Year
+  - type: table
+    name: courses-by-year
+    filters:
+      and:
+        - file.folder.contains("Sources/Courses")
+        - file.name != ".md"
+    sort:
+      - property: yearXP
+        direction: DESC
+      - property: semester
+        direction: DESC
+    columns:
+      - property: file
+        label: Title
+      - property: by
+        label: Instructor
+      - property: semester
+        label: Semester
+      - property: courseCategory
+        label: Category
+    group:
+      - property: yearXP

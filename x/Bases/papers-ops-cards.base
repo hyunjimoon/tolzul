@@ -4,3 +4,9 @@ filter: (collection contains Papers) and (file.name starts with 📜) and (field
 sort:
   - property: rank
     direction: desc
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - field == ["🐙ops"]

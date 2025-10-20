@@ -1,17 +1,25 @@
 ---
 collection:
-- '[[People]]'
+  - "[[People]]"
 field:
-- 👾cog
+  - 👾cog
+  - 🐙ops
 atom: 🧭atom(PCO🔃)
-created: '2024-04-26'
+created: 2024-04-26
+성장:
+  - 2025-10-19T02:08:28-04:00
 ---
+A handful of titles I wish to earn; one of them, a student who makes Kris smile. So here's another attempt:
+
+> Everyone finds the Zoom experience fatiguing and a bit awkward (they become oysgezoomt). A big reason is that the effigies in the rectangles, all of them looking at their own screens instead of the camera, cannot make eye contact. One workaround never caught on: an AI module that generated a deepfake of each person’s 👁️eyes looking straight out of the screen. It was too much: viewers ended up looking at each other more than they do in natural conversation, and they were cognitively taxed by constantly having to interpret what the pair of eyes gazing back at them meant. Making, breaking, and interpreting eye contact is a nimble human performance, and it exploits an anatomical feature of the face that can’t be duplicated by a camera and a screen.  
+
+> excerpt from <_When everyone knows that everyone knows...>_
+
+That is to say, I agree Thursday 30th is the best option. How's 3pm?
 
 [[10-04|25-10-04]]
 
 You always have the most creative and unique questions and analysis, and I'm honored this one is about my work!! :)
-
-
 
 2024-05
 #todo

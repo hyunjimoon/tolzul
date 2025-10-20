@@ -4,6 +4,7 @@ collection:
 author_ids:
 field:
   - 👾cog
+  - 🐢inv
 year: 2023
 created: 2024-11-05
 ---

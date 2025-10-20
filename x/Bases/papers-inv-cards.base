@@ -6,6 +6,15 @@ sort:
     direction: desc
   - property: year
     direction: desc
+formulas:
+  Untitled: ""
 views:
   - type: table
     name: Table
+    filters:
+      and:
+        - field == ["🐢inv"]
+    order:
+      - file.name
+      - field
+      - formula.Untitled

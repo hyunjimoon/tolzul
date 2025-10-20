@@ -4,3 +4,9 @@ filter: (collection contains Papers) and (file.name starts with 📜) and (statu
 sort:
   - property: created
     direction: desc
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.name.contains("📜")

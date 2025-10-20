@@ -1,5 +1,17 @@
- **contents**
+---
+collection:
+  - "[[Books]]"
+by: "[[Milo Beckman]]"
+year: 2021
+yearXP: 2024
+rating: 4.5
+bookCategory: "수학/과학"
+bookStatus: "완독"
+image: "http://books.google.com/books/content?id=wLHWDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+created: 2024-01-01
+---
 
+**contents**
 
   - [[#**Topology**|**Topology**]]: shape, manifold, dimension
 - [[#**Analysis**|**Analysis**]]: infinity, continuum, maps
@@ -10,13 +22,13 @@
 Theory proved are as follows
 - there are infinite number of shapes (infinite family argument: systemic process of churning out descendant)  
 - continuous >> infinity (diagonal indexing technique)  
-- every complete-information game without luck is “solvable.”  
+- every complete-information game without luck is "solvable."  
 - 1+1 = 2  
   
 
 Quotes
 
-## **Topology** 
+## **Topology** 
 
 - two shapes are the same if you can turn one into the other by stretching and squeezing, without any ripping or gluing  
 - The circle (aka S one) and the infinite line (named R one) are the only manifolds in the first dimension.  
@@ -38,14 +50,14 @@ Quotes
 - structure examples: set(simplest structure), graph(set with additional structure), game/predator-prey tree,  
 - symmetry types: flip, rotational, transitional, dilational  
     
-- **Reduction**; all arithmetic relation could be reduced to axiom system with five statements: 1) zero is  a number 2) if x is a number, the successor of x is a number, 3) zero is not the successor of the number, 4) two numbers with the same successor are the same number 5) if a set S contains zero and S contains the successor of every number in S, then S contains every number  
-* Godel proved "every possible model of arithmetic is imcomplete",  "no formal system of proof can prove all mathematical truths"
+- **Reduction**; all arithmetic relation could be reduced to axiom system with five statements: 1) zero is  a number 2) if x is a number, the successor of x is a number, 3) zero is not the successor of the number, 4) two numbers with the same successor are the same number 5) if a set S contains zero and S contains the successor of every number in S, then S contains every number  
+* Godel proved "every possible model of arithmetic is imcomplete",  "no formal system of proof can prove all mathematical truths"
 
 ## math philosophy types:  
-- platonism - mathematical objects really exist in some “platonic realm”  
+- platonism - mathematical objects really exist in some "platonic realm"  
 - intuitionism -math is an extension of human intuition and reasoning  
 - logicism - math is an extension of logic, which is objective and universal  
 - empiricism - math is just like science: it must be tested to be believed  
 - formalism - math is a game of symbolic manipulation with no deeper meaning  
 - conventionalism - math is the set of agreed-upon truths within the math community  
-- We’re not inventing math to fit our world—we’re discovering what math is out there, and then later realizing that our world happens to look exactly like it
+- We're not inventing math to fit our world—we're discovering what math is out there, and then later realizing that our world happens to look exactly like it

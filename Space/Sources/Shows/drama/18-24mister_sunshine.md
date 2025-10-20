@@ -1,9 +1,10 @@
 ---
 출생: 2019-03-03
+성장:
+  - 2025-10-18T23:09:12-04:00
 ---
-Best language from [Mister sunshine ](https://en.wikipedia.org/wiki/Mr._Sunshine_(South_Korean_TV_series) drama
 
-ep.3
+# ep.3
 > 러시아제 볼텍쇼 소총은 총신이 길고 반동이 심해서 체구가 작으면 다루기 어렵소. 허나 독일제보다 명중률이 높아 유효사거리 밖으로 벗어나도 감만 있으면 실패할 일이 드물거요. 쏘는 연습보다 제대로 드는 연습을 먼저 해야하오.
 
 > 신문에서 작금을 낭만의 시대라고 하더이다. 그럴지도. 개화한 이들이 즐긴다는 가베. 불란서 양장. 각국의 박래품들 나 역시 다르지 않소. 단지 나의 낭만은 독일제 총구 안에 있을 뿐이오. 혹시 아오?
@@ -23,14 +24,14 @@ ep.3
 
  "For 500 years, we've endured many invasions. Each time, someone risked their life to protect us. Now, this Joseon is being peacefully torn apart. First by the Qing, then Russia, now Japan, and even American troops have entered. In this state of our nation, shouldn't someone fight?"
  
-ep.7
+# ep.7
  >꽃도 꽃가마도 꽃같은 내얼굴도 안 통하니..
 질투하라 꽃을 주십니까 꽃처럼 살라고 꽃을 주십니까? 여인의 심금을 울리는것은 한철에 시들 꽃이 아니라, 내 진심이지요. 오래된 진심일수록 좋구요.
 
-ep.9
+# ep.9
 > 헛될수록 비싸고 달콤하죠. 나라를 팔아 부자가 되겠다는 불순한 희망, 애를 쓰면 나라가 안 팔릴거라는 안쓰런 희망, 정혼을 깰수 있겠단 나약한 희망. 그런 헛된것들이요.
 
-ep.10
+# ep.10
 > 이방의 사내, 이리 될 줄  처음부터 알고 있었지.
 > stranger
 > s에는 snow, sunshine, star 모두 하늘에서 빛나는 것들이구나. sky 
@@ -38,7 +39,7 @@ ep.10
 > moonlight, miracle, mister
 
 
-ep.15
+# ep.15
 > 죽이시겠습니까? 그래도 되는거였으면 미리 고했어야지. 그 자의 손에 한 미국인이 목숨을 잃었고, 또 다른 이는 목숨을 걸었고, 부모를 잃은 한 아이는 원수를 지척에 두고도 죽을 힘을 다해 물러나니 부디 이 분노보다 나은 선택을 하길 바라네.
 
 x2
@@ -48,6 +49,11 @@ x2
 의병장: 제가 대감께 그리 요구한 것입니다. 그 미국인에게 중한것은 선교사의 선의와 명예를 온전히 하는 일뿐입니다. 그자의 호의를 한번쯤은 우리도 호의로 돌려줘야하지 않겠습니까?
 대감: 혹 그리하면 그 자를 얻어볼 요량인가? 그리하면 얻어질 자가 확실한가?
 의병장: 이미 얻었던걸 몰라 지금은 잃었습니다.
+
+
+나 하나 죽인다고 다 넘어간 조선이 구해지나?  
+적어도 하루는 늦출수 있지. 그 하루에 하루를 보태는 것이다.
+조금씩 나아지면 되는것이다.
 
 
 눈부신 날이었다

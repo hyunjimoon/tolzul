@@ -7,8 +7,17 @@ atom: 🧭atom(PCO🔃)
 created: 2024-10-28
 성장:
   - 2025-10-14T14:14:55-04:00
+  - 2025-10-20T10:31:30-04:00
 ---
 
+10/20/2025 (다음 방문시 성장에 쌓이는지 확인하기; 아직 )
+balance for my guilty feeling from
+1. maintained trust and optimism in advisor-phd relationship, 
+2. your sharp distinguishment between "co-ordination" and "co-operation"
+3. embarassed, shame, guilt
+4. 
+
+---
 - language instinct
 - [[The Better Angels of Our Nature]]
 - rationality - what it is, why it seems scare, why it matters

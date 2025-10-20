@@ -20,3 +20,6 @@ sort:
 views:
   - type: table
     name: Table
+    filters:
+      and:
+        - file.name.contains("📜")

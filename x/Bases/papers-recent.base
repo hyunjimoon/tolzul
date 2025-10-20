@@ -4,3 +4,13 @@ filter: (collection contains Papers) and (file.name starts with 📜) and (read_
 sort:
   - property: read_year
     direction: desc
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.name.contains("📜")
+    sort:
+      - property: 성장
+        direction: DESC
+    limit: 10

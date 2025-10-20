@@ -7,7 +7,10 @@ related:
   - "[[Innovation]]"
 created: 2025-10-14
 rank: 3
+성장:
+  - 2025-10-17T20:23:59-04:00
 ---
+
 
 # 🐢 Innovation - 혁신과 전략
 
@@ -17,6 +20,8 @@ rank: 3
 
 Innovation field는 **기업 혁신**, **기술 전략**, **불확실성 관리**를 연구합니다. 거북선의 명량해전처럼, 급진적 혁신과 적응적 실험이 핵심입니다.
 
+
+[[23_15357]], ![[🗺️(15357).png|300]]
 ### Core Questions
 - How do firms manage uncertainty and ambiguity?
 - What drives disruptive innovation?

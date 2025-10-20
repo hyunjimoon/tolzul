@@ -9,3 +9,9 @@ sort:
 views:
   - type: table
     name: Table
+    filters:
+      and:
+        - field == ["👾cog"]
+        - file.name.startsWith("📜")
+    order:
+      - file.fullname
