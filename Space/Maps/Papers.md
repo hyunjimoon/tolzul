@@ -10,6 +10,7 @@ mapState: 🟩
   - 2025-10-14T14:42:48-04:00
   - 2025-10-18T23:45:43-04:00
   - 2025-10-19T17:50:04-04:00
+  - 2025-10-21T09:55:14-04:00
 ---
 ~ [[Sources]]
 
@@ -25,11 +26,27 @@ mapState: 🟩
 
 ---
 
-# 📊 논문 포스터와 함께 보기 (Card View)
 
-논문 포스터 이미지와 함께 시각적으로 표시됩니다.
 
-![[papers-cards.base]]
+# 🖼️ 포스터 이미지가 포함된 테이블 (Dataview)
+
+논문 포스터를 테이블 형태로 한눈에 볼 수 있습니다.
+
+```dataview
+TABLE WITHOUT ID
+	year as Year,
+	choice(image, embed(link(image)), 
+	       choice(diagrams, "🖼️", "📄")) as Poster,
+	file.link as Title,
+	join(list(by)) as Author,
+	battlefield as Field,
+	mentor as Mentor,
+	rank as Rank
+WHERE
+	contains(collection, [[Papers]]) and
+	file.name != ".md"
+SORT rank desc, year desc
+```
 
 ---
 
@@ -50,15 +67,19 @@ Rank 5 논문들을 포스터와 함께 표시합니다.
 
 ### 👾 Cognition
 ![[papers-cog-cards.base]]
+![[papers-cog-table.base]]
 
 ### 🐢 Innovation  
 ![[papers-inv-cards.base]]
+![[papers-inv-table.base]]
 
 ### 🐙 Operations
 ![[papers-ops-cards.base]]
+![[papers-ops-table.base]]
 
 ### 🐅 CompBayes
 ![[papers-cba-cards.base]]
+![[papers-cba-table.base]]
 
 ---
 

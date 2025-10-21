@@ -60,7 +60,7 @@ Related to:
 
 Builds foundation for:
 - Understanding [[🗺️(15357)]] course framework
-- [[1 Innovation]] field research
+- [[1🐢Innovation]] field research
 
 ## Class Discussion Notes
 

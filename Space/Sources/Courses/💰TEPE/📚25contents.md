@@ -1,5 +1,7 @@
-
-
+---
+성장:
+  - 2025-10-20T20:34:34-04:00
+---
 
 |Section/Subsection|🔐Research Question|🧱Literature Brick|🔑Key Message|📊Empirical Evidence/Mathematical Formalization|
 |---|---|---|---|---|

@@ -8,6 +8,7 @@ deadline: 2025-10-20
 성장:
   - 2025-10-11T19:35:47-04:00
   - 2025-10-18T07:21:16-04:00
+  - 2025-10-21T11:14:41-04:00
 market: 🐢Operations
 tools:
   최적손: 50
@@ -17,6 +18,10 @@ journal_target: Management Science
 audience: Operations researchers, Entrepreneurs
 first_principle: Framework Design
 status: active
+---
+
+
+
 ---
 
 [[bob_gibbons]] 에게 [[coase to culture x strategic ambiguity]]

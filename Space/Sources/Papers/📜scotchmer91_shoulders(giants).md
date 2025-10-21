@@ -73,7 +73,7 @@ Connects to [[🗺️(15357)]] framework:
 - A' depends on A: cumulativeness in ideas production
 - Patent design affects how effectively current ideas enable future ideas
 
-Related themes from [[1 Innovation]]:
+Related themes from [[1🐢Innovation]]:
 - Sequential innovation incentives
 - Role of licensing markets
 

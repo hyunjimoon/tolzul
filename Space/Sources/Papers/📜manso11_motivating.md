@@ -100,7 +100,7 @@ Connects to [[🗺️(15357)]] framework:
 - Z_A: Contract design is key institutional parameter
 - Shows why δ (form of production function) varies with incentive structure
 
-Related themes from [[1 Innovation]]:
+Related themes from [[1🐢Innovation]]:
 - Risk-taking in innovation
 - Time horizons and research strategy
 - Design of innovation institutions

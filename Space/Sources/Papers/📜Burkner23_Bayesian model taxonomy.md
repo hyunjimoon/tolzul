@@ -8,6 +8,8 @@ field:
   - 🐅cba
 year: 2023
 created: 2025-02-03
+diagrams:
+  - "[[📜Burkner23_Bayesian model taxonomy 2025-04-11-8]]"
 ---
 
 | Section/Subsection                                           | 🔐Research Question / Focus                                                  | 🧱Literature Brick / Context                                                                                    | 🔑Key Message / Contribution                                                                                                                                                                                                                                |

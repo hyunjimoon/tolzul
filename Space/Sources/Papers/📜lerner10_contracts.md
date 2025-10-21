@@ -96,7 +96,7 @@ Connects to [[🗺️(15357)]] framework:
 - Financial constraints interact with optimal institutional design
 - Shows importance of properly testing theoretical predictions empirically
 
-Related themes from [[1 Innovation]]:
+Related themes from [[1🐢Innovation]]:
 - Role of financial markets in innovation
 - Optimal contract design under uncertainty
 - Early vs late stage research trade-offs

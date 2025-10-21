@@ -71,7 +71,7 @@ Connects to [[🗺️(15357)]] framework:
 - Z_A: Patent institutions shape direction but not necessarily rate of innovation
 - Shows institutions affect which types of ideas get developed
 
-Related themes from [[1 Innovation]]:
+Related themes from [[1🐢Innovation]]:
 - Role of IP in innovation
 - Sectoral differences in appropriability
 

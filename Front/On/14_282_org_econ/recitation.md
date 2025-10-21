@@ -1,6 +1,7 @@
 ---
 성장:
   - 2025-10-20T17:25:54-04:00
+  - 2025-10-21T14:12:34-04:00
 ---
 ## steady state predictions
 
@@ -51,3 +52,27 @@ building routines: learning, cooperation,
 - if you have money, you'd never fire agent -> loose the intuition
 - 💰do i put money(so powerful; model become stationary) or not in the money (no firing) ->  DON'T HAVE STH IN BETWEEN (wealth constraints)
 - if R_t = b, not to experiment, 
+
+---
+- implementability of experimentation policies
+
+sum across domain, 
+because of the inequality, there will be interdependancy,
+
+breakthrough in domain 1, our relation; pool incentive accros domain, 
+no loss in pooling from every domain (defect, punish in every domain)
+project never expire, 
+
+average of the project should be sufficiently higher (deteriorate; )
+
+explore until we find "v not", don't know what you don't know - become confident,
+
+- exploitation phase is harder to sustain as outcome if fixed (clear winner and loser)  WHEREAS exploration phase people all have they will be the winner
+- you can't characterize it 
+- what i can do today -> what i can do tmr
+
+---
+
+charlie - just as you want me to be happy, i want you to be happy, and that was motivation behind trying to add operational piece
+
+i wish to have 

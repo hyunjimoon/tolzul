@@ -1,3 +1,7 @@
+---
+성장:
+  - 2025-10-20T20:37:00-04:00
+---
 https://student.mit.edu/catalog/search.cgi?search=21T.101
 
 Explores the actor's dramatic instincts with 
@@ -15,7 +19,3 @@ Studio exercises foster
   
 Develops communication skills and offers varied approaches to relating with self, ensemble, character, dramatic material, and audience. Limited to 20 per section.
 
-
-TR1-2.30, MW3-5
-[[gibbons]]
-pre

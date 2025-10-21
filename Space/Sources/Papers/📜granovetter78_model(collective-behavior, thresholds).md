@@ -6,6 +6,8 @@ field:
   - 🐅cba
 year: 2078
 created: 2025-05-30
+diagrams:
+  - "[[📜SS_granovetter78_model(collective-behavior, thresholds) 2025-05-30-9]]"
 ---
 
 - [full paper](https://www.pushkin.fm/wp-content/uploads/imported-files/granovetter78threshold.pdf#:~:text=granovetter%20www,In%20most) 

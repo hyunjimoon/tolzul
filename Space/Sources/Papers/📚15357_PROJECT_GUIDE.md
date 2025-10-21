@@ -5,7 +5,7 @@
 We're transforming your 15.357 class materials into a structured knowledge base with:
 - **100+ individual paper files** (📜 prefix)
 - **1 control tower map** (🗺️ prefix) 
-- **Integration** with existing [[1 Innovation]] field structure
+- **Integration** with existing [[1🐢Innovation]] field structure
 
 ## 📁 File Structure
 
@@ -185,16 +185,16 @@ Once you have many paper files created, enhance the control tower map:
 1. **Open** 🗺️15357_course_map.base
 2. **Add** specific connections between papers
 3. **Fill in** any missing papers in the .base structure
-4. **Link** to [[1 Innovation]] field themes
+4. **Link** to [[1🐢Innovation]] field themes
 
 ## 🔗 Integration with Existing System
 
 ### Don't Overwrite These Files:
-- ✅ [[1 Innovation]].md - Add to it, don't replace
+- ✅ [[1🐢Innovation]].md - Add to it, don't replace
 - ✅ [[📜gans20_choose(tech)]].md - Already exists, good example
 
 ### Do Connect To:
-- [[1 Innovation]] field themes
+- [[1🐢Innovation]] field themes
 - [[Papers]] collection
 - [[Fields]] collection
 - [[23_15357]] class notes

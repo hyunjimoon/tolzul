@@ -5,6 +5,7 @@ course: "[[14.282 Organizational Economics]]"
 created: 2025-10-19
 성장:
   - 2025-10-19T18:30:00-04:00
+  - 2025-10-21T11:13:45-04:00
 ---
 
 # 🗄️🐅 - 14.282 Enhanced Module Guide
@@ -26,16 +27,16 @@ This enhanced guide adds **Critical Insights Tables** inspired by [[23_15357]]'s
 
 ### 📚 Core Concepts
 
-| **Concept** | 💡 **Critical Insight** | 🔑 **Memorable Takeaway** | 🏆 **Application** |
-|-------------|------------------------|--------------------------|-------------------|
-| **Moral Hazard** | Agents choose hidden actions that affect outcomes | "Can't see effort → pay for luck" | Why founders need equity, not salary |
-| **Multi-tasking** | Multiple tasks → effort distortion toward measured ones | "What gets measured gets gamed" | Why pure KPIs hurt innovation |
-| **Career Concerns** | Future reputation incentivizes current effort | "Work hard today, shine tomorrow" | Why junior researchers hustle without tenure |
-| **Relational Contracts** | Self-enforcing promises based on future rents | "Trust needs tomorrow's profit" | Why long-term partnerships work |
-| **Subjective Evaluation** | Boss's discretion complements hard metrics | "Numbers + judgment > numbers alone" | Why Google uses OKRs + manager feedback |
-| **Tournaments** | Rank-based pay motivates competition | "Winner takes most" | Why sales teams have leaderboards |
-| **Team Incentives** | Free-riding problem in team production | "Everyone's job = nobody's job" | Why startups need individual accountability |
-| **Control vs. Incentives** | Strong relationships enable control, not just pay | "Trust unlocks orders" | Why VCs do more than write checks |
+| **Concept**                | 💡 **Critical Insight**                                 | 🔑 **Memorable Takeaway**            | 🏆 **Application**                           |
+| -------------------------- | ------------------------------------------------------- | ------------------------------------ | -------------------------------------------- |
+| **Moral Hazard**           | Agents choose hidden actions that affect outcomes       | "Can't see effort → pay for luck"    | Why founders need equity, not salary         |
+| **Multi-tasking**          | Multiple tasks → effort distortion toward measured ones | "What gets measured gets gamed"      | Why pure KPIs hurt innovation                |
+| **Career Concerns**        | Future reputation incentivizes current effort           | "Work hard today, shine tomorrow"    | Why junior researchers hustle without tenure |
+| **Relational Contracts**   | Self-enforcing promises based on future rents           | "Trust needs tomorrow's profit"      | Why long-term partnerships work              |
+| **Subjective Evaluation**  | Boss's discretion complements hard metrics              | "Numbers + judgment > numbers alone" | Why Google uses OKRs + manager feedback      |
+| **Tournaments**            | Rank-based pay motivates competition                    | "Winner takes most"                  | Why sales teams have leaderboards            |
+| **Team Incentives**        | Free-riding problem in team production                  | "Everyone's job = nobody's job"      | Why startups need individual accountability  |
+| **Control vs. Incentives** | Strong relationships enable control, not just pay       | "Trust unlocks orders"               | Why VCs do more than write checks            |
 
 ### 📜 Key Papers
 

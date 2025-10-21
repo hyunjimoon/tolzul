@@ -74,5 +74,5 @@ https://claude.ai/chat/442bfd57-b329-4cd6-9095-bab69a4d3290
 감각(S): 데이터/측정
 ```
 
-related: [[4 Cognition]], [[1 Innovation]], [[🐙Operations]], [[2 CompBayes]]
+related: [[4👾Cognition]], [[1🐢Innovation]], [[🐙Operations]], [[2🐅CompBayes]]
 

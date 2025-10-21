@@ -1,0 +1,24 @@
+id: papers-inv-table
+type: table
+columns:
+  - property: image
+    label: 🖼️
+    width: 80
+  - property: file.name
+    label: Title
+    width: 250
+  - property: author_ids
+    label: Authors
+    width: 150
+  - property: year
+    label: Year
+    width: 60
+  - property: rank
+    label: ⭐
+    width: 50
+filter: (collection contains Papers) and (file.name starts with 📜) and (field contains 🐢inv)
+sort:
+  - property: rank
+    direction: desc
+  - property: year
+    direction: desc

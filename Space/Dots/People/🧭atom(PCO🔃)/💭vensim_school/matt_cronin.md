@@ -1,11 +1,41 @@
 ---
 collection:
-- '[[People]]'
+  - "[[People]]"
 field:
-- 👾cog
+  - 👾cog
 atom: 🧭atom(PCO🔃)
-created: '2024-05-02'
+created: 2024-05-02
+성장:
+  - 2025-10-21T13:35:49-04:00
 ---
+
+affecting
+
+---
+
+1. i've been thinking about the comments you gave.
+    
+2. i just need some help, solving ;
+    
+3. tell me more about so that what you're asking me of
+    
+4. "worth investing in"
+    
+    1. -> what time /concern/worry, how much you care about them
+        
+    2. not transactional but relational
+        
+    3. if you can't use it??
+        
+    4. should have ; use it,
+        
+    5. ⭐️being careful and considerate of the time they are investing⭐️
+        
+    6. what they expect me to demonstrate a legitimate and i
+        
+5. here to help them believe i can do what they ask of me.
+    
+6. not sure mutually exclusive -
 
 [[2025-07-09|25-07-09-14]]
 

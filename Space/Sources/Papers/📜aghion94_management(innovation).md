@@ -93,7 +93,7 @@ Connects to [[🗺️(15357)]] framework:
 - This paper addresses Z_A: how institutional design (control allocation) affects innovation incentives
 - Shows why contractual environment matters for L_A (who participates in research)
 
-Related themes from [[1 Innovation]]:
+Related themes from [[1🐢Innovation]]:
 - Innovation incentives through institutional design
 - Trade-offs between different stakeholder incentives
 - Role of financing in innovation outcomes

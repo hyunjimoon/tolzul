@@ -126,7 +126,7 @@ Connects to [[🗺️(15357)]] framework:
 - Z_A: Incentive design shapes type and direction of research
 - δ: Different incentive structures may change the form of the production function itself
 
-Related themes from [[1 Innovation]]:
+Related themes from [[1🐢Innovation]]:
 - Exploration of new knowledge frontiers
 - Trade-offs in research funding design
 - Measurement of innovation quality vs quantity

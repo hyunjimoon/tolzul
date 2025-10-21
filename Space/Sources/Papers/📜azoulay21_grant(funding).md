@@ -98,7 +98,7 @@ Connects to [[🗺️(15357)]] framework:
 - Shows why no single mechanism optimal for all innovation types
 - Emphasizes complementarity across funding sources
 
-Related themes from [[1 Innovation]]:
+Related themes from [[1🐢Innovation]]:
 - Public goods aspects of research
 - Exploration vs exploitation in funding
 - Role of institutions in innovation system

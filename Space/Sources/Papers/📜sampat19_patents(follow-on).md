@@ -75,7 +75,7 @@ Connects to [[🗺️(15357)]] framework:
 - Cumulative aspect of ideas production: A enters production function
 - Patents need not block cumulativeness if institutions adapt
 
-Related themes from [[1 Innovation]]:
+Related themes from [[1🐢Innovation]]:
 - Cumulativeness of innovation
 - Role of informal norms
 

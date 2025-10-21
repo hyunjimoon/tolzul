@@ -82,7 +82,7 @@ Connects to [[🗺️(15357)]] framework:
 - Ideas production function: $A' = f(L_A, K_A, A; Z_A, \delta)$
 - [How this paper relates to framework]
 
-Related themes from [[1 Innovation]]:
+Related themes from [[1🐢Innovation]]:
 - [Theme 1]
 - [Theme 2]
 

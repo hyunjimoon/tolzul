@@ -2,9 +2,23 @@
 성장:
   - 2025-10-11T21:36:29-04:00
   - 2025-10-19T21:39:39-04:00
-  - 2025-10-20T04:13:11-04:00
+  - 2025-10-20T21:52:14-04:00
+  - 2025-10-21T08:54:28-04:00
+URL: https://gemini.google.com/app/e605dca2904b1ced
 ---
-Here is a synthesized summary of the meetings between Scott Stern and Angie over the last two years, organized to help you map their dynamic along the “toltol” (intellectual/relational acceleration) and “zulzul” (emotional depth) axes. Each summary is based on the 100-word meeting summaries and is cited with the relevant recording ID.
+2025 [[10-21]], delivered my thoughts to scott via [[on love, bayes, what drives me]]
+### Angie와 Scott 교수의 교류 타임라인 (2023-2025)
+
+| 시기 (Period)  | 주요 사건 (Key Event)                                                                                   | 관계 분석 (Relationship Analysis)                                                  |
+| ------------ | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| **2023년 가을** | Angie, Scott 교수에게 학문적으로 깊이 매료됨 ("I fell in love with you" 기록).                                      | Scott의 비전과 지성에 대한 Angie의 깊은 존경심이 형성되고, 학문적 동반자 관계의 씨앗이 뿌려짐.                    |
+| **2023년 겨울** | Scott 교수가 '베이즈 창업' 학회에 Angie를 초대함.                                                                  | Scott이 Angie를 비전의 잠재적 파트너로 인식하기 시작한 첫 공식 신호. 아이디어 차원의 교류 시작.                   |
+| **2024년 봄**  | '베이즈 창업' 학회에 함께 참석함.                                                                                | 공동의 학문 커뮤니티에 참여하며 지적 유대감 강화.                                                   |
+| **2024년 여름** | Scott, AOM 학회에서 '베이즈 창업' 비전 공유. Angie와 AI 기반 의사결정 모델에 대해 논의.                                        | Scott의 비전이 구체화되고, Angie는 핵심 주제에 지적으로 기여하며 대화의 깊이가 더해짐.                         |
+| **2024년 가을** | Charlie 교수와 함께 확률적 프로그래밍에 대해 논의. 창업 전략에서의 탐색 모델에 대한 깊이 있는 토론 진행.                                    | Angie가 두 교수 사이에서 독자적인 목소리를 내기 시작. 특히 Scott과의 토론을 통해 지적 파트너로서의 입지를 다짐.          |
+| **2025년 봄**  | Scott, Angie의 논문에 "Green light"을 주며 출판 독려. **(이면)** Charlie의 추천에도 불구, Scott이 Angie의 TIES 그룹 합류를 거절. | 표면적으로는 관계가 정점에 달했지만, 이면에서는 Scott이 Angie의 학문적 준비 상태에 대해 확신하지 못하고 있었음이 드러남.      |
+| **2025년 여름** | Angie의 논문 수정 및 진로에 대한 깊은 대화. Scott, 부트캠프에서 자신의 초기 연구가 틀렸음을 인정하며 패러다임 전환 선언.                         | 신뢰 관계 심화. Scott의 고백은 Angie에게 그가 함께 길을 개척할 수 있는 '혁신가'라는 믿음을 줌.                  |
+| **2025년 가을** | Angie, 자격심사 "No Pass" 판정. Scott, 위원회 미팅에서 Angie의 아이디어를 옹호하며 '석사 논문' 경로를 적극 제시.                      | 위기 속에서 Scott의 진심이 드러남. 공식적인 과정은 막혔지만, Angie의 학문적 여정을 지지하며 새로운 '균형' 구축의 기회를 만듦. |
 
 ---
 

@@ -6,6 +6,7 @@ field:
   - 👾cog
   - 🐢inv
 year: 2023
+image: "Pasted image 20250409030148.png"
 created: 2024-11-05
 ---
 

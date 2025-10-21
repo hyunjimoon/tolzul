@@ -72,7 +72,7 @@ Connects to [[🗺️(15357)]] framework:
 - Measurement of A' (ideas production)
 - Challenges in quantifying innovation value
 
-Related themes from [[1 Innovation]]:
+Related themes from [[1🐢Innovation]]:
 - Innovation measurement difficulties
 - Heterogeneity in patent quality
 

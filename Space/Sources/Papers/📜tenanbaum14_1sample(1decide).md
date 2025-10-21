@@ -5,6 +5,7 @@ author_ids:
 field:
   - 🐢inv
 year: 2014
+image: "Pasted image 20241106170516.png"
 created: 2024-11-05
 ---
 

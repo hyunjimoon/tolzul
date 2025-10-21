@@ -5,9 +5,13 @@ author_ids:
 field:
   - 🐢inv
 year: 2020
+image: Pasted image 20250409102105.png
 created: 2024-12-24
 성장:
   - 2025-10-18T14:31:18-04:00
+  - 2025-10-21T09:17:56-04:00
+diagrams:
+  - "[[📜 gans20_choose(tech) 2025-04-21-20]]"
 ---
 
 [[09-28|25-09-28]]

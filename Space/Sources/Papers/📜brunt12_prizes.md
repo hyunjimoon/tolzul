@@ -79,7 +79,7 @@ Connects to [[🗺️(15357)]] framework:
 - Z_A: Prize systems as institutional mechanism
 - Shows non-pecuniary motivations matter for L_A
 
-Related themes from [[1 Innovation]]:
+Related themes from [[1🐢Innovation]]:
 - Multiple incentive mechanisms
 - Importance of recognition in science
 

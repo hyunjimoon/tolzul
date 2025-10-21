@@ -83,7 +83,7 @@ Connects to [[🗺️(15357)]] framework:
 - Z_A: Patent system design distorts innovation direction
 - Shows how institutions affect which problems researchers tackle
 
-Related themes from [[1 Innovation]]:
+Related themes from [[1🐢Innovation]]:
 - Market failures in innovation
 - Optimal IP system design
 
