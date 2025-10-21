@@ -317,8 +317,8 @@ WHERE date >= date(this.week) AND date < date(this.week) + dur(7 days)
 ---
 
 ## Related
-- [[Balance/🧊일별 리듬/README|🧊 일별]]
-- [[Balance/☁️Monthly/README|☁️ 월별]]
+- [[Calendar/🧊일별 리듬/README|🧊 일별]]
+- [[Calendar/☁️Monthly/README|☁️ 월별]]
 - [[Balance/물의 세 가지 상태|전체 개념]]
 - [[Home|홈]]
 

@@ -1,7 +1,7 @@
 ---
 성장:
   - 2025-10-18T07:40:50-04:00
-  - 2025-10-20T11:48:30-04:00
+  - 2025-10-20T12:25:48-04:00
 ---
 
 1. Gibbons가 Bilateral governance (Ongoing coordination without integration)을 강조하는 이유?
@@ -18,7 +18,15 @@
     
 7. "세 카테고리 (1) 🤝visible hands/🫂integration, (2) 🤝visible hands/👥non-integration, (3) 👻invisible hand/👥non-integration"에서 building new equilibrium에 해당하는 카테고리는 뭔가요?
 
-
+continue as phd 
+- 1. different cause
+- 2. problem: charlie opposed but now better 
+- like idea don't like execution -> execution;  (effort, focus, ); 
+- creative act of challenging the status quo is  = in the beginning; obtuse/vague ; without clarity
+- as the creative sta; deliverable materizes; my strategy ; quality of idea and quality of deliverability ; very 
+- executing and work (MANAGER) vs ZERO-ONE
+	- assumption: hard to be clear (venture capital - high degree of confidence; early)
+	- 
 
 ---
 
