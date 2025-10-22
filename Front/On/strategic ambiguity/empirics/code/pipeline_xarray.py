@@ -49,23 +49,78 @@ class PitchbookPipeline:
             self.ds = self._init_empty_dataset()
 
     def _init_empty_dataset(self):
-        """Initialize empty xarray Dataset with metadata"""
+        """Initialize empty xarray Dataset with metadata including git info"""
+        import subprocess
+
+        # Get git metadata for reproducibility
+        try:
+            git_commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'],
+                                                  cwd=Path(__file__).parent.parent).decode('utf-8').strip()
+            git_branch = subprocess.check_output(['git', 'rev-parse', '--abbrev-ref', 'HEAD'],
+                                                  cwd=Path(__file__).parent.parent).decode('utf-8').strip()
+            git_remote = subprocess.check_output(['git', 'config', '--get', 'remote.origin.url'],
+                                                  cwd=Path(__file__).parent.parent).decode('utf-8').strip()
+
+            # Construct GitHub URL
+            if 'github.com' in git_remote or 'hyunjimoon/tolzul' in git_remote:
+                repo_url = 'https://github.com/hyunjimoon/tolzul'
+                git_commit_url = f'{repo_url}/commit/{git_commit}'
+                git_branch_url = f'{repo_url}/tree/{git_branch}'
+            else:
+                git_commit_url = f'commit:{git_commit}'
+                git_branch_url = f'branch:{git_branch}'
+        except:
+            git_commit = 'unknown'
+            git_branch = 'unknown'
+            git_commit_url = 'unknown'
+            git_branch_url = 'unknown'
+
         ds = xr.Dataset(
             attrs={
-                'pipeline_version': '1.0',
+                'pipeline_version': '2.0_xarray_only',
                 'created_at': datetime.now().isoformat(),
                 'last_updated': datetime.now().isoformat(),
                 'data_source': 'Pitchbook',
-                'pipeline_status': 'initialized'
+                'pipeline_status': 'initialized',
+                # Git metadata for reproducibility
+                'git_commit_id': git_commit,
+                'git_commit_url': git_commit_url,
+                'git_branch': git_branch,
+                'git_branch_url': git_branch_url,
+                'github_pr_url': '',  # Will be filled when PR is created
+                # Step completion tracking
+                'step_01_status': 'pending',
+                'step_02_status': 'pending',
+                'step_03_status': 'pending',
+                'step_04_status': 'pending',
+                'step_05_status': 'pending',
             }
         )
         return ds
 
-    def save_checkpoint(self, step_name):
-        """Save current state to disk"""
+    def save_checkpoint(self, step_num, step_name):
+        """Save current state to disk with step completion tracking"""
         self.ds.attrs['last_updated'] = datetime.now().isoformat()
         self.ds.attrs['last_completed_step'] = step_name
-        self.ds.to_netcdf(self.checkpoint_file)
+        self.ds.attrs[f'step_{step_num:02d}_status'] = 'completed'
+        self.ds.attrs[f'step_{step_num:02d}_timestamp'] = datetime.now().isoformat()
+
+        # Load all data into memory before saving (avoid lazy loading issues)
+        self.ds.load()
+
+        # Save to temporary file first, then rename (atomic operation)
+        temp_file = self.checkpoint_file.with_suffix('.nc.tmp')
+        self.ds.to_netcdf(temp_file, mode='w')
+
+        # Close and rename
+        if self.checkpoint_file.exists():
+            self.checkpoint_file.unlink()
+        temp_file.rename(self.checkpoint_file)
+
+        # Reopen for next operations
+        self.ds.close()
+        self.ds = xr.open_dataset(self.checkpoint_file)
+
         print(f"💾 Checkpoint saved: {step_name}")
 
     def step_01_process_company_data(self, force=False):
@@ -117,20 +172,24 @@ class PitchbookPipeline:
 
         ai_ml_df['high_integration_cost'] = ai_ml_df.apply(calc_integration_cost, axis=1)
 
-        # Convert to xarray
-        # Set company_id as index
+        # Convert to xarray - store each column separately to handle mixed types
+        # This allows viewing all data in one Dataset while avoiding dtype issues
         ai_ml_df = ai_ml_df.set_index('CompanyID')
 
-        # Select key columns
-        key_cols = ['CompanyName', 'vagueness', 'high_integration_cost',
-                    'Employees', 'YearFounded', 'TotalRaised']
-        company_data = ai_ml_df[key_cols].to_xarray()
+        # Store each column as separate DataArray (handles mixed str/int/float types)
+        for col in ai_ml_df.columns:
+            var_name = f'company_{col}'
+            self.ds[var_name] = xr.DataArray(
+                ai_ml_df[col].values,
+                dims=['company'],
+                coords={'company': ai_ml_df.index.values}
+            )
 
-        # Add to dataset
-        self.ds['company_data'] = company_data.to_array(dim='variable')
+        # Store row count for reference
+        self.ds.attrs['n_companies'] = len(ai_ml_df)
 
         print(f"  ✅ Processed {len(ai_ml_df)} AI/ML companies")
-        self.save_checkpoint(step_name)
+        self.save_checkpoint(1, step_name)
 
     def step_02_process_deal_data(self, force=False):
         """
@@ -171,18 +230,23 @@ class PitchbookPipeline:
             (deal_panel['DealStatus'].str.contains('Completed', case=False, na=False))
         ).astype(int)
 
-        # Convert to xarray
+        # Convert to xarray - store each column separately
         deal_panel['deal_id'] = range(len(deal_panel))
         deal_panel = deal_panel.set_index('deal_id')
 
-        key_cols = ['CompanyID', 'CompanyName', 'round', 'DealSize',
-                    'funding_success', 'DealDate', 'PostValuation']
-        deal_data = deal_panel[key_cols].to_xarray()
+        # Store each column as separate DataArray
+        for col in deal_panel.columns:
+            var_name = f'deal_{col}'
+            self.ds[var_name] = xr.DataArray(
+                deal_panel[col].values,
+                dims=['deal'],
+                coords={'deal': deal_panel.index.values}
+            )
 
-        self.ds['deal_data'] = deal_data.to_array(dim='variable')
+        self.ds.attrs['n_deals'] = len(deal_panel)
 
         print(f"  ✅ Processed {len(deal_panel)} deals")
-        self.save_checkpoint(step_name)
+        self.save_checkpoint(2, step_name)
 
     def step_03_create_panel(self, force=False):
         """
@@ -197,29 +261,51 @@ class PitchbookPipeline:
 
         print(f"▶️  Step 3: Creating analysis panel...")
 
-        # Convert back to pandas for merging (could be done in xarray but pandas is easier)
-        company_df = self.ds['company_data'].to_pandas().T
-        deal_df = self.ds['deal_data'].to_pandas().T
+        # Convert xarray variables back to pandas DataFrames
+        company_cols = [v for v in self.ds.data_vars if v.startswith('company_')]
+        deal_cols = [v for v in self.ds.data_vars if v.startswith('deal_')]
 
-        # Merge
+        company_data = {}
+        for col in company_cols:
+            col_name = col.replace('company_', '')
+            company_data[col_name] = self.ds[col].values
+
+        company_df = pd.DataFrame(company_data, index=self.ds['company'].values)
+
+        deal_data = {}
+        for col in deal_cols:
+            col_name = col.replace('deal_', '')
+            deal_data[col_name] = self.ds[col].values
+
+        deal_df = pd.DataFrame(deal_data, index=self.ds['deal'].values)
+
+        # Merge on CompanyID
         panel = deal_df.merge(
             company_df,
             left_on='CompanyID',
             right_index=True,
-            how='inner'
+            how='inner',
+            suffixes=('_deal', '_company')
         )
 
-        # Create panel structure (each firm × 2 rounds)
-        # ... (similar logic as before)
-
+        # Add derived variables
+        panel['series_b_dummy'] = (panel['round'] == 'Series B').astype(int)
         panel['observation_id'] = range(len(panel))
         panel = panel.set_index('observation_id')
 
-        analysis_panel = panel.to_xarray()
-        self.ds['analysis_panel'] = analysis_panel.to_array(dim='variable')
+        # Store panel data (each column separately)
+        for col in panel.columns:
+            var_name = f'panel_{col}'
+            self.ds[var_name] = xr.DataArray(
+                panel[col].values,
+                dims=['observation'],
+                coords={'observation': panel.index.values}
+            )
+
+        self.ds.attrs['n_observations'] = len(panel)
 
         print(f"  ✅ Created panel with {len(panel)} observations")
-        self.save_checkpoint(step_name)
+        self.save_checkpoint(3, step_name)
 
     def step_04_run_analysis(self, force=False):
         """
@@ -234,32 +320,104 @@ class PitchbookPipeline:
 
         print(f"▶️  Step 4: Running analysis...")
 
-        # Convert to pandas for statsmodels
-        panel_df = self.ds['analysis_panel'].to_pandas().T
+        # Convert panel variables back to pandas DataFrame
+        panel_cols = [v for v in self.ds.data_vars if v.startswith('panel_')]
+        panel_data = {}
+        for col in panel_cols:
+            col_name = col.replace('panel_', '')
+            panel_data[col_name] = self.ds[col].values
 
-        # Run regressions (simplified)
+        panel_df = pd.DataFrame(panel_data, index=self.ds['observation'].values)
+
+        # Prepare for regression
+        panel_df['vagueness_scaled'] = panel_df['vagueness'] / 100
+
+        # Normalize column names (handle case sensitivity)
+        panel_df.columns = [col.lower() for col in panel_df.columns]
+
+        # Check if required columns exist, otherwise use simplified formula
+        required_cols = ['log_series_a_amount', 'employees']
+        available_cols = [col for col in required_cols if col in panel_df.columns]
+
+        # Run regressions
         import statsmodels.formula.api as smf
 
-        model1 = smf.logit(
-            'funding_success ~ vagueness + series_b_dummy + vagueness:series_b_dummy',
-            data=panel_df
-        ).fit(disp=False)
+        # Model 1: Two-way interaction
+        if available_cols:
+            controls = ' + '.join(available_cols)
+            model1_formula = f"""
+                funding_success ~ vagueness_scaled + series_b_dummy +
+                                  vagueness_scaled:series_b_dummy + {controls}
+            """
+        else:
+            model1_formula = """
+                funding_success ~ vagueness_scaled + series_b_dummy +
+                                  vagueness_scaled:series_b_dummy
+            """
 
-        # Store results
+        try:
+            model1 = smf.logit(model1_formula, data=panel_df).fit(disp=False)
+        except:
+            print("  ⚠️  Logit failed, using OLS")
+            model1 = smf.ols(model1_formula, data=panel_df).fit()
+
+        # Model 2: Three-way interaction
+        if available_cols:
+            controls = ' + '.join(available_cols)
+            model2_formula = f"""
+                funding_success ~ vagueness_scaled + series_b_dummy + high_integration_cost +
+                                  vagueness_scaled:series_b_dummy +
+                                  vagueness_scaled:high_integration_cost +
+                                  series_b_dummy:high_integration_cost +
+                                  vagueness_scaled:series_b_dummy:high_integration_cost + {controls}
+            """
+        else:
+            model2_formula = """
+                funding_success ~ vagueness_scaled + series_b_dummy + high_integration_cost +
+                                  vagueness_scaled:series_b_dummy +
+                                  vagueness_scaled:high_integration_cost +
+                                  series_b_dummy:high_integration_cost +
+                                  vagueness_scaled:series_b_dummy:high_integration_cost
+            """
+
+        try:
+            model2 = smf.logit(model2_formula, data=panel_df).fit(disp=False)
+        except:
+            print("  ⚠️  Logit failed, using OLS")
+            model2 = smf.ols(model2_formula, data=panel_df).fit()
+
+        # Store results as pickled object
         results = {
-            'model1_params': model1.params,
-            'model1_pvalues': model1.pvalues,
-            'model1_summary': str(model1.summary())
+            'model1_params': model1.params.to_dict(),
+            'model1_pvalues': model1.pvalues.to_dict(),
+            'model1_summary': str(model1.summary()),
+            'model2_params': model2.params.to_dict(),
+            'model2_pvalues': model2.pvalues.to_dict(),
+            'model2_summary': str(model2.summary())
         }
 
-        # Save as pickled object (xarray doesn't handle complex objects well)
         with open(self.output_dir / 'model_results.pkl', 'wb') as f:
             pickle.dump(results, f)
+
+        # Save as CSV tables
+        model1_results = pd.DataFrame({
+            'Variable': model1.params.index,
+            'Coefficient': model1.params.values,
+            'p-value': model1.pvalues.values,
+        })
+        model1_results.to_csv(self.output_dir / 'table2_model1.csv', index=False)
+
+        model2_results = pd.DataFrame({
+            'Variable': model2.params.index,
+            'Coefficient': model2.params.values,
+            'p-value': model2.pvalues.values,
+        })
+        model2_results.to_csv(self.output_dir / 'table4_model2.csv', index=False)
 
         self.ds.attrs['model_results_file'] = str(self.output_dir / 'model_results.pkl')
 
         print(f"  ✅ Analysis complete")
-        self.save_checkpoint(step_name)
+        self.save_checkpoint(4, step_name)
 
     def step_05_create_deliverables(self, force=False):
         """
@@ -273,26 +431,131 @@ class PitchbookPipeline:
 
         print(f"▶️  Step 5: Creating deliverables...")
 
-        # Create figures (simplified)
+        # Convert panel variables back to pandas DataFrame
+        panel_cols = [v for v in self.ds.data_vars if v.startswith('panel_')]
+        panel_data = {}
+        for col in panel_cols:
+            col_name = col.replace('panel_', '')
+            panel_data[col_name] = self.ds[col].values
+
+        panel_df = pd.DataFrame(panel_data, index=self.ds['observation'].values)
+
+        # Import plotting libraries
+        import matplotlib
+        matplotlib.use('Agg')
         import matplotlib.pyplot as plt
+        import seaborn as sns
 
-        panel_df = self.ds['analysis_panel'].to_pandas().T
+        sns.set_style("whitegrid")
 
-        # Figure 1: Bar chart
-        fig, ax = plt.subplots(figsize=(10, 6))
-        success_by_round = panel_df.groupby('round')['funding_success'].mean()
-        success_by_round.plot(kind='bar', ax=ax)
-        ax.set_title('Funding Success by Round')
-        ax.set_ylabel('Success Rate')
-        plt.tight_layout()
-        plt.savefig(self.output_dir / 'figure1_success_by_round.png', dpi=300)
-        plt.close()
+        # Normalize column names
+        panel_df.columns = [col.lower() for col in panel_df.columns]
 
-        self.ds.attrs['deliverables_created'] = True
+        # Table 1: Descriptive statistics
+        print("\n  Creating Table 1: Descriptive statistics")
+        # Use only available columns
+        desc_vars_candidates = ['vagueness', 'high_integration_cost', 'funding_success',
+                                 'dealsize', 'employees', 'totalraised']
+        desc_vars = [v for v in desc_vars_candidates if v in panel_df.columns]
+
+        if desc_vars:
+            desc_stats = panel_df[desc_vars].describe().T
+            desc_stats['median'] = panel_df[desc_vars].median()
+            desc_stats = desc_stats[['count', 'mean', 'median', 'std', 'min', 'max']]
+            desc_stats.to_csv(self.output_dir / 'table1_descriptives.csv')
+            print(f"    ✅ Saved table1_descriptives.csv")
+        else:
+            print(f"    ⚠️  Skipped table1 (no numeric columns found)")
+
+        # Table 3: Success rates by sector
+        print("\n  Creating Table 3: Success rates")
+        required_for_table3 = ['vagueness_category', 'round', 'integration_cost_label', 'funding_success']
+        if all(col in panel_df.columns for col in required_for_table3):
+            success_rates = panel_df.groupby(['vagueness_category', 'round', 'integration_cost_label']).agg({
+                'funding_success': ['count', 'sum', 'mean']
+            }).round(3)
+            success_rates.columns = ['N', 'Successes', 'Success_Rate']
+            success_rates = success_rates.reset_index()
+            success_pivot = success_rates.pivot_table(
+                index=['integration_cost_label', 'vagueness_category'],
+                columns='round',
+                values='Success_Rate'
+            )
+            success_pivot.to_csv(self.output_dir / 'table3_success_rates.csv')
+            print(f"    ✅ Saved table3_success_rates.csv")
+        else:
+            print(f"    ⚠️  Skipped table3 (missing required columns)")
+
+        # Figure 1: Reversal pattern bars
+        print("\n  Creating Figure 1: Reversal bars")
+        if all(col in panel_df.columns for col in ['vagueness_category', 'round', 'funding_success']):
+            fig, ax = plt.subplots(figsize=(12, 7))
+            success_by_vague_round = panel_df.groupby(['vagueness_category', 'round'])['funding_success'].mean().unstack()
+
+            x = np.arange(len(success_by_vague_round.index))
+            width = 0.35
+
+            bars1 = ax.bar(x - width/2, success_by_vague_round['Series A'], width,
+                           label='Series A', color='steelblue', alpha=0.8)
+            bars2 = ax.bar(x + width/2, success_by_vague_round['Series B'], width,
+                           label='Series B', color='coral', alpha=0.8)
+
+            ax.set_xlabel('Promise Type', fontsize=13, fontweight='bold')
+            ax.set_ylabel('Funding Success Rate', fontsize=13, fontweight='bold')
+            ax.set_title('Funding Success Reversal', fontsize=14, fontweight='bold')
+            ax.set_xticks(x)
+            ax.set_xticklabels(success_by_vague_round.index)
+            ax.legend(fontsize=11)
+            ax.set_ylim(0, 1.1)
+            ax.grid(axis='y', alpha=0.3)
+
+            for bars in [bars1, bars2]:
+                for bar in bars:
+                    height = bar.get_height()
+                    ax.text(bar.get_x() + bar.get_width()/2., height,
+                            f'{height:.1%}', ha='center', va='bottom', fontsize=10)
+
+            plt.tight_layout()
+            plt.savefig(self.output_dir / 'figure1_reversal_bars.png', dpi=300)
+            plt.close()
+            print(f"    ✅ Saved figure1_reversal_bars.png")
+        else:
+            print(f"    ⚠️  Skipped figure1 (missing required columns)")
+
+        # Figure 2: Vagueness curves
+        print("\n  Creating Figure 2: Vagueness curves")
+        if all(col in panel_df.columns for col in ['vagueness', 'round', 'funding_success']):
+            fig, ax = plt.subplots(figsize=(12, 7))
+
+            panel_df['vagueness_bin'] = pd.cut(panel_df['vagueness'], bins=[0, 30, 50, 70, 100],
+                                                 labels=['0-30', '30-50', '50-70', '70-100'])
+            vague_curves = panel_df.groupby(['vagueness_bin', 'round'])['funding_success'].mean().unstack()
+
+            for col in vague_curves.columns:
+                ax.plot(range(len(vague_curves.index)), vague_curves[col],
+                        marker='o', linewidth=2.5, markersize=8, label=col, alpha=0.8)
+
+            ax.set_xlabel('Vagueness Level', fontsize=13, fontweight='bold')
+            ax.set_ylabel('Funding Success Rate', fontsize=13, fontweight='bold')
+            ax.set_title('How Vagueness Affects Funding Success', fontsize=14, fontweight='bold')
+            ax.set_xticks(range(len(vague_curves.index)))
+            ax.set_xticklabels(vague_curves.index)
+            ax.legend(fontsize=11, title='Round')
+            ax.grid(alpha=0.3)
+            ax.set_ylim(0, 1.1)
+
+            plt.tight_layout()
+            plt.savefig(self.output_dir / 'figure2_vagueness_curves.png', dpi=300)
+            plt.close()
+            print(f"    ✅ Saved figure2_vagueness_curves.png")
+        else:
+            print(f"    ⚠️  Skipped figure2 (missing required columns)")
+
+        self.ds.attrs['deliverables_created'] = 1  # Use int instead of bool for NetCDF compatibility
         self.ds.attrs['deliverables_path'] = str(self.output_dir)
 
-        print(f"  ✅ Deliverables created")
-        self.save_checkpoint(step_name)
+        print(f"\n  ✅ All deliverables created")
+        self.save_checkpoint(5, step_name)
 
     def run_pipeline(self, start_from=1, force_rerun=False):
         """
