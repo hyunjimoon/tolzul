@@ -1,0 +1,151 @@
+Angie.H Moon  0:04  
+Okay, so to the ideal outcome of this meeting would be to sync with you, what is the hypothesis I want to test, and also for that, what is the I already shared this via text, but I'm just recalling where those are came from. So the conversation I had with Charlie and Scott was, there are a lot of commitment versus flexibility trade off in other management fields but entrepreneurship, it feels like there is some hidden cost of commitment. What I mean by that is like Scott was actually telling one of his experiences today, like he was talking to one MIT professors, and if in smoking his technology for his whole year, like career, and he thinks that's the only way to go, but we all know there are many other options to achieve something. So my point is, people think, people think they're experimenting, but they're just holding on or committing to what they already know. So the reason why I like this research, why I'm passionate about this is, first of all, I think honest signaling should have more faith in what we are doing like and that's somehow how I've been operating. And I've said I am ready to finally commit to become academic scholar for studying entrepreneurship, and I really like this topic. Can you help me develop I'm I think finding a topic that interests me and Charlie and Scott is a huge win for investing my summer. Now that I have that, I really want to make my thesis out of this, so I need to prove myself that I can do that by delivering the data collection and empirical piece. So that's when, I said, there is 5% hope, so, yeah, now that situation has been synced the graph I shared with you just quickly.
+
+Speaker 1  2:31  
+So with respect to like, the dissertation, like, what did they communicate to you? They said, Hey, this topic sounds okay. What do they want from you to, kind of like, continue the PhD.
+
+Angie.H Moon  2:41  
+So the situation last week was much more bad, like worse, in that they just okay. So to do the interdisciplinary work, they think I should be PhD, level, depth in both domain, but they don't think I'm even close to that, so perhaps wrap up like they recommend somehow wrapping this as a master thesis. And perhaps Scott's recommendation was to have reality, like the real world experience or Yeah, but I told them, US is not my home country. So, like, I know you may feel that the word is oyster, like you say that very easily, but I have some visual problems, and my home contract is like until August, so I it's not like that easy. So I guess that's one factor that made me commit to academics, somehow career, but I guess that's the reality, yeah. But that being said, I am trying to turn that turn their mind into finishing as a master thesis by two, continuing a PhD with them.
+
+Speaker 1  4:04  
+Okay, that sounds that's useful, just just as content that's useful.
+
+Angie.H Moon  4:07  
+So does that? Okay? I have 1000s of questions regarding your interest, but I guess that's not my priority.
+
+Speaker 1  4:19  
+Let's, let's talk about, let's, let's see, let's focus on the priority. So, yeah, yeah.
+
+Angie.H Moon  4:25  
+So this graph, does this graph speak for itself or, like, do you want me to elaborate a little more? No, this is, this is, I mean,
+
+Unknown Speaker  4:38  
+it makes sense, right? I mean, yeah,
+
+Angie.H Moon  4:42  
+okay, so for this, I need three things. First is the longitudinal data for certain startups in like comparable setting. It can be like pitch book data or Tech Crunch. Much, or some accelerator program. But I feel I want to somehow scope the domain where, like, at least that was Scott's recommendation, choose one domain, like clean tech or some vertical so I need some, yeah, like, what domain to choose, and it would be better if they're I think that is the choice is dependent on the other two things I need, which are the vagueness, how? How will I measure the vagueness of their promise, and the existing literature, the paper I shared with you with the title is vague language. Founding team, human capital and resource acquisition, and their conclusion is the firm's the vague language is usually a bad sign, but if the speaker understands the need of the audience, then it can have a positive impact. So so there are their conclusion is positive, in fact, impacts of vague language, because apparent when firms founder have human capital endowments associated with the effective use of language. So I guess that I need to select, perhaps in a situation where those who use vague promises know why they are being vague, if I can separate them. So my point is, there are two types in using vague languages. One is really they don't know anything, so they are just being vague, whereas others are being intentionally vague. So I feel if I were to make this graph, I have to know the intentionality behind their vagueness. Does that make sense? Yeah. So, yeah. So, to summarize, I need, I guess I forgot the third one, yeah. What I meant was I need the longitudinal data. And second, the Met the metric for vagueness. I think that's two things I need to set, but I'm new to empirical research, so I need some guidance. To be honest, how would you approach, I mean, yeah, I mean,
+
+Speaker 1  7:28  
+I think you have the right idea with respect to tracking down, like, data from pitch book or, I mean, like, basically, you want the pitch itself right, and the vagueness of the language could be the language, right? They could it also be like, what is the what is the startup committing to? Are they promising? Because you can have things are specific, but things that are that are indefinite.
+
+Angie.H Moon  8:02  
+Yeah, this is interesting.
+
+Speaker 1  8:05  
+It's, it's, it's also complicated, right? Yeah. I mean, I guess, I guess the starting point would be, you need to get some data, right? You need, like, a starting point with respect to data. I don't know if it's series A to Series B, or if it's like seed funding to series A I guess the thing that pops to mind is, I was listening to a podcast today about, there is, like, this series of podcasts. It's, I forget what the podcast is. It's Derek Thompson show, but they've been doing this series on, like, is AI a bubble, basically, and so the left, it's like, people arguing that AI is a bubble. This, this version was like, like, basically still making the argument that AI is is not a bubble. It just doesn't. They're like, they're like artifacts, the way that investment is happening and the revenue is being generated, that doesn't coincide with, like, the.com bubble, or even like the real estate bubble. And what desk on the on the show was talking about, I forget what her name is now, but she was, like, one of the, like, the co founders of open AI. She was, she had, like, a senior position. She received money now for for a new venture, but she's being unbelievably vague about what that venture is. Like. She's not, she's not saying about it, right? Like, in fact, what this guy invested, but when she, when she went there, he was like, really frustrated, because she's like, she's like, I'm doing this AI venture, and I can't tell you what it's about right now, but it's going to be amazing, amazing. She's, I mean, she's raising, like, hundreds of millions of dollars, like, it's unbelievably expensive. And I wonder if, if in that context, like, the vagueness, like in, like, in our VC pitch, stuff like, what like an investor would attenuate to. It's like, if you, if you make very specific promises, people are going to attenuate to those, those promises, right? It sets expectations. If you're vague, no clear expectations are given, which means you have to like, you have to rely on like, like other. Your signals probably like, how do I do the Evaluate? Like, if you've been told me, like, what you're building or what your metrics for success are, well then the default is like, like, people are basically investing in her credibility. So it's basically an investment in the founders team, not an investment in the idea, because the idea is not, not, not articulated. And so it's me that one of the the strategic mechanisms and being vague with respect to outcomes and expectations during a pitch process, whether that's like seed stage or that's a series, probably not a series, a but like a seed stage, promise is to, like, really force the investors to invest in the team, as opposed to the idea. And maybe, maybe that lowers the likelihood of getting funded, but the conditional being funded, it probably increases the likelihood of being, being able to deliver on something, right? Because you're, you're no longer bound by strong expectations, that would be like a hypothesis, right? So,
+
+Angie.H Moon  10:59  
+oh, sorry, what was okay? Two comments. First question is, what was the hypothesis? And second was, Are you saying that the those who benefit from the vague promises are those with Team centered, or people centered,
+
+Speaker 1  11:26  
+yeah, or that have, that have some other credible signal that they want the VCs to rely on with respect to perspective success, right? So they're not giving you ideas about what the details are then, then, by construction, they have to attenuate to something else. And so it's almost like Not, not every venture could be vague with their promises, because they, if they don't have credible track record, like, if they don't have like, they haven't gone through seven ventures and been the CFO or whatever it was for a big company, then they have to, they have to sell you on the concept, which I think suggests that the process itself is, like, probably endogenous, and so it's almost like, why do people, why do people choose to be vague? Would be an interesting question. I'd say all of that at this point probably is an immaterial Angie, because, like, I think you, you're right about, like, you need to get some data. You need to have a way of, like, measuring vagueness in some fashion. So how do you define that? How do you measure that? And then, and then, you need a way of, like, mapping that onto, onto outcomes and so. So what are the outcomes that you care about? Is it? Is it? You know, I mean pitch book is going to be, I think it's only stuff that's actually been funded, so that that makes things complicated, but um, so what you want is what you would want to like. You don't want like survivorship bias. You want the successes and failures, right? So,
+
+Speaker 1  12:55  
+yeah, yeah, start with some data, right? Show a main effect, and then try to understand either heterogeneity in that effect or some sort of causal mechanism, like, why would be the antenna being vague?
+
+Angie.H Moon  13:09  
+Got it. Got it. So I guess I just put some paper on the chat, because it explains that the reason behind ambiguity is the people who are interpreting the vague promises would have the confirmation bias, meaning they want to think what they would like to think, and that somehow preserves the option. Is what I like the mechanism, but I don't know whether knowing that would help me collect, I mean, design the data and the statistical model. I'm just thinking about like, Do you know what I mean?
+
+Speaker 1  14:00  
+Yes, but at the same time like this, to me is, I mean, this is ambiguity, which I mean, theoretically, is a little different than vagueness, because big is like, like, independent ambiguity actually swings both directions, right? So, but basically, like, like, like, what that paper suggests is a mechanism for why vagueness, or Angie B might be why it might be effective as a strategy, right? So I think what you need to demonstrate is that you have the ability to get data, you can measure vagueness in the in the in the approach, and then you want to just show that that has some meaningful, pronounced impact on the prediction of, you know, Series B funding or whatever, whatever it is that you choose as your your outcome metrics,
+
+Angie.H Moon  14:47  
+yeah, I guess, um, just one last question is, um, how, like, what would be the regression model for this? Do you think I. Yeah,
+
+Speaker 1  15:04  
+it would be something like you do. You're building a predictive model for the success of, say, like, like series A and Series B funding. And you'd want to build a predictive model so you have a collection of of, like, heuristics of the deal. So kind of, like, what we're building with the venture investors model, like, and one of those characteristics would be your your measure of of the Miss, of of the pitch, right, or the promise, or whatever, whatever, however you like to not define it. So, so it ends up being like you look for like, basically what I would do, probably, is, I would try to find an off the shelf model, like, like, how have people modeled the likelihood of of funding? But try to, I would try to, like, basically replicate that and then add to it this additional variable. So it's like, you're, you're trying to basically show that there's additional inflammatory power in predicting the success of funding as a function of vagueness. I think your your little two by two suggests that it should be like for if the if it's a vague, a vague pitch, it decreases series a funding, but it's a series B funding, right? And it could be that the pitch becomes specific, specific in series B, but it's kind of like, I think you want to make that prediction, not just like conditional on this pitch, who's going to be get the Series A, but then who also is going to get a series B? And that's probably so it's like a logistic regression would be the regression model, I guess so, binary outcome, logistic Link function, collection of covariates
+
+Angie.H Moon  16:43  
+that makes sense, just to clarify that I got what you mean. So one of the paper they use, like the certitude score, and I wouldn't go too much detail on that, but it uses, like, always, never, certainly, definitely, complete. Those are, the more they have, the more certitude. And they're subtracting it from 100 and that would be just,
+
+Angie.H Moon  17:16  
+yeah, I think they use pitch book data and pitch videos and events and news or something like that. But ultimately, where that goes into is the funding success is zero or one, and the vagueness core comes here and um, what this Hold on, does the series B means that, if it is one, then it succeeded to So A and B was successful, and if this is zero, does it mean a was successful and B was not successful? You think?
+
+Speaker 1  18:00  
+I think it's looking at this basically conditions on what round is being best. And so if it's if it's if they're if they're going so funny to success is basically binary, one, zero, independent of what round it is. So if it's Series B, then that's a one, if it's Series A, then then it's zero, basically. So, the bottle ends up being funny, six funny success for series A is basically just beta naught plus beta one times vagueness, legit model again, and so that gives you basically the that's like the interaction that you're looking for.
+
+Angie.H Moon  18:38  
+Sorry, I I have to learn the empirical model at the same time do this. So thanks for your patience.
+
+Speaker 1  18:49  
+So this is, this is pretty basic. Where did this paper come from?
+
+Angie.H Moon  18:55  
+The paper? You mean? The journal? Yeah, organization, science,
+
+Unknown Speaker  19:03  
+I don't this is org science, yeah, I
+
+Angie.H Moon  19:05  
+don't know. This is the exact model they used. Maybe I can just ask, it's good. But do you think this is a I mean, I guess I want to get the sense of what is the simplest model with some control that I can start from, so that I can, yeah, identify the data with this conditional on the statistical model. Yeah.
+
+Speaker 1  19:39  
+I mean, it's down there, right? So then you have the model with controls, and it's just adding, like, the standard collection of things, right? So prior, founder, experience, team, size, the industry, and your fixed effects, that's all that stuff, right? So, yeah, yeah. And a lot of times in these papers, they'll have like, the really, like the remedial model, which is just vagueness, and then they'll basically the table. Is like, we add additional controls, and all you're trying to show is that the effect is preserved the across the set of controls. Yeah. I mean, if, if they've done this in org science, then I think this is to build upon, including their measure of vagueness, right? So I wouldn't try to reinvent something about and even the data use probably is the right data to start with.
+
+Angie.H Moon  20:26  
+So I asked Claude to go through, I think, at least 30 papers and like, choose the top 10 that is relevant to what I would want to do. So like the data type and longitudinal and language data and funding outcomes.
+
+Angie.H Moon  20:55  
+So, um, I guess it's first question is, are there any journals that ask people to share their data?
+
+Unknown Speaker  21:09  
+Yes, there are lots of journals require data sharing now, yeah,
+
+Angie.H Moon  21:14  
+so that, but, but if,
+
+Speaker 1  21:19  
+if the if the data are from game like, for example, if pitch book requires, like, some sort of a subscription to get access to their data, they wouldn't be able to make the pitch book data public school. They would just basically have to give you, like, pseudo code. Here's how you would process the data, if, if, if you, if you like, it's you get access to, you just got to pay for it. Here's how you would process the data like, and so, yeah, so it's like, so, like most journals do require like data to be shared in good but, but not, not all of them, yeah. And I'm not sure about the management journals. I don't know what their
+
+Angie.H Moon  21:57  
+policies are. Got it? Um, okay, I will, I will work on this. And thank you. Would you mind if I ask if there's some progress? I asked for, like, 15 minutes to 30 minute meeting sometime later this week.
+
+Speaker 1  22:15  
+That's fine, yeah, yeah, yeah. When do you need to when you need to get back to Charlie that on that this was the timeline.
+
+Angie.H Moon  22:23  
+Yeah, I they say three weeks, but I said I want to report with via mail every week. But I also have other like exam for the class Charlie wanted me to take, so I want to somehow finish this within this week, and especially for the next few days, that would really make me feel comfortable, like I cannot even sleep without with this huge risk in my life, I feel,
+
+Speaker 1  22:54  
+I mean, it's, it's great. I mean, depending on how this plays itself out, I mean, we could have a conversation about how I would approach this, if I were you,
+
+Angie.H Moon  23:04  
+that would be very helpful. I'd say,
+
+Speaker 1  23:06  
+if the door is still open at MIT, I would still, I would like pursue that to to like it to fruition, right? So I would say that's worth doing this, right? But if, if not, they're like, they're always other other options, right? So, oh, I
+
+Angie.H Moon  23:19  
+see, I see, you mean as a career, you mean,
+
+Speaker 1  23:24  
+yeah, I mean, like, like, if, I mean, if you were to finish a master's degree at MIT, your next step, right? So, and it could be going and getting some professional experience, but it could also just be applying to, like, a different program, right, in something that's maybe a little bit more specific, so doing a program specifically in entrepreneurship, as opposed to, kind of, like the Operations Management kind of hybrid stuff, right? So, yeah, I mean, there are places like that,
+
+Angie.H Moon  23:51  
+yeah, that would be, I mean, you would, sorry, yeah,
+
+Speaker 1  23:57  
+oh, yeah. I mean, I mean, you would be an attractive candidate, like the MIT master's degree helps make you a more attractive candidate.
+
+Angie.H Moon  24:08  
+Okay, thank you. I will first focus the next I think this is kind of the politeness to my life to do my best in the next three weeks and then search for the option. But I really appreciate thinking about,
+
+Speaker 1  24:25  
+or No, I would structure the same way, like I would pursue this to its fruition, and then, if the outcome is not, oh, then it's and then it's kind of like, okay, we now we got to rethink, like, yeah, what is the next step? I was just, you know, like, it's not, it's not as like, it seems really, it seems really like emotionally fraught, like there's a lot of uncertainty, all of that stuff, things have a tendency to work out, and it's not, certainly not the end of the world, like there's, there's a lot of good options.
+
+Angie.H Moon  24:51  
+So, yeah, I will just leave it the comment that I'm I feel relatively okay, but it's my parents that I'm a little worried about. Yeah. Like they want the best to me, but Korean culture is a little different with US culture. So, yeah, sorry, sure, they want me to Yeah, yeah.
+
+Speaker 1  25:13  
+I think I understand. I mean, I've kids in college. We want the best for them, but yeah, that's Yeah kids are Yeah, so they're really, lots of really good outcomes, right? This is not like, yeah, they work on this. I'm happy to have a call if you
+
+Angie.H Moon  25:32  
+thank you very much. So Jeff, I will please forgive me if I just text with you for stupid questions.
+
+Speaker 1  25:43  
+But if I'm busy, I just won't respond because but if I'm not busy, I'm happy to respond
+
+Angie.H Moon  25:48  
+so I know. Yeah, okay. Thank you so much, Jeff, it means a lot. Yeah, thanks. You. The.
+
+Transcribed by https://otter.ai
