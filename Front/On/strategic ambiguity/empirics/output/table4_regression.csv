@@ -1,0 +1,12 @@
+Variable,Coefficient,Std Error
+Constant,-1.0642,(6.1715)
+Vagueness,0.0098,(0.0196)
+Series B,2.8713**,(1.2274)
+High Integration Cost,2.6901**,(1.2590)
+Vagueness × Series B,-0.0504**,(0.0216)
+Vagueness × High-i,-0.0459*,(0.0239)
+Series B × High-i,-6.8753***,(1.7641)
+Vagueness × Series B × High-i (β₇),0.1077***,(0.0300)
+log(Series A Amount),0.0884,(0.4051)
+Team Size,-0.0024,(0.0172)
+Founder Prior Exit,0.3304,(0.4209)
