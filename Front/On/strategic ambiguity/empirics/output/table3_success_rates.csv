@@ -1,5 +1,4 @@
-integration_cost_label,vagueness_category,Series A,Series B,Change (pp)
-High-i (Hardware),Precise,88.88888888888889,33.33333333333333,-55.55555555555556
-High-i (Hardware),Vague,59.09090909090909,72.72727272727273,13.63636363636364
-Low-i (API/SaaS),Precise,65.0,90.0,25.0
-Low-i (API/SaaS),Vague,73.33333333333333,60.0,-13.333333333333329
+integration_cost_label,vagueness_category,Series A,Series B
+High-i (Hardware),Precise,1.0,0.875
+Low-i (API/SaaS),Precise,1.0,0.0
+Low-i (API/SaaS),Vague,0.769,0.462
