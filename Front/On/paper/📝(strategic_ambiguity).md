@@ -1,7 +1,34 @@
 ---
 성장:
-  - 2025-10-21T14:52:56-04:00
+  - 2025-10-21T17:35:09-04:00
 ---
+
+# Strategic Ambiguity in Entrepreneurial Promises
+
+In 2008, Tesla entered the electric vehicle market with a promise of "over 200 miles of range." This statement was not a precise number, but a lower bound, leaving significant room for final specifications. The firm ultimately delivered 244 miles for its initial Model S, leveraging this flexibility to iterate on battery technology while having already secured market interest. This example raises a fundamental question in entrepreneurship: What is the optimal variance of an entrepreneur's promise?
+
+It seems natural to think that an entrepreneur's primary communication goal should be maximum clarity (minimum variance), largely to solve the credibility problem: should a stakeholder believe the promise being made? From this perspective, a precise promise appears more credible. It avoids adding noise to an already challenging environment, signals the founder's clarity of thought, and demonstrates technical competence, particularly to those with an engineering mindset. By offering a concrete, verifiable target, a precise promise reduces the perceived risk for investors and customers, making it a "promise you can believe in." Yet, entrepreneurs systematically employ ambiguity in their communications. Recent empirical work suggests this is not accidental, but strategic. For instance, El-Zayaty et al. (2025) find that vague language can enhance resource acquisition when paired with strong founder credentials. This creates a puzzle: if precision is the answer to the credibility problem, why is ambiguity so prevalent and apparently effective? Existing theory provides limited guidance on when, why, and how much ambiguity is optimal.
+
+This paper develops a formal model to resolve this tension by analyzing the trade-off between mobilizing support with precise commitments and preserving adaptability through strategic ambiguity. We analyze a situation where an entrepreneur must make a public promise about a key quality attribute—like battery range—to a market of potential resource providers (e.g., customers). We model this promise as a strategic communication with two components: an expected quality level (mean, $\mu$) and a degree of variance ($\sigma^2$). We conceptualize this promise as a social prior: a publicly articulated distribution that serves as a focal point for coordination among all stakeholders, including the entrepreneur. Unlike a classical Bayesian prior that represents an agent's static, internal state of knowledge, this social prior is a strategically chosen variable, constructed to optimize the venture's success in the face of shared uncertainty. The promise is thus a tool for both persuasion and coordination.
+
+The core contribution of our paper is to endogenize the choice of promise variance ($\sigma^2$) by formalizing the trade-off between mobilization and adaptability. A precise promise (low variance) is beneficial for mobilization; it reduces perceived risk for stakeholders and makes the venture's claims appear more credible, thereby increasing the likelihood of securing resources. However, precision creates rigidity. It acts as a commitment that is costly to break. This tension aligns with prior work showing that while pivots are common, they can alienate stakeholders who bought into the venture's original claims, complicating the reorientation process (McDonald & Gao, 2019). If the entrepreneur discovers a better path or finds the initial goal is suboptimal, a precise prior promise generates significant rigidity costs—reputational damage, loss of stakeholder trust, or the cost of being locked into an inferior design. An ambiguous promise (high variance) minimizes these rigidity costs, preserving the adaptability needed for learning and pivots, but it hinders initial resource mobilization.
+
+Our analysis demonstrates that the optimal level of promise variance is governed by the ratio of the venture's potential value to these endogenous rigidity costs. We derive a clear threshold rule: when the costs of being wrong are high relative to the value of securing initial support, an entrepreneur should remain deliberately ambiguous (maintain high variance). Precision must be "earned" as the venture de-risks and the value of commitment begins to outweigh the value of flexibility. This formalizes the intuition that ventures should transition from an exploratory, high-variance stance to a more defined, low-variance one as they mature.
+
+Our work is most closely related to two papers. Archibald et al. (2002) model startup survival by optimizing inventory decisions under demand uncertainty, but in their model, this uncertainty is an exogenous state of the world, not a chosen communication strategy. Closer to our work, El-Zayaty et al. (2025) provide empirical evidence that strategic ambiguity can succeed. Our model provides the theoretical counterpart: it prescribes when and how much variance should be used by framing it as a solution to an optimization problem. Our primary departure is to explicitly model promise variance as a strategic communication variable, distinct from an entrepreneur's private knowledge, to manage the fundamental tension between commitment and flexibility.
+
+The paper proceeds as follows. Section 2 develops the model, formalizing the costs and benefits of promise variance. Section 3 presents the main results, including the derivation of the optimal variance level. Section 4 discusses the implications for entrepreneurial strategy and communication. Section 5 concludes.
+
+### References
+
+Archibald, G., Thomas, L. C., Betts, J. M., & Johnston, R. B. (2002). The Management of Start-Up Companies in the Service Sector. Management Science, 48(3), 357–367.
+
+El-Zayaty, A., Ganco, M., & Khoshimov, B. (2025). Vague Language, Founding Team Human Capital, and Resource Acquisition. Organization Science. Forthcoming.
+
+McDonald, R., & Gao, C. (2019). Pivoting Isn’t Enough? Managing Strategic Reorientation in New Ventures. Organization Science, 30(6), 1289–1318.
+
+----
+
 # Introduction: Strategic Ambiguity in Entrepreneurial Promises
 
 ---
