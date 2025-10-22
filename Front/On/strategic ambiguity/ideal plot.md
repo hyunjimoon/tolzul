@@ -1,7 +1,10 @@
 ---
 성장:
-  - 2025-10-21T17:34:07-04:00
+  - 2025-10-21T23:26:45-04:00
 ---
+
+
+----
 
 # Temporal Tradeoff Hypothesis: Vague vs. Precise Promises in Entrepreneurship
 

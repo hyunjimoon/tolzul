@@ -1,6 +1,7 @@
 ---
 성장:
   - 2025-10-21T13:36:24-04:00
+  - 2025-10-22T03:12:44-04:00
 ---
 threaten, 
 have only opportunity cost of them is 
@@ -40,4 +41,6 @@ conflict to arise in equilibrium path ()
 - intuition is very specific (firing business)
 - NOT experiment but elicitation of knowledge - as agent already knows which is productive
 ---
+
+- sum of the player payoff from tomorrow (continuation value given )
 # multiple 
