@@ -22,7 +22,7 @@ This note is a place of joy, without expectations or obligations, which will be 
 
 This is where the garden metaphor gives us a way to approach relating ideas:
 
-> [!trees] **[[Garden]]** » [[Plant]] | [[Cultivate]] | [[Question]] | [[Repot]] | [[Revitalize]] | [[Revisit]] — [[Architect]] ⤴️
+> [!trees] **[[Garden]]** » [[Plant]] | [[Cultivate]] | [[Question]] | [[Repot]] | [[Revitalize]] | [[revisit]] — [[Architect]] ⤴️
 
 ---
 

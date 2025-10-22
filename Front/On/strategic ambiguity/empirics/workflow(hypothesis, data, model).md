@@ -1,7 +1,7 @@
 ---
 성장:
   - 2025-10-21T23:08:50-04:00
-  - 2025-10-22T04:57:46-04:00
+  - 2025-10-22T06:39:41-04:00
 updated:
   - 2025-10-22T04:45:00-04:00
 next: "[[revisit]]"
@@ -15,7 +15,9 @@ next: "[[revisit]]"
 
 ---
 
-## 2. Data and Context
+## 2. [[Data]] and [[Context]]
+
+This study will merge time-stamped promissory texts, sourced from public venture archives, with firm-level funding and valuation data from a comprehensive private capital database. This hybrid-archival approach links founder language to subsequent, objective financing outcomes.
 
 ### Data Source
 
