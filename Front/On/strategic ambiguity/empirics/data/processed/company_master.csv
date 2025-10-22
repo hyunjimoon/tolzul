@@ -1,0 +1,23 @@
+company_id,company_name,description,keywords,vagueness,high_integration_cost,total_raised,employees,year_founded
+C001,NeuralStack AI,We build approximately scalable machine learning platforms for enterprise data processing with flexible architectures,"AI, machine learning, api, software, cloud",80,0,5000000,25,2020
+C002,ChipForge Labs,Precisely engineered AI chip solutions for distributed computing with guaranteed performance on specific ASIC designs,"AI, chip, asic, hardware, semiconductor",20,1,8000000,45,2019
+C003,DataMind Solutions,An adaptive AI platform that roughly processes unstructured data using flexible neural networks,"machine learning, software, saas, platform",80,0,3500000,18,2021
+C004,RoboVision Systems,Certified robotics platform with precisely calibrated distributed sensors for autonomous navigation,"AI, robotics, hardware, distributed, gpu",30,1,12000000,60,2020
+C005,CloudML Pro,Scalable machine learning API service for cloud applications with approximately optimized inference,"ML, api, saas, cloud, software",70,0,4200000,22,2021
+C006,QuantumChip Dynamics,Exactly specified quantum computing hardware with certified benchmarks for AI workloads,"AI, chip, hardware, semiconductor, asic",30,1,15000000,75,2019
+C007,FlexiLearn AI,Around 50% faster AI training using our flexible and adaptive software platform,"machine learning, software, platform, cloud",80,0,6000000,30,2020
+C009,AutoAPI Services,Roughly integrated machine learning wrapper APIs for approximately automated workflows,"AI, api, saas, wrapper, software",70,0,2800000,15,2021
+C010,HardwareML Systems,Precisely engineered distributed GPU clusters with exactly measured efficiency for AI,"AI, gpu, hardware, distributed, chip",30,1,9500000,50,2020
+C011,AdaptiveCloud ML,Flexible and scalable cloud-based ML platform with around 99% uptime,"machine learning, cloud, saas, platform",80,0,3900000,20,2021
+C012,ChipAI Precision,Exactly certified ASIC designs with specific performance guarantees for neural networks,"AI, chip, asic, hardware, semiconductor",20,1,11000000,65,2019
+C013,SoftML Innovations,Approximately optimized software solutions for scalable machine learning deployment,"ML, software, saas, cloud, api",70,0,4500000,24,2020
+C015,CloudPredict AI,Around 95% accurate predictions using our flexible cloud-based AI platform,"AI, cloud, saas, software, platform",70,0,3200000,17,2021
+C016,Blockchain Finance,Decentralized cryptocurrency exchange with blockchain technology for digital assets,"blockchain, crypto, finance",50,0,6000000,35,2020
+C019,TensorFlow Services,Flexible AI framework approximately optimized for scalable deep learning workflows,"AI, machine learning, software, cloud",80,0,5500000,26,2021
+C020,PrecisionVision AI,Exactly calibrated computer vision with guaranteed accuracy for specific use cases,"AI, hardware, chip, distributed",20,1,10500000,58,2020
+C021,AdaptNet Systems,Around 100x faster networking using our flexible and scalable software architecture,"ML, software, saas, cloud",80,0,3700000,19,2021
+C022,ChipNeural Pro,Certified neural processing unit with precisely measured power efficiency,"AI, chip, hardware, asic, semiconductor",30,1,12500000,68,2019
+C023,FlexAPI Builder,Roughly automated API generation with approximately optimized performance,"machine learning, api, software, wrapper",70,0,2900000,16,2021
+C025,CloudScale ML,Scalable and flexible cloud ML infrastructure with around 99.9% availability,"AI, cloud, saas, platform, software",80,0,4100000,21,2020
+C027,AdaptLearn Cloud,Approximately optimized learning algorithms with flexible deployment options,"machine learning, cloud, software, saas",70,0,3600000,18,2021
+C030,EdgeAI Systems,Precisely calibrated edge AI chips with guaranteed low-latency processing,"AI, chip, hardware, edge, distributed",30,1,9800000,52,2020
