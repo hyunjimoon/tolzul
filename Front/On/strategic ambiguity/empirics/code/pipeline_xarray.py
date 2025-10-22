@@ -33,17 +33,24 @@ class PitchbookPipeline:
     xarray-based pipeline for Pitchbook analysis with checkpoint/resume capability
     """
 
-    def __init__(self, data_dir="data", output_dir="output"):
+    def __init__(self, data_dir="data", output_dir="output", sample_size=None):
         self.data_dir = Path(data_dir)
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
+        self.sample_size = sample_size  # For POC: read only first N rows
 
-        self.checkpoint_file = self.output_dir / "pitchbook_analysis.nc"
+        # Use pickle format only
+        if self.sample_size:
+            print(f"🔬 POC MODE: Using sample_size={sample_size} rows")
+            self.checkpoint_file = self.output_dir / f"pitchbook_analysis_sample{sample_size}.pkl"
+        else:
+            self.checkpoint_file = self.output_dir / "pitchbook_analysis.pkl"
 
-        # Initialize or load existing dataset
+        # Initialize or load
         if self.checkpoint_file.exists():
-            print(f"📂 Loading existing checkpoint: {self.checkpoint_file}")
-            self.ds = xr.open_dataset(self.checkpoint_file)
+            print(f"📂 Loading checkpoint: {self.checkpoint_file}")
+            with open(self.checkpoint_file, 'rb') as f:
+                self.ds = pickle.load(f)
         else:
             print("🆕 Creating new dataset")
             self.ds = self._init_empty_dataset()
@@ -105,21 +112,20 @@ class PitchbookPipeline:
         self.ds.attrs[f'step_{step_num:02d}_status'] = 'completed'
         self.ds.attrs[f'step_{step_num:02d}_timestamp'] = datetime.now().isoformat()
 
-        # Load all data into memory before saving (avoid lazy loading issues)
         self.ds.load()
 
-        # Save to temporary file first, then rename (atomic operation)
-        temp_file = self.checkpoint_file.with_suffix('.nc.tmp')
-        self.ds.to_netcdf(temp_file, mode='w')
+        # Save as pickle
+        temp_file = self.checkpoint_file.with_suffix('.pkl.tmp')
+        with open(temp_file, 'wb') as f:
+            pickle.dump(self.ds, f)
 
-        # Close and rename
         if self.checkpoint_file.exists():
             self.checkpoint_file.unlink()
         temp_file.rename(self.checkpoint_file)
 
-        # Reopen for next operations
-        self.ds.close()
-        self.ds = xr.open_dataset(self.checkpoint_file)
+        # Reopen
+        with open(self.checkpoint_file, 'rb') as f:
+            self.ds = pickle.load(f)
 
         print(f"💾 Checkpoint saved: {step_name}")
 
@@ -136,10 +142,16 @@ class PitchbookPipeline:
 
         print(f"▶️  Step 1: Processing company data...")
 
-        # Read raw data
-        company_files = list((self.data_dir / "raw").glob("Company*.dat"))
-        dfs = [pd.read_csv(f, sep='|', low_memory=False) for f in company_files]
-        company_df = pd.concat(dfs, ignore_index=True)
+        # Read Company2023.dat
+        company_file = "/Users/hyunjimoon/MIT Dropbox/Angie.H Moon/tolzul/Front/On/strategic ambiguity/empirics/data/raw/Company20230501.dat"
+        
+        # Read with sample_size for POC
+        if self.sample_size:
+            print(f"  🔬 Reading first {self.sample_size} rows for POC...")
+            company_df = pd.read_csv(company_file, sep='|', low_memory=False, nrows=self.sample_size)
+        else:
+            company_df = pd.read_csv(company_file, sep='|', low_memory=False)
+        print(f"  ✓ Loaded {len(company_df)} rows")
 
         # Filter AI/ML firms (simplified for demo)
         ai_keywords = ['AI', 'ML', 'machine learning', 'artificial intelligence']
@@ -150,16 +162,50 @@ class PitchbookPipeline:
         company_df['is_ai_ml'] = company_df.apply(is_ai_ml, axis=1)
         ai_ml_df = company_df[company_df['is_ai_ml']].copy()
 
-        # Calculate vagueness (simplified)
+        # Calculate vagueness based on LIWC certitude approach
+        # Certitude words indicate clarity, specificity, certainty
+        certitude_words = [
+            # Absolute/totality words
+            'always', 'never', 'all', 'none', 'every', 'completely', 'entirely',
+            'totally', 'absolutely', 'full', 'whole', 'total', 'entire',
+            # Certainty markers
+            'definitely', 'certainly', 'obviously', 'clearly', 'surely',
+            'indeed', 'undoubtedly', 'of course', 'without doubt',
+            # Specific determiners and precision
+            'specifically', 'precisely', 'exactly', 'particular', 'definite',
+            'explicit', 'concrete', 'actual', 'real', 'true', 'certain',
+            # Modal certainty
+            'must', 'will', 'shall', 'have to',
+            # Other clarity markers
+            'basic', 'fundamental', 'essential', 'critical', 'key',
+            'not only', 'in fact', 'guarantee', 'proven', 'established'
+        ]
+        
         def calc_vagueness(desc):
-            if pd.isna(desc):
-                return 50
+            """Calculate vagueness as 100 - certitude percentage"""
+            if pd.isna(desc) or len(str(desc).strip()) == 0:
+                return 50  # neutral for missing
+            
             text = str(desc).lower()
-            vague_words = ['approximately', 'around', 'flexible', 'scalable']
-            precise_words = ['precisely', 'exactly', 'guaranteed', 'specific']
-            vague_count = sum(text.count(w) for w in vague_words)
-            precise_count = sum(text.count(w) for w in precise_words)
-            return max(0, min(100, 50 + 10 * (vague_count - precise_count)))
+            words = text.split()
+            
+            if len(words) == 0:
+                return 50
+            
+            # Count certitude words
+            certitude_count = sum(1 for word in words if word in certitude_words)
+            
+            # Also check multi-word phrases
+            for phrase in ['of course', 'not only', 'without doubt', 'in fact', 'have to']:
+                certitude_count += text.count(phrase)
+            
+            # Certitude score = percentage of certitude words
+            certitude_score = (certitude_count / len(words)) * 100
+            
+            # Vagueness = 100 - certitude (higher = more vague)
+            vagueness = 100 - certitude_score
+            
+            return max(0, min(100, vagueness))
 
         ai_ml_df['vagueness'] = ai_ml_df['Description'].apply(calc_vagueness)
 
@@ -193,7 +239,9 @@ class PitchbookPipeline:
 
     def step_02_process_deal_data(self, force=False):
         """
-        Step 2: Process Deal data
+        Step 2: Process Deal data with specific date filtering
+        Series A: 2021-01-01 to 2022-10-31
+        Series B: 2023-05-01 to 2025-10-31
         Creates: ds['deal_data'] with dims (deal_id, variable)
         """
         step_name = "02_process_deal"
@@ -204,24 +252,89 @@ class PitchbookPipeline:
 
         print(f"▶️  Step 2: Processing deal data...")
 
-        # Read raw data
-        deal_files = list((self.data_dir / "raw").glob("Deal*.dat"))
-        dfs = [pd.read_csv(f, sep='|', low_memory=False) for f in deal_files]
-        deal_df = pd.concat(dfs, ignore_index=True)
+        # Read Deal2023.dat
+        deal_file = "/Users/hyunjimoon/MIT Dropbox/Angie.H Moon/tolzul/Front/On/strategic ambiguity/empirics/data/raw/Deal20230501.dat"
+        
+        # Read with sample_size for POC
+        if self.sample_size:
+            print(f"  🔬 Reading first {self.sample_size} rows for POC...")
+            deal_df = pd.read_csv(deal_file, sep='|', low_memory=False, nrows=self.sample_size)
+        else:
+            deal_df = pd.read_csv(deal_file, sep='|', low_memory=False)
+        print(f"  ✓ Loaded {len(deal_df)} rows")
+        
+        # Debug: Show column names
+        print(f"\n  📊 Available columns: {', '.join(deal_df.columns[:10])}...")
+        
+        # Debug: Check what DealType values exist
+        if 'DealType' in deal_df.columns:
+            print(f"\n  📊 DealType value counts:")
+            print(deal_df['DealType'].value_counts().head(10))
+        
+        # Filter to VC deals - use flexible matching
+        vc_deals = deal_df[deal_df['DealType'].str.contains('VC', case=False, na=False)].copy()
+        print(f"\n  ✓ Found {len(vc_deals)} VC deals")
+        
+        if len(vc_deals) == 0:
+            print(f"  ⚠️  No VC deals found, using all deals")
+            vc_deals = deal_df.copy()
+        
+        # Debug: Check VCRound column
+        if 'VCRound' in vc_deals.columns:
+            print(f"\n  📊 VCRound value counts:")
+            print(vc_deals['VCRound'].value_counts().head(10))
 
-        # Filter to VC deals
-        vc_deals = deal_df[deal_df['DealType'].isin(['Early Stage VC', 'Later Stage VC'])].copy()
-
-        # Identify Series A/B
-        series_a = vc_deals[vc_deals['VCRound'].str.contains('Series A', case=False, na=False)].copy()
-        series_b = vc_deals[vc_deals['VCRound'].str.contains('Series B', case=False, na=False)].copy()
+        # Convert DealDate to datetime for filtering
+        vc_deals['DealDate'] = pd.to_datetime(vc_deals['DealDate'], errors='coerce')
+        
+        # Filter by date ranges
+        # Series A: 2021-01-01 to 2022-10-31
+        # Series B: 2023-05-01 to 2025-10-31
+        series_a = vc_deals[
+            (vc_deals['DealDate'] >= '2021-01-01') & 
+            (vc_deals['DealDate'] <= '2022-10-31')
+        ].copy()
+        
+        series_b = vc_deals[
+            (vc_deals['DealDate'] >= '2023-05-01') & 
+            (vc_deals['DealDate'] <= '2025-10-31')
+        ].copy()
+        
+        print(f"\n  ✓ Series A deals (2021-01-01 to 2022-10-31): {len(series_a)}")
+        print(f"  ✓ Series B deals (2023-05-01 to 2025-10-31): {len(series_b)}")
+        
+        # Additional filtering by round type if available
+        if 'VCRound' in vc_deals.columns:
+            early_rounds = ['1st Round', 'Seed Round', 'Angel', 'Series A']
+            later_rounds = ['2nd Round', '3rd Round', '4th Round', 'Series B', 'Later Stage VC']
+            
+            # Apply round filters to respective date ranges
+            series_a = series_a[series_a['VCRound'].isin(early_rounds) | series_a['VCRound'].isna()]
+            series_b = series_b[series_b['VCRound'].isin(later_rounds) | series_b['VCRound'].isna()]
+            
+            print(f"  ✓ After round filtering: Series A={len(series_a)}, Series B={len(series_b)}")
 
         # Add round label
         series_a['round'] = 'Series A'
         series_b['round'] = 'Series B'
 
         # Combine
-        deal_panel = pd.concat([series_a, series_b], ignore_index=True)
+        if len(series_a) > 0 or len(series_b) > 0:
+            deal_panel = pd.concat([series_a, series_b], ignore_index=True)
+        else:
+            print(f"\n  ⚠️  WARNING: No deals found after filtering!")
+            print(f"  💡 TIP: Check if date ranges contain data")
+            print(f"  ⏭️  Creating minimal dummy data to continue pipeline")
+            # Create dummy data
+            deal_panel = pd.DataFrame({
+                'CompanyID': ['DUMMY001'],
+                'DealSize': [1000000],
+                'DealStatus': ['Completed'],
+                'round': ['Series A'],
+                'VCRound': ['Series A'],
+                'DealType': ['Early Stage VC'],
+                'DealDate': [pd.Timestamp('2021-06-01')]
+            })
 
         # Create funding success variable
         deal_panel['DealSize'] = pd.to_numeric(deal_panel['DealSize'], errors='coerce').fillna(0)
@@ -244,6 +357,8 @@ class PitchbookPipeline:
             )
 
         self.ds.attrs['n_deals'] = len(deal_panel)
+        self.ds.attrs['series_a_date_range'] = '2021-01-01 to 2022-10-31'
+        self.ds.attrs['series_b_date_range'] = '2023-05-01 to 2025-10-31'
 
         print(f"  ✅ Processed {len(deal_panel)} deals")
         self.save_checkpoint(2, step_name)
@@ -278,6 +393,28 @@ class PitchbookPipeline:
             deal_data[col_name] = self.ds[col].values
 
         deal_df = pd.DataFrame(deal_data, index=self.ds['deal'].values)
+        
+        # Debug: Check CompanyID overlap
+        print(f"\n  📊 Company data: {len(company_df)} companies")
+        print(f"  📊 Deal data: {len(deal_df)} deals")
+        
+        if len(company_df) > 0:
+            print(f"\n  🔍 Sample Company IDs: {list(company_df.index[:5])}")
+        
+        if len(deal_df) > 0 and 'CompanyID' in deal_df.columns:
+            print(f"  🔍 Sample Deal CompanyIDs: {list(deal_df['CompanyID'].head(5))}")
+            
+            # Check overlap
+            company_ids = set(company_df.index)
+            deal_company_ids = set(deal_df['CompanyID'].dropna())
+            overlap = company_ids.intersection(deal_company_ids)
+            
+            print(f"\n  🎯 CompanyID overlap: {len(overlap)} companies have both company and deal data")
+            if len(overlap) > 0:
+                print(f"     Sample overlapping IDs: {list(overlap)[:5]}")
+            else:
+                print(f"  ⚠️  WARNING: No overlapping CompanyIDs found!")
+                print(f"  💡 TIP: Company and Deal data may be from different sources or time periods")
 
         # Merge on CompanyID
         panel = deal_df.merge(
@@ -328,6 +465,15 @@ class PitchbookPipeline:
             panel_data[col_name] = self.ds[col].values
 
         panel_df = pd.DataFrame(panel_data, index=self.ds['observation'].values)
+        
+        # Check if we have data
+        if len(panel_df) == 0:
+            print(f"\n  ⚠️  ERROR: No panel data available for analysis!")
+            print(f"  💡 TIP: Check step 2 and 3 - there may be no matching deals")
+            print(f"  ⏭️  Skipping analysis step")
+            return
+        
+        print(f"\n  ✓ Panel has {len(panel_df)} observations")
 
         # Prepare for regression
         panel_df['vagueness_scaled'] = panel_df['vagueness'] / 100
@@ -627,11 +773,13 @@ if __name__ == "__main__":
                         help='Force rerun all steps')
     parser.add_argument('--summary', action='store_true',
                         help='Print pipeline status summary')
+    parser.add_argument('--sample', type=int, default=None,
+                        help='POC mode: Use only first N rows of data (e.g., --sample 1000)')
 
     args = parser.parse_args()
 
-    # Initialize pipeline
-    pipeline = PitchbookPipeline()
+    # Initialize pipeline with sample_size
+    pipeline = PitchbookPipeline(sample_size=args.sample)
 
     if args.summary:
         pipeline.get_summary()

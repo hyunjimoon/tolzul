@@ -1,18 +1,18 @@
 ---
 성장:
   - 2025-10-21T23:08:50-04:00
-  - 2025-10-22T06:39:41-04:00
+  - 2025-10-22T10:30:45-04:00
 updated:
   - 2025-10-22T04:45:00-04:00
 next: "[[revisit]]"
 ---
+
 # Promise Precision and Venture Funding
 
 ## 1. Hypotheses
 
 * **Hypothesis 1:** Vagueness at Series A lowers initial funding chances but increases Series B success (because no rigid expectations to disappoint).
-* **Hypothesis 2:** Firms whose founding teams have a greater endowment of skills associated with rhetoric and communication secure more interest from investors when using vague language than those with lesser endowments.
-
+- **Hypothesis 2:** High integration cost firms (hardware, distributed systems) benefit more from initial ambiguity than low integration cost firms (software, APIs).
 ---
 
 ## 2. [[Data]] and [[Context]]
@@ -22,9 +22,14 @@ This study will merge time-stamped promissory texts, sourced from public venture
 ### Data Source
 
 * **Primary Sources:** Pitchbook Company + Deal data
-* **Domain:** 🚨1: AI/ML infrastructure startups (2021–2022 Series A → 2025 Series B outcomes)
+* **Domain with era of ferment:** one of the three
+	* 1: AI/ML infrastructure startups (2021–2022 Series A → 2025 Series B outcomes)
+	* 
 * **Sample Size:** 60–80 firms observed twice (Series A attempt, Series B attempt)
 
+sample data at 
+- /Users/hyunjimoon/Dropbox (MIT)/tolzul/Front/On/strategic ambiguity/empirics/data/raw/deal2023.dat
+- /Users/hyunjimoon/Dropbox (MIT)/tolzul/Front/On/strategic ambiguity/empirics/data/raw/company2021.dat
 ### **Data Integration Strategy:**
 
 **Company Data (Pitchbook) - 핵심 컬럼:**
