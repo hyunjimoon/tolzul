@@ -187,3 +187,101 @@ for target in target_companies:
 print("\n" + "=" * 80)
 print("✓ SCRIPT 01 COMPLETED SUCCESSFULLY")
 print("=" * 80)
+
+
+def process_company_data():
+    """
+    Process Company data and return DataFrame
+
+    Returns:
+        pd.DataFrame: AI/ML company master data with vagueness and integration cost
+    """
+    # Read Company data files
+    company_files = list(RAW_DATA_DIR.glob("Company*.dat"))
+
+    dfs = []
+    for file in company_files:
+        df = pd.read_csv(file, sep='|', encoding='utf-8', low_memory=False)
+        dfs.append(df)
+
+    company_df = pd.concat(dfs, ignore_index=True)
+
+    # Filter to AI/ML firms
+    ai_ml_keywords = ['AI', 'ML', 'artificial intelligence', 'machine learning', 'neural',
+                      'deep learning', 'NLP', 'natural language', 'GPT', 'language model',
+                      'generative AI', 'chatbot', 'conversational AI']
+
+    def is_ai_ml_firm(row):
+        description = str(row.get('Description', ''))
+        keywords = str(row.get('Keywords', ''))
+        text = f"{description} {keywords}".lower()
+        return any(keyword.lower() in text for keyword in ai_ml_keywords)
+
+    company_df['is_ai_ml'] = company_df.apply(is_ai_ml_firm, axis=1)
+    ai_ml_df = company_df[company_df['is_ai_ml']].copy()
+
+    # Calculate vagueness
+    VAGUE_KEYWORDS = ['approximately', 'around', 'roughly', 'flexible', 'scalable', 'adaptive',
+                       'designed to', 'enables', 'allows', 'offering', 'providing']
+    PRECISE_KEYWORDS = ['exactly', 'precisely', 'guaranteed', 'specific', 'certified',
+                         'proprietary', 'advanced', 'specialized', 'focuses on', 'built on']
+
+    def calculate_vagueness(description):
+        if pd.isna(description) or description == '':
+            return 50
+
+        text = str(description).lower()
+        vague_count = sum(text.count(keyword) for keyword in VAGUE_KEYWORDS)
+        precise_count = sum(text.count(keyword) for keyword in PRECISE_KEYWORDS)
+
+        score = 50 + 10 * (vague_count - precise_count)
+        score = max(0, min(100, score))
+
+        return score
+
+    ai_ml_df['vagueness'] = ai_ml_df['Description'].apply(calculate_vagueness)
+
+    # Classify integration cost
+    HIGH_I_KEYWORDS = ['chip', 'asic', 'robotics', 'distributed', 'gpu', 'hardware',
+                        'semiconductor', 'quantum', 'fpga', 'silicon']
+    LOW_I_KEYWORDS = ['api', 'saas', 'software', 'wrapper', 'platform', 'cloud',
+                       'web application', 'service', 'interface', 'application']
+
+    def classify_integration_cost(row):
+        keywords = str(row.get('Keywords', '')).lower()
+        description = str(row.get('Description', '')).lower()
+        text = f"{keywords} {description}"
+
+        has_high_i = any(keyword in text for keyword in HIGH_I_KEYWORDS)
+        has_low_i = any(keyword in text for keyword in LOW_I_KEYWORDS)
+
+        if has_high_i and not has_low_i:
+            return 1
+        elif has_low_i and not has_high_i:
+            return 0
+        else:
+            high_i_count = sum(keyword in text for keyword in HIGH_I_KEYWORDS)
+            low_i_count = sum(keyword in text for keyword in LOW_I_KEYWORDS)
+            return 1 if high_i_count > low_i_count else 0
+
+    ai_ml_df['high_integration_cost'] = ai_ml_df.apply(classify_integration_cost, axis=1)
+
+    # Create company master file
+    company_master = ai_ml_df[[
+        'CompanyID', 'CompanyName', 'Description', 'Keywords',
+        'vagueness', 'high_integration_cost',
+        'TotalRaised', 'Employees', 'YearFounded'
+    ]].copy()
+
+    company_master.columns = [
+        'company_id', 'company_name', 'description', 'keywords',
+        'vagueness', 'high_integration_cost',
+        'total_raised', 'employees', 'year_founded'
+    ]
+
+    # Convert numeric columns
+    company_master['total_raised'] = pd.to_numeric(company_master['total_raised'], errors='coerce').fillna(0)
+    company_master['employees'] = pd.to_numeric(company_master['employees'], errors='coerce').fillna(0)
+    company_master['year_founded'] = pd.to_numeric(company_master['year_founded'], errors='coerce').fillna(0)
+
+    return company_master

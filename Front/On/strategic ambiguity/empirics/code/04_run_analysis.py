@@ -201,3 +201,53 @@ print(f"  2. {output_file2}")
 print("\n" + "=" * 80)
 print("✓ SCRIPT 04 COMPLETED SUCCESSFULLY")
 print("=" * 80)
+
+
+def run_analysis(panel_df):
+    """
+    Run regression analysis on panel data
+
+    Args:
+        panel_df: Analysis panel DataFrame
+
+    Returns:
+        dict: Dictionary with model1 and model2 results
+    """
+    # Create standardized vagueness
+    df = panel_df.copy()
+    df['vagueness_scaled'] = df['vagueness'] / 100
+
+    # Model 1: Vagueness × SeriesB
+    model1_formula = """
+        funding_success ~ vagueness_scaled + series_b_dummy + vagueness_scaled:series_b_dummy +
+                          log_series_a_amount + employees
+    """
+
+    try:
+        model1 = smf.logit(model1_formula, data=df).fit(disp=False)
+    except:
+        model1 = smf.ols(model1_formula, data=df).fit()
+
+    # Model 2: Three-way interaction
+    model2_formula = """
+        funding_success ~ vagueness_scaled + series_b_dummy + high_integration_cost +
+                          vagueness_scaled:series_b_dummy +
+                          vagueness_scaled:high_integration_cost +
+                          series_b_dummy:high_integration_cost +
+                          vagueness_scaled:series_b_dummy:high_integration_cost +
+                          log_series_a_amount + employees
+    """
+
+    try:
+        model2 = smf.logit(model2_formula, data=df).fit(disp=False)
+    except:
+        model2 = smf.ols(model2_formula, data=df).fit()
+
+    return {
+        'model1': model1,
+        'model2': model2,
+        'model1_params': model1.params.to_dict(),
+        'model1_pvalues': model1.pvalues.to_dict(),
+        'model2_params': model2.params.to_dict(),
+        'model2_pvalues': model2.pvalues.to_dict()
+    }

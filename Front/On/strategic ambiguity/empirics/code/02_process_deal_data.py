@@ -203,3 +203,105 @@ for target in target_companies:
 print("\n" + "=" * 80)
 print("✓ SCRIPT 02 COMPLETED SUCCESSFULLY")
 print("=" * 80)
+
+
+def process_deal_data(series_a_start='2021-01-01', series_a_end='2022-10-31',
+                     series_b_start='2023-05-01', series_b_end='2025-10-31'):
+    """
+    Process Deal data with date filtering and return DataFrame
+
+    Args:
+        series_a_start: Start date for Series A filtering
+        series_a_end: End date for Series A filtering
+        series_b_start: Start date for Series B filtering
+        series_b_end: End date for Series B filtering
+
+    Returns:
+        pd.DataFrame: Deal panel with Series A/B deals and funding success
+    """
+    # Read Deal data files
+    deal_files = list(RAW_DATA_DIR.glob("Deal*.dat"))
+
+    dfs = []
+    for file in deal_files:
+        df = pd.read_csv(file, sep='|', encoding='utf-8', low_memory=False)
+        dfs.append(df)
+
+    deal_df = pd.concat(dfs, ignore_index=True)
+
+    # Convert DealDate to datetime
+    deal_df['DealDate'] = pd.to_datetime(deal_df['DealDate'], errors='coerce')
+
+    # Filter to VC deals
+    vc_deals = deal_df[deal_df['DealType'].isin(['Early Stage VC', 'Later Stage VC'])].copy()
+
+    # Identify Series A and B
+    series_a_explicit = vc_deals[vc_deals['VCRound'].str.contains('Series A', case=False, na=False)].copy()
+    series_b_explicit = vc_deals[vc_deals['VCRound'].str.contains('Series B', case=False, na=False)].copy()
+
+    # For deals without explicit VCRound, use sequence-based heuristic
+    deals_no_series = vc_deals[~vc_deals['VCRound'].str.contains('Series', case=False, na=False)].copy()
+
+    if len(deals_no_series) > 0:
+        deals_no_series = deals_no_series.sort_values(['CompanyID', 'DealDate'])
+        deals_no_series['sequence'] = deals_no_series.groupby('CompanyID').cumcount() + 1
+
+        sequence_a = deals_no_series[deals_no_series['sequence'] == 1].copy()
+        sequence_b = deals_no_series[deals_no_series['sequence'] == 2].copy()
+
+        sequence_a['VCRound'] = 'Series A'
+        sequence_b['VCRound'] = 'Series B'
+
+        all_series_a = pd.concat([series_a_explicit, sequence_a], ignore_index=True)
+        all_series_b = pd.concat([series_b_explicit, sequence_b], ignore_index=True)
+    else:
+        all_series_a = series_a_explicit
+        all_series_b = series_b_explicit
+
+    # Filter by date ranges
+    series_a_final = all_series_a[
+        (all_series_a['DealDate'] >= series_a_start) &
+        (all_series_a['DealDate'] <= series_a_end)
+    ].copy()
+
+    series_b_final = all_series_b[
+        (all_series_b['DealDate'] >= series_b_start) &
+        (all_series_b['DealDate'] <= series_b_end)
+    ].copy()
+
+    # Add round labels
+    series_a_final['round'] = 'Series A'
+    series_b_final['round'] = 'Series B'
+
+    # Convert DealSize to numeric
+    series_a_final['DealSize'] = pd.to_numeric(series_a_final['DealSize'], errors='coerce').fillna(0)
+    series_b_final['DealSize'] = pd.to_numeric(series_b_final['DealSize'], errors='coerce').fillna(0)
+
+    # Create funding success variable
+    series_a_final['funding_success'] = (
+        (series_a_final['DealSize'] > 0) &
+        (series_a_final['DealStatus'].str.contains('Completed', case=False, na=False))
+    ).astype(int)
+
+    series_b_final['funding_success'] = (
+        (series_b_final['DealSize'] > 0) &
+        (series_b_final['DealStatus'].str.contains('Completed', case=False, na=False))
+    ).astype(int)
+
+    # Combine Series A and B
+    deal_panel = pd.concat([series_a_final, series_b_final], ignore_index=True)
+
+    # Select and rename columns
+    deal_panel = deal_panel[[
+        'CompanyID', 'CompanyName', 'round', 'DealType', 'VCRound', 'DealDate',
+        'DealSize', 'funding_success', 'Investors', 'PostValuation'
+    ]].copy()
+
+    deal_panel.columns = [
+        'company_id', 'company_name', 'round', 'deal_type', 'vc_round', 'deal_date',
+        'deal_size', 'funding_success', 'investors', 'post_valuation'
+    ]
+
+    deal_panel = deal_panel.sort_values(['company_id', 'round'])
+
+    return deal_panel
