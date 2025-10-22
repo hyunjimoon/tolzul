@@ -1,6 +1,6 @@
 ---
 성장:
-  - 2025-10-22T06:07:45-04:00
+  - 2025-10-22T08:10:31-04:00
 URL: https://gemini.google.com/app/8e5186bc3c6f3f5d
 ---
 # Domain Identification Prompt for Strategic Ambiguity Research
@@ -123,7 +123,7 @@ For each of the three domains, provide:
 
 **From transcript:**
 
-> "I would find a setting... could be a domain... you know enough about enough... there have been a few booms of things. It could be the clean energy boom of your mid, 2000s you know, when you know close, you know saying people were talking about windmills and things like that. It could be AI drug discovery. It could be whatever you want to be... I would have it in a domain where there's a cluster of companies, all of whom are competing... you have 20 or 30 companies, and they're all have available pitch decks from around the time of founding."
+> "I would find a setting... could be a domain... there have been a few booms of things. It could be the clean energy boom of your mid, 2000s you know, when you know clean energy talking about windmills. It could be AI drug discovery. It could be where there's a cluster of 20~30 competing companies and they're all have available pitch decks from around the time of founding."
 
 **Core Logic:**
 
@@ -136,9 +136,9 @@ For each of the three domains, provide:
 
 **Hypothesis 1:** Vagueness at Series A lowers initial funding probability but increases Series B success (because no rigid expectations to disappoint).
 
-**Hypothesis 2:** Firms with founding teams possessing greater communication/rhetoric skills secure more funding when using vague language than those with lesser endowments.
+**Hypothesis 2:** High integration cost firms (hardware, distributed systems) benefit more from initial ambiguity than low integration cost firms (software, APIs).
 
-**Hypothesis 3:** High integration cost firms (hardware, distributed systems) benefit more from initial ambiguity than low integration cost firms (software, APIs).
+**Hypothesis 3:** Firms with founding teams possessing greater communication/rhetoric skills secure more funding when using vague language than those with lesser endowments.
 
 **Variables to Code:**
 

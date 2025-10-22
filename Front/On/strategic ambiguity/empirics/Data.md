@@ -1,9 +1,7 @@
 ---
 성장:
-  - 2025-10-22T06:38:26-04:00
+  - 2025-10-22T07:39:20-04:00
 ---
-Here is the ranking of data sources for your goal.
-
 ### Data Source Ranking
 
 1. **YC Public Data + Pitchbook (Hybrid)**
