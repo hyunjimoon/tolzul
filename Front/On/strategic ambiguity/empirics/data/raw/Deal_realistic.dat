@@ -1,0 +1,16 @@
+CompanyID|CompanyName|DealDate|DealSize|VCRound|DealType|DealStatus|PostValuation|Investors
+500001-01|Anthropic|2021-05-28|124000000|Series A|Early Stage VC|Completed||Jaan Tallinn, Dustin Moskovitz
+500001-01|Anthropic|2022-04-29|580000000|Series B|Later Stage VC|Completed|4100000000|Sam Bankman-Fried
+500001-01|Anthropic|2023-05-23|450000000|Series C|Later Stage VC|Completed|15000000000|Spark Capital, Google, Salesforce Ventures
+500001-02|Stability AI|2022-10-17|101000000|Series A|Early Stage VC|Completed|1000000000|Coatue, Lightspeed
+500001-02|Stability AI|2023-11-15|0|Series B|Later Stage VC|Pending||
+500001-03|Inflection AI|2022-03-15|225000000|Series A|Early Stage VC|Completed||Reid Hoffman, Bill Gates, Eric Schmidt
+500001-03|Inflection AI|2023-06-29|1300000000|Series B|Later Stage VC|Completed|4000000000|Microsoft, Reid Hoffman, NVIDIA
+500001-04|Character.AI|2022-11-08|13500000|Seed Round|Early Stage VC|Completed||Andreessen Horowitz
+500001-04|Character.AI|2023-03-23|150000000|Series A|Early Stage VC|Completed|1000000000|Andreessen Horowitz
+500001-05|OpenAI|2019-07-22|1000000000||Later Stage VC|Completed||Microsoft
+500001-05|OpenAI|2023-01-05|10000000000|Series C|Later Stage VC|Completed|29000000000|Microsoft
+500001-06|Cohere|2021-11-15|40000000|Series A|Early Stage VC|Completed||Tiger Global
+500001-06|Cohere|2022-02-08|125000000|Series B|Later Stage VC|Completed||Tiger Global
+500001-07|Adept AI|2022-04-26|65000000|Series A|Early Stage VC|Completed||Greylock Partners
+500001-07|Adept AI|2023-03-14|350000000|Series B|Later Stage VC|Completed|1000000000|General Catalyst
