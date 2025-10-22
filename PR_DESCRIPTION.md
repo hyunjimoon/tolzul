@@ -1,259 +1,133 @@
-# Add Pitchbook Data Analysis Pipelines with Git Metadata Tracking
+# Pitchbook 데이터 분석 Pipeline (xarray 기반)
 
-## Summary
+## 요약
 
-This PR adds two production-ready data analysis pipelines for processing Pitchbook data, optimized for the Management Science paper on vagueness in entrepreneurial promises. Both pipelines include automatic git metadata tracking for full reproducibility.
+Pitchbook 데이터를 분석하는 5단계 pipeline입니다. 모든 데이터가 하나의 xarray Dataset에 저장되어 쉽게 탐색할 수 있습니다.
 
-## What's New
+## 핵심 기능
 
-### 📊 Pipeline Options
-
-#### Option 1: xarray-only Pipeline (Recommended)
-**File**: `code/pipeline_xarray.py`
-
-- **Single unified view**: All 40+ variables visible in one xarray Dataset
-- **Easy exploration**: Access data with `ds.company_vagueness`, `ds.panel_funding_success`
-- **Checkpoint/resume**: Resume from any step if errors occur
-- **Git metadata**: Automatic tracking of commit ID, branch, and URLs
-- **File**: `output/pitchbook_analysis.nc` (120KB)
+### ✅ 하나의 파일에 모든 데이터
 
 ```python
 import xarray as xr
+
 ds = xr.open_dataset('output/pitchbook_analysis.nc')
-print(ds.data_vars)  # See all 40+ variables
-print(ds.attrs['git_commit_url'])  # Check which code generated this
+print(ds)  # 모든 변수를 한눈에!
 ```
 
-#### Option 2: Hybrid Pipeline (For Large Datasets)
-**File**: `code/pipeline_hybrid.py`
+**포함된 데이터**:
+- 📊 **Dimensions**: company (30), deal (61), observation (53)
+- 📈 **Variables**: 40+ 개 (company_*, deal_*, panel_*)
+- 📝 **Attributes**: git 메타데이터, 처리 단계 정보
 
-- **Optimized for 94+ columns**: Real Pitchbook format with 94 Company + 97 Deal columns
-- **60% size reduction**: Columnar parquet compression vs CSV
-- **Selective loading**: Read only needed columns
-- **Lightweight checkpoint**: 4KB metadata file + compressed parquet data
+### ✅ xarray 구조
 
-### 📚 Documentation
+**Dimensions (차원)**:
+- `company`: 회사별 데이터
+- `deal`: 딜별 데이터
+- `observation`: 분석 패널 (회사 × 라운드)
 
-**File**: `code/PIPELINE_GUIDE.md`
-
-- Korean/English bilingual guide
-- Detailed comparison of both approaches
-- Usage examples and best practices
-- Reproducibility instructions
-
-## Key Features
-
-### 🔄 Reproducibility
-
-Both pipelines automatically record:
-
+**Variables (변수)**:
 ```python
-attrs = {
-    'git_commit_id': 'a84c975...',
-    'git_commit_url': 'https://github.com/hyunjimoon/tolzul/commit/...',
-    'git_branch': 'claude/pitchbook-pipeline-updates-011CUNKR6EKWqqHsAjq1cTAG',
-    'git_branch_url': 'https://github.com/hyunjimoon/tolzul/tree/...',
-    'step_01-05_status': 'completed',
-    'step_01-05_timestamp': '2025-10-22T...'
-}
+ds.company_vagueness        # 모호성 점수 (0-100)
+ds.company_Employees        # 직원 수
+ds.deal_funding_success     # 펀딩 성공 여부
+ds.panel_series_b_dummy     # Series B 더미
 ```
 
-You can always trace which code version generated your results!
+**Attributes (메타데이터)**:
+```python
+ds.attrs['git_commit_url']    # 재현성: 어떤 코드로 생성?
+ds.attrs['n_companies']       # 데이터 요약: 30개 회사
+ds.attrs['step_01_status']    # 처리 상태: completed
+```
 
-### 🎯 5-Step Processing Pipeline
-
-Both pipelines implement the same 5-step workflow:
-
-1. **Step 1**: Process Company data (filter AI/ML firms, calculate vagueness scores)
-2. **Step 2**: Process Deal data (identify Series A/B, create funding success variable)
-3. **Step 3**: Create analysis panel (merge company + deal, each firm × 2 rounds)
-4. **Step 4**: Run regression analysis (two-way and three-way interactions)
-5. **Step 5**: Create deliverables (4 tables + 4 figures)
-
-### 📈 Output Files
-
-Both pipelines generate:
-
-**Tables**:
-- `table1_descriptives.csv` - Descriptive statistics
-- `table2_model1.csv` - Vagueness × Series B interaction
-- `table4_model2.csv` - Three-way interaction (vagueness × round × integration cost)
-- `table3_success_rates.csv` - Success rates by sector/round
-
-**Figures**:
-- `figure1_reversal_bars.png` - Funding success reversal pattern
-- `figure2_vagueness_curves.png` - Success curves by vagueness level
-
-**Models**:
-- `model_results.pkl` - Full regression results with coefficients and p-values
-
-## Usage
-
-### Quick Start (xarray-only)
+### ✅ 간단한 사용법
 
 ```bash
-cd "Front/On/strategic ambiguity/empirics"
-
-# Run full pipeline
+# 실행
 python code/pipeline_xarray.py
 
-# View status
+# 상태 확인
 python code/pipeline_xarray.py --summary
 
-# Resume from specific step (if needed)
+# 재실행 (3단계부터)
 python code/pipeline_xarray.py --from 3
 ```
 
-### Quick Start (hybrid)
-
-```bash
-cd "Front/On/strategic ambiguity/empirics"
-
-# Run full pipeline
-python code/pipeline_hybrid.py
-
-# View status
-python code/pipeline_hybrid.py --summary
-```
-
-### Data Requirements
-
-Place your Pitchbook data files in `data/raw/`:
-- `Company2021.dat`, `Company2022.dat`, ..., `Company2025.dat`
-- `Deal2023.dat` (or your deal data files)
-
-**Format**: Pipe-delimited (.dat) files with headers
-
-**Expected columns**:
-- Company: CompanyID, CompanyName, Description, Keywords, TotalRaised, Employees, YearFounded
-- Deal: CompanyID, DealType, VCRound, DealDate, DealSize, Investors, PostValuation, DealStatus
-
-## Test Results
-
-✅ Successfully tested with sample data:
-- **30 AI/ML companies** processed
-- **61 VC deals** (Series A/B)
-- **53 observations** in final panel
-- **40+ variables** stored in xarray Dataset
-- All 5 pipeline steps completed successfully
-
-## Technical Details
-
-### Why Two Pipelines?
-
-| Feature | xarray-only | hybrid |
-|---------|------------|--------|
-| **Best for** | Exploring data, seeing everything at once | Very wide data (100+ columns) |
-| **Storage** | Single 120KB file | Multiple compressed files |
-| **Data access** | All variables visible | Load columns on demand |
-| **Complexity** | Simple, unified interface | More efficient for large datasets |
-| **Recommended when** | < 100MB datasets, interactive analysis | > 100 columns, production use |
-
-### Data Structure
-
-**xarray-only**:
-```
-pitchbook_analysis.nc (120KB)
-├─ company_* (30 companies × 9 variables)
-├─ deal_* (61 deals × 10 variables)
-└─ panel_* (53 observations × 20+ variables)
-```
-
-**Hybrid**:
-```
-checkpoint.nc (4KB)              # Metadata only
-data/processed/
-  ├─ company_master.parquet (11KB)  # 60% smaller than CSV
-  ├─ deal_panel.parquet (9KB)
-  └─ analysis_panel.parquet (18KB)
-```
-
-## Migration Guide
-
-If you were using the original scripts (`01_process_company_data.py` - `05_create_deliverables.py`):
-
-**Old approach**:
-```bash
-python code/01_process_company_data.py
-python code/02_process_deal_data.py
-python code/03_create_panel.py
-python code/04_run_analysis.py
-python code/05_create_deliverables.py
-```
-
-**New approach**:
-```bash
-# One command runs all 5 steps with checkpointing
-python code/pipeline_xarray.py
-```
-
-**Benefits**:
-- ✅ Automatic checkpoint/resume
-- ✅ Git metadata tracking
-- ✅ All data visible in one place
-- ✅ Easier to debug and explore
-
-## Reproducibility Example
-
-You can verify which code version generated any results:
+### ✅ 데이터 탐색
 
 ```python
-import xarray as xr
+# DataFrame으로 변환
+df = ds.to_dataframe()
 
-# Load results
-ds = xr.open_dataset('output/pitchbook_analysis.nc')
+# 변수 선택
+subset = ds[['company_vagueness', 'company_Employees']]
 
-# Check metadata
-print(f"Generated by: {ds.attrs['git_commit_url']}")
-print(f"Branch: {ds.attrs['git_branch']}")
-print(f"Completed: {ds.attrs['step_05_timestamp']}")
-print(f"N observations: {ds.attrs['n_observations']}")
+# 조건 필터
+high_vague = ds.where(ds.company_vagueness > 60, drop=True)
+
+# 평균 계산
+print(f"평균 모호성: {ds.company_vagueness.values.mean():.1f}")
 ```
 
-## Files Changed
+## Pipeline 5단계
 
-**Added**:
-- `code/pipeline_xarray.py` (26KB) - xarray-only pipeline
-- `code/pipeline_hybrid.py` (22KB) - hybrid pipeline
-- `code/PIPELINE_GUIDE.md` (5KB) - Documentation
-- `output/pitchbook_analysis.nc` (120KB) - Test results
-- `output/checkpoint.nc` (4KB) - Hybrid checkpoint
-- `data/processed/*.parquet` (3 files) - Compressed data
+1. **회사 데이터 처리** → AI/ML 회사 필터링, 모호성 점수 계산
+2. **딜 데이터 처리** → Series A/B 식별, 펀딩 성공 변수 생성
+3. **패널 생성** → 회사+딜 병합 (각 회사 × 2 라운드)
+4. **회귀분석** → 2-way/3-way 상호작용
+5. **결과물 생성** → 표 4개 + 그림 2개
 
-**Modified**:
-- `output/table1_descriptives.csv` - Updated with test data
-- `output/table2_model1.csv` - Two-way interaction results
-- `output/table4_model2.csv` - Three-way interaction results
-- `output/figure2_vagueness_curves.png` - Updated visualization
+## Output 파일
 
-## Testing
+```
+output/
+├── pitchbook_analysis.nc           ← 모든 데이터 여기 있음!
+├── table1_descriptives.csv
+├── table2_model1.csv
+├── table4_model2.csv
+├── figure2_vagueness_curves.png
+└── model_results.pkl
+```
 
-Both pipelines have been tested with:
-- ✅ Sample Pitchbook data (8 real AI companies + 22 synthetic)
-- ✅ Full 5-step processing
-- ✅ Regression analysis (logit/OLS fallback)
-- ✅ Deliverable generation (tables + figures)
-- ✅ Checkpoint save/load
-- ✅ Git metadata recording
+## 재현성 (Git Metadata)
 
-## Next Steps
+생성된 결과가 어떤 코드로 만들어졌는지 자동 추적:
 
-After merging this PR:
+```python
+print(ds.attrs['git_commit_url'])
+# → https://github.com/hyunjimoon/tolzul/commit/...
 
-1. **Pull the code** to your local machine
-2. **Copy real Pitchbook data** to `data/raw/`
-3. **Run pipeline**: `python code/pipeline_xarray.py`
-4. **Review results** in `output/` directory
-5. **Check reproducibility**: Verify git metadata in checkpoint file
+print(ds.attrs['git_branch'])
+# → claude/pitchbook-pipeline-updates-011CUNKR6EKWqqHsAjq1cTAG
 
-## Questions?
+print(ds.attrs['step_05_timestamp'])
+# → 2025-10-22T16:52:57...
+```
 
-Refer to `code/PIPELINE_GUIDE.md` for detailed documentation, or check the inline comments in the pipeline scripts.
+## 테스트 결과
 
----
+✅ 샘플 데이터로 성공적으로 테스트:
+- 30 AI/ML 회사
+- 61 딜 (Series A/B)
+- 53 관측치 (패널)
+- 5단계 모두 완료
 
-**Related Issues**: Addresses the need for reproducible Pitchbook data analysis with checkpoint/resume capability
+## 파일 변경사항
 
-**Breaking Changes**: None - original scripts (`01-05_*.py`) remain unchanged
+**추가**:
+- `code/pipeline_xarray.py` - 메인 pipeline
+- `code/PIPELINE_GUIDE.md` - xarray 구조 설명서
 
-**Dependencies**: Requires `pandas`, `numpy`, `xarray`, `netcdf4`, `pyarrow`, `statsmodels`, `matplotlib`, `seaborn`
+**Output 예시**:
+- `output/pitchbook_analysis.nc` - 모든 데이터
+- `data/processed/*.parquet` - 중간 파일들
+
+## 다음 단계
+
+1. 실제 Pitchbook 데이터를 `data/raw/`에 복사
+2. `python code/pipeline_xarray.py` 실행
+3. `output/pitchbook_analysis.nc` 열어서 탐색!
+
+상세 내용은 `code/PIPELINE_GUIDE.md` 참고.
