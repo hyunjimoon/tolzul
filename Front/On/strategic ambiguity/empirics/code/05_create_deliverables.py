@@ -299,3 +299,120 @@ print("  4. figure4_magnitude_bars.png")
 print("\n" + "=" * 80)
 print("✓ SCRIPT 05 COMPLETED SUCCESSFULLY")
 print("=" * 80)
+
+
+def create_deliverables(panel_df, output_dir):
+    """
+    Create tables and figures from analysis panel
+
+    Args:
+        panel_df: Analysis panel DataFrame
+        output_dir: Path to output directory
+
+    Returns:
+        dict: Dictionary with paths to created files
+    """
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+
+    sns.set_style("whitegrid")
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    created_files = {}
+
+    # Table 1: Descriptive statistics
+    desc_vars = ['vagueness', 'high_integration_cost', 'funding_success',
+                 'deal_size', 'employees', 'total_raised']
+
+    desc_stats = panel_df[desc_vars].describe().T
+    desc_stats['median'] = panel_df[desc_vars].median()
+    desc_stats = desc_stats[['count', 'mean', 'median', 'std', 'min', 'max']]
+
+    table1_file = output_dir / "table1_descriptives.csv"
+    desc_stats.to_csv(table1_file)
+    created_files['table1'] = table1_file
+
+    # Table 3: Success rates
+    success_rates = panel_df.groupby(['vagueness_category', 'round', 'integration_cost_label']).agg({
+        'funding_success': ['count', 'sum', 'mean']
+    }).round(3)
+
+    success_rates.columns = ['N', 'Successes', 'Success_Rate']
+    success_rates = success_rates.reset_index()
+
+    success_pivot = success_rates.pivot_table(
+        index=['integration_cost_label', 'vagueness_category'],
+        columns='round',
+        values='Success_Rate'
+    )
+
+    table3_file = output_dir / "table3_success_rates.csv"
+    success_pivot.to_csv(table3_file)
+    created_files['table3'] = table3_file
+
+    # Figure 1: Reversal bars
+    fig, ax = plt.subplots(figsize=(12, 7))
+
+    success_by_vague_round = panel_df.groupby(['vagueness_category', 'round'])['funding_success'].mean().unstack()
+
+    x = np.arange(len(success_by_vague_round.index))
+    width = 0.35
+
+    bars1 = ax.bar(x - width/2, success_by_vague_round['Series A'], width,
+                   label='Series A', color='steelblue', alpha=0.8)
+    bars2 = ax.bar(x + width/2, success_by_vague_round['Series B'], width,
+                   label='Series B', color='coral', alpha=0.8)
+
+    ax.set_xlabel('Promise Type', fontsize=13, fontweight='bold')
+    ax.set_ylabel('Funding Success Rate', fontsize=13, fontweight='bold')
+    ax.set_title('Funding Success Reversal', fontsize=14, fontweight='bold')
+    ax.set_xticks(x)
+    ax.set_xticklabels(success_by_vague_round.index)
+    ax.legend(fontsize=11)
+    ax.set_ylim(0, 1.1)
+    ax.grid(axis='y', alpha=0.3)
+
+    for bars in [bars1, bars2]:
+        for bar in bars:
+            height = bar.get_height()
+            ax.text(bar.get_x() + bar.get_width()/2., height,
+                    f'{height:.1%}', ha='center', va='bottom', fontsize=10)
+
+    plt.tight_layout()
+    fig1_file = output_dir / "figure1_reversal_bars.png"
+    plt.savefig(fig1_file, dpi=300)
+    plt.close()
+    created_files['figure1'] = fig1_file
+
+    # Figure 2: Vagueness curves
+    fig, ax = plt.subplots(figsize=(12, 7))
+
+    panel_df_copy = panel_df.copy()
+    panel_df_copy['vagueness_bin'] = pd.cut(panel_df_copy['vagueness'], bins=[0, 30, 50, 70, 100],
+                                              labels=['0-30', '30-50', '50-70', '70-100'])
+
+    vague_curves = panel_df_copy.groupby(['vagueness_bin', 'round'])['funding_success'].mean().unstack()
+
+    for col in vague_curves.columns:
+        ax.plot(range(len(vague_curves.index)), vague_curves[col],
+                marker='o', linewidth=2.5, markersize=8, label=col, alpha=0.8)
+
+    ax.set_xlabel('Vagueness Level', fontsize=13, fontweight='bold')
+    ax.set_ylabel('Funding Success Rate', fontsize=13, fontweight='bold')
+    ax.set_title('How Vagueness Affects Funding Success', fontsize=14, fontweight='bold')
+    ax.set_xticks(range(len(vague_curves.index)))
+    ax.set_xticklabels(vague_curves.index)
+    ax.legend(fontsize=11, title='Round')
+    ax.grid(alpha=0.3)
+    ax.set_ylim(0, 1.1)
+
+    plt.tight_layout()
+    fig2_file = output_dir / "figure2_vagueness_curves.png"
+    plt.savefig(fig2_file, dpi=300)
+    plt.close()
+    created_files['figure2'] = fig2_file
+
+    return created_files

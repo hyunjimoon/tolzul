@@ -188,3 +188,90 @@ print(analysis_panel[['company_id', 'company_name', 'round', 'vagueness',
 print("\n" + "=" * 80)
 print("✓ SCRIPT 03 COMPLETED SUCCESSFULLY")
 print("=" * 80)
+
+
+def create_analysis_panel(company_df, deal_df):
+    """
+    Create analysis panel by merging company and deal data
+
+    Args:
+        company_df: Company master DataFrame
+        deal_df: Deal panel DataFrame
+
+    Returns:
+        pd.DataFrame: Analysis panel with derived variables
+    """
+    # Merge on company_id
+    panel_df = deal_df.merge(
+        company_df,
+        on='company_id',
+        how='inner'
+    )
+
+    # For firms with only Series A, create a missing Series B record
+    companies_with_a_only = panel_df[panel_df['round'] == 'Series A']['company_id'].unique()
+    companies_with_both_rounds = panel_df.groupby('company_id').filter(lambda x: len(x) == 2)['company_id'].unique()
+    companies_missing_b = set(companies_with_a_only) - set(companies_with_both_rounds)
+
+    if len(companies_missing_b) > 0:
+        missing_b_records = []
+
+        for company_id in companies_missing_b:
+            series_a_record = panel_df[
+                (panel_df['company_id'] == company_id) &
+                (panel_df['round'] == 'Series A')
+            ].iloc[0].to_dict()
+
+            series_b_record = series_a_record.copy()
+            series_b_record['round'] = 'Series B'
+            series_b_record['funding_success'] = 0
+            series_b_record['deal_size'] = 0
+            series_b_record['deal_date'] = pd.NaT
+            series_b_record['investors'] = 'None'
+            series_b_record['post_valuation'] = series_a_record['post_valuation']
+
+            missing_b_records.append(series_b_record)
+
+        missing_b_df = pd.DataFrame(missing_b_records)
+        panel_df = pd.concat([panel_df, missing_b_df], ignore_index=True)
+
+    # Sort by company and round
+    panel_df = panel_df.sort_values(['company_id', 'round'])
+
+    # Add derived variables
+    panel_df['series_b_dummy'] = (panel_df['round'] == 'Series B').astype(int)
+
+    # Log of Series A amount
+    series_a_amounts = panel_df[panel_df['round'] == 'Series A'][['company_id', 'deal_size']].copy()
+    series_a_amounts.columns = ['company_id', 'series_a_amount']
+    panel_df = panel_df.merge(series_a_amounts, on='company_id', how='left')
+    panel_df['log_series_a_amount'] = np.log(panel_df['series_a_amount'] + 1)
+
+    # Vagueness categories
+    panel_df['vagueness_category'] = pd.cut(
+        panel_df['vagueness'],
+        bins=[0, 50, 100],
+        labels=['Precise', 'Vague'],
+        include_lowest=True
+    )
+
+    # Integration cost label
+    panel_df['integration_cost_label'] = panel_df['high_integration_cost'].map({
+        0: 'Low-i (API/SaaS)',
+        1: 'High-i (Hardware)'
+    })
+
+    # Select columns for final output
+    analysis_cols = [
+        'company_id', 'company_name', 'round', 'series_b_dummy',
+        'vagueness', 'vagueness_category',
+        'high_integration_cost', 'integration_cost_label',
+        'funding_success', 'deal_size', 'deal_date',
+        'series_a_amount', 'log_series_a_amount',
+        'employees', 'year_founded', 'total_raised',
+        'investors', 'post_valuation'
+    ]
+
+    analysis_panel = panel_df[analysis_cols].copy()
+
+    return analysis_panel
