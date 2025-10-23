@@ -21,6 +21,8 @@ from pathlib import Path
 from datetime import datetime
 import pickle
 import subprocess
+import json
+import os
 
 # Import processing functions dynamically
 import importlib.util
@@ -56,31 +58,34 @@ class StrategicAmbiguityPipeline:
         self.output_dir = base_dir / output_dir
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
-        self.checkpoint_file = self.output_dir / "pipeline_checkpoint.pkl"
+        # Use JSON for lightweight checkpoint metadata
+        self.checkpoint_file = self.output_dir / "pipeline_checkpoint.json"
+        self.data_dir = base_dir / "data" / "processed"
+        self.data_dir.mkdir(parents=True, exist_ok=True)
 
-        # Initialize or load checkpoint
+        # Initialize or load checkpoint metadata
         if self.checkpoint_file.exists():
             print(f"📂 Loading checkpoint: {self.checkpoint_file}")
-            with open(self.checkpoint_file, 'rb') as f:
-                self.ds = pickle.load(f)
+            with open(self.checkpoint_file, 'r') as f:
+                self.checkpoint = json.load(f)
+            # Recreate dataset from saved data
+            self.ds = self._load_dataset_from_checkpoint()
         else:
             print("🆕 Creating new dataset")
+            self.checkpoint = self._init_empty_checkpoint()
             self.ds = self._init_empty_dataset()
 
-    def _init_empty_dataset(self):
-        """Initialize empty xarray Dataset with metadata"""
-        # Get git metadata for reproducibility
+    def _init_empty_checkpoint(self):
+        """Initialize empty checkpoint metadata"""
         try:
             git_commit = subprocess.check_output(
                 ['git', 'rev-parse', 'HEAD'],
                 cwd=self.base_dir
             ).decode('utf-8').strip()
-
             git_branch = subprocess.check_output(
                 ['git', 'rev-parse', '--abbrev-ref', 'HEAD'],
                 cwd=self.base_dir
             ).decode('utf-8').strip()
-
             repo_url = 'https://github.com/hyunjimoon/tolzul'
             git_commit_url = f'{repo_url}/commit/{git_commit}'
             git_branch_url = f'{repo_url}/tree/{git_branch}'
@@ -90,61 +95,108 @@ class StrategicAmbiguityPipeline:
             git_commit_url = 'unknown'
             git_branch_url = 'unknown'
 
-        ds = xr.Dataset(
-            attrs={
-                'pipeline_version': '3.0_modular_xarray',
-                'created_at': datetime.now().isoformat(),
-                'last_updated': datetime.now().isoformat(),
-                'data_source': 'Pitchbook',
-                'pipeline_status': 'initialized',
-                # Git metadata for reproducibility
-                'git_commit_id': git_commit,
-                'git_commit_url': git_commit_url,
-                'git_branch': git_branch,
-                'git_branch_url': git_branch_url,
-                # Date filtering
-                'series_a_date_range': '2021-01-01 to 2022-10-31',
-                'series_b_date_range': '2023-05-01 to 2025-10-31',
-                # Step completion tracking
-                'step_01_status': 'pending',
-                'step_02_status': 'pending',
-                'step_03_status': 'pending',
-                'step_04_status': 'pending',
-                'step_05_status': 'pending',
-            }
-        )
+        return {
+            'pipeline_version': '3.1_modular_xarray_lightweight',
+            'created_at': datetime.now().isoformat(),
+            'last_updated': datetime.now().isoformat(),
+            'data_source': 'Pitchbook',
+            'pipeline_status': 'initialized',
+            'git_commit_id': git_commit,
+            'git_commit_url': git_commit_url,
+            'git_branch': git_branch,
+            'git_branch_url': git_branch_url,
+            'series_a_date_range': '2021-01-01 to 2022-10-31',
+            'series_b_date_range': '2023-05-01 to 2025-10-31',
+            'step_01_status': 'pending',
+            'step_02_status': 'pending',
+            'step_03_status': 'pending',
+            'step_04_status': 'pending',
+            'step_05_status': 'pending',
+            'completed_steps': []
+        }
+
+    def _init_empty_dataset(self):
+        """Initialize empty xarray Dataset with metadata"""
+        ds = xr.Dataset(attrs=self.checkpoint.copy())
+        return ds
+
+    def _load_dataset_from_checkpoint(self):
+        """Load dataset from checkpoint by reading saved CSV files"""
+        ds = xr.Dataset(attrs=self.checkpoint.copy())
+        
+        # Load company data if step 1 is completed
+        if self.checkpoint.get('step_01_status') == 'completed':
+            company_file = self.data_dir / "company_master.csv"
+            if company_file.exists():
+                company_df = pd.read_csv(company_file)
+                company_df = company_df.set_index('company_id')
+                self._dataframe_to_xarray(ds, company_df, 'company', 'company_')
+                print(f"  ✅ Loaded {len(company_df)} companies from checkpoint")
+        
+        # Load deal data if step 2 is completed
+        if self.checkpoint.get('step_02_status') == 'completed':
+            deal_file = self.data_dir / "deal_master.csv"
+            if deal_file.exists():
+                deal_df = pd.read_csv(deal_file)
+                deal_df = deal_df.set_index('deal_id')
+                self._dataframe_to_xarray(ds, deal_df, 'deal', 'deal_')
+                print(f"  ✅ Loaded {len(deal_df)} deals from checkpoint")
+        
+        # Load panel data if step 3 is completed
+        if self.checkpoint.get('step_03_status') == 'completed':
+            panel_file = self.data_dir / "analysis_panel.csv"
+            if panel_file.exists():
+                panel_df = pd.read_csv(panel_file)
+                panel_df = panel_df.set_index('observation_id')
+                self._dataframe_to_xarray(ds, panel_df, 'observation', 'panel_')
+                print(f"  ✅ Loaded {len(panel_df)} observations from checkpoint")
+        
         return ds
 
     def save_checkpoint(self, step_num, step_name):
-        """Save current state to disk with step completion tracking"""
-        self.ds.attrs['last_updated'] = datetime.now().isoformat()
-        self.ds.attrs['last_completed_step'] = step_name
-        self.ds.attrs[f'step_{step_num:02d}_status'] = 'completed'
-        self.ds.attrs[f'step_{step_num:02d}_timestamp'] = datetime.now().isoformat()
+        """Save lightweight checkpoint metadata (no large data)"""
+        try:
+            self.checkpoint['last_updated'] = datetime.now().isoformat()
+            self.checkpoint['last_completed_step'] = step_name
+            self.checkpoint[f'step_{step_num:02d}_status'] = 'completed'
+            self.checkpoint[f'step_{step_num:02d}_timestamp'] = datetime.now().isoformat()
+            
+            if step_name not in self.checkpoint['completed_steps']:
+                self.checkpoint['completed_steps'].append(step_name)
+            
+            # Save checkpoint as JSON (lightweight)
+            temp_file = self.checkpoint_file.with_suffix('.json.tmp')
+            with open(temp_file, 'w') as f:
+                json.dump(self.checkpoint, f, indent=2)
+            
+            if self.checkpoint_file.exists():
+                self.checkpoint_file.unlink()
+            temp_file.rename(self.checkpoint_file)
+            
+            # Update dataset attributes
+            self.ds.attrs.update(self.checkpoint)
+            
+            print(f"💾 Checkpoint saved: {step_name}")
+            
+        except OSError as e:
+            if e.errno == 28:  # No space left on device
+                print(f"⚠️  Warning: Could not save checkpoint due to disk space")
+                print(f"   Data files are saved, you can resume from step {step_num}")
+                # Update in-memory checkpoint anyway
+                self.checkpoint['last_updated'] = datetime.now().isoformat()
+                self.checkpoint['last_completed_step'] = step_name
+                self.checkpoint[f'step_{step_num:02d}_status'] = 'completed'
+                if step_name not in self.checkpoint['completed_steps']:
+                    self.checkpoint['completed_steps'].append(step_name)
+            else:
+                raise
 
-        # Force load into memory before saving
-        self.ds.load()
-
-        # Save as pickle
-        temp_file = self.checkpoint_file.with_suffix('.pkl.tmp')
-        with open(temp_file, 'wb') as f:
-            pickle.dump(self.ds, f)
-
-        if self.checkpoint_file.exists():
-            self.checkpoint_file.unlink()
-        temp_file.rename(self.checkpoint_file)
-
-        # Reload
-        with open(self.checkpoint_file, 'rb') as f:
-            self.ds = pickle.load(f)
-
-        print(f"💾 Checkpoint saved: {step_name}")
-
-    def _dataframe_to_xarray(self, df, dim_name, prefix):
+    def _dataframe_to_xarray(self, ds, df, dim_name, prefix):
         """
         Convert pandas DataFrame to xarray DataArrays
 
         Args:
+            ds: xarray Dataset to add to
             df: pandas DataFrame
             dim_name: dimension name (e.g., 'company', 'deal', 'observation')
             prefix: variable name prefix (e.g., 'company_', 'deal_', 'panel_')
@@ -157,7 +209,7 @@ class StrategicAmbiguityPipeline:
         # Store each column as separate DataArray
         for col in df.columns:
             var_name = f'{prefix}{col}'
-            self.ds[var_name] = xr.DataArray(
+            ds[var_name] = xr.DataArray(
                 df[col].values,
                 dims=[dim_name],
                 coords={dim_name: df.index.values}
@@ -185,10 +237,11 @@ class StrategicAmbiguityPipeline:
         company_df = company_df.set_index('company_id')
 
         # Convert to xarray
-        self._dataframe_to_xarray(company_df, 'company', 'company_')
+        self._dataframe_to_xarray(self.ds, company_df, 'company', 'company_')
 
         # Store metadata
         self.ds.attrs['n_companies'] = len(company_df)
+        self.checkpoint['n_companies'] = len(company_df)
 
         print(f"  ✅ Processed {len(company_df)} AI/ML companies")
         self.save_checkpoint(1, step_name)
@@ -220,11 +273,16 @@ class StrategicAmbiguityPipeline:
         deal_df['deal_id'] = range(len(deal_df))
         deal_df = deal_df.set_index('deal_id')
 
+        # Save deal data to CSV for checkpointing
+        deal_df_save = deal_df.reset_index()
+        deal_df_save.to_csv(self.data_dir / "deal_master.csv", index=False)
+
         # Convert to xarray
-        self._dataframe_to_xarray(deal_df, 'deal', 'deal_')
+        self._dataframe_to_xarray(self.ds, deal_df, 'deal', 'deal_')
 
         # Store metadata
         self.ds.attrs['n_deals'] = len(deal_df)
+        self.checkpoint['n_deals'] = len(deal_df)
 
         print(f"  ✅ Processed {len(deal_df)} deals")
         self.save_checkpoint(2, step_name)
@@ -262,11 +320,16 @@ class StrategicAmbiguityPipeline:
         panel_df['observation_id'] = range(len(panel_df))
         panel_df = panel_df.set_index('observation_id')
 
+        # Save panel data to CSV for checkpointing
+        panel_df_save = panel_df.reset_index()
+        panel_df_save.to_csv(self.data_dir / "analysis_panel.csv", index=False)
+
         # Convert to xarray
-        self._dataframe_to_xarray(panel_df, 'observation', 'panel_')
+        self._dataframe_to_xarray(self.ds, panel_df, 'observation', 'panel_')
 
         # Store metadata
         self.ds.attrs['n_observations'] = len(panel_df)
+        self.checkpoint['n_observations'] = len(panel_df)
 
         print(f"  ✅ Created panel with {len(panel_df)} observations")
         self.save_checkpoint(3, step_name)
@@ -278,7 +341,7 @@ class StrategicAmbiguityPipeline:
         """
         step_name = "04_run_analysis"
 
-        if self.ds.attrs.get('step_04_status') == 'completed' and not force:
+        if self.checkpoint.get('step_04_status') == 'completed' and not force:
             print(f"⏭️  Step 4: Skipping (already completed)")
             return
 
@@ -316,6 +379,7 @@ class StrategicAmbiguityPipeline:
         model2_results.to_csv(self.output_dir / 'table4_model2.csv', index=False)
 
         self.ds.attrs['model_results_file'] = str(self.output_dir / 'model_results.pkl')
+        self.checkpoint['model_results_file'] = str(self.output_dir / 'model_results.pkl')
 
         print(f"  ✅ Analysis complete")
         self.save_checkpoint(4, step_name)
@@ -326,7 +390,7 @@ class StrategicAmbiguityPipeline:
         """
         step_name = "05_create_deliverables"
 
-        if self.ds.attrs.get('step_05_status') == 'completed' and not force:
+        if self.checkpoint.get('step_05_status') == 'completed' and not force:
             print(f"⏭️  Step 5: Skipping (already completed)")
             return
 
@@ -344,6 +408,8 @@ class StrategicAmbiguityPipeline:
 
         self.ds.attrs['deliverables_created'] = 1
         self.ds.attrs['deliverables_path'] = str(self.output_dir)
+        self.checkpoint['deliverables_created'] = 1
+        self.checkpoint['deliverables_path'] = str(self.output_dir)
 
         print(f"\n  ✅ All deliverables created")
         for name, path in created_files.items():
@@ -371,8 +437,8 @@ class StrategicAmbiguityPipeline:
         print("STRATEGIC AMBIGUITY EMPIRICS PIPELINE")
         print("=" * 80)
         print(f"\nDate Filtering:")
-        print(f"  Series A: {self.ds.attrs['series_a_date_range']}")
-        print(f"  Series B: {self.ds.attrs['series_b_date_range']}")
+        print(f"  Series A: {self.checkpoint['series_a_date_range']}")
+        print(f"  Series B: {self.checkpoint['series_b_date_range']}")
         print()
 
         for i, step in enumerate(steps, 1):
@@ -384,7 +450,9 @@ class StrategicAmbiguityPipeline:
             except Exception as e:
                 print(f"\n❌ Error in step {i}: {step.__name__}")
                 print(f"   {str(e)}")
-                print(f"\n💡 To resume from this step: pipeline.run_pipeline(start_from={i})")
+                print(f"\n💡 To resume from this step: python pipeline_xarray.py --from {i}")
+                import traceback
+                traceback.print_exc()
                 raise
 
         print("\n" + "=" * 80)
@@ -403,19 +471,26 @@ class StrategicAmbiguityPipeline:
         print(f"\nCheckpoint file: {self.checkpoint_file}")
         print(f"Exists: {self.checkpoint_file.exists()}")
 
-        if 'last_completed_step' in self.ds.attrs:
-            print(f"\nLast completed: {self.ds.attrs['last_completed_step']}")
-            print(f"Last updated: {self.ds.attrs['last_updated']}")
+        if 'last_completed_step' in self.checkpoint:
+            print(f"\nLast completed: {self.checkpoint['last_completed_step']}")
+            print(f"Last updated: {self.checkpoint['last_updated']}")
+        
+        print(f"\nCompleted steps: {', '.join(self.checkpoint.get('completed_steps', []))}")
+
+        print(f"\nStep status:")
+        for i in range(1, 6):
+            status = self.checkpoint.get(f'step_{i:02d}_status', 'pending')
+            print(f"  Step {i}: {status}")
 
         print(f"\nData variables in dataset:")
         for var in self.ds.data_vars:
             print(f"  - {var}: {self.ds[var].shape}")
 
-        print(f"\nAttributes:")
+        print(f"\nMetadata:")
         for key in ['pipeline_version', 'n_companies', 'n_deals', 'n_observations',
                     'series_a_date_range', 'series_b_date_range', 'git_commit_url']:
-            if key in self.ds.attrs:
-                val = self.ds.attrs[key]
+            if key in self.checkpoint:
+                val = self.checkpoint[key]
                 print(f"  - {key}: {val}")
 
     def to_dataframe(self):
