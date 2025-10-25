@@ -100,7 +100,7 @@ This summary provides a foundation for your “tolzul” map, showing how the An
 1. irreversible -> choice in sub level can be formulated as optimization in higher level, discovered
 2. 
 
-[[📜gleick11_information]]
+[[Space/Sources/Papers/📜gleick11_information]]
 2025-06-27
 - set aside 10mins collaborating on my career as i am certain that i'd be a great asset to your vision of bayesian entrepreneurship as you agreed from the mail to josh (move toward computational cognitive science)
 - critical reason for choosing my research topic is bc you said bayes talent is need, but we didn't know at that time meaning of bayes btw you and me and that's ok. i just needed to propagate that learning into action

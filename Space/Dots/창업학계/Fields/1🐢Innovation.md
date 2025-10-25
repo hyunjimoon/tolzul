@@ -54,7 +54,7 @@ Related papers:
 Related papers:
 - [[📜🐢_gans22_disrupt(vision, strategy)]] - Disruption and vision
 - [[📜🐢_gans17_approach(endogenous, strategy)]] - Endogenous growth strategy
-- [[📜Felin21_ResourceOriginsSearch]] - Resource origins and search
+- [[Space/Sources/Papers/📜Felin21_ResourceOriginsSearch]] - Resource origins and search
 
 **Core idea**: Disruption comes from new problem-solution pairings
 
@@ -64,9 +64,9 @@ Related papers:
 **Discovering unexpected uses**
 
 Related papers:
-- [[📜Andriani17_msr_exaptation_pharma]] - Exaptation in pharma
-- [[📜Codini23_bmi_exapt_sme]] - Business model innovation through exaptation
-- [[📜laporta20_understanding Innovation Through Exaptation]] - Exaptation theory
+- [[Space/Sources/Papers/📜Andriani17_msr_exaptation_pharma]] - Exaptation in pharma
+- [[Space/Sources/Papers/📜Codini23_bmi_exapt_sme]] - Business model innovation through exaptation
+- [[Space/Sources/Papers/📜laporta20_understanding Innovation Through Exaptation]] - Exaptation theory
 
 **Core idea**: Innovation through functional excess
 

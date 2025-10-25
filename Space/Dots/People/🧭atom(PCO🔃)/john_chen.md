@@ -36,7 +36,7 @@ c. probability measure construction from exchangeability of process or goal of i
 d. distinguish Bayes decision theory EV(i \in C) and Bayes sampling/inference algorithms (MCMC). decision feels sequential than sampling (why?).  
 e. stopping time from innovation conjecture
 
-[[📜Phillips19_How We Know What Not To Think]]
+[[Space/Sources/Papers/📜Phillips19_How We Know What Not To Think]]
 synthesize
 [john's idea]
 

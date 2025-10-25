@@ -2,7 +2,7 @@
 성장:
   - 2025-10-17T15:18:33-04:00
 ---
- [[📜Gans19_EntrepreneurialStrategy]]
+ [[Space/Sources/Papers/📜Gans19_EntrepreneurialStrategy]]
 
 Research Summary: This paper develops an integrated framework linking the nature of the entrepreneurial choice process to the foundations of entrepreneurial strategy. Because entrepreneurs face many alternatives that cannot be pursued at once, entrepreneurs must adopt (implicitly or explicitly) a process for choosing among entrepreneurial strategies. The interplay between uncertainty and learning has the consequence that commitment-free analysis yields multiple, equally viable alternatives from which one must be chosen. This endogenous gap between optimization and choice is a central paradox confronting entrepreneurs. Resolving this allows for a reformulation of the foundations of entrepreneurial strategy, emphasizing the role of choice rather than the centrality of the strategic environment.
 

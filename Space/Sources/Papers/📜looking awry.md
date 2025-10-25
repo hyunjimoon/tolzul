@@ -7,7 +7,7 @@ field:
 created: 2024-12-07
 ---
 
-[[zizek]]'s [[📜sublime object of ideology]] also has object a petit (and joyness)
+[[zizek]]'s [[Space/Sources/Papers/📜sublime object of ideology]] also has object a petit (and joyness)
 #🐠 EMPTY SPACE from the book: 
 - Where do we find the objet petit a? The objet a is precisely that surplus, that elusive make-believe that drove the man to change his existence. In "reality," it is nothing at all, just an empty surface (his life after the break is the same as before), but because of it the break is nonetheless well worth the trouble.
 

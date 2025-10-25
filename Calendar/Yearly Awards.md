@@ -18,8 +18,8 @@ using [year-end awards system cld](https://claude.ai/chat/784865a1-191f-4fa3-810
 - [[university|🏫 University]] - Educational and research excellence
 
 ### 💼 Economic & Industrial
-- [[../Front/Ongoing/베이즈창업/🙌business_cases/company/🏢company|🏢 Company]] - Organizational and entrepreneurial excellence  
-- [[../Front/Ongoing/베이즈창업/🙌business_cases/industry/🗺️industry|🗺️ Industry]] - Sectoral transformation and innovation
+- [[🏢company|🏢 Company]] - Organizational and entrepreneurial excellence  
+- [[🗺️industry|🗺️ Industry]] - Sectoral transformation and innovation
 
 ---
 

@@ -19,4 +19,4 @@ Managerial Summary: How do managers and entrepreneurs search, identify, and find
 
 KEYWORDS: factor markets, perception, resource search, resource-based view
 
-[[📜Mastrogiorgio22_more_thumbs]]
+[[Space/Sources/Papers/📜Mastrogiorgio22_more_thumbs]]

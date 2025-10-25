@@ -1,106 +1,42 @@
----
-up:
-  - - Home
-출생: 2025-10-09
----
+# Front/On 🔬
 
-# 🔥 On - 화급(火急)
-
-> **"싸움이 급하다!"**  
-> 지금 당장 집중해야 할 작전들
+Active research and dissertation chapters
 
 ---
 
-## 📋 사용법
+## ⚠️ Before You Start
 
-이 폴더에는 **지금 이 순간 집중하고 있는 작업**만 둡니다.
+**Read the collaboration guidelines:** [**../../TECH_SPEC.md**](../../TECH_SPEC.md)
 
-### 규칙
-- **최대 3개**까지만 (이상적으로는 1-2개)
-- 매일 또는 매주 작업하는 것들
-- 명확한 다음 행동(next action)이 있어야 함
-- 데드라인이 가까운 것들
-
-### 템플릿
-
-```markdown
----
-up: [[Home]]
-created: YYYY-MM-DD
-전장: "🐢 사천" | "🐅 한산" | "🐙 명량" | "👾 노량"
-rank: 1-3 (1이 가장 긴급)
-deadline: YYYY-MM-DD
----
-
-# [작전명]
-
-## 🎯 목표
-[한 문장으로]
-
-## 📍 현재 상태
-[어디까지 왔는가]
-
-## ⚡ 다음 행동
-- [ ] [구체적 행동 1]
-- [ ] [구체적 행동 2]
-
-## 🗓️ 일정
-- 오늘: 
-- 이번주:
-- 데드라인:
-
-## 📝 메모
-[추가 사항]
-```
+All data analysis, modeling, and writing work should follow Tech Spec principles.
 
 ---
 
-## 🎖️ 예시
+## 📁 Current Projects
 
-### Oil Framework 논문 제출
-```
-전장: 👾 노량
-rank: 1
-deadline: 2025-10-15
+### Strategic Ambiguity Research
+📍 `strategic ambiguity/empirics/`
 
-다음 행동:
-- [ ] Charlie 피드백 반영 (2시간)
-- [ ] Abstract impact 문장 수정 (30분)
-- [ ] 5명 교수에게 피드백 요청 이메일 (1시간)
-```
+**Hypothesis Testing:**
+- H1: Vague promises hurt Series A funding (alpha_1 < 0)
+- H2: Vague promises help Series B success (beta_1 > 0)
 
----
+**Workflow:** See [`strategic ambiguity/empirics/workflow(hypothesis, data, model).md`](workflow(hypothesis,%20data,%20model).md)
 
-## 💡 활용 팁
-
-### 아침 의식
-1. 이 폴더 열기
-2. 오늘 할 작업 확인  
-3. 가장 중요한 것 하나 선택
-4. 해당 전장(Atlas)으로 이동
-
-### 저녁 의식
-1. 오늘 한 것 체크
-2. 내일 할 것 업데이트
-3. 완료되면 → x/완료작전 폴더로 이동
-4. 새로운 On 작업 고려
+### Other Active Work
+- `Oil-Framework-논문-제출.md` - OIL framework paper
+- `coase to culture x strategic ambiguity.md` - Theory integration
+- `💌찰리스캇 러브레터 플젝` - Advisor communication
 
 ---
 
-## ⚠️ 주의사항
+## 🔄 Workflow Example
 
-**On이 너무 많아지면**:
-- 2-3개로 줄이기
-- 중요하지 않은 것은 Simmering으로
-- 아니면 Ongoing으로
-
-**On이 비어있다면**:
-- Ongoing에서 하나 승격
-- 또는 Simmering에서 시작
-- 새로운 작전 기획
+1. **Start with Tech Spec** (hypothesis → data → model)
+2. **Share for feedback** when 60% complete
+3. **Implement after discussion**
+4. **Update Tech Spec** as decisions change
 
 ---
 
-*"집중하라. 화급한 전투에 모든 것을 걸어라."*
-
-[[Home|← 사령부로]]
+**Questions?** Contact amoon🐣

@@ -12,4 +12,4 @@ Iteration can help people improve ideas. It can also give rise to ﬁxation, con
 
 [[yesparallel_Dow et al. - 2011 - Parallel prototyping leads to better design result.pdf]]
 
-antithesis of [[📜Ott18_decision_weaving]]
+antithesis of [[Space/Sources/Papers/📜Ott18_decision_weaving]]
