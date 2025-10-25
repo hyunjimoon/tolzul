@@ -1,7 +1,7 @@
 ---
 성장:
   - 2025-10-22T04:57:29-04:00
-previous: "[[workflow(hypothesis, data, model)]]"
+previous: "[[workflow(hypothesis, data, model)🗺️]]"
 ---
 
 # jeff

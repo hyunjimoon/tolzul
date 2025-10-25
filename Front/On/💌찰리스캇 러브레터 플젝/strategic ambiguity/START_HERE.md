@@ -1,5 +1,14 @@
 # Promise Precision and Venture Funding - START HERE
 
+## 🚀 New User? Check These First
+
+1. **[[작전상황판.md]]** - One-page dashboard (현재 상태 빠른 확인)
+2. **[[전투일지🩸]]** - Detailed battle log (전체 진행 기록)
+3. **This file** - Quick start guide (코드 실행 방법)
+4. **[[workflow(hypothesis, data, model)🗺️]]** - Research design (가설, 데이터, 모델)
+
+---
+
 ## What We're Doing
 Analyze how **vagueness in promises** affects VC funding success using real Pitchbook data.
 

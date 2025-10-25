@@ -21,7 +21,7 @@ All data analysis, modeling, and writing work should follow Tech Spec principles
 - H1: Vague promises hurt Series A funding (alpha_1 < 0)
 - H2: Vague promises help Series B success (beta_1 > 0)
 
-**Workflow:** See [`strategic ambiguity/empirics/workflow(hypothesis, data, model).md`](workflow(hypothesis,%20data,%20model).md)
+**Workflow:** See [`strategic ambiguity/empirics/workflow(hypothesis, data, model).md`](workflow(hypothesis,%20data,%20model)🗺️.md)
 
 ### Other Active Work
 - `Oil-Framework-논문-제출.md` - OIL framework paper
