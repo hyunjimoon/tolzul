@@ -300,15 +300,36 @@ class StrategicAmbiguityPipeline:
 
         print(f"▶️  Step 3: Creating analysis panel...")
 
-        # Reconstruct DataFrames from xarray
-        company_cols = [v.replace('company_', '') for v in self.ds.data_vars if v.startswith('company_')]
-        company_data = {col: self.ds[f'company_{col}'].values for col in company_cols}
+        # Reconstruct DataFrames from xarray - FIX: handle double-prefix correctly
+        company_cols = []
+        for v in self.ds.data_vars:
+            if v.startswith('company_'):
+                col = v[len('company_'):]  # Slice instead of replace
+                company_cols.append(col)
+        
+        company_data = {}
+        for col in company_cols:
+            var_name = f'company_{col}'
+            if var_name in self.ds:
+                company_data[col] = self.ds[var_name].values
+        
         company_df = pd.DataFrame(company_data, index=self.ds['company'].values)
         company_df.index.name = 'company_id'
         company_df = company_df.reset_index()
 
-        deal_cols = [v.replace('deal_', '') for v in self.ds.data_vars if v.startswith('deal_')]
-        deal_data = {col: self.ds[f'deal_{col}'].values for col in deal_cols}
+        # Same fix for deals
+        deal_cols = []
+        for v in self.ds.data_vars:
+            if v.startswith('deal_'):
+                col = v[len('deal_'):]  # Slice instead of replace
+                deal_cols.append(col)
+        
+        deal_data = {}
+        for col in deal_cols:
+            var_name = f'deal_{col}'
+            if var_name in self.ds:
+                deal_data[col] = self.ds[var_name].values
+        
         deal_df = pd.DataFrame(deal_data, index=self.ds['deal'].values)
 
         # Import and call function
@@ -492,6 +513,40 @@ class StrategicAmbiguityPipeline:
             if key in self.checkpoint:
                 val = self.checkpoint[key]
                 print(f"  - {key}: {val}")
+
+    def search_companies(self, search_term, limit=20):
+        """
+        Search for companies by name
+        
+        Args:
+            search_term: Company name to search for
+            limit: Maximum results to return
+        """
+        if 'company_company_name' not in self.ds:
+            print("⚠️  Company data not loaded yet")
+            return None
+        
+        names = self.ds['company_company_name'].values
+        ids = self.ds['company'].values
+        
+        # Case-insensitive search
+        search_lower = search_term.lower()
+        matches = []
+        for i, name in enumerate(names):
+            if pd.notna(name) and search_lower in str(name).lower():
+                matches.append({'company_id': ids[i], 'company_name': name})
+                if len(matches) >= limit:
+                    break
+        
+        if matches:
+            df = pd.DataFrame(matches)
+            print(f"\n🔍 Found {len(matches)} companies matching '{search_term}':")
+            for _, row in df.iterrows():
+                print(f"  - {row['company_id']}: {row['company_name']}")
+            return df
+        else:
+            print(f"\n❌ No companies found matching '{search_term}'")
+            return None
 
     def to_dataframe(self):
         """

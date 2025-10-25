@@ -11,6 +11,8 @@ created: 2022-01-01
 rank: 3
 mapState:
   - 🟩
+tags:
+  - map
 ---
 ~ [[ARC Framework]] 
 

@@ -2,6 +2,8 @@
 up: [[Maps]]
 type: map
 created: 2025-10-16
+tags:
+  - map
 ---
 
 # 📚 Papers MOC

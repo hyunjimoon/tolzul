@@ -13,6 +13,8 @@ mapState:
   - 🟩
 obsidianUIMode: preview
 cssclasses: []
+tags:
+  - map
 ---
 ~ [[ARC Framework]] 
 
@@ -26,4 +28,28 @@ This is where the garden metaphor gives us a way to approach relating ideas:
 
 ---
 
-To discover notes that haven't been modified in a long time, go to [[Dusty Ideas]]. 
+To discover notes that haven't been modified in a long time, go to [[Dusty Ideas]].
+
+---
+
+# 🔗 Related Research Papers
+
+Visual overview of papers that explore relationships between concepts.
+
+```dataview
+TABLE WITHOUT ID
+	year as Year,
+	choice(image, embed(link(image)), 
+	       choice(diagrams, "🖼️", "📄")) as Poster,
+	file.link as Title,
+	join(list(by)) as Author,
+	battlefield as Field,
+	rank as Rank
+WHERE
+	contains(collection, [[Papers]]) and
+	file.name != ".md"
+SORT rank desc, year desc
+LIMIT 10
+```
+
+--- 

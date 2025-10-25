@@ -2,6 +2,8 @@
 map: true
 rank: 4
 collection: Maps
+tags:
+  - map
 ---
 
 # Maps by Links

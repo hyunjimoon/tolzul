@@ -136,7 +136,7 @@ print("\n[Step 5] Saving analysis panel...")
 
 # Select columns for final output
 analysis_cols = [
-    'company_id', 'company_name', 'round', 'series_b_dummy',
+    'company_id', 'round', 'series_b_dummy',
     'vagueness', 'vagueness_category',
     'high_integration_cost', 'integration_cost_label',
     'funding_success', 'deal_size', 'deal_date',

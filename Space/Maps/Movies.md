@@ -13,6 +13,8 @@ rank: 3
 mapState:
   - 🟩
 cssclasses: []
+tags:
+  - map
 ---
 ~ [[Sources]]
 

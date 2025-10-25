@@ -1,3 +1,8 @@
+---
+tags:
+  - map
+---
+
 # Maps
 
 > Maps help you gather, develop, and navigate ideas across your tolzul vault.

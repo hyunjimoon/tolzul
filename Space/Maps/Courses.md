@@ -11,6 +11,9 @@ mapState:
   - 🟩
 성장:
   - 2025-10-19T00:03:45-04:00
+  - 2025-10-24T21:04:23-04:00
+tags:
+  - map
 ---
 ~ [[Sources]]
 
@@ -38,7 +41,7 @@ mapState:
 
 # 🔬 Battlefield별 강의
 
-## 👾 Cognition
+****## 👾 Cognition
 
 ![[courses.base#courses-cognition]]
 

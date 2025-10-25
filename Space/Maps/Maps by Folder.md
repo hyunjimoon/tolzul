@@ -4,6 +4,8 @@ rank: 3
 collection: Maps
 성장:
   - 2025-10-17T12:34:55-04:00
+tags:
+  - map
 ---
 
 # Maps by Folder

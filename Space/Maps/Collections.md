@@ -5,6 +5,8 @@ type: map
 created: 2025-10-16
 성장:
   - 2025-10-16T22:10:58-04:00
+tags:
+  - map
 ---
 
 # 📚 Collections
