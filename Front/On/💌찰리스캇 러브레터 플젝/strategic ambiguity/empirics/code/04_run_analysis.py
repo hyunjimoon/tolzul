@@ -32,9 +32,9 @@ df['log_amount'] = np.log(df['deal_size'] + 1)
 df['funded'] = (df['deal_size'] > 0).astype(int)
 df['vagueness_scaled'] = df['vagueness'] / 100
 
-# Split by series
-df_A = df[df['series'] == 'A'].copy()
-df_B = df[df['series'] == 'B'].copy()
+# Split by round (column is 'round', values are 'Series A' and 'Series B')
+df_A = df[df['round'] == 'Series A'].copy()
+df_B = df[df['round'] == 'Series B'].copy()
 
 print(f"\nSample: {len(df_A)} Series A, {len(df_B)} Series B")
 
@@ -103,10 +103,10 @@ def run_analysis(panel_df):
     df['log_amount'] = np.log(df['deal_size'] + 1)
     df['funded'] = (df['deal_size'] > 0).astype(int)
     df['vagueness_scaled'] = df['vagueness'] / 100
-    
-    # Split
-    df_A = df[df['series'] == 'A']
-    df_B = df[df['series'] == 'B']
+
+    # Split by round (column is 'round', values are 'Series A' and 'Series B')
+    df_A = df[df['round'] == 'Series A']
+    df_B = df[df['round'] == 'Series B']
     
     # Models
     model_A = smf.ols('log_amount ~ vagueness_scaled + employees', data=df_A).fit()
