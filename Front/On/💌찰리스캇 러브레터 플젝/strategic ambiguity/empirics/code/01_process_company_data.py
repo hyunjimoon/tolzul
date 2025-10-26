@@ -19,6 +19,7 @@ import sys
 # Add parent directory to path for config imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from config.sector_keywords import SECTOR_DEFINITIONS, get_all_sectors
+from config.storytelling_metrics import calculate_storytelling_skill, categorize_storytelling
 
 # Setup paths
 BASE_DIR = Path(__file__).parent.parent
@@ -130,6 +131,28 @@ def classify_multiple_sectors(row):
 
 
 ai_ml_df['vagueness'] = ai_ml_df['Description'].apply(calculate_vagueness)
+
+# Calculate storytelling skill
+print("\n[Step 3.5] Calculating storytelling skill...")
+
+def extract_storytelling_score(description):
+    """Extract overall storytelling score from description"""
+    result = calculate_storytelling_skill(description)
+    return result['overall_score']
+
+ai_ml_df['storytelling_skill'] = ai_ml_df['Description'].apply(extract_storytelling_score)
+ai_ml_df['storytelling_category'] = ai_ml_df['storytelling_skill'].apply(categorize_storytelling)
+
+print(f"Storytelling scores: mean={ai_ml_df['storytelling_skill'].mean():.2f}, "
+      f"median={ai_ml_df['storytelling_skill'].median():.2f}, "
+      f"std={ai_ml_df['storytelling_skill'].std():.2f}")
+
+# Show distribution by category
+print(f"\nStorytelling categories:")
+for cat in ['Excellent', 'Good', 'Basic', 'Poor']:
+    count = (ai_ml_df['storytelling_category'] == cat).sum()
+    pct = count / len(ai_ml_df) * 100 if len(ai_ml_df) > 0 else 0
+    print(f"  {cat:10s}: {count:3d} ({pct:5.1f}%)")
 print(f"Vagueness scores: mean={ai_ml_df['vagueness'].mean():.2f}, "
       f"median={ai_ml_df['vagueness'].median():.2f}, "
       f"std={ai_ml_df['vagueness'].std():.2f}")
@@ -210,7 +233,7 @@ print("\n[Step 5] Creating company master file...")
 # Include all sector classification columns
 sector_cols = [col for col in ai_ml_df.columns if col.startswith('is_') or col in ['sector_count', 'primary_sector']]
 base_cols = ['CompanyID', 'CompanyName', 'Description', 'Keywords',
-             'vagueness', 'high_integration_cost',
+             'vagueness', 'storytelling_skill', 'storytelling_category', 'high_integration_cost',
              'TotalRaised', 'Employees', 'YearFounded']
 company_master = ai_ml_df[base_cols + sector_cols].copy()
 
@@ -324,6 +347,36 @@ def process_company_data():
         return score
 
     ai_ml_df['vagueness'] = ai_ml_df['Description'].apply(calculate_vagueness)
+    
+    # Calculate storytelling skill
+    def extract_storytelling_score(description):
+        result = calculate_storytelling_skill(description)
+        return result['overall_score']
+    
+    ai_ml_df['storytelling_skill'] = ai_ml_df['Description'].apply(extract_storytelling_score)
+    ai_ml_df['storytelling_category'] = ai_ml_df['storytelling_skill'].apply(categorize_storytelling)
+
+# Calculate storytelling skill
+print("\n[Step 3.5] Calculating storytelling skill...")
+
+def extract_storytelling_score(description):
+    """Extract overall storytelling score from description"""
+    result = calculate_storytelling_skill(description)
+    return result['overall_score']
+
+ai_ml_df['storytelling_skill'] = ai_ml_df['Description'].apply(extract_storytelling_score)
+ai_ml_df['storytelling_category'] = ai_ml_df['storytelling_skill'].apply(categorize_storytelling)
+
+print(f"Storytelling scores: mean={ai_ml_df['storytelling_skill'].mean():.2f}, "
+      f"median={ai_ml_df['storytelling_skill'].median():.2f}, "
+      f"std={ai_ml_df['storytelling_skill'].std():.2f}")
+
+# Show distribution by category
+print(f"\nStorytelling categories:")
+for cat in ['Excellent', 'Good', 'Basic', 'Poor']:
+    count = (ai_ml_df['storytelling_category'] == cat).sum()
+    pct = count / len(ai_ml_df) * 100 if len(ai_ml_df) > 0 else 0
+    print(f"  {cat:10s}: {count:3d} ({pct:5.1f}%)")
 
     
 
