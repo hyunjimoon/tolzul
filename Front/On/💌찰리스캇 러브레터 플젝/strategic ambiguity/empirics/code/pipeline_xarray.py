@@ -284,7 +284,14 @@ class StrategicAmbiguityPipeline:
         self.ds.attrs['n_deals'] = len(deal_df)
         self.checkpoint['n_deals'] = len(deal_df)
 
-        print(f"  ✅ Processed {len(deal_df)} deals")
+        if len(deal_df) == 0:
+            print(f"\n  ⚠️  WARNING: Processed 0 deals")
+            print(f"     This usually means no Deal*.dat files were found in data/raw/")
+            print(f"     The pipeline will continue but analysis will be empty")
+            print(f"     Please add Deal*.dat files to proceed with analysis")
+        else:
+            print(f"  ✅ Processed {len(deal_df)} deals")
+
         self.save_checkpoint(2, step_name)
 
     def step_03_create_panel(self, force=False):
