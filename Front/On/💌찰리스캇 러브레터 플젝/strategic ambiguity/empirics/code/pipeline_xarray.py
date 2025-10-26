@@ -307,37 +307,57 @@ class StrategicAmbiguityPipeline:
 
         print(f"▶️  Step 3: Creating analysis panel...")
 
-        # Reconstruct DataFrames from xarray - FIX: handle double-prefix correctly
-        company_cols = []
-        for v in self.ds.data_vars:
-            if v.startswith('company_'):
-                col = v[len('company_'):]  # Slice instead of replace
-                company_cols.append(col)
-        
-        company_data = {}
-        for col in company_cols:
-            var_name = f'company_{col}'
-            if var_name in self.ds:
-                company_data[col] = self.ds[var_name].values
-        
-        company_df = pd.DataFrame(company_data, index=self.ds['company'].values)
-        company_df.index.name = 'company_id'
-        company_df = company_df.reset_index()
+        # Check if company data is in xarray dataset, if not load from CSV
+        if 'company' not in self.ds.dims:
+            print("  ℹ️  Company data not in xarray, loading from CSV...")
+            company_file = self.data_dir / "company_master.csv"
+            if company_file.exists():
+                company_df = pd.read_csv(company_file)
+                print(f"  ✅ Loaded {len(company_df)} companies from CSV")
+            else:
+                raise FileNotFoundError(f"Company data not found: {company_file}")
+        else:
+            # Reconstruct DataFrames from xarray - FIX: handle double-prefix correctly
+            company_cols = []
+            for v in self.ds.data_vars:
+                if v.startswith('company_'):
+                    col = v[len('company_'):]  # Slice instead of replace
+                    company_cols.append(col)
 
-        # Same fix for deals
-        deal_cols = []
-        for v in self.ds.data_vars:
-            if v.startswith('deal_'):
-                col = v[len('deal_'):]  # Slice instead of replace
-                deal_cols.append(col)
-        
-        deal_data = {}
-        for col in deal_cols:
-            var_name = f'deal_{col}'
-            if var_name in self.ds:
-                deal_data[col] = self.ds[var_name].values
-        
-        deal_df = pd.DataFrame(deal_data, index=self.ds['deal'].values)
+            company_data = {}
+            for col in company_cols:
+                var_name = f'company_{col}'
+                if var_name in self.ds:
+                    company_data[col] = self.ds[var_name].values
+
+            company_df = pd.DataFrame(company_data, index=self.ds['company'].values)
+            company_df.index.name = 'company_id'
+            company_df = company_df.reset_index()
+
+        # Check if deal data is in xarray dataset, if not load from CSV
+        if 'deal' not in self.ds.dims:
+            print("  ℹ️  Deal data not in xarray, loading from CSV...")
+            deal_file = self.data_dir / "deal_master.csv"
+            if deal_file.exists():
+                deal_df = pd.read_csv(deal_file)
+                print(f"  ✅ Loaded {len(deal_df)} deals from CSV")
+            else:
+                raise FileNotFoundError(f"Deal data not found: {deal_file}")
+        else:
+            # Same fix for deals
+            deal_cols = []
+            for v in self.ds.data_vars:
+                if v.startswith('deal_'):
+                    col = v[len('deal_'):]  # Slice instead of replace
+                    deal_cols.append(col)
+
+            deal_data = {}
+            for col in deal_cols:
+                var_name = f'deal_{col}'
+                if var_name in self.ds:
+                    deal_data[col] = self.ds[var_name].values
+
+            deal_df = pd.DataFrame(deal_data, index=self.ds['deal'].values)
 
         # Import and call function
         code_dir = self.base_dir / "code"
