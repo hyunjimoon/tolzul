@@ -23,6 +23,10 @@ import pickle
 import subprocess
 import json
 import os
+import sys
+
+# Add parent directory to path for config imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 # Import processing functions dynamically
 import importlib.util
@@ -239,11 +243,37 @@ class StrategicAmbiguityPipeline:
         # Convert to xarray
         self._dataframe_to_xarray(self.ds, company_df, 'company', 'company_')
 
-        # Store metadata
+        # Store metadata including sector information
         self.ds.attrs['n_companies'] = len(company_df)
         self.checkpoint['n_companies'] = len(company_df)
-
-        print(f"  ✅ Processed {len(company_df)} AI/ML companies")
+        
+        # Import and store sector definitions metadata
+        try:
+            from config.sector_keywords import SECTOR_DEFINITIONS, get_all_sectors
+            self.ds.attrs['sectors_available'] = get_all_sectors()
+            self.ds.attrs['sector_definitions_version'] = {
+                k: v['version'] for k, v in SECTOR_DEFINITIONS.items()
+            }
+            self.checkpoint['sectors_available'] = get_all_sectors()
+            
+            # Store sector counts
+            sector_counts = {}
+            for sector_id in get_all_sectors():
+                col_name = f'company_is_{sector_id}'
+                if col_name in self.ds:
+                    count = int(self.ds[col_name].sum().values)
+                    sector_counts[sector_id] = count
+                    self.ds.attrs[f'n_companies_{sector_id}'] = count
+            
+            print(f"  ✅ Processed {len(company_df)} AI/ML companies")
+            print(f"  📊 Sector breakdown:")
+            for sector_id, count in sector_counts.items():
+                sector_name = SECTOR_DEFINITIONS[sector_id]['name']
+                pct = count / len(company_df) * 100 if len(company_df) > 0 else 0
+                print(f"     - {sector_name:25s}: {count:4d} ({pct:5.1f}%)")
+        except ImportError:
+            print(f"  ⚠️  Warning: Could not import sector definitions")
+            print(f"  ✅ Processed {len(company_df)} AI/ML companies")
         self.save_checkpoint(1, step_name)
 
     def step_02_process_deal_data(self, force=False):
