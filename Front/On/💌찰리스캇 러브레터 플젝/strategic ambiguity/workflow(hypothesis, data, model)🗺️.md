@@ -3,6 +3,7 @@ updated: 2025-10-25
 프로젝트: 명량해전 (3주)
 성장:
   - 2025-10-25T13:31:33-04:00
+  - 2025-10-26T14:50:23-04:00
 ---
 
 # Promise Precision and Venture Funding
@@ -35,14 +36,14 @@ Longitudinal data with company descriptions and funding data at early and later 
 
 ### Key Variables
 
-| Variable | Measurement | Role |
-|----------|-------------|------|
-| 😵‍💫 Vagueness | Inverse of linguistic certitude (LIWC) in company description | Independent |
-| 💰 Early_Funding | Funding amount at early stage ($ millions) | Dependent (Model 1) / Control (Model 2) |
-| 🎯 Later_Success | Binary: 1 if raised later-stage funding, 0 otherwise | Dependent (Model 2) |
-| Team_Size | Number of employees at early stage | Control |
-| Prior_Exit | Founder has previous exit (binary) | Control |
-| Sector | Industry category | Control |
+| Variable         | Measurement                                                   | Role                                    |
+| ---------------- | ------------------------------------------------------------- | --------------------------------------- |
+| 😵‍💫 Vagueness  | Inverse of linguistic certitude (LIWC) in company description | Independent                             |
+| 💰 Early_Funding | Funding amount at early stage ($ millions)                    | Dependent (Model 1) / Control (Model 2) |
+| 🎯 Later_Success | Binary: 1 if raised later-stage funding, 0 otherwise          | Dependent (Model 2)                     |
+| Team_Size        | Number of employees at early stage                            | Control                                 |
+| Prior_Exit       | Founder has previous exit (binary)                            | Control                                 |
+| Sector           | Industry category                                             | Control                                 |
 
 ---
 

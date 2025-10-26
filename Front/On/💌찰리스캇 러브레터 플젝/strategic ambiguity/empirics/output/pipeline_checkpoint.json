@@ -1,0 +1,27 @@
+{
+  "pipeline_version": "3.1_modular_xarray_lightweight",
+  "created_at": "2025-10-26T10:19:54.992412",
+  "last_updated": "2025-10-26T10:57:49.736643",
+  "data_source": "Pitchbook",
+  "pipeline_status": "initialized",
+  "git_commit_id": "eca6151c6cd5b28cabea01b524edd34eb93a1ea7",
+  "git_commit_url": "https://github.com/hyunjimoon/tolzul/commit/eca6151c6cd5b28cabea01b524edd34eb93a1ea7",
+  "git_branch": "master",
+  "git_branch_url": "https://github.com/hyunjimoon/tolzul/tree/master",
+  "series_a_date_range": "2021-01-01 to 2022-10-31",
+  "series_b_date_range": "2023-05-01 to 2025-10-31",
+  "step_01_status": "pending",
+  "step_02_status": "completed",
+  "step_03_status": "completed",
+  "step_04_status": "pending",
+  "step_05_status": "pending",
+  "completed_steps": [
+    "02_process_deal",
+    "03_create_panel"
+  ],
+  "n_deals": 17824,
+  "last_completed_step": "02_process_deal",
+  "step_02_timestamp": "2025-10-26T10:57:49.736652",
+  "n_observations": 321690,
+  "step_03_timestamp": "2025-10-26T10:49:46.805087"
+}
