@@ -121,35 +121,59 @@ class StrategicAmbiguityPipeline:
         return ds
 
     def _load_dataset_from_checkpoint(self):
-        """Load dataset from checkpoint by reading saved CSV files"""
+        """Load dataset from checkpoint by reading saved files (parquet preferred)"""
         ds = xr.Dataset(attrs=self.checkpoint.copy())
-        
+
         # Load company data if step 1 is completed
         if self.checkpoint.get('step_01_status') == 'completed':
-            company_file = self.data_dir / "company_master.csv"
-            if company_file.exists():
-                company_df = pd.read_csv(company_file)
+            # Try parquet first (faster), fall back to CSV
+            parquet_file = self.data_dir / "company_master.parquet"
+            csv_file = self.data_dir / "company_master.csv"
+
+            if parquet_file.exists():
+                company_df = pd.read_parquet(parquet_file)
                 company_df = company_df.set_index('company_id')
                 self._dataframe_to_xarray(ds, company_df, 'company', 'company_')
-                print(f"  ✅ Loaded {len(company_df)} companies from checkpoint")
-        
+                print(f"  ✅ Loaded {len(company_df)} companies from checkpoint (parquet)")
+            elif csv_file.exists():
+                company_df = pd.read_csv(csv_file)
+                company_df = company_df.set_index('company_id')
+                self._dataframe_to_xarray(ds, company_df, 'company', 'company_')
+                print(f"  ✅ Loaded {len(company_df)} companies from checkpoint (CSV)")
+
         # Load deal data if step 2 is completed
         if self.checkpoint.get('step_02_status') == 'completed':
-            deal_file = self.data_dir / "deal_master.csv"
-            if deal_file.exists():
-                deal_df = pd.read_csv(deal_file)
+            # Try parquet first (faster), fall back to CSV
+            parquet_file = self.data_dir / "deal_master.parquet"
+            csv_file = self.data_dir / "deal_master.csv"
+
+            if parquet_file.exists():
+                deal_df = pd.read_parquet(parquet_file)
                 deal_df = deal_df.set_index('deal_id')
                 self._dataframe_to_xarray(ds, deal_df, 'deal', 'deal_')
-                print(f"  ✅ Loaded {len(deal_df)} deals from checkpoint")
-        
+                print(f"  ✅ Loaded {len(deal_df)} deals from checkpoint (parquet)")
+            elif csv_file.exists():
+                deal_df = pd.read_csv(csv_file)
+                deal_df = deal_df.set_index('deal_id')
+                self._dataframe_to_xarray(ds, deal_df, 'deal', 'deal_')
+                print(f"  ✅ Loaded {len(deal_df)} deals from checkpoint (CSV)")
+
         # Load panel data if step 3 is completed
         if self.checkpoint.get('step_03_status') == 'completed':
-            panel_file = self.data_dir / "analysis_panel.csv"
-            if panel_file.exists():
-                panel_df = pd.read_csv(panel_file)
+            # Try parquet first (faster), fall back to CSV
+            parquet_file = self.data_dir / "analysis_panel.parquet"
+            csv_file = self.data_dir / "analysis_panel.csv"
+
+            if parquet_file.exists():
+                panel_df = pd.read_parquet(parquet_file)
                 panel_df = panel_df.set_index('observation_id')
                 self._dataframe_to_xarray(ds, panel_df, 'observation', 'panel_')
-                print(f"  ✅ Loaded {len(panel_df)} observations from checkpoint")
+                print(f"  ✅ Loaded {len(panel_df)} observations from checkpoint (parquet)")
+            elif csv_file.exists():
+                panel_df = pd.read_csv(csv_file)
+                panel_df = panel_df.set_index('observation_id')
+                self._dataframe_to_xarray(ds, panel_df, 'observation', 'panel_')
+                print(f"  ✅ Loaded {len(panel_df)} observations from checkpoint (CSV)")
         
         return ds
 
@@ -205,6 +229,12 @@ class StrategicAmbiguityPipeline:
         if df.index.name is None:
             df = df.reset_index(drop=True)
             df.index.name = 'idx'
+
+        # Convert categorical columns to strings (xarray doesn't handle categoricals)
+        df = df.copy()
+        for col in df.columns:
+            if pd.api.types.is_categorical_dtype(df[col]):
+                df[col] = df[col].astype(str)
 
         # Store each column as separate DataArray
         for col in df.columns:
@@ -273,9 +303,11 @@ class StrategicAmbiguityPipeline:
         deal_df['deal_id'] = range(len(deal_df))
         deal_df = deal_df.set_index('deal_id')
 
-        # Save deal data to CSV for checkpointing
+        # Save deal data to CSV and Parquet for checkpointing
         deal_df_save = deal_df.reset_index()
         deal_df_save.to_csv(self.data_dir / "deal_master.csv", index=False)
+        # Parquet is much faster to load for large files
+        deal_df_save.to_parquet(self.data_dir / "deal_master.parquet", index=False)
 
         # Convert to xarray
         self._dataframe_to_xarray(self.ds, deal_df, 'deal', 'deal_')
@@ -307,15 +339,22 @@ class StrategicAmbiguityPipeline:
 
         print(f"▶️  Step 3: Creating analysis panel...")
 
-        # Check if company data is in xarray dataset, if not load from CSV
+        # Check if company data is in xarray dataset, if not load from disk
         if 'company' not in self.ds.dims:
-            print("  ℹ️  Company data not in xarray, loading from CSV...")
-            company_file = self.data_dir / "company_master.csv"
-            if company_file.exists():
-                company_df = pd.read_csv(company_file)
+            # Try parquet first (much faster), fall back to CSV
+            parquet_file = self.data_dir / "company_master.parquet"
+            csv_file = self.data_dir / "company_master.csv"
+
+            if parquet_file.exists():
+                print("  ℹ️  Company data not in xarray, loading from parquet (fast)...")
+                company_df = pd.read_parquet(parquet_file)
+                print(f"  ✅ Loaded {len(company_df)} companies from parquet")
+            elif csv_file.exists():
+                print("  ℹ️  Company data not in xarray, loading from CSV...")
+                company_df = pd.read_csv(csv_file)
                 print(f"  ✅ Loaded {len(company_df)} companies from CSV")
             else:
-                raise FileNotFoundError(f"Company data not found: {company_file}")
+                raise FileNotFoundError(f"Company data not found: {csv_file}")
         else:
             # Reconstruct DataFrames from xarray - FIX: handle double-prefix correctly
             company_cols = []
@@ -334,15 +373,22 @@ class StrategicAmbiguityPipeline:
             company_df.index.name = 'company_id'
             company_df = company_df.reset_index()
 
-        # Check if deal data is in xarray dataset, if not load from CSV
+        # Check if deal data is in xarray dataset, if not load from disk
         if 'deal' not in self.ds.dims:
-            print("  ℹ️  Deal data not in xarray, loading from CSV...")
-            deal_file = self.data_dir / "deal_master.csv"
-            if deal_file.exists():
-                deal_df = pd.read_csv(deal_file)
+            # Try parquet first (much faster), fall back to CSV
+            parquet_file = self.data_dir / "deal_master.parquet"
+            csv_file = self.data_dir / "deal_master.csv"
+
+            if parquet_file.exists():
+                print("  ℹ️  Deal data not in xarray, loading from parquet (fast)...")
+                deal_df = pd.read_parquet(parquet_file)
+                print(f"  ✅ Loaded {len(deal_df)} deals from parquet")
+            elif csv_file.exists():
+                print("  ℹ️  Deal data not in xarray, loading from CSV...")
+                deal_df = pd.read_csv(csv_file)
                 print(f"  ✅ Loaded {len(deal_df)} deals from CSV")
             else:
-                raise FileNotFoundError(f"Deal data not found: {deal_file}")
+                raise FileNotFoundError(f"Deal data not found: {csv_file}")
         else:
             # Same fix for deals
             deal_cols = []
@@ -368,9 +414,11 @@ class StrategicAmbiguityPipeline:
         panel_df['observation_id'] = range(len(panel_df))
         panel_df = panel_df.set_index('observation_id')
 
-        # Save panel data to CSV for checkpointing
+        # Save panel data to CSV and Parquet for checkpointing
         panel_df_save = panel_df.reset_index()
         panel_df_save.to_csv(self.data_dir / "analysis_panel.csv", index=False)
+        # Parquet is much faster to load for large files
+        panel_df_save.to_parquet(self.data_dir / "analysis_panel.parquet", index=False)
 
         # Convert to xarray
         self._dataframe_to_xarray(self.ds, panel_df, 'observation', 'panel_')
