@@ -7,9 +7,9 @@
 ## 🎯 시작하기
 
 ### 처음 사용하는 분
-1. ⚡ [**QUICKSTART.md**](./QUICKSTART.md) - **여기서 시작!** (3분)
-2. 📖 [README.md](./README.md) - 전체 가이드
-3. 📝 [SUMMARY.md](./SUMMARY.md) - 개념 정리
+1. ⚡ [**QUICKSTART.md**](QUICKSTART.md) - **여기서 시작!** (3분)
+2. 📖 [README.md](Front/On/💌찰리스캇%20러브레터%20플젝/strategic%20ambiguity/_archive/automation/README.md) - 전체 가이드
+3. 📝 [SUMMARY.md](Front/On/💌찰리스캇%20러브레터%20플젝/strategic%20ambiguity/_archive/automation/SUMMARY.md) - 개념 정리
 
 ### 바로 사용하고 싶은 분
 ```bash

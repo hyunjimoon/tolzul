@@ -1,0 +1,66 @@
+---
+title: "Promise Precision & Venture Funding — Professor Brief (Updated)"
+subtitle: "Hypotheses → Data → Model → Decision"
+author: "11/11 명량 필사즉생 — Empirics"
+date: "2025-10-26"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    pdf-engine: xelatex
+  html:
+    toc: true
+    number-sections: true
+    code-fold: false
+execute:
+  eval: false
+  echo: false
+  warning: false
+  message: false
+editor: visual
+---
+
+::: callout-important
+**Update** — AV data DETECTED ✅: 
+Upload your AV CSV to `/mnt/data/empirics/data/av_firms.csv` to replace the schema preview automatically.
+:::
+
+# 1. Hypotheses (plain language)
+
+- **H1 (short-term cost)**: Vague promises reduce Series A funding.  
+- **H2 (long-term benefit)**: Among survivors, earlier vagueness raises Series B success.
+
+# 2. Data (AI + AV)
+
+- **AI head (first 10 rows)**: [`ai_head_firstcols.csv`](ai_head_firstcols.csv)  
+- **AV head**: `av_head_firstcols.csv`
+
+# 3. Model (how we test)
+
+- **Model 1 (OLS)**: Early funding ~ Vagueness + controls (expect negative).  
+- **Model 2 (Logit)**: Later success ~ Vagueness + Early funding + controls (expect positive).
+
+# 4. Figures (axes visible)
+
+- **A.** Vagueness vs Early Funding → `figA_vagueness_vs_earlyfunding_axes.png`  
+- **B.** Predicted Later Success vs Vagueness → `figB_pred_success_vs_vagueness_axes.png`
+
+# 5. CQ1 — Data Sources & Hybrid Plan
+
+See scored tables:  
+- **Individual sources**: [`data_source_evaluation.csv`](data_source_evaluation.csv)  
+- **Combinations**: [`data_combo_evaluation.csv`](data_combo_evaluation.csv)
+
+**Recommendation:** Use **YC text + Pitchbook funding** as the primary dataset; enrich with **TechCrunch** (mechanism checks) and **Whitepapers** (hardware/deep-tech coverage).
+
+# 6. Limits & Actions (CQ.TABLE#me)
+
+Download the action table: [`table_limits_actions.csv`](table_limits_actions.csv).
+
+# 7. Case — Perplexity AI (Vague → Precise)
+
+`case_perplexity.png`
+
+# Appendix — Repro
+- Render: `quarto render report_professors.qmd --to pdf` (and `--to html`)
+- Data folder for AV upload: `/mnt/data/empirics/data/av_firms.csv` (column-friendly, will be auto-mapped).

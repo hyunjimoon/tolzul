@@ -1,0 +1,10 @@
+Issue,Why_it_matters,Mitigation_Action,Owner,Target_Week,Status
+Intentional vs. unintentional vagueness,Confounds mechanism: strategic flexibility vs. knowledge gaps,"Add founder CV proxies (serial/mfg experience), tech readiness indicators; instrument with investor type",Empirics,W2,Planned
+Aspirational/Platform vs. Niche/Specific promises,Promise ‘level’ may bias vagueness measure and outcomes,Code promise level (architectural vs. disruptor) as control; interaction with vagueness,Theory+Empirics,W2,Planned
+Measurement triangulation of vagueness,Single LIWC metric may be noisy,Combine: (1) LIWC-certitude (2) hedge-word rate (3) jargon density; build composite,Empirics,W2,In progress
+Era coverage & comparability (AV vs. AI/LLM),Moderator identification needs diversity and timing validity,Add AV cohort with observable B outcomes; keep time windows comparable,Empirics,W1→W2,Pending AV file
+Endogeneity of PB company descriptions,Descriptions may be edited post-funding → look-ahead bias,"Use pre-funding snapshots (YC text, TechCrunch, archived websites) as primary text",Empirics,W1,Planned
+Master-plan founders may delay funding (H1) yet win later (H2),Explains reversal but needs identification,"Founder ambition proxies (patents, moonshot keywords); survival conditioning in Model 2",Theory+Empirics,W3,Planned
+Integration cost (hardware vs. software) misclassification,Moderator weakens if mislabeled,Keyword rules + manual validation subset; robustness with alternative tags,Empirics,W2,In progress
+Sample selection & generalizability,Elite samples (TechCrunch/YC) may not generalize,Use PB population as frame; use elite samples for mechanism checks only,Empirics,W1,Planned
+Crowdfunding vs. VC outcomes are not directly comparable,Retail investor dynamics differ from institutional VC,Use as robustness/negative control; do not mix outcome definitions,Empirics,W3,Planned

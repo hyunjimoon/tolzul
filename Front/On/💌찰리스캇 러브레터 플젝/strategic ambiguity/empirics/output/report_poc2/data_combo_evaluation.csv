@@ -1,0 +1,7 @@
+Combination,Methodological_Soundness,Data_Quality,Feasibility,Generalizability,Complementarity,Weighted_Score,Rationale
+YC + Pitchbook Funding,4.5,4.5,4.5,4.5,4.8,4.529999999999999,"Best overall: pre-funding, standardized promises + gold-standard outcomes; scalable."
+YC + TechCrunch + Pitchbook Funding,4.5,4.5,4.5,4.5,4.8,4.529999999999999,"Triangulation where overlap exists: demo-day text + high-stakes pitch + outcomes (smaller N, high validity)."
+TechCrunch Disrupt + Pitchbook Funding,4.5,5.0,3.5,3.5,4.8,4.305,"Elite, high-quality text + outcomes; smaller N but strong identification for mechanisms."
+Whitepapers + Pitchbook Funding,4.0,4.5,3.5,4.0,4.8,4.105,Deep tech/hardware coverage; strong for high-integration-cost moderator; higher extraction cost.
+Pitchbook Description + Pitchbook Funding,3.5,4.0,4.5,4.5,4.3,4.055,Most feasible but method risk: ensure ex-ante snapshot only; otherwise exclude.
+Crowdfunding + Pitchbook Funding,4.0,4.0,4.0,4.0,4.3,4.03,Useful as robustness and contrast; outcome comparability cautions; mapping can be partial.
