@@ -15,179 +15,216 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 
-# Setup paths
+# Setup paths (but don't execute script when imported)
 BASE_DIR = Path(__file__).parent.parent
 PROCESSED_DATA_DIR = BASE_DIR / "data" / "processed"
 
-print("=" * 80)
-print("SCRIPT 03: CREATE ANALYSIS PANEL")
-print("=" * 80)
 
-# Step 1: Read processed files
-print("\n[Step 1] Reading processed files...")
-company_file = PROCESSED_DATA_DIR / "company_master.csv"
-deal_file = PROCESSED_DATA_DIR / "deal_panel.csv"
+def main():
+    """Main script execution - only runs when called directly"""
+    print("=" * 80)
+    print("SCRIPT 03: CREATE ANALYSIS PANEL")
+    print("=" * 80)
 
-company_df = pd.read_csv(company_file)
-deal_df = pd.read_csv(deal_file)
+    # Step 1: Read processed files
+    print("\n[Step 1] Reading processed files...")
+    company_file = PROCESSED_DATA_DIR / "company_master.csv"
+    deal_file = PROCESSED_DATA_DIR / "deal_panel.csv"
 
-print(f"  Company master: {len(company_df)} firms")
-print(f"  Deal panel: {len(deal_df)} deals")
+    company_df = pd.read_csv(company_file)
+    deal_df = pd.read_csv(deal_file)
 
-# Step 2: Join company and deal data
-print("\n[Step 2] Joining company and deal data...")
+    print(f"  Company master: {len(company_df)} firms")
+    print(f"  Deal panel: {len(deal_df)} deals")
 
-# Merge on company_id
-panel_df = deal_df.merge(
-    company_df,
-    on='company_id',
-    how='inner'
-)
+    # Check for empty data
+    if len(deal_df) == 0:
+        print("\n⚠️  WARNING: Deal panel is empty (0 deals)")
+        print("   This will result in an empty analysis panel.")
+        print("   Please check that Deal*.dat files exist in data/raw/")
+        print("   Or run step 2 again to process deal data.")
+        # Create empty analysis panel with proper schema
+        analysis_panel = pd.DataFrame(columns=[
+            'company_id', 'round', 'series_b_dummy',
+            'vagueness', 'vagueness_category',
+            'high_integration_cost', 'integration_cost_label',
+            'funding_success', 'deal_size', 'deal_date',
+            'series_a_amount', 'log_series_a_amount',
+            'employees', 'year_founded', 'total_raised',
+            'investors', 'post_valuation'
+        ])
+        output_file = PROCESSED_DATA_DIR / "analysis_panel.csv"
+        analysis_panel.to_csv(output_file, index=False)
+        print(f"\n✓ Created empty analysis panel: {output_file}")
+        return analysis_panel
 
-print(f"  Merged panel: {len(panel_df)} observations")
-print(f"  Unique firms: {panel_df['company_id'].nunique()}")
+    # Step 2: Join company and deal data
+    print("\n[Step 2] Joining company and deal data...")
 
-# Check for firms without both rounds
-firms_with_both = panel_df.groupby('company_id')['round'].count()
-firms_complete = (firms_with_both == 2).sum()
-firms_partial = (firms_with_both == 1).sum()
+    # Merge on company_id
+    panel_df = deal_df.merge(
+        company_df,
+        on='company_id',
+        how='inner'
+    )
 
-print(f"  Firms with both A and B: {firms_complete}")
-print(f"  Firms with only one round: {firms_partial}")
+    print(f"  Merged panel: {len(panel_df)} observations")
+    print(f"  Unique firms: {panel_df['company_id'].nunique()}")
 
-# Step 3: Create panel structure
-print("\n[Step 3] Creating panel structure...")
+    # Check for firms without both rounds
+    firms_with_both = panel_df.groupby('company_id')['round'].count()
+    firms_complete = (firms_with_both == 2).sum()
+    firms_partial = (firms_with_both == 1).sum()
 
-# For firms with only Series A, create a missing Series B record
-companies_with_a_only = panel_df[panel_df['round'] == 'Series A']['company_id'].unique()
-companies_with_both_rounds = panel_df.groupby('company_id').filter(lambda x: len(x) == 2)['company_id'].unique()
-companies_missing_b = set(companies_with_a_only) - set(companies_with_both_rounds)
+    print(f"  Firms with both A and B: {firms_complete}")
+    print(f"  Firms with only one round: {firms_partial}")
 
-print(f"  Companies missing Series B: {len(companies_missing_b)}")
+    # Step 3: Create panel structure
+    print("\n[Step 3] Creating panel structure...")
 
-if len(companies_missing_b) > 0:
-    # Create Series B records for companies that only have Series A
-    missing_b_records = []
+    # For firms with only Series A, create a missing Series B record
+    companies_with_a_only = panel_df[panel_df['round'] == 'Series A']['company_id'].unique()
+    companies_with_both_rounds = panel_df.groupby('company_id').filter(lambda x: len(x) == 2)['company_id'].unique()
+    companies_missing_b = set(companies_with_a_only) - set(companies_with_both_rounds)
 
-    for company_id in companies_missing_b:
-        # Get Series A record for this company
-        series_a_record = panel_df[
-            (panel_df['company_id'] == company_id) &
-            (panel_df['round'] == 'Series A')
-        ].iloc[0].to_dict()
+    print(f"  Companies missing Series B: {len(companies_missing_b)}")
 
-        # Create Series B record with same firm characteristics but no funding
-        series_b_record = series_a_record.copy()
-        series_b_record['round'] = 'Series B'
-        series_b_record['funding_success'] = 0  # No Series B funding
-        series_b_record['deal_size'] = 0
-        series_b_record['deal_date'] = pd.NaT
-        series_b_record['investors'] = 'None'
-        series_b_record['post_valuation'] = series_a_record['post_valuation']  # No change
+    if len(companies_missing_b) > 0:
+        # Create Series B records for companies that only have Series A
+        missing_b_records = []
 
-        missing_b_records.append(series_b_record)
+        for company_id in companies_missing_b:
+            # Get Series A record for this company
+            series_a_record = panel_df[
+                (panel_df['company_id'] == company_id) &
+                (panel_df['round'] == 'Series A')
+            ].iloc[0].to_dict()
 
-    # Add missing B records to panel
-    missing_b_df = pd.DataFrame(missing_b_records)
-    panel_df = pd.concat([panel_df, missing_b_df], ignore_index=True)
+            # Create Series B record with same firm characteristics but no funding
+            series_b_record = series_a_record.copy()
+            series_b_record['round'] = 'Series B'
+            series_b_record['funding_success'] = 0  # No Series B funding
+            series_b_record['deal_size'] = 0
+            series_b_record['deal_date'] = pd.NaT
+            series_b_record['investors'] = 'None'
+            series_b_record['post_valuation'] = series_a_record['post_valuation']  # No change
 
-    print(f"  Added {len(missing_b_records)} Series B records for firms without Series B")
+            missing_b_records.append(series_b_record)
 
-# Sort by company and round
-panel_df = panel_df.sort_values(['company_id', 'round'])
+        # Add missing B records to panel
+        missing_b_df = pd.DataFrame(missing_b_records)
+        panel_df = pd.concat([panel_df, missing_b_df], ignore_index=True)
 
-print(f"  Final panel: {len(panel_df)} observations")
-print(f"  Final unique firms: {panel_df['company_id'].nunique()}")
+        print(f"  Added {len(missing_b_records)} Series B records for firms without Series B")
 
-# Step 4: Add derived variables
-print("\n[Step 4] Creating derived variables...")
+    # Sort by company and round
+    panel_df = panel_df.sort_values(['company_id', 'round'])
 
-# Series B dummy (1 = Series B, 0 = Series A)
-panel_df['series_b_dummy'] = (panel_df['round'] == 'Series B').astype(int)
+    print(f"  Final panel: {len(panel_df)} observations")
+    print(f"  Final unique firms: {panel_df['company_id'].nunique()}")
 
-# Log of Series A amount (for controls)
-# Get Series A amount for each firm
-series_a_amounts = panel_df[panel_df['round'] == 'Series A'][['company_id', 'deal_size']].copy()
-series_a_amounts.columns = ['company_id', 'series_a_amount']
-panel_df = panel_df.merge(series_a_amounts, on='company_id', how='left')
-panel_df['log_series_a_amount'] = np.log(panel_df['series_a_amount'] + 1)  # +1 to handle zeros
+    # Step 4: Add derived variables
+    print("\n[Step 4] Creating derived variables...")
 
-# Vagueness categories for analysis
-panel_df['vagueness_category'] = pd.cut(
-    panel_df['vagueness'],
-    bins=[0, 50, 100],
-    labels=['Precise', 'Vague'],
-    include_lowest=True
-)
+    # Series B dummy (1 = Series B, 0 = Series A)
+    panel_df['series_b_dummy'] = (panel_df['round'] == 'Series B').astype(int)
 
-# Integration cost label
-panel_df['integration_cost_label'] = panel_df['high_integration_cost'].map({
-    0: 'Low-i (API/SaaS)',
-    1: 'High-i (Hardware)'
-})
+    # Log of Series A amount (for controls)
+    # Get Series A amount for each firm
+    series_a_amounts = panel_df[panel_df['round'] == 'Series A'][['company_id', 'deal_size']].copy()
+    series_a_amounts.columns = ['company_id', 'series_a_amount']
+    panel_df = panel_df.merge(series_a_amounts, on='company_id', how='left')
+    panel_df['log_series_a_amount'] = np.log(panel_df['series_a_amount'] + 1)  # +1 to handle zeros
 
-print("  ✓ Added series_b_dummy")
-print("  ✓ Added log_series_a_amount")
-print("  ✓ Added vagueness_category")
-print("  ✓ Added integration_cost_label")
+    # Vagueness categories for analysis
+    panel_df['vagueness_category'] = pd.cut(
+        panel_df['vagueness'],
+        bins=[0, 50, 100],
+        labels=['Precise', 'Vague'],
+        include_lowest=True
+    )
 
-# Step 5: Save analysis panel
-print("\n[Step 5] Saving analysis panel...")
+    # Integration cost label
+    panel_df['integration_cost_label'] = panel_df['high_integration_cost'].map({
+        0: 'Low-i (API/SaaS)',
+        1: 'High-i (Hardware)'
+    })
 
-# Select columns for final output
-analysis_cols = [
-    'company_id', 'round', 'series_b_dummy',
-    'vagueness', 'vagueness_category',
-    'high_integration_cost', 'integration_cost_label',
-    'funding_success', 'deal_size', 'deal_date',
-    'series_a_amount', 'log_series_a_amount',
-    'employees', 'year_founded', 'total_raised',
-    'investors', 'post_valuation'
-]
+    print("  ✓ Added series_b_dummy")
+    print("  ✓ Added log_series_a_amount")
+    print("  ✓ Added vagueness_category")
+    print("  ✓ Added integration_cost_label")
 
-analysis_panel = panel_df[analysis_cols].copy()
+    # Step 5: Save analysis panel
+    print("\n[Step 5] Saving analysis panel...")
 
-# Save to CSV
-output_file = PROCESSED_DATA_DIR / "analysis_panel.csv"
-analysis_panel.to_csv(output_file, index=False)
+    # Select columns for final output
+    analysis_cols = [
+        'company_id', 'round', 'series_b_dummy',
+        'vagueness', 'vagueness_category',
+        'high_integration_cost', 'integration_cost_label',
+        'funding_success', 'deal_size', 'deal_date',
+        'series_a_amount', 'log_series_a_amount',
+        'employees', 'year_founded', 'total_raised',
+        'investors', 'post_valuation'
+    ]
 
-print(f"✓ Saved to: {output_file}")
-print(f"  Rows: {len(analysis_panel)}")
-print(f"  Columns: {len(analysis_panel.columns)}")
+    analysis_panel = panel_df[analysis_cols].copy()
 
-# Display summary
-print("\n" + "=" * 80)
-print("SUMMARY STATISTICS")
-print("=" * 80)
-print(f"\nTotal observations: {len(analysis_panel)}")
-print(f"Unique firms: {analysis_panel['company_id'].nunique()}")
-print(f"\nObservations per firm:")
-print(analysis_panel.groupby('company_id').size().value_counts())
+    # Save to CSV
+    output_file = PROCESSED_DATA_DIR / "analysis_panel.csv"
+    analysis_panel.to_csv(output_file, index=False)
 
-print(f"\nRound distribution:")
-print(analysis_panel['round'].value_counts())
+    print(f"✓ Saved to: {output_file}")
+    print(f"  Rows: {len(analysis_panel)}")
+    print(f"  Columns: {len(analysis_panel.columns)}")
 
-print(f"\nFunding success by round:")
-success_by_round = analysis_panel.groupby('round')['funding_success'].agg(['count', 'sum', 'mean'])
-print(success_by_round)
+    # Display summary
+    print("\n" + "=" * 80)
+    print("SUMMARY STATISTICS")
+    print("=" * 80)
+    print(f"\nTotal observations: {len(analysis_panel)}")
+    print(f"Unique firms: {analysis_panel['company_id'].nunique()}")
+    print(f"\nObservations per firm:")
+    print(analysis_panel.groupby('company_id').size().value_counts())
 
-print(f"\nFunding success by integration cost and round:")
-success_by_int_round = analysis_panel.groupby(['integration_cost_label', 'round'])['funding_success'].agg(['count', 'sum', 'mean'])
-print(success_by_int_round)
+    print(f"\nRound distribution:")
+    print(analysis_panel['round'].value_counts())
 
-print(f"\nFunding success by vagueness and round:")
-success_by_vague_round = analysis_panel.groupby(['vagueness_category', 'round'])['funding_success'].agg(['count', 'sum', 'mean'])
-print(success_by_vague_round)
+    print(f"\nFunding success by round:")
+    success_by_round = analysis_panel.groupby('round')['funding_success'].agg(['count', 'sum', 'mean'])
+    print(success_by_round)
 
-print("\n" + "=" * 80)
-print("FIRST 5 ROWS")
-print("=" * 80)
-print(analysis_panel[['company_id', 'company_name', 'round', 'vagueness',
-                      'high_integration_cost', 'funding_success', 'deal_size']].head())
+    print(f"\nFunding success by integration cost and round:")
+    success_by_int_round = analysis_panel.groupby(['integration_cost_label', 'round'])['funding_success'].agg(['count', 'sum', 'mean'])
+    print(success_by_int_round)
 
-print("\n" + "=" * 80)
-print("✓ SCRIPT 03 COMPLETED SUCCESSFULLY")
-print("=" * 80)
+    print(f"\nFunding success by vagueness and round:")
+    success_by_vague_round = analysis_panel.groupby(['vagueness_category', 'round'])['funding_success'].agg(['count', 'sum', 'mean'])
+    print(success_by_vague_round)
+
+    print("\n" + "=" * 80)
+    print("FIRST 5 ROWS")
+    print("=" * 80)
+    # Only print if we have data and company_name column exists
+    display_cols = ['company_id', 'round', 'vagueness', 'high_integration_cost', 'funding_success', 'deal_size']
+    if 'company_name' in analysis_panel.columns:
+        display_cols.insert(1, 'company_name')
+    if len(analysis_panel) > 0:
+        print(analysis_panel[display_cols].head())
+    else:
+        print("(No data to display)")
+
+    print("\n" + "=" * 80)
+    print("✓ SCRIPT 03 COMPLETED SUCCESSFULLY")
+    print("=" * 80)
+
+    return analysis_panel
+
+
+# Only run main() when script is executed directly
+if __name__ == "__main__":
+    main()
 
 
 def create_analysis_panel(company_df, deal_df):
@@ -201,12 +238,38 @@ def create_analysis_panel(company_df, deal_df):
     Returns:
         pd.DataFrame: Analysis panel with derived variables
     """
+    # Handle empty deal data
+    if len(deal_df) == 0:
+        print("⚠️  WARNING: Deal panel is empty (0 deals) - creating empty analysis panel")
+        # Return empty dataframe with proper schema
+        return pd.DataFrame(columns=[
+            'company_id', 'company_name', 'round', 'series_b_dummy',
+            'vagueness', 'vagueness_category',
+            'high_integration_cost', 'integration_cost_label',
+            'funding_success', 'deal_size', 'deal_date',
+            'series_a_amount', 'log_series_a_amount',
+            'employees', 'year_founded', 'total_raised',
+            'investors', 'post_valuation'
+        ])
+
     # Merge on company_id
     panel_df = deal_df.merge(
         company_df,
         on='company_id',
         how='inner'
     )
+
+    if len(panel_df) == 0:
+        print("⚠️  WARNING: Merged panel is empty (no matching companies/deals)")
+        return pd.DataFrame(columns=[
+            'company_id', 'company_name', 'round', 'series_b_dummy',
+            'vagueness', 'vagueness_category',
+            'high_integration_cost', 'integration_cost_label',
+            'funding_success', 'deal_size', 'deal_date',
+            'series_a_amount', 'log_series_a_amount',
+            'employees', 'year_founded', 'total_raised',
+            'investors', 'post_valuation'
+        ])
 
     # For firms with only Series A, create a missing Series B record
     companies_with_a_only = panel_df[panel_df['round'] == 'Series A']['company_id'].unique()
@@ -261,9 +324,9 @@ def create_analysis_panel(company_df, deal_df):
         1: 'High-i (Hardware)'
     })
 
-    # Select columns for final output
+    # Select columns for final output - include company_name if it exists
     analysis_cols = [
-        'company_id', 'company_name', 'round', 'series_b_dummy',
+        'company_id', 'round', 'series_b_dummy',
         'vagueness', 'vagueness_category',
         'high_integration_cost', 'integration_cost_label',
         'funding_success', 'deal_size', 'deal_date',
@@ -271,6 +334,10 @@ def create_analysis_panel(company_df, deal_df):
         'employees', 'year_founded', 'total_raised',
         'investors', 'post_valuation'
     ]
+
+    # Add company_name if it exists in the dataframe
+    if 'company_name' in panel_df.columns:
+        analysis_cols.insert(1, 'company_name')
 
     analysis_panel = panel_df[analysis_cols].copy()
 

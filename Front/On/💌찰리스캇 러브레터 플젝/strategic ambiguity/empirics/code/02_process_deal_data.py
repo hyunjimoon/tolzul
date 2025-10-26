@@ -28,6 +28,36 @@ print("\n[Step 1] Reading Deal data files...")
 deal_files = list(RAW_DATA_DIR.glob("Deal*.dat"))
 print(f"Found {len(deal_files)} Deal files: {[f.name for f in deal_files]}")
 
+if len(deal_files) == 0:
+    print("\n❌ ERROR: No Deal*.dat files found in data/raw/")
+    print("\n📋 Expected file pattern: Deal*.dat (e.g., Deal2023.dat)")
+    print(f"   Looking in: {RAW_DATA_DIR}")
+    print("\n   Available files in data/raw/:")
+    all_files = list(RAW_DATA_DIR.glob("*.dat"))
+    for f in all_files:
+        print(f"     - {f.name}")
+    print("\n💡 To fix this:")
+    print("   1. Download Deal data files from Pitchbook")
+    print("   2. Place them in data/raw/ directory")
+    print("   3. Files should be named Deal*.dat (pipe-delimited)")
+    print("\n   Or if you have combined Company+Deal files:")
+    print("   1. Split the data into separate Company*.dat and Deal*.dat files")
+    print("   2. Ensure Deal files have the proper schema (see Deal header example)")
+    print("\n⏸️  Creating empty deal panel for now...")
+
+    # Create empty deal panel with proper schema
+    deal_panel = pd.DataFrame(columns=[
+        'company_id', 'company_name', 'round', 'deal_type', 'vc_round', 'deal_date',
+        'deal_size', 'funding_success', 'investors', 'post_valuation'
+    ])
+    output_file = PROCESSED_DATA_DIR / "deal_panel.csv"
+    deal_panel.to_csv(output_file, index=False)
+    print(f"✓ Created empty deal panel: {output_file}")
+    print("\n" + "=" * 80)
+    print("⚠️  SCRIPT 02: INCOMPLETE - NO DEAL DATA FOUND")
+    print("=" * 80)
+    exit(0)
+
 dfs = []
 for file in deal_files:
     df = pd.read_csv(file, sep='|', encoding='utf-8', low_memory=False)
@@ -222,10 +252,30 @@ def process_deal_data(series_a_start='2021-01-01', series_a_end='2022-10-31',
     # Read Deal data files
     deal_files = list(RAW_DATA_DIR.glob("Deal*.dat"))
 
+    if len(deal_files) == 0:
+        print("\n❌ WARNING: No Deal*.dat files found in data/raw/")
+        print(f"   Looking in: {RAW_DATA_DIR}")
+        all_files = list(RAW_DATA_DIR.glob("*.dat"))
+        if all_files:
+            print(f"   Available files: {[f.name for f in all_files]}")
+        print("\n💡 Please add Deal*.dat files to data/raw/ directory")
+        print("   Returning empty deal panel...")
+        # Return empty dataframe with proper schema
+        return pd.DataFrame(columns=[
+            'company_id', 'company_name', 'round', 'deal_type', 'vc_round', 'deal_date',
+            'deal_size', 'funding_success', 'investors', 'post_valuation'
+        ])
+
     dfs = []
     for file in deal_files:
         df = pd.read_csv(file, sep='|', encoding='utf-8', low_memory=False)
         dfs.append(df)
+
+    if len(dfs) == 0:
+        return pd.DataFrame(columns=[
+            'company_id', 'company_name', 'round', 'deal_type', 'vc_round', 'deal_date',
+            'deal_size', 'funding_success', 'investors', 'post_valuation'
+        ])
 
     deal_df = pd.concat(dfs, ignore_index=True)
 
