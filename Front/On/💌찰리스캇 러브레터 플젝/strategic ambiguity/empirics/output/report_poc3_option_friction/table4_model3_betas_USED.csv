@@ -1,0 +1,8 @@
+term,beta,expected_sign
+Intercept,-0.4,—
+Vagueness,1.1,>
+High_Integration_Cost,-0.25,<
+Vagueness×High_Integration_Cost,-1.35,<
+log(Early_Funding),0.45,>
+Prior_Exit,0.35,>
+log(Team_Size),0.18,>

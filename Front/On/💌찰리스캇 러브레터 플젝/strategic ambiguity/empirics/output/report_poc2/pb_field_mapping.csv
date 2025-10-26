@@ -1,0 +1,9 @@
+Analysis variable,PB field(s),Note
+firm_id,CompanyID,Company export ID
+company_name,CompanyName,Human-readable name
+vagueness (to be computed),Description,Source text for LIWC/hedge/jargon
+early_funding (Series A $),FirstFinancingSize,Proxy if DealType==Series A (else: fetch Deals table)
+later_success (Series B dummy),LastFinancingDealType,1 if contains 'Series B' (else 0)
+team_size,Employees,Employee count (company export)
+sector / era tag,Keywords,To be tagged into #AI/#AV using keywords
+prior_exit,(not present),Requires founder-level table or manual coding

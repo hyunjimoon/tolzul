@@ -1,7 +1,0 @@
-Source,Methodological_Soundness,Data_Quality,Feasibility,Generalizability,Complementarity,Rationale,Weighted_Score
-Pitchbook Funding Data (DV + controls),5,5,4,5,5,Gold standard for outcomes and founder controls; anchors the study; pairs with any text source.,4.8
-YC Public Data,4,4,5,4,4,"Standardized, time-stamped founder text; large N; maps well to pre-A/A stage; broad tech coverage.",4.2
-TechCrunch Disrupt Pitches,4,5,3,2,4,"High-stakes, high-quality transcripts; smaller, elite sample; great for mechanism checks, limited generalization.",3.75
-Whitepapers / Litepapers,3,4,3,3,4,Rich technical detail; heterogeneous domains (Web3/deep tech); extraction cost; complements for high-integration firms.,3.35
-Pitchbook Company Description,2,3,5,4,3,Easy at scale but risk of ex-post edits; must ensure pre-funding snapshots to avoid look-ahead bias.,3.25
-Crowdfunding Campaign Descriptions,3,3,4,3,3,Self-contained text+funding; retail-investor bias; outcome definitions differ from VC; good robustness set.,3.2
