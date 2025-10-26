@@ -121,15 +121,15 @@ else:
 print(f"\n  Total Series A: {len(all_series_a)}")
 print(f"  Total Series B: {len(all_series_b)}")
 
-# Filter 3: Size thresholds (relaxed for real data)
-print("\n  [2.3] Filter by deal size (relaxed thresholds)...")
+# Filter 3: Size thresholds - require actual amounts
+print("\n  [2.3] Filter by deal size...")
 all_series_a['DealSize'] = pd.to_numeric(all_series_a['DealSize'], errors='coerce').fillna(0)
 all_series_b['DealSize'] = pd.to_numeric(all_series_b['DealSize'], errors='coerce').fillna(0)
 
-# More lenient size filters for Series A/B
-# Keep all deals with DealSize > 0 or explicitly marked as Series A/B
-all_series_a['in_size_range'] = (all_series_a['DealSize'] >= 1e6) | (all_series_a['DealSize'] == 0)
-all_series_b['in_size_range'] = (all_series_b['DealSize'] >= 5e6) | (all_series_b['DealSize'] == 0)
+# Only keep deals with disclosed amounts (DealSize > 0)
+# This ensures we have actual funding data to analyze
+all_series_a['in_size_range'] = (all_series_a['DealSize'] > 0)
+all_series_b['in_size_range'] = (all_series_b['DealSize'] > 0)
 
 a_in_range = all_series_a['in_size_range'].sum()
 b_in_range = all_series_b['in_size_range'].sum()
@@ -308,24 +308,26 @@ def process_deal_data(series_a_start='2021-01-01', series_a_end='2022-10-31',
         all_series_a = series_a_explicit
         all_series_b = series_b_explicit
 
-    # Filter by date ranges
+    # Convert DealSize to numeric first (before filtering)
+    all_series_a['DealSize'] = pd.to_numeric(all_series_a['DealSize'], errors='coerce').fillna(0)
+    all_series_b['DealSize'] = pd.to_numeric(all_series_b['DealSize'], errors='coerce').fillna(0)
+
+    # Filter by date ranges AND deal size (must have disclosed amount)
     series_a_final = all_series_a[
         (all_series_a['DealDate'] >= series_a_start) &
-        (all_series_a['DealDate'] <= series_a_end)
+        (all_series_a['DealDate'] <= series_a_end) &
+        (all_series_a['DealSize'] > 0)  # Only deals with disclosed amounts
     ].copy()
 
     series_b_final = all_series_b[
         (all_series_b['DealDate'] >= series_b_start) &
-        (all_series_b['DealDate'] <= series_b_end)
+        (all_series_b['DealDate'] <= series_b_end) &
+        (all_series_b['DealSize'] > 0)  # Only deals with disclosed amounts
     ].copy()
 
     # Add round labels
     series_a_final['round'] = 'Series A'
     series_b_final['round'] = 'Series B'
-
-    # Convert DealSize to numeric
-    series_a_final['DealSize'] = pd.to_numeric(series_a_final['DealSize'], errors='coerce').fillna(0)
-    series_b_final['DealSize'] = pd.to_numeric(series_b_final['DealSize'], errors='coerce').fillna(0)
 
     # Create funding success variable
     series_a_final['funding_success'] = (
