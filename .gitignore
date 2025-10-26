@@ -56,6 +56,10 @@ _ref/
 # Ignore Smart Environment folder
 .smart-env
 
+# Symlinks for emoji directory access
+charlie_scott
+Front/On/charlie_scott
+
 # Large data files (>100MB)
 Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/processed/company_master.csv
 Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/raw/Company20211201.dat
