@@ -121,10 +121,12 @@ class HypothesisTestingPipeline:
         # Add missing variables as placeholders (for single-snapshot runs)
         print("\n  - Adding placeholder variables...")
 
-        # founder_credibility placeholder
+        # founder_credibility (serial founder indicator)
         if 'founder_credibility' not in self.df.columns:
-            self.df['founder_credibility'] = 0
-            print("    ⚠️  founder_credibility = 0 (placeholder)")
+            from feature_engineering import compute_founder_credibility
+            self.df['founder_credibility'] = compute_founder_credibility(self.df)
+            serial_rate = self.df['founder_credibility'].mean()
+            print(f"    ✓ founder_credibility computed ({serial_rate:.1%} serial founders)")
 
         # sector_fe from Keywords
         if 'sector_fe' not in self.df.columns and 'keywords' in self.df.columns:

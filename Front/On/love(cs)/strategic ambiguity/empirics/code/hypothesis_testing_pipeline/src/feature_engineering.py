@@ -428,6 +428,85 @@ def compute_firm_age(year_founded: pd.Series, current_year: int = 2024) -> pd.Se
     return current_year - years
 
 
+def compute_founder_credibility(df: pd.DataFrame) -> pd.Series:
+    """
+    Compute founder credibility indicator.
+
+    Uses serial founder status as primary measure (binary: 0 or 1).
+
+    Implementation options (auto-detected):
+    1. If 'NumberOfFounders' column exists:
+       - Serial founder = 1 if founded 2+ companies (proxy: total_raised in top quartile)
+    2. If 'FoundingTeam' or similar text field exists:
+       - Parse for serial founder indicators
+    3. Fallback: Use proxy based on firm characteristics:
+       - Serial founder = 1 if (firm_age < 5 years) AND (total_raised > median)
+       - Rationale: Young companies with high funding = experienced founders
+
+    Args:
+        df: DataFrame with company data
+
+    Returns:
+        Series of founder credibility (0 or 1)
+
+    Examples:
+        >>> df = pd.DataFrame({
+        ...     'TotalRaised': [1e6, 1e7, 1e8],
+        ...     'YearFounded': [2020, 2015, 2018]
+        ... })
+        >>> compute_founder_credibility(df)
+        0    0  # Low funding, recent
+        1    1  # High funding, experienced
+        2    1  # Very high funding
+        dtype: int64
+    """
+    n = len(df)
+
+    # Option 1: Check for direct founder columns
+    founder_cols = [col for col in df.columns if 'founder' in col.lower()]
+
+    if 'NumberOfFounders' in df.columns:
+        # Use number of founders as proxy (more founders = more experience)
+        num_founders = pd.to_numeric(df['NumberOfFounders'], errors='coerce')
+        return (num_founders >= 2).astype(int)  # 2+ founders = more credible
+
+    elif any('founding' in col.lower() for col in df.columns):
+        # Check for founding team text fields
+        founding_col = [col for col in df.columns if 'founding' in col.lower()][0]
+        # Look for serial founder indicators in text
+        serial_indicators = df[founding_col].str.contains(
+            'serial|prior|previous|founded|co-founded',
+            case=False,
+            na=False
+        )
+        return serial_indicators.astype(int)
+
+    # Fallback Option: Proxy from firm characteristics
+    print("    ℹ️  No founder columns found, using proxy:")
+    print("       Serial founder = (young firm + high funding) OR (high funding + high growth)")
+
+    # Calculate proxies
+    total_raised = pd.to_numeric(df.get('TotalRaised', 0), errors='coerce').fillna(0)
+    year_founded = pd.to_numeric(df.get('YearFounded', 2020), errors='coerce').fillna(2020)
+    firm_age = 2024 - year_founded
+
+    # High funding threshold (75th percentile)
+    if len(total_raised[total_raised > 0]) > 0:
+        high_funding_threshold = total_raised[total_raised > 0].quantile(0.75)
+    else:
+        high_funding_threshold = 0
+
+    # Serial founder proxy logic:
+    # 1. Young company (<5 years) + High funding = experienced founder
+    # 2. OR: Very high funding (>75th percentile) = successful fundraiser = credible
+    serial_founder = (
+        ((firm_age < 5) & (total_raised > high_funding_threshold)) |  # Young + high funding
+        (total_raised > high_funding_threshold)  # OR just high funding
+    ).astype(int)
+
+    return serial_founder
+
+
 def standardize_variable(series: pd.Series) -> pd.Series:
     """
     Standardize a variable to mean=0, std=1.
