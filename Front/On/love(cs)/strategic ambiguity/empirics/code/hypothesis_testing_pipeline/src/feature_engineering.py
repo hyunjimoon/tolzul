@@ -19,44 +19,53 @@ def compute_vagueness(text: str) -> float:
     """
     Compute textual vagueness using LIWC-style keyword approach.
 
-    Measures the frequency of hedge words relative to total word count.
+    Measures the frequency of hedge words vs precise words.
     Higher scores indicate more vague language.
 
     Args:
         text: Description or text to analyze
 
     Returns:
-        Vagueness score (0-1 scale), or np.nan if text is invalid
+        Vagueness score (0-100 scale), or np.nan if text is invalid
+        Formula: 50 + 10 * (vague_count - precise_count), capped at [0, 100]
 
     Examples:
         >>> compute_vagueness("We maybe provide approximately scalable solutions")
-        0.25  # 2 hedge words out of 8 total
-        >>> compute_vagueness("We provide precise machine learning APIs")
-        0.0   # 0 hedge words
+        70  # 2 vague words, 0 precise words
+        >>> compute_vagueness("We provide precise guaranteed machine learning APIs")
+        30  # 0 vague words, 2 precise words
     """
     if not isinstance(text, str) or pd.isna(text):
         return np.nan
 
-    # Hedge words indicating vagueness/uncertainty
-    hedge_words = [
+    # Vague/hedge words indicating uncertainty
+    vague_words = [
         "maybe", "approximately", "somewhat", "likely", "possibly",
         "potential", "around", "roughly", "flexible", "scalable",
         "adaptive", "designed to", "enables", "allows", "offering",
-        "providing", "can be", "may be", "could be"
+        "providing", "can be", "may be", "could be", "about", "nearly"
+    ]
+
+    # Precise words indicating certainty
+    precise_words = [
+        "exactly", "precisely", "guaranteed", "specific", "certified",
+        "proprietary", "patented", "proven", "definite", "concrete",
+        "measurable", "quantifiable"
     ]
 
     # Tokenize and count
     text_lower = text.lower()
-    total_words = len(text.split())
 
-    if total_words == 0:
+    if len(text_lower) == 0:
         return np.nan
 
-    # Count hedge word occurrences
-    hits = sum(text_lower.count(hedge) for hedge in hedge_words)
+    # Count word occurrences
+    vague_count = sum(text_lower.count(word) for word in vague_words)
+    precise_count = sum(text_lower.count(word) for word in precise_words)
 
-    # Return proportion (0-1 scale)
-    return hits / total_words
+    # Formula from Family 1: 50 + 10*(vague - precise), capped at [0, 100]
+    score = 50 + 10 * (vague_count - precise_count)
+    return max(0, min(100, score))
 
 
 def compute_vagueness_vectorized(descriptions: pd.Series) -> pd.Series:
@@ -67,7 +76,7 @@ def compute_vagueness_vectorized(descriptions: pd.Series) -> pd.Series:
         descriptions: Series of text descriptions
 
     Returns:
-        Series of vagueness scores (0-1 scale)
+        Series of vagueness scores (0-100 scale)
     """
     return descriptions.apply(compute_vagueness)
 
@@ -195,6 +204,197 @@ def derive_later_success(last_deal_type: pd.Series, threshold: str = "Series B")
 
 
 # =============================================================================
+# SURVIVAL VARIABLE (3-SNAPSHOT LOGIC)
+# =============================================================================
+
+def create_survival_from_snapshots(
+    snapshot_20230501: pd.DataFrame,
+    deal_data: pd.DataFrame,
+    cutoff_date: str = "2021-11-01"
+) -> pd.DataFrame:
+    """
+    Create survival variable from 3-snapshot data.
+
+    Survival definition:
+        survival = 1 if (company in 20230501 snapshot) AND
+                       (LastFinancingDate >= cutoff_date)
+        survival = 0 otherwise
+
+    This captures companies that:
+    1. Still exist as of May 2023
+    2. Received funding within 18 months before snapshot (2021-11-01 onwards)
+
+    Args:
+        snapshot_20230501: DataFrame with companies in May 2023 snapshot
+        deal_data: DataFrame with all deal data including LastFinancingDate
+        cutoff_date: Date threshold for recent funding (default: 2021-11-01)
+
+    Returns:
+        DataFrame with company_id and survival binary indicator
+
+    Examples:
+        >>> snapshot = pd.DataFrame({'company_id': [1, 2, 3]})
+        >>> deals = pd.DataFrame({
+        ...     'company_id': [1, 2, 3],
+        ...     'LastFinancingDate': ['2022-05-01', '2020-01-01', '2023-01-01']
+        ... })
+        >>> result = create_survival_from_snapshots(snapshot, deals)
+        >>> result['survival'].tolist()
+        [1, 0, 1]  # Company 2 funded too early
+    """
+    # Ensure company_id column exists
+    if 'company_id' not in snapshot_20230501.columns:
+        if 'CompanyID' in snapshot_20230501.columns:
+            snapshot_20230501 = snapshot_20230501.rename(columns={'CompanyID': 'company_id'})
+        else:
+            raise ValueError("snapshot_20230501 must have 'company_id' or 'CompanyID' column")
+
+    if 'company_id' not in deal_data.columns:
+        if 'CompanyID' in deal_data.columns:
+            deal_data = deal_data.rename(columns={'CompanyID': 'company_id'})
+        else:
+            raise ValueError("deal_data must have 'company_id' or 'CompanyID' column")
+
+    # Get companies in May 2023 snapshot
+    companies_in_snapshot = set(snapshot_20230501['company_id'].unique())
+
+    # Get latest financing date for each company
+    last_financing = deal_data.groupby('company_id').agg({
+        'LastFinancingDate': 'max'
+    }).reset_index()
+
+    # Convert date column to datetime
+    last_financing['LastFinancingDate'] = pd.to_datetime(
+        last_financing['LastFinancingDate'],
+        errors='coerce'
+    )
+    cutoff_datetime = pd.to_datetime(cutoff_date)
+
+    # Create survival indicator
+    def compute_survival(row):
+        company_id = row['company_id']
+        last_date = row['LastFinancingDate']
+
+        # Check both conditions
+        in_snapshot = company_id in companies_in_snapshot
+        recent_funding = pd.notna(last_date) and last_date >= cutoff_datetime
+
+        return 1 if (in_snapshot and recent_funding) else 0
+
+    last_financing['survival'] = last_financing.apply(compute_survival, axis=1)
+
+    return last_financing[['company_id', 'survival']]
+
+
+# =============================================================================
+# SECTOR FIXED EFFECTS
+# =============================================================================
+
+def extract_sector_fe(keywords: pd.Series) -> pd.Series:
+    """
+    Extract sector fixed effects from Keywords column.
+
+    Maps companies to 5-10 broad sector categories based on keyword matching.
+
+    Categories:
+        - AI/ML Software
+        - Hardware/Robotics
+        - Biotech/Healthcare
+        - FinTech
+        - Enterprise Software
+        - Consumer Software
+        - Data/Analytics
+        - Other
+
+    Args:
+        keywords: Series of keyword strings
+
+    Returns:
+        Series of sector category labels
+
+    Examples:
+        >>> keywords = pd.Series([
+        ...     "AI, machine learning, NLP",
+        ...     "robotics, hardware, sensors",
+        ...     "biotech, drug discovery"
+        ... ])
+        >>> extract_sector_fe(keywords)
+        0    AI/ML Software
+        1    Hardware/Robotics
+        2    Biotech/Healthcare
+        dtype: object
+    """
+    def classify_sector(keyword_str):
+        if pd.isna(keyword_str):
+            return "Other"
+
+        kw_lower = str(keyword_str).lower()
+
+        # Priority order matters (hardware before software to catch hardware-AI)
+        if any(word in kw_lower for word in ['biotech', 'pharma', 'drug', 'health', 'medical', 'therapeutics']):
+            return "Biotech/Healthcare"
+        elif any(word in kw_lower for word in ['hardware', 'robotics', 'robot', 'chip', 'semiconductor', 'sensor', 'device']):
+            return "Hardware/Robotics"
+        elif any(word in kw_lower for word in ['ai', 'machine learning', 'ml', 'artificial intelligence', 'nlp', 'computer vision', 'deep learning']):
+            return "AI/ML Software"
+        elif any(word in kw_lower for word in ['fintech', 'finance', 'payment', 'banking', 'crypto', 'blockchain']):
+            return "FinTech"
+        elif any(word in kw_lower for word in ['data analytics', 'big data', 'data science', 'business intelligence']):
+            return "Data/Analytics"
+        elif any(word in kw_lower for word in ['enterprise', 'b2b', 'saas', 'cloud']):
+            return "Enterprise Software"
+        elif any(word in kw_lower for word in ['consumer', 'b2c', 'mobile app', 'gaming', 'social']):
+            return "Consumer Software"
+        else:
+            return "Other"
+
+    return keywords.apply(classify_sector)
+
+
+# =============================================================================
+# DOWN ROUNDS DETECTION
+# =============================================================================
+
+def detect_down_rounds(deal_data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Detect down rounds (when post-valuation decreases from previous round).
+
+    Down round: PostValuation_t < PostValuation_{t-1}
+
+    Args:
+        deal_data: DataFrame with company_id, deal_date, post_valuation columns
+
+    Returns:
+        DataFrame with is_down_round binary indicator added
+
+    Note:
+        Down rounds are flagged but NOT excluded from analysis per user specs.
+        Used in H2 robustness test only.
+    """
+    # Ensure required columns exist
+    required_cols = ['company_id', 'deal_date', 'post_valuation']
+    missing = [col for col in required_cols if col not in deal_data.columns]
+    if missing:
+        print(f"Warning: Missing columns for down round detection: {missing}")
+        deal_data['is_down_round'] = 0
+        return deal_data
+
+    # Sort by company and date
+    deal_sorted = deal_data.sort_values(['company_id', 'deal_date']).copy()
+
+    # Get previous valuation per company
+    deal_sorted['prev_valuation'] = deal_sorted.groupby('company_id')['post_valuation'].shift(1)
+
+    # Flag down rounds
+    deal_sorted['is_down_round'] = (
+        (deal_sorted['post_valuation'] < deal_sorted['prev_valuation']) &
+        (deal_sorted['prev_valuation'].notna())
+    ).astype(int)
+
+    return deal_sorted
+
+
+# =============================================================================
 # CONTROL VARIABLES
 # =============================================================================
 
@@ -316,6 +516,161 @@ def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
     print("  ✓ Feature engineering complete")
 
     return df
+
+
+# =============================================================================
+# ANALYSIS DATASET CREATION (MAIN ORCHESTRATOR)
+# =============================================================================
+
+def create_analysis_dataset(
+    company_df: pd.DataFrame,
+    deal_df: pd.DataFrame,
+    snapshot_20230501_df: pd.DataFrame = None
+) -> pd.DataFrame:
+    """
+    Create complete analysis dataset with all variables for H1, H2 main, and H2 robustness.
+
+    This is the main orchestrator function that calls all feature engineering
+    functions to create the final analysis-ready dataset.
+
+    Variables created (Page 13 table):
+        - vagueness: LLM-based generality score (0-100)
+        - early_funding_musd: First financing amount in millions USD
+        - survival: Binary indicator (Main DV for H2)
+        - high_integration_cost: Moderator (0=modular, 1=integrated)
+        - founder_credibility: Placeholder (TODO: implement)
+        - employees_log: log(employees+1)
+        - sector_fe: Sector fixed effects (categorical)
+        - year_founded: Founding year
+        - is_down_round: Down round indicator (for H2 robustness)
+        - series_a_funding: Series A amount (for H2 robustness)
+        - series_b_funding: Series B amount (for H2 robustness)
+
+    Args:
+        company_df: DataFrame with company-level data
+        deal_df: DataFrame with deal-level data
+        snapshot_20230501_df: Optional DataFrame with May 2023 snapshot
+                              (if None, survival not computed)
+
+    Returns:
+        DataFrame with all analysis variables
+
+    Usage:
+        >>> analysis_data = create_analysis_dataset(companies, deals, snapshot)
+        >>> # Ready for hypothesis testing
+        >>> run_h1_early_funding(analysis_data)
+        >>> run_h2_main_survival(analysis_data)
+    """
+    print("\n" + "="*80)
+    print("CREATING ANALYSIS DATASET")
+    print("="*80)
+
+    # Step 1: Engineer features from company data
+    print("\n[1/7] Engineering company features...")
+    company_features = engineer_features(company_df)
+
+    # Step 2: Extract sector fixed effects
+    print("\n[2/7] Extracting sector fixed effects...")
+    if 'keywords' in company_features.columns:
+        company_features['sector_fe'] = extract_sector_fe(company_features['keywords'])
+        print(f"  Sector distribution:\n{company_features['sector_fe'].value_counts()}")
+    else:
+        print("  Warning: No 'keywords' column found, setting sector_fe to 'Other'")
+        company_features['sector_fe'] = "Other"
+
+    # Step 3: Add founder credibility (placeholder)
+    print("\n[3/7] Adding founder credibility (placeholder)...")
+    company_features['founder_credibility'] = 0
+    print("  ⚠️  TODO: Implement founder_credibility calculation")
+    print("      (e.g., prior exits, patents, advanced degrees)")
+
+    # Step 4: Create survival variable (if snapshot provided)
+    if snapshot_20230501_df is not None:
+        print("\n[4/7] Computing survival variable from 3 snapshots...")
+        survival_df = create_survival_from_snapshots(
+            snapshot_20230501_df,
+            deal_df,
+            cutoff_date="2021-11-01"
+        )
+        # Merge with company features
+        company_features = company_features.merge(
+            survival_df,
+            on='company_id',
+            how='left'
+        )
+        survival_rate = company_features['survival'].mean()
+        print(f"  Survival rate: {survival_rate:.1%} ({company_features['survival'].sum()}/{len(company_features)})")
+    else:
+        print("\n[4/7] Skipping survival variable (no snapshot provided)")
+        company_features['survival'] = np.nan
+
+    # Step 5: Extract Series A/B funding amounts
+    print("\n[5/7] Extracting Series A and Series B funding amounts...")
+    series_a = deal_df[deal_df['vc_round'].str.contains('Series A', case=False, na=False)].copy()
+    series_b = deal_df[deal_df['vc_round'].str.contains('Series B', case=False, na=False)].copy()
+
+    if len(series_a) > 0:
+        series_a_grouped = series_a.groupby('company_id')['deal_size'].first().reset_index()
+        series_a_grouped.columns = ['company_id', 'series_a_funding']
+        company_features = company_features.merge(series_a_grouped, on='company_id', how='left')
+        print(f"  Series A deals found: {len(series_a_grouped)}")
+    else:
+        company_features['series_a_funding'] = np.nan
+        print("  Warning: No Series A deals found")
+
+    if len(series_b) > 0:
+        series_b_grouped = series_b.groupby('company_id')['deal_size'].first().reset_index()
+        series_b_grouped.columns = ['company_id', 'series_b_funding']
+        company_features = company_features.merge(series_b_grouped, on='company_id', how='left')
+        print(f"  Series B deals found: {len(series_b_grouped)}")
+    else:
+        company_features['series_b_funding'] = np.nan
+        print("  Warning: No Series B deals found")
+
+    # Step 6: Detect down rounds
+    print("\n[6/7] Detecting down rounds...")
+    if all(col in deal_df.columns for col in ['company_id', 'deal_date', 'post_valuation']):
+        deal_with_down = detect_down_rounds(deal_df)
+        # Get down round indicator per company (1 if any down round)
+        down_rounds = deal_with_down.groupby('company_id')['is_down_round'].max().reset_index()
+        company_features = company_features.merge(down_rounds, on='company_id', how='left')
+        company_features['is_down_round'] = company_features['is_down_round'].fillna(0).astype(int)
+        n_down = company_features['is_down_round'].sum()
+        print(f"  Companies with down rounds: {n_down} ({n_down/len(company_features)*100:.1f}%)")
+    else:
+        company_features['is_down_round'] = 0
+        print("  Warning: Missing columns for down round detection")
+
+    # Step 7: Final variable summary
+    print("\n[7/7] Final dataset summary...")
+    analysis_vars = [
+        'vagueness', 'early_funding_musd', 'survival', 'high_integration_cost',
+        'founder_credibility', 'employees_log', 'sector_fe', 'year_founded',
+        'series_a_funding', 'series_b_funding', 'is_down_round'
+    ]
+    available_vars = [var for var in analysis_vars if var in company_features.columns]
+
+    print(f"\n  Total companies: {len(company_features)}")
+    print(f"  Variables created: {len(available_vars)}/{len(analysis_vars)}")
+    print("\n  Variable missingness:")
+    for var in available_vars:
+        if company_features[var].dtype == 'object':
+            # Categorical variable
+            n_valid = company_features[var].notna().sum()
+            pct = n_valid / len(company_features) * 100
+            print(f"    - {var}: {n_valid}/{len(company_features)} ({pct:.1f}%)")
+        else:
+            # Numeric variable
+            n_valid = company_features[var].notna().sum()
+            pct = n_valid / len(company_features) * 100
+            mean = company_features[var].mean()
+            print(f"    - {var}: {n_valid}/{len(company_features)} ({pct:.1f}%), mean={mean:.2f}")
+
+    print("\n" + "="*80)
+    print("✓ ANALYSIS DATASET READY")
+    print("="*80)
+
+    return company_features
 
 
 # =============================================================================

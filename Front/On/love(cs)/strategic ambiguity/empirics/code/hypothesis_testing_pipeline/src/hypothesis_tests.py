@@ -29,17 +29,23 @@ import xarray as xr
 
 def test_h1_early_funding(
     df: pd.DataFrame,
-    formula: str = "early_funding_musd ~ vagueness + employees_log + year_founded"
+    formula: str = ("early_funding_musd ~ vagueness + founder_credibility + "
+                   "high_integration_cost + employees_log + C(sector_fe) + year_founded")
 ) -> RegressionResultsWrapper:
     """
     Test H1: Early funding amount is negatively affected by vagueness.
 
-    Model: log(Early Funding) ~ Vagueness + Controls
-    Expected: α₁ < 0
+    Model: Early Funding ~ Vagueness + Controls
+    Expected: α₁ < 0 (vagueness reduces early funding)
+
+    Full specification:
+        early_funding_musd ~ vagueness + founder_credibility +
+                           high_integration_cost + log(employees+1) +
+                           sector_fe + year_founded
 
     Args:
         df: DataFrame with required variables
-        formula: R-style formula for regression (default includes basic controls)
+        formula: R-style formula for regression (default includes full controls)
 
     Returns:
         Statsmodels OLS results object
@@ -47,6 +53,7 @@ def test_h1_early_funding(
     Interpretation:
         - Vagueness coefficient (α₁) should be negative
         - Negative coefficient means more vague promises lead to lower funding
+        - Controls for founder quality, sector, firm size, and age
     """
     # Drop missing values
     df_clean = df.dropna(subset=['early_funding_musd', 'vagueness'])
@@ -89,20 +96,27 @@ def test_h1_early_funding(
 
 
 # =============================================================================
-# H2: LATER SUCCESS ~ VAGUENESS × INTEGRATION COST (LOGIT)
+# H2: SURVIVAL ~ VAGUENESS × INTEGRATION COST (LOGIT)
 # =============================================================================
 
-def test_h2_later_success(
+def test_h2_main_survival(
     df: pd.DataFrame,
-    formula: str = ("later_success ~ vagueness * high_integration_cost + "
-                   "early_funding_musd + employees_log + year_founded")
+    formula: str = ("survival ~ vagueness * high_integration_cost + "
+                   "founder_credibility + employees_log + C(sector_fe) + year_founded")
 ) -> BinaryResultsWrapper:
     """
-    Test H2: Vagueness effect on later success is moderated by integration cost.
+    Test H2 Main: Vagueness effect on survival is moderated by integration cost.
 
-    Model: Later Success ~ Vagueness × Integration Cost + Early Funding + Controls
+    ⚠️  CRITICAL: NO early_funding control (it's a MEDIATOR, not confounder)
+
+    Model: Survival ~ Vagueness × Integration Cost + Controls
     Expected: β₁ > 0 (positive in modular sectors)
               β₃ < 0 (negative interaction, attenuated in integrated sectors)
+
+    Full specification:
+        survival ~ vagueness * high_integration_cost +
+                   founder_credibility + log(employees+1) +
+                   sector_fe + year_founded
 
     Args:
         df: DataFrame with required variables
@@ -115,20 +129,21 @@ def test_h2_later_success(
         - β₁ (vagueness main effect): effect in modular sectors (high_integration_cost=0)
         - β₃ (interaction): differential effect in integrated sectors
         - Total effect in integrated = β₁ + β₃
+        - NO early_funding: it's a mediator in causal chain vagueness→funding→survival
     """
     # Drop missing values
-    required_vars = ['later_success', 'vagueness', 'high_integration_cost', 'early_funding_musd']
+    required_vars = ['survival', 'vagueness', 'high_integration_cost']
     df_clean = df.dropna(subset=required_vars)
 
     if len(df_clean) == 0:
         raise ValueError("No valid observations after removing missing values")
 
     print(f"\n{'='*80}")
-    print("H2: LATER SUCCESS ~ VAGUENESS × INTEGRATION COST (LOGIT)")
+    print("H2 MAIN: SURVIVAL ~ VAGUENESS × INTEGRATION COST (LOGIT)")
     print(f"{'='*80}")
     print(f"Sample size: {len(df_clean)}")
     print(f"Formula: {formula}")
-    print(f"Success rate: {df_clean['later_success'].mean():.2%}")
+    print(f"Survival rate: {df_clean['survival'].mean():.2%}")
 
     # Fit logit model
     model = smf.logit(formula, data=df_clean).fit(disp=False)
@@ -178,24 +193,120 @@ def test_h2_later_success(
 
 
 # =============================================================================
+# H2 ROBUSTNESS: SERIES B FUNDING ~ VAGUENESS × INTEGRATION COST
+# =============================================================================
+
+def test_h2_robustness(
+    df: pd.DataFrame,
+    formula: str = ("series_b_funding ~ vagueness * high_integration_cost + "
+                   "series_a_funding + is_down_round + founder_credibility + "
+                   "employees_log + C(sector_fe) + year_founded")
+) -> RegressionResultsWrapper:
+    """
+    Test H2 Robustness: Vagueness effect on Series B funding conditional on Series A.
+
+    This is a robustness check that:
+    1. Uses continuous DV (Series B funding amount) instead of binary survival
+    2. Controls for Series A funding to isolate later-stage effects
+    3. Includes down_round indicator as requested by user
+
+    Model: Series B Funding ~ Vagueness × Integration Cost + Series A Funding +
+                              Down Rounds + Controls
+    Expected: Similar pattern to H2 Main (β₁ > 0, β₃ < 0)
+
+    Args:
+        df: DataFrame with required variables
+        formula: R-style formula for OLS regression
+
+    Returns:
+        Statsmodels OLS results object
+
+    Interpretation:
+        - Tests whether vagueness effect persists when controlling for early funding
+        - Down rounds indicator captures valuation decreases
+        - Complements H2 Main's binary survival outcome
+    """
+    # Drop missing values
+    required_vars = ['series_b_funding', 'vagueness', 'high_integration_cost', 'series_a_funding']
+    df_clean = df.dropna(subset=required_vars)
+
+    if len(df_clean) == 0:
+        raise ValueError("No valid observations after removing missing values")
+
+    print(f"\n{'='*80}")
+    print("H2 ROBUSTNESS: SERIES B FUNDING ~ VAGUENESS × INTEGRATION COST + SERIES A")
+    print(f"{'='*80}")
+    print(f"Sample size: {len(df_clean)}")
+    print(f"Formula: {formula}")
+    print(f"Mean Series B funding: ${df_clean['series_b_funding'].mean():.2f}M")
+    print(f"Mean Series A funding: ${df_clean['series_a_funding'].mean():.2f}M")
+
+    if 'is_down_round' in df_clean.columns:
+        down_rate = df_clean['is_down_round'].mean()
+        print(f"Down round rate: {down_rate:.1%}")
+
+    # Fit OLS model
+    model = smf.ols(formula, data=df_clean).fit()
+
+    print(f"\n{model.summary()}")
+
+    # Extract key coefficients
+    beta1 = model.params.get('vagueness', np.nan)
+    beta3 = model.params.get('vagueness:high_integration_cost', np.nan)
+    pval1 = model.pvalues.get('vagueness', np.nan)
+    pval3 = model.pvalues.get('vagueness:high_integration_cost', np.nan)
+
+    # Series A coefficient
+    beta_a = model.params.get('series_a_funding', np.nan)
+    pval_a = model.pvalues.get('series_a_funding', np.nan)
+
+    print(f"\n{'='*80}")
+    print("H2 ROBUSTNESS TEST RESULTS")
+    print(f"{'='*80}")
+    print(f"β₁ (Vagueness main effect): {beta1:.6f} (p={pval1:.4f})")
+    print(f"β₃ (Interaction term): {beta3:.6f} (p={pval3:.4f})")
+    print(f"β_A (Series A funding control): {beta_a:.6f} (p={pval_a:.4f})")
+
+    # Total effect in integrated sectors
+    total_effect_integrated = beta1 + beta3
+    print(f"\nTotal effect in integrated sectors (β₁+β₃): {total_effect_integrated:.6f}")
+
+    # Check hypothesis
+    h2_robust = beta1 > 0 and pval1 < 0.05
+    print(f"\n{'='*80}")
+    if h2_robust:
+        print(f"✓ H2 ROBUSTNESS SUPPORTED")
+        print(f"  - Vagueness effect persists after controlling for Series A (β₁={beta1:.4f}, p<0.05)")
+    else:
+        print(f"✗ H2 ROBUSTNESS NOT SUPPORTED")
+        print(f"  - Vagueness effect not significant after controlling for Series A (β₁={beta1:.4f}, p={pval1:.4f})")
+
+    return model
+
+
+# =============================================================================
 # COMBINED ANALYSIS
 # =============================================================================
 
 def run_full_hypothesis_tests(
     df: pd.DataFrame,
     h1_formula: Optional[str] = None,
-    h2_formula: Optional[str] = None
+    h2_formula: Optional[str] = None,
+    h2_robust_formula: Optional[str] = None,
+    run_robustness: bool = True
 ) -> Dict[str, Union[RegressionResultsWrapper, BinaryResultsWrapper]]:
     """
-    Run both H1 and H2 tests and return results.
+    Run H1, H2 main, and H2 robustness tests.
 
     Args:
         df: DataFrame with all required variables
         h1_formula: Optional custom formula for H1
-        h2_formula: Optional custom formula for H2
+        h2_formula: Optional custom formula for H2 main
+        h2_robust_formula: Optional custom formula for H2 robustness
+        run_robustness: Whether to run H2 robustness test (default: True)
 
     Returns:
-        Dictionary with 'h1' and 'h2' model results
+        Dictionary with 'h1', 'h2_main', and 'h2_robustness' model results
     """
     results = {}
 
@@ -205,8 +316,9 @@ def run_full_hypothesis_tests(
     print(f"\nTotal observations: {len(df)}")
     print(f"\nVariable availability:")
     required_vars = [
-        'vagueness', 'early_funding_musd', 'later_success',
-        'high_integration_cost', 'employees_log', 'year_founded'
+        'vagueness', 'early_funding_musd', 'survival', 'high_integration_cost',
+        'founder_credibility', 'employees_log', 'sector_fe', 'year_founded',
+        'series_a_funding', 'series_b_funding', 'is_down_round'
     ]
     for var in required_vars:
         if var in df.columns:
@@ -223,15 +335,26 @@ def run_full_hypothesis_tests(
         print(f"\n❌ H1 test failed: {e}")
         results['h1'] = None
 
-    # Run H2
+    # Run H2 Main
     try:
         if h2_formula:
-            results['h2'] = test_h2_later_success(df, h2_formula)
+            results['h2_main'] = test_h2_main_survival(df, h2_formula)
         else:
-            results['h2'] = test_h2_later_success(df)
+            results['h2_main'] = test_h2_main_survival(df)
     except Exception as e:
-        print(f"\n❌ H2 test failed: {e}")
-        results['h2'] = None
+        print(f"\n❌ H2 Main test failed: {e}")
+        results['h2_main'] = None
+
+    # Run H2 Robustness
+    if run_robustness:
+        try:
+            if h2_robust_formula:
+                results['h2_robustness'] = test_h2_robustness(df, h2_robust_formula)
+            else:
+                results['h2_robustness'] = test_h2_robustness(df)
+        except Exception as e:
+            print(f"\n❌ H2 Robustness test failed: {e}")
+            results['h2_robustness'] = None
 
     print("\n" + "="*80)
     print("HYPOTHESIS TESTING COMPLETE")
