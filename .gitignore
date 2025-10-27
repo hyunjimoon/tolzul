@@ -72,3 +72,8 @@ Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/outpu
 *.pyc
 Front/On/strategic ambiguity/empirics/code/hypothesis_testing_pipeline/output/pb_processed_dataset.nc
 Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/전투일지🩸.md
+*.dat
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/processed/company_master.csv
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/processed/deal_master.csv
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/processed/deal_panel.csv
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/output/report_poc2/pipeline_checkpoint.pkl
