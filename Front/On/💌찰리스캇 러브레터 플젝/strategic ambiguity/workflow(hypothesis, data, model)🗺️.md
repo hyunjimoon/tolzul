@@ -2,7 +2,7 @@
 updated: 2025-10-25
 프로젝트: 명량해전 (3주)
 성장:
-  - 2025-10-25T13:31:33-04:00
+  - 2025-10-27T08:53:07-04:00
 ---
 
 # Promise Precision and Venture Funding

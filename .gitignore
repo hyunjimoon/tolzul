@@ -69,3 +69,8 @@ Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/
 Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/raw/Company20251001.dat
 Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/raw/Deal20230501.dat
 Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/output/pipeline_checkpoint.pkl
+*.dat
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/processed/company_master.csv
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/processed/deal_master.csv
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/processed/deal_panel.csv
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/output/report_poc2/pipeline_checkpoint.pkl
