@@ -1,0 +1,401 @@
+---
+title: "Promise Precision & Venture Funding: Analysis Results"
+subtitle: "Hypothesis Testing Pipeline Validation Report"
+author: "Strategic Ambiguity Research Team"
+date: today
+format:
+  pdf:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    fig-width: 7
+    fig-height: 5
+    include-in-header:
+      text: |
+        \usepackage{booktabs}
+        \usepackage{longtable}
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{python}
+#| label: setup
+#| include: false
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from pathlib import Path
+
+# Set paths (adjust as needed)
+output_dir = Path("../outputs")  # Adjust to your output directory
+
+# Set plotting style
+sns.set_style("whitegrid")
+plt.rcParams['figure.figsize'] = (8, 5)
+plt.rcParams['font.size'] = 10
+
+# Load results
+try:
+    h1_results = pd.read_csv(output_dir / "h1_coefficients.csv")
+    h2_main_results = pd.read_csv(output_dir / "h2_main_coefficients.csv")
+    h2_robust_results = pd.read_csv(output_dir / "h2_robustness_coefficients.csv")
+    regression_table = pd.read_csv(output_dir / "regression_table.csv")
+    summary = pd.read_csv(output_dir / "hypothesis_test_summary.csv")
+
+    # Load analysis dataset
+    analysis_data = pd.read_csv(output_dir / "analysis_ready_data.csv")
+except FileNotFoundError as e:
+    print(f"Warning: Could not load all result files. Run pipeline first.")
+    analysis_data = None
+```
+
+# Executive Summary
+
+This report presents the results of hypothesis testing for the "Promise Precision & Venture Funding" research project. We analyze how **textual vagueness** in company descriptions affects:
+
+1. **H1**: Early-stage funding amounts (Series A)
+2. **H2 Main**: Long-term survival (18-month window from May 2023)
+3. **H2 Robustness**: Series B funding conditional on Series A
+
+## Key Findings
+
+```{python}
+#| label: key-findings
+#| results: asis
+
+if analysis_data is not None:
+    n_companies = len(analysis_data)
+    survival_rate = analysis_data['survival'].mean() if 'survival' in analysis_data else 0
+    mean_vagueness = analysis_data['vagueness'].mean() if 'vagueness' in analysis_data else 0
+
+    print(f"- **Sample size**: {n_companies} companies")
+    print(f"- **Survival rate**: {survival_rate:.1%}")
+    print(f"- **Mean vagueness score**: {mean_vagueness:.1f} (0-100 scale)")
+else:
+    print("- _Results pending: Run pipeline to generate statistics_")
+```
+
+---
+
+# Data Summary
+
+## Sample Characteristics
+
+```{python}
+#| label: tbl-descriptives
+#| tbl-cap: "Descriptive Statistics"
+
+if analysis_data is not None:
+    # Select key variables
+    desc_vars = [
+        'vagueness', 'early_funding_musd', 'survival',
+        'high_integration_cost', 'employees_log', 'year_founded'
+    ]
+
+    available_vars = [v for v in desc_vars if v in analysis_data.columns]
+
+    # Create descriptive table
+    desc_table = analysis_data[available_vars].describe().T[['count', 'mean', 'std', 'min', '50%', 'max']]
+    desc_table.columns = ['N', 'Mean', 'SD', 'Min', 'Median', 'Max']
+    desc_table.index.name = 'Variable'
+
+    print(desc_table.to_markdown(floatfmt=".2f"))
+else:
+    print("| Variable | N | Mean | SD | Min | Median | Max |")
+    print("|----------|---|------|----|----|--------|-----|")
+    print("| _Run pipeline to generate table_ |")
+```
+
+## Variable Distributions
+
+```{python}
+#| label: fig-distributions
+#| fig-cap: "Distribution of Key Variables"
+#| fig-height: 6
+
+if analysis_data is not None:
+    fig, axes = plt.subplots(2, 2, figsize=(10, 8))
+
+    # Vagueness distribution
+    axes[0, 0].hist(analysis_data['vagueness'].dropna(), bins=30, edgecolor='black', alpha=0.7)
+    axes[0, 0].set_xlabel('Vagueness Score (0-100)')
+    axes[0, 0].set_ylabel('Frequency')
+    axes[0, 0].set_title('Promise Vagueness Distribution')
+    axes[0, 0].axvline(50, color='red', linestyle='--', label='Neutral (50)')
+    axes[0, 0].legend()
+
+    # Early funding distribution
+    if 'early_funding_musd' in analysis_data.columns:
+        axes[0, 1].hist(analysis_data['early_funding_musd'].dropna(), bins=30, edgecolor='black', alpha=0.7, color='green')
+        axes[0, 1].set_xlabel('Early Funding (Million USD)')
+        axes[0, 1].set_ylabel('Frequency')
+        axes[0, 1].set_title('Early Funding Distribution')
+
+    # Survival by integration cost
+    if 'survival' in analysis_data.columns and 'high_integration_cost' in analysis_data.columns:
+        survival_by_integration = analysis_data.groupby('high_integration_cost')['survival'].mean()
+        axes[1, 0].bar(['Modular\n(Low)', 'Integrated\n(High)'], survival_by_integration.values,
+                       color=['blue', 'red'], alpha=0.7, edgecolor='black')
+        axes[1, 0].set_ylabel('Survival Rate')
+        axes[1, 0].set_title('Survival by Integration Cost')
+        axes[1, 0].set_ylim([0, 1])
+
+    # Sector distribution
+    if 'sector_fe' in analysis_data.columns:
+        sector_counts = analysis_data['sector_fe'].value_counts().head(5)
+        axes[1, 1].barh(range(len(sector_counts)), sector_counts.values, alpha=0.7, edgecolor='black')
+        axes[1, 1].set_yticks(range(len(sector_counts)))
+        axes[1, 1].set_yticklabels(sector_counts.index, fontsize=8)
+        axes[1, 1].set_xlabel('Count')
+        axes[1, 1].set_title('Top 5 Sectors')
+
+    plt.tight_layout()
+    plt.show()
+```
+
+---
+
+# H1: Early Funding ~ Vagueness
+
+## Hypothesis
+
+> **H1**: Vagueness **negatively** affects early-stage funding.
+> **Expected**: α₁ < 0 (more vague → less funding)
+
+## Regression Results
+
+```{python}
+#| label: tbl-h1-results
+#| tbl-cap: "H1: Early Funding Model (OLS)"
+
+if 'h1_results' in locals() and h1_results is not None:
+    h1_display = h1_results[['Variable', 'Coefficient', 'Std Error', 'p-value']].copy()
+    h1_display['Coefficient'] = h1_display['Coefficient'].apply(lambda x: f"{x:.4f}")
+    h1_display['Std Error'] = h1_display['Std Error'].apply(lambda x: f"({x:.4f})")
+    h1_display['p-value'] = h1_display['p-value'].apply(lambda x: f"{x:.4f}")
+
+    print(h1_display.to_markdown(index=False))
+else:
+    print("| Variable | Coefficient | Std Error | p-value |")
+    print("|----------|-------------|-----------|---------|")
+    print("| _Results pending_ |")
+```
+
+## Visualization
+
+![H1 Scatter Plot](../outputs/h1_scatter.png){width=80%}
+
+## Interpretation
+
+```{python}
+#| label: h1-interpretation
+#| results: asis
+
+if 'h1_results' in locals() and h1_results is not None:
+    vagueness_row = h1_results[h1_results['Variable'] == 'vagueness']
+    if not vagueness_row.empty:
+        coef = vagueness_row['Coefficient'].values[0]
+        pval = vagueness_row['p-value'].values[0]
+
+        if coef < 0 and pval < 0.05:
+            conclusion = f"✅ **H1 SUPPORTED**: Vagueness has a significant negative effect (α₁={coef:.4f}, p<0.05). More vague promises lead to **${abs(coef):.2f}M less** in early funding per unit increase in vagueness."
+        elif coef < 0:
+            conclusion = f"⚠️ **H1 PARTIAL**: Vagueness is negative but not significant (α₁={coef:.4f}, p={pval:.4f})."
+        else:
+            conclusion = f"❌ **H1 NOT SUPPORTED**: Vagueness coefficient is not negative (α₁={coef:.4f})."
+
+        print(conclusion)
+```
+
+---
+
+# H2 Main: Survival ~ Vagueness × Integration Cost
+
+## Hypothesis
+
+> **H2 Main**: Vagueness effect on **survival** is moderated by integration cost.
+> **Expected**: β₁ > 0 (positive in modular), β₃ < 0 (attenuated in integrated)
+> **CRITICAL**: NO early_funding control (it's a mediator)
+
+## Regression Results
+
+```{python}
+#| label: tbl-h2-main-results
+#| tbl-cap: "H2 Main: Survival Model (Logit)"
+
+if 'h2_main_results' in locals() and h2_main_results is not None:
+    h2_display = h2_main_results[['Variable', 'Coefficient', 'Std Error', 'p-value']].copy()
+    h2_display['Coefficient'] = h2_display['Coefficient'].apply(lambda x: f"{x:.4f}")
+    h2_display['Std Error'] = h2_display['Std Error'].apply(lambda x: f"({x:.4f})")
+    h2_display['p-value'] = h2_display['p-value'].apply(lambda x: f"{x:.4f}")
+
+    print(h2_display.to_markdown(index=False))
+else:
+    print("| Variable | Coefficient | Std Error | p-value |")
+    print("|----------|-------------|-----------|---------|")
+    print("| _Results pending_ |")
+```
+
+## Visualizations
+
+:::{#fig-h2-interaction layout-ncol=2}
+
+![Interaction Plot](../outputs/h2_interaction.png)
+
+![ROC Curve](../outputs/h2_roc_curve.png)
+
+H2 Main Model Diagnostics
+:::
+
+## Interpretation
+
+```{python}
+#| label: h2-interpretation
+#| results: asis
+
+if 'h2_main_results' in locals() and h2_main_results is not None:
+    vagueness_row = h2_main_results[h2_main_results['Variable'] == 'vagueness']
+    interaction_row = h2_main_results[h2_main_results['Variable'].str.contains('vagueness:high_integration_cost', na=False)]
+
+    if not vagueness_row.empty:
+        beta1 = vagueness_row['Coefficient'].values[0]
+        pval1 = vagueness_row['p-value'].values[0]
+
+        if not interaction_row.empty:
+            beta3 = interaction_row['Coefficient'].values[0]
+            pval3 = interaction_row['p-value'].values[0]
+            total_effect = beta1 + beta3
+
+            if beta1 > 0 and pval1 < 0.05 and beta3 < 0:
+                conclusion = f"✅ **H2 FULLY SUPPORTED**: \n- Vagueness **helps** in modular sectors (β₁={beta1:.4f}, p<0.05)\n- Effect **attenuated** in integrated sectors (β₃={beta3:.4f})\n- Total effect in integrated: β₁+β₃={total_effect:.4f}"
+            elif beta1 > 0 and pval1 < 0.05:
+                conclusion = f"⚠️ **H2 PARTIALLY SUPPORTED**: \n- Vagueness helps in modular sectors (β₁={beta1:.4f}, p<0.05)\n- But interaction term not negative (β₃={beta3:.4f}, p={pval3:.4f})"
+            else:
+                conclusion = f"❌ **H2 NOT SUPPORTED**: Main effect not positive/significant (β₁={beta1:.4f}, p={pval1:.4f})"
+
+            print(conclusion)
+```
+
+---
+
+# H2 Robustness: Series B Funding
+
+## Purpose
+
+Tests whether vagueness effect persists when controlling for Series A funding.
+
+## Regression Results
+
+```{python}
+#| label: tbl-h2-robust-results
+#| tbl-cap: "H2 Robustness: Series B Funding (OLS)"
+
+if 'h2_robust_results' in locals() and h2_robust_results is not None:
+    h2r_display = h2_robust_results[['Variable', 'Coefficient', 'Std Error', 'p-value']].head(10).copy()
+    h2r_display['Coefficient'] = h2r_display['Coefficient'].apply(lambda x: f"{x:.4f}")
+    h2r_display['Std Error'] = h2r_display['Std Error'].apply(lambda x: f"({x:.4f})")
+    h2r_display['p-value'] = h2r_display['p-value'].apply(lambda x: f"{x:.4f}")
+
+    print(h2r_display.to_markdown(index=False))
+else:
+    print("| Variable | Coefficient | Std Error | p-value |")
+    print("|----------|-------------|-----------|---------|")
+    print("| _Results pending_ |")
+```
+
+---
+
+# Combined Results Table
+
+```{python}
+#| label: tbl-combined
+#| tbl-cap: "AER-Style Regression Table"
+
+if 'regression_table' in locals() and regression_table is not None:
+    print(regression_table.head(15).to_markdown(index=False))
+else:
+    print("_Run pipeline to generate combined table_")
+```
+
+**Significance levels**: *** p<0.001, ** p<0.01, * p<0.05, † p<0.1
+
+---
+
+# Diagnostics
+
+## Model Fit
+
+```{python}
+#| label: model-fit
+#| results: asis
+
+if 'h1_results' in locals() and 'h2_main_results' in locals():
+    print("### H1 (OLS)")
+    print(f"- N observations: {h1_results.shape[0] if h1_results is not None else 'N/A'}")
+    print(f"- R²: _See output files_")
+
+    print("\n### H2 Main (Logit)")
+    print(f"- N observations: {h2_main_results.shape[0] if h2_main_results is not None else 'N/A'}")
+    print(f"- Pseudo R²: _See output files_")
+    print(f"- ROC AUC: _See ROC curve figure_")
+```
+
+## Residual Diagnostics
+
+![H1 Residual Diagnostics](../outputs/h1_diagnostics.png){width=90%}
+
+---
+
+# Conclusion
+
+## Summary of Findings
+
+1. **H1 (Early Funding)**: [Insert conclusion based on results]
+2. **H2 Main (Survival)**: [Insert conclusion based on results]
+3. **H2 Robustness**: [Insert conclusion based on results]
+
+## Theoretical Implications
+
+- Vagueness as a strategic signal in early-stage funding
+- Moderating role of integration cost / sector modularity
+- Survival as ultimate success metric (18-month window)
+
+## Limitations
+
+- Founder credibility currently placeholder (=0)
+- Down rounds flagged but limited observations
+- Sector categorization based on keywords (8 categories)
+
+## Next Steps
+
+1. Implement founder credibility calculation (prior exits, patents, degrees)
+2. Expand survival window sensitivity analysis (12/24 months)
+3. Add industry-specific robustness checks
+
+---
+
+# Appendix: Variable Definitions
+
+| Variable | Definition | Source |
+|----------|------------|--------|
+| `vagueness` | Vague vs precise word count (0-100 scale). Formula: 50 + 10*(vague_count - precise_count) | Computed from Description |
+| `early_funding_musd` | First financing amount in millions USD | FirstFinancingSize |
+| `survival` | Binary: 1 if in 20230501 snapshot AND LastFinancingDate >= 2021-11-01 | 3 snapshots |
+| `high_integration_cost` | Binary: 1 if hardware/robotics/chip, 0 if software/API/SaaS | Keywords |
+| `founder_credibility` | **TODO**: Prior exits, patents, degrees (currently placeholder=0) | To be implemented |
+| `employees_log` | log(employees+1) | Employees |
+| `sector_fe` | Categorical: AI/ML, Hardware, Biotech, FinTech, Enterprise, Consumer, Data, Other | Keywords |
+| `year_founded` | Founding year | YearFounded |
+| `series_a_funding` | Series A amount (for H2 robustness) | Deal data |
+| `series_b_funding` | Series B amount (DV for H2 robustness) | Deal data |
+| `is_down_round` | Binary: 1 if post-valuation decreased from prior round | Deal data |
+
+---
+
+**Report Generated**: `r format(Sys.time(), '%Y-%m-%d %H:%M:%S')`
+**Pipeline Version**: 1.0.0_hypothesis_testing
+**Contact**: Strategic Ambiguity Research Team
