@@ -17,6 +17,7 @@ import statsmodels.api as sm
 from statsmodels.regression.linear_model import RegressionResultsWrapper
 from statsmodels.discrete.discrete_model import BinaryResultsWrapper
 from pathlib import Path
+from sklearn.metrics import roc_curve, auc, roc_auc_score
 
 # Set style
 sns.set_style("whitegrid")
@@ -180,28 +181,29 @@ def plot_h2_interaction(
     """
     fig, ax = plt.subplots(figsize=(10, 6))
 
-    # Vagueness range
-    v = np.linspace(0, 1, 50)
+    # Vagueness range (0-100 scale)
+    v = np.linspace(0, 100, 50)
 
     # Get coefficients
     intercept = model.params.get('Intercept', 0)
     beta_vagueness = model.params.get('vagueness', 0)
     beta_integration = model.params.get('high_integration_cost', 0)
     beta_interaction = model.params.get('vagueness:high_integration_cost', 0)
-    beta_funding = model.params.get('early_funding_musd', 0)
+    beta_founder = model.params.get('founder_credibility', 0)
     beta_employees = model.params.get('employees_log', 0)
     beta_year = model.params.get('year_founded', 0)
 
     # Control variables at means
-    df_clean = df.dropna(subset=['early_funding_musd', 'employees_log', 'year_founded'])
-    funding_mean = df_clean['early_funding_musd'].mean()
+    df_clean = df.dropna(subset=['founder_credibility', 'employees_log', 'year_founded'])
+    founder_mean = df_clean['founder_credibility'].mean() if 'founder_credibility' in df_clean else 0
     employees_mean = df_clean['employees_log'].mean()
     year_mean = df_clean['year_founded'].mean()
 
     # Predicted probabilities for low integration cost (modular)
+    # NOTE: NO early_funding control (it's a mediator)
     logit_low = (intercept +
                  beta_vagueness * v +
-                 beta_funding * funding_mean +
+                 beta_founder * founder_mean +
                  beta_employees * employees_mean +
                  beta_year * year_mean)
     pred_low = 1 / (1 + np.exp(-logit_low))
@@ -211,7 +213,7 @@ def plot_h2_interaction(
                   beta_vagueness * v +
                   beta_integration +
                   beta_interaction * v +
-                  beta_funding * funding_mean +
+                  beta_founder * founder_mean +
                   beta_employees * employees_mean +
                   beta_year * year_mean)
     pred_high = 1 / (1 + np.exp(-logit_high))
@@ -221,9 +223,9 @@ def plot_h2_interaction(
     ax.plot(v, pred_high, 'r--', linewidth=2.5, label='Integrated (High Integration Cost)')
 
     # Formatting
-    ax.set_xlabel('Vagueness Score', fontsize=12, fontweight='bold')
-    ax.set_ylabel('Predicted P(Later Success)', fontsize=12, fontweight='bold')
-    ax.set_title('H2: Vagueness Effect on Later Success\nby Integration Cost',
+    ax.set_xlabel('Vagueness Score (0-100)', fontsize=12, fontweight='bold')
+    ax.set_ylabel('Predicted P(Survival)', fontsize=12, fontweight='bold')
+    ax.set_title('H2 Main: Vagueness Effect on Survival\nby Integration Cost',
                  fontsize=14, fontweight='bold')
 
     # Add coefficient info
@@ -265,21 +267,23 @@ def plot_h2_marginal_effects(
     """
     fig, axes = plt.subplots(1, 2, figsize=(14, 5))
 
-    df_clean = df.dropna(subset=['vagueness', 'later_success', 'high_integration_cost'])
+    # Determine DV column (survival or later_success for backward compat)
+    dv_col = 'survival' if 'survival' in df.columns else 'later_success'
+    df_clean = df.dropna(subset=['vagueness', dv_col, 'high_integration_cost'])
 
     # Left plot: Low integration cost (modular)
     df_low = df_clean[df_clean['high_integration_cost'] == 0]
     if len(df_low) > 0:
         vagueness_bins = pd.cut(df_low['vagueness'], bins=5)
-        success_rate = df_low.groupby(vagueness_bins, observed=True)['later_success'].mean()
+        success_rate = df_low.groupby(vagueness_bins, observed=True)[dv_col].mean()
         bin_centers = [interval.mid for interval in success_rate.index]
 
         axes[0].bar(range(len(success_rate)), success_rate.values,
                    alpha=0.7, color='blue', edgecolor='black')
         axes[0].set_xticks(range(len(success_rate)))
-        axes[0].set_xticklabels([f'{c:.2f}' for c in bin_centers], rotation=45)
-        axes[0].set_xlabel('Vagueness (bin center)')
-        axes[0].set_ylabel('Later Success Rate')
+        axes[0].set_xticklabels([f'{c:.1f}' for c in bin_centers], rotation=45)
+        axes[0].set_xlabel('Vagueness (bin center, 0-100)')
+        axes[0].set_ylabel('Survival Rate')
         axes[0].set_title('Modular Sectors (Low Integration Cost)')
         axes[0].set_ylim([0, 1])
         axes[0].grid(True, alpha=0.3, axis='y')
@@ -288,20 +292,20 @@ def plot_h2_marginal_effects(
     df_high = df_clean[df_clean['high_integration_cost'] == 1]
     if len(df_high) > 0:
         vagueness_bins = pd.cut(df_high['vagueness'], bins=5)
-        success_rate = df_high.groupby(vagueness_bins, observed=True)['later_success'].mean()
+        success_rate = df_high.groupby(vagueness_bins, observed=True)[dv_col].mean()
         bin_centers = [interval.mid for interval in success_rate.index]
 
         axes[1].bar(range(len(success_rate)), success_rate.values,
                    alpha=0.7, color='red', edgecolor='black')
         axes[1].set_xticks(range(len(success_rate)))
-        axes[1].set_xticklabels([f'{c:.2f}' for c in bin_centers], rotation=45)
-        axes[1].set_xlabel('Vagueness (bin center)')
-        axes[1].set_ylabel('Later Success Rate')
+        axes[1].set_xticklabels([f'{c:.1f}' for c in bin_centers], rotation=45)
+        axes[1].set_xlabel('Vagueness (bin center, 0-100)')
+        axes[1].set_ylabel('Survival Rate')
         axes[1].set_title('Integrated Sectors (High Integration Cost)')
         axes[1].set_ylim([0, 1])
         axes[1].grid(True, alpha=0.3, axis='y')
 
-    fig.suptitle('H2: Success Rates by Vagueness Bins', fontsize=14, fontweight='bold')
+    fig.suptitle('H2 Main: Survival Rates by Vagueness Bins', fontsize=14, fontweight='bold')
     plt.tight_layout()
 
     if output_path:
@@ -309,6 +313,180 @@ def plot_h2_marginal_effects(
         print(f"  ✓ Saved: {output_path}")
 
     return fig
+
+
+def plot_h2_roc_curve(
+    df: pd.DataFrame,
+    model: BinaryResultsWrapper,
+    output_path: Optional[Path] = None
+) -> plt.Figure:
+    """
+    Create ROC curve for H2 survival model.
+
+    Args:
+        df: DataFrame with data
+        model: Fitted H2 model
+        output_path: Optional path to save figure
+
+    Returns:
+        Matplotlib figure object
+    """
+    fig, ax = plt.subplots(figsize=(8, 8))
+
+    # Determine DV column
+    dv_col = 'survival' if 'survival' in df.columns else 'later_success'
+
+    # Get predictions and actual values
+    y_true = model.model.endog  # Actual values
+    y_pred_proba = model.predict()  # Predicted probabilities
+
+    # Compute ROC curve
+    fpr, tpr, thresholds = roc_curve(y_true, y_pred_proba)
+    roc_auc = auc(fpr, tpr)
+
+    # Plot
+    ax.plot(fpr, tpr, color='darkorange', lw=2,
+            label=f'ROC curve (AUC = {roc_auc:.3f})')
+    ax.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--',
+            label='Random classifier')
+
+    # Formatting
+    ax.set_xlim([0.0, 1.0])
+    ax.set_ylim([0.0, 1.05])
+    ax.set_xlabel('False Positive Rate', fontsize=12, fontweight='bold')
+    ax.set_ylabel('True Positive Rate', fontsize=12, fontweight='bold')
+    ax.set_title('H2 Survival Model: ROC Curve', fontsize=14, fontweight='bold')
+    ax.legend(loc="lower right", fontsize=11)
+    ax.grid(True, alpha=0.3)
+
+    # Add diagonal
+    ax.set_aspect('equal', adjustable='box')
+
+    plt.tight_layout()
+
+    if output_path:
+        fig.savefig(output_path, dpi=300, bbox_inches='tight')
+        print(f"  ✓ Saved: {output_path}")
+
+    return fig
+
+
+# =============================================================================
+# REGRESSION TABLES (AER STYLE)
+# =============================================================================
+
+def create_regression_table(
+    results: Dict,
+    output_path: Optional[Path] = None
+) -> pd.DataFrame:
+    """
+    Create AER-style regression table for all hypothesis tests.
+
+    Args:
+        results: Dictionary with 'h1', 'h2_main', 'h2_robustness' model results
+        output_path: Optional path to save table as CSV
+
+    Returns:
+        DataFrame with regression results
+    """
+    table_data = []
+
+    models = {
+        'H1: Early Funding': results.get('h1'),
+        'H2 Main: Survival': results.get('h2_main'),
+        'H2 Robust: Series B': results.get('h2_robustness')
+    }
+
+    # Collect all unique variable names
+    all_vars = set()
+    for model in models.values():
+        if model is not None:
+            all_vars.update(model.params.index)
+
+    # Prioritize key variables
+    key_vars = [
+        'Intercept', 'vagueness', 'high_integration_cost',
+        'vagueness:high_integration_cost', 'founder_credibility',
+        'employees_log', 'year_founded', 'series_a_funding', 'is_down_round'
+    ]
+
+    # Add sector FE categories
+    sector_vars = [v for v in all_vars if v.startswith('C(sector_fe)')]
+    ordered_vars = key_vars + sorted(sector_vars) + sorted(all_vars - set(key_vars) - set(sector_vars))
+
+    for var in ordered_vars:
+        if var not in all_vars:
+            continue
+
+        row = {'Variable': var}
+
+        for model_name, model in models.items():
+            if model is None:
+                row[f'{model_name} (Coef)'] = ''
+                row[f'{model_name} (SE)'] = ''
+                continue
+
+            if var in model.params:
+                coef = model.params[var]
+                se = model.bse[var]
+                pval = model.pvalues[var]
+
+                # Format coefficient with stars
+                if pval < 0.001:
+                    stars = '***'
+                elif pval < 0.01:
+                    stars = '**'
+                elif pval < 0.05:
+                    stars = '*'
+                elif pval < 0.1:
+                    stars = '†'
+                else:
+                    stars = ''
+
+                row[f'{model_name} (Coef)'] = f'{coef:.4f}{stars}'
+                row[f'{model_name} (SE)'] = f'({se:.4f})'
+            else:
+                row[f'{model_name} (Coef)'] = ''
+                row[f'{model_name} (SE)'] = ''
+
+        table_data.append(row)
+
+    # Add model statistics
+    table_data.append({'Variable': '---' * 20})
+
+    # N observations
+    row_n = {'Variable': 'N'}
+    for model_name, model in models.items():
+        if model is not None:
+            row_n[f'{model_name} (Coef)'] = int(model.nobs)
+            row_n[f'{model_name} (SE)'] = ''
+        else:
+            row_n[f'{model_name} (Coef)'] = ''
+            row_n[f'{model_name} (SE)'] = ''
+    table_data.append(row_n)
+
+    # R² / Pseudo R²
+    row_r2 = {'Variable': 'R² / Pseudo R²'}
+    for model_name, model in models.items():
+        if model is not None:
+            if hasattr(model, 'rsquared'):
+                row_r2[f'{model_name} (Coef)'] = f'{model.rsquared:.3f}'
+            elif hasattr(model, 'prsquared'):
+                row_r2[f'{model_name} (Coef)'] = f'{model.prsquared:.3f}'
+            row_r2[f'{model_name} (SE)'] = ''
+        else:
+            row_r2[f'{model_name} (Coef)'] = ''
+            row_r2[f'{model_name} (SE)'] = ''
+    table_data.append(row_r2)
+
+    # Create DataFrame
+    table_df = pd.DataFrame(table_data)
+
+    if output_path:
+        table_df.to_csv(output_path, index=False)
+        print(f"  ✓ Saved: {output_path}")
+
+    return table_df
 
 
 # =============================================================================
@@ -349,9 +527,9 @@ def plot_coefficient_comparison(
         labels.append('H1: α₁\n(Vagueness → Early Funding)')
         colors.append('green' if coef < 0 else 'red')
 
-    # H2 coefficients
-    if results.get('h2') is not None:
-        h2_model = results['h2']
+    # H2 Main coefficients
+    h2_model = results.get('h2_main') or results.get('h2')  # Backward compat
+    if h2_model is not None:
         ci = h2_model.conf_int()
 
         # β₁ (main effect)
@@ -359,7 +537,7 @@ def plot_coefficient_comparison(
         coefficients.append(coef)
         ci_lower.append(ci.loc['vagueness', 0])
         ci_upper.append(ci.loc['vagueness', 1])
-        labels.append('H2: β₁\n(Vagueness - Modular)')
+        labels.append('H2 Main: β₁\n(Vagueness - Modular)')
         colors.append('green' if coef > 0 else 'red')
 
         # β₃ (interaction)
@@ -368,7 +546,7 @@ def plot_coefficient_comparison(
             coefficients.append(coef)
             ci_lower.append(ci.loc['vagueness:high_integration_cost', 0])
             ci_upper.append(ci.loc['vagueness:high_integration_cost', 1])
-            labels.append('H2: β₃\n(Interaction)')
+            labels.append('H2 Main: β₃\n(Interaction)')
             colors.append('green' if coef < 0 else 'red')
 
     # Create error bars
@@ -420,7 +598,7 @@ def create_all_visualizations(
 
     Args:
         df: DataFrame with analysis data
-        results: Dictionary with 'h1' and 'h2' model results
+        results: Dictionary with 'h1', 'h2_main', 'h2_robustness' model results
         output_dir: Directory to save plots
 
     Returns:
@@ -449,28 +627,40 @@ def create_all_visualizations(
         created_files['h1_diagnostics'] = output_dir / "h1_diagnostics.png"
         plt.close(fig)
 
-    # H2 plots
-    if results.get('h2') is not None:
-        print("\nH2 Visualizations:")
+    # H2 Main plots
+    h2_model = results.get('h2_main') or results.get('h2')  # Backward compat
+    if h2_model is not None:
+        print("\nH2 Main Visualizations:")
 
         # Interaction plot
-        fig = plot_h2_interaction(df, results['h2'], output_dir / "h2_interaction.png")
+        fig = plot_h2_interaction(df, h2_model, output_dir / "h2_interaction.png")
         created_files['h2_interaction'] = output_dir / "h2_interaction.png"
         plt.close(fig)
 
         # Marginal effects
-        fig = plot_h2_marginal_effects(df, results['h2'], output_dir / "h2_marginal_effects.png")
+        fig = plot_h2_marginal_effects(df, h2_model, output_dir / "h2_marginal_effects.png")
         created_files['h2_marginal_effects'] = output_dir / "h2_marginal_effects.png"
         plt.close(fig)
 
-    # Summary plot
+        # ROC curve
+        fig = plot_h2_roc_curve(df, h2_model, output_dir / "h2_roc_curve.png")
+        created_files['h2_roc_curve'] = output_dir / "h2_roc_curve.png"
+        plt.close(fig)
+
+    # Summary visualizations
     print("\nSummary Visualizations:")
+
+    # Coefficient comparison
     fig = plot_coefficient_comparison(results, output_dir / "coefficient_comparison.png")
     created_files['coefficient_comparison'] = output_dir / "coefficient_comparison.png"
     plt.close(fig)
 
+    # Regression table
+    table = create_regression_table(results, output_dir / "regression_table.csv")
+    created_files['regression_table'] = output_dir / "regression_table.csv"
+
     print("\n" + "="*80)
-    print(f"✓ Created {len(created_files)} visualization files")
+    print(f"✓ Created {len(created_files)} output files")
     print("="*80)
 
     return created_files
