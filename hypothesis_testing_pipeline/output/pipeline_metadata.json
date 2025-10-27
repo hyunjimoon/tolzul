@@ -1,0 +1,15 @@
+{
+  "pipeline_version": "1.0.0_hypothesis_testing",
+  "created_at": "2025-10-27T11:52:50.211676",
+  "data_source": "data/demo_data.csv",
+  "n_rows_raw": 300,
+  "n_cols_raw": 9,
+  "n_rows_engineered": 300,
+  "visualization_files": {
+    "h1_scatter": "output/h1_scatter.png",
+    "h1_diagnostics": "output/h1_diagnostics.png",
+    "h2_interaction": "output/h2_interaction.png",
+    "h2_marginal_effects": "output/h2_marginal_effects.png",
+    "coefficient_comparison": "output/coefficient_comparison.png"
+  }
+}
