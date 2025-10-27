@@ -286,6 +286,73 @@ def create_survival_from_snapshots(
     return last_financing[['company_id', 'survival']]
 
 
+def create_survival_from_company_snapshots(
+    baseline_df: pd.DataFrame,
+    followup_df: pd.DataFrame,
+    baseline_date: str = "2022-01-01",
+    followup_date: str = "2023-05-01"
+) -> pd.DataFrame:
+    """
+    Create survival variable from two Company snapshots (NO Deal data needed).
+
+    Survival definition:
+        survival = 1 if company appears in BOTH baseline and follow-up snapshots
+        survival = 0 if company only in baseline (disappeared by follow-up)
+
+    This is a simpler presence-based survival measure that tracks whether
+    companies persist across time periods.
+
+    Args:
+        baseline_df: DataFrame from baseline snapshot (e.g., 2022-01-01)
+        followup_df: DataFrame from follow-up snapshot (e.g., 2023-05-01)
+        baseline_date: Date of baseline snapshot (for documentation)
+        followup_date: Date of follow-up snapshot (for documentation)
+
+    Returns:
+        DataFrame with company_id and survival binary indicator
+
+    Examples:
+        >>> baseline = pd.DataFrame({'CompanyID': [1, 2, 3, 4]})
+        >>> followup = pd.DataFrame({'CompanyID': [1, 3, 4, 5]})
+        >>> result = create_survival_from_company_snapshots(baseline, followup)
+        >>> result['survival'].tolist()
+        [1, 0, 1, 1]  # Company 2 disappeared, others survived
+    """
+    # Standardize company ID column name
+    baseline_id_col = 'CompanyID' if 'CompanyID' in baseline_df.columns else 'company_id'
+    followup_id_col = 'CompanyID' if 'CompanyID' in followup_df.columns else 'company_id'
+
+    if baseline_id_col not in baseline_df.columns:
+        raise ValueError("Baseline must have 'CompanyID' or 'company_id' column")
+    if followup_id_col not in followup_df.columns:
+        raise ValueError("Follow-up must have 'CompanyID' or 'company_id' column")
+
+    # Get company IDs from both snapshots
+    baseline_companies = set(baseline_df[baseline_id_col].dropna().unique())
+    followup_companies = set(followup_df[followup_id_col].dropna().unique())
+
+    print(f"\n  📊 Survival Analysis:")
+    print(f"     Baseline ({baseline_date}): {len(baseline_companies):,} companies")
+    print(f"     Follow-up ({followup_date}): {len(followup_companies):,} companies")
+
+    # Calculate survival
+    survived = baseline_companies & followup_companies  # Intersection
+    disappeared = baseline_companies - followup_companies  # In baseline but not follow-up
+
+    survival_rate = len(survived) / len(baseline_companies) if len(baseline_companies) > 0 else 0
+
+    print(f"     Survived: {len(survived):,} ({survival_rate:.1%})")
+    print(f"     Disappeared: {len(disappeared):,} ({1-survival_rate:.1%})")
+
+    # Create survival DataFrame
+    survival_df = pd.DataFrame({
+        'company_id': list(baseline_companies),
+        'survival': [1 if cid in survived else 0 for cid in baseline_companies]
+    })
+
+    return survival_df
+
+
 # =============================================================================
 # SECTOR FIXED EFFECTS
 # =============================================================================

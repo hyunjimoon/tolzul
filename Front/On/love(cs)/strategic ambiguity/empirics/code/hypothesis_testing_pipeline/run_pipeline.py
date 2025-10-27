@@ -43,66 +43,133 @@ class HypothesisTestingPipeline:
     End-to-end pipeline for hypothesis testing using xarray for data management.
     """
 
-    def __init__(self, data_path: str = None, output_dir: str = "output"):
+    def __init__(self, baseline_path: str = None, followup_path: str = None,
+                 data_path: str = None, output_dir: str = "output"):
         """
         Initialize pipeline.
 
         Args:
-            data_path: Path to input CSV file
+            baseline_path: Path to baseline snapshot file (e.g., Company20220101.dat)
+            followup_path: Path to follow-up snapshot file (e.g., Company20230501.dat)
+            data_path: DEPRECATED - Single file path for backward compatibility
             output_dir: Directory for outputs
         """
-        self.data_path = Path(data_path) if data_path else None
+        self.baseline_path = Path(baseline_path) if baseline_path else None
+        self.followup_path = Path(followup_path) if followup_path else None
+        self.data_path = Path(data_path) if data_path else None  # Backward compatibility
+
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
-        self.df = None
+        self.baseline_df = None  # Baseline snapshot
+        self.followup_df = None  # Follow-up snapshot
+        self.df = None  # Final merged dataset
         self.ds = None  # xarray Dataset
         self.results = None
         self.results_ds = None  # xarray Dataset with results
 
         self.metadata = {
-            'pipeline_version': '1.0.0_hypothesis_testing',
+            'pipeline_version': '2.0.0_longitudinal_survival',
             'created_at': datetime.now().isoformat(),
-            'data_source': str(self.data_path) if self.data_path else 'unknown'
+            'baseline_source': str(self.baseline_path) if self.baseline_path else 'unknown',
+            'followup_source': str(self.followup_path) if self.followup_path else 'unknown'
         }
 
     def step_1_load_data(self, csv_path: str = None):
         """
         Step 1: Load raw CSV data into pandas DataFrame.
 
+        Supports two modes:
+        1. Longitudinal (baseline + follow-up snapshots for survival analysis)
+        2. Cross-sectional (single snapshot for backward compatibility)
+
         Args:
-            csv_path: Optional path to CSV file (overrides init path)
+            csv_path: Optional path to CSV file (overrides init path, cross-sectional mode)
         """
         print("\n" + "="*80)
         print("STEP 1: LOAD DATA")
         print("="*80)
 
-        if csv_path:
-            self.data_path = Path(csv_path)
+        # Mode 1: Longitudinal (baseline + follow-up)
+        if self.baseline_path and self.followup_path:
+            print("📊 LONGITUDINAL MODE (Multi-snapshot survival analysis)")
+            print(f"\n  Baseline:  {self.baseline_path}")
+            print(f"  Follow-up: {self.followup_path}")
 
-        if not self.data_path or not self.data_path.exists():
-            raise FileNotFoundError(f"Data file not found: {self.data_path}")
+            # Load baseline
+            if not self.baseline_path.exists():
+                raise FileNotFoundError(f"Baseline file not found: {self.baseline_path}")
 
-        print(f"Loading: {self.data_path}")
+            for delimiter in ['|', ',', '\t']:
+                try:
+                    self.baseline_df = pd.read_csv(self.baseline_path, sep=delimiter, low_memory=False)
+                    if len(self.baseline_df.columns) > 1:
+                        break
+                except:
+                    continue
 
-        # Try different delimiters
-        for delimiter in ['|', ',', '\t']:
-            try:
-                self.df = pd.read_csv(self.data_path, sep=delimiter, low_memory=False)
-                if len(self.df.columns) > 1:  # Valid if multiple columns
-                    break
-            except:
-                continue
+            if self.baseline_df is None or len(self.baseline_df.columns) == 1:
+                raise ValueError("Could not parse baseline file. Check delimiter.")
 
-        if self.df is None or len(self.df.columns) == 1:
-            raise ValueError("Could not parse CSV file. Check delimiter.")
+            print(f"\n  ✓ Baseline loaded: {len(self.baseline_df)} rows, {len(self.baseline_df.columns)} columns")
 
-        print(f"  ✓ Loaded {len(self.df)} rows, {len(self.df.columns)} columns")
-        print(f"  Columns: {list(self.df.columns[:10])}...")
+            # Load follow-up
+            if not self.followup_path.exists():
+                raise FileNotFoundError(f"Follow-up file not found: {self.followup_path}")
 
-        # Store metadata
-        self.metadata['n_rows_raw'] = len(self.df)
-        self.metadata['n_cols_raw'] = len(self.df.columns)
+            for delimiter in ['|', ',', '\t']:
+                try:
+                    self.followup_df = pd.read_csv(self.followup_path, sep=delimiter, low_memory=False)
+                    if len(self.followup_df.columns) > 1:
+                        break
+                except:
+                    continue
+
+            if self.followup_df is None or len(self.followup_df.columns) == 1:
+                raise ValueError("Could not parse follow-up file. Check delimiter.")
+
+            print(f"  ✓ Follow-up loaded: {len(self.followup_df)} rows, {len(self.followup_df.columns)} columns")
+
+            # Use baseline as primary dataset for predictors
+            self.df = self.baseline_df.copy()
+
+            # Store metadata
+            self.metadata['mode'] = 'longitudinal'
+            self.metadata['n_rows_baseline'] = len(self.baseline_df)
+            self.metadata['n_rows_followup'] = len(self.followup_df)
+            self.metadata['n_cols_raw'] = len(self.baseline_df.columns)
+
+        # Mode 2: Cross-sectional (single snapshot, backward compatibility)
+        else:
+            print("📊 CROSS-SECTIONAL MODE (Single snapshot)")
+
+            if csv_path:
+                self.data_path = Path(csv_path)
+
+            if not self.data_path or not self.data_path.exists():
+                raise FileNotFoundError(f"Data file not found: {self.data_path}")
+
+            print(f"Loading: {self.data_path}")
+
+            # Try different delimiters
+            for delimiter in ['|', ',', '\t']:
+                try:
+                    self.df = pd.read_csv(self.data_path, sep=delimiter, low_memory=False)
+                    if len(self.df.columns) > 1:  # Valid if multiple columns
+                        break
+                except:
+                    continue
+
+            if self.df is None or len(self.df.columns) == 1:
+                raise ValueError("Could not parse CSV file. Check delimiter.")
+
+            print(f"  ✓ Loaded {len(self.df)} rows, {len(self.df.columns)} columns")
+            print(f"  Columns: {list(self.df.columns[:10])}...")
+
+            # Store metadata
+            self.metadata['mode'] = 'cross_sectional'
+            self.metadata['n_rows_raw'] = len(self.df)
+            self.metadata['n_cols_raw'] = len(self.df.columns)
 
     def step_2_engineer_features(self):
         """
@@ -137,14 +204,34 @@ class HypothesisTestingPipeline:
             self.df['sector_fe'] = 'Other'
             print("    ⚠️  sector_fe = 'Other' (no keywords available)")
 
-        # survival proxy (use later_success as fallback)
+        # survival variable
         if 'survival' not in self.df.columns:
-            if 'later_success' in self.df.columns:
+            # Longitudinal mode: Create TRUE survival from baseline → follow-up
+            if self.baseline_df is not None and self.followup_df is not None:
+                from feature_engineering import create_survival_from_company_snapshots
+                survival_df = create_survival_from_company_snapshots(
+                    self.baseline_df,
+                    self.followup_df,
+                    baseline_date="2022-01-01",
+                    followup_date="2023-05-01"
+                )
+                # Merge survival back to main dataframe
+                id_col = 'CompanyID' if 'CompanyID' in self.df.columns else 'company_id'
+                self.df = self.df.merge(
+                    survival_df.rename(columns={'company_id': id_col}),
+                    on=id_col,
+                    how='left'
+                )
+                self.df['survival'] = self.df['survival'].fillna(0).astype(int)
+                print(f"    ✓ survival created from multi-snapshot (TRUE longitudinal tracking)")
+
+            # Cross-sectional mode: Use proxy
+            elif 'later_success' in self.df.columns:
                 self.df['survival'] = self.df['later_success']
-                print("    ⚠️  survival = later_success (proxy, need Deal data for true survival)")
+                print("    ⚠️  survival = later_success (cross-sectional proxy)")
             else:
                 self.df['survival'] = 0
-                print("    ⚠️  survival = 0 (placeholder, need Deal data)")
+                print("    ⚠️  survival = 0 (placeholder)")
 
         # series_a_funding, series_b_funding proxies
         if 'series_a_funding' not in self.df.columns:
@@ -409,11 +496,14 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  # Run with PitchBook data
-  python run_pipeline.py --data data/pb_company_raw.csv
+  # Longitudinal mode (proper survival analysis)
+  python run_pipeline.py --baseline data/raw/Company20220101.dat --followup data/raw/Company20230501.dat
 
   # Specify custom output directory
-  python run_pipeline.py --data data/pb_company_raw.csv --output results/
+  python run_pipeline.py --baseline data/raw/Company20220101.dat --followup data/raw/Company20230501.dat --output results/
+
+  # Cross-sectional mode (backward compatibility, uses proxy survival)
+  python run_pipeline.py --data data/raw/Company20230501.dat
 
   # Use demo/simulated data
   python run_pipeline.py --demo
@@ -421,9 +511,21 @@ Examples:
     )
 
     parser.add_argument(
+        '--baseline',
+        type=str,
+        help='Path to baseline snapshot file (e.g., Company20220101.dat) for longitudinal analysis'
+    )
+
+    parser.add_argument(
+        '--followup',
+        type=str,
+        help='Path to follow-up snapshot file (e.g., Company20230501.dat) for longitudinal analysis'
+    )
+
+    parser.add_argument(
         '--data',
         type=str,
-        help='Path to input CSV file (PitchBook format)'
+        help='Path to single snapshot file (cross-sectional mode, backward compatibility)'
     )
 
     parser.add_argument(
@@ -477,14 +579,29 @@ Examples:
         args.data = str(demo_path)
 
     # Validate input
-    if not args.data:
-        parser.error("Must specify --data or --demo")
+    longitudinal_mode = args.baseline and args.followup
+    cross_sectional_mode = args.data
+
+    if not (longitudinal_mode or cross_sectional_mode):
+        parser.error("Must specify either (--baseline AND --followup) OR --data OR --demo")
+
+    if longitudinal_mode and cross_sectional_mode:
+        parser.error("Cannot use both longitudinal (--baseline/--followup) and cross-sectional (--data) modes simultaneously")
 
     # Run pipeline
-    pipeline = HypothesisTestingPipeline(
-        data_path=args.data,
-        output_dir=args.output
-    )
+    if longitudinal_mode:
+        print("\n🔬 Running in LONGITUDINAL mode (proper survival analysis)")
+        pipeline = HypothesisTestingPipeline(
+            baseline_path=args.baseline,
+            followup_path=args.followup,
+            output_dir=args.output
+        )
+    else:
+        print("\n🔬 Running in CROSS-SECTIONAL mode (proxy survival)")
+        pipeline = HypothesisTestingPipeline(
+            data_path=args.data,
+            output_dir=args.output
+        )
 
     pipeline.run_full_pipeline()
 
