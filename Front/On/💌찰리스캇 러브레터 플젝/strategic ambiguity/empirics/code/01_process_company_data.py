@@ -14,6 +14,12 @@ Steps:
 import pandas as pd
 import os
 from pathlib import Path
+import sys
+
+# Add parent directory to path for config imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from config.sector_keywords import SECTOR_DEFINITIONS, get_all_sectors
+from config.storytelling_metrics import calculate_storytelling_skill, categorize_storytelling
 
 # Setup paths
 BASE_DIR = Path(__file__).parent.parent
@@ -83,10 +89,105 @@ def calculate_vagueness(description):
 
     return score
 
+
+def classify_multiple_sectors(row):
+    """
+    Classify company into multiple sectors with overlap handling
+    
+    Args:
+        row: DataFrame row with Description and Keywords columns
+    
+    Returns:
+        pd.Series: Dictionary with is_X flags, sector_count, and primary_sector
+    """
+    description = str(row.get('Description', ''))
+    keywords_field = str(row.get('Keywords', ''))
+    text = f"{description} {keywords_field}".lower()
+    
+    results = {}
+    sector_match_counts = {}
+    
+    # Check each sector
+    for sector_id, sector_info in SECTOR_DEFINITIONS.items():
+        keyword_list = sector_info['keywords']
+        matches = sum(1 for kw in keyword_list if kw.lower() in text)
+        
+        # Boolean: True if ANY keyword matches
+        results[f'is_{sector_id}'] = matches > 0
+        sector_match_counts[sector_id] = matches
+    
+    # Count total sectors matched
+    results['sector_count'] = sum(1 for k, v in results.items() 
+                                  if k.startswith('is_') and v)
+    
+    # Determine primary sector (most keyword matches)
+    if any(sector_match_counts.values()):
+        primary_id = max(sector_match_counts.items(), key=lambda x: x[1])[0]
+        results['primary_sector'] = primary_id if sector_match_counts[primary_id] > 0 else 'Unknown'
+    else:
+        results['primary_sector'] = 'Unknown'
+    
+    return pd.Series(results)
+
+
 ai_ml_df['vagueness'] = ai_ml_df['Description'].apply(calculate_vagueness)
+
+# Calculate storytelling skill
+print("\n[Step 3.5] Calculating storytelling skill...")
+
+def extract_storytelling_score(description):
+    """Extract overall storytelling score from description"""
+    result = calculate_storytelling_skill(description)
+    return result['overall_score']
+
+ai_ml_df['storytelling_skill'] = ai_ml_df['Description'].apply(extract_storytelling_score)
+ai_ml_df['storytelling_category'] = ai_ml_df['storytelling_skill'].apply(categorize_storytelling)
+
+print(f"Storytelling scores: mean={ai_ml_df['storytelling_skill'].mean():.2f}, "
+      f"median={ai_ml_df['storytelling_skill'].median():.2f}, "
+      f"std={ai_ml_df['storytelling_skill'].std():.2f}")
+
+# Show distribution by category
+print(f"\nStorytelling categories:")
+for cat in ['Excellent', 'Good', 'Basic', 'Poor']:
+    count = (ai_ml_df['storytelling_category'] == cat).sum()
+    pct = count / len(ai_ml_df) * 100 if len(ai_ml_df) > 0 else 0
+    print(f"  {cat:10s}: {count:3d} ({pct:5.1f}%)")
 print(f"Vagueness scores: mean={ai_ml_df['vagueness'].mean():.2f}, "
       f"median={ai_ml_df['vagueness'].median():.2f}, "
       f"std={ai_ml_df['vagueness'].std():.2f}")
+
+
+
+# Step 2.5: Multi-sector classification
+print("\n[Step 2.5] Classifying companies into multiple sectors...")
+sector_results = ai_ml_df.apply(classify_multiple_sectors, axis=1)
+ai_ml_df = pd.concat([ai_ml_df, sector_results], axis=1)
+
+# Print sector statistics
+print("\nSector Classification Results:")
+for sector_id in get_all_sectors():
+    if f'is_{sector_id}' in ai_ml_df.columns:
+        count = ai_ml_df[f'is_{sector_id}'].sum()
+        pct = count / len(ai_ml_df) * 100 if len(ai_ml_df) > 0 else 0
+        sector_name = SECTOR_DEFINITIONS[sector_id]['name']
+        print(f"  {sector_name:30s}: {count:5d} ({pct:5.1f}%)")
+
+# Overlap statistics
+print(f"\nSector Overlap Statistics:")
+if 'sector_count' in ai_ml_df.columns:
+    overlap_counts = ai_ml_df['sector_count'].value_counts().sort_index()
+    for n_sectors, count in overlap_counts.items():
+        pct = count / len(ai_ml_df) * 100 if len(ai_ml_df) > 0 else 0
+        print(f"  {n_sectors} sector(s): {count:5d} ({pct:5.1f}%)")
+
+# Primary sector distribution
+print(f"\nPrimary Sector Distribution:")
+if 'primary_sector' in ai_ml_df.columns:
+    primary_dist = ai_ml_df['primary_sector'].value_counts()
+    for sector, count in primary_dist.head(10).items():
+        pct = count / len(ai_ml_df) * 100 if len(ai_ml_df) > 0 else 0
+        print(f"  {sector:15s}: {count:5d} ({pct:5.1f}%)")
 
 # Step 4: Classify integration cost
 print("\n[Step 4] Classifying integration cost...")
@@ -129,18 +230,24 @@ print(f"Integration cost classification: High-i={high_i_count}, Low-i={low_i_cou
 print("\n[Step 5] Creating company master file...")
 
 # Select and rename columns for output
-company_master = ai_ml_df[[
-    'CompanyID', 'CompanyName', 'Description', 'Keywords',
-    'vagueness', 'high_integration_cost',
-    'TotalRaised', 'Employees', 'YearFounded'
-]].copy()
+# Include all sector classification columns
+sector_cols = [col for col in ai_ml_df.columns if col.startswith('is_') or col in ['sector_count', 'primary_sector']]
+base_cols = ['CompanyID', 'CompanyName', 'Description', 'Keywords',
+             'vagueness', 'storytelling_skill', 'storytelling_category', 'high_integration_cost',
+             'TotalRaised', 'Employees', 'YearFounded']
+company_master = ai_ml_df[base_cols + sector_cols].copy()
 
-# Rename for consistency
-company_master.columns = [
-    'company_id', 'company_name', 'description', 'keywords',
-    'vagueness', 'high_integration_cost',
-    'total_raised', 'employees', 'year_founded'
-]
+# Rename base columns for consistency (keep sector columns as-is)
+rename_dict = {
+    'CompanyID': 'company_id',
+    'CompanyName': 'company_name',
+    'Description': 'description',
+    'Keywords': 'keywords',
+    'TotalRaised': 'total_raised',
+    'Employees': 'employees',
+    'YearFounded': 'year_founded'
+}
+company_master = company_master.rename(columns=rename_dict)
 
 # Convert numeric columns
 company_master['total_raised'] = pd.to_numeric(company_master['total_raised'], errors='coerce').fillna(0)
@@ -240,6 +347,42 @@ def process_company_data():
         return score
 
     ai_ml_df['vagueness'] = ai_ml_df['Description'].apply(calculate_vagueness)
+    
+    # Calculate storytelling skill
+    def extract_storytelling_score(description):
+        result = calculate_storytelling_skill(description)
+        return result['overall_score']
+    
+    ai_ml_df['storytelling_skill'] = ai_ml_df['Description'].apply(extract_storytelling_score)
+    ai_ml_df['storytelling_category'] = ai_ml_df['storytelling_skill'].apply(categorize_storytelling)
+
+# Calculate storytelling skill
+print("\n[Step 3.5] Calculating storytelling skill...")
+
+def extract_storytelling_score(description):
+    """Extract overall storytelling score from description"""
+    result = calculate_storytelling_skill(description)
+    return result['overall_score']
+
+ai_ml_df['storytelling_skill'] = ai_ml_df['Description'].apply(extract_storytelling_score)
+ai_ml_df['storytelling_category'] = ai_ml_df['storytelling_skill'].apply(categorize_storytelling)
+
+print(f"Storytelling scores: mean={ai_ml_df['storytelling_skill'].mean():.2f}, "
+      f"median={ai_ml_df['storytelling_skill'].median():.2f}, "
+      f"std={ai_ml_df['storytelling_skill'].std():.2f}")
+
+# Show distribution by category
+print(f"\nStorytelling categories:")
+for cat in ['Excellent', 'Good', 'Basic', 'Poor']:
+    count = (ai_ml_df['storytelling_category'] == cat).sum()
+    pct = count / len(ai_ml_df) * 100 if len(ai_ml_df) > 0 else 0
+    print(f"  {cat:10s}: {count:3d} ({pct:5.1f}%)")
+
+    
+
+    # Multi-sector classification
+    sector_results = ai_ml_df.apply(classify_multiple_sectors, axis=1)
+    ai_ml_df = pd.concat([ai_ml_df, sector_results], axis=1)
 
     # Classify integration cost
     HIGH_I_KEYWORDS = ['chip', 'asic', 'robotics', 'distributed', 'gpu', 'hardware',
@@ -266,18 +409,24 @@ def process_company_data():
 
     ai_ml_df['high_integration_cost'] = ai_ml_df.apply(classify_integration_cost, axis=1)
 
-    # Create company master file
-    company_master = ai_ml_df[[
-        'CompanyID', 'CompanyName', 'Description', 'Keywords',
-        'vagueness', 'high_integration_cost',
-        'TotalRaised', 'Employees', 'YearFounded'
-    ]].copy()
+    # Create company master file with sector classifications
+    sector_cols = [col for col in ai_ml_df.columns if col.startswith('is_') or col in ['sector_count', 'primary_sector']]
+    base_cols = ['CompanyID', 'CompanyName', 'Description', 'Keywords',
+                 'vagueness', 'high_integration_cost',
+                 'TotalRaised', 'Employees', 'YearFounded']
+    company_master = ai_ml_df[base_cols + sector_cols].copy()
 
-    company_master.columns = [
-        'company_id', 'company_name', 'description', 'keywords',
-        'vagueness', 'high_integration_cost',
-        'total_raised', 'employees', 'year_founded'
-    ]
+    # Rename base columns for consistency (keep sector columns as-is)
+    rename_dict = {
+        'CompanyID': 'company_id',
+        'CompanyName': 'company_name',
+        'Description': 'description',
+        'Keywords': 'keywords',
+        'TotalRaised': 'total_raised',
+        'Employees': 'employees',
+        'YearFounded': 'year_founded'
+    }
+    company_master = company_master.rename(columns=rename_dict)
 
     # Convert numeric columns
     company_master['total_raised'] = pd.to_numeric(company_master['total_raised'], errors='coerce').fillna(0)
