@@ -486,8 +486,16 @@ def compute_founder_credibility(df: pd.DataFrame) -> pd.Series:
     print("       Serial founder = (young firm + high funding) OR (high funding + high growth)")
 
     # Calculate proxies
-    total_raised = pd.to_numeric(df.get('TotalRaised', 0), errors='coerce').fillna(0)
-    year_founded = pd.to_numeric(df.get('YearFounded', 2020), errors='coerce').fillna(2020)
+    if 'TotalRaised' in df.columns:
+        total_raised = pd.to_numeric(df['TotalRaised'], errors='coerce').fillna(0)
+    else:
+        total_raised = pd.Series(0, index=df.index)
+
+    if 'YearFounded' in df.columns:
+        year_founded = pd.to_numeric(df['YearFounded'], errors='coerce').fillna(2020)
+    else:
+        year_founded = pd.Series(2020, index=df.index)
+
     firm_age = 2024 - year_founded
 
     # High funding threshold (75th percentile)
