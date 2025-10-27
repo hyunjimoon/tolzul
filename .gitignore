@@ -69,3 +69,5 @@ Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/
 Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/raw/Company20251001.dat
 Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/raw/Deal20230501.dat
 Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/output/pipeline_checkpoint.pkl
+*.pyc
+Front/On/strategic ambiguity/empirics/code/hypothesis_testing_pipeline/output/pb_processed_dataset.nc
