@@ -118,6 +118,49 @@ class HypothesisTestingPipeline:
         # Engineer features
         self.df = engineer_features(self.df)
 
+        # Add missing variables as placeholders (for single-snapshot runs)
+        print("\n  - Adding placeholder variables...")
+
+        # founder_credibility placeholder
+        if 'founder_credibility' not in self.df.columns:
+            self.df['founder_credibility'] = 0
+            print("    ⚠️  founder_credibility = 0 (placeholder)")
+
+        # sector_fe from Keywords
+        if 'sector_fe' not in self.df.columns and 'keywords' in self.df.columns:
+            from feature_engineering import extract_sector_fe
+            self.df['sector_fe'] = extract_sector_fe(self.df['keywords'])
+            print(f"    ✓ sector_fe extracted ({self.df['sector_fe'].nunique()} categories)")
+        elif 'sector_fe' not in self.df.columns:
+            self.df['sector_fe'] = 'Other'
+            print("    ⚠️  sector_fe = 'Other' (no keywords available)")
+
+        # survival proxy (use later_success as fallback)
+        if 'survival' not in self.df.columns:
+            if 'later_success' in self.df.columns:
+                self.df['survival'] = self.df['later_success']
+                print("    ⚠️  survival = later_success (proxy, need Deal data for true survival)")
+            else:
+                self.df['survival'] = 0
+                print("    ⚠️  survival = 0 (placeholder, need Deal data)")
+
+        # series_a_funding, series_b_funding proxies
+        if 'series_a_funding' not in self.df.columns:
+            if 'early_funding_musd' in self.df.columns:
+                self.df['series_a_funding'] = self.df['early_funding_musd']
+                print("    ⚠️  series_a_funding = early_funding_musd (proxy)")
+            else:
+                self.df['series_a_funding'] = np.nan
+
+        if 'series_b_funding' not in self.df.columns:
+            self.df['series_b_funding'] = np.nan
+            print("    ⚠️  series_b_funding = NaN (need Deal data)")
+
+        # is_down_round placeholder
+        if 'is_down_round' not in self.df.columns:
+            self.df['is_down_round'] = 0
+            print("    ⚠️  is_down_round = 0 (need Deal data)")
+
         # Print summary
         print("\n" + "-"*80)
         print("Feature Summary:")
