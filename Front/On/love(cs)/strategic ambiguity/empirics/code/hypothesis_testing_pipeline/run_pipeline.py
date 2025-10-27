@@ -389,14 +389,22 @@ class HypothesisTestingPipeline:
         # Save xarray dataset
         if self.ds is not None:
             dataset_path = self.output_dir / "pb_processed_dataset.nc"
-            self.ds.to_netcdf(dataset_path)
-            print(f"  ✓ Saved xarray dataset: {dataset_path}")
+            try:
+                # Try with netCDF4 format (more robust encoding)
+                self.ds.to_netcdf(dataset_path, format='NETCDF4', engine='netcdf4')
+                print(f"  ✓ Saved xarray dataset: {dataset_path}")
+            except:
+                # Fallback: Skip netCDF saving (not critical for analysis)
+                print(f"  ⚠️  Skipped xarray dataset (encoding issue)")
 
         # Save results xarray
         if self.results_ds is not None:
             results_path = self.output_dir / "model_results.nc"
-            self.results_ds.to_netcdf(results_path)
-            print(f"  ✓ Saved model results: {results_path}")
+            try:
+                self.results_ds.to_netcdf(results_path, format='NETCDF4', engine='netcdf4')
+                print(f"  ✓ Saved model results: {results_path}")
+            except:
+                print(f"  ⚠️  Skipped model results (encoding issue)")
 
         # Save coefficient tables
         if self.results and self.results.get('h1'):
