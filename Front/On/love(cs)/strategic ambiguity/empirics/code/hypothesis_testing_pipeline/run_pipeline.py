@@ -29,8 +29,12 @@ warnings.filterwarnings('ignore')
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
-from feature_engineering import engineer_features, get_feature_summary
-from hypothesis_tests import run_full_hypothesis_tests, results_to_xarray, create_results_summary
+from feature_engineering import (
+    engineer_features, get_feature_summary, create_analysis_dataset
+)
+from hypothesis_tests import (
+    run_full_hypothesis_tests, results_to_xarray, create_results_summary
+)
 from visualizations import create_all_visualizations
 
 
@@ -144,10 +148,12 @@ class HypothesisTestingPipeline:
             company_ids = np.arange(len(self.df))
             self.df['company_id'] = company_ids
 
-        # Select analytical columns
+        # Select analytical columns (updated for Phase 2 specs)
         analysis_cols = [
             'vagueness', 'high_integration_cost', 'early_funding_musd',
-            'later_success', 'employees_log', 'year_founded',
+            'survival', 'later_success',  # Keep later_success for backward compat
+            'founder_credibility', 'employees_log', 'sector_fe', 'year_founded',
+            'series_a_funding', 'series_b_funding', 'is_down_round',
             'firm_age', 'total_raised'
         ]
 
@@ -274,18 +280,34 @@ class HypothesisTestingPipeline:
             h1_table.to_csv(h1_path, index=False)
             print(f"  ✓ Saved H1 coefficients: {h1_path}")
 
-        if self.results and self.results.get('h2'):
+        # Save H2 Main coefficients
+        h2_model = self.results.get('h2_main') or self.results.get('h2')  # Backward compat
+        if self.results and h2_model:
             h2_table = pd.DataFrame({
-                'Variable': self.results['h2'].params.index,
-                'Coefficient': self.results['h2'].params.values,
-                'Std Error': self.results['h2'].bse.values,
-                'p-value': self.results['h2'].pvalues.values,
-                'CI Lower': self.results['h2'].conf_int().iloc[:, 0].values,
-                'CI Upper': self.results['h2'].conf_int().iloc[:, 1].values
+                'Variable': h2_model.params.index,
+                'Coefficient': h2_model.params.values,
+                'Std Error': h2_model.bse.values,
+                'p-value': h2_model.pvalues.values,
+                'CI Lower': h2_model.conf_int().iloc[:, 0].values,
+                'CI Upper': h2_model.conf_int().iloc[:, 1].values
             })
-            h2_path = self.output_dir / "h2_coefficients.csv"
+            h2_path = self.output_dir / "h2_main_coefficients.csv"
             h2_table.to_csv(h2_path, index=False)
-            print(f"  ✓ Saved H2 coefficients: {h2_path}")
+            print(f"  ✓ Saved H2 Main coefficients: {h2_path}")
+
+        # Save H2 Robustness coefficients
+        if self.results and self.results.get('h2_robustness'):
+            h2r_table = pd.DataFrame({
+                'Variable': self.results['h2_robustness'].params.index,
+                'Coefficient': self.results['h2_robustness'].params.values,
+                'Std Error': self.results['h2_robustness'].bse.values,
+                'p-value': self.results['h2_robustness'].pvalues.values,
+                'CI Lower': self.results['h2_robustness'].conf_int().iloc[:, 0].values,
+                'CI Upper': self.results['h2_robustness'].conf_int().iloc[:, 1].values
+            })
+            h2r_path = self.output_dir / "h2_robustness_coefficients.csv"
+            h2r_table.to_csv(h2r_path, index=False)
+            print(f"  ✓ Saved H2 Robustness coefficients: {h2r_path}")
 
         # Save metadata
         metadata_path = self.output_dir / "pipeline_metadata.json"
@@ -322,9 +344,11 @@ class HypothesisTestingPipeline:
             print(f"  - pb_processed_dataset.nc (xarray dataset)")
             print(f"  - model_results.nc (model coefficients)")
             print(f"  - hypothesis_test_summary.csv (test results)")
-            print(f"  - h1_coefficients.csv (H1 detailed results)")
-            print(f"  - h2_coefficients.csv (H2 detailed results)")
-            print(f"  - Diagnostic plots (*.png)")
+            print(f"  - h1_coefficients.csv (H1: Early Funding)")
+            print(f"  - h2_main_coefficients.csv (H2 Main: Survival)")
+            print(f"  - h2_robustness_coefficients.csv (H2 Robustness: Series B)")
+            print(f"  - regression_table.csv (AER-style table)")
+            print(f"  - Diagnostic plots (*.png including ROC curve)")
 
         except Exception as e:
             print(f"\n❌ PIPELINE FAILED: {e}")
