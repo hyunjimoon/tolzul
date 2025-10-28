@@ -719,20 +719,143 @@ def compute_firm_age(year_founded: pd.Series, current_year: int = 2024) -> pd.Se
     return current_year - years
 
 
+# =============================================================================
+# FOUNDER CREDIBILITY (ENHANCED with PrimaryContactPBId-based metrics)
+# =============================================================================
+
+def compute_serial_entrepreneur(df: pd.DataFrame, contact_id_col: str = 'PrimaryContactPBId') -> pd.Series:
+    """
+    Identify serial entrepreneurs using founder ID linkage across companies.
+
+    A founder is "serial" if they appear in 2+ companies in the dataset.
+    This is the GOLD STANDARD measure of founder credibility.
+
+    Args:
+        df: DataFrame with company data
+        contact_id_col: Column name for founder unique ID (default: PrimaryContactPBId)
+
+    Returns:
+        Series of binary indicator (1 = serial entrepreneur, 0 = first-time founder)
+
+    Examples:
+        >>> df = pd.DataFrame({
+        ...     'CompanyID': [1, 2, 3, 4],
+        ...     'PrimaryContactPBId': ['F001', 'F001', 'F002', 'F003']
+        ... })
+        >>> compute_serial_entrepreneur(df)
+        0    1  # F001 appears in 2 companies → serial
+        1    1  # F001 appears in 2 companies → serial
+        2    0  # F002 appears in 1 company → first-time
+        3    0  # F003 appears in 1 company → first-time
+        dtype: int64
+    """
+    if contact_id_col not in df.columns:
+        print(f"    ⚠️  Column '{contact_id_col}' not found. Cannot compute serial entrepreneur.")
+        return pd.Series(0, index=df.index)
+
+    # Count how many companies each founder has
+    founder_counts = df.groupby(contact_id_col)['CompanyID'].nunique() if 'CompanyID' in df.columns else df.groupby(contact_id_col).size()
+
+    # Map back to original dataframe
+    is_serial = df[contact_id_col].map(founder_counts) >= 2
+
+    # Handle NaN (missing founder ID) as 0
+    is_serial = is_serial.fillna(False).astype(int)
+
+    serial_rate = is_serial.mean()
+    n_valid = df[contact_id_col].notna().sum()
+
+    print(f"    ✓ IsSerialEntrepreneur: {serial_rate:.1%} of {n_valid:,} founders with valid IDs")
+
+    return is_serial
+
+
+def compute_has_successful_exit(df: pd.DataFrame,
+                                  contact_id_col: str = 'PrimaryContactPBId',
+                                  status_col: str = 'BusinessStatus') -> pd.Series:
+    """
+    Identify founders with successful exit experience (IPO or Acquisition).
+
+    This is the STRONGEST credibility signal: prior successful exit.
+    Requires both founder ID linkage AND business status data.
+
+    Args:
+        df: DataFrame with company data
+        contact_id_col: Column name for founder unique ID
+        status_col: Column name for business status
+
+    Returns:
+        Series of binary indicator (1 = has successful exit, 0 = no prior exit)
+
+    Logic:
+        1. Find all companies this founder is associated with
+        2. Check if ANY of those companies have status = "Acquired" or "IPO"
+        3. If yes, this founder has exit experience → credibility = 1
+
+    Examples:
+        >>> df = pd.DataFrame({
+        ...     'CompanyID': [1, 2, 3, 4],
+        ...     'PrimaryContactPBId': ['F001', 'F001', 'F002', 'F003'],
+        ...     'BusinessStatus': ['Acquired', 'Operating', 'Operating', 'Operating']
+        ... })
+        >>> compute_has_successful_exit(df)
+        0    1  # F001's other company (ID=1) was acquired → has exit
+        1    1  # F001's other company (ID=1) was acquired → has exit
+        2    0  # F002 has no acquisitions
+        3    0  # F003 has no acquisitions
+        dtype: int64
+    """
+    if contact_id_col not in df.columns:
+        print(f"    ⚠️  Column '{contact_id_col}' not found. Cannot compute successful exit.")
+        return pd.Series(0, index=df.index)
+
+    if status_col not in df.columns:
+        print(f"    ⚠️  Column '{status_col}' not found. Cannot compute successful exit.")
+        return pd.Series(0, index=df.index)
+
+    # Define successful exits
+    success_statuses = ['Acquired', 'IPO', 'Public']
+
+    # Mark companies with successful exits
+    df_temp = df.copy()
+    df_temp['_has_exit'] = df_temp[status_col].isin(success_statuses).astype(int)
+
+    # For each founder, check if ANY of their companies had a successful exit
+    founder_exit_exp = df_temp.groupby(contact_id_col)['_has_exit'].max()
+
+    # Map back to original dataframe
+    has_exit = df[contact_id_col].map(founder_exit_exp)
+
+    # Handle NaN as 0
+    has_exit = has_exit.fillna(0).astype(int)
+
+    exit_rate = has_exit.mean()
+    n_valid = df[contact_id_col].notna().sum()
+
+    print(f"    ✓ HasSuccessfulExit: {exit_rate:.1%} of {n_valid:,} founders with valid IDs")
+
+    return has_exit
+
+
 def compute_founder_credibility(df: pd.DataFrame) -> pd.Series:
     """
-    Compute founder credibility indicator.
+    Compute founder credibility indicator (ENHANCED).
 
     Uses serial founder status as primary measure (binary: 0 or 1).
 
-    Implementation options (auto-detected):
-    1. If 'NumberOfFounders' column exists:
-       - Serial founder = 1 if founded 2+ companies (proxy: total_raised in top quartile)
-    2. If 'FoundingTeam' or similar text field exists:
+    Implementation priority (auto-detected):
+    1. **BEST**: PrimaryContactPBId-based serial entrepreneur detection
+       - Checks if founder appears in 2+ companies in dataset
+       - Gold standard: direct founder linkage
+    2. **GOOD**: Successful exit experience
+       - Checks if founder has prior IPO/Acquisition
+       - Requires PrimaryContactPBId + BusinessStatus
+    3. If 'NumberOfFounders' column exists:
+       - Serial founder = 1 if founded 2+ companies
+    4. If 'FoundingTeam' text field exists:
        - Parse for serial founder indicators
-    3. Fallback: Use proxy based on firm characteristics:
-       - Serial founder = 1 if (firm_age < 5 years) AND (total_raised > median)
-       - Rationale: Young companies with high funding = experienced founders
+    5. **FALLBACK**: Proxy from firm characteristics
+       - Serial founder = young + high funding
 
     Args:
         df: DataFrame with company data
@@ -742,20 +865,42 @@ def compute_founder_credibility(df: pd.DataFrame) -> pd.Series:
 
     Examples:
         >>> df = pd.DataFrame({
-        ...     'TotalRaised': [1e6, 1e7, 1e8],
-        ...     'YearFounded': [2020, 2015, 2018]
+        ...     'PrimaryContactPBId': ['F001', 'F001', 'F002'],
+        ...     'BusinessStatus': ['Acquired', 'Operating', 'Operating']
         ... })
         >>> compute_founder_credibility(df)
-        0    0  # Low funding, recent
-        1    1  # High funding, experienced
-        2    1  # Very high funding
+        0    1  # F001 is serial + has exit
+        1    1  # F001 is serial + has exit
+        2    0  # F002 is first-time
         dtype: int64
     """
     n = len(df)
 
-    # Option 1: Check for direct founder columns
-    founder_cols = [col for col in df.columns if 'founder' in col.lower()]
+    # Priority 1: PrimaryContactPBId-based serial entrepreneur (GOLD STANDARD)
+    if 'PrimaryContactPBId' in df.columns:
+        print("    ℹ️  Using PrimaryContactPBId-based founder credibility (GOLD STANDARD):")
 
+        # First try: Serial entrepreneur with successful exit (STRONGEST signal)
+        if 'BusinessStatus' in df.columns:
+            print("       Attempting: HasSuccessfulExit (serial + IPO/Acquisition)")
+            has_exit = compute_has_successful_exit(df)
+
+            if has_exit.sum() > 0:  # If we found any founders with exits
+                print(f"       ✓ Using HasSuccessfulExit as primary credibility measure")
+                return has_exit
+
+        # Second try: Just serial entrepreneur (still very good)
+        print("       Attempting: IsSerialEntrepreneur (founder appears in 2+ companies)")
+        is_serial = compute_serial_entrepreneur(df)
+
+        if is_serial.sum() > 0:  # If we found any serial entrepreneurs
+            print(f"       ✓ Using IsSerialEntrepreneur as primary credibility measure")
+            return is_serial
+
+        print("       ⚠️  PrimaryContactPBId exists but no serial entrepreneurs found")
+        # Fall through to other methods
+
+    # Priority 2: NumberOfFounders
     if 'NumberOfFounders' in df.columns:
         # Use number of founders as proxy (more founders = more experience)
         num_founders = pd.to_numeric(df['NumberOfFounders'], errors='coerce')
