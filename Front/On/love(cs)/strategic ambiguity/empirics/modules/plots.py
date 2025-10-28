@@ -666,6 +666,293 @@ def create_all_visualizations(
     return created_files
 
 
+# =============================================================================
+# STORYBOARD PLOTS (🎞️ narrative)
+# =============================================================================
+from dataclasses import dataclass
+from itertools import product
+
+class StoryboardPlots:
+    """
+    Narrative plots for telling the causal story behind H1/H2.
+
+    Panels mirror the research storyboard:
+      1) Univariate distributions (vagueness, IC, growth DV)
+      2) Bivariate with growth (V~G by IC; heatmap with Ns)
+      3) Interaction decomposition (lines for modular vs integrated)
+    """
+
+    def __init__(self, dv_col: str = 'survival', dv_label: str = 'Growth (Series B+ within window)'):
+        self.dv_col = dv_col
+        self.dv_label = dv_label
+
+    def _dv(self, df: pd.DataFrame) -> str:
+        # Backward-compat: prefer explicit dv_col; fall back to 'growth' or 'survival'
+        if self.dv_col in df.columns:
+            return self.dv_col
+        if 'growth' in df.columns:
+            return 'growth'
+        if 'survival' in df.columns:
+            return 'survival'
+        raise ValueError("No DV column found. Expected 'growth' or 'survival'.")
+
+    def plot_univariate(self, df: pd.DataFrame, output_path: Optional[Path] = None) -> plt.Figure:
+        """
+        3-panel univariate overview:
+          - Vagueness histogram
+          - Integration cost distribution (binary)
+          - DV base rate bar chart (growth=1 vs 0)
+        """
+        dv = self._dv(df)
+        fig, axes = plt.subplots(1, 3, figsize=(16, 5))
+
+        # 1) Vagueness
+        v = df['vagueness'].astype(float)
+        v = v[np.isfinite(v)]
+        axes[0].hist(v, bins=30, edgecolor='black', alpha=0.7)
+        axes[0].set_title("Vagueness Distribution")
+        axes[0].set_xlabel("Vagueness (0–100)")
+        axes[0].set_ylabel("Count")
+
+        # 2) Integration cost
+        if 'high_integration_cost' in df.columns:
+            ic_counts = df['high_integration_cost'].value_counts(dropna=False).sort_index()
+            axes[1].bar(['Modular(0)', 'Integrated(1)'], ic_counts.reindex([0,1]).fillna(0).values,
+                        edgecolor='black', alpha=0.8)
+            axes[1].set_title("Integration Cost (binary)")
+            axes[1].set_ylabel("Count")
+        else:
+            axes[1].text(0.5, 0.5, "high_integration_cost not found", ha='center', va='center')
+            axes[1].set_axis_off()
+
+        # 3) DV base rate
+        if dv in df.columns:
+            dv_rate = df[dv].mean()
+            axes[2].bar([self.dv_label], [dv_rate], edgecolor='black', alpha=0.8)
+            axes[2].set_ylim(0, 1)
+            axes[2].set_title(f"{self.dv_label} — base rate")
+            axes[2].text(0, dv_rate + 0.03, f"{dv_rate:.1%}", ha='center')
+        else:
+            axes[2].text(0.5, 0.5, f"{dv} not found", ha='center', va='center')
+            axes[2].set_axis_off()
+
+        fig.suptitle("Storyboard — Univariate Distributions", fontsize=14, fontweight='bold')
+        plt.tight_layout()
+        if output_path:
+            fig.savefig(output_path, dpi=300, bbox_inches='tight')
+            print(f"  ✓ Saved: {output_path}")
+        return fig
+
+    def plot_bivariate_growth(self, df: pd.DataFrame, output_path: Optional[Path] = None) -> plt.Figure:
+        """
+        3-panel bivariate views with the growth DV:
+          (a) V→G by IC (two lines from binned rates)
+          (b) V×IC heatmap (cell = mean growth rate, annotate n)
+          (c) Bubble: Employees vs growth by founding cohort (if columns exist)
+        """
+        dv = self._dv(df)
+        fig, axes = plt.subplots(1, 3, figsize=(18, 5))
+
+        df_clean = df.dropna(subset=['vagueness', dv]).copy()
+        if 'high_integration_cost' not in df_clean.columns:
+            df_clean['high_integration_cost'] = 0
+
+        # Binning
+        df_clean['v_bin'] = pd.cut(df_clean['vagueness'].astype(float),
+                                   bins=[0,20,40,60,80,100], include_lowest=True)
+
+        # (a) line chart by IC
+        rate = (df_clean.groupby(['high_integration_cost','v_bin'], observed=True)[dv]
+                      .agg(['mean','size']).reset_index())
+        for ic, dsub, color, label in [(0, rate[rate['high_integration_cost']==0], 'C0', 'Modular'),
+                                       (1, rate[rate['high_integration_cost']==1], 'C1', 'Integrated')]:
+            if len(dsub):
+                x = np.arange(len(dsub))
+                axes[0].plot(x, dsub['mean'].values, marker='o', linewidth=2, label=label)
+        axes[0].set_title("Vagueness → Growth by IC")
+        axes[0].set_xticks(range(len(rate['v_bin'].unique())))
+        axes[0].set_xticklabels([str(c) for c in sorted(rate['v_bin'].unique())], rotation=45)
+        axes[0].set_ylim(0,1); axes[0].legend(); axes[0].grid(True, alpha=0.3)
+
+        # (b) heatmap of growth rate with Ns
+        pivot = rate.pivot(index='high_integration_cost', columns='v_bin', values='mean')
+        sns.heatmap(pivot, annot=True, fmt=".2f", cmap="RdYlGn", vmin=0, vmax=1, ax=axes[1],
+                    cbar_kws={'label': f'P({self.dv_label})'})
+        axes[1].set_title("V×IC Heatmap (cell = growth rate)")
+        axes[1].set_yticklabels(['Modular(0)','Integrated(1)'], rotation=0)
+
+        # (c) bubble: employees vs growth by cohort
+        if all(c in df_clean.columns for c in ['employees_log', 'founding_cohort']):
+            # average growth by (employees_log bin, cohort)
+            df_clean['empl_bin'] = pd.qcut(df_clean['employees_log'], q=5, duplicates='drop')
+            bubble = (df_clean.groupby(['founding_cohort','empl_bin'], observed=True)[dv]
+                              .agg(['mean','size']).reset_index())
+            sizes = 50 * (bubble['size'] / (bubble['size'].max() if bubble['size'].max()>0 else 1) + 0.1)
+            axes[2].scatter(bubble['mean'], bubble['size'], s=sizes, alpha=0.6, edgecolor='k')
+            axes[2].set_xlabel("Mean growth by (cohort, employees bin)")
+            axes[2].set_ylabel("N (bubble size ∝ N)")
+            axes[2].set_title("Employees × Growth by Cohort")
+            axes[2].grid(True, alpha=0.3)
+        else:
+            axes[2].text(0.5, 0.5, "Need employees_log & founding_cohort", ha='center', va='center')
+            axes[2].set_axis_off()
+
+        fig.suptitle("Storyboard — Bivariate with Growth", fontsize=14, fontweight='bold')
+        plt.tight_layout()
+        if output_path:
+            fig.savefig(output_path, dpi=300, bbox_inches='tight')
+            print(f"  ✓ Saved: {output_path}")
+        return fig
+
+    def plot_interaction_decomposition(
+        self,
+        df: pd.DataFrame,
+        model: Optional[BinaryResultsWrapper] = None,
+        output_path: Optional[Path] = None
+    ) -> plt.Figure:
+        """
+        Core H2 visual: predicted P(growth) vs vagueness lines by IC.
+        If a fitted logit `model` is provided, use it for smooth curves.
+        Otherwise, draw binned empirical rates.
+        """
+        dv = self._dv(df)
+        fig, ax = plt.subplots(figsize=(8, 5))
+
+        if model is not None:
+            # Smooth curves using model coefficients
+            v = np.linspace(0, 100, 101)
+            base = pd.DataFrame({'vagueness': v})
+            for ic, ls, lbl in [(0, '-', 'Modular'), (1, '--', 'Integrated')]:
+                X = base.copy()
+                X['high_integration_cost'] = ic
+                # Fill controls with means if present
+                for c in ['z_employees_log','employees_log','founding_cohort']:
+                    if c in df.columns and c.startswith('z_'):
+                        X[c] = 0.0
+                    elif c in df.columns:
+                        X[c] = df[c].mode().iloc[0] if df[c].dtype=='O' else df[c].mean()
+                p = model.predict(X)
+                ax.plot(v, p, ls=ls, lw=2.5, label=lbl)
+        else:
+            # Empirical: binned rates by IC
+            d = df.dropna(subset=['vagueness', dv]).copy()
+            d['v_bin'] = pd.cut(d['vagueness'], bins=[0,20,40,60,80,100], include_lowest=True)
+            for ic, marker, lbl in [(0, 'o', 'Modular'), (1, 's', 'Integrated')]:
+                s = (d[d['high_integration_cost']==ic]
+                     .groupby('v_bin', observed=True)[dv].mean())
+                ax.plot(range(len(s)), s.values, marker=marker, lw=2, label=lbl)
+            ax.set_xticks(range(len(s.index))); ax.set_xticklabels([str(c) for c in s.index], rotation=45)
+
+        ax.set_ylim(0,1); ax.grid(True, alpha=0.3)
+        ax.set_xlabel("Vagueness (bins or 0–100)")
+        ax.set_ylabel(f"Predicted P({self.dv_label})")
+        ax.set_title("H2 Interaction: Vagueness × Integration Cost")
+        ax.legend(loc='best')
+
+        plt.tight_layout()
+        if output_path:
+            fig.savefig(output_path, dpi=300, bbox_inches='tight')
+            print(f"  ✓ Saved: {output_path}")
+        return fig
+
+
+# =============================================================================
+# MULTIVERSE HEATMAP (🌌 robustness across specs)
+# =============================================================================
+
+def plot_multiverse_heatmap(results_df: pd.DataFrame, output_path: Optional[Path] = None) -> plt.Figure:
+    """
+    Draw a heatmap summarizing H2 conclusions across model specs.
+
+    Expected columns in results_df:
+      - spec_id, dv, ic_spec, sector_fe, estimator, n, converged (bool)
+      - beta_vag, p_vag  (β₁ and its p-value)
+      - beta_int, p_int  (β₃ and its p-value)
+
+    Color encodes signed evidence: sign(β) × −log10(p), clipped [0, 6]
+    Column1 = β₁ (Vag→Growth in modular), Column2 = β₃ (Interaction)
+    """
+    if results_df is None or results_df.empty:
+        raise ValueError("No multiverse results to plot.")
+
+    dfp = results_df.copy()
+    def ev(beta, p):
+        if pd.isna(beta) or pd.isna(p) or p<=0:
+            return 0.0
+        return np.sign(beta) * np.clip(-np.log10(p), 0, 6)
+
+    dfp['E_vag'] = [ev(b, p) for b, p in zip(dfp['beta_vag'], dfp['p_vag'])]
+    dfp['E_int'] = [ev(b, p) for b, p in zip(dfp['beta_int'], dfp['p_int'])]
+
+    # Row label = compact spec signature
+    dfp['spec'] = (dfp['dv'].astype(str) + " | IC:" + dfp['ic_spec'].astype(str) +
+                   " | FE:" + dfp['sector_fe'].map({True:'Y', False:'N'}).astype(str) +
+                   " | est:" + dfp['estimator'].astype(str))
+
+    mat = dfp[['E_vag','E_int']].to_numpy()
+    row_labels = dfp['spec'].tolist()
+    col_labels = ['β₁ (Vag→Growth, modular)', 'β₃ (Interaction)']
+
+    fig, ax = plt.subplots(figsize=(10, max(6, 0.35*len(row_labels))))
+    sns.heatmap(mat, annot=True, fmt=".2f", cmap="coolwarm", center=0,
+                yticklabels=row_labels, xticklabels=col_labels, ax=ax,
+                cbar_kws={'label':'sign×−log10(p)'}
+                )
+    ax.set_title("Multiverse Heatmap — H2 Consistency across Specifications")
+    ax.set_ylabel("Model specifications")
+    ax.set_xlabel("Parameters of interest")
+
+    # Convergence border (draw a marker for non-converged)
+    for i, conv in enumerate(dfp['converged'].tolist()):
+        if not conv:
+            ax.text(2.02, i+0.5, "×", va='center', ha='left', color='k', fontsize=12)
+
+    plt.tight_layout()
+    if output_path:
+        fig.savefig(output_path, dpi=300, bbox_inches='tight')
+        print(f"  ✓ Saved: {output_path}")
+    return fig
+
+
+# =============================================================================
+# STORYBOARD + MV CONVENIENCE WRAPPER
+# =============================================================================
+
+def create_storyboard_and_multiverse_plots(
+    df: pd.DataFrame,
+    results_df: Optional[pd.DataFrame],
+    output_dir: Path,
+    dv_col: str = 'survival'
+) -> Dict[str, Path]:
+    """
+    Convenience wrapper to create:
+      - story_univariate.png
+      - story_bivariate_growth.png
+      - story_interaction.png
+      - multiverse_heatmap.png  (if results_df provided)
+    """
+    out = {}
+    output_dir = Path(output_dir); output_dir.mkdir(parents=True, exist_ok=True)
+
+    sb = StoryboardPlots(dv_col=dv_col, dv_label='Growth (Series B+ within window)')
+
+    fig = sb.plot_univariate(df, output_dir / "story_univariate.png")
+    plt.close(fig); out['story_univariate'] = output_dir / "story_univariate.png"
+
+    fig = sb.plot_bivariate_growth(df, output_dir / "story_bivariate_growth.png")
+    plt.close(fig); out['story_bivariate_growth'] = output_dir / "story_bivariate_growth.png"
+
+    # Optionally pass an H2 model to draw smooth curves; here we just use data
+    fig = sb.plot_interaction_decomposition(df, model=None, output_path=output_dir / "story_interaction.png")
+    plt.close(fig); out['story_interaction'] = output_dir / "story_interaction.png"
+
+    if results_df is not None and len(results_df):
+        fig = plot_multiverse_heatmap(results_df, output_dir / "multiverse_heatmap.png")
+        plt.close(fig); out['multiverse_heatmap'] = output_dir / "multiverse_heatmap.png"
+
+    return out
+
+
 if __name__ == "__main__":
     print("Visualization Module - Standalone Test\n")
     print("=" * 80)

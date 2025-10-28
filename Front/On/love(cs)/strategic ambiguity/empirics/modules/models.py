@@ -612,6 +612,100 @@ def create_results_summary(results: Dict[str, Union[RegressionResultsWrapper, Bi
     return summary_df
 
 
+# =============================================================================
+# MULTIVERSE RUNNER (no window toggle)
+# =============================================================================
+from dataclasses import dataclass
+from typing import List
+from itertools import product
+
+@dataclass(frozen=True)
+class SpecConfig:
+    dv: str                 # 'Y_primary' | 'Y_MA_upper' | 'Y_MA_lower'
+    ic_spec: str            # 'binary' | 'within'
+    sector_fe: bool         # True | False
+    estimator: str = 'logit'  # 'logit' | 'ridge'
+
+class MultiverseRunner:
+    """
+    Run a small grid of H2 specifications and collect β₁ (vag) / β₃ (interaction).
+    Assumes df is preprocessed (z_vagueness, z_employees_log, founding_cohort, ic_within).
+    """
+
+    def fit_one(self, df: pd.DataFrame, cfg: SpecConfig) -> Dict[str, object]:
+        dv = cfg.dv
+        if dv not in df.columns:
+            raise ValueError(f"DV column '{dv}' not found in dataframe.")
+
+        work = df.copy()
+        work = work[work[dv].notna()]
+        work = work.dropna(subset=['z_vagueness', 'z_employees_log'])
+
+        # choose IC term
+        if cfg.ic_spec == 'binary':
+            ic_term = 'high_integration_cost'
+            inter_term = 'z_vagueness:high_integration_cost'
+            if ic_term not in work.columns:
+                work[ic_term] = 0
+        elif cfg.ic_spec == 'within':
+            ic_term = 'ic_within'
+            inter_term = 'z_vagueness:ic_within'
+            if ic_term not in work.columns:
+                raise ValueError("ic_within not found. Add it in preprocessing.")
+        else:
+            raise ValueError("ic_spec must be 'binary' or 'within'.")
+
+        # formula
+        rhs = f"z_vagueness * {ic_term} + z_employees_log + C(founding_cohort)"
+        if cfg.sector_fe:
+            rhs += " + C(sector_fe)"
+        formula = f"{dv} ~ {rhs}"
+
+        # fit
+        converged = True
+        try:
+            if cfg.estimator == 'logit':
+                model = smf.logit(formula, data=work).fit(disp=False)
+            else:
+                model = smf.logit(formula, data=work).fit_regularized(method='l2', alpha=0.01, disp=False, maxiter=200)
+        except Exception as e:
+            converged = False
+            model = None
+
+        # extract
+        beta_vag = p_vag = beta_int = p_int = np.nan
+        n = len(work)
+        if model is not None:
+            beta_vag = model.params.get('z_vagueness', np.nan)
+            p_vag = model.pvalues.get('z_vagueness', np.nan)
+            beta_int = model.params.get(inter_term, np.nan)
+            p_int = model.pvalues.get(inter_term, np.nan)
+
+        return {
+            'spec_id': f"{dv}|IC:{cfg.ic_spec}|FE:{cfg.sector_fe}|{cfg.estimator}",
+            'dv': dv,
+            'ic_spec': cfg.ic_spec,
+            'sector_fe': cfg.sector_fe,
+            'estimator': cfg.estimator,
+            'n': n,
+            'converged': converged,
+            'beta_vag': beta_vag, 'p_vag': p_vag,
+            'beta_int': beta_int, 'p_int': p_int
+        }
+
+    def run(self, df: pd.DataFrame, grid: Dict[str, List]) -> pd.DataFrame:
+        rows = []
+        for dv, ic_spec, sector_fe, estimator in product(
+                grid.get('dv', ['Y_primary','Y_MA_upper','Y_MA_lower']),
+                grid.get('ic_spec', ['binary','within']),
+                grid.get('sector_fe', [False, True]),
+                grid.get('estimator', ['logit','ridge'])
+            ):
+            cfg = SpecConfig(dv=dv, ic_spec=ic_spec, sector_fe=sector_fe, estimator=estimator)
+            rows.append(self.fit_one(df, cfg))
+        return pd.DataFrame(rows)
+
+
 if __name__ == "__main__":
     # Example usage with simulated data
     print("Hypothesis Testing Module - Example Usage\n")

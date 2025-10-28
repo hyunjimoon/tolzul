@@ -28,8 +28,10 @@ from modules.features import (
     create_survival_seriesb_progression, preprocess_for_h2
 )
 from modules.models import (
-    test_h1_early_funding, test_h2_main_survival, test_h2_robustness_sector_fe
+    test_h1_early_funding, test_h2_main_survival, test_h2_robustness_sector_fe,
+    MultiverseRunner
 )
+from modules.plots import create_storyboard_and_multiverse_plots
 
 
 def read_snapshot(path, encoding='utf-8'):
@@ -234,11 +236,13 @@ def run_h2_analysis(dfs, output_dir):
     lower_coeffs.to_csv(output_dir / "h2_robustness_MA_lower.csv", index=False)
     print(f"  ✓ Saved: {output_dir / 'h2_robustness_MA_lower.csv'}")
 
+    # Return results and analysis dataset for storyboard/multiverse if needed
     return {
         'main': h2_main_result,
         'sector_fe': h2_sector_result,
         'ma_upper': h2_upper_result,
-        'ma_lower': h2_lower_result
+        'ma_lower': h2_lower_result,
+        'analysis_df': analysis_df
     }
 
 
@@ -265,6 +269,18 @@ def main():
         '--h2-only',
         action='store_true',
         help='Test H2 only (series B+ progression)'
+    )
+
+    parser.add_argument(
+        '--storyboard',
+        action='store_true',
+        help='Create storyboard plots (narrative visualizations)'
+    )
+
+    parser.add_argument(
+        '--multiverse',
+        action='store_true',
+        help='Run multiverse grid and create heatmap'
     )
 
     args = parser.parse_args()
@@ -358,6 +374,44 @@ def main():
     if test_h2:
         results['h2'] = run_h2_analysis(dfs, output_dir)
 
+    # === Optional: Storyboard & Multiverse ===
+    if (args.storyboard or args.multiverse) and test_h2:
+        print("\n" + "="*80)
+        print("STORYBOARD & MULTIVERSE ANALYSIS")
+        print("="*80)
+
+        # Get analysis dataset from H2 results
+        analysis_df = results['h2']['analysis_df']
+
+        mv_results = None
+        if args.multiverse:
+            print("\n" + "="*80)
+            print("RUNNING MULTIVERSE GRID (no window toggle)")
+            print("="*80)
+            grid = {
+                'dv': ['Y_primary', 'Y_MA_upper', 'Y_MA_lower'],
+                'ic_spec': ['binary', 'within'],
+                'sector_fe': [False, True],
+                'estimator': ['logit', 'ridge']
+            }
+            mv = MultiverseRunner()
+            mv_results = mv.run(analysis_df, grid)
+            mv_results.to_csv(output_dir / "multiverse_results.csv", index=False)
+            print(f"  ✓ Saved: {output_dir / 'multiverse_results.csv'}")
+
+        if args.storyboard:
+            print("\n" + "="*80)
+            print("CREATING STORYBOARD PLOTS")
+            print("="*80)
+            created = create_storyboard_and_multiverse_plots(
+                df=analysis_df,
+                results_df=mv_results,
+                output_dir=output_dir,
+                dv_col='survival'
+            )
+            for k, p in created.items():
+                print(f"  ✓ {k}: {p}")
+
     # Summary
     print("\n" + "="*80)
     print("✓ ANALYSIS COMPLETE")
@@ -376,6 +430,17 @@ def main():
         print(f"  - h2_robustness_MA_lower.csv (M&A=0)")
         print(f"  - h2_analysis_dataset.csv (full data)")
         print(f"  - h2_dv_seriesb_17m.csv (DV construction)")
+
+        if args.storyboard:
+            print("\nStoryboard Plots:")
+            print(f"  - story_univariate.png")
+            print(f"  - story_bivariate_growth.png")
+            print(f"  - story_interaction.png")
+
+        if args.multiverse:
+            print("\nMultiverse Analysis:")
+            print(f"  - multiverse_results.csv")
+            print(f"  - multiverse_heatmap.png")
 
 
 if __name__ == "__main__":
