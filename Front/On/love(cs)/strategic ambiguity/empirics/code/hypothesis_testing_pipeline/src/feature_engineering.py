@@ -353,6 +353,214 @@ def create_survival_from_company_snapshots(
     return survival_df
 
 
+def create_survival_seriesb_progression(
+    df_baseline: pd.DataFrame,
+    df_mid1: pd.DataFrame,
+    df_mid2: pd.DataFrame,
+    df_endpoint: pd.DataFrame,
+    baseline_date: str = "2021-12-01",
+    mid1_date: str = "2022-01-01",
+    mid2_date: str = "2022-05-01",
+    endpoint_date: str = "2023-05-01"
+) -> pd.DataFrame:
+    """
+    Create survival variable based on Series B+ progression (LLM2 approach).
+
+    This addresses the singular matrix problem by using SUCCESS-BASED survival:
+    - Y=1: Company progressed from Series A → Series B+ within window
+    - Y=0: Company stayed at Series A or went Out of Business
+    - CENSORED: Company had M&A exit (competing risk)
+
+    Expected base rate: 12-15% (17-month window captures early movers only)
+
+    Key features:
+    1. As-of capping: Prevents data leakage (diagnostic showed 2024-2025 dates in 2021-23 snapshots)
+    2. Event ordering: Uses all 4 snapshots to determine "first seen" for B+ and M&A
+    3. At-risk cohort: Only companies at Series A (VC-backed) at baseline
+
+    Args:
+        df_baseline: Baseline snapshot (2021-12-01) - extract predictors
+        df_mid1: Mid snapshot 1 (2022-01-01) - for event ordering
+        df_mid2: Mid snapshot 2 (2022-05-01) - for event ordering
+        df_endpoint: Endpoint snapshot (2023-05-01) - final outcomes
+        baseline_date: Date of baseline snapshot
+        mid1_date: Date of mid1 snapshot
+        mid2_date: Date of mid2 snapshot
+        endpoint_date: Date of endpoint snapshot
+
+    Returns:
+        DataFrame with columns:
+        - company_id: Company identifier
+        - Y_primary: Binary DV (1=B+ progression, 0=no progression, NaN=M&A censored)
+        - Y_MA_upper: Upper bound (M&A=1)
+        - Y_MA_lower: Lower bound (M&A=0)
+        - at_risk: Whether company was in at-risk cohort
+    """
+    import re
+
+    # Regex patterns for deal types
+    B_PLUS_PAT = r"(Series\s*B(\d+)?|Series\s*C|Series\s*D|Later Stage VC:\s*Series\s*[BCD])"
+    A_STAGE_PAT = r"(Series\s*A(\d+)?|Early Stage VC:\s*Series\s*A)"
+    MA_PAT = r"(Merger/Acquisition|Acquisition|Buyout/LBO)"
+    OOB_VAL = "Out of Business"
+
+    # Identify company ID column
+    id_col = 'CompanyID' if 'CompanyID' in df_baseline.columns else 'company_id'
+
+    def apply_asof_cap(df, snapshot_date, date_col="LastFinancingDate", type_col="LastFinancingDealType"):
+        """Apply as-of date capping to prevent data leakage."""
+        df = df.copy()
+        snap_dt = pd.to_datetime(snapshot_date)
+
+        # Normalize date
+        d = pd.to_datetime(df[date_col], errors='coerce')
+
+        # Cap: if future relative to snapshot, null both date and type
+        capped_date = d.where(d <= snap_dt)
+        capped_type = df[type_col].where(d <= snap_dt)
+
+        df[date_col + "_asof"] = capped_date
+        df[type_col + "_asof"] = capped_type
+
+        # Leakage guard
+        max_date = df[date_col + "_asof"].dropna().max()
+        if pd.notna(max_date) and max_date > snap_dt:
+            print(f"  ⚠️  WARNING: Leakage detected: {max_date} > {snap_dt}")
+
+        # Convenience flags for this snapshot
+        df["asof_is_Bplus"] = df[type_col + "_asof"].fillna("").str.contains(B_PLUS_PAT, case=False, regex=True)
+        df["asof_is_Astage"] = df[type_col + "_asof"].fillna("").str.contains(A_STAGE_PAT, case=False, regex=True)
+        df["asof_is_MA"] = df[type_col + "_asof"].fillna("").str.contains(MA_PAT, case=False, regex=True)
+
+        # Check for OOB status
+        if "BusinessStatus" in df.columns:
+            df["asof_is_OOB"] = (df["BusinessStatus"] == OOB_VAL)
+        else:
+            df["asof_is_OOB"] = False
+
+        return df
+
+    # Apply as-of capping to all snapshots
+    print("\n  📅 Applying as-of date capping (preventing data leakage):")
+    df_t0 = apply_asof_cap(df_baseline, baseline_date)
+    print(f"     Baseline ({baseline_date}): capped")
+    df_tM1 = apply_asof_cap(df_mid1, mid1_date)
+    print(f"     Mid1 ({mid1_date}): capped")
+    df_tM2 = apply_asof_cap(df_mid2, mid2_date)
+    print(f"     Mid2 ({mid2_date}): capped")
+    df_t1 = apply_asof_cap(df_endpoint, endpoint_date)
+    print(f"     Endpoint ({endpoint_date}): capped")
+
+    # Get at-risk cohort: Series A, VC-backed, no prior B+ at baseline
+    print("\n  🎯 Identifying at-risk cohort (Series A at baseline):")
+
+    if "CompanyFinancingStatus" in df_t0.columns:
+        vc = (df_t0["CompanyFinancingStatus"] == "Venture Capital-Backed")
+    else:
+        vc = pd.Series(True, index=df_t0.index)
+
+    at_a = df_t0["asof_is_Astage"].fillna(False)
+    no_prior_b = ~df_t0["asof_is_Bplus"].fillna(False)
+
+    cohort_mask = vc & at_a & no_prior_b
+    atrisk = df_t0.loc[cohort_mask, [id_col]].drop_duplicates(subset=[id_col])
+
+    print(f"     Total at baseline: {len(df_t0):,}")
+    print(f"     VC-backed: {vc.sum():,}")
+    print(f"     At Series A: {at_a.sum():,}")
+    print(f"     No prior B+: {no_prior_b.sum():,}")
+    print(f"     → At-risk cohort: {len(atrisk):,}")
+
+    # Track event ordering across all 4 snapshots
+    print("\n  🔍 Tracking event ordering (first seen B+ vs M&A):")
+
+    atrisk_ids = set(atrisk[id_col].unique())
+    snapshots = [
+        (0, "t0", df_t0),
+        (1, "tM1", df_tM1),
+        (2, "tM2", df_tM2),
+        (3, "t1", df_t1)
+    ]
+
+    # Collect all events
+    all_events = []
+    for idx, name, df in snapshots:
+        events = df[[id_col, "asof_is_Bplus", "asof_is_MA"]].copy()
+        events = events[events[id_col].isin(atrisk_ids)]
+        events['_snap_idx'] = idx
+        all_events.append(events)
+
+    all_events_df = pd.concat(all_events, axis=0, ignore_index=True)
+
+    # Find first occurrence of each event type
+    def first_idx(flag_col):
+        subset = all_events_df.loc[all_events_df[flag_col].fillna(False), [id_col, '_snap_idx']]
+        return subset.groupby(id_col)['_snap_idx'].min()
+
+    first_b = first_idx("asof_is_Bplus")
+    first_ma = first_idx("asof_is_MA")
+
+    # OOB status at endpoint
+    oob_at_t1 = df_t1[[id_col, "asof_is_OOB"]].set_index(id_col)["asof_is_OOB"]
+
+    # Merge into result DataFrame
+    result = pd.DataFrame({
+        'company_id': list(atrisk_ids)
+    })
+    result['first_seen_B_idx'] = result['company_id'].map(first_b)
+    result['first_seen_MA_idx'] = result['company_id'].map(first_ma)
+    result['oob_at_t1'] = result['company_id'].map(oob_at_t1).fillna(False)
+
+    # Compute DV variants
+    print("\n  📊 Computing DV (Series B+ progression):")
+
+    # Primary DV: Y=1 if B+ appeared after baseline (idx>=1), CENSORED if M&A before B+
+    b_idx = result['first_seen_B_idx']
+    m_idx = result['first_seen_MA_idx']
+
+    cond_B = b_idx.notna() & (b_idx >= 1)  # B+ appeared after baseline
+    cond_MA_preB = m_idx.notna() & ((b_idx.isna()) | (m_idx < b_idx))  # M&A before B+ (or no B+)
+    cond_OOB_or_stillA = (~cond_B) & (~cond_MA_preB)  # Neither B+ nor M&A
+
+    # Primary DV (M&A censored)
+    result['Y_primary'] = np.nan
+    result.loc[cond_B, 'Y_primary'] = 1
+    result.loc[cond_OOB_or_stillA, 'Y_primary'] = 0
+    # M&A before B+ → censored (remains NaN)
+
+    # Robustness bounds
+    result['Y_MA_upper'] = result['Y_primary'].copy()
+    result.loc[cond_MA_preB & (~cond_B), 'Y_MA_upper'] = 1
+
+    result['Y_MA_lower'] = result['Y_primary'].copy()
+    result.loc[cond_MA_preB & (~cond_B), 'Y_MA_lower'] = 0
+
+    result['at_risk'] = True
+
+    # Diagnostics
+    n_total = len(result)
+    n_valid_primary = result['Y_primary'].notna().sum()
+    n_success = (result['Y_primary'] == 1).sum()
+    n_censored = result['Y_primary'].isna().sum()
+
+    base_rate = n_success / n_valid_primary if n_valid_primary > 0 else 0
+    censored_rate = n_censored / n_total if n_total > 0 else 0
+
+    print(f"     N at-risk: {n_total:,}")
+    print(f"     N valid (non-censored): {n_valid_primary:,}")
+    print(f"     N progressed to B+: {n_success:,}")
+    print(f"     Base rate (B+ progression): {base_rate:.1%}")
+    print(f"     M&A censored: {n_censored:,} ({censored_rate:.1%})")
+
+    # Sanity check
+    if not (0.08 <= base_rate <= 0.20):
+        print(f"     ⚠️  WARNING: Base rate {base_rate:.1%} outside expected 8-20% range")
+    else:
+        print(f"     ✓ Base rate within expected range (8-20%)")
+
+    return result[['company_id', 'Y_primary', 'Y_MA_upper', 'Y_MA_lower', 'at_risk']]
+
+
 # =============================================================================
 # SECTOR FIXED EFFECTS
 # =============================================================================
