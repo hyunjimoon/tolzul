@@ -1232,8 +1232,17 @@ def create_founding_cohort(df: pd.DataFrame, year_col: str = 'year_founded') -> 
 
     cohort = pd.cut(df[year_col], bins=bins, labels=labels, right=True)
 
+    # CRITICAL FIX: Remove unused categories (causes singular matrix in regression)
+    cohort_counts = cohort.value_counts()
+    empty_cats = cohort_counts[cohort_counts == 0].index.tolist()
+
+    if empty_cats:
+        print(f"    ⚠️  Removing empty categories: {empty_cats}")
+        # Remove unused categories from the categorical
+        cohort = cohort.cat.remove_unused_categories()
+
     # Report distribution
-    print(f"    ✓ founding_cohort created:")
+    print(f"    ✓ founding_cohort created (active categories only):")
     print(f"      {cohort.value_counts().sort_index().to_dict()}")
 
     return cohort
