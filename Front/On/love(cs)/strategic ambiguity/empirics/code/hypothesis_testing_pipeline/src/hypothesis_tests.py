@@ -157,8 +157,22 @@ def test_h2_main_survival(
     print(f"Formula: {formula}")
     print(f"Survival rate: {df_clean['survival'].mean():.2%}")
 
-    # Fit logit model
-    model = smf.logit(formula, data=df_clean).fit(disp=False)
+    # Fit logit model with regularization fallback
+    try:
+        # Try standard MLE first
+        model = smf.logit(formula, data=df_clean).fit(disp=False)
+        print(f"  ✓ Converged with standard MLE")
+    except (np.linalg.LinAlgError, ValueError) as e:
+        print(f"\n  ⚠️  Standard MLE failed: {e}")
+        print(f"  → Retrying with L2 regularization (ridge, α=0.01)...")
+        # Fallback to regularized logistic regression
+        model = smf.logit(formula, data=df_clean).fit_regularized(
+            method='l2',
+            alpha=0.01,
+            disp=False,
+            maxiter=100
+        )
+        print(f"  ✓ Converged with regularization")
 
     print(f"\n{model.summary()}")
 
@@ -246,8 +260,22 @@ def test_h2_robustness_sector_fe(
     print(f"Formula: {formula}")
     print(f"Survival rate: {df_clean['survival'].mean():.2%}")
 
-    # Fit logit model
-    model = smf.logit(formula, data=df_clean).fit(disp=False)
+    # Fit logit model with regularization fallback
+    try:
+        # Try standard MLE first
+        model = smf.logit(formula, data=df_clean).fit(disp=False)
+        print(f"  ✓ Converged with standard MLE")
+    except (np.linalg.LinAlgError, ValueError) as e:
+        print(f"\n  ⚠️  Standard MLE failed: {e}")
+        print(f"  → Retrying with L2 regularization (ridge, α=0.01)...")
+        # Fallback to regularized logistic regression
+        model = smf.logit(formula, data=df_clean).fit_regularized(
+            method='l2',
+            alpha=0.01,
+            disp=False,
+            maxiter=100
+        )
+        print(f"  ✓ Converged with regularization")
 
     print(f"\n{model.summary()}")
 
