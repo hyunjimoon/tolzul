@@ -1,6 +1,20 @@
 # Usage Examples
 
-## 1. Quick Start with Demo Data
+---
+
+## ⚠️ DEPRECATION NOTICE
+
+**These examples are for the OLD pipeline (now archived).**
+
+**Please use**: `../../run_h2_seriesb.py`
+
+**See**: `../../README_START_HERE.md` for current usage
+
+**Old files archived to**: `../../archive_deprecated/`
+
+---
+
+## 1. Quick Start with Demo Data (OLD - Don't Use)
 
 ```bash
 # Run complete pipeline with simulated data

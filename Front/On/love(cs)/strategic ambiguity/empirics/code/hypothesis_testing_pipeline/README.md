@@ -1,6 +1,24 @@
 # Hypothesis Testing Pipeline for Promise Vagueness Research
 
-## 🎯 Research Objective
+---
+
+## ⚠️ DEPRECATION NOTICE
+
+**This documentation is for the OLD pipeline (now archived).**
+
+**Please use the NEW pipeline instead**: `../../run_h2_seriesb.py`
+
+**Documentation**: See `../../README_START_HERE.md`
+
+**What changed**:
+- OLD: 2-snapshot approach (singular matrix error)
+- NEW: 4-snapshot approach (12-15% progression rate) ✓
+
+**Old files archived to**: `../../archive_deprecated/`
+
+---
+
+## 🎯 Research Objective (Historical Reference Only)
 
 Test how **promise vagueness** affects (1) early funding amounts and (2) later success, conditional on sector integration cost.
 
