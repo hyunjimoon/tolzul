@@ -1,4 +1,0 @@
-Hypothesis,Parameter,Expected Sign,Estimated,p-value,Significant,Sign Match,Hypothesis Supported
-H1,α₁ (Vagueness),Negative (<0),-3.539661427688289,0.3405106410543445,✗,✓,✗
-H2,β₁ (Vagueness - modular),Positive (>0),-3.453451891971236,0.15962781217913835,✗,✗,✗
-H2,β₃ (Interaction),Negative (<0),5.3055006260897395,0.13056296794996095,✗,✗,✗
