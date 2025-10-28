@@ -167,7 +167,12 @@ def plot_bivariate_with_survival(df, output_dir):
     ax.set_xlabel('Integration Cost')
     ax.set_ylabel('Survival Rate (%)')
     ax.set_title('Survival Rate by Integration Cost')
-    ax.set_xticklabels(['Modular (0)', 'Integrated (1)'], rotation=0)
+    # Only set labels for categories that exist
+    existing_cats = cross_tab.index.tolist()
+    labels = []
+    for cat in existing_cats:
+        labels.append('Modular (0)' if cat == 0 else 'Integrated (1)')
+    ax.set_xticklabels(labels, rotation=0)
     ax.legend(['Failed', 'Survived'], title='Survival')
 
     # 3. Founder Credibility vs Survival
@@ -177,7 +182,12 @@ def plot_bivariate_with_survival(df, output_dir):
     ax.set_xlabel('Founder Credibility')
     ax.set_ylabel('Survival Rate (%)')
     ax.set_title('Survival Rate by Founder Type')
-    ax.set_xticklabels(['Non-serial (0)', 'Serial (1)'], rotation=0)
+    # Only set labels for categories that exist
+    existing_cats = cross_tab.index.tolist()
+    labels = []
+    for cat in existing_cats:
+        labels.append('Non-serial (0)' if cat == 0 else 'Serial (1)')
+    ax.set_xticklabels(labels, rotation=0)
     ax.legend(['Failed', 'Survived'], title='Survival')
 
     # 4. Employees vs Survival
