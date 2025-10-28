@@ -398,10 +398,17 @@ def create_survival_seriesb_progression(
     """
     import re
 
-    # Regex patterns for deal types (SIMPLIFIED - more permissive)
-    B_PLUS_PAT = r"Series\s*[BCD]"  # Matches "Series B", "Series C", "Series D"
-    A_STAGE_PAT = r"Series\s*A"  # Matches "Series A" (case-insensitive flag in contains())
-    MA_PAT = r"(Merger|Acquisition|Buyout|LBO)"
+    # Regex patterns for deal types (FIXED - matches actual PitchBook data structure)
+    # PitchBook uses "Early Stage VC" / "Later Stage VC" instead of "Series A/B/C"
+
+    # Series A: "Early Stage VC" is the primary label (~45K companies)
+    A_STAGE_PAT = r"(?:\bSeries\s*A(?:[-\s]?\d+|[A-Z])?\b|\bEarly[-\s]*Stage\s*VC\b)"
+
+    # Series B+: "Later Stage VC" is the primary label (~24K companies)
+    B_PLUS_PAT = r"(?:\bLater[-\s]*Stage\s*VC\b|\bSeries\s*[B-G](?:[-\s]?\d+|[A-Z])?\b)"
+
+    # M&A pattern (unchanged)
+    MA_PAT = r"(?:Merger|Acquisition|Buyout|LBO)"
     OOB_VAL = "Out of Business"
 
     # Identify company ID column
