@@ -31,9 +31,12 @@ sys.path.insert(0, str(Path(__file__).parent / "code/hypothesis_testing_pipeline
 
 from feature_engineering import (
     engineer_features, compute_founder_credibility, extract_sector_fe,
-    create_survival_seriesb_progression
+    create_survival_seriesb_progression, preprocess_for_h2
 )
-from hypothesis_tests import run_full_hypothesis_tests, create_results_summary
+from hypothesis_tests import (
+    run_full_hypothesis_tests, create_results_summary,
+    test_h2_main_survival, test_h2_robustness_sector_fe
+)
 from visualizations import create_all_visualizations
 
 
@@ -140,9 +143,16 @@ def main():
         df_baseline['sector_fe'] = extract_sector_fe(df_baseline['keywords'])
         print(f"    ✓ sector_fe: {df_baseline['sector_fe'].nunique()} categories")
 
+    # Apply H2 preprocessing (fixes for singular matrix)
+    print("\n" + "="*80)
+    print("STEP 4: H2 PREPROCESSING")
+    print("="*80)
+
+    df_baseline = preprocess_for_h2(df_baseline)
+
     # Merge survival DV with predictors
     print("\n" + "="*80)
-    print("STEP 4: MERGE DV WITH PREDICTORS")
+    print("STEP 5: MERGE DV WITH PREDICTORS")
     print("="*80)
 
     id_col = 'CompanyID' if 'CompanyID' in df_baseline.columns else 'company_id'
@@ -167,20 +177,52 @@ def main():
 
     # Run hypothesis tests
     print("\n" + "="*80)
-    print("STEP 5: RUN HYPOTHESIS TESTS")
+    print("STEP 6: RUN HYPOTHESIS TESTS")
     print("="*80)
 
     # Primary spec (M&A censored)
-    print("\n[PRIMARY] H2 Main (M&A censored):")
+    print("\n[PRIMARY] H2 Main (M&A censored, no sector FE):")
     df_primary = analysis_df[analysis_df['survival'].notna()].copy()
     print(f"  N = {len(df_primary):,}")
+    print(f"  Survival rate: {df_primary['survival'].mean():.2%}")
 
-    results = run_full_hypothesis_tests(df_primary)
+    h2_main_result = test_h2_main_survival(df_primary)
 
-    # Save results
-    summary = create_results_summary(results)
-    summary.to_csv(output_dir / "h2_main_coefficients.csv", index=False)
+    # Robustness: With sector FE
+    print("\n[ROBUSTNESS] H2 with Sector FE + ic_within:")
+    h2_sector_result = test_h2_robustness_sector_fe(df_primary)
+
+    # Package results for compatibility
+    results = {
+        'h2_main': h2_main_result,
+        'h2_sector_fe': h2_sector_result
+    }
+
+    # Save main results (convert to dataframe manually)
+    main_coeffs = pd.DataFrame({
+        'variable': h2_main_result.params.index,
+        'coefficient': h2_main_result.params.values,
+        'std_err': h2_main_result.bse.values,
+        'z': h2_main_result.tvalues.values,
+        'p_value': h2_main_result.pvalues.values,
+        'ci_lower': h2_main_result.conf_int()[0].values,
+        'ci_upper': h2_main_result.conf_int()[1].values
+    })
+    main_coeffs.to_csv(output_dir / "h2_main_coefficients.csv", index=False)
     print(f"\n  ✓ Saved: {output_dir / 'h2_main_coefficients.csv'}")
+
+    # Save sector FE robustness results
+    sector_coeffs = pd.DataFrame({
+        'variable': h2_sector_result.params.index,
+        'coefficient': h2_sector_result.params.values,
+        'std_err': h2_sector_result.bse.values,
+        'z': h2_sector_result.tvalues.values,
+        'p_value': h2_sector_result.pvalues.values,
+        'ci_lower': h2_sector_result.conf_int()[0].values,
+        'ci_upper': h2_sector_result.conf_int()[1].values
+    })
+    sector_coeffs.to_csv(output_dir / "h2_robustness_sector_fe.csv", index=False)
+    print(f"  ✓ Saved: {output_dir / 'h2_robustness_sector_fe.csv'}")
 
     # Robustness: M&A upper bound
     print("\n[ROBUSTNESS] H2 with M&A=1 (upper bound):")
@@ -188,10 +230,19 @@ def main():
     df_upper['survival'] = df_upper['survival_MA_upper']
     df_upper = df_upper[df_upper['survival'].notna()]
     print(f"  N = {len(df_upper):,}")
+    print(f"  Survival rate: {df_upper['survival'].mean():.2%}")
 
-    results_upper = run_full_hypothesis_tests(df_upper)
-    summary_upper = create_results_summary(results_upper)
-    summary_upper.to_csv(output_dir / "h2_robustness_MA_upper.csv", index=False)
+    h2_upper_result = test_h2_main_survival(df_upper)
+    upper_coeffs = pd.DataFrame({
+        'variable': h2_upper_result.params.index,
+        'coefficient': h2_upper_result.params.values,
+        'std_err': h2_upper_result.bse.values,
+        'z': h2_upper_result.tvalues.values,
+        'p_value': h2_upper_result.pvalues.values,
+        'ci_lower': h2_upper_result.conf_int()[0].values,
+        'ci_upper': h2_upper_result.conf_int()[1].values
+    })
+    upper_coeffs.to_csv(output_dir / "h2_robustness_MA_upper.csv", index=False)
     print(f"  ✓ Saved: {output_dir / 'h2_robustness_MA_upper.csv'}")
 
     # Robustness: M&A lower bound
@@ -200,18 +251,33 @@ def main():
     df_lower['survival'] = df_lower['survival_MA_lower']
     df_lower = df_lower[df_lower['survival'].notna()]
     print(f"  N = {len(df_lower):,}")
+    print(f"  Survival rate: {df_lower['survival'].mean():.2%}")
 
-    results_lower = run_full_hypothesis_tests(df_lower)
-    summary_lower = create_results_summary(results_lower)
-    summary_lower.to_csv(output_dir / "h2_robustness_MA_lower.csv", index=False)
+    h2_lower_result = test_h2_main_survival(df_lower)
+    lower_coeffs = pd.DataFrame({
+        'variable': h2_lower_result.params.index,
+        'coefficient': h2_lower_result.params.values,
+        'std_err': h2_lower_result.bse.values,
+        'z': h2_lower_result.tvalues.values,
+        'p_value': h2_lower_result.pvalues.values,
+        'ci_lower': h2_lower_result.conf_int()[0].values,
+        'ci_upper': h2_lower_result.conf_int()[1].values
+    })
+    lower_coeffs.to_csv(output_dir / "h2_robustness_MA_lower.csv", index=False)
     print(f"  ✓ Saved: {output_dir / 'h2_robustness_MA_lower.csv'}")
 
     # Create visualizations
     print("\n" + "="*80)
-    print("STEP 6: CREATE VISUALIZATIONS")
+    print("STEP 7: CREATE VISUALIZATIONS")
     print("="*80)
 
-    create_all_visualizations(df_primary, results, output_dir=output_dir)
+    # Reconstruct results dict for visualization function
+    vis_results = {'h2': h2_main_result}
+    try:
+        create_all_visualizations(df_primary, vis_results, output_dir=output_dir)
+    except Exception as e:
+        print(f"  ⚠️  Visualization skipped: {e}")
+        print(f"  (This is OK - visualizations are optional)")
 
     print("\n" + "="*80)
     print("✓ H2 ANALYSIS COMPLETE")
@@ -220,10 +286,11 @@ def main():
     print("\nKey files:")
     print(f"  - h2_dv_seriesb_17m.csv (DV construction)")
     print(f"  - h2_analysis_dataset_17m.csv (merged predictors + DV)")
-    print(f"  - h2_main_coefficients.csv (primary results)")
-    print(f"  - h2_robustness_MA_upper.csv (upper bound)")
-    print(f"  - h2_robustness_MA_lower.csv (lower bound)")
-    print(f"  - Visualizations: h1_scatter.png, h2_interaction.png, etc.")
+    print(f"  - h2_main_coefficients.csv (primary results, no sector FE)")
+    print(f"  - h2_robustness_sector_fe.csv (robustness with sector FE)")
+    print(f"  - h2_robustness_MA_upper.csv (M&A=1 upper bound)")
+    print(f"  - h2_robustness_MA_lower.csv (M&A=0 lower bound)")
+    print(f"  - Visualizations: h1_scatter.png, h2_interaction.png, etc. (if available)")
 
 
 if __name__ == "__main__":

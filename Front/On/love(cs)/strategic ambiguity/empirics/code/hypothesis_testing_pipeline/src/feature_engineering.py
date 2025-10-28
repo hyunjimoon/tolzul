@@ -1197,6 +1197,209 @@ def create_analysis_dataset(
 
 
 # =============================================================================
+# H2 PREPROCESSING (FIXES FOR SINGULAR MATRIX)
+# =============================================================================
+
+def create_founding_cohort(df: pd.DataFrame, year_col: str = 'year_founded') -> pd.Series:
+    """
+    Create categorical founding cohort variable to replace continuous year_founded.
+
+    This addresses the ChatGPT diagnosis: year_founded as continuous assumes linear trend,
+    but founding year effects are better captured as cohort effects (macro conditions,
+    technology maturity, etc. differ by cohort).
+
+    Args:
+        df: DataFrame with year_founded column
+        year_col: Name of year founded column (default: 'year_founded')
+
+    Returns:
+        Series with categorical founding cohort labels
+
+    Cohorts:
+        - '≤2009': Pre-mobile era
+        - '2010-14': Mobile-first era
+        - '2015-18': AI/ML emergence
+        - '2019-20': Pre-COVID
+        - '2021': COVID era (baseline snapshot year)
+    """
+    if year_col not in df.columns:
+        print(f"    ⚠️  Column '{year_col}' not found. Returning NaN.")
+        return pd.Series(np.nan, index=df.index)
+
+    # Define cohort bins
+    bins = [0, 2009, 2014, 2018, 2020, 2021, 9999]
+    labels = ['≤2009', '2010-14', '2015-18', '2019-20', '2021', '2022+']
+
+    cohort = pd.cut(df[year_col], bins=bins, labels=labels, right=True)
+
+    # Report distribution
+    print(f"    ✓ founding_cohort created:")
+    print(f"      {cohort.value_counts().sort_index().to_dict()}")
+
+    return cohort
+
+
+def standardize_continuous_predictors(df: pd.DataFrame,
+                                      predictors: List[str] = None) -> pd.DataFrame:
+    """
+    Standardize continuous predictors to z-scores (mean=0, std=1).
+
+    This addresses the ChatGPT diagnosis: unstandardized predictors can cause
+    numerical instability in logistic regression, especially with interaction terms.
+
+    Args:
+        df: DataFrame with continuous predictors
+        predictors: List of predictor names to standardize
+                   Default: ['vagueness', 'employees_log']
+
+    Returns:
+        DataFrame with added z_* columns for each predictor
+
+    Example:
+        df['z_vagueness'] = (vagueness - mean) / std
+    """
+    if predictors is None:
+        predictors = ['vagueness', 'employees_log']
+
+    df_out = df.copy()
+
+    print(f"    ✓ Standardizing continuous predictors:")
+    for pred in predictors:
+        if pred not in df.columns:
+            print(f"      ⚠️  '{pred}' not found, skipping")
+            continue
+
+        # Compute z-score
+        mean_val = df[pred].mean()
+        std_val = df[pred].std()
+
+        if std_val == 0 or pd.isna(std_val):
+            print(f"      ⚠️  '{pred}' has zero variance, setting to 0")
+            df_out[f'z_{pred}'] = 0
+        else:
+            df_out[f'z_{pred}'] = (df[pred] - mean_val) / std_val
+            print(f"      ✓ z_{pred}: mean={mean_val:.2f}, std={std_val:.2f}")
+
+    return df_out
+
+
+def create_within_sector_ic(df: pd.DataFrame,
+                            ic_col: str = 'high_integration_cost',
+                            sector_col: str = 'sector_fe') -> pd.Series:
+    """
+    Create within-sector centered integration cost for robustness model.
+
+    This addresses the ChatGPT diagnosis: C(sector_fe) and high_integration_cost
+    are collinear because IC is derived from sector keywords. This function creates
+    sector-centered continuous IC that can be used WITH sector fixed effects.
+
+    Args:
+        df: DataFrame with integration cost and sector columns
+        ic_col: Name of integration cost column (binary or continuous)
+        sector_col: Name of sector fixed effect column
+
+    Returns:
+        Series with sector-centered integration cost (continuous)
+
+    Formula:
+        ic_within[i] = ic[i] - mean(ic | sector[i])
+
+    This captures within-sector variation in integration cost while
+    sector FE capture between-sector differences.
+    """
+    if ic_col not in df.columns or sector_col not in df.columns:
+        print(f"    ⚠️  Required columns not found. Returning zeros.")
+        return pd.Series(0, index=df.index)
+
+    # Compute sector means
+    sector_means = df.groupby(sector_col)[ic_col].transform('mean')
+
+    # Center within sector
+    ic_within = df[ic_col] - sector_means
+
+    print(f"    ✓ ic_within created (sector-centered integration cost)")
+    print(f"      Mean: {ic_within.mean():.4f} (should be ~0)")
+    print(f"      Std: {ic_within.std():.4f}")
+
+    return ic_within
+
+
+def preprocess_for_h2(df: pd.DataFrame,
+                      fix_founder_credibility: bool = True) -> pd.DataFrame:
+    """
+    Apply all H2 preprocessing fixes in one step.
+
+    This is the main function to call before running H2 hypothesis tests.
+    It applies all fixes identified in ChatGPT's diagnosis:
+
+    1. Create founding_cohort (replace year_founded)
+    2. Standardize continuous predictors (z-scores)
+    3. Create ic_within (for robustness model with sector FE)
+    4. Fix founder_credibility (remove if constant)
+
+    Args:
+        df: DataFrame with raw features from engineer_features()
+        fix_founder_credibility: If True, remove founder_credibility if all zeros
+
+    Returns:
+        DataFrame with all H2 preprocessing applied
+
+    Usage:
+        df = engineer_features(df_baseline)
+        df = preprocess_for_h2(df)
+        # Now ready for H2 hypothesis tests
+    """
+    print("\n" + "="*80)
+    print("H2 PREPROCESSING (SINGULAR MATRIX FIXES)")
+    print("="*80)
+
+    df_out = df.copy()
+
+    # 1. Create founding cohort
+    print("\n  [1/4] Creating founding_cohort...")
+    df_out['founding_cohort'] = create_founding_cohort(df_out)
+
+    # 2. Standardize continuous predictors
+    print("\n  [2/4] Standardizing continuous predictors...")
+    df_out = standardize_continuous_predictors(df_out)
+
+    # 3. Create within-sector IC
+    print("\n  [3/4] Creating ic_within (sector-centered integration cost)...")
+    df_out['ic_within'] = create_within_sector_ic(df_out)
+
+    # 4. Fix founder_credibility
+    print("\n  [4/4] Checking founder_credibility...")
+    if 'founder_credibility' in df_out.columns:
+        fc_mean = df_out['founder_credibility'].mean()
+        fc_std = df_out['founder_credibility'].std()
+
+        if fc_std == 0 or pd.isna(fc_std):
+            print(f"      ⚠️  founder_credibility is constant ({fc_mean:.4f})")
+            if fix_founder_credibility:
+                print(f"      ✓ Dropping founder_credibility (causes collinearity with intercept)")
+                df_out = df_out.drop(columns=['founder_credibility'])
+        else:
+            print(f"      ✓ founder_credibility has variation (mean={fc_mean:.2f}, std={fc_std:.2f})")
+            # Also create z-score version
+            df_out['z_founder_credibility'] = (df_out['founder_credibility'] - fc_mean) / fc_std
+    else:
+        print(f"      ℹ️  founder_credibility not found in dataset")
+
+    print("\n" + "="*80)
+    print("✓ H2 PREPROCESSING COMPLETE")
+    print("="*80)
+    print("\nNew variables created:")
+    print("  - founding_cohort (categorical, replaces year_founded)")
+    print("  - z_vagueness (standardized)")
+    print("  - z_employees_log (standardized)")
+    print("  - ic_within (sector-centered, for robustness model)")
+    if 'z_founder_credibility' in df_out.columns:
+        print("  - z_founder_credibility (standardized)")
+
+    return df_out
+
+
+# =============================================================================
 # UTILITIES
 # =============================================================================
 

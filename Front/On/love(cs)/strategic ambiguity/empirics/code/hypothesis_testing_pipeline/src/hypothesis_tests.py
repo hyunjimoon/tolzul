@@ -29,8 +29,8 @@ import xarray as xr
 
 def test_h1_early_funding(
     df: pd.DataFrame,
-    formula: str = ("early_funding_musd ~ vagueness + founder_credibility + "
-                   "high_integration_cost + employees_log + C(sector_fe) + year_founded")
+    formula: str = ("early_funding_musd ~ z_vagueness + z_employees_log + "
+                   "C(sector_fe) + C(founding_cohort)")
 ) -> RegressionResultsWrapper:
     """
     Test H1: Early funding amount is negatively affected by vagueness.
@@ -38,10 +38,15 @@ def test_h1_early_funding(
     Model: Early Funding ~ Vagueness + Controls
     Expected: α₁ < 0 (vagueness reduces early funding)
 
-    Full specification:
-        early_funding_musd ~ vagueness + founder_credibility +
-                           high_integration_cost + log(employees+1) +
-                           sector_fe + year_founded
+    Full specification (UPDATED - fixes from ChatGPT diagnosis):
+        early_funding_musd ~ z_vagueness + z_employees_log +
+                           C(sector_fe) + C(founding_cohort)
+
+    Changes from original:
+        - Uses z-scores for numerical stability
+        - Dropped founder_credibility (constant, causes collinearity)
+        - Dropped high_integration_cost (collinear with sector_fe)
+        - Uses founding_cohort instead of year_founded (cohort effects)
 
     Args:
         df: DataFrame with required variables
@@ -56,7 +61,7 @@ def test_h1_early_funding(
         - Controls for founder quality, sector, firm size, and age
     """
     # Drop missing values
-    df_clean = df.dropna(subset=['early_funding_musd', 'vagueness'])
+    df_clean = df.dropna(subset=['early_funding_musd', 'z_vagueness'])
 
     if len(df_clean) == 0:
         raise ValueError("No valid observations after removing missing values")
@@ -73,8 +78,8 @@ def test_h1_early_funding(
     print(f"\n{model.summary()}")
 
     # Check hypothesis
-    vagueness_coef = model.params.get('vagueness', np.nan)
-    vagueness_pval = model.pvalues.get('vagueness', np.nan)
+    vagueness_coef = model.params.get('z_vagueness', np.nan)
+    vagueness_pval = model.pvalues.get('z_vagueness', np.nan)
 
     print(f"\n{'='*80}")
     print("H1 HYPOTHESIS TEST")
@@ -82,8 +87,8 @@ def test_h1_early_funding(
     print(f"Expected: α₁ < 0 (vagueness negatively affects early funding)")
     print(f"Estimated α₁: {vagueness_coef:.6f}")
     print(f"p-value: {vagueness_pval:.4f}")
-    print(f"95% CI: [{model.conf_int().loc['vagueness', 0]:.6f}, "
-          f"{model.conf_int().loc['vagueness', 1]:.6f}]")
+    print(f"95% CI: [{model.conf_int().loc['z_vagueness', 0]:.6f}, "
+          f"{model.conf_int().loc['z_vagueness', 1]:.6f}]")
 
     if vagueness_coef < 0 and vagueness_pval < 0.05:
         print(f"✓ H1 SUPPORTED: Vagueness has significant negative effect (α₁={vagueness_coef:.4f}, p<0.05)")
@@ -101,8 +106,8 @@ def test_h1_early_funding(
 
 def test_h2_main_survival(
     df: pd.DataFrame,
-    formula: str = ("survival ~ vagueness * high_integration_cost + "
-                   "founder_credibility + employees_log + C(sector_fe) + year_founded")
+    formula: str = ("survival ~ z_vagueness * high_integration_cost + "
+                   "z_employees_log + C(founding_cohort)")
 ) -> BinaryResultsWrapper:
     """
     Test H2 Main: Vagueness effect on survival is moderated by integration cost.
@@ -113,10 +118,17 @@ def test_h2_main_survival(
     Expected: β₁ > 0 (positive in modular sectors)
               β₃ < 0 (negative interaction, attenuated in integrated sectors)
 
-    Full specification:
-        survival ~ vagueness * high_integration_cost +
-                   founder_credibility + log(employees+1) +
-                   sector_fe + year_founded
+    Full specification (UPDATED - fixes from ChatGPT diagnosis):
+        survival ~ z_vagueness * high_integration_cost +
+                   z_employees_log + C(founding_cohort)
+
+    CRITICAL FIXES:
+        1. DROPPED C(sector_fe) - collinear with high_integration_cost
+        2. Uses z-scores for numerical stability
+        3. DROPPED founder_credibility - constant (all zeros)
+        4. Uses founding_cohort instead of year_founded
+
+    For robustness with sector FE, use test_h2_robustness_sector_fe() instead.
 
     Args:
         df: DataFrame with required variables
@@ -132,7 +144,7 @@ def test_h2_main_survival(
         - NO early_funding: it's a mediator in causal chain vagueness→funding→survival
     """
     # Drop missing values
-    required_vars = ['survival', 'vagueness', 'high_integration_cost']
+    required_vars = ['survival', 'z_vagueness', 'high_integration_cost']
     df_clean = df.dropna(subset=required_vars)
 
     if len(df_clean) == 0:
@@ -151,10 +163,10 @@ def test_h2_main_survival(
     print(f"\n{model.summary()}")
 
     # Extract key coefficients
-    beta1 = model.params.get('vagueness', np.nan)
-    beta3 = model.params.get('vagueness:high_integration_cost', np.nan)
-    pval1 = model.pvalues.get('vagueness', np.nan)
-    pval3 = model.pvalues.get('vagueness:high_integration_cost', np.nan)
+    beta1 = model.params.get('z_vagueness', np.nan)
+    beta3 = model.params.get('z_vagueness:high_integration_cost', np.nan)
+    pval1 = model.pvalues.get('z_vagueness', np.nan)
+    pval3 = model.pvalues.get('z_vagueness:high_integration_cost', np.nan)
 
     # Total effect in integrated sectors
     total_effect_integrated = beta1 + beta3
@@ -164,12 +176,12 @@ def test_h2_main_survival(
     print(f"{'='*80}")
     print(f"Expected: β₁ > 0 (positive in modular), β₃ < 0 (attenuated in integrated)")
     print(f"\nβ₁ (Vagueness main effect - modular sectors): {beta1:.6f} (p={pval1:.4f})")
-    print(f"   95% CI: [{model.conf_int().loc['vagueness', 0]:.6f}, "
-          f"{model.conf_int().loc['vagueness', 1]:.6f}]")
+    print(f"   95% CI: [{model.conf_int().loc['z_vagueness', 0]:.6f}, "
+          f"{model.conf_int().loc['z_vagueness', 1]:.6f}]")
     print(f"\nβ₃ (Interaction term): {beta3:.6f} (p={pval3:.4f})")
-    if 'vagueness:high_integration_cost' in model.conf_int().index:
-        print(f"   95% CI: [{model.conf_int().loc['vagueness:high_integration_cost', 0]:.6f}, "
-              f"{model.conf_int().loc['vagueness:high_integration_cost', 1]:.6f}]")
+    if 'z_vagueness:high_integration_cost' in model.conf_int().index:
+        print(f"   95% CI: [{model.conf_int().loc['z_vagueness:high_integration_cost', 0]:.6f}, "
+              f"{model.conf_int().loc['z_vagueness:high_integration_cost', 1]:.6f}]")
     print(f"\nTotal effect in integrated sectors (β₁+β₃): {total_effect_integrated:.6f}")
 
     # Check hypothesis
@@ -188,6 +200,84 @@ def test_h2_main_survival(
     else:
         print(f"✗ H2 NOT SUPPORTED")
         print(f"  - Main effect not positive or significant (β₁={beta1:.4f}, p={pval1:.4f})")
+
+    return model
+
+
+def test_h2_robustness_sector_fe(
+    df: pd.DataFrame,
+    formula: str = ("survival ~ z_vagueness * ic_within + "
+                   "z_employees_log + C(sector_fe) + C(founding_cohort)")
+) -> BinaryResultsWrapper:
+    """
+    Test H2 Robustness: With sector FE using within-sector centered integration cost.
+
+    This robustness check addresses collinearity by using ic_within (sector-centered
+    integration cost) instead of high_integration_cost. This allows including both
+    sector FE (captures between-sector differences) and ic_within (captures
+    within-sector variation in integration cost).
+
+    Model: Survival ~ Vagueness × IC_within + Controls + Sector FE
+    Expected: Similar pattern to H2 Main (β₁ > 0, β₃ < 0)
+
+    Args:
+        df: DataFrame with required variables (must have ic_within from preprocess_for_h2)
+        formula: R-style formula for logit regression
+
+    Returns:
+        Statsmodels logit results object
+
+    Interpretation:
+        - Tests whether vagueness effect persists when controlling for sector FE
+        - ic_within captures within-sector variation in integration cost
+        - Complements H2 Main's between-sector comparison
+    """
+    # Drop missing values
+    required_vars = ['survival', 'z_vagueness', 'ic_within']
+    df_clean = df.dropna(subset=required_vars)
+
+    if len(df_clean) == 0:
+        raise ValueError("No valid observations after removing missing values")
+
+    print(f"\n{'='*80}")
+    print("H2 ROBUSTNESS: WITH SECTOR FE + IC_WITHIN (LOGIT)")
+    print(f"{'='*80}")
+    print(f"Sample size: {len(df_clean)}")
+    print(f"Formula: {formula}")
+    print(f"Survival rate: {df_clean['survival'].mean():.2%}")
+
+    # Fit logit model
+    model = smf.logit(formula, data=df_clean).fit(disp=False)
+
+    print(f"\n{model.summary()}")
+
+    # Extract key coefficients
+    beta1 = model.params.get('z_vagueness', np.nan)
+    beta3 = model.params.get('z_vagueness:ic_within', np.nan)
+    pval1 = model.pvalues.get('z_vagueness', np.nan)
+    pval3 = model.pvalues.get('z_vagueness:ic_within', np.nan)
+
+    # Total effect at high IC (ic_within = 1 std above mean)
+    total_effect_high_ic = beta1 + beta3
+
+    print(f"\n{'='*80}")
+    print("H2 ROBUSTNESS TEST RESULTS")
+    print(f"{'='*80}")
+    print(f"β₁ (Vagueness main effect): {beta1:.6f} (p={pval1:.4f})")
+    print(f"β₃ (Interaction with ic_within): {beta3:.6f} (p={pval3:.4f})")
+    print(f"\nTotal effect at high IC (+1 SD): {total_effect_high_ic:.6f}")
+
+    # Check hypothesis
+    h2_robust = beta1 > 0 and pval1 < 0.05
+    print(f"\n{'='*80}")
+    if h2_robust:
+        print(f"✓ H2 ROBUSTNESS SUPPORTED")
+        print(f"  - Vagueness effect persists with sector FE (β₁={beta1:.4f}, p<0.05)")
+        if beta3 < 0:
+            print(f"  - Effect attenuated at high IC (β₃={beta3:.4f})")
+    else:
+        print(f"✗ H2 ROBUSTNESS NOT SUPPORTED")
+        print(f"  - Vagueness effect not significant with sector FE (β₁={beta1:.4f}, p={pval1:.4f})")
 
     return model
 
