@@ -398,10 +398,10 @@ def create_survival_seriesb_progression(
     """
     import re
 
-    # Regex patterns for deal types
-    B_PLUS_PAT = r"(Series\s*B(\d+)?|Series\s*C|Series\s*D|Later Stage VC:\s*Series\s*[BCD])"
-    A_STAGE_PAT = r"(Series\s*A(\d+)?|Early Stage VC:\s*Series\s*A)"
-    MA_PAT = r"(Merger/Acquisition|Acquisition|Buyout/LBO)"
+    # Regex patterns for deal types (SIMPLIFIED - more permissive)
+    B_PLUS_PAT = r"Series\s*[BCD]"  # Matches "Series B", "Series C", "Series D"
+    A_STAGE_PAT = r"Series\s*A"  # Matches "Series A" (case-insensitive flag in contains())
+    MA_PAT = r"(Merger|Acquisition|Buyout|LBO)"
     OOB_VAL = "Out of Business"
 
     # Identify company ID column
@@ -415,9 +415,10 @@ def create_survival_seriesb_progression(
         # Normalize date
         d = pd.to_datetime(df[date_col], errors='coerce')
 
-        # Cap: if future relative to snapshot, null both date and type
+        # Cap DATE but keep TYPE (type represents current stage, date may have data entry errors)
         capped_date = d.where(d <= snap_dt)
-        capped_type = df[type_col].where(d <= snap_dt)
+        # IMPORTANT: We keep the deal type even if date is future - it shows current financing stage
+        capped_type = df[type_col]  # Don't null out based on date
 
         df[date_col + "_asof"] = capped_date
         df[type_col + "_asof"] = capped_type
@@ -431,6 +432,14 @@ def create_survival_seriesb_progression(
         df["asof_is_Bplus"] = df[type_col + "_asof"].fillna("").str.contains(B_PLUS_PAT, case=False, regex=True)
         df["asof_is_Astage"] = df[type_col + "_asof"].fillna("").str.contains(A_STAGE_PAT, case=False, regex=True)
         df["asof_is_MA"] = df[type_col + "_asof"].fillna("").str.contains(MA_PAT, case=False, regex=True)
+
+        # Debug: Show sample matches
+        n_a = df["asof_is_Astage"].sum()
+        n_b = df["asof_is_Bplus"].sum()
+        if n_a > 0:
+            print(f"        → Found {n_a:,} Series A companies")
+        if n_b > 0:
+            print(f"        → Found {n_b:,} Series B+ companies")
 
         # Check for OOB status
         if "BusinessStatus" in df.columns:
