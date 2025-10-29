@@ -82,7 +82,7 @@ def test_h2_main_growth(
     try:
         model = smf.logit(formula, data=d).fit(disp=False)
     except Exception:
-        model = smf.logit(formula, data=d).fit_regularized(method='l2', alpha=0.01, disp=False, maxiter=200)
+        model = smf.logit(formula, data=d).fit_regularized(method='l1', alpha=0.01, disp=False, maxiter=200)
     return model
 
 # -----------------------------
@@ -165,7 +165,7 @@ def test_h4_growth_interaction(
         Statsmodels logit results object
 
     Note:
-        Falls back to fit_regularized(method='l2', alpha=0.01) if convergence fails
+        Falls back to fit_regularized(method='l1', alpha=0.01) if convergence fails
     """
     # Create founder_serial if not present
     d = df.copy()
@@ -196,5 +196,5 @@ def test_h4_growth_interaction(
     try:
         model = smf.logit(formula, data=d).fit(disp=False)
     except Exception:
-        model = smf.logit(formula, data=d).fit_regularized(method='l2', alpha=0.01, disp=False, maxiter=200)
+        model = smf.logit(formula, data=d).fit_regularized(method='l1', alpha=0.01, disp=False, maxiter=200)
     return model
