@@ -18,6 +18,7 @@ warnings.filterwarnings('ignore')
 import pandas as pd
 import numpy as np
 import statsmodels.formula.api as smf
+from sklearn.metrics import roc_auc_score, brier_score_loss, log_loss
 
 sys.path.insert(0, str(Path(__file__).parent))
 
@@ -134,8 +135,8 @@ def main():
     print("MODERATOR BAKE-OFF: Architecture vs Credibility")
     print("="*80)
 
-    def save_model_results(model, coef_path, metrics_path):
-        """Helper to save model coefficients and fit metrics."""
+    def save_model_results(model, coef_path, metrics_path, ame_path, data_for_pred):
+        """Helper to save model coefficients, fit metrics, and AME."""
         # Coefficients
         coef_df = pd.DataFrame({
             'variable': model.params.index,
@@ -148,6 +149,26 @@ def main():
         })
         coef_df.to_csv(coef_path, index=False)
 
+        # Predictions for additional metrics
+        y_true = model.model.endog
+        y_pred_proba = model.predict()
+
+        # Calculate additional metrics
+        try:
+            auc = roc_auc_score(y_true, y_pred_proba)
+        except:
+            auc = float('nan')
+
+        try:
+            brier = brier_score_loss(y_true, y_pred_proba)
+        except:
+            brier = float('nan')
+
+        try:
+            logloss = log_loss(y_true, y_pred_proba)
+        except:
+            logloss = float('nan')
+
         # Fit metrics
         metrics_df = pd.DataFrame([{
             'nobs': float(getattr(model, 'nobs', float('nan'))),
@@ -155,9 +176,75 @@ def main():
             'aic': float(getattr(model, 'aic', float('nan'))),
             'bic': float(getattr(model, 'bic', float('nan'))),
             'llf': float(getattr(model, 'llf', float('nan'))),
-            'converged': bool(getattr(model, 'mle_retvals', {}).get('converged', True))
+            'converged': bool(getattr(model, 'mle_retvals', {}).get('converged', True)),
+            'auc': float(auc),
+            'brier': float(brier),
+            'logloss': float(logloss)
         }])
         metrics_df.to_csv(metrics_path, index=False)
+
+        # AME and level-specific slopes
+        # This is simplified - for production, use get_margeff()
+        # For now, calculate marginal effects at representative values
+        ame_results = []
+
+        # Get marginal effect of z_vagueness (AME)
+        try:
+            marg_eff = model.get_margeff(at='overall')
+            vagueness_vars = [v for v in marg_eff.margeff_names if 'vagueness' in v.lower()]
+            if vagueness_vars:
+                vague_idx = marg_eff.margeff_names.index(vagueness_vars[0])
+                ame_vagueness = marg_eff.margeff[vague_idx]
+                ame_se = marg_eff.margeff_se[vague_idx]
+            else:
+                ame_vagueness = float('nan')
+                ame_se = float('nan')
+        except:
+            ame_vagueness = float('nan')
+            ame_se = float('nan')
+
+        ame_results.append({
+            'effect': 'AME_z_vagueness',
+            'value': float(ame_vagueness),
+            'std_err': float(ame_se)
+        })
+
+        # Level-specific slopes (manual calculation from coefficients)
+        # For Architecture: β_vagueness (level 0), β_vagueness + β_interaction (level 1)
+        # For Founder: β_vagueness (level 0), β_vagueness + β_interaction (level 1)
+        try:
+            # Find main effect and interaction
+            vague_main = None
+            interaction = None
+
+            for var in model.params.index:
+                if var == 'z_vagueness':
+                    vague_main = model.params[var]
+                elif 'vagueness' in var.lower() and (':' in var or '*' in var):
+                    interaction = model.params[var]
+
+            if vague_main is not None:
+                # Level 0 (reference): just main effect
+                ame_results.append({
+                    'effect': 'slope_level_0',
+                    'value': float(vague_main),
+                    'std_err': float(model.bse.get('z_vagueness', float('nan')))
+                })
+
+                # Level 1: main + interaction
+                if interaction is not None:
+                    slope_level_1 = vague_main + interaction
+                    # Note: SE calculation for sum requires covariance, simplified here
+                    ame_results.append({
+                        'effect': 'slope_level_1',
+                        'value': float(slope_level_1),
+                        'std_err': float('nan')  # Requires full covariance matrix
+                    })
+        except Exception as e:
+            print(f"  ⚠️ Warning: Could not calculate level-specific slopes: {e}")
+
+        ame_df = pd.DataFrame(ame_results)
+        ame_df.to_csv(ame_path, index=False)
 
     # Model 1: Architecture (is_hardware)
     print("\nFitting H2-Architecture (is_hardware moderator)...")
@@ -168,9 +255,16 @@ def main():
     except Exception:
         m_arch = smf.logit(formula_arch, data=ana_arch).fit_regularized(method='l2', alpha=0.01, disp=False, maxiter=200)
 
-    save_model_results(m_arch, outdir / "h2_model_architecture.csv", outdir / "h2_model_architecture_metrics.csv")
+    save_model_results(
+        m_arch,
+        outdir / "h2_model_architecture.csv",
+        outdir / "h2_model_architecture_metrics.csv",
+        outdir / "h2_model_architecture_ame.csv",
+        ana_arch
+    )
     print(f"✓ Saved: {outdir / 'h2_model_architecture.csv'}")
     print(f"✓ Saved: {outdir / 'h2_model_architecture_metrics.csv'}")
+    print(f"✓ Saved: {outdir / 'h2_model_architecture_ame.csv'}")
 
     # Model 2: Credibility (is_serial)
     print("\nFitting H2-Credibility (is_serial moderator)...")
@@ -181,9 +275,16 @@ def main():
     except Exception:
         m_founder = smf.logit(formula_founder, data=ana_founder).fit_regularized(method='l2', alpha=0.01, disp=False, maxiter=200)
 
-    save_model_results(m_founder, outdir / "h2_model_founder.csv", outdir / "h2_model_founder_metrics.csv")
+    save_model_results(
+        m_founder,
+        outdir / "h2_model_founder.csv",
+        outdir / "h2_model_founder_metrics.csv",
+        outdir / "h2_model_founder_ame.csv",
+        ana_founder
+    )
     print(f"✓ Saved: {outdir / 'h2_model_founder.csv'}")
     print(f"✓ Saved: {outdir / 'h2_model_founder_metrics.csv'}")
+    print(f"✓ Saved: {outdir / 'h2_model_founder_ame.csv'}")
 
     print("\n" + "="*80)
     print("BAKE-OFF COMPLETE")

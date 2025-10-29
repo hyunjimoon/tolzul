@@ -853,13 +853,104 @@ def save_h2_interaction_architecture(df: pd.DataFrame, outdir: Path) -> None:
     plt.close(fig)
 
 
-def save_h2_interaction_founder(df: pd.DataFrame, outdir: Path) -> None:
+def save_moderator_overlap(df: pd.DataFrame, outdir: Path, moderator: str) -> None:
     """
-    Save interaction plot: vagueness × is_serial.
+    Save ECDF/histogram overlap plot for moderator positivity check.
 
     Args:
         df: DataFrame with analysis data
         outdir: Output directory for saved plot
+        moderator: Moderator variable name ("is_hardware" or "is_serial")
+    """
+    outdir = Path(outdir)
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+    # Filter valid data
+    df_valid = df[df['vagueness'].notna() & df[moderator].notna()].copy()
+
+    # Get groups
+    group_0 = df_valid[df_valid[moderator] == 0]['vagueness']
+    group_1 = df_valid[df_valid[moderator] == 1]['vagueness']
+
+    # Labels
+    if moderator == 'is_hardware':
+        label_0, label_1 = 'Software (0)', 'Hardware (1)'
+        colors = ['#2ecc71', '#e67e22']
+    elif moderator == 'is_serial':
+        label_0, label_1 = 'Non-serial (0)', 'Serial (1)'
+        colors = ['#95a5a6', '#9b59b6']
+    else:
+        label_0, label_1 = f'{moderator}=0', f'{moderator}=1'
+        colors = ['blue', 'red']
+
+    # Left plot: Histogram overlap
+    ax = axes[0]
+    ax.hist(group_0, bins=30, alpha=0.5, label=f'{label_0} (n={len(group_0):,})',
+            color=colors[0], edgecolor='black')
+    ax.hist(group_1, bins=30, alpha=0.5, label=f'{label_1} (n={len(group_1):,})',
+            color=colors[1], edgecolor='black')
+    ax.set_xlabel('Vagueness Score (0-100)', fontsize=11, fontweight='bold')
+    ax.set_ylabel('Frequency', fontsize=11, fontweight='bold')
+    ax.set_title(f'Vagueness Distribution by {moderator}', fontsize=12, fontweight='bold')
+    ax.legend(loc='best')
+    ax.grid(True, alpha=0.3, axis='y')
+
+    # Calculate SMD
+    mean_0, std_0 = group_0.mean(), group_0.std()
+    mean_1, std_1 = group_1.mean(), group_1.std()
+    pooled_std = np.sqrt((std_0**2 + std_1**2) / 2)
+    smd = (mean_1 - mean_0) / pooled_std if pooled_std > 0 else 0
+
+    ax.text(0.05, 0.95, f'SMD = {smd:.3f}',
+            transform=ax.transAxes, fontsize=10,
+            verticalalignment='top',
+            bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8))
+
+    # Right plot: ECDF
+    ax = axes[1]
+
+    # Sort and compute ECDF
+    sorted_0 = np.sort(group_0)
+    ecdf_0 = np.arange(1, len(sorted_0) + 1) / len(sorted_0)
+
+    sorted_1 = np.sort(group_1)
+    ecdf_1 = np.arange(1, len(sorted_1) + 1) / len(sorted_1)
+
+    ax.plot(sorted_0, ecdf_0, label=label_0, color=colors[0], linewidth=2)
+    ax.plot(sorted_1, ecdf_1, label=label_1, color=colors[1], linewidth=2)
+
+    ax.set_xlabel('Vagueness Score (0-100)', fontsize=11, fontweight='bold')
+    ax.set_ylabel('Cumulative Probability', fontsize=11, fontweight='bold')
+    ax.set_title('ECDF: Positivity Check', fontsize=12, fontweight='bold')
+    ax.legend(loc='best')
+    ax.grid(True, alpha=0.3)
+
+    # KS statistic
+    ks_stat = np.max(np.abs(
+        np.interp(sorted_0, sorted_1, ecdf_1, left=0, right=1) - ecdf_0
+    ))
+    ax.text(0.05, 0.95, f'KS stat = {ks_stat:.3f}',
+            transform=ax.transAxes, fontsize=10,
+            verticalalignment='top',
+            bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.8))
+
+    plt.tight_layout()
+    output_path = outdir / f'moderator_overlap_{moderator}.png'
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    print(f"  ✓ Saved: {output_path}")
+    plt.close(fig)
+
+
+def save_h2_interaction(df: pd.DataFrame, outdir: Path, moderator: str) -> None:
+    """
+    Save interaction plot: vagueness × moderator with Wilson CI.
+
+    Args:
+        df: DataFrame with analysis data
+        outdir: Output directory for saved plot
+        moderator: Moderator variable name ("is_hardware" or "is_serial")
     """
     outdir = Path(outdir)
     outdir.mkdir(parents=True, exist_ok=True)
@@ -867,49 +958,109 @@ def save_h2_interaction_founder(df: pd.DataFrame, outdir: Path) -> None:
     fig, ax = plt.subplots(figsize=(10, 6))
 
     # Filter valid data
-    df_valid = df[df['growth'].notna() & df['vagueness'].notna() & df['is_serial'].notna()].copy()
+    df_valid = df[df['growth'].notna() & df['vagueness'].notna() & df[moderator].notna()].copy()
 
     # Create vagueness quintiles
-    df_valid['vagueness_quintile'] = pd.qcut(df_valid['vagueness'], q=5, labels=['Q1', 'Q2', 'Q3', 'Q4', 'Q5'], duplicates='drop')
+    df_valid['vagueness_quintile'] = pd.qcut(
+        df_valid['vagueness'], q=5,
+        labels=['Q1', 'Q2', 'Q3', 'Q4', 'Q5'],
+        duplicates='drop'
+    )
 
-    # Calculate mean growth by quintile and is_serial
-    interaction_data = df_valid.groupby(['vagueness_quintile', 'is_serial']).agg({
-        'growth': ['mean', 'count']
+    # Calculate mean growth by quintile and moderator
+    interaction_data = df_valid.groupby(['vagueness_quintile', moderator]).agg({
+        'growth': ['sum', 'count']
     }).reset_index()
-    interaction_data.columns = ['quintile', 'is_serial', 'mean_growth', 'count']
+    interaction_data.columns = ['quintile', moderator, 'successes', 'trials']
+    interaction_data['rate'] = interaction_data['successes'] / interaction_data['trials']
 
-    # Plot lines for each moderator level
-    colors = {'Non-serial (0)': '#95a5a6', 'Serial (1)': '#9b59b6'}
+    # Wilson confidence intervals
+    def wilson_ci(successes, trials, alpha=0.05):
+        """Calculate Wilson score confidence interval."""
+        from scipy import stats
+        z = stats.norm.ppf(1 - alpha/2)
+        p = successes / trials
+        denominator = 1 + z**2/trials
+        center = (p + z**2/(2*trials)) / denominator
+        margin = z * np.sqrt(p*(1-p)/trials + z**2/(4*trials**2)) / denominator
+        return center - margin, center + margin
+
+    interaction_data['ci_lower'] = interaction_data.apply(
+        lambda row: wilson_ci(row['successes'], row['trials'])[0], axis=1
+    )
+    interaction_data['ci_upper'] = interaction_data.apply(
+        lambda row: wilson_ci(row['successes'], row['trials'])[1], axis=1
+    )
+
+    # Labels and colors
+    if moderator == 'is_hardware':
+        labels = {0: 'Software (0)', 1: 'Hardware (1)'}
+        colors = {0: '#2ecc71', 1: '#e67e22'}
+    elif moderator == 'is_serial':
+        labels = {0: 'Non-serial (0)', 1: 'Serial (1)'}
+        colors = {0: '#95a5a6', 1: '#9b59b6'}
+    else:
+        labels = {0: f'{moderator}=0', 1: f'{moderator}=1'}
+        colors = {0: 'blue', 1: 'red'}
+
     markers = {0: 'o', 1: 's'}
 
-    for serial_val in [0, 1]:
-        subset = interaction_data[interaction_data['is_serial'] == serial_val]
+    # Plot lines for each moderator level
+    for mod_val in [0, 1]:
+        subset = interaction_data[interaction_data[moderator] == mod_val]
         if len(subset) > 0:
-            label = 'Non-serial (0)' if serial_val == 0 else 'Serial (1)'
-            ax.plot(range(len(subset)), subset['mean_growth'] * 100,
-                   marker=markers[serial_val], markersize=10, linewidth=2.5,
-                   label=label, color=colors[label])
+            x_pos = range(len(subset))
+            y_vals = subset['rate'] * 100
+
+            # Plot line with markers
+            ax.plot(x_pos, y_vals,
+                   marker=markers[mod_val], markersize=10, linewidth=2.5,
+                   label=labels[mod_val], color=colors[mod_val])
+
+            # Add error bars (Wilson CI)
+            ax.fill_between(x_pos,
+                           subset['ci_lower'] * 100,
+                           subset['ci_upper'] * 100,
+                           alpha=0.2, color=colors[mod_val])
 
             # Add sample size labels
             for i, (idx, row) in enumerate(subset.iterrows()):
-                ax.text(i, row['mean_growth'] * 100 + 1, f"n={int(row['count'])}",
+                ax.text(i, row['rate'] * 100 + 1.5,
+                       f"n={int(row['trials'])}",
                        ha='center', va='bottom', fontsize=8, alpha=0.7)
 
     ax.set_xlabel('Vagueness Quintile', fontsize=12, fontweight='bold')
     ax.set_ylabel('Growth Rate (%)', fontsize=12, fontweight='bold')
-    ax.set_title('H2-Credibility: Vagueness × is_serial Interaction',
+
+    title_suffix = 'is_hardware' if moderator == 'is_hardware' else 'is_serial'
+    ax.set_title(f'H2 Interaction: Vagueness × {title_suffix}',
                 fontsize=14, fontweight='bold')
+
     ax.set_xticks(range(5))
     ax.set_xticklabels(['Q1\n(Low)', 'Q2', 'Q3', 'Q4', 'Q5\n(High)'])
     ax.legend(loc='best', fontsize=11)
     ax.grid(True, alpha=0.3)
-    ax.set_ylim(0, max(interaction_data['mean_growth'].max() * 100 + 5, 20))
+
+    # Dynamic y-limit
+    max_val = interaction_data['ci_upper'].max() * 100
+    ax.set_ylim(0, max(max_val + 5, 20))
 
     plt.tight_layout()
-    output_path = outdir / 'h2_interaction_founder.png'
+    output_path = outdir / f'h2_interaction_{moderator}.png'
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     print(f"  ✓ Saved: {output_path}")
     plt.close(fig)
+
+
+# Backward compatibility wrappers
+def save_h2_interaction_architecture(df: pd.DataFrame, outdir: Path) -> None:
+    """Backward compatible wrapper for save_h2_interaction with is_hardware."""
+    save_h2_interaction(df, outdir, "is_hardware")
+
+
+def save_h2_interaction_founder(df: pd.DataFrame, outdir: Path) -> None:
+    """Backward compatible wrapper for save_h2_interaction with is_serial."""
+    save_h2_interaction(df, outdir, "is_serial")
 
 
 if __name__ == "__main__":
