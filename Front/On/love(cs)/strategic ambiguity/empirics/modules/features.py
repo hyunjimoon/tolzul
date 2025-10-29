@@ -164,6 +164,18 @@ def classify_hardware_vectorized(keywords: pd.Series, descriptions: pd.Series = 
 # Funding / DV helpers
 # =========================================================
 def derive_early_funding(first_financing_size: pd.Series) -> pd.Series:
+    """
+    Convert first financing size to millions USD.
+
+    Note: This function only converts the amount. Filtering for Series A /
+    Early Stage VC is done in engineer_features() using FirstFinancingDealType.
+
+    Args:
+        first_financing_size: First financing amount in USD
+
+    Returns:
+        Funding amount in millions USD
+    """
     return first_financing_size / 1e6
 
 def create_survival_seriesb_progression(
@@ -456,7 +468,9 @@ def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
     mapping = {
         'Description': 'description', 'Keywords': 'keywords',
-        'FirstFinancingSize': 'first_financing_size', 'LastFinancingDealType': 'last_financing_deal_type',
+        'FirstFinancingSize': 'first_financing_size',
+        'FirstFinancingDealType': 'first_financing_deal_type',
+        'LastFinancingDealType': 'last_financing_deal_type',
         'Employees': 'employees', 'YearFounded': 'year_founded', 'TotalRaised': 'total_raised',
         'CompanyID': 'CompanyID', 'company_id': 'company_id'
     }
@@ -480,9 +494,24 @@ def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
         desc = df['description'] if 'description' in df.columns else None
         df['is_hardware'] = classify_hardware_vectorized(df['keywords'], desc)
 
-    # 3) Early funding ($M)
+    # 3) Early funding ($M) - ONLY Series A / Early Stage VC
     if 'first_financing_size' in df.columns:
+        # Pattern for Series A / Early Stage VC (same as DV creation)
+        A_STAGE_PAT = r"(?:\bSeries\s*A(?:[-\s]?\d+|[A-Z])?\b|\bEarly[-\s]*Stage\s*VC\b)"
+
+        # Initialize with the funding amount
         df['early_funding_musd'] = derive_early_funding(df['first_financing_size'])
+
+        # Filter: Set to NaN if NOT Early Stage VC / Series A
+        if 'first_financing_deal_type' in df.columns:
+            is_series_a = df['first_financing_deal_type'].fillna("").str.contains(
+                A_STAGE_PAT, case=False, regex=True, na=False
+            )
+            # Keep only Series A / Early Stage VC funding
+            df.loc[~is_series_a, 'early_funding_musd'] = np.nan
+            print(f"  ℹ️  Early funding filtered to Series A / Early Stage VC: {is_series_a.sum():,} of {len(df):,} companies")
+        else:
+            print("  ⚠️  Warning: 'first_financing_deal_type' not found. Using all first financing rounds.")
 
     # 4) Controls
     if 'employees' in df.columns:
