@@ -1195,8 +1195,21 @@ def fig_founder_interactions(
 
     # Ensure founder_serial and founder_serial_cat exist
     df_plot = df.copy()
-    if 'founder_serial' not in df_plot.columns and 'founder_credibility' in df_plot.columns:
-        df_plot['founder_serial'] = (df_plot['founder_credibility'] > 0).astype(int)
+
+    # Priority: 1) founder_serial, 2) is_serial, 3) founder_credibility
+    if 'founder_serial' not in df_plot.columns:
+        if 'is_serial' in df_plot.columns:
+            # Use existing is_serial (created in run_analysis.py)
+            df_plot['founder_serial'] = df_plot['is_serial']
+        elif 'founder_credibility' in df_plot.columns:
+            # Create from founder_credibility
+            df_plot['founder_serial'] = (df_plot['founder_credibility'] > 0).astype(int)
+        else:
+            raise KeyError(
+                "Cannot find 'founder_serial', 'is_serial', or 'founder_credibility'. "
+                "At least one is required for Figure 2 generation. "
+                "Note: 'founder_credibility' may be dropped if std=0 in preprocess_for_h2()."
+            )
 
     if 'founder_serial_cat' not in df_plot.columns:
         df_plot['founder_serial_cat'] = df_plot['founder_serial'].map({

@@ -112,8 +112,21 @@ def test_h3_early_funding_interaction(
     """
     # Create founder_serial if not present
     d = df.copy()
-    if 'founder_serial' not in d.columns and 'founder_credibility' in d.columns:
-        d['founder_serial'] = (d['founder_credibility'] > 0).astype(int)
+
+    # Priority: 1) founder_serial, 2) is_serial, 3) founder_credibility
+    if 'founder_serial' not in d.columns:
+        if 'is_serial' in d.columns:
+            # Use existing is_serial (created in run_analysis.py)
+            d['founder_serial'] = d['is_serial']
+        elif 'founder_credibility' in d.columns:
+            # Create from founder_credibility
+            d['founder_serial'] = (d['founder_credibility'] > 0).astype(int)
+        else:
+            raise KeyError(
+                "Cannot find 'founder_serial', 'is_serial', or 'founder_credibility'. "
+                "At least one is required for H3 analysis. "
+                "Note: 'founder_credibility' may be dropped if std=0 in preprocess_for_h2()."
+            )
 
     # Create founder_serial_cat for plotting
     if 'founder_serial_cat' not in d.columns and 'founder_serial' in d.columns:
@@ -156,8 +169,21 @@ def test_h4_growth_interaction(
     """
     # Create founder_serial if not present
     d = df.copy()
-    if 'founder_serial' not in d.columns and 'founder_credibility' in d.columns:
-        d['founder_serial'] = (d['founder_credibility'] > 0).astype(int)
+
+    # Priority: 1) founder_serial, 2) is_serial, 3) founder_credibility
+    if 'founder_serial' not in d.columns:
+        if 'is_serial' in d.columns:
+            # Use existing is_serial (created in run_analysis.py)
+            d['founder_serial'] = d['is_serial']
+        elif 'founder_credibility' in d.columns:
+            # Create from founder_credibility
+            d['founder_serial'] = (d['founder_credibility'] > 0).astype(int)
+        else:
+            raise KeyError(
+                "Cannot find 'founder_serial', 'is_serial', or 'founder_credibility'. "
+                "At least one is required for H4 analysis. "
+                "Note: 'founder_credibility' may be dropped if std=0 in preprocess_for_h2()."
+            )
 
     # Create founder_serial_cat for plotting
     if 'founder_serial_cat' not in d.columns and 'founder_serial' in d.columns:
