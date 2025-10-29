@@ -140,18 +140,23 @@ def test_h2_main_growth(
 # -----------------------------
 def test_h3_early_funding_interaction(
     df: pd.DataFrame,
-    formula: str = ("early_funding_musd ~ z_vagueness * founder_serial + "
+    formula: str = ("log_early_funding ~ z_vagueness * founder_serial + "
                     "z_employees_log + C(founding_cohort) + C(sector_fe)")
 ) -> RegressionResultsWrapper:
     """
     Test H3: Early funding interaction with founder credibility.
 
-    Model: Early Funding ~ Vagueness × Serial Founder + Controls
+    Model: Log(Early Funding) ~ Vagueness × Serial Founder + Controls
     Expected: Interaction shows differential funding effects based on founder credibility
 
+    IMPORTANT: Uses log1p transformation to handle extreme positive skew in funding data.
+    This is standard practice for heavily skewed financial variables.
+
     Full specification:
-        early_funding_musd ~ z_vagueness * founder_serial +
+        log_early_funding ~ z_vagueness * founder_serial +
                            z_employees_log + C(founding_cohort) + C(sector_fe)
+
+    Where: log_early_funding = np.log1p(early_funding_musd)
 
     Args:
         df: DataFrame with required variables (must have founder_credibility)
@@ -185,7 +190,22 @@ def test_h3_early_funding_interaction(
             1: 'Serial Founder (1)'
         })
 
-    d = d.dropna(subset=['early_funding_musd', 'z_vagueness', 'founder_serial']).copy()
+    # Apply log1p transformation to handle extreme positive skew
+    # log1p(x) = log(1 + x) handles zeros gracefully
+    d['log_early_funding'] = np.log1p(d['early_funding_musd'])
+
+    # Drop rows with missing values in key variables
+    d = d.dropna(subset=['log_early_funding', 'z_vagueness', 'founder_serial']).copy()
+
+    # Print diagnostic to show transformation effect
+    print(f"\n  📊 H3 Transformation Diagnostics:")
+    print(f"     Original early_funding_musd:")
+    print(f"       Mean: ${d['early_funding_musd'].mean():.2f}M, Median: ${d['early_funding_musd'].median():.2f}M")
+    print(f"       Max: ${d['early_funding_musd'].max():.2f}M, Skew: {d['early_funding_musd'].skew():.2f}")
+    print(f"     Log-transformed log_early_funding:")
+    print(f"       Mean: {d['log_early_funding'].mean():.2f}, Median: {d['log_early_funding'].median():.2f}")
+    print(f"       Max: {d['log_early_funding'].max():.2f}, Skew: {d['log_early_funding'].skew():.2f}")
+
     model = smf.ols(formula, data=d).fit()
     return model
 

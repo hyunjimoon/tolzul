@@ -1223,7 +1223,7 @@ def fig_founder_interactions(
         'Not Serial (0)': '#d8bfff'
     }
 
-    # --- FIGURE 2a: H3 (Early Funding) ---
+    # --- FIGURE 2a: H3 (Early Funding - LOG TRANSFORMED) ---
     fig, ax = plt.subplots(figsize=(10, 6))
 
     # Filter data for H3
@@ -1233,20 +1233,23 @@ def fig_founder_interactions(
         df_plot['founder_serial'].notna()
     ].copy()
 
-    # Scatter plot per group
+    # Apply log transformation to match H3 model (log1p handles zeros)
+    df_h3['log_early_funding'] = np.log1p(df_h3['early_funding_musd'])
+
+    # Scatter plot per group (using LOG-TRANSFORMED Y-axis)
     for serial_val, label in [(0, 'Not Serial (0)'), (1, 'Serial Founder (1)')]:
         subset = df_h3[df_h3['founder_serial_cat'] == label]
         if len(subset) > 0:
             ax.scatter(
                 subset['z_vagueness'],
-                subset['early_funding_musd'],
-                alpha=0.15,
+                subset['log_early_funding'],  # LOG-TRANSFORMED
+                alpha=0.1,  # Reduced alpha for less visual clutter
                 s=15,
                 color=palette[label],
                 label=f'{label} (n={len(subset):,})'
             )
 
-    # Regression lines per group
+    # Regression lines per group (predictions are already in log scale from H3 model)
     z_vague_range = np.linspace(df_h3['z_vagueness'].min(), df_h3['z_vagueness'].max(), 100)
     z_emp_mean = df_h3['z_employees_log'].mean()
 
@@ -1260,6 +1263,8 @@ def fig_founder_interactions(
     else:
         sector_mode = 'Other'
 
+    # Store predictions for fill_between
+    predictions_dict = {}
     for serial_val, label in [(0, 'Not Serial (0)'), (1, 'Serial Founder (1)')]:
         pred_df = pd.DataFrame({
             'z_vagueness': z_vague_range,
@@ -1274,15 +1279,25 @@ def fig_founder_interactions(
 
         try:
             predictions = h3.predict(pred_df)
-            ax.plot(z_vague_range, predictions, color=palette[label], linewidth=3)
+            predictions_dict[serial_val] = predictions
+            ax.plot(z_vague_range, predictions, color=palette[label], linewidth=3, label=f'{label} (regression)')
         except Exception as e:
             print(f"  ⚠️ Warning: Could not plot H3 regression line for {label}: {e}")
 
+    # Fill between lines to highlight interaction effect
+    if len(predictions_dict) == 2:
+        ax.fill_between(z_vague_range,
+                        predictions_dict[0],
+                        predictions_dict[1],
+                        alpha=0.15,
+                        color='gray',
+                        label='Interaction effect')
+
     ax.set_xlabel('Vagueness (z-score)', fontsize=12, fontweight='bold')
-    ax.set_ylabel('Early Funding ($M)', fontsize=12, fontweight='bold')
-    ax.set_title('Figure 2a: H3 - Early Funding × Founder Credibility',
+    ax.set_ylabel('Early Funding [Log(1 + $M)]', fontsize=12, fontweight='bold')
+    ax.set_title('Figure 2a: H3 - Early Funding × Founder Credibility (OLS on Log(Y))',
                  fontsize=14, fontweight='bold')
-    ax.legend(loc='best')
+    ax.legend(loc='best', fontsize=10)
     ax.grid(True, alpha=0.3)
 
     plt.tight_layout()
@@ -1301,18 +1316,22 @@ def fig_founder_interactions(
         df_plot['founder_serial'].notna()
     ].copy()
 
-    # Scatter plot per group
-    for serial_val, label in [(0, 'Not Serial (0)'), (1, 'Serial Founder (1)')]:
-        subset = df_h4[df_h4['founder_serial_cat'] == label]
-        if len(subset) > 0:
-            ax.scatter(
-                subset['z_vagueness'],
-                subset['growth'],
-                alpha=0.15,
-                s=15,
-                color=palette[label],
-                label=f'{label} (n={len(subset):,})'
-            )
+    # SCATTER PLOT REMOVED: For binary outcomes, scatter creates visual noise
+    # that obscures the key finding (regression line comparison).
+    # Dense points at Y=0 and Y=1 make it difficult to see null interaction.
+    #
+    # Original scatter code (commented out):
+    # for serial_val, label in [(0, 'Not Serial (0)'), (1, 'Serial Founder (1)')]:
+    #     subset = df_h4[df_h4['founder_serial_cat'] == label]
+    #     if len(subset) > 0:
+    #         ax.scatter(
+    #             subset['z_vagueness'],
+    #             subset['growth'],
+    #             alpha=0.15,
+    #             s=15,
+    #             color=palette[label],
+    #             label=f'{label} (n={len(subset):,})'
+    #         )
 
     # Logistic regression lines per group (logistic=True equivalent)
     z_vague_range = np.linspace(df_h4['z_vagueness'].min(), df_h4['z_vagueness'].max(), 100)
@@ -1336,14 +1355,30 @@ def fig_founder_interactions(
         try:
             # Logit model returns probabilities directly
             predictions = h4.predict(pred_df)
-            ax.plot(z_vague_range, predictions, color=palette[label], linewidth=3)
+
+            # Add sample size to legend
+            n_group = len(df_h4[df_h4['founder_serial'] == serial_val])
+            ax.plot(z_vague_range, predictions, color=palette[label], linewidth=3,
+                   label=f'{label} (n={n_group:,})')
         except Exception as e:
             print(f"  ⚠️ Warning: Could not plot H4 regression line for {label}: {e}")
 
+    # Check interaction significance
+    title = 'Figure 2b: H4 - Growth × Founder Credibility (Logit)'
+    try:
+        # Extract interaction term p-value
+        param_names = [str(p) for p in h4.params.index]
+        int_term = [p for p in param_names if 'vagueness' in p.lower() and 'serial' in p.lower()]
+        if int_term and hasattr(h4, 'pvalues'):
+            int_pval = h4.pvalues[int_term[0]]
+            if int_pval >= 0.10:
+                title += ' (Interaction Not Significant)'
+    except Exception:
+        pass  # If can't extract p-value, use base title
+
     ax.set_xlabel('Vagueness (z-score)', fontsize=12, fontweight='bold')
     ax.set_ylabel('P(Growth)', fontsize=12, fontweight='bold')
-    ax.set_title('Figure 2b: H4 - Growth × Founder Credibility',
-                 fontsize=14, fontweight='bold')
+    ax.set_title(title, fontsize=14, fontweight='bold')
     ax.set_ylim([0, 1])  # Fix y-axis to [0, 1] for probabilities
     ax.legend(loc='best')
     ax.grid(True, alpha=0.3)
