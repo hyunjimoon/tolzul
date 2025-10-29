@@ -14,8 +14,24 @@ format:
     toc: true
     number-sections: true
     geometry:
-      - margin=1in
-    fontsize: 11pt
+      - margin=0.75in
+    fontsize: 10pt
+    include-in-header:
+      text: |
+        \usepackage{booktabs}
+        \usepackage{longtable}
+        \usepackage{array}
+        \usepackage{multirow}
+        \usepackage{wrapfig}
+        \usepackage{float}
+        \usepackage{colortbl}
+        \usepackage{pdflscape}
+        \usepackage{tabu}
+        \usepackage{threeparttable}
+        \usepackage{threeparttablex}
+        \usepackage[normalem]{ulem}
+        \usepackage{makecell}
+        \usepackage{xcolor}
 execute:
   echo: false
   warning: false
@@ -30,6 +46,28 @@ import numpy as np
 from pathlib import Path
 import warnings
 warnings.filterwarnings('ignore')
+
+# Helper function to format tables for PDF (truncate long column names)
+def format_table_for_pdf(df, max_col_width=20):
+    """Format dataframe for better PDF rendering"""
+    df_copy = df.copy()
+
+    # Truncate long column names
+    df_copy.columns = [col[:max_col_width] if len(col) > max_col_width else col
+                       for col in df_copy.columns]
+
+    # Truncate long variable names in 'variable' column if it exists
+    if 'variable' in df_copy.columns:
+        df_copy['variable'] = df_copy['variable'].apply(
+            lambda x: x[:35] + '...' if isinstance(x, str) and len(x) > 35 else x
+        )
+
+    return df_copy
+
+def print_table(df, floatfmt=".4f", max_col_width=20):
+    """Print table with PDF-friendly formatting"""
+    df_formatted = format_table_for_pdf(df, max_col_width)
+    print(df_formatted.to_markdown(index=False, floatfmt=floatfmt))
 
 # Load data
 df = pd.read_csv("outputs/h2_analysis_dataset.csv")
@@ -69,7 +107,7 @@ To understand **for whom** this pattern holds, we tested two competing moderator
 ```{python}
 #| label: h1-results
 print("### H1: Early Funding (Series A Amount)\n")
-print(h1_coef.to_markdown(index=False, floatfmt=".4f"))
+print_table(h1_coef)
 
 # Extract vagueness coefficient
 vague_row = h1_coef[h1_coef['variable'].str.contains('vagueness', case=False, na=False)]
@@ -102,13 +140,13 @@ if len(vague_row) > 0:
 ```{python}
 #| label: arch-results
 print("#### Coefficients\n")
-print(arch_coef.to_markdown(index=False, floatfmt=".4f"))
+print_table(arch_coef)
 
 print("\n#### Model Fit\n")
-print(arch_metrics.to_markdown(index=False, floatfmt=".4f"))
+print_table(arch_metrics)
 
 print("\n#### Average Marginal Effects\n")
-print(arch_ame.to_markdown(index=False, floatfmt=".4f"))
+print_table(arch_ame)
 ```
 
 ### Interaction Plot
@@ -182,13 +220,13 @@ print(f"""
 ```{python}
 #| label: found-results
 print("#### Coefficients\n")
-print(found_coef.to_markdown(index=False, floatfmt=".4f"))
+print_table(found_coef)
 
 print("\n#### Model Fit\n")
-print(found_metrics.to_markdown(index=False, floatfmt=".4f"))
+print_table(found_metrics)
 
 print("\n#### Average Marginal Effects\n")
-print(found_ame.to_markdown(index=False, floatfmt=".4f"))
+print_table(found_ame)
 ```
 
 ### Interaction Plot
@@ -310,7 +348,7 @@ comparison = pd.DataFrame({
     ]
 })
 
-print(comparison.to_markdown(index=False))
+print_table(comparison, max_col_width=25)
 ```
 
 ## Key Observations
@@ -445,14 +483,14 @@ For comparison, we also estimated H3 (Early Funding Ã— Founder) and H4 (Growth Ã
 
 ```{python}
 #| label: h3-appendix
-print(h3_coef.to_markdown(index=False, floatfmt=".4f"))
+print_table(h3_coef)
 ```
 
 ### H4 Coefficients
 
 ```{python}
 #| label: h4-appendix
-print(h4_coef.to_markdown(index=False, floatfmt=".4f"))
+print_table(h4_coef)
 ```
 
 **Note**: H3 and H4 use founder credibility (is_serial) as the moderator for both early funding and growth outcomes. These provide a **within-moderator consistency check** across DVs.

@@ -15,9 +15,25 @@ format:
     toc: true
     number-sections: true
     geometry:
-      - margin=1in
-    fontsize: 11pt
+      - margin=0.75in
+    fontsize: 10pt
     fig-pos: 'H'
+    include-in-header:
+      text: |
+        \usepackage{booktabs}
+        \usepackage{longtable}
+        \usepackage{array}
+        \usepackage{multirow}
+        \usepackage{wrapfig}
+        \usepackage{float}
+        \usepackage{colortbl}
+        \usepackage{pdflscape}
+        \usepackage{tabu}
+        \usepackage{threeparttable}
+        \usepackage{threeparttablex}
+        \usepackage[normalem]{ulem}
+        \usepackage{makecell}
+        \usepackage{xcolor}
 execute:
   echo: false
   warning: false
@@ -33,6 +49,23 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings('ignore')
+
+# Helper function to format tables for PDF
+def format_table_for_pdf(df, max_col_width=20):
+    """Format dataframe for better PDF rendering"""
+    df_copy = df.copy()
+    df_copy.columns = [col[:max_col_width] if len(col) > max_col_width else col
+                       for col in df_copy.columns]
+    if 'variable' in df_copy.columns:
+        df_copy['variable'] = df_copy['variable'].apply(
+            lambda x: x[:35] + '...' if isinstance(x, str) and len(x) > 35 else x
+        )
+    return df_copy
+
+def print_table(df, floatfmt=".4f", max_col_width=20):
+    """Print table with PDF-friendly formatting"""
+    df_formatted = format_table_for_pdf(df, max_col_width)
+    print(df_formatted.to_markdown(index=False, floatfmt=floatfmt))
 
 # Load all results
 h1_coef = pd.read_csv("outputs/h1_coefficients.csv")
@@ -166,7 +199,7 @@ snapshots = pd.DataFrame({
         'Observe final outcomes'
     ]
 })
-print(snapshots.to_markdown(index=False))
+print_table(snapshots, max_col_width=30)
 ```
 
 **Observation window**: 17 months post-baseline (December 2021 – May 2023).
@@ -232,7 +265,7 @@ controls = pd.DataFrame({
         'Account for sector-specific norms and funding patterns'
     ]
 })
-print(controls.to_markdown(index=False))
+print_table(controls, max_col_width=30)
 ```
 
 ## As-of Date Capping
@@ -273,7 +306,7 @@ requirements = pd.DataFrame({
     ],
     'Status': ['✓ Implemented', '✓ Implemented', '✓ Implemented', '✓ Implemented', '✓ Implemented']
 })
-print(requirements.to_markdown(index=False))
+print_table(requirements, max_col_width=30)
 ```
 
 **Why this framework resolves singular matrix errors**: By focusing on a **homogeneous at-risk cohort** (all starting at Series A) and tracking a well-defined transition event (progression to B+), we achieve sufficient outcome variance.
@@ -301,7 +334,7 @@ validation = pd.DataFrame({
         'M&A exits assigned Y_primary = NaN (censored)'
     ]
 })
-print(validation.to_markdown(index=False))
+print_table(validation, max_col_width=30)
 ```
 
 ### ⚠️ Methodological Limitation: Cohort Heterogeneity
@@ -519,7 +552,7 @@ priorities = pd.DataFrame({
         'Moderator bake-off for final paper decision'
     ]
 })
-print(priorities.to_markdown(index=False))
+print_table(priorities, max_col_width=30)
 ```
 
 ## Extended Validation
@@ -565,7 +598,7 @@ deliverables = pd.DataFrame({
         '○ Pending implementation'
     ]
 })
-print(deliverables.to_markdown(index=False))
+print_table(deliverables, max_col_width=30)
 ```
 
 ---
@@ -633,7 +666,7 @@ spec_table = pd.DataFrame({
         '○ Pending'
     ]
 })
-print(spec_table.to_markdown(index=False))
+print_table(spec_table, max_col_width=30)
 
 print("\n**Controls (all models)**:")
 print("- z_employees_log: Firm size (log-transformed, standardized)")
