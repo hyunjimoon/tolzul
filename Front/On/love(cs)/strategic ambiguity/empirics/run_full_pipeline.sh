@@ -155,16 +155,27 @@ if [ $QUARTO_AVAILABLE -eq 1 ]; then
         if [ -f "$report" ]; then
             echo "  Rendering: $report"
 
-            # Render to HTML
-            if quarto render "$report" --to html --output-dir outputs/reports 2>&1 | grep -v "Warning"; then
-                echo -e "${GREEN}    ✓ HTML rendered${NC}"
+            # Extract base filename (without .qmd extension)
+            base_name="${report%.qmd}"
+
+            # Render to HTML (use -o flag for individual files, not --output-dir)
+            if quarto render "$report" --to html -o "outputs/reports/${base_name}.html" 2>&1 | grep -q -v "^ERROR"; then
+                if [ -f "outputs/reports/${base_name}.html" ]; then
+                    echo -e "${GREEN}    ✓ HTML rendered${NC}"
+                else
+                    echo -e "${RED}    ✗ HTML rendering failed${NC}"
+                fi
             else
-                echo -e "${YELLOW}    ⚠ HTML rendering had warnings${NC}"
+                echo -e "${RED}    ✗ HTML rendering failed${NC}"
             fi
 
             # Try to render to PDF (may fail if LaTeX not installed)
-            if quarto render "$report" --to pdf --output-dir outputs/reports 2>&1 | grep -v "Warning" > /dev/null 2>&1; then
-                echo -e "${GREEN}    ✓ PDF rendered${NC}"
+            if quarto render "$report" --to pdf -o "outputs/reports/${base_name}.pdf" 2>&1 | grep -q -v "^ERROR"; then
+                if [ -f "outputs/reports/${base_name}.pdf" ]; then
+                    echo -e "${GREEN}    ✓ PDF rendered${NC}"
+                else
+                    echo -e "${YELLOW}    ⚠ PDF rendering skipped (LaTeX may not be installed)${NC}"
+                fi
             else
                 echo -e "${YELLOW}    ⚠ PDF rendering skipped (LaTeX may not be installed)${NC}"
             fi
