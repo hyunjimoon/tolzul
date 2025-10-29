@@ -27,7 +27,11 @@ from modules.features import (
     create_survival_seriesb_progression, preprocess_for_h2
 )
 from modules.models import (
-    test_h1_early_funding, test_h2_main_growth
+    test_h1_early_funding, test_h2_main_growth,
+    test_h3_early_funding_interaction, test_h4_growth_interaction
+)
+from modules.plots import (
+    fig_reversal_from_models, fig_founder_interactions
 )
 
 def read_snapshot(path, encoding='utf-8'):
@@ -129,6 +133,38 @@ def main():
         'ci_upper': h2_res.conf_int()[1].values
     }).to_csv(outdir / "h2_main_coefficients.csv", index=False)
     print(f"✓ Saved: {outdir / 'h2_main_coefficients.csv'}")
+
+    # --- H3: Early funding interaction with founder credibility (OLS) ---
+    print("\n" + "="*80)
+    print("H3: EARLY FUNDING × FOUNDER CREDIBILITY")
+    print("="*80)
+    h3_res = test_h3_early_funding_interaction(analysis)
+    pd.DataFrame({
+        'variable': h3_res.params.index,
+        'coefficient': h3_res.params.values,
+        'std_err': h3_res.bse.values,
+        'stat': h3_res.tvalues.values,
+        'p_value': h3_res.pvalues.values,
+        'ci_lower': h3_res.conf_int()[0].values,
+        'ci_upper': h3_res.conf_int()[1].values
+    }).to_csv(outdir / "h3_coefficients.csv", index=False)
+    print(f"✓ Saved: {outdir / 'h3_coefficients.csv'}")
+
+    # --- H4: Growth interaction with founder credibility (Logit) ---
+    print("\n" + "="*80)
+    print("H4: GROWTH × FOUNDER CREDIBILITY")
+    print("="*80)
+    h4_res = test_h4_growth_interaction(analysis)
+    pd.DataFrame({
+        'variable': h4_res.params.index,
+        'coefficient': h4_res.params.values,
+        'std_err': h4_res.bse.values,
+        'stat': h4_res.tvalues.values,
+        'p_value': h4_res.pvalues.values,
+        'ci_lower': h4_res.conf_int()[0].values,
+        'ci_upper': h4_res.conf_int()[1].values
+    }).to_csv(outdir / "h4_coefficients.csv", index=False)
+    print(f"✓ Saved: {outdir / 'h4_coefficients.csv'}")
 
     # --- BAKE-OFF: Two H2 models with different moderators ---
     print("\n" + "="*80)
@@ -290,7 +326,39 @@ def main():
     print("BAKE-OFF COMPLETE")
     print("="*80)
 
-    print("\nDone. Artifacts:", *[p.name for p in outdir.glob('*.csv')], sep="\n  - ")
+    # --- GENERATE FIGURES ---
+    print("\n" + "="*80)
+    print("GENERATING FIGURES")
+    print("="*80)
+
+    figures_dir = outdir / "figures"
+    figures_dir.mkdir(parents=True, exist_ok=True)
+
+    # Figure 1: The Reversal (H1 + H2)
+    print("\nGenerating Figure 1: The Reversal...")
+    try:
+        fig_reversal_from_models(analysis, h1_res, h2_res, figures_dir)
+    except Exception as e:
+        print(f"  ⚠️ Error generating Figure 1: {e}")
+
+    # Figure 2: Founder Interactions (H3 + H4)
+    print("\nGenerating Figure 2a/2b: Founder Interactions...")
+    try:
+        fig_founder_interactions(analysis, h3_res, h4_res, figures_dir)
+    except Exception as e:
+        print(f"  ⚠️ Error generating Figure 2: {e}")
+
+    print("\n" + "="*80)
+    print("ONE-TOUCH EXECUTION COMPLETE")
+    print("="*80)
+
+    print("\nGenerated Files:")
+    print("\nCoefficient Tables:")
+    for p in sorted(outdir.glob('*.csv')):
+        print(f"  - {p.name}")
+    print("\nFigures:")
+    for p in sorted(figures_dir.glob('*.png')):
+        print(f"  - figures/{p.name}")
 
 if __name__ == "__main__":
     main()

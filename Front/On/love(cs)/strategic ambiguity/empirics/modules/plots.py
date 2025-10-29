@@ -1063,6 +1063,285 @@ def save_h2_interaction_founder(df: pd.DataFrame, outdir: Path) -> None:
     save_h2_interaction(df, outdir, "is_serial")
 
 
+# =============================================================================
+# ONE-TOUCH EXECUTION: MODEL-BASED FIGURES
+# =============================================================================
+
+def fig_reversal_from_models(
+    df: pd.DataFrame,
+    h1: RegressionResultsWrapper,
+    h2: BinaryResultsWrapper,
+    outdir: Path = Path("outputs/figures")
+) -> None:
+    """
+    Figure 1: The Reversal - dual-axis plot showing H1 and H2 predictions.
+
+    Left axis (H1 OLS): Series A amount vs vagueness
+    Right axis (H2 Logit): P(Series B+) vs vagueness, y in [0,1]
+
+    Args:
+        df: DataFrame with analysis data
+        h1: Fitted H1 OLS model
+        h2: Fitted H2 Logit model
+        outdir: Output directory for saved plot
+    """
+    outdir = Path(outdir)
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    fig, ax1 = plt.subplots(figsize=(10, 6))
+
+    # Create shared z_vagueness grid
+    z_vague_range = np.linspace(
+        df['z_vagueness'].min(),
+        df['z_vagueness'].max(),
+        100
+    )
+
+    # Get mean values for control variables
+    z_emp_mean = df['z_employees_log'].mean()
+
+    # Find most common founding cohort
+    if 'founding_cohort' in df.columns:
+        cohort_mode = df['founding_cohort'].mode()[0] if len(df['founding_cohort'].mode()) > 0 else None
+    else:
+        cohort_mode = None
+
+    # --- LEFT AXIS: H1 (OLS) Series A Amount ---
+    # Build prediction DataFrame for H1
+    pred_df_h1 = pd.DataFrame({
+        'z_vagueness': z_vague_range,
+        'z_employees_log': z_emp_mean
+    })
+
+    if cohort_mode is not None:
+        pred_df_h1['founding_cohort'] = cohort_mode
+
+    if 'sector_fe' in df.columns:
+        sector_mode = df['sector_fe'].mode()[0] if len(df['sector_fe'].mode()) > 0 else 'Other'
+        pred_df_h1['sector_fe'] = sector_mode
+
+    try:
+        h1_pred = h1.predict(pred_df_h1)
+        ax1.plot(z_vague_range, h1_pred, 'b-', linewidth=3, label='H1: Series A Amount')
+        ax1.set_xlabel('Vagueness (z-score)', fontsize=12, fontweight='bold')
+        ax1.set_ylabel('Series A Amount ($M)', fontsize=12, fontweight='bold', color='b')
+        ax1.tick_params(axis='y', labelcolor='b')
+    except Exception as e:
+        print(f"  ⚠️ Warning: Could not plot H1 predictions: {e}")
+
+    # --- RIGHT AXIS: H2 (Logit) P(Series B+) ---
+    ax2 = ax1.twinx()
+
+    # Build prediction DataFrame for H2
+    pred_df_h2 = pd.DataFrame({
+        'z_vagueness': z_vague_range,
+        'z_employees_log': z_emp_mean,
+        'is_hardware': 0  # Reference group (software)
+    })
+
+    if cohort_mode is not None:
+        pred_df_h2['founding_cohort'] = cohort_mode
+
+    try:
+        h2_pred = h2.predict(pred_df_h2)
+        ax2.plot(z_vague_range, h2_pred, 'r--', linewidth=3, label='H2: P(Series B+)')
+        ax2.set_ylabel('P(Series B+)', fontsize=12, fontweight='bold', color='r')
+        ax2.set_ylim([0, 1])
+        ax2.tick_params(axis='y', labelcolor='r')
+    except Exception as e:
+        print(f"  ⚠️ Warning: Could not plot H2 predictions: {e}")
+
+    # Title and legend
+    ax1.set_title('Figure 1: The Reversal - Early Funding vs Later Success',
+                  fontsize=14, fontweight='bold')
+    ax1.grid(True, alpha=0.3)
+
+    # Combine legends
+    lines1, labels1 = ax1.get_legend_handles_labels()
+    lines2, labels2 = ax2.get_legend_handles_labels()
+    ax1.legend(lines1 + lines2, labels1 + labels2, loc='best')
+
+    plt.tight_layout()
+    output_path = outdir / 'Figure_1_Reversal.png'
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    print(f"  ✓ Saved: {output_path}")
+    plt.close(fig)
+
+
+def fig_founder_interactions(
+    df: pd.DataFrame,
+    h3: RegressionResultsWrapper,
+    h4: BinaryResultsWrapper,
+    outdir: Path = Path("outputs/figures")
+) -> None:
+    """
+    Figure 2: Founder Interaction Plots (H3 and H4).
+
+    Figure 2a (H3): Scatter + regression line per founder group (OLS)
+    Figure 2b (H4): Scatter + logistic regression line per founder group (Logit)
+
+    Uses purple palette for founder credibility:
+    - Serial Founder (1): '#6f42c1'
+    - Not Serial (0): '#d8bfff'
+
+    Args:
+        df: DataFrame with analysis data (must have founder_serial and founder_serial_cat)
+        h3: Fitted H3 OLS model
+        h4: Fitted H4 Logit model
+        outdir: Output directory for saved plots
+    """
+    outdir = Path(outdir)
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    # Ensure founder_serial and founder_serial_cat exist
+    df_plot = df.copy()
+    if 'founder_serial' not in df_plot.columns and 'founder_credibility' in df_plot.columns:
+        df_plot['founder_serial'] = (df_plot['founder_credibility'] > 0).astype(int)
+
+    if 'founder_serial_cat' not in df_plot.columns:
+        df_plot['founder_serial_cat'] = df_plot['founder_serial'].map({
+            0: 'Not Serial (0)',
+            1: 'Serial Founder (1)'
+        })
+
+    # Palette (purple theme for founder)
+    palette = {
+        'Serial Founder (1)': '#6f42c1',
+        'Not Serial (0)': '#d8bfff'
+    }
+
+    # --- FIGURE 2a: H3 (Early Funding) ---
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    # Filter data for H3
+    df_h3 = df_plot[
+        df_plot['early_funding_musd'].notna() &
+        df_plot['z_vagueness'].notna() &
+        df_plot['founder_serial'].notna()
+    ].copy()
+
+    # Scatter plot per group
+    for serial_val, label in [(0, 'Not Serial (0)'), (1, 'Serial Founder (1)')]:
+        subset = df_h3[df_h3['founder_serial_cat'] == label]
+        if len(subset) > 0:
+            ax.scatter(
+                subset['z_vagueness'],
+                subset['early_funding_musd'],
+                alpha=0.15,
+                s=15,
+                color=palette[label],
+                label=f'{label} (n={len(subset):,})'
+            )
+
+    # Regression lines per group
+    z_vague_range = np.linspace(df_h3['z_vagueness'].min(), df_h3['z_vagueness'].max(), 100)
+    z_emp_mean = df_h3['z_employees_log'].mean()
+
+    if 'founding_cohort' in df_h3.columns:
+        cohort_mode = df_h3['founding_cohort'].mode()[0] if len(df_h3['founding_cohort'].mode()) > 0 else None
+    else:
+        cohort_mode = None
+
+    if 'sector_fe' in df_h3.columns:
+        sector_mode = df_h3['sector_fe'].mode()[0] if len(df_h3['sector_fe'].mode()) > 0 else 'Other'
+    else:
+        sector_mode = 'Other'
+
+    for serial_val, label in [(0, 'Not Serial (0)'), (1, 'Serial Founder (1)')]:
+        pred_df = pd.DataFrame({
+            'z_vagueness': z_vague_range,
+            'founder_serial': serial_val,
+            'z_employees_log': z_emp_mean
+        })
+
+        if cohort_mode is not None:
+            pred_df['founding_cohort'] = cohort_mode
+
+        pred_df['sector_fe'] = sector_mode
+
+        try:
+            predictions = h3.predict(pred_df)
+            ax.plot(z_vague_range, predictions, color=palette[label], linewidth=3)
+        except Exception as e:
+            print(f"  ⚠️ Warning: Could not plot H3 regression line for {label}: {e}")
+
+    ax.set_xlabel('Vagueness (z-score)', fontsize=12, fontweight='bold')
+    ax.set_ylabel('Early Funding ($M)', fontsize=12, fontweight='bold')
+    ax.set_title('Figure 2a: H3 - Early Funding × Founder Credibility',
+                 fontsize=14, fontweight='bold')
+    ax.legend(loc='best')
+    ax.grid(True, alpha=0.3)
+
+    plt.tight_layout()
+    output_path = outdir / 'Figure_2a_H3.png'
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    print(f"  ✓ Saved: {output_path}")
+    plt.close(fig)
+
+    # --- FIGURE 2b: H4 (Growth) ---
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    # Filter data for H4
+    df_h4 = df_plot[
+        df_plot['growth'].notna() &
+        df_plot['z_vagueness'].notna() &
+        df_plot['founder_serial'].notna()
+    ].copy()
+
+    # Scatter plot per group
+    for serial_val, label in [(0, 'Not Serial (0)'), (1, 'Serial Founder (1)')]:
+        subset = df_h4[df_h4['founder_serial_cat'] == label]
+        if len(subset) > 0:
+            ax.scatter(
+                subset['z_vagueness'],
+                subset['growth'],
+                alpha=0.15,
+                s=15,
+                color=palette[label],
+                label=f'{label} (n={len(subset):,})'
+            )
+
+    # Logistic regression lines per group (logistic=True equivalent)
+    z_vague_range = np.linspace(df_h4['z_vagueness'].min(), df_h4['z_vagueness'].max(), 100)
+    z_emp_mean = df_h4['z_employees_log'].mean()
+
+    if 'founding_cohort' in df_h4.columns:
+        cohort_mode = df_h4['founding_cohort'].mode()[0] if len(df_h4['founding_cohort'].mode()) > 0 else None
+    else:
+        cohort_mode = None
+
+    for serial_val, label in [(0, 'Not Serial (0)'), (1, 'Serial Founder (1)')]:
+        pred_df = pd.DataFrame({
+            'z_vagueness': z_vague_range,
+            'founder_serial': serial_val,
+            'z_employees_log': z_emp_mean
+        })
+
+        if cohort_mode is not None:
+            pred_df['founding_cohort'] = cohort_mode
+
+        try:
+            # Logit model returns probabilities directly
+            predictions = h4.predict(pred_df)
+            ax.plot(z_vague_range, predictions, color=palette[label], linewidth=3)
+        except Exception as e:
+            print(f"  ⚠️ Warning: Could not plot H4 regression line for {label}: {e}")
+
+    ax.set_xlabel('Vagueness (z-score)', fontsize=12, fontweight='bold')
+    ax.set_ylabel('P(Growth)', fontsize=12, fontweight='bold')
+    ax.set_title('Figure 2b: H4 - Growth × Founder Credibility',
+                 fontsize=14, fontweight='bold')
+    ax.set_ylim([0, 1])  # Fix y-axis to [0, 1] for probabilities
+    ax.legend(loc='best')
+    ax.grid(True, alpha=0.3)
+
+    plt.tight_layout()
+    output_path = outdir / 'Figure_2b_H4.png'
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    print(f"  ✓ Saved: {output_path}")
+    plt.close(fig)
+
+
 if __name__ == "__main__":
     print("Visualization Module - Standalone Test\n")
     print("=" * 80)
