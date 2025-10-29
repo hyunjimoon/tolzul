@@ -1,0 +1,629 @@
+---
+title: "Moderator Bake-off: Integration Cost vs Founder Credibility"
+subtitle: "Decision Memo for H2 Hypothesis Specification"
+author: "Strategic Ambiguity Research Team"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    theme: cosmo
+    code-fold: true
+    embed-resources: true
+execute:
+  echo: false
+  warning: false
+  message: false
+jupyter: python3
+---
+
+# 1. Executive Summary
+
+This report presents a head-to-head comparison of two alternative moderators for H2 (the hypothesis that vagueness positively affects long-term growth probability). We evaluate:
+
+- **H2-Architecture**: Integration Cost (is_hardware) as moderator
+- **H2-Alt (Credibility)**: Founder Credibility (is_serial) as moderator
+
+Both models use **identical specifications** except for the moderator variable, ensuring a fair comparison based on three criteria:
+
+1. **Data Quality (40%)**: Distribution balance, sample sizes, missing data
+2. **Statistical Evidence (40%)**: Interaction significance, effect sizes, model fit
+3. **Theory Fit (20%)**: Alignment with H2 definition, defensibility, interpretability
+
+**The final decision will determine which moderator to use for the main paper.**
+
+---
+
+# 2. Background: H2 Hypothesis
+
+## H2 Definition
+
+> **H2**: The positive effect of vagueness on long-term growth probability is **moderated** by contextual factors that determine the cost of strategic flexibility.
+
+## Two Competing Moderators
+
+### H2-Architecture (Integration Cost)
+- **Operationalization**: `is_hardware` (1 = Hardware/Integrated, 0 = Software/Modular)
+- **Theory**: High integration cost (hardware) reduces flexibility → attenuates vagueness benefit
+- **Expected interaction**: Negative (vagueness helps less in hardware sectors)
+
+### H2-Alt (Credibility)
+- **Operationalization**: `is_serial` (1 = Serial entrepreneur, 0 = First-time)
+- **Theory**: Founder credibility provides alternative signaling → substitutes for vagueness benefit
+- **Expected interaction**: Negative (vagueness helps less for serial entrepreneurs)
+
+---
+
+# 3. Data Quality Assessment
+
+```{python}
+#| label: load-data
+#| echo: false
+
+import pandas as pd
+import numpy as np
+from pathlib import Path
+import matplotlib.pyplot as plt
+import warnings
+warnings.filterwarnings('ignore')
+
+# Load analysis dataset
+df = pd.read_csv("outputs/h2_analysis_dataset.csv")
+
+print(f"Total observations: {len(df):,}")
+print(f"Columns: {', '.join(df.columns)}")
+```
+
+## 3.1 Univariate Distributions
+
+![Univariate Distributions](outputs/bakeoff/univariate_distributions.png)
+
+```{python}
+#| label: moderator-balance
+#| echo: false
+
+# Calculate moderator prevalence
+hw_counts = df['is_hardware'].value_counts()
+hw_pct = (hw_counts / hw_counts.sum() * 100).to_dict()
+
+serial_counts = df['is_serial'].value_counts()
+serial_pct = (serial_counts / serial_counts.sum() * 100).to_dict()
+
+# Risk assessment
+def assess_risk(minority_pct):
+    if minority_pct < 10:
+        return "🔴 HIGH RISK"
+    elif minority_pct < 20:
+        return "🟡 MEDIUM RISK"
+    else:
+        return "🟢 LOW RISK"
+
+hw_risk = assess_risk(hw_pct.get(1, 0))
+serial_risk = assess_risk(serial_pct.get(1, 0))
+
+# Create summary table
+balance_summary = pd.DataFrame({
+    'Moderator': ['is_hardware (Architecture)', 'is_serial (Credibility)'],
+    'Minority Class %': [f"{hw_pct.get(1, 0):.1f}%", f"{serial_pct.get(1, 0):.1f}%"],
+    'Minority N': [f"{hw_counts.get(1, 0):,}", f"{serial_counts.get(1, 0):,}"],
+    'Majority N': [f"{hw_counts.get(0, 0):,}", f"{serial_counts.get(0, 0):,}"],
+    'Balance Risk': [hw_risk, serial_risk]
+})
+
+print("\n### Moderator Balance Assessment\n")
+print(balance_summary.to_markdown(index=False))
+```
+
+### Key Observations
+
+```{python}
+#| label: balance-narrative
+#| echo: false
+
+# Generate narrative based on actual data
+hw_minority = hw_pct.get(1, 0)
+serial_minority = serial_pct.get(1, 0)
+
+print(f"""
+- **is_hardware**: Hardware/integrated companies represent {hw_minority:.1f}% of the sample.
+  - Risk level: {hw_risk}
+  - {'⚠️ Severe imbalance may lead to unstable estimates and wide confidence intervals.' if hw_minority < 10 else 'Acceptable balance for interaction analysis.' if hw_minority > 20 else 'Moderate imbalance - requires caution in interpretation.'}
+
+- **is_serial**: Serial entrepreneurs represent {serial_minority:.1f}% of the sample.
+  - Risk level: {serial_risk}
+  - {'⚠️ Severe imbalance may lead to unstable estimates and wide confidence intervals.' if serial_minority < 10 else 'Acceptable balance for interaction analysis.' if serial_minority > 20 else 'Moderate imbalance - requires caution in interpretation.'}
+""")
+```
+
+## 3.2 Missing Data and Sample Coverage
+
+```{python}
+#| label: missing-data
+#| echo: false
+
+# Check missing data for key variables
+key_vars = ['growth', 'vagueness', 'is_hardware', 'is_serial', 'z_employees_log', 'founding_cohort']
+missing_summary = pd.DataFrame({
+    'Variable': key_vars,
+    'N Valid': [df[v].notna().sum() for v in key_vars],
+    'N Missing': [df[v].isna().sum() for v in key_vars],
+    '% Valid': [f"{df[v].notna().sum() / len(df) * 100:.1f}%" for v in key_vars]
+})
+
+print("\n### Missing Data Summary\n")
+print(missing_summary.to_markdown(index=False))
+```
+
+---
+
+# 4. Bake-off Round 1: H2-Architecture (is_hardware)
+
+## 4.1 Theory Summary
+
+**Integration Cost Hypothesis**: High integration cost (hardware/biotech) limits strategic flexibility because:
+- Physical components are harder to pivot
+- Supply chain commitments are less reversible
+- Development cycles are longer
+
+**Expected Pattern**: Vagueness should help **more** in modular (software) sectors where flexibility is valuable.
+
+## 4.2 Model Specification
+
+$$
+\text{logit}(P(\text{growth} = 1)) = \beta_0 + \beta_1 \cdot \text{vagueness} + \beta_2 \cdot \text{is\_hardware} + \beta_3 \cdot (\text{vagueness} \times \text{is\_hardware}) + \text{controls}
+$$
+
+Where:
+- $\beta_1$ = Main effect of vagueness (in software sectors)
+- $\beta_3$ = Interaction effect (attenuation in hardware sectors)
+- Controls: `z_employees_log`, `C(founding_cohort)`
+
+## 4.3 Results
+
+```{python}
+#| label: h2-arch-results
+#| echo: false
+
+# Load Architecture model results
+arch_coef = pd.read_csv("outputs/h2_model_architecture.csv")
+arch_metrics = pd.read_csv("outputs/h2_model_architecture_metrics.csv")
+
+print("\n### Coefficient Table\n")
+print(arch_coef.to_markdown(index=False, floatfmt=".4f"))
+
+print("\n### Model Fit Metrics\n")
+print(arch_metrics.to_markdown(index=False, floatfmt=".4f"))
+```
+
+## 4.4 Interaction Plot
+
+![Architecture Interaction](outputs/bakeoff/h2_interaction_architecture.png)
+
+## 4.5 Assessment
+
+```{python}
+#| label: arch-assessment
+#| echo: false
+
+# Extract key metrics
+arch_n = arch_metrics['nobs'].values[0]
+arch_pseudo_r2 = arch_metrics['prsquared'].values[0]
+arch_aic = arch_metrics['aic'].values[0]
+
+# Extract interaction coefficient
+try:
+    interaction_row = arch_coef[arch_coef['variable'].str.contains('is_hardware', na=False) &
+                                 arch_coef['variable'].str.contains('vagueness', na=False)]
+    if len(interaction_row) > 0:
+        arch_interaction_coef = interaction_row['coefficient'].values[0]
+        arch_interaction_p = interaction_row['p_value'].values[0]
+        arch_interaction_sig = "✓ Significant" if arch_interaction_p < 0.05 else "✗ Not significant"
+    else:
+        arch_interaction_coef = np.nan
+        arch_interaction_p = np.nan
+        arch_interaction_sig = "N/A"
+except:
+    arch_interaction_coef = np.nan
+    arch_interaction_p = np.nan
+    arch_interaction_sig = "N/A"
+
+print(f"""
+**Data Quality**: {hw_risk}
+- Sample imbalance poses {'severe' if hw_minority < 10 else 'moderate' if hw_minority < 20 else 'low'} risk to estimation stability
+
+**Statistical Evidence**:
+- Interaction coefficient: {arch_interaction_coef:.4f} (p = {arch_interaction_p:.4f})
+- Significance: {arch_interaction_sig}
+- Pseudo R²: {arch_pseudo_r2:.3f}
+- N: {int(arch_n):,}
+
+**Theory Alignment**:
+- Expected sign: Negative (attenuation in hardware)
+- Observed sign: {'✓ Consistent' if arch_interaction_coef < 0 else '✗ Inconsistent'}
+- Interpretability: High (integration cost is concrete and measurable)
+""")
+```
+
+---
+
+# 5. Bake-off Round 2: H2-Alt (Credibility)
+
+## 5.1 Theory Summary
+
+**Founder Credibility Hypothesis**: Serial entrepreneurs with successful exits can signal quality through their track record, reducing the need for strategic vagueness.
+
+**Expected Pattern**: Vagueness should help **more** for first-time founders who lack credibility signals.
+
+## 5.2 Model Specification
+
+$$
+\text{logit}(P(\text{growth} = 1)) = \beta_0 + \beta_1 \cdot \text{vagueness} + \beta_2 \cdot \text{is\_serial} + \beta_3 \cdot (\text{vagueness} \times \text{is\_serial}) + \text{controls}
+$$
+
+Where:
+- $\beta_1$ = Main effect of vagueness (for first-time founders)
+- $\beta_3$ = Interaction effect (attenuation for serial entrepreneurs)
+- Controls: `z_employees_log`, `C(founding_cohort)`
+
+## 5.3 Results
+
+```{python}
+#| label: h2-founder-results
+#| echo: false
+
+# Load Founder model results
+founder_coef = pd.read_csv("outputs/h2_model_founder.csv")
+founder_metrics = pd.read_csv("outputs/h2_model_founder_metrics.csv")
+
+print("\n### Coefficient Table\n")
+print(founder_coef.to_markdown(index=False, floatfmt=".4f"))
+
+print("\n### Model Fit Metrics\n")
+print(founder_metrics.to_markdown(index=False, floatfmt=".4f"))
+```
+
+## 5.4 Interaction Plot
+
+![Founder Interaction](outputs/bakeoff/h2_interaction_founder.png)
+
+## 5.5 Assessment
+
+```{python}
+#| label: founder-assessment
+#| echo: false
+
+# Extract key metrics
+founder_n = founder_metrics['nobs'].values[0]
+founder_pseudo_r2 = founder_metrics['prsquared'].values[0]
+founder_aic = founder_metrics['aic'].values[0]
+
+# Extract interaction coefficient
+try:
+    interaction_row = founder_coef[founder_coef['variable'].str.contains('is_serial', na=False) &
+                                    founder_coef['variable'].str.contains('vagueness', na=False)]
+    if len(interaction_row) > 0:
+        founder_interaction_coef = interaction_row['coefficient'].values[0]
+        founder_interaction_p = interaction_row['p_value'].values[0]
+        founder_interaction_sig = "✓ Significant" if founder_interaction_p < 0.05 else "✗ Not significant"
+    else:
+        founder_interaction_coef = np.nan
+        founder_interaction_p = np.nan
+        founder_interaction_sig = "N/A"
+except:
+    founder_interaction_coef = np.nan
+    founder_interaction_p = np.nan
+    founder_interaction_sig = "N/A"
+
+print(f"""
+**Data Quality**: {serial_risk}
+- Sample imbalance poses {'severe' if serial_minority < 10 else 'moderate' if serial_minority < 20 else 'low'} risk to estimation stability
+
+**Statistical Evidence**:
+- Interaction coefficient: {founder_interaction_coef:.4f} (p = {founder_interaction_p:.4f})
+- Significance: {founder_interaction_sig}
+- Pseudo R²: {founder_pseudo_r2:.3f}
+- N: {int(founder_n):,}
+
+**Theory Alignment**:
+- Expected sign: Negative (substitution for credibility signal)
+- Observed sign: {'✓ Consistent' if founder_interaction_coef < 0 else '✗ Inconsistent'}
+- Interpretability: Medium (credibility is observable but less concrete than architecture)
+""")
+```
+
+---
+
+# 6. Head-to-Head Comparison
+
+## 6.1 Summary Scorecard
+
+```{python}
+#| label: scorecard
+#| echo: false
+
+def score_balance(minority_pct):
+    if minority_pct < 10:
+        return 0  # High risk
+    elif minority_pct < 20:
+        return 5  # Medium risk
+    else:
+        return 10  # Low risk
+
+def score_significance(p_value):
+    if p_value < 0.01:
+        return 10
+    elif p_value < 0.05:
+        return 7
+    elif p_value < 0.10:
+        return 4
+    else:
+        return 0
+
+def score_fit(pseudo_r2):
+    return min(pseudo_r2 * 100, 10)  # Scale to 0-10
+
+def score_theory(interaction_coef, expected_negative=True):
+    if np.isnan(interaction_coef):
+        return 0
+    if expected_negative:
+        return 10 if interaction_coef < 0 else 0
+    else:
+        return 10 if interaction_coef > 0 else 0
+
+# Calculate scores
+arch_balance_score = score_balance(hw_minority)
+arch_sig_score = score_significance(arch_interaction_p) if not np.isnan(arch_interaction_p) else 0
+arch_fit_score = score_fit(arch_pseudo_r2)
+arch_theory_score = score_theory(arch_interaction_coef, expected_negative=True)
+
+founder_balance_score = score_balance(serial_minority)
+founder_sig_score = score_significance(founder_interaction_p) if not np.isnan(founder_interaction_p) else 0
+founder_fit_score = score_fit(founder_pseudo_r2)
+founder_theory_score = score_theory(founder_interaction_coef, expected_negative=True)
+
+# Weighted total (Data Quality 40%, Statistical 40%, Theory 20%)
+arch_total = (arch_balance_score * 0.4 +
+              (arch_sig_score + arch_fit_score) / 2 * 0.4 +
+              arch_theory_score * 0.2)
+
+founder_total = (founder_balance_score * 0.4 +
+                 (founder_sig_score + founder_fit_score) / 2 * 0.4 +
+                 founder_theory_score * 0.2)
+
+scorecard = pd.DataFrame({
+    'Criterion': [
+        'Data Quality: Balance (10pt)',
+        'Statistical: Significance (10pt)',
+        'Statistical: Model Fit (10pt)',
+        'Theory: Sign Consistency (10pt)',
+        '─' * 30,
+        'TOTAL SCORE (Weighted)'
+    ],
+    'Architecture (is_hardware)': [
+        f"{arch_balance_score:.1f}",
+        f"{arch_sig_score:.1f}",
+        f"{arch_fit_score:.1f}",
+        f"{arch_theory_score:.1f}",
+        "─" * 10,
+        f"{arch_total:.1f}/10"
+    ],
+    'Credibility (is_serial)': [
+        f"{founder_balance_score:.1f}",
+        f"{founder_sig_score:.1f}",
+        f"{founder_fit_score:.1f}",
+        f"{founder_theory_score:.1f}",
+        "─" * 10,
+        f"{founder_total:.1f}/10"
+    ]
+})
+
+print("\n### Decision Scorecard\n")
+print(scorecard.to_markdown(index=False))
+```
+
+## 6.2 Detailed Comparison
+
+```{python}
+#| label: detailed-comparison
+#| echo: false
+
+comparison = pd.DataFrame({
+    'Dimension': [
+        'Sample Balance',
+        'Minority Class %',
+        'Interaction Coef',
+        'Interaction p-value',
+        'Pseudo R²',
+        'AIC',
+        'N Observations',
+        'Sign Consistency'
+    ],
+    'Architecture': [
+        hw_risk.split()[1],  # Extract risk level
+        f"{hw_minority:.1f}%",
+        f"{arch_interaction_coef:.4f}" if not np.isnan(arch_interaction_coef) else "N/A",
+        f"{arch_interaction_p:.4f}" if not np.isnan(arch_interaction_p) else "N/A",
+        f"{arch_pseudo_r2:.3f}",
+        f"{arch_aic:.1f}",
+        f"{int(arch_n):,}",
+        "✓" if arch_interaction_coef < 0 else "✗"
+    ],
+    'Credibility': [
+        serial_risk.split()[1],
+        f"{serial_minority:.1f}%",
+        f"{founder_interaction_coef:.4f}" if not np.isnan(founder_interaction_coef) else "N/A",
+        f"{founder_interaction_p:.4f}" if not np.isnan(founder_interaction_p) else "N/A",
+        f"{founder_pseudo_r2:.3f}",
+        f"{founder_aic:.1f}",
+        f"{int(founder_n):,}",
+        "✓" if founder_interaction_coef < 0 else "✗"
+    ]
+})
+
+print("\n### Detailed Metrics Comparison\n")
+print(comparison.to_markdown(index=False))
+```
+
+---
+
+# 7. Decision & Recommendation
+
+## 7.1 Decision Rule
+
+Based on the weighted scorecard (Data Quality 40%, Statistical Evidence 40%, Theory Fit 20%):
+
+```{python}
+#| label: decision
+#| echo: false
+
+winner = "Architecture (is_hardware)" if arch_total > founder_total else "Credibility (is_serial)"
+loser = "Credibility (is_serial)" if arch_total > founder_total else "Architecture (is_hardware)"
+margin = abs(arch_total - founder_total)
+
+print(f"""
+### 🏆 WINNER: **{winner}**
+
+**Score**: {max(arch_total, founder_total):.1f} vs {min(arch_total, founder_total):.1f} (margin: {margin:.1f} points)
+""")
+```
+
+## 7.2 Rationale
+
+```{python}
+#| label: rationale
+#| echo: false
+
+if arch_total > founder_total:
+    print(f"""
+**Why Architecture wins**:
+1. {'Better sample balance' if arch_balance_score > founder_balance_score else 'Comparable sample balance'}
+2. {'Stronger statistical evidence' if arch_sig_score > founder_sig_score else 'Similar statistical evidence'}
+3. {'Superior model fit' if arch_pseudo_r2 > founder_pseudo_r2 else 'Comparable model fit'}
+4. Integration cost is a **concrete, observable** construct with clear theoretical foundations
+5. Hardware/software distinction is well-established in venture capital research
+6. Lower risk of confounding (architecture is exogenous to founder decisions)
+
+**Drawbacks of Credibility**:
+- {'Severe sample imbalance' if serial_minority < 10 else 'Moderate sample imbalance' if serial_minority < 20 else 'Acceptable balance but weaker than Architecture'}
+- Credibility is harder to measure objectively (relies on PitchBook founder linkage)
+- Potential endogeneity (successful founders may select into different venture types)
+""")
+else:
+    print(f"""
+**Why Credibility wins**:
+1. {'Better sample balance' if founder_balance_score > arch_balance_score else 'Comparable sample balance'}
+2. {'Stronger statistical evidence' if founder_sig_score > arch_sig_score else 'Similar statistical evidence'}
+3. {'Superior model fit' if founder_pseudo_r2 > arch_pseudo_r2 else 'Comparable model fit'}
+4. Founder credibility provides direct test of **signaling substitution** mechanism
+5. Serial entrepreneurship is well-studied in entrepreneurship literature
+6. More aligned with H2' (second-order interaction with experience)
+
+**Drawbacks of Architecture**:
+- {'Severe sample imbalance' if hw_minority < 10 else 'Moderate sample imbalance' if hw_minority < 20 else 'Acceptable balance but weaker than Credibility'}
+- Hardware/software may not perfectly capture integration cost
+- Potential sectoral confounds (hardware tends to have different funding dynamics)
+""")
+```
+
+## 7.3 Next Steps
+
+```{python}
+#| label: next-steps
+#| echo: false
+
+print(f"""
+1. **Adopt {winner} as primary H2 moderator** for main paper
+2. Report {loser} as robustness check in appendix
+3. {'Add diagnostic checks for small-sample bias' if min(hw_minority, serial_minority) < 15 else 'Proceed with standard logistic regression'}
+4. Consider Bayesian re-estimation with weakly informative priors for winner
+5. Develop theoretical narrative emphasizing:
+   - Why {winner.split()[0].lower()} is the key boundary condition
+   - How this aligns with H2 definition and broader theory
+6. Create interaction plots and marginal effects tables for main text
+""")
+```
+
+---
+
+# 8. Reproducibility
+
+## 8.1 Analysis Pipeline
+
+All analyses are fully reproducible using:
+
+```bash
+# Step 1: Run analysis (generates both models)
+cd "Front/On/love(cs)/strategic ambiguity/empirics"
+python run_analysis.py --output outputs
+
+# Step 2: Generate bake-off visualizations
+python -c "
+import pandas as pd
+from pathlib import Path
+from modules.plots import save_univariate_distributions, save_h2_interaction_architecture, save_h2_interaction_founder
+
+outdir = Path('outputs/bakeoff')
+outdir.mkdir(parents=True, exist_ok=True)
+
+df = pd.read_csv('outputs/h2_analysis_dataset.csv')
+save_univariate_distributions(df, outdir)
+save_h2_interaction_architecture(df, outdir)
+save_h2_interaction_founder(df, outdir)
+"
+
+# Step 3: Render this report
+quarto render moderator_bakeoff.qmd
+```
+
+## 8.2 Session Info
+
+```{python}
+#| label: session-info
+#| echo: true
+
+import sys
+import pandas as pd
+import numpy as np
+import matplotlib
+
+print(f"Python: {sys.version}")
+print(f"Pandas: {pd.__version__}")
+print(f"NumPy: {np.__version__}")
+print(f"Matplotlib: {matplotlib.__version__}")
+```
+
+---
+
+# Appendix: Decision Criteria Details
+
+## A1. Scoring Methodology
+
+### Data Quality (40% weight)
+- **10 points**: Minority class ≥20% (low risk)
+- **5 points**: Minority class 10-20% (medium risk)
+- **0 points**: Minority class <10% (high risk)
+
+### Statistical Evidence (40% weight = 20% significance + 20% fit)
+
+**Significance** (20%):
+- **10 points**: p < 0.01 (highly significant)
+- **7 points**: p < 0.05 (significant)
+- **4 points**: p < 0.10 (marginally significant)
+- **0 points**: p ≥ 0.10 (not significant)
+
+**Model Fit** (20%):
+- **Score = Pseudo R² × 100** (capped at 10)
+
+### Theory Fit (20% weight)
+- **10 points**: Interaction sign matches theory
+- **0 points**: Interaction sign contradicts theory
+
+## A2. Rationale for Weights
+
+- **Data Quality = 40%**: Poor data quality undermines all downstream inference
+- **Statistical Evidence = 40%**: Split equally between significance and fit
+- **Theory Fit = 20%**: Theory alignment is crucial but can't overcome bad data
+
+---
+
+**Report generated**: `{python} from datetime import datetime; print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))`

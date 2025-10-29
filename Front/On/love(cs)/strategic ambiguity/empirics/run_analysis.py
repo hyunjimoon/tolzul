@@ -17,11 +17,12 @@ warnings.filterwarnings('ignore')
 
 import pandas as pd
 import numpy as np
+import statsmodels.formula.api as smf
 
 sys.path.insert(0, str(Path(__file__).parent))
 
 from modules.features import (
-    engineer_features, compute_founder_credibility, extract_sector_fe,
+    engineer_features, compute_founder_credibility, compute_serial_entrepreneur, extract_sector_fe,
     create_survival_seriesb_progression, preprocess_for_h2
 )
 from modules.models import (
@@ -84,6 +85,19 @@ def main():
     # keep only non-missing growth
     analysis = analysis[analysis['growth'].notna()].copy()
 
+    # --- Add is_serial for bake-off (permanently) ---
+    # Reconstruct from original base data before merge
+    base['is_serial'] = compute_serial_entrepreneur(base)
+    # Merge into analysis
+    id_col_for_merge = 'CompanyID' if 'CompanyID' in analysis.columns else 'company_id'
+    if 'is_serial' not in analysis.columns:
+        analysis = analysis.merge(
+            base[[id_col_for_merge, 'is_serial']].drop_duplicates(subset=[id_col_for_merge]),
+            on=id_col_for_merge,
+            how='left'
+        )
+        analysis['is_serial'] = analysis['is_serial'].fillna(0).astype(int)
+
     # Save analysis dataset
     analysis.to_csv(outdir / "h2_analysis_dataset.csv", index=False)
     print(f"✓ Saved: {outdir / 'h2_analysis_dataset.csv'}")
@@ -114,6 +128,66 @@ def main():
         'ci_upper': h2_res.conf_int()[1].values
     }).to_csv(outdir / "h2_main_coefficients.csv", index=False)
     print(f"✓ Saved: {outdir / 'h2_main_coefficients.csv'}")
+
+    # --- BAKE-OFF: Two H2 models with different moderators ---
+    print("\n" + "="*80)
+    print("MODERATOR BAKE-OFF: Architecture vs Credibility")
+    print("="*80)
+
+    def save_model_results(model, coef_path, metrics_path):
+        """Helper to save model coefficients and fit metrics."""
+        # Coefficients
+        coef_df = pd.DataFrame({
+            'variable': model.params.index,
+            'coefficient': model.params.values,
+            'std_err': model.bse.values,
+            'z': model.tvalues.values,
+            'p_value': model.pvalues.values,
+            'ci_lower': model.conf_int()[0].values,
+            'ci_upper': model.conf_int()[1].values
+        })
+        coef_df.to_csv(coef_path, index=False)
+
+        # Fit metrics
+        metrics_df = pd.DataFrame([{
+            'nobs': float(getattr(model, 'nobs', float('nan'))),
+            'prsquared': float(getattr(model, 'prsquared', float('nan'))),
+            'aic': float(getattr(model, 'aic', float('nan'))),
+            'bic': float(getattr(model, 'bic', float('nan'))),
+            'llf': float(getattr(model, 'llf', float('nan'))),
+            'converged': bool(getattr(model, 'mle_retvals', {}).get('converged', True))
+        }])
+        metrics_df.to_csv(metrics_path, index=False)
+
+    # Model 1: Architecture (is_hardware)
+    print("\nFitting H2-Architecture (is_hardware moderator)...")
+    formula_arch = "growth ~ z_vagueness * is_hardware + z_employees_log + C(founding_cohort)"
+    ana_arch = analysis.dropna(subset=['growth', 'z_vagueness', 'is_hardware']).copy()
+    try:
+        m_arch = smf.logit(formula_arch, data=ana_arch).fit(disp=False)
+    except Exception:
+        m_arch = smf.logit(formula_arch, data=ana_arch).fit_regularized(method='l2', alpha=0.01, disp=False, maxiter=200)
+
+    save_model_results(m_arch, outdir / "h2_model_architecture.csv", outdir / "h2_model_architecture_metrics.csv")
+    print(f"✓ Saved: {outdir / 'h2_model_architecture.csv'}")
+    print(f"✓ Saved: {outdir / 'h2_model_architecture_metrics.csv'}")
+
+    # Model 2: Credibility (is_serial)
+    print("\nFitting H2-Credibility (is_serial moderator)...")
+    formula_founder = "growth ~ z_vagueness * is_serial + z_employees_log + C(founding_cohort)"
+    ana_founder = analysis.dropna(subset=['growth', 'z_vagueness', 'is_serial']).copy()
+    try:
+        m_founder = smf.logit(formula_founder, data=ana_founder).fit(disp=False)
+    except Exception:
+        m_founder = smf.logit(formula_founder, data=ana_founder).fit_regularized(method='l2', alpha=0.01, disp=False, maxiter=200)
+
+    save_model_results(m_founder, outdir / "h2_model_founder.csv", outdir / "h2_model_founder_metrics.csv")
+    print(f"✓ Saved: {outdir / 'h2_model_founder.csv'}")
+    print(f"✓ Saved: {outdir / 'h2_model_founder_metrics.csv'}")
+
+    print("\n" + "="*80)
+    print("BAKE-OFF COMPLETE")
+    print("="*80)
 
     print("\nDone. Artifacts:", *[p.name for p in outdir.glob('*.csv')], sep="\n  - ")
 

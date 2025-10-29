@@ -666,6 +666,252 @@ def create_all_visualizations(
     return created_files
 
 
+# =============================================================================
+# BAKE-OFF VISUALIZATIONS
+# =============================================================================
+
+def save_univariate_distributions(df: pd.DataFrame, outdir: Path) -> None:
+    """
+    Save univariate distribution plot for bake-off analysis with risk labels.
+
+    Args:
+        df: DataFrame with analysis data
+        outdir: Output directory for saved plot
+    """
+    outdir = Path(outdir)
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+    fig.suptitle('Univariate Distributions - Bake-off Variables', fontsize=16, y=0.995)
+
+    # 1. Vagueness (continuous)
+    ax = axes[0, 0]
+    if 'vagueness' in df.columns:
+        vague_data = df['vagueness'].dropna()
+        ax.hist(vague_data, bins=50, edgecolor='black', alpha=0.7, color='steelblue')
+        ax.axvline(vague_data.median(), color='red', linestyle='--',
+                   label=f'Median={vague_data.median():.1f}')
+        ax.set_xlabel('Vagueness Score (0-100)')
+        ax.set_ylabel('Frequency')
+        ax.set_title(f'Vagueness (n={len(vague_data):,})')
+        ax.legend()
+
+    # 2. is_hardware (binary moderator)
+    ax = axes[0, 1]
+    if 'is_hardware' in df.columns:
+        hw_counts = df['is_hardware'].value_counts()
+        hw_pct = hw_counts / hw_counts.sum() * 100
+        colors = ['#2ecc71', '#e67e22']  # Green for 0, Orange for 1
+        bars = ax.bar(['Software (0)', 'Hardware (1)'],
+                      hw_pct.reindex([0, 1], fill_value=0),
+                      color=colors, edgecolor='black', alpha=0.7)
+        ax.set_ylabel('Percentage (%)')
+        ax.set_title(f'Integration Cost / is_hardware (n={hw_counts.sum():,})')
+
+        # Add percentages on bars
+        for i, (val, pct) in enumerate(zip([0, 1], hw_pct.reindex([0, 1], fill_value=0))):
+            count = hw_counts.get(val, 0)
+            ax.text(i, pct + 1, f'{pct:.1f}%\n(n={count:,})',
+                   ha='center', va='bottom', fontsize=9)
+
+        # Risk label if hardware < 10%
+        hw_minority_pct = hw_pct.get(1, 0)
+        if hw_minority_pct < 10:
+            ax.text(0.5, 0.95, '⚠️ HIGH RISK: Severe imbalance',
+                   transform=ax.transAxes, ha='center', va='top',
+                   fontsize=11, fontweight='bold', color='red',
+                   bbox=dict(boxstyle='round', facecolor='yellow', alpha=0.8))
+
+    # 3. is_serial (binary moderator)
+    ax = axes[0, 2]
+    if 'is_serial' in df.columns:
+        serial_counts = df['is_serial'].value_counts()
+        serial_pct = serial_counts / serial_counts.sum() * 100
+        colors = ['#95a5a6', '#9b59b6']  # Gray for 0, Purple for 1
+        bars = ax.bar(['Non-serial (0)', 'Serial (1)'],
+                      serial_pct.reindex([0, 1], fill_value=0),
+                      color=colors, edgecolor='black', alpha=0.7)
+        ax.set_ylabel('Percentage (%)')
+        ax.set_title(f'Founder Credibility / is_serial (n={serial_counts.sum():,})')
+
+        # Add percentages on bars
+        for i, (val, pct) in enumerate(zip([0, 1], serial_pct.reindex([0, 1], fill_value=0))):
+            count = serial_counts.get(val, 0)
+            ax.text(i, pct + 1, f'{pct:.1f}%\n(n={count:,})',
+                   ha='center', va='bottom', fontsize=9)
+
+        # Risk label if serial < 10%
+        serial_minority_pct = serial_pct.get(1, 0)
+        if serial_minority_pct < 10:
+            ax.text(0.5, 0.95, '⚠️ HIGH RISK: Severe imbalance',
+                   transform=ax.transAxes, ha='center', va='top',
+                   fontsize=11, fontweight='bold', color='red',
+                   bbox=dict(boxstyle='round', facecolor='yellow', alpha=0.8))
+
+    # 4. Growth (DV)
+    ax = axes[1, 0]
+    if 'growth' in df.columns:
+        growth_counts = df['growth'].value_counts()
+        growth_pct = growth_counts / growth_counts.sum() * 100
+        colors = ['#e74c3c', '#2ecc71']  # Red for 0, Green for 1
+        ax.bar(['No Growth (0)', 'Growth (1)'],
+               growth_pct.reindex([0, 1], fill_value=0),
+               color=colors, edgecolor='black', alpha=0.7)
+        ax.set_ylabel('Percentage (%)')
+        ax.set_title(f'Growth DV (n={growth_counts.sum():,})')
+
+        for i, (val, pct) in enumerate(zip([0, 1], growth_pct.reindex([0, 1], fill_value=0))):
+            count = growth_counts.get(val, 0)
+            ax.text(i, pct + 1, f'{pct:.1f}%\n(n={count:,})',
+                   ha='center', va='bottom', fontsize=9)
+
+    # 5. Employees (control)
+    ax = axes[1, 1]
+    if 'employees_log' in df.columns:
+        emp_data = df['employees_log'].dropna()
+        ax.hist(emp_data, bins=50, edgecolor='black', alpha=0.7, color='steelblue')
+        ax.axvline(emp_data.median(), color='red', linestyle='--',
+                   label=f'Median={emp_data.median():.2f}')
+        ax.set_xlabel('log(Employees)')
+        ax.set_ylabel('Frequency')
+        ax.set_title(f'Employees (n={len(emp_data):,})')
+        ax.legend()
+
+    # 6. Sector FE (control)
+    ax = axes[1, 2]
+    if 'sector_fe' in df.columns:
+        sector_counts = df['sector_fe'].value_counts().head(8)
+        sector_pct = sector_counts / len(df) * 100
+        sector_pct.plot(kind='barh', ax=ax, color='steelblue', edgecolor='black', alpha=0.7)
+        ax.set_xlabel('Percentage (%)')
+        ax.set_title(f'Sector Distribution (n={df["sector_fe"].notna().sum():,})')
+        ax.invert_yaxis()
+
+    plt.tight_layout()
+    output_path = outdir / 'univariate_distributions.png'
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    print(f"  ✓ Saved: {output_path}")
+    plt.close(fig)
+
+
+def save_h2_interaction_architecture(df: pd.DataFrame, outdir: Path) -> None:
+    """
+    Save interaction plot: vagueness × is_hardware.
+
+    Args:
+        df: DataFrame with analysis data
+        outdir: Output directory for saved plot
+    """
+    outdir = Path(outdir)
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    # Filter valid data
+    df_valid = df[df['growth'].notna() & df['vagueness'].notna() & df['is_hardware'].notna()].copy()
+
+    # Create vagueness quintiles
+    df_valid['vagueness_quintile'] = pd.qcut(df_valid['vagueness'], q=5, labels=['Q1', 'Q2', 'Q3', 'Q4', 'Q5'], duplicates='drop')
+
+    # Calculate mean growth by quintile and is_hardware
+    interaction_data = df_valid.groupby(['vagueness_quintile', 'is_hardware']).agg({
+        'growth': ['mean', 'count']
+    }).reset_index()
+    interaction_data.columns = ['quintile', 'is_hardware', 'mean_growth', 'count']
+
+    # Plot lines for each moderator level
+    colors = {'Software (0)': '#2ecc71', 'Hardware (1)': '#e67e22'}
+    markers = {0: 'o', 1: 's'}
+
+    for hw_val in [0, 1]:
+        subset = interaction_data[interaction_data['is_hardware'] == hw_val]
+        if len(subset) > 0:
+            label = 'Software (0)' if hw_val == 0 else 'Hardware (1)'
+            ax.plot(range(len(subset)), subset['mean_growth'] * 100,
+                   marker=markers[hw_val], markersize=10, linewidth=2.5,
+                   label=label, color=colors[label])
+
+            # Add sample size labels
+            for i, (idx, row) in enumerate(subset.iterrows()):
+                ax.text(i, row['mean_growth'] * 100 + 1, f"n={int(row['count'])}",
+                       ha='center', va='bottom', fontsize=8, alpha=0.7)
+
+    ax.set_xlabel('Vagueness Quintile', fontsize=12, fontweight='bold')
+    ax.set_ylabel('Growth Rate (%)', fontsize=12, fontweight='bold')
+    ax.set_title('H2-Architecture: Vagueness × is_hardware Interaction',
+                fontsize=14, fontweight='bold')
+    ax.set_xticks(range(5))
+    ax.set_xticklabels(['Q1\n(Low)', 'Q2', 'Q3', 'Q4', 'Q5\n(High)'])
+    ax.legend(loc='best', fontsize=11)
+    ax.grid(True, alpha=0.3)
+    ax.set_ylim(0, max(interaction_data['mean_growth'].max() * 100 + 5, 20))
+
+    plt.tight_layout()
+    output_path = outdir / 'h2_interaction_architecture.png'
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    print(f"  ✓ Saved: {output_path}")
+    plt.close(fig)
+
+
+def save_h2_interaction_founder(df: pd.DataFrame, outdir: Path) -> None:
+    """
+    Save interaction plot: vagueness × is_serial.
+
+    Args:
+        df: DataFrame with analysis data
+        outdir: Output directory for saved plot
+    """
+    outdir = Path(outdir)
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    # Filter valid data
+    df_valid = df[df['growth'].notna() & df['vagueness'].notna() & df['is_serial'].notna()].copy()
+
+    # Create vagueness quintiles
+    df_valid['vagueness_quintile'] = pd.qcut(df_valid['vagueness'], q=5, labels=['Q1', 'Q2', 'Q3', 'Q4', 'Q5'], duplicates='drop')
+
+    # Calculate mean growth by quintile and is_serial
+    interaction_data = df_valid.groupby(['vagueness_quintile', 'is_serial']).agg({
+        'growth': ['mean', 'count']
+    }).reset_index()
+    interaction_data.columns = ['quintile', 'is_serial', 'mean_growth', 'count']
+
+    # Plot lines for each moderator level
+    colors = {'Non-serial (0)': '#95a5a6', 'Serial (1)': '#9b59b6'}
+    markers = {0: 'o', 1: 's'}
+
+    for serial_val in [0, 1]:
+        subset = interaction_data[interaction_data['is_serial'] == serial_val]
+        if len(subset) > 0:
+            label = 'Non-serial (0)' if serial_val == 0 else 'Serial (1)'
+            ax.plot(range(len(subset)), subset['mean_growth'] * 100,
+                   marker=markers[serial_val], markersize=10, linewidth=2.5,
+                   label=label, color=colors[label])
+
+            # Add sample size labels
+            for i, (idx, row) in enumerate(subset.iterrows()):
+                ax.text(i, row['mean_growth'] * 100 + 1, f"n={int(row['count'])}",
+                       ha='center', va='bottom', fontsize=8, alpha=0.7)
+
+    ax.set_xlabel('Vagueness Quintile', fontsize=12, fontweight='bold')
+    ax.set_ylabel('Growth Rate (%)', fontsize=12, fontweight='bold')
+    ax.set_title('H2-Credibility: Vagueness × is_serial Interaction',
+                fontsize=14, fontweight='bold')
+    ax.set_xticks(range(5))
+    ax.set_xticklabels(['Q1\n(Low)', 'Q2', 'Q3', 'Q4', 'Q5\n(High)'])
+    ax.legend(loc='best', fontsize=11)
+    ax.grid(True, alpha=0.3)
+    ax.set_ylim(0, max(interaction_data['mean_growth'].max() * 100 + 5, 20))
+
+    plt.tight_layout()
+    output_path = outdir / 'h2_interaction_founder.png'
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    print(f"  ✓ Saved: {output_path}")
+    plt.close(fig)
+
+
 if __name__ == "__main__":
     print("Visualization Module - Standalone Test\n")
     print("=" * 80)

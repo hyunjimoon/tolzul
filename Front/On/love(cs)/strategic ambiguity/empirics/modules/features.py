@@ -438,6 +438,14 @@ def compute_founder_credibility(df: pd.DataFrame) -> pd.Series:
         return has_exit.fillna(0).astype(int)
     return pd.Series(0, index=df.index)
 
+def compute_serial_entrepreneur(df: pd.DataFrame) -> pd.Series:
+    """
+    Compute serial entrepreneur indicator (alias for founder credibility).
+    Returns 1 if founder has had prior successful exit, 0 otherwise.
+    This is used as the moderator for H2-Alt (Credibility hypothesis).
+    """
+    return compute_founder_credibility(df)
+
 # =========================================================
 # Orchestrator
 # =========================================================
