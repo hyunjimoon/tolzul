@@ -79,11 +79,61 @@ def test_h2_main_growth(
         - NO early_funding: it's a mediator in causal chain vagueness→funding→growth
     """
     d = df.dropna(subset=['growth', 'z_vagueness', 'is_hardware']).copy()
+
+    # Print diagnostics
+    print(f"\n  📊 H2 (Architecture) Diagnostics:")
+    print(f"     Sample size: {len(d):,}")
+    print(f"     Growth rate: {d['growth'].mean():.1%}")
+
+    hw_dist = d['is_hardware'].value_counts()
+    print(f"     Architecture distribution:")
+    for val, count in hw_dist.items():
+        pct = count / len(d) * 100
+        label = 'Hardware' if val == 1 else 'Software'
+        print(f"       {label} ({val}): {count:,} ({pct:.1f}%)")
+
+    if len(hw_dist) > 1:
+        growth_by_hw = d.groupby('is_hardware')['growth'].agg(['mean', 'count'])
+        print(f"     Growth by architecture:")
+        for idx, row in growth_by_hw.iterrows():
+            label = 'Hardware' if idx == 1 else 'Software'
+            print(f"       {label}: {row['mean']:.1%} (n={int(row['count']):,})")
+
+    print(f"\n  🔧 Fitting H2 model...")
+
+    # Try normal fit
     try:
+        print(f"     Stage 1: Attempting standard logit fit...")
         model = smf.logit(formula, data=d).fit(disp=False)
+        print(f"     ✓ Standard fit successful")
+        return model
     except Exception:
-        model = smf.logit(formula, data=d).fit_regularized(method='l1', alpha=0.01, disp=False, maxiter=200)
-    return model
+        print(f"     ✗ Standard fit failed, trying L1 regularization...")
+
+    # Try L1 regularization
+    try:
+        print(f"     Stage 2: Attempting L1 regularization (alpha=0.1)...")
+        model = smf.logit(formula, data=d).fit_regularized(
+            method='l1', alpha=0.1, disp=False, maxiter=200, warn_convergence=False
+        )
+        print(f"     ✓ L1 (alpha=0.1) successful")
+        return model
+    except Exception:
+        print(f"     ✗ L1 (alpha=0.1) failed, trying stronger regularization...")
+
+    # Try stronger regularization
+    try:
+        print(f"     Stage 3: Attempting L1 regularization (alpha=0.5)...")
+        model = smf.logit(formula, data=d).fit_regularized(
+            method='l1', alpha=0.5, disp=False, maxiter=200, warn_convergence=False
+        )
+        print(f"     ✓ L1 (alpha=0.5) successful")
+        return model
+    except Exception:
+        raise RuntimeError(
+            "H2 model convergence failed. See diagnostics above. "
+            "Data may have perfect separation or severe multicollinearity."
+        )
 
 # -----------------------------
 # H3: Early funding interaction with founder credibility (OLS)
@@ -193,8 +243,104 @@ def test_h4_growth_interaction(
         })
 
     d = d.dropna(subset=['growth', 'z_vagueness', 'founder_serial']).copy()
+
+    # Print diagnostics to help troubleshoot convergence issues
+    print(f"\n  📊 H4 Diagnostics:")
+    print(f"     Sample size: {len(d):,}")
+    print(f"     Growth rate: {d['growth'].mean():.1%}")
+
+    # Check founder distribution
+    founder_dist = d['founder_serial'].value_counts()
+    print(f"     Founder distribution:")
+    for val, count in founder_dist.items():
+        pct = count / len(d) * 100
+        label = 'Serial' if val == 1 else 'Not Serial'
+        print(f"       {label} ({val}): {count:,} ({pct:.1f}%)")
+
+    # Check growth by founder group
+    if len(founder_dist) > 1:
+        growth_by_founder = d.groupby('founder_serial')['growth'].agg(['mean', 'count'])
+        print(f"     Growth by founder type:")
+        for idx, row in growth_by_founder.iterrows():
+            label = 'Serial' if idx == 1 else 'Not Serial'
+            print(f"       {label}: {row['mean']:.1%} (n={int(row['count']):,})")
+
+    # Multi-stage fallback strategy
+    print(f"\n  🔧 Fitting H4 model...")
+
+    # Stage 1: Try normal MLE
     try:
+        print(f"     Stage 1: Attempting standard logit fit...")
         model = smf.logit(formula, data=d).fit(disp=False)
-    except Exception:
-        model = smf.logit(formula, data=d).fit_regularized(method='l1', alpha=0.01, disp=False, maxiter=200)
-    return model
+        print(f"     ✓ Standard fit successful")
+        return model
+    except Exception as e1:
+        print(f"     ✗ Standard fit failed: {type(e1).__name__}")
+
+    # Stage 2: Try L1 with alpha=0.1 (moderate regularization)
+    try:
+        print(f"     Stage 2: Attempting L1 regularization (alpha=0.1)...")
+        model = smf.logit(formula, data=d).fit_regularized(
+            method='l1', alpha=0.1, disp=False, maxiter=200, warn_convergence=False
+        )
+        print(f"     ✓ L1 (alpha=0.1) successful")
+        return model
+    except Exception as e2:
+        print(f"     ✗ L1 (alpha=0.1) failed: {type(e2).__name__}")
+
+    # Stage 3: Try L1 with alpha=0.5 (strong regularization)
+    try:
+        print(f"     Stage 3: Attempting L1 regularization (alpha=0.5)...")
+        model = smf.logit(formula, data=d).fit_regularized(
+            method='l1', alpha=0.5, disp=False, maxiter=200, warn_convergence=False
+        )
+        print(f"     ✓ L1 (alpha=0.5) successful")
+        return model
+    except Exception as e3:
+        print(f"     ✗ L1 (alpha=0.5) failed: {type(e3).__name__}")
+
+    # Stage 4: Try simplified model without interaction
+    try:
+        print(f"     Stage 4: Attempting simplified model (no interaction)...")
+        simple_formula = "growth ~ z_vagueness + founder_serial + z_employees_log + C(founding_cohort)"
+        model = smf.logit(simple_formula, data=d).fit_regularized(
+            method='l1', alpha=0.1, disp=False, maxiter=200, warn_convergence=False
+        )
+        print(f"     ✓ Simplified model successful (no interaction term)")
+        print(f"     ⚠️  WARNING: Interaction term dropped due to convergence issues")
+        return model
+    except Exception as e4:
+        print(f"     ✗ Simplified model failed: {type(e4).__name__}")
+
+    # Stage 5: Last resort - main effects only
+    try:
+        print(f"     Stage 5: Attempting main effects only...")
+        minimal_formula = "growth ~ z_vagueness + founder_serial"
+        model = smf.logit(minimal_formula, data=d).fit_regularized(
+            method='l1', alpha=0.5, disp=False, maxiter=200, warn_convergence=False
+        )
+        print(f"     ✓ Main effects only model successful")
+        print(f"     ⚠️  WARNING: Controls and interaction dropped due to convergence issues")
+        return model
+    except Exception as e5:
+        print(f"     ✗ Main effects only failed: {type(e5).__name__}")
+
+    # All stages failed - raise informative error
+    print(f"\n  ❌ ERROR: All H4 fallback strategies failed")
+    print(f"     This suggests severe data issues:")
+    print(f"     - Possible perfect separation (all Y=0 or Y=1 in one group)")
+    print(f"     - Extreme multicollinearity")
+    print(f"     - Insufficient sample size in founder groups")
+    print(f"")
+    print(f"     Recommendations:")
+    print(f"     1. Check founder_serial distribution (should have both 0 and 1)")
+    print(f"     2. Check growth distribution by founder type")
+    print(f"     3. Consider collecting more data")
+    print(f"     4. Consider alternative moderators (e.g., is_hardware)")
+    print(f"")
+
+    raise RuntimeError(
+        "H4 model convergence failed across all fallback strategies. "
+        "See diagnostics above for details. Data may have perfect separation or "
+        "severe multicollinearity."
+    )
