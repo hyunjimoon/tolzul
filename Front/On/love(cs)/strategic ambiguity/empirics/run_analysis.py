@@ -289,7 +289,7 @@ def main():
     try:
         m_arch = smf.logit(formula_arch, data=ana_arch).fit(disp=False)
     except Exception:
-        m_arch = smf.logit(formula_arch, data=ana_arch).fit_regularized(method='l2', alpha=0.01, disp=False, maxiter=200)
+        m_arch = smf.logit(formula_arch, data=ana_arch).fit_regularized(method='l1', alpha=0.1, disp=False, maxiter=200, warn_convergence=False)
 
     save_model_results(
         m_arch,
@@ -309,7 +309,7 @@ def main():
     try:
         m_founder = smf.logit(formula_founder, data=ana_founder).fit(disp=False)
     except Exception:
-        m_founder = smf.logit(formula_founder, data=ana_founder).fit_regularized(method='l2', alpha=0.01, disp=False, maxiter=200)
+        m_founder = smf.logit(formula_founder, data=ana_founder).fit_regularized(method='l1', alpha=0.1, disp=False, maxiter=200, warn_convergence=False)
 
     save_model_results(
         m_founder,
