@@ -562,4 +562,11 @@ def preprocess_for_h2(df: pd.DataFrame, fix_founder_credibility: bool = True) ->
         out['founder_serial'] = 0
         print(f"  ⚠️  founder_credibility not found. Created founder_serial=0 for all rows.")
 
+    # FINAL GUARD: Ensure founder_serial has stable dtype and no NaNs
+    # This is belt-and-suspenders to prevent any downstream issues
+    if 'founder_serial' in out.columns:
+        out['founder_serial'] = out['founder_serial'].fillna(0).astype(int)
+        # NEVER drop founder_serial - it's required for H3/H4
+        assert 'founder_serial' in out.columns, "INTERNAL ERROR: founder_serial was dropped"
+
     return out

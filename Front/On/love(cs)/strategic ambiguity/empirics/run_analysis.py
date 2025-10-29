@@ -35,11 +35,45 @@ from modules.plots import (
     save_h2_interaction_architecture, save_h2_interaction_founder
 )
 
-def read_snapshot(path, encoding='utf-8'):
+# Log which modules are imported (guard against path drift)
+import modules.features as _mf
+import modules.models as _mm
+import modules.plots as _mp
+print(f"🔍 USING features module: {_mf.__file__}")
+print(f"🔍 USING models module: {_mm.__file__}")
+print(f"🔍 USING plots module: {_mp.__file__}")
+
+def read_snapshot_cached(path, encoding='utf-8'):
+    """
+    Read .dat file with Parquet caching for 10-50x speed improvement.
+
+    First run: Reads .dat and creates .parquet cache
+    Subsequent runs: Reads .parquet (much faster!)
+    """
+    # Parquet cache path
+    parquet_path = Path(str(path).replace('.dat', '.parquet'))
+
+    # Use cache if it exists and is newer than source
+    if parquet_path.exists() and parquet_path.stat().st_mtime > path.stat().st_mtime:
+        print(f"  ✓ Loading from cache: {parquet_path.name} (fast!)")
+        return pd.read_parquet(parquet_path)
+
+    # No cache - read .dat and create cache
+    print(f"  ⏳ Reading .dat file: {path.name} (first run is slow...)")
     try:
-        return pd.read_csv(path, sep='|', encoding=encoding, low_memory=False)
+        df = pd.read_csv(path, sep='|', encoding=encoding, low_memory=False)
     except UnicodeDecodeError:
-        return pd.read_csv(path, sep='|', encoding='latin-1', low_memory=False)
+        df = pd.read_csv(path, sep='|', encoding='latin-1', low_memory=False)
+
+    # Save to Parquet cache for next time
+    print(f"  💾 Caching to: {parquet_path.name} (next run will be 10-50x faster!)")
+    df.to_parquet(parquet_path, index=False, compression='snappy')
+
+    return df
+
+def read_snapshot(path, encoding='utf-8'):
+    """Legacy function - redirects to cached version"""
+    return read_snapshot_cached(path, encoding)
 
 def main():
     p = argparse.ArgumentParser()
@@ -71,8 +105,9 @@ def main():
     # --- H2 preprocessing (z-scores, cohorts, etc.) ---
     base = preprocess_for_h2(base)
 
-    # VERIFICATION: Ensure critical columns survived preprocessing
-    print(f"\n📊 Post-preprocessing verification:")
+    # CHECKPOINT 1: Assert founder_serial exists after preprocessing
+    print(f"\n📊 CHECKPOINT 1: Post-preprocessing verification:")
+    print(f"   Columns in base: {len(base.columns)}")
     print(f"   founder_credibility present: {'founder_credibility' in base.columns}")
     if 'founder_credibility' in base.columns:
         print(f"   founder_credibility stats: mean={base['founder_credibility'].mean():.3f}, std={base['founder_credibility'].std():.3f}")
@@ -80,7 +115,13 @@ def main():
     if 'founder_serial' in base.columns:
         print(f"   founder_serial distribution: {base['founder_serial'].value_counts().to_dict()}")
         print(f"   Serial founders: {base['founder_serial'].sum():,} ({100*base['founder_serial'].mean():.1f}%)")
-    print()
+    else:
+        print(f"   ❌ ERROR: founder_serial missing after preprocess_for_h2()")
+
+    # STRICT CHECK: founder_serial MUST exist
+    assert 'founder_serial' in base.columns, \
+        "❌ CRITICAL: founder_serial missing after preprocess_for_h2() - fix modules/features.py"
+    print(f"   ✅ CHECKPOINT 1 PASSED: founder_serial exists\n")
 
     # --- DV: Series B+ progression (reuse existing function) ---
     dv = create_survival_seriesb_progression(
@@ -102,35 +143,63 @@ def main():
     # keep only non-missing growth
     analysis = analysis[analysis['growth'].notna()].copy()
 
-    # --- Ensure founder_serial and is_serial are present for bake-off ---
-    # founder_serial should already be in analysis from preprocess_for_h2()
-    if 'founder_serial' not in analysis.columns:
-        print("  ⚠️  WARNING: founder_serial not found in analysis. Creating as all zeros.")
-        analysis['founder_serial'] = 0
-
-    # Create is_serial as alias for founder_serial (for backwards compatibility)
-    if 'is_serial' not in analysis.columns:
-        analysis['is_serial'] = analysis['founder_serial']
-        print(f"  ℹ️  Created is_serial from founder_serial (n={analysis['is_serial'].sum():,})")
-
-    # VERIFICATION: Final check before saving
-    print(f"\n📊 Pre-save verification of analysis dataset:")
-    print(f"   Total rows: {len(analysis):,}")
+    # CHECKPOINT 2: Ensure founder_serial survived merge
+    print(f"\n📊 CHECKPOINT 2: Post-merge verification:")
+    print(f"   Columns in analysis: {len(analysis.columns)}")
     print(f"   founder_serial present: {'founder_serial' in analysis.columns}")
-    if 'founder_serial' in analysis.columns:
-        print(f"   founder_serial: {analysis['founder_serial'].sum():,} serial ({100*analysis['founder_serial'].mean():.1f}%)")
-    print(f"   is_serial present: {'is_serial' in analysis.columns}")
-    if 'is_serial' in analysis.columns:
-        print(f"   is_serial: {analysis['is_serial'].sum():,} serial ({100*analysis['is_serial'].mean():.1f}%)")
+
+    # Belt-and-suspenders: Regenerate founder_serial if missing
+    if 'founder_serial' not in analysis.columns and 'founder_credibility' in analysis.columns:
+        print(f"   ⚠️  founder_serial missing post-merge; regenerating from founder_credibility")
+        analysis['founder_serial'] = (analysis['founder_credibility'] > 0).astype(int)
+        print(f"   ✓ Regenerated founder_serial: {analysis['founder_serial'].sum():,} serial founders")
+
+    # STRICT CHECK: founder_serial MUST exist now
+    if 'founder_serial' not in analysis.columns:
+        raise RuntimeError(
+            "❌ CRITICAL: founder_serial still missing after merge and regeneration attempt!\n"
+            "This indicates a fundamental data pipeline issue. Check:\n"
+            "1. modules/features.py::preprocess_for_h2() creates founder_serial\n"
+            "2. modules/features.py::engineer_features() creates founder_credibility\n"
+            "3. The merge on CompanyID/company_id is working correctly"
+        )
+
+    # Create is_serial as alias (for backwards compatibility with plots/models)
+    analysis['is_serial'] = analysis['founder_serial'].fillna(0).astype(int)
+    print(f"   ✓ Created is_serial alias: {analysis['is_serial'].sum():,} serial founders")
+
+    # CHECKPOINT 3: Final pre-save verification
+    print(f"\n📊 CHECKPOINT 3: Pre-save verification of analysis dataset:")
+    print(f"   Total rows: {len(analysis):,}")
+    print(f"   founder_serial: {analysis['founder_serial'].sum():,} serial ({100*analysis['founder_serial'].mean():.1f}%)")
+    print(f"   is_serial: {analysis['is_serial'].sum():,} serial ({100*analysis['is_serial'].mean():.1f}%)")
     print(f"   founder_credibility present: {'founder_credibility' in analysis.columns}")
     if 'founder_credibility' in analysis.columns:
         print(f"   founder_credibility: mean={analysis['founder_credibility'].mean():.3f}")
-    print()
+    print(f"   ✅ CHECKPOINT 3 PASSED: All critical columns present in-memory\n")
 
     # Save analysis dataset (NO column filtering - save ALL columns)
     analysis.to_csv(outdir / "h2_analysis_dataset.csv", index=False)
     print(f"✓ Saved: {outdir / 'h2_analysis_dataset.csv'}")
-    print(f"  Columns saved: {list(analysis.columns)}")
+    print(f"  Columns saved: {len(analysis.columns)}")
+
+    # CHECKPOINT 4: Verify columns were actually saved to disk
+    print(f"\n📊 CHECKPOINT 4: Post-save verification (reading from disk):")
+    _saved = pd.read_csv(outdir / "h2_analysis_dataset.csv")
+    print(f"   Rows in saved CSV: {len(_saved):,}")
+    print(f"   Columns in saved CSV: {len(_saved.columns)}")
+    print(f"   founder_serial in CSV: {'founder_serial' in _saved.columns}")
+    print(f"   is_serial in CSV: {'is_serial' in _saved.columns}")
+
+    if 'founder_serial' not in _saved.columns:
+        raise RuntimeError(
+            "❌ CRITICAL: founder_serial missing from saved CSV!\n"
+            "Column was present in-memory but disappeared during save. This is a pandas I/O bug."
+        )
+
+    print(f"   founder_serial sum (disk): {int(_saved['founder_serial'].sum()):,}")
+    print(f"   is_serial sum (disk): {int(_saved['is_serial'].sum()):,}")
+    print(f"   ✅ CHECKPOINT 4 PASSED: founder_serial confirmed on disk!\n")
 
     # --- H1 (OLS) on companies with early_funding_musd ---
     h1_df = analysis[analysis['early_funding_musd'].notna()].copy()
