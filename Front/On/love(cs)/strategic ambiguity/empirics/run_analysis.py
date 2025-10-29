@@ -31,7 +31,8 @@ from modules.models import (
     test_h3_early_funding_interaction, test_h4_growth_interaction
 )
 from modules.plots import (
-    fig_reversal_from_models, fig_founder_interactions
+    fig_reversal_from_models, fig_founder_interactions,
+    save_h2_interaction_architecture, save_h2_interaction_founder
 )
 
 def read_snapshot(path, encoding='utf-8'):
@@ -345,6 +346,23 @@ def main():
     print(f"✓ Saved: {outdir / 'h2_model_founder.csv'}")
     print(f"✓ Saved: {outdir / 'h2_model_founder_metrics.csv'}")
     print(f"✓ Saved: {outdir / 'h2_model_founder_ame.csv'}")
+
+    # Generate bakeoff interaction plots
+    print("\nGenerating bakeoff interaction plots...")
+    bakeoff_dir = outdir / "bakeoff"
+    bakeoff_dir.mkdir(parents=True, exist_ok=True)
+
+    try:
+        save_h2_interaction_architecture(analysis, bakeoff_dir)
+        print(f"✓ Saved: {bakeoff_dir / 'h2_interaction_is_hardware.png'}")
+    except Exception as e:
+        print(f"  ⚠️ Error generating architecture interaction plot: {e}")
+
+    try:
+        save_h2_interaction_founder(analysis, bakeoff_dir)
+        print(f"✓ Saved: {bakeoff_dir / 'h2_interaction_is_serial.png'}")
+    except Exception as e:
+        print(f"  ⚠️ Error generating founder interaction plot: {e}")
 
     print("\n" + "="*80)
     print("BAKE-OFF COMPLETE")
