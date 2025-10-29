@@ -168,15 +168,8 @@ if [ $QUARTO_AVAILABLE -eq 1 ]; then
             # Extract base filename (without .qmd extension)
             base_name="${report%.qmd}"
 
-            # Quarto quirk: -o flag doesn't accept paths, only filenames
-            # Solution: Copy .qmd to output directory, render there, then clean up
-            cp "$report" outputs/reports/
-
-            # Save current directory
-            ORIG_DIR=$(pwd)
-
-            # Change to output directory for rendering
-            cd outputs/reports
+            # CRITICAL: Render in current directory so Python code can find outputs/*.csv
+            # Then move the generated PDF/HTML to outputs/reports/
 
             # Try PDF first (preferred output format)
             PDF_SUCCESS=0
@@ -184,6 +177,7 @@ if [ $QUARTO_AVAILABLE -eq 1 ]; then
                 echo -e "${YELLOW}    ⚠ PDF rendering failed (see error above)${NC}"
             else
                 if [ -f "${base_name}.pdf" ]; then
+                    mv "${base_name}.pdf" outputs/reports/
                     echo -e "${GREEN}    ✓ PDF rendered${NC}"
                     PDF_SUCCESS=1
                 else
@@ -197,18 +191,13 @@ if [ $QUARTO_AVAILABLE -eq 1 ]; then
                     echo -e "${RED}    ✗ HTML rendering also failed${NC}"
                 else
                     if [ -f "${base_name}.html" ]; then
+                        mv "${base_name}.html" outputs/reports/
                         echo -e "${GREEN}    ✓ HTML rendered (fallback)${NC}"
                     else
                         echo -e "${RED}    ✗ Both PDF and HTML rendering failed${NC}"
                     fi
                 fi
             fi
-
-            # Clean up the copied .qmd file
-            rm -f "$report"
-
-            # Return to original directory
-            cd "$ORIG_DIR"
         else
             echo -e "${RED}  ✗ Report not found: $report${NC}"
         fi
