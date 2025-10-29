@@ -1,6 +1,7 @@
+# run_analysis.py
 #!/usr/bin/env python3
 """
-W1 Pipeline (clean): produce exactly 3 outputs
+W1 Pipeline: H1 + H2 (minimal outputs)
 
 Outputs:
   outputs/
@@ -9,113 +10,98 @@ Outputs:
     - h2_analysis_dataset.csv
 """
 
-import argparse
+import pandas as pd
 from pathlib import Path
-import sys
-import warnings
+import argparse, sys, warnings
 warnings.filterwarnings('ignore')
 
-import pandas as pd
-import numpy as np
-
+# dual import (modules.* or local *)
 sys.path.insert(0, str(Path(__file__).parent))
+try:
+    from modules.features import (
+        engineer_features, compute_founder_credibility, extract_sector_fe,
+        create_survival_seriesb_progression, preprocess_for_w1
+    )
+    from modules.models import (
+        test_h1_early_funding, test_h2_main_survival
+    )
+except Exception:
+    from features import (
+        engineer_features, compute_founder_credibility, extract_sector_fe,
+        create_survival_seriesb_progression, preprocess_for_w1
+    )
+    from models import (
+        test_h1_early_funding, test_h2_main_survival
+    )
 
-from modules.features import (
-    engineer_features, compute_founder_credibility, extract_sector_fe,
-    create_survival_seriesb_progression, preprocess_for_h2
-)
-from modules.models import (
-    test_h1_early_funding, test_h2_main_growth
-)
-
-def read_snapshot(path, encoding='utf-8'):
+def read_snapshot(path: Path, encoding='utf-8') -> pd.DataFrame:
     try:
         return pd.read_csv(path, sep='|', encoding=encoding, low_memory=False)
     except UnicodeDecodeError:
         return pd.read_csv(path, sep='|', encoding='latin-1', low_memory=False)
 
 def main():
-    p = argparse.ArgumentParser()
-    p.add_argument('--output', type=str, default='outputs')
-    args = p.parse_args()
-    outdir = Path(args.output)
-    outdir.mkdir(parents=True, exist_ok=True)
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--output', type=str, default='outputs')
+    args = ap.parse_args()
+    out = Path(args.output); out.mkdir(parents=True, exist_ok=True)
 
-    print("=" * 80)
-    print("W1 HYPOTHESIS TESTING (CLEAN)")
-    print("=" * 80)
-
-    # --- Load 4 snapshots for DV construction (B+ progression) ---
+    print("="*80); print("W1: Load snapshots"); print("="*80)
     data_dir = Path("data/raw")
     snaps = {
-        't0': data_dir / "Company20211201.dat",
+        't0':  data_dir / "Company20211201.dat",
         'tm1': data_dir / "Company20220101.dat",
         'tm2': data_dir / "Company20220501.dat",
-        't1': data_dir / "Company20230501.dat"
+        't1':  data_dir / "Company20230501.dat"
     }
     dfs = {k: read_snapshot(v) for k, v in snaps.items()}
 
-    # --- Features from baseline ---
+    print("\n"+"="*80); print("Step 1: DV(growth) — Series B+ progression"); print("="*80)
+    dv = create_survival_seriesb_progression(dfs['t0'], dfs['tm1'], dfs['tm2'], dfs['t1'])
+    dv.rename(columns={'Y_primary':'growth'}, inplace=True)
+
+    print("\n"+"="*80); print("Step 2: Features @ baseline"); print("="*80)
     base = engineer_features(dfs['t0'])
     base['founder_credibility'] = compute_founder_credibility(base)
-    if 'sector_fe' not in base.columns and 'keywords' in base.columns:
-        base['sector_fe'] = extract_sector_fe(base['keywords'])
+    if 'sector_fe' not in base: base['sector_fe'] = extract_sector_fe(base.get('keywords', pd.Series([""]*len(base))))
 
-    # --- H2 preprocessing (z-scores, cohorts, etc.) ---
-    base = preprocess_for_h2(base)
-
-    # --- DV: Series B+ progression (reuse existing function) ---
-    dv = create_survival_seriesb_progression(
-        df_baseline=dfs['t0'], df_mid1=dfs['tm1'], df_mid2=dfs['tm2'], df_endpoint=dfs['t1'],
-        baseline_date="2021-12-01", mid1_date="2022-01-01", mid2_date="2022-05-01", endpoint_date="2023-05-01"
-    )
-
-    # --- Merge & Rename DV columns ---
+    print("\n"+"="*80); print("Step 3: Merge + preprocess"); print("="*80)
     id_col = 'CompanyID' if 'CompanyID' in base.columns else 'company_id'
-    dv = dv.rename(columns={'company_id': id_col})
-    analysis = base.merge(dv, on=id_col, how='inner').copy()
-    # primary DV
-    analysis['growth'] = analysis['Y_primary']  # <- rename
-    # NOTE: we deliberately do not keep MA upper/lower variants for W1
-    # cleanup
-    for col in [c for c in analysis.columns if c.startswith('Y_MA_')]:
-        analysis.drop(columns=[col], inplace=True)
+    ana = base.merge(dv.rename(columns={'company_id': id_col}), on=id_col, how='inner')
+    ana = preprocess_for_w1(ana)
+    # back-compat alias
+    if 'survival' not in ana.columns: ana['survival'] = ana['growth']
+    ana.to_csv(out / "h2_analysis_dataset.csv", index=False)
+    print(f"✓ Saved: {out / 'h2_analysis_dataset.csv'}")
 
-    # keep only non-missing growth
-    analysis = analysis[analysis['growth'].notna()].copy()
-
-    # Save analysis dataset
-    analysis.to_csv(outdir / "h2_analysis_dataset.csv", index=False)
-    print(f"✓ Saved: {outdir / 'h2_analysis_dataset.csv'}")
-
-    # --- H1 (OLS) on companies with early_funding_musd ---
-    h1_df = analysis[analysis['early_funding_musd'].notna()].copy()
-    h1_res = test_h1_early_funding(h1_df)
+    print("\n"+"="*80); print("Step 4: H1 (OLS)"); print("="*80)
+    h1 = test_h1_early_funding(ana)
     pd.DataFrame({
-        'variable': h1_res.params.index,
-        'coefficient': h1_res.params.values,
-        'std_err': h1_res.bse.values,
-        'stat': h1_res.tvalues.values,
-        'p_value': h1_res.pvalues.values,
-        'ci_lower': h1_res.conf_int()[0].values,
-        'ci_upper': h1_res.conf_int()[1].values
-    }).to_csv(outdir / "h1_coefficients.csv", index=False)
-    print(f"✓ Saved: {outdir / 'h1_coefficients.csv'}")
+        'variable': h1.params.index,
+        'coefficient': h1.params.values,
+        'std_err': h1.bse.values,
+        't': h1.tvalues.values,
+        'p_value': h1.pvalues.values,
+        'ci_lower': h1.conf_int()[0].values,
+        'ci_upper': h1.conf_int()[1].values
+    }).to_csv(out / "h1_coefficients.csv", index=False)
+    print(f"✓ Saved: {out / 'h1_coefficients.csv'}")
 
-    # --- H2 main (Logit; NO early_funding) ---
-    h2_res = test_h2_main_growth(analysis)
+    print("\n"+"="*80); print("Step 5: H2 Main (Logit)"); print("="*80)
+    h2 = test_h2_main_survival(ana)  # wrapper → growth 사용
     pd.DataFrame({
-        'variable': h2_res.params.index,
-        'coefficient': h2_res.params.values,
-        'std_err': h2_res.bse.values,
-        'stat': h2_res.tvalues.values,
-        'p_value': h2_res.pvalues.values,
-        'ci_lower': h2_res.conf_int()[0].values,
-        'ci_upper': h2_res.conf_int()[1].values
-    }).to_csv(outdir / "h2_main_coefficients.csv", index=False)
-    print(f"✓ Saved: {outdir / 'h2_main_coefficients.csv'}")
+        'variable': h2.params.index,
+        'coefficient': h2.params.values,
+        'std_err': h2.bse.values,
+        'z': h2.tvalues.values,
+        'p_value': h2.pvalues.values,
+        'ci_lower': h2.conf_int()[0].values,
+        'ci_upper': h2.conf_int()[1].values
+    }).to_csv(out / "h2_main_coefficients.csv", index=False)
+    print(f"✓ Saved: {out / 'h2_main_coefficients.csv'}")
 
-    print("\nDone. Artifacts:", *[p.name for p in outdir.glob('*.csv')], sep="\n  - ")
+    print("\n"+"="*80); print("✓ DONE (W1 minimal outputs)"); print("="*80)
+    print(f"Outputs → {out}")
 
 if __name__ == "__main__":
     main()
