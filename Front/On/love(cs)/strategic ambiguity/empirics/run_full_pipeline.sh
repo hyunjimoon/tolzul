@@ -44,6 +44,16 @@ if ! command -v quarto &> /dev/null; then
 else
     echo -e "${GREEN}✓ Quarto found:${NC} $(quarto --version)"
     QUARTO_AVAILABLE=1
+
+    # Check for LaTeX (required for PDF generation)
+    if command -v pdflatex &> /dev/null; then
+        echo -e "${GREEN}✓ LaTeX found:${NC} PDF generation available"
+        LATEX_AVAILABLE=1
+    else
+        echo -e "${YELLOW}⚠ LaTeX not found - PDF generation may fail${NC}"
+        echo -e "${YELLOW}  Install LaTeX: brew install --cask mactex (Mac) or sudo apt install texlive-full (Linux)${NC}"
+        LATEX_AVAILABLE=0
+    fi
 fi
 
 # Define paths
@@ -158,27 +168,47 @@ if [ $QUARTO_AVAILABLE -eq 1 ]; then
             # Extract base filename (without .qmd extension)
             base_name="${report%.qmd}"
 
-            # Render to HTML (use -o flag for individual files, not --output-dir)
-            if quarto render "$report" --to html -o "outputs/reports/${base_name}.html" 2>&1 | grep -q -v "^ERROR"; then
-                if [ -f "outputs/reports/${base_name}.html" ]; then
-                    echo -e "${GREEN}    ✓ HTML rendered${NC}"
-                else
-                    echo -e "${RED}    ✗ HTML rendering failed${NC}"
-                fi
+            # Quarto quirk: -o flag doesn't accept paths, only filenames
+            # Solution: Copy .qmd to output directory, render there, then clean up
+            cp "$report" outputs/reports/
+
+            # Save current directory
+            ORIG_DIR=$(pwd)
+
+            # Change to output directory for rendering
+            cd outputs/reports
+
+            # Try PDF first (preferred output format)
+            PDF_SUCCESS=0
+            if quarto render "$report" --to pdf 2>&1 | tee /tmp/quarto_pdf.log | grep -q "ERROR"; then
+                echo -e "${YELLOW}    ⚠ PDF rendering failed (see error above)${NC}"
             else
-                echo -e "${RED}    ✗ HTML rendering failed${NC}"
+                if [ -f "${base_name}.pdf" ]; then
+                    echo -e "${GREEN}    ✓ PDF rendered${NC}"
+                    PDF_SUCCESS=1
+                else
+                    echo -e "${YELLOW}    ⚠ PDF file not generated (LaTeX may not be installed)${NC}"
+                fi
             fi
 
-            # Try to render to PDF (may fail if LaTeX not installed)
-            if quarto render "$report" --to pdf -o "outputs/reports/${base_name}.pdf" 2>&1 | grep -q -v "^ERROR"; then
-                if [ -f "outputs/reports/${base_name}.pdf" ]; then
-                    echo -e "${GREEN}    ✓ PDF rendered${NC}"
+            # Fallback to HTML if PDF failed
+            if [ $PDF_SUCCESS -eq 0 ]; then
+                if quarto render "$report" --to html 2>&1 | grep -q "ERROR"; then
+                    echo -e "${RED}    ✗ HTML rendering also failed${NC}"
                 else
-                    echo -e "${YELLOW}    ⚠ PDF rendering skipped (LaTeX may not be installed)${NC}"
+                    if [ -f "${base_name}.html" ]; then
+                        echo -e "${GREEN}    ✓ HTML rendered (fallback)${NC}"
+                    else
+                        echo -e "${RED}    ✗ Both PDF and HTML rendering failed${NC}"
+                    fi
                 fi
-            else
-                echo -e "${YELLOW}    ⚠ PDF rendering skipped (LaTeX may not be installed)${NC}"
             fi
+
+            # Clean up the copied .qmd file
+            rm -f "$report"
+
+            # Return to original directory
+            cd "$ORIG_DIR"
         else
             echo -e "${RED}  ✗ Report not found: $report${NC}"
         fi
@@ -467,40 +497,66 @@ echo "    - outputs/bakeoff/*.png (moderator comparison plots)"
 echo ""
 
 if [ $QUARTO_AVAILABLE -eq 1 ]; then
-    echo "  Reports (HTML):"
-    for report in "${REPORTS[@]}"; do
-        html_file="outputs/reports/${report%.qmd}.html"
-        if [ -f "$html_file" ]; then
-            echo -e "    ${GREEN}✓${NC} $html_file"
-        fi
-    done
-    echo ""
+    # Show PDFs first (preferred format)
     echo "  Reports (PDF):"
+    PDF_COUNT=0
     for report in "${REPORTS[@]}"; do
         pdf_file="outputs/reports/${report%.qmd}.pdf"
         if [ -f "$pdf_file" ]; then
             echo -e "    ${GREEN}✓${NC} $pdf_file"
+            PDF_COUNT=$((PDF_COUNT + 1))
         else
-            echo -e "    ${YELLOW}○${NC} $pdf_file (not generated - LaTeX required)"
+            echo -e "    ${YELLOW}○${NC} $pdf_file (not generated)"
         fi
     done
-else
-    echo "  Reports (Source):"
+
+    # Show HTMLs as fallback
+    echo ""
+    echo "  Reports (HTML - fallback):"
+    HTML_COUNT=0
     for report in "${REPORTS[@]}"; do
-        echo "    ○ $report (render with: quarto render $report)"
+        html_file="outputs/reports/${report%.qmd}.html"
+        if [ -f "$html_file" ]; then
+            echo -e "    ${GREEN}✓${NC} $html_file"
+            HTML_COUNT=$((HTML_COUNT + 1))
+        fi
+    done
+
+    if [ $PDF_COUNT -eq 0 ] && [ $HTML_COUNT -eq 0 ]; then
+        echo -e "${RED}  ✗ No reports were generated. Check errors above.${NC}"
+    fi
+else
+    echo "  Reports (Source - Quarto not installed):"
+    for report in "${REPORTS[@]}"; do
+        echo "    ○ $report"
     done
 fi
 
 echo ""
 echo "🎯 Next Steps:"
 echo "  1. Review evaluation results above"
-echo "  2. Open reports in browser:"
-if [ $QUARTO_AVAILABLE -eq 1 ]; then
-    echo "     open outputs/reports/moderator_bakeoff_lean.html"
-    echo "     open outputs/reports/Progress_Report_W1_is_serial.html"
-    echo "     open outputs/reports/Progress_Report_W1_is_hardware.html"
+if [ $QUARTO_AVAILABLE -eq 1 ] && [ ${PDF_COUNT:-0} -gt 0 ]; then
+    echo "  2. Open PDF reports:"
+    for report in "${REPORTS[@]}"; do
+        pdf_file="outputs/reports/${report%.qmd}.pdf"
+        if [ -f "$pdf_file" ]; then
+            echo "     open $pdf_file"
+        fi
+    done
+elif [ $QUARTO_AVAILABLE -eq 1 ] && [ ${HTML_COUNT:-0} -gt 0 ]; then
+    echo "  2. Open HTML reports:"
+    for report in "${REPORTS[@]}"; do
+        html_file="outputs/reports/${report%.qmd}.html"
+        if [ -f "$html_file" ]; then
+            echo "     open $html_file"
+        fi
+    done
 else
-    echo "     (Install Quarto first: https://quarto.org/)"
+    echo "  2. Render reports manually:"
+    echo "     cd outputs/reports"
+    echo "     quarto render ../../moderator_bakeoff_lean.qmd --to pdf"
+    echo "     quarto render ../../Progress_Report_W1_is_serial.qmd --to pdf"
+    echo "     quarto render ../../Progress_Report_W1_is_hardware.qmd --to pdf"
 fi
 echo "  3. Share with Professors Fine and Stern for feedback"
 echo ""
