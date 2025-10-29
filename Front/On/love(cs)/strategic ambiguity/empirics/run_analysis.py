@@ -70,6 +70,17 @@ def main():
     # --- H2 preprocessing (z-scores, cohorts, etc.) ---
     base = preprocess_for_h2(base)
 
+    # VERIFICATION: Ensure critical columns survived preprocessing
+    print(f"\n📊 Post-preprocessing verification:")
+    print(f"   founder_credibility present: {'founder_credibility' in base.columns}")
+    if 'founder_credibility' in base.columns:
+        print(f"   founder_credibility stats: mean={base['founder_credibility'].mean():.3f}, std={base['founder_credibility'].std():.3f}")
+    print(f"   founder_serial present: {'founder_serial' in base.columns}")
+    if 'founder_serial' in base.columns:
+        print(f"   founder_serial distribution: {base['founder_serial'].value_counts().to_dict()}")
+        print(f"   Serial founders: {base['founder_serial'].sum():,} ({100*base['founder_serial'].mean():.1f}%)")
+    print()
+
     # --- DV: Series B+ progression (reuse existing function) ---
     dv = create_survival_seriesb_progression(
         df_baseline=dfs['t0'], df_mid1=dfs['tm1'], df_mid2=dfs['tm2'], df_endpoint=dfs['t1'],
@@ -90,22 +101,35 @@ def main():
     # keep only non-missing growth
     analysis = analysis[analysis['growth'].notna()].copy()
 
-    # --- Add is_serial for bake-off (permanently) ---
-    # Reconstruct from original base data before merge
-    base['is_serial'] = compute_serial_entrepreneur(base)
-    # Merge into analysis
-    id_col_for_merge = 'CompanyID' if 'CompanyID' in analysis.columns else 'company_id'
-    if 'is_serial' not in analysis.columns:
-        analysis = analysis.merge(
-            base[[id_col_for_merge, 'is_serial']].drop_duplicates(subset=[id_col_for_merge]),
-            on=id_col_for_merge,
-            how='left'
-        )
-        analysis['is_serial'] = analysis['is_serial'].fillna(0).astype(int)
+    # --- Ensure founder_serial and is_serial are present for bake-off ---
+    # founder_serial should already be in analysis from preprocess_for_h2()
+    if 'founder_serial' not in analysis.columns:
+        print("  ⚠️  WARNING: founder_serial not found in analysis. Creating as all zeros.")
+        analysis['founder_serial'] = 0
 
-    # Save analysis dataset
+    # Create is_serial as alias for founder_serial (for backwards compatibility)
+    if 'is_serial' not in analysis.columns:
+        analysis['is_serial'] = analysis['founder_serial']
+        print(f"  ℹ️  Created is_serial from founder_serial (n={analysis['is_serial'].sum():,})")
+
+    # VERIFICATION: Final check before saving
+    print(f"\n📊 Pre-save verification of analysis dataset:")
+    print(f"   Total rows: {len(analysis):,}")
+    print(f"   founder_serial present: {'founder_serial' in analysis.columns}")
+    if 'founder_serial' in analysis.columns:
+        print(f"   founder_serial: {analysis['founder_serial'].sum():,} serial ({100*analysis['founder_serial'].mean():.1f}%)")
+    print(f"   is_serial present: {'is_serial' in analysis.columns}")
+    if 'is_serial' in analysis.columns:
+        print(f"   is_serial: {analysis['is_serial'].sum():,} serial ({100*analysis['is_serial'].mean():.1f}%)")
+    print(f"   founder_credibility present: {'founder_credibility' in analysis.columns}")
+    if 'founder_credibility' in analysis.columns:
+        print(f"   founder_credibility: mean={analysis['founder_credibility'].mean():.3f}")
+    print()
+
+    # Save analysis dataset (NO column filtering - save ALL columns)
     analysis.to_csv(outdir / "h2_analysis_dataset.csv", index=False)
     print(f"✓ Saved: {outdir / 'h2_analysis_dataset.csv'}")
+    print(f"  Columns saved: {list(analysis.columns)}")
 
     # --- H1 (OLS) on companies with early_funding_musd ---
     h1_df = analysis[analysis['early_funding_musd'].notna()].copy()

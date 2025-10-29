@@ -542,11 +542,24 @@ def preprocess_for_h2(df: pd.DataFrame, fix_founder_credibility: bool = True) ->
         else:
             out[f'z_{col}'] = 0
 
-    # founder_credibility may be constant → drop for main spec
+    # CRITICAL FIX: Create founder_serial BEFORE z-scoring or dropping
+    # This ensures the binary column persists even if founder_credibility has std=0
     if 'founder_credibility' in out.columns:
+        # Create binary column (0 or 1) from continuous credibility
+        out['founder_serial'] = (out['founder_credibility'] > 0).astype(int)
+
+        # Now handle z-scoring (founder_credibility may be constant → drop for main spec)
         fc_std = out['founder_credibility'].std()
         if (pd.isna(fc_std) or fc_std == 0) and fix_founder_credibility:
+            # Drop the continuous version but KEEP the binary founder_serial
             out = out.drop(columns=['founder_credibility'])
+            print(f"  ℹ️  founder_credibility dropped (std=0), but founder_serial preserved (n={out['founder_serial'].sum():,})")
         else:
+            # Create z-score if there's variation
             out['z_founder_credibility'] = (out['founder_credibility'] - out['founder_credibility'].mean()) / max(1e-9, out['founder_credibility'].std())
+    else:
+        # If founder_credibility doesn't exist, create founder_serial as all zeros
+        out['founder_serial'] = 0
+        print(f"  ⚠️  founder_credibility not found. Created founder_serial=0 for all rows.")
+
     return out
