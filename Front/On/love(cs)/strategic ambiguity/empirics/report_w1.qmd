@@ -1,0 +1,225 @@
+---
+title: "Promise Precision & Venture Funding"
+subtitle: "Week 1 — Era of Ferment Strategy"
+format:
+  html:
+    embed-resources: true
+    toc: true
+    toc-depth: 3
+execute:
+  echo: false
+---
+
+<style>
+:root{
+  --soft-green:#2E7D32; /* software/non-integrated */
+  --hard-purple:#6A1B9A; /* hardware/integrated */
+  --neutral-gray:#6c757d; --pos-green:#28a745;
+}
+body { font-family: -apple-system, BlinkMacSystemFont, "Inter", Roboto, "Helvetica Neue", Arial, sans-serif; }
+h1,h2,h3{ font-weight:700; }
+.opinion{ background:#f8f9fa; border-left:6px solid var(--soft-green); padding:14px 16px; }
+.figure-caption{ font-style:italic; color:#555; text-align:center; }
+hr{ border:none; border-top:1px solid #eee; margin:1.2rem 0; }
+.badge{ display:inline-block; padding:2px 8px; border-radius:10px; font-size:0.85em; }
+.badge-soft{ background:var(--soft-green); color:#fff; }
+.badge-hard{ background:var(--hard-purple); color:#fff; }
+</style>
+
+# Executive Summary (Opinion)
+
+<div class="opinion">
+<strong>Claim.</strong> In an era of ferment, <em>don't go all in</em>. Start with a <em>vague promise</em> and commit gradually.<br>
+<strong>Why.</strong> Precision buys early credibility (H1) but may kill option value; vagueness hurts early (H1) and helps later where pivot is feasible—especially in <span class="badge badge-soft">Software (Non‑integrated)</span>, not in <span class="badge badge-hard">Hardware (Integrated)</span>.
+</div>
+
+**Key numbers (auto-filled from outputs):**
+
+```{python}
+#| label: load
+import pandas as pd, numpy as np, matplotlib.pyplot as plt
+h1 = pd.read_csv('outputs/h1_coefficients.csv')
+h2 = pd.read_csv('outputs/h2_main_coefficients.csv')
+df = pd.read_csv('outputs/h2_analysis_dataset.csv')
+
+N = len(df)
+# H1: pick z_vagueness row
+h1_row = h1[h1['variable'].str.contains('z_vagueness')].iloc[0]
+H1_coef = float(h1_row['coefficient']); H1_p = float(h1_row['p_value'])
+
+# H2: main effect (software slope) & interaction
+b1 = float(h2.loc[h2['variable']=='z_vagueness','coefficient'].values[0])
+b3 = float(h2.loc[h2['variable'].str.contains('z_vagueness:is_hardware'),'coefficient'].values[0])
+p1 = float(h2.loc[h2['variable']=='z_vagueness','p_value'].values[0])
+
+print(f"N={N} companies")
+print(f"H1: α₁ (z_vagueness) = {H1_coef:.3f} (p={H1_p:.3f})")
+print(f"H2: β₁ (software) = {b1:.3f} (p={p1:.3f}), β₃ (interaction with hardware) = {b3:.3f}")
+```
+
+---
+
+# Research Question (Reasoning Setup)
+
+**Context.** EV/AV transition, LLM wave—dominant design not fixed; entry is abundant.
+**Trade-off.** Precise promise ↑resources but ↓options; vague promise ↓resources but ↑options.
+**Hypotheses.**
+
+* **H1**: Vague → lower Series A (α₁ < 0).
+* **H2**: Vague helps later **only** where pivot is feasible: **software/non‑integrated** (β₁ > 0), attenuated/reversed in **hardware/integrated** (β₃ < 0).
+
+---
+
+# Data
+
+* Source: PitchBook four snapshots (Dec 2021 → May 2023); at‑risk cohort = Series‑A ventures.
+* Variables: **Vagueness** (academic composite), **growth** (Series B+ within 17m), **is_hardware** (1=HW/Integrated), controls (size; cohort).
+* N = {python} N.
+
+---
+
+# Storyboarding: From Univariate to Bivariate
+
+## Part 1 — H1 (Short‑term Penalty)
+
+### Figure 1. Vagueness Distribution (precision bias)
+
+```{python}
+#| label: fig1
+fig,ax = plt.subplots(figsize=(7.5,4.5))
+v = df['vagueness'].dropna()
+ax.hist(v, bins=30, edgecolor='black')
+ax.axvline(v.median(), color='red', linestyle='--', linewidth=2)
+ax.set_xlabel('Vagueness (5–75)')
+ax.set_ylabel('Count')
+ax.set_title('Figure 1. Vagueness Distribution (Precision Bias)')
+plt.show()
+```
+
+### Figure 2. H1 — Early Penalty (scatter + fit)
+
+```{python}
+#| label: fig2
+x = df['vagueness']; y = df['early_funding_musd']
+mask = x.notna() & y.notna()
+xv, yv = x[mask], y[mask]
+
+fig,ax = plt.subplots(figsize=(7.5,4.5))
+ax.scatter(xv, yv, alpha=0.35, edgecolors='none', s=20, color='#ffb000')
+z = np.polyfit(xv, yv, 1); p = np.poly1d(z)
+xs = np.linspace(xv.min(), xv.max(), 100)
+ax.plot(xs, p(xs), 'r-', linewidth=2, label=f"α₁ ≈ {z[0]:.3f}")
+ax.set_xlabel('Vagueness'); ax.set_ylabel('Series A ($M)')
+ax.set_title('Figure 2. H1: Vague hurts early funding')
+ax.legend(); ax.grid(alpha=0.3)
+plt.show()
+```
+
+## Part 2 — H2 (Long‑term Benefit, pooled)
+
+We first pool industries to estimate the average slope (β₁). This can be misleading if composition varies by vagueness, but it sets up the reversal.
+
+### Figure 3. Reversal Effect (H1 vs H2, pooled)
+
+```{python}
+#| label: fig3
+# Use normalized bars to compare signs
+h1_eff = float(z[0])  # from scatter fit above
+h2_eff = b1           # software(main) in pooled model
+vals = [h1_eff, h2_eff]
+labels = ['H1: Series A', 'H2: Growth (pooled β₁)']
+colors = ['#6c757d', '#28a745']
+
+fig,ax = plt.subplots(figsize=(7.5,4.5))
+bars = ax.bar(labels, vals, color=colors, edgecolor='black')
+ax.axhline(0,color='black',linewidth=1)
+for b,val in zip(bars,vals):
+    ax.text(b.get_x()+b.get_width()/2, val+0.02*np.sign(val), f"{val:.2f}", ha='center', fontweight='bold')
+ax.set_ylabel('Effect (slope)')
+ax.set_title('Figure 3. Reversal: what hurts early helps later')
+plt.show()
+```
+
+## Part 3 — Founder Credibility (calibration)
+
+We guard against the "Elon‑can‑be‑vague" critique. Add founder credibility as a control in a **sensitivity check** (not in the main H2 spec).
+
+```{python}
+#| label: founder-check
+import statsmodels.formula.api as smf
+if 'founder_credibility' in df.columns:
+    d = df.dropna(subset=['growth','z_vagueness','is_hardware','founder_credibility'])
+    # z-standardize credibility if present
+    fc = (d['founder_credibility']-d['founder_credibility'].mean())/max(1e-9,d['founder_credibility'].std())
+    d = d.assign(z_founder_credibility=fc)
+    m = smf.logit("growth ~ z_founder_credibility + z_vagueness + is_hardware + z_vagueness:is_hardware + z_employees_log + C(founding_cohort)", data=d).fit(disp=False)
+    fc_coef = float(m.params['z_founder_credibility'])
+    print(f"Founder credibility (logit) coef = {fc_coef:.3f} (controls included). Main β₁, β₃ signs robust?")
+else:
+    print("Founder credibility not available in dataset.")
+```
+
+> **Placement rationale:** H1 → H2(평균) → **Reversal**로 '패러독스'를 만든 뒤, **Founder credibility**로 "혹시 인적자본 때문?"을 제어하여 독립효과를 보이고, 마지막에 **H2×Hardware**로 메커니즘을 명확히 드러냅니다.
+
+## Part 4 — Industry Heterogeneity (Hardware vs Software; integration cost)
+
+### Figure 4. H2 Interaction — Software ↑ (green), Hardware ━/↓ (purple)
+
+```{python}
+#| label: fig4
+# Bin vagueness into quintiles and plot growth rates by group
+tmp = df[['vagueness','growth','is_hardware']].dropna().copy()
+tmp['vague_bin'] = pd.qcut(tmp['vagueness'], 5, duplicates='drop', labels=False)
+
+def rate(g):
+    return g.groupby('vague_bin')['growth'].mean()
+
+soft = rate(tmp[tmp['is_hardware']==0])
+hard = rate(tmp[tmp['is_hardware']==1])
+
+fig,ax = plt.subplots(figsize=(7.5,4.5))
+ax.plot(soft.index, soft.values, marker='o', linewidth=3, label='Software (Non‑integrated)', color='#2E7D32')
+ax.plot(hard.index, hard.values, marker='o', linewidth=3, linestyle='--', label='Hardware (Integrated)', color='#6A1B9A')
+ax.set_xticks(soft.index); ax.set_xticklabels([f'Q{int(i)+1}' for i in soft.index])
+ax.set_xlabel('Vagueness quintile (low → high)')
+ax.set_ylabel('P(Growth to Series B+)')
+ax.set_ylim(0, 1); ax.grid(alpha=0.3); ax.legend()
+ax.set_title('Figure 4. H2: Vagueness × Hardware (integration cost)')
+plt.show()
+```
+
+---
+
+# Results Tables
+
+**H1 (OLS)** and **H2 (Logit)** coefficient tables are read from the CSV outputs for reproducibility.
+
+```{python}
+print("H1 coefficients:")
+print(h1.to_string(index=False))
+print("\nH2 main coefficients:")
+print(h2.to_string(index=False))
+```
+
+---
+
+# Case Study: Ghost vs Wayve (Example)
+
+* **Ghost Autonomy (Hardware/Integrated, purple)** — "Highway autopilot kit (8 cameras) by 2020." Precise promise → capital, but high integration cost ⇒ pivot 어려움 → 실패.
+* **Wayve (Software/Non‑integrated, green)** — "AI Driver." 모호하지만 소프트웨어 중심 ⇒ 옵션가치 현실화, 운영자 모델 → 라이선싱 전환.
+
+---
+
+# Discussion & Implications (Opinion Closing)
+
+* **Clockspeed × Commitment.** Precision is earned, not assumed. When integration cost is high (hardware), **commit early**; when low (software), **delay precision** until information value rises.
+* **Methodological note (Simpson's paradox avoidance).** Average H2 can mask the **opposite** slopes by sector; modeling the **interaction** is necessary and sufficient to avoid the paradox.
+
+---
+
+# Reproducibility
+
+```bash
+python run_analysis.py --output outputs/
+quarto render report_w1.qmd
+```
