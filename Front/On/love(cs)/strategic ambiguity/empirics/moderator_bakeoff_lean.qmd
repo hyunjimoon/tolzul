@@ -18,6 +18,9 @@ format:
     fontsize: 10pt
     include-in-header:
       text: |
+        \usepackage{graphicx}
+        \usepackage{grffile}
+        \usepackage{adjustbox}
         \usepackage{booktabs}
         \usepackage{longtable}
         \usepackage{array}
@@ -151,7 +154,7 @@ print_table(arch_ame)
 
 ### Interaction Plot
 
-![Architecture Interaction](outputs/bakeoff/h2_interaction_is_hardware.png)
+![Architecture Interaction](outputs/bakeoff/h2_interaction_is_hardware.png){width=90%}
 
 ### Assessment
 
@@ -231,7 +234,7 @@ print_table(found_ame)
 
 ### Interaction Plot
 
-![Founder Interaction](outputs/bakeoff/h2_interaction_is_serial.png)
+![Founder Interaction](outputs/bakeoff/h2_interaction_is_serial.png){width=90%}
 
 ### Assessment
 

@@ -20,6 +20,9 @@ format:
     fig-pos: 'H'
     include-in-header:
       text: |
+        \usepackage{graphicx}
+        \usepackage{grffile}
+        \usepackage{adjustbox}
         \usepackage{booktabs}
         \usepackage{longtable}
         \usepackage{array}
@@ -452,7 +455,7 @@ print(h2_found_ame.to_markdown(index=False, floatfmt=".4f"))
 
 ### Interaction Plot
 
-![H2 Interaction: Growth × Founder Credibility](outputs/bakeoff/h2_interaction_is_serial.png)
+![H2 Interaction: Growth × Founder Credibility](outputs/bakeoff/h2_interaction_is_serial.png){width=90%}
 
 **Figure Interpretation**: The interaction plot shows predicted probabilities of Series B+ progression as a function of vagueness for serial vs. first-time founders. Parallel or overlapping lines suggest weak moderation, while diverging slopes indicate strong interaction effects.
 
@@ -490,7 +493,7 @@ if len(h3_int) > 0:
 
 ### Interaction Plot
 
-![H3 Interaction: Early Funding × Founder Credibility](outputs/figures/Figure_2a_H3.png)
+![H3 Interaction: Early Funding × Founder Credibility](outputs/figures/Figure_2a_H3.png){width=90%}
 
 **Figure Interpretation**: Scatter plot with OLS regression lines for serial vs. non-serial founders. Diverging slopes indicate interaction; parallel slopes suggest moderation is weak.
 
@@ -528,7 +531,7 @@ if len(h4_int) > 0:
 
 ### Interaction Plot
 
-![H4 Interaction: Growth × Founder Credibility](outputs/figures/Figure_2b_H4.png)
+![H4 Interaction: Growth × Founder Credibility](outputs/figures/Figure_2b_H4.png){width=90%}
 
 **Figure Interpretation**: Scatter plot with logistic regression lines showing predicted probabilities. Y-axis fixed to [0,1] for probability scale.
 

@@ -20,6 +20,9 @@ format:
     fig-pos: 'H'
     include-in-header:
       text: |
+        \usepackage{graphicx}
+        \usepackage{grffile}
+        \usepackage{adjustbox}
         \usepackage{booktabs}
         \usepackage{longtable}
         \usepackage{array}
@@ -449,7 +452,7 @@ if len(h2_int) > 0:
 
 ### Interaction Plot
 
-![H2 Interaction: Growth × Architecture](outputs/bakeoff/h2_interaction_is_hardware.png)
+![H2 Interaction: Growth × Architecture](outputs/bakeoff/h2_interaction_is_hardware.png){width=90%}
 
 **Figure Interpretation**: The interaction plot shows predicted probabilities of Series B+ progression as a function of vagueness for hardware vs. software startups. **Diverging slopes** indicate strong moderation by integration cost, while parallel lines suggest weak interaction.
 
