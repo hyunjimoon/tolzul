@@ -5,6 +5,8 @@ _ref/
 **/.dll
 **/.m
 *.m
+*.parquet
+*.deb
 **/*.m
 **/.trash/
 **/.sops/
