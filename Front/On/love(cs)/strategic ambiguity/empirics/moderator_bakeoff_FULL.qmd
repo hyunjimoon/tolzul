@@ -1,0 +1,628 @@
+---
+title: "Moderator Bake-off: Integration Cost vs Founder Credibility"
+subtitle: "H1-First, Manifest-Driven Decision Memo for H2"
+author: "Strategic Ambiguity Research Team"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    theme: cosmo
+    code-fold: true
+    embed-resources: true
+    number-sections: true
+execute:
+  echo: false
+  warning: false
+  message: false
+jupyter: python3
+---
+
+```{python}
+#| label: setup-and-manifest-validation
+#| echo: false
+
+import pandas as pd
+import numpy as np
+from pathlib import Path
+import warnings
+warnings.filterwarnings('ignore')
+
+# =============================================================================
+# MANIFEST-DRIVEN VALIDATION
+# =============================================================================
+
+print("=" * 80)
+print("MANIFEST VALIDATION: Checking all required files...")
+print("=" * 80)
+
+# Define manifest (machine-readable)
+manifest_data = {
+    'Section': [
+        '2. H1',
+        '3. EDA',
+        '3. EDA',
+        '3. EDA',
+        '4. Arch',
+        '4. Arch',
+        '4. Arch',
+        '4. Arch',
+        '5. Found',
+        '5. Found',
+        '5. Found',
+        '5. Found'
+    ],
+    'Type': [
+        'Table',
+        'Figure',
+        'Figure',
+        'Figure',
+        'Table',
+        'Table',
+        'Table',
+        'Figure',
+        'Table',
+        'Table',
+        'Table',
+        'Figure'
+    ],
+    'Filename': [
+        'outputs/h1_coefficients.csv',
+        'outputs/bakeoff/univariate_distributions.png',
+        'outputs/bakeoff/moderator_overlap_is_hardware.png',
+        'outputs/bakeoff/moderator_overlap_is_serial.png',
+        'outputs/h2_model_architecture.csv',
+        'outputs/h2_model_architecture_metrics.csv',
+        'outputs/h2_model_architecture_ame.csv',
+        'outputs/bakeoff/h2_interaction_is_hardware.png',
+        'outputs/h2_model_founder.csv',
+        'outputs/h2_model_founder_metrics.csv',
+        'outputs/h2_model_founder_ame.csv',
+        'outputs/bakeoff/h2_interaction_is_serial.png'
+    ],
+    'Purpose': [
+        'H1 (simple effect) → motivates H2 exploration',
+        'Distribution balance & risk labels',
+        'Positivity check: is_hardware overlap/SMD',
+        'Positivity check: is_serial overlap/SMD',
+        'Architecture coefficients (p, CI, sign)',
+        'Architecture fit (Pseudo-R², AIC, AUC, Brier, LogLoss)',
+        'Architecture AME & level-specific slopes',
+        'Architecture interaction (Wilson CI, N)',
+        'Founder coefficients (p, CI, sign)',
+        'Founder fit (Pseudo-R², AIC, AUC, Brier, LogLoss)',
+        'Founder AME & level-specific slopes',
+        'Founder interaction (Wilson CI, N)'
+    ]
+}
+
+manifest = pd.DataFrame(manifest_data)
+
+# Validate all files exist
+manifest['Exists'] = manifest['Filename'].apply(lambda f: Path(f).exists())
+missing = manifest[~manifest['Exists']]
+
+if len(missing) > 0:
+    print("\n⚠️  WARNING: Missing files detected!\n")
+    print(missing[['Section', 'Filename']].to_string(index=False))
+    print("\nPlease run the full pipeline to generate all required outputs.")
+else:
+    print("\n✓ All required files present!\n")
+
+print("=" * 80)
+
+# Load data for later use
+df = pd.read_csv("outputs/h2_analysis_dataset.csv")
+```
+
+# Executive Summary
+
+This report implements a **rigorous, manifest-driven moderator comparison** to select the optimal H2 moderator. We compare:
+
+- **H2-Architecture**: Integration Cost (`is_hardware`)
+- **H2-Alt (Credibility)**: Founder Credibility (`is_serial`)
+
+**Key Principles**:
+
+1. **H1 First**: Establish simple effect before exploring moderation
+2. **No Auto-Winner**: Comparison metrics provided, but final decision requires human judgment
+3. **Manifest-Driven**: All tables/figures validated against checklist (see Appendix)
+4. **Theory Alignment**: Consistent with H2/H2′ definitions
+
+**Evaluation Criteria**:
+
+- Data Quality (40%): Balance, positivity, sample size
+- Statistical Evidence (40%): Significance, effect sizes, model fit
+- Theory Fit (20%): Sign consistency, interpretability
+
+---
+
+# H1: Initial Funding (Simple Effect) {#sec-h1}
+
+**Purpose**: Establish the **baseline vagueness effect** before exploring moderation.
+
+**H1 Definition**: Vagueness negatively affects early funding amount.
+
+$$
+\text{Early Funding} = \alpha_0 + \alpha_1 \cdot \text{Vagueness} + \text{Controls} + \epsilon
+$$
+
+**Expected**: $\alpha_1 < 0$ (vagueness reduces early funding)
+
+## H1 Results
+
+```{python}
+#| label: h1-results
+#| echo: false
+
+h1_coef = pd.read_csv("outputs/h1_coefficients.csv")
+
+print("\n### H1 Coefficient Table\n")
+print(h1_coef.to_markdown(index=False, floatfmt=".4f"))
+```
+
+```{python}
+#| label: h1-interpretation
+#| echo: false
+
+# Extract key coefficient
+try:
+    vague_row = h1_coef[h1_coef['variable'].str.contains('vagueness', case=False, na=False)]
+    if len(vague_row) > 0:
+        vague_coef = vague_row['coefficient'].values[0]
+        vague_p = vague_row['p_value'].values[0]
+        vague_sig = "significant" if vague_p < 0.05 else "not significant"
+        sign_match = "✓ Consistent" if vague_coef < 0 else "✗ Inconsistent"
+
+        print(f"\n**Key Finding**:\n")
+        print(f"- Vagueness coefficient: {vague_coef:.4f} (p = {vague_p:.4f})")
+        print(f"- Statistical significance: {vague_sig}")
+        print(f"- Expected sign: {sign_match}")
+    else:
+        print("\n⚠️ Warning: Vagueness coefficient not found in H1 results")
+except Exception as e:
+    print(f"\n⚠️ Error extracting H1 results: {e}")
+```
+
+**Motivation for H2**: H1 establishes that vagueness affects funding, but **for whom** and **under what conditions** does vagueness help or hurt long-term growth? This motivates our moderator analysis.
+
+---
+
+# H2 EDA: Data Quality Assessment {#sec-eda}
+
+Before comparing models, we assess **data quality** for both moderators:
+
+1. Distribution balance (minority class prevalence)
+2. Positivity (overlap in vagueness distributions)
+3. Sample sizes across groups
+
+## Univariate Distributions
+
+![Univariate Distributions with Risk Labels](outputs/bakeoff/univariate_distributions.png)
+
+```{python}
+#| label: moderator-balance
+#| echo: false
+
+def assess_risk(minority_pct):
+    if minority_pct < 10:
+        return "🔴 HIGH RISK"
+    elif minority_pct < 20:
+        return "🟡 MEDIUM RISK"
+    else:
+        return "🟢 LOW RISK"
+
+# Calculate prevalence
+hw_counts = df['is_hardware'].value_counts()
+hw_pct = (hw_counts / hw_counts.sum() * 100).to_dict()
+hw_minority = hw_pct.get(1, 0)
+hw_risk = assess_risk(hw_minority)
+
+serial_counts = df['is_serial'].value_counts()
+serial_pct = (serial_counts / serial_counts.sum() * 100).to_dict()
+serial_minority = serial_pct.get(1, 0)
+serial_risk = assess_risk(serial_minority)
+
+balance_table = pd.DataFrame({
+    'Moderator': ['is_hardware (Architecture)', 'is_serial (Credibility)'],
+    'Minority %': [f"{hw_minority:.1f}%", f"{serial_minority:.1f}%"],
+    'Minority N': [f"{hw_counts.get(1, 0):,}", f"{serial_counts.get(1, 0):,}"],
+    'Majority N': [f"{hw_counts.get(0, 0):,}", f"{serial_counts.get(0, 0):,}"],
+    'Risk Level': [hw_risk, serial_risk]
+})
+
+print("\n### Moderator Balance Assessment\n")
+print(balance_table.to_markdown(index=False))
+```
+
+### Interpretation
+
+```{python}
+#| label: balance-narrative
+#| echo: false
+
+print(f"""
+**is_hardware (Architecture)**:
+- Hardware/integrated companies: {hw_minority:.1f}%
+- Risk: {hw_risk}
+- {'⚠️ Severe imbalance may lead to unstable estimates and wide CIs.' if hw_minority < 10 else 'Moderate imbalance - requires caution.' if hw_minority < 20 else 'Acceptable balance for interaction analysis.'}
+
+**is_serial (Credibility)**:
+- Serial entrepreneurs: {serial_minority:.1f}%
+- Risk: {serial_risk}
+- {'⚠️ Severe imbalance may lead to unstable estimates and wide CIs.' if serial_minority < 10 else 'Moderate imbalance - requires caution.' if serial_minority < 20 else 'Acceptable balance for interaction analysis.'}
+""")
+```
+
+## Positivity Checks (Overlap Analysis)
+
+### is_hardware Overlap
+
+![Positivity Check: is_hardware](outputs/bakeoff/moderator_overlap_is_hardware.png)
+
+### is_serial Overlap
+
+![Positivity Check: is_serial](outputs/bakeoff/moderator_overlap_is_serial.png)
+
+**Key Metrics**:
+
+- **SMD (Standardized Mean Difference)**: Measures covariate balance (|SMD| < 0.1 = excellent, < 0.25 = acceptable)
+- **KS Statistic**: Measures distributional overlap (lower = better overlap)
+
+---
+
+# Bake-off Round 1: H2-Architecture (is_hardware) {#sec-arch}
+
+## Theory
+
+**Integration Cost Hypothesis**: High integration cost (hardware/biotech) limits strategic flexibility because:
+
+- Physical components harder to pivot
+- Supply chain commitments less reversible
+- Longer development cycles
+
+**Expected Pattern**: Vagueness helps **more** in modular (software) sectors.
+
+## Model Specification
+
+$$
+\text{logit}(P(\text{growth} = 1)) = \beta_0 + \beta_1 \cdot z_\text{vagueness} + \beta_2 \cdot \text{is\_hardware} + \beta_3 \cdot (z_\text{vagueness} \times \text{is\_hardware}) + \text{controls}
+$$
+
+Where:
+- $\beta_1$: Main effect (in software sectors)
+- $\beta_3$: Interaction (attenuation in hardware)
+- Controls: `z_employees_log`, `C(founding_cohort)`
+
+**Expected**: $\beta_3 < 0$ (negative interaction)
+
+## Results
+
+```{python}
+#| label: arch-results
+#| echo: false
+
+arch_coef = pd.read_csv("outputs/h2_model_architecture.csv")
+arch_metrics = pd.read_csv("outputs/h2_model_architecture_metrics.csv")
+arch_ame = pd.read_csv("outputs/h2_model_architecture_ame.csv")
+
+print("\n### Coefficient Table\n")
+print(arch_coef.to_markdown(index=False, floatfmt=".4f"))
+
+print("\n### Model Fit Metrics\n")
+print(arch_metrics.to_markdown(index=False, floatfmt=".4f"))
+
+print("\n### Average Marginal Effects & Level-Specific Slopes\n")
+print(arch_ame.to_markdown(index=False, floatfmt=".4f"))
+```
+
+## Interaction Plot
+
+![Architecture Interaction with Wilson CI](outputs/bakeoff/h2_interaction_is_hardware.png)
+
+## Assessment
+
+```{python}
+#| label: arch-assessment
+#| echo: false
+
+arch_n = arch_metrics['nobs'].values[0]
+arch_pseudo_r2 = arch_metrics['prsquared'].values[0]
+arch_auc = arch_metrics['auc'].values[0]
+arch_brier = arch_metrics['brier'].values[0]
+
+# Extract interaction
+try:
+    int_row = arch_coef[
+        arch_coef['variable'].str.contains('vagueness', na=False) &
+        arch_coef['variable'].str.contains('hardware', na=False)
+    ]
+    arch_int_coef = int_row['coefficient'].values[0]
+    arch_int_p = int_row['p_value'].values[0]
+    arch_int_sig = "✓ Significant" if arch_int_p < 0.05 else "✗ Not significant"
+except:
+    arch_int_coef = np.nan
+    arch_int_p = np.nan
+    arch_int_sig = "N/A"
+
+print(f"""
+**Data Quality**: {hw_risk}
+- Sample imbalance poses {'severe' if hw_minority < 10 else 'moderate' if hw_minority < 20 else 'low'} risk
+
+**Statistical Evidence**:
+- Interaction: {arch_int_coef:.4f} (p = {arch_int_p:.4f}) - {arch_int_sig}
+- Pseudo R²: {arch_pseudo_r2:.3f}
+- AUC: {arch_auc:.3f}
+- Brier Score: {arch_brier:.3f}
+- N: {int(arch_n):,}
+
+**Theory Alignment**:
+- Expected sign: Negative (attenuation in hardware)
+- Observed: {'✓ Consistent' if arch_int_coef < 0 else '✗ Inconsistent'}
+""")
+```
+
+---
+
+# Bake-off Round 2: H2-Credibility (is_serial) {#sec-found}
+
+## Theory
+
+**Founder Credibility Hypothesis**: Serial entrepreneurs with successful exits signal quality through track record, reducing need for strategic vagueness.
+
+**Expected Pattern**: Vagueness helps **more** for first-time founders lacking credibility signals.
+
+## Model Specification
+
+$$
+\text{logit}(P(\text{growth} = 1)) = \beta_0 + \beta_1 \cdot z_\text{vagueness} + \beta_2 \cdot \text{is\_serial} + \beta_3 \cdot (z_\text{vagueness} \times \text{is\_serial}) + \text{controls}
+$$
+
+Where:
+- $\beta_1$: Main effect (for first-timers)
+- $\beta_3$: Interaction (substitution for serial)
+- Controls: `z_employees_log`, `C(founding_cohort)`
+
+**Expected**: $\beta_3 < 0$ (negative interaction)
+
+## Results
+
+```{python}
+#| label: found-results
+#| echo: false
+
+found_coef = pd.read_csv("outputs/h2_model_founder.csv")
+found_metrics = pd.read_csv("outputs/h2_model_founder_metrics.csv")
+found_ame = pd.read_csv("outputs/h2_model_founder_ame.csv")
+
+print("\n### Coefficient Table\n")
+print(found_coef.to_markdown(index=False, floatfmt=".4f"))
+
+print("\n### Model Fit Metrics\n")
+print(found_metrics.to_markdown(index=False, floatfmt=".4f"))
+
+print("\n### Average Marginal Effects & Level-Specific Slopes\n")
+print(found_ame.to_markdown(index=False, floatfmt=".4f"))
+```
+
+## Interaction Plot
+
+![Founder Interaction with Wilson CI](outputs/bakeoff/h2_interaction_is_serial.png)
+
+## Assessment
+
+```{python}
+#| label: found-assessment
+#| echo: false
+
+found_n = found_metrics['nobs'].values[0]
+found_pseudo_r2 = found_metrics['prsquared'].values[0]
+found_auc = found_metrics['auc'].values[0]
+found_brier = found_metrics['brier'].values[0]
+
+# Extract interaction
+try:
+    int_row = found_coef[
+        found_coef['variable'].str.contains('vagueness', na=False) &
+        found_coef['variable'].str.contains('serial', na=False)
+    ]
+    found_int_coef = int_row['coefficient'].values[0]
+    found_int_p = int_row['p_value'].values[0]
+    found_int_sig = "✓ Significant" if found_int_p < 0.05 else "✗ Not significant"
+except:
+    found_int_coef = np.nan
+    found_int_p = np.nan
+    found_int_sig = "N/A"
+
+print(f"""
+**Data Quality**: {serial_risk}
+- Sample imbalance poses {'severe' if serial_minority < 10 else 'moderate' if serial_minority < 20 else 'low'} risk
+
+**Statistical Evidence**:
+- Interaction: {found_int_coef:.4f} (p = {found_int_p:.4f}) - {found_int_sig}
+- Pseudo R²: {found_pseudo_r2:.3f}
+- AUC: {found_auc:.3f}
+- Brier Score: {found_brier:.3f}
+- N: {int(found_n):,}
+
+**Theory Alignment**:
+- Expected sign: Negative (substitution for credibility)
+- Observed: {'✓ Consistent' if found_int_coef < 0 else '✗ Inconsistent'}
+""")
+```
+
+---
+
+# Conclusion: Human-in-the-Loop Decision {#sec-conclusion}
+
+## Comparison Matrix
+
+```{python}
+#| label: comparison-matrix
+#| echo: false
+
+# Build comparison table
+comparison = pd.DataFrame({
+    'Criterion': [
+        'Data Quality: Balance',
+        'Data Quality: Risk Level',
+        'Statistical: Interaction Coef',
+        'Statistical: Interaction p-value',
+        'Statistical: Significance',
+        'Model Fit: Pseudo R²',
+        'Model Fit: AUC',
+        'Model Fit: Brier Score',
+        'Model Fit: AIC',
+        'Sample Size (N)',
+        'Theory: Sign Consistency'
+    ],
+    'Architecture (is_hardware)': [
+        f"{hw_minority:.1f}%",
+        hw_risk.split()[1],
+        f"{arch_int_coef:.4f}" if not np.isnan(arch_int_coef) else "N/A",
+        f"{arch_int_p:.4f}" if not np.isnan(arch_int_p) else "N/A",
+        arch_int_sig,
+        f"{arch_pseudo_r2:.3f}",
+        f"{arch_auc:.3f}",
+        f"{arch_brier:.3f}",
+        f"{arch_metrics['aic'].values[0]:.1f}",
+        f"{int(arch_n):,}",
+        "✓" if arch_int_coef < 0 else "✗"
+    ],
+    'Credibility (is_serial)': [
+        f"{serial_minority:.1f}%",
+        serial_risk.split()[1],
+        f"{found_int_coef:.4f}" if not np.isnan(found_int_coef) else "N/A",
+        f"{found_int_p:.4f}" if not np.isnan(found_int_p) else "N/A",
+        found_int_sig,
+        f"{found_pseudo_r2:.3f}",
+        f"{found_auc:.3f}",
+        f"{found_brier:.3f}",
+        f"{found_metrics['aic'].values[0]:.1f}",
+        f"{int(found_n):,}",
+        "✓" if found_int_coef < 0 else "✗"
+    ]
+})
+
+print("\n### Side-by-Side Comparison\n")
+print(comparison.to_markdown(index=False))
+```
+
+## Decision Framework
+
+**NO AUTOMATIC WINNER DECLARED** - Final decision requires human judgment based on:
+
+### Data Quality Assessment (40% weight)
+- Minority class balance
+- Positivity (overlap in distributions)
+- Sample size adequacy
+
+### Statistical Evidence (40% weight)
+- Interaction significance (20%)
+- Model fit metrics (20%): Pseudo-R², AUC, Brier, AIC
+
+### Theory Fit (20% weight)
+- Sign consistency with expected pattern
+- Interpretability
+- Defensibility
+
+## Recommended Decision Process
+
+**For Research Team Discussion**:
+
+1. **Review comparison matrix** (Section 6.1) for quantitative evidence
+2. **Assess data quality risks** - Is imbalance acceptable for chosen moderator?
+3. **Evaluate statistical strength** - Is interaction significant and consistent?
+4. **Consider theory** - Which moderator tells more compelling story?
+5. **Make final call** - Document rationale in Section 6.3
+
+## Final Verdict (TO BE COMPLETED BY RESEARCHER)
+
+**DECISION**: [Architecture / Credibility]
+
+**RATIONALE**:
+```
+[Fill in after reviewing all evidence]
+
+Key considerations:
+- Data quality: ...
+- Statistical evidence: ...
+- Theoretical fit: ...
+- Practical defensibility: ...
+```
+
+**NEXT STEPS**:
+1. Adopt chosen moderator as primary H2 for main paper
+2. Report alternative as robustness check in appendix
+3. Develop theoretical narrative emphasizing winner
+4. [Optional] Bayesian re-estimation with weakly informative priors
+
+---
+
+# Appendix A: Table of Tables & Figures (Manifest) {#sec-manifest}
+
+```{python}
+#| label: manifest-table
+#| echo: false
+
+print("\n### Complete Manifest\n")
+print(manifest.to_markdown(index=False))
+
+print("\n### Validation Status\n")
+if len(missing) > 0:
+    print(f"⚠️  {len(missing)} file(s) missing - see above for details")
+else:
+    print("✓ All files validated successfully")
+```
+
+## Reproducibility
+
+**Full Pipeline**:
+
+```bash
+# 1. Generate data and fit models
+cd "Front/On/love(cs)/strategic ambiguity/empirics"
+python run_analysis.py --output outputs
+
+# 2. Generate visualizations
+python -c "
+import sys; sys.path.insert(0, 'modules')
+from plots import *
+from pathlib import Path
+import pandas as pd
+
+outdir = Path('outputs/bakeoff')
+outdir.mkdir(parents=True, exist_ok=True)
+df = pd.read_csv('outputs/h2_analysis_dataset.csv')
+
+save_univariate_distributions(df, outdir)
+save_moderator_overlap(df, outdir, 'is_hardware')
+save_moderator_overlap(df, outdir, 'is_serial')
+save_h2_interaction(df, outdir, 'is_hardware')
+save_h2_interaction(df, outdir, 'is_serial')
+"
+
+# 3. Render report
+quarto render moderator_bakeoff_FULL.qmd
+```
+
+**Session Info**:
+
+```{python}
+#| label: session-info
+#| echo: true
+
+import sys
+import pandas as pd
+import numpy as np
+
+print(f"Python: {sys.version}")
+print(f"Pandas: {pd.__version__}")
+print(f"NumPy: {np.__version__}")
+```
+
+---
+
+**Report Status**: Manifest-validated, H1-motivated, Human-in-the-loop decision framework
+
+**Generated**: {python} from datetime import datetime; datetime.now().strftime("%Y-%m-%d %H:%M:%S")
