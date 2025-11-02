@@ -3,7 +3,7 @@ collection:
   - "[[Courses]]"
 course: "[[14.282 Organizational Economics]]"
 created: 2025-10-19
-성장:
+modified:
   - 2025-10-19T18:00:00-04:00
 ---
 
@@ -95,10 +95,10 @@ created: 2025-10-19
 
 | **Paper** | **Author(s)** | **Year** | **Key Insight** | **Status** |
 |-----------|--------------|----------|-----------------|-----------|
-| The Nature of the Firm | Coase | 1937 | Transaction costs | ⭐️ [[📜coase37_nature]] |
+| The Nature of the Firm | Coase | 1937 | Transaction costs | ⭐️ [[Front/On/14_282_org_econ/Papers/📜coase37_nature]] |
 | Vertical Integration: Market Failure | Williamson | 1971 | Hold-up problem | [[📜williamson71_integration]] |
 | Transaction Cost Economics | Williamson | 1979 | Governance structures | [[📜williamson79_tce]] |
-| Costs and Benefits of Ownership | Grossman & Hart | 1986 | Property rights theory | ⭐️ [[📜gh86_ownership]] |
+| Costs and Benefits of Ownership | Grossman & Hart | 1986 | Property rights theory | ⭐️ [[Front/On/14_282_org_econ/Papers/📜gh86_ownership]] |
 | Property Rights and Nature of Firm | Hart & Moore | 1990 | PRT foundations | [[📜hm90_property]] |
 | Influence-Cost Model | Powell | 2015 | Influence costs & boundaries | [[📜powell15_influence]] |
 | Vertical Integration and Input Flows | Atalay et al | 2014 | Empirical integration | [[📜atalay14_vertical]] |

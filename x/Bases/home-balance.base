@@ -11,3 +11,6 @@ filter: file.folder contains "Balance"
 sort:
   - property: file.name
     direction: asc
+views:
+  - type: table
+    name: Table

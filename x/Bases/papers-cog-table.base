@@ -22,3 +22,6 @@ sort:
     direction: desc
   - property: year
     direction: desc
+views:
+  - type: table
+    name: Table

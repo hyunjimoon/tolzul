@@ -7,7 +7,7 @@ related:
   - "[[Habits carry a ton of hidden inertia]]"
 created: 2020-06-01
 says: The more you feed me, the more I feed you.
-성장:
+modified:
   - 2025-10-14T07:12:11-04:00
 ---
  *"The more you feed me, the more I feed you." - Feedback Loop*

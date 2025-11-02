@@ -2,9 +2,9 @@
 collection:
   - "[[Courses]]"
 course: "[[15.911 Entrepreneurial Strategy]]"
-instructor: "Scott Stern"
+instructor: Scott Stern
 created: 2025-11-01
-성장:
+modified:
   - 2025-11-01T00:00:00-04:00
 ---
 

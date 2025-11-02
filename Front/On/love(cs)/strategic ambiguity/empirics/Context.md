@@ -1,5 +1,5 @@
 ---
-성장:
+modified:
   - 2025-10-22T08:10:31-04:00
 URL: https://gemini.google.com/app/8e5186bc3c6f3f5d
 ---

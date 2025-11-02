@@ -1,5 +1,5 @@
 ---
-성장:
+modified:
   - 2025-10-11T20:08:26-04:00
 ---
 I'm a Ph.D. at MIT studying innovation and operations management with [Charles Fine](https://www.charles-fine.com/),  [Scott Stern](https://www.scott-stern.com/), [Vikash Mansinghka](https://probcomp-test211190.csail.mit.edu/talks/). My past and future in [resume](https://www.dropbox.com/scl/fi/fa14fcd5ihdq014k6v4h0/Angie-Moon-Resume.pdf?rlkey=y7eerk8e6yx028es2rq7vjmid&dl=0). 

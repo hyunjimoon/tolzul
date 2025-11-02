@@ -1,7 +1,7 @@
 ---
 type: dashboard
 created: 2025-10-16
-성장:
+modified:
   - 2025-11-01T21:12:50-04:00
 ---
 

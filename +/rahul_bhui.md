@@ -1,5 +1,5 @@
 ---
-성장:
+modified:
   - 2025-10-15T15:03:02-04:00
 ---
 Video title: Ambiguity and confirmation bias in reward learning

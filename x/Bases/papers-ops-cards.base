@@ -10,3 +10,5 @@ views:
     filters:
       and:
         - field == ["🐙ops"]
+  - type: cards
+    name: View

@@ -1,68 +1,48 @@
 ---
-tags:
-  - map
+up: "[[Space]]"
+created: 2025-11-01
+rank: 5
+modified:
+  - 2025-11-02T10:07:12-05:00
 ---
 
-# Maps
+~ [[Space]]
 
-> Maps help you gather, develop, and navigate ideas across your tolzul vault.
+> [!globe] **[[Maps]]** | [[Space/Papers]] | [[Dots]]
 
-## 🧭 Navigation
+**Maps = 지식의 지형도**
 
-- [[Maps by Links]] - 연결로 보는 지도
-- [[Maps by Rank]] - 중요도로 보는 지도  
-- [[Maps by Folder]] - 폴더별 지도
-
----
-
-## 📊 All Maps Overview
-
-![[all-maps.base#All Maps]]
+연결의 지도를 만들고, 생각의 경로를 탐색한다.
 
 ---
 
-## 🌟 High Priority Maps (Rank > 3)
+## 📍 핵심 Maps
 
-![[all-maps.base#High Priority]]
-
----
-
-## 🔗 Most Connected Notes
-
-Shows notes with the highest number of connections (inlinks + outlinks).
-
-![[all-maps.base#Most Connected]]
-
----
-
-## 📝 Recent Maps
-
-Maps created or updated recently.
-
-![[all-maps.base#Recent Maps]]
-
----
-
-## 💡 Usage Tips
-
-### Adding a Note to Maps
-Add these properties to your note's frontmatter:
-
-```yaml
----
-map: true
-rank: 3.5
-collection: Maps
----
+```dataview
+TABLE WITHOUT ID
+	"🗺️ " + file.link as "Maps",
+	rank as "Rank",
+	file.folder as "위치"
+FROM "Space/Maps"
+WHERE file.name != "Maps"
+SORT rank desc
+LIMIT 20
 ```
 
-### Rank System
-- **5**: Critical - Essential core concepts
-- **4**: Important - Key supporting ideas  
-- **3**: Useful - Helpful reference materials
-- **2**: Minor - Supplementary notes
-- **1**: Archive - Rarely used
+---
+
+## 🔄 최근 생성된 Maps
+
+```dataview
+TABLE WITHOUT ID
+	"🗺️ " + file.link as "Maps",
+	file.ctime as "생성일"
+FROM "Space/Maps"
+WHERE file.name != "Maps"
+SORT file.ctime desc
+LIMIT 10
+```
 
 ---
 
-Back to [[Home]]
+Back to [[Space]]

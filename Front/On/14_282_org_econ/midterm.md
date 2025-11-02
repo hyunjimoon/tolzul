@@ -1,5 +1,5 @@
 ---
-성장:
+modified:
   - 2025-10-23T23:33:06-04:00
   - 2025-10-24T13:38:48-04:00
 URL: https://claude.ai/share/a427a92e-ab66-4e6e-ae3d-60fedc16c28d

@@ -1,19 +1,21 @@
 ---
 collection: Papers
-authors: [Coase, Ronald H.]
+authors:
+  - Coase
+  - Ronald H.
 year: 1937
 journal: Economica
 field: 🏛️theory, 🧱foundations
-cited_by: 
+cited_by:
   - "[[📜williamson75_markets_hierarchies]]"
-  - "[[📜gh86_ownership]]"
+  - "[[Front/On/14_282_org_econ/Papers/📜gh86_ownership]]"
   - "[[📜richardson72_organisation]]"
   - "[[📜gibbons25_coase2culture]]"
-cites: 
+cites:
   - Knight (1921) - Uncertainty
   - Robertson (1923) - Islands metaphor
 image: coase37_nature_firm.svg
-status: 🔴retired  # Gibbons: "Retire gracefully"
+status: 🔴retired
 google_scholar: 89000
 ---
 

@@ -7,7 +7,7 @@ related:
   - "[[Operations]]"
 created: 2025-10-14
 rank: 1
-성장:
+modified:
   - 2025-10-14T09:34:11-04:00
 ---
 

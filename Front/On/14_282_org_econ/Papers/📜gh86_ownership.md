@@ -1,6 +1,10 @@
 ---
 collection: Papers
-authors: [Grossman, Sanford J., Hart, Oliver D.]
+authors:
+  - Grossman
+  - Sanford J.
+  - Hart
+  - Oliver D.
 year: 1986
 journal: Journal of Political Economy
 field: 🏛️theory, 🧱foundations, 🐅strategy
@@ -9,7 +13,7 @@ cited_by:
   - "[[📜bgm02_relational]]"
   - "[[📜gibbons25_coase2culture]]"
 cites:
-  - "[[📜coase37_nature]]"
+  - "[[Front/On/14_282_org_econ/Papers/📜coase37_nature]]"
   - "[[📜williamson75_markets_hierarchies]]"
   - Klein-Crawford-Alchian (1978)
 image: gh86_ownership.svg

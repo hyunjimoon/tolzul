@@ -1,5 +1,5 @@
 ---
-성장:
+modified:
   - 2025-10-12T07:15:10-04:00
 ---
 I have found that a better way to look at Virtues is less as Values and more as "Abilities," because it implies that it's not enough to value something, you have to be skilled in it. 

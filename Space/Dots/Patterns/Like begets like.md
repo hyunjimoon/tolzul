@@ -3,10 +3,12 @@ up:
   - "[[Habits Map]]"
 collection:
   - "[[Concepts]]"
-related: 
+related:
 created: 2020-06-01
 rank: 5.6
 says: It's circular but true, we become what we do.
+modified:
+  - 2025-11-02T09:43:50-05:00
 ---
  *It's circular but true, we become what we do.*
 
@@ -24,3 +26,4 @@ This is a first principle; perhaps one of the most fundamental first principles.
 
 Related: [[Mirror Neurons]] (not included in Ideaverse for Obsidian)
 
+Related: [[jungha_kim]]'s if you like laugh, then you purse, then you become better at it

@@ -1,10 +1,10 @@
 ---
-성장:
+modified:
   - 2025-10-19T00:57:48-04:00
 created: 2025-06-05
 ---
 
-[[humor]], [[Space/Sources/Papers/they say i say|they say i say]]                                                                               
+[[humor]], [[Space/Sources/Lab/they say i say|they say i say]]                                                                               
 
 |Category|Rule|Problem Framing|
 |---|---|---|

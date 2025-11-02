@@ -1,5 +1,5 @@
 ---
-성장:
+modified:
   - 2025-10-22T10:03:13-04:00
 ---
 **Skill: Matthew Kay Visualization Competence**

@@ -1,5 +1,5 @@
 2025-04-25
-[[Space/Sources/Papers/🐅CompBayes/💻Mansinghka25_9.s/🗄️1Table of Contents (Q&A&B)]]
+[[🗄️1Table of Contents (Q&A&B)]]
 [[🗄️🧠charlie]], 
 
 | Dilemma       | Mapped Type                                                                                                                                               |

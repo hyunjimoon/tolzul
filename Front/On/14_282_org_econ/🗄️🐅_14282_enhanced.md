@@ -3,7 +3,7 @@ collection:
   - "[[Courses]]"
 course: "[[14.282 Organizational Economics]]"
 created: 2025-10-19
-성장:
+modified:
   - 2025-10-19T18:30:00-04:00
   - 2025-10-21T11:13:45-04:00
 ---
@@ -123,10 +123,10 @@ This enhanced guide adds **Critical Insights Tables** inspired by [[23_15357]]'s
 
 | **Paper** | **One-Line Insight** | **Research Application** |
 |-----------|---------------------|-------------------------|
-| [[📜coase37_nature]] | Firms exist because organizing beats repeated market transactions | Foundational: why organize anything? |
+| [[Front/On/14_282_org_econ/Papers/📜coase37_nature]] | Firms exist because organizing beats repeated market transactions | Foundational: why organize anything? |
 | [[📜williamson71_integration]] | Hold-up problem → vertical integration | Model startup supplier relationships |
 | [[📜williamson79_tce]] | Transaction attributes determine governance structure | Match governance to transaction type |
-| [[📜gh86_ownership]] | Asset ownership provides residual control rights | Design founder equity structures |
+| [[Front/On/14_282_org_econ/Papers/📜gh86_ownership]] | Asset ownership provides residual control rights | Design founder equity structures |
 | [[📜hm90_property]] | Property rights affect investment incentives ex ante | How ownership shapes innovation |
 | [[📜powell15_influence]] | Internal politics shape make-or-buy decisions | When to outsource to avoid politics |
 | [[📜atalay14_vertical]] | Vertical integration primarily about controlling inputs, not outputs | What drives integration empirically? |

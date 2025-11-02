@@ -1,4 +1,4 @@
-[[Space/Sources/Papers/📜Walters23_invest_beh_epis_alea]]
+[[Space/Sources/Lab/📜Walters23_invest_beh_epis_alea]]
 ## 🗄️ 산업별 τ* 관리표 (개선판)
 
 |불확실성 유형|특징|τ* 전략|대표 산업|

@@ -2,10 +2,10 @@
 created: 2025-10-16
 type: map
 rank: 5
-성장:
+modified:
   - 2025-10-17T14:50:14-04:00
   - 2025-11-01T22:25:18-04:00
-  - 2025-11-02T00:26:05-04:00
+  - 2025-11-02T00:40:23-04:00
 ---
 
 > *"뉴런이 함께 발화하면 함께 묶인다"*  
@@ -38,7 +38,7 @@ rank: 5
 ## 🧭 Navigation
 
 > [!globe] **👂 Space RO**
-> [[Space/Maps|Maps]] | [[Space/Sources/Papers|Papers]] | [[Space/Dots|Dots]]
+> [[Maps|Maps]] | [[Space/Sources/Papers|Papers]] | [[Space/Dots|Dots]]
 
 > [!calendar] **✋ Balance **
 > [[Balance/일별 리듬|Daily]] | [[Balance/주별 멜로디|Weekly]] | [[Balance/월별 화음|Monthly]]

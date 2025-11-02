@@ -8,15 +8,15 @@ by:
   - "[[Charles Angelucci]]"
 year: 2024
 yearXP: 2024
-semester: "Fall 2024"
-courseCategory: "Innovation"
-courseStatus: "진행중"
-institution: "MIT Economics"
+semester: Fall 2024
+courseCategory: Innovation
+courseStatus: 진행중
+institution: MIT Economics
 courseCode: "14.282"
 image: ""
 created: 2024-09-01
 rank: 5
-성장:
+modified:
   - 2025-10-19T00:36:21-04:00
   - 2025-10-19T01:00:00-04:00
   - 2025-10-19T18:30:00-04:00
@@ -88,7 +88,7 @@ Unlike markets (invisible hand), OE studies:
 ### M4: Boundary of the Firm 🐅
 *Transaction costs, property rights, integration decisions*
 
-**Foundation**: [[📜coase37_nature]], [[📜gh86_ownership]]
+**Foundation**: [[Front/On/14_282_org_econ/Papers/📜coase37_nature]], [[Front/On/14_282_org_econ/Papers/📜gh86_ownership]]
 
 ### M5: Governance of Non-Integration 🐢
 *Relational contracts, supply chain partnerships, external governance*
@@ -167,8 +167,8 @@ Priority reading for understanding OE:
 1. [[📜holmstrom79_moral_hazard]] - Risk-incentive tradeoff
 2. [[📜holmstrom91_multitask]] - Multi-task distortions
 3. [[📜aghion97_authority]] - Formal vs. real authority
-4. [[📜coase37_nature]] - Transaction costs
-5. [[📜gh86_ownership]] - Property rights theory
+4. [[Front/On/14_282_org_econ/Papers/📜coase37_nature]] - Transaction costs
+5. [[Front/On/14_282_org_econ/Papers/📜gh86_ownership]] - Property rights theory
 6. [[📜bgm02_relational]] - Relational contracts & boundaries
 7. [[📜bloom13_management_india]] - Management practices RCT
 8. [[📜mm15_kenya_roses]] - Value of relationships

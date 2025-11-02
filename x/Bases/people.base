@@ -19,3 +19,6 @@ sort:
     direction: asc
   - property: file.name
     direction: asc
+views:
+  - type: table
+    name: Table

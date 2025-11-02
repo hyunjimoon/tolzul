@@ -4,3 +4,6 @@ filter: (collection contains Papers) and (file.name starts with 📜) and (rank 
 sort:
   - property: rank
     direction: desc
+views:
+  - type: table
+    name: Table

@@ -16,7 +16,7 @@ tags:
   - organizational-culture
   - coase
 created: 2025-10-20
-성장:
+modified:
   - 2025-10-19T07:53:36-04:00
   - 2025-10-20T11:09:18-04:00
   - 2025-10-21T10:57:40-04:00
@@ -31,7 +31,7 @@ Coase (1937) ─┬─> Williamson (1975) ─┬─> Grossman-Hart (1986)
 ## Summary
 Gibbons proposes **retiring Coase's classic firm-versus-market dichotomy**, arguing it obscures a crucial third category: **visible hands under non-integration** (alliances, networks, ecosystems). The essay reframes organizational economics around the question: *"What can visible hands do to help a fixed set of entities collaborate?"* Building on incomplete contracts as the field's foundation, Gibbons develops a unified conception of **coalitional management** that applies both within and between organizations, culminating in the challenge of **building equilibria**—shared interpretations and relational contracts that sustain collaboration.
 
-[[x/Templates/they say i say|they say i say]], [[Space/Sources/Papers/they say i say|they say i say]]
+[[x/Templates/they say i say|they say i say]], [[Space/Sources/Lab/they say i say|they say i say]]
 ## The Conversational Flow: "They Say / I Say"
 
 ### 🗣️ **THEY SAY** - The Received Wisdom
@@ -129,9 +129,9 @@ Parties distill continuous state spaces into finite categories through cognitive
 ### Builds On
 
 #### The Coasean Tradition
-- **[[📜coase37_nature]]** - Transaction costs and incomplete contracts as field foundation
+- **[[Front/On/14_282_org_econ/Papers/📜coase37_nature]]** - Transaction costs and incomplete contracts as field foundation
 - **[[📜williamson79_tce]]** - "Substantially the same factors" cause challenges in both integration and non-integration
-- **[[📜gh86_ownership]]** - Property rights theory: ownership as residual control rights
+- **[[Front/On/14_282_org_econ/Papers/📜gh86_ownership]]** - Property rights theory: ownership as residual control rights
 
 #### The Relational Contracts Literature  
 - **[[📜bgm02_relational]]** - Formal and relational contracts interact; integration decision made to serve relationship

@@ -61,9 +61,9 @@ SORT year ASC
 ## Research Lineages
 
 ### Coase → Williamson → GH Line (Property Rights)
-1. [[📜coase37_nature]] (1937) - Incomplete contracts
+1. [[Front/On/14_282_org_econ/Papers/📜coase37_nature]] (1937) - Incomplete contracts
 2. [[📜williamson75_markets_hierarchies]] (1975) - TCE
-3. [[📜gh86_ownership]] (1986) - Formal model
+3. [[Front/On/14_282_org_econ/Papers/📜gh86_ownership]] (1986) - Formal model
 
 ### Barnard → Simon → C&M Line (Behavioral)
 1. [[📜barnard38_functions]] (1938) - Coalitional authority

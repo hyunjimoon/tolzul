@@ -63,7 +63,7 @@ Propose implementing simulation-based adaptive learning  (Solution) and map each
 - even for the person without any cognitive constraint, simulation tool is needed as change from the baseline should be computed for adaptation 
 ##### PI Institution level problem
  no incentive to develop programmatic theory (Cronin et al, 2019)
-- conflicting literature on [[Space/Sources/Papers/📜🗄️2_literature review on H1to6]] as evidence for P (problem to intervene): noncumulative science of startup adaptation
+- conflicting literature on [[Space/Sources/Lab/📜🗄️2_literature review on H1to6]] as evidence for P (problem to intervene): noncumulative science of startup adaptation
 - pivoting has relative and absolute aspect; REL is direction of vector whereas ABS is size of the vector. if you're more confident on the market, you're less likely to pivot away from this market 
 - [[table on pivot conflict with old hp names]]
 - [[detail on simulation model]]

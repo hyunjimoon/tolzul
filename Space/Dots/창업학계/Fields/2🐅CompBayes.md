@@ -7,7 +7,7 @@ related:
   - "[[CompBayes]]"
 created: 2025-10-14
 rank: 1
-성장:
+modified:
   - 2025-10-15T07:30:36-04:00
 ---
 
@@ -40,7 +40,7 @@ Related papers:
 - [[📜Gelman21_bayesholes]] - Avoiding Bayesian pitfalls
 - [[📜gelman06_boxer🥊]] - Boxing metaphor for Bayesian thinking
 - [[📜mcelreath25_rethinking]] - Statistical rethinking
-- [[Space/Sources/Papers/📜Richters21_incredible_utility]] - Incredible utility of Bayes
+- [[Space/Sources/Lab/📜Richters21_incredible_utility]] - Incredible utility of Bayes
 
 **Core idea**: Coherent belief updating
 
@@ -50,9 +50,9 @@ Related papers:
 **Scaling Bayesian inference**
 
 Related papers:
-- [[Space/Sources/Papers/📜Stan manual on auto param tuning in warmup]] - MCMC tuning
+- [[Space/Sources/Lab/📜Stan manual on auto param tuning in warmup]] - MCMC tuning
 - [[📜Burkner23_Bayesian model taxonomy]] - Model taxonomy
-- [[Space/Sources/Papers/📜Margossian24_nested_rhat]] - Convergence diagnostics
+- [[Space/Sources/Lab/📜Margossian24_nested_rhat]] - Convergence diagnostics
 - [[📜👾_mansinghka25_automate(formalization, programming)]] - Automated inference
 
 **Core idea**: Efficient computation enables complex models
@@ -63,7 +63,7 @@ Related papers:
 **Structuring uncertainty**
 
 Related papers:
-- [[Space/Sources/Papers/📜Cronin21_synthesize(theory)]] - Theory synthesis
+- [[Space/Sources/Lab/📜Cronin21_synthesize(theory)]] - Theory synthesis
 - [[📜🐢_meehl90_appraise(theory, amendments)]] - Theory appraisal
 - [[📜👾_meehl67_test(theory, method)]] - Theory testing
 
@@ -75,9 +75,9 @@ Related papers:
 **Optimal choices under uncertainty**
 
 Related papers:
-- [[Space/Sources/Papers/📜Walters23_invest_beh_epis_alea]] - Epistemic and aleatory uncertainty
+- [[Space/Sources/Lab/📜Walters23_invest_beh_epis_alea]] - Epistemic and aleatory uncertainty
 - [[📜Hullman_How far can exchangeability get us toward agreeing on individual probability?]] - Exchangeability
-- [[Space/Sources/Papers/📜Phillips19_How We Know What Not To Think]] - Negative knowledge
+- [[Space/Sources/Lab/📜Phillips19_How We Know What Not To Think]] - Negative knowledge
 
 **Core idea**: Decisions require probability
 
