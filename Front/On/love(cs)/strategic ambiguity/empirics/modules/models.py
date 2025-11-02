@@ -50,7 +50,8 @@ def test_h1_early_funding(
 def test_h2_main_growth(
     df: pd.DataFrame,
     formula: str = ("growth ~ z_vagueness * is_hardware + "
-                    "z_employees_log + C(founding_cohort)")
+                    "C(founding_cohort)")
+               #🚨      "z_employees_log + C(founding_cohort)")
 ) -> BinaryResultsWrapper:
     """
     Test H2 Main: Vagueness effect on growth is moderated by integration cost.
