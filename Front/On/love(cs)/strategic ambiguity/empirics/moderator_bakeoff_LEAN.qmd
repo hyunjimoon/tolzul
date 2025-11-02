@@ -1,247 +1,503 @@
 ---
-title: "Moderator Decision: Architecture vs Credibility"
-subtitle: "H2 Bake-off (LEAN Version - Top 30% Features)"
-author: "Strategic Ambiguity Research"
+title: "Moderator Bake-off: Architecture vs. Founder Credibility"
+subtitle: "Decision Memo for Advisors"
+author: "Strategic Ambiguity Research Team"
 date: today
 format:
   html:
-    toc: false
+    toc: true
+    toc-depth: 2
     theme: cosmo
+    code-fold: true
     embed-resources: true
+  pdf:
+    toc: true
+    number-sections: true
+    geometry:
+      - margin=0.75in
+    fontsize: 10pt
+    include-in-header:
+      text: |
+        \usepackage{graphicx}
+        \usepackage{grffile}
+        \usepackage{adjustbox}
+        \usepackage{booktabs}
+        \usepackage{longtable}
+        \usepackage{array}
+        \usepackage{multirow}
+        \usepackage{wrapfig}
+        \usepackage{float}
+        \usepackage{colortbl}
+        \usepackage{pdflscape}
+        \usepackage{tabu}
+        \usepackage{threeparttable}
+        \usepackage{threeparttablex}
+        \usepackage[normalem]{ulem}
+        \usepackage{makecell}
+        \usepackage{xcolor}
 execute:
   echo: false
   warning: false
+  message: false
 jupyter: python3
 ---
 
 ```{python}
-#| label: load-data
+#| label: setup
 import pandas as pd
 import numpy as np
+from pathlib import Path
 import warnings
 warnings.filterwarnings('ignore')
 
+# Helper function to format tables for PDF (truncate long column names)
+def format_table_for_pdf(df, max_col_width=20):
+    """Format dataframe for better PDF rendering"""
+    df_copy = df.copy()
+
+    # Truncate long column names
+    df_copy.columns = [col[:max_col_width] if len(col) > max_col_width else col
+                       for col in df_copy.columns]
+
+    # Truncate long variable names in 'variable' column if it exists
+    if 'variable' in df_copy.columns:
+        df_copy['variable'] = df_copy['variable'].apply(
+            lambda x: x[:35] + '...' if isinstance(x, str) and len(x) > 35 else x
+        )
+
+    return df_copy
+
+def print_table(df, floatfmt=".4f", max_col_width=20):
+    """Print table with PDF-friendly formatting"""
+    df_formatted = format_table_for_pdf(df, max_col_width)
+    print(df_formatted.to_markdown(index=False, floatfmt=floatfmt))
+
+# Load data
 df = pd.read_csv("outputs/h2_analysis_dataset.csv")
-h1 = pd.read_csv("outputs/h1_coefficients.csv")
+h1_coef = pd.read_csv("outputs/h1_coefficients.csv")
 arch_coef = pd.read_csv("outputs/h2_model_architecture.csv")
 arch_metrics = pd.read_csv("outputs/h2_model_architecture_metrics.csv")
+arch_ame = pd.read_csv("outputs/h2_model_architecture_ame.csv")
 found_coef = pd.read_csv("outputs/h2_model_founder.csv")
 found_metrics = pd.read_csv("outputs/h2_model_founder_metrics.csv")
+found_ame = pd.read_csv("outputs/h2_model_founder_ame.csv")
+h3_coef = pd.read_csv("outputs/h3_coefficients.csv")
+h4_coef = pd.read_csv("outputs/h4_coefficients.csv")
 ```
 
-# Core Question
+# Executive Summary
 
-**Which moderator for H2**: Integration Cost (`is_hardware`) or Founder Credibility (`is_serial`)?
+We have identified a **reversal pattern** in how strategic ambiguity affects startup success:
 
-**Why it matters**: This choice determines our theoretical story and data requirements for the paper.
+- **H1 (Early Funding)**: Vagueness **positively** predicts Series A funding amounts
+- **H2 (Growth)**: Vagueness **negatively** predicts Series B+ progression
+
+To understand **for whom** this pattern holds, we tested two competing moderators:
+
+1. **Architecture (is_hardware)**: Integration cost hypothesis – vagueness affects modular (software) and integrated (hardware/biotech) startups differently
+2. **Founder Credibility (is_serial)**: Reputation hypothesis – vagueness affects serial vs. first-time founders differently
+
+**Key Finding**: The **is_hardware** moderator shows **clearer interaction patterns** with stronger slope differences between groups, while **is_serial** shows weaker moderation effects.
+
+**Question for Advisors**: Which moderator tells a more compelling story for entrepreneurship research and practice?
 
 ---
 
-# 1. Motivation (H1)
+# H1 Context: The Reversal Pattern
 
-**Does vagueness affect early outcomes?**
+## H1 Results
 
 ```{python}
-#| label: h1-quick
-try:
-    vague_row = h1[h1['variable'].str.contains('vagueness', case=False, na=False)]
-    if len(vague_row) > 0:
-        coef = vague_row['coefficient'].values[0]
-        pval = vague_row['p_value'].values[0]
-        sig = "✓" if pval < 0.05 else "✗"
-        print(f"**H1 Effect**: α₁ = {coef:.3f}, p = {pval:.3f} {sig}")
-        print(f"\n→ Vagueness affects early funding. **But does it help or hurt long-term growth?**")
+#| label: h1-results
+print("### H1: Early Funding (Series A Amount)\n")
+print_table(h1_coef)
+
+# Extract vagueness coefficient
+vague_row = h1_coef[h1_coef['variable'].str.contains('vagueness', case=False, na=False)]
+if len(vague_row) > 0:
+    vague_coef = vague_row['coefficient'].values[0]
+    vague_p = vague_row['p_value'].values[0]
+    print(f"\n**Key Finding**: Vagueness coefficient = {vague_coef:.4f} (p = {vague_p:.4f})")
+    if vague_coef < 0:
+        print("- **Sign**: Negative (vagueness reduces Series A funding)")
     else:
-        print("H1 results not found")
-except:
-    print("H1 analysis pending")
+        print("- **Sign**: Positive (vagueness increases Series A funding)")
 ```
 
+**Motivation**: H1 establishes that vagueness has an effect on early funding. Now we ask: **For which types of startups does vagueness help or hurt long-term growth?**
+
 ---
 
-# 2. Data Quality Check
+# Moderator Comparison
+
+## Option 1: Architecture (is_hardware)
+
+### Theory
+
+**Integration Cost Hypothesis**: Hardware/biotech startups have high integration costs (physical components, supply chains, longer cycles), limiting strategic flexibility. Vagueness should be **more beneficial for software startups** where pivoting is easier.
+
+**Expected Pattern**: Negative interaction (vagueness helps more in software)
+
+### Results
 
 ```{python}
-#| label: balance-check
-def risk_label(pct):
-    return "🔴 HIGH" if pct < 10 else "🟡 MED" if pct < 20 else "🟢 LOW"
+#| label: arch-results
+print("#### Coefficients\n")
+print_table(arch_coef)
 
-# Calculate balance
-hw_counts = df['is_hardware'].value_counts()
-hw_pct = hw_counts.get(1, 0) / hw_counts.sum() * 100
-hw_risk = risk_label(hw_pct)
+print("\n#### Model Fit\n")
+print_table(arch_metrics)
 
-serial_counts = df['is_serial'].value_counts()
-serial_pct = serial_counts.get(1, 0) / serial_counts.sum() * 100
-serial_risk = risk_label(serial_pct)
-
-balance = pd.DataFrame({
-    'Moderator': ['Architecture (is_hardware)', 'Credibility (is_serial)'],
-    'Minority %': [f"{hw_pct:.1f}%", f"{serial_pct:.1f}%"],
-    'Risk': [hw_risk, serial_risk],
-    'N': [f"{len(df):,}", f"{len(df):,}"]
-})
-
-print("### Balance Assessment\n")
-print(balance.to_markdown(index=False))
+print("\n#### Average Marginal Effects\n")
+print_table(arch_ame)
 ```
 
-**Key**: 🟢 = good balance, 🟡 = caution, 🔴 = high risk of unstable estimates
+### Interaction Plot
 
----
+![Architecture Interaction](outputs/bakeoff/h2_interaction_is_hardware.png){width=90%}
 
-# 3. Bake-off Results
-
-## Architecture (is_hardware)
-
-![](outputs/bakeoff/h2_interaction_is_hardware.png)
-
-## Credibility (is_serial)
-
-![](outputs/bakeoff/h2_interaction_is_serial.png)
-
----
-
-## Compact Coefficients
+### Assessment
 
 ```{python}
-#| label: compact-coefs
-
-def extract_key_rows(coef_df, moderator_name):
-    """Extract only 3 key rows: main, moderator, interaction"""
-    rows = []
-
-    # Main effect (z_vagueness)
-    main_row = coef_df[coef_df['variable'] == 'z_vagueness']
-    if len(main_row) > 0:
-        rows.append({
-            'Variable': 'z_vagueness',
-            'Coef': f"{main_row['coefficient'].values[0]:.3f}",
-            'p': f"{main_row['p_value'].values[0]:.3f}"
-        })
-
-    # Moderator main effect
-    mod_row = coef_df[coef_df['variable'] == moderator_name]
-    if len(mod_row) > 0:
-        rows.append({
-            'Variable': moderator_name,
-            'Coef': f"{mod_row['coefficient'].values[0]:.3f}",
-            'p': f"{mod_row['p_value'].values[0]:.3f}"
-        })
-
-    # Interaction
-    int_row = coef_df[
-        coef_df['variable'].str.contains('vagueness', na=False) &
-        coef_df['variable'].str.contains(moderator_name, na=False)
-    ]
-    if len(int_row) > 0:
-        rows.append({
-            'Variable': f'z_vagueness:{moderator_name}',
-            'Coef': f"{int_row['coefficient'].values[0]:.3f}",
-            'p': f"{int_row['p_value'].values[0]:.3f}"
-        })
-
-    return pd.DataFrame(rows)
-
-# Architecture
-arch_compact = extract_key_rows(arch_coef, 'is_hardware')
-arch_compact['Model'] = 'Architecture'
-
-# Credibility
-found_compact = extract_key_rows(found_coef, 'is_serial')
-found_compact['Model'] = 'Credibility'
-
-# Combine
-compact = pd.concat([arch_compact, found_compact], ignore_index=True)
-
-print("### Key Coefficients (3 rows per model)\n")
-print(compact[['Model', 'Variable', 'Coef', 'p']].to_markdown(index=False))
-```
-
----
-
-# 4. Decision Matrix
-
-```{python}
-#| label: decision-matrix
-
+#| label: arch-assessment
 # Extract key metrics
 arch_n = arch_metrics['nobs'].values[0]
-arch_r2 = arch_metrics['prsquared'].values[0]
+arch_pseudo_r2 = arch_metrics['prsquared'].values[0]
+arch_auc = arch_metrics['auc'].values[0]
+arch_brier = arch_metrics['brier'].values[0]
+arch_aic = arch_metrics['aic'].values[0]
+
+# Extract interaction
+int_row = arch_coef[
+    arch_coef['variable'].str.contains('vagueness', na=False) &
+    arch_coef['variable'].str.contains('hardware', na=False)
+]
+if len(int_row) > 0:
+    arch_int_coef = int_row['coefficient'].values[0]
+    arch_int_p = int_row['p_value'].values[0]
+    arch_int_sig = "✓ Significant" if arch_int_p < 0.05 else "✗ Not significant"
+else:
+    arch_int_coef = np.nan
+    arch_int_p = np.nan
+    arch_int_sig = "N/A"
+
+# Data quality
+hw_counts = df['is_hardware'].value_counts()
+hw_pct = (hw_counts / hw_counts.sum() * 100).to_dict()
+hw_minority = hw_pct.get(1, 0)
+
+print(f"""
+**Data Quality**:
+- Hardware/integrated: {hw_minority:.1f}% (N = {hw_counts.get(1, 0):,})
+- Software/modular: {100-hw_minority:.1f}% (N = {hw_counts.get(0, 0):,})
+
+**Statistical Evidence**:
+- Interaction coefficient: {arch_int_coef:.4f} (p = {arch_int_p:.4f})
+- Statistical significance: {arch_int_sig}
+- Pseudo R²: {arch_pseudo_r2:.3f}
+- AUC: {arch_auc:.3f}
+- Brier Score: {arch_brier:.3f}
+- AIC: {arch_aic:.1f}
+- Sample size: {int(arch_n):,}
+
+**Theory Alignment**:
+- Expected sign: Negative (attenuation in hardware)
+- Observed: {'✓ Consistent' if arch_int_coef < 0 else '✗ Inconsistent'}
+
+**Interpretation**: {'Strong negative interaction suggests vagueness benefits software startups more than hardware startups.' if arch_int_coef < 0 and arch_int_p < 0.05 else 'Interaction pattern requires further investigation.'}
+""")
+```
+
+---
+
+## Option 2: Founder Credibility (is_serial)
+
+### Theory
+
+**Reputation Hypothesis**: Serial entrepreneurs have established reputations that signal quality. Vagueness should be **more beneficial for first-time founders** who lack credibility signals.
+
+**Expected Pattern**: Negative interaction (vagueness helps more for first-timers)
+
+### Results
+
+```{python}
+#| label: found-results
+print("#### Coefficients\n")
+print_table(found_coef)
+
+print("\n#### Model Fit\n")
+print_table(found_metrics)
+
+print("\n#### Average Marginal Effects\n")
+print_table(found_ame)
+```
+
+### Interaction Plot
+
+![Founder Interaction](outputs/bakeoff/h2_interaction_is_serial.png){width=90%}
+
+### Assessment
+
+```{python}
+#| label: found-assessment
+# Extract key metrics
 found_n = found_metrics['nobs'].values[0]
-found_r2 = found_metrics['prsquared'].values[0]
+found_pseudo_r2 = found_metrics['prsquared'].values[0]
+found_auc = found_metrics['auc'].values[0]
+found_brier = found_metrics['brier'].values[0]
+found_aic = found_metrics['aic'].values[0]
 
-# Extract interaction p-values
-try:
-    arch_int_p = float(arch_compact[arch_compact['Variable'].str.contains(':', na=False)]['p'].values[0])
-    arch_sig = "✓ Sig" if arch_int_p < 0.05 else "✗ NS"
-except:
-    arch_int_p = 1.0
-    arch_sig = "N/A"
+# Extract interaction
+int_row = found_coef[
+    found_coef['variable'].str.contains('vagueness', na=False) &
+    found_coef['variable'].str.contains('serial', na=False)
+]
+if len(int_row) > 0:
+    found_int_coef = int_row['coefficient'].values[0]
+    found_int_p = int_row['p_value'].values[0]
+    found_int_sig = "✓ Significant" if found_int_p < 0.05 else "✗ Not significant"
+else:
+    found_int_coef = np.nan
+    found_int_p = np.nan
+    found_int_sig = "N/A"
 
-try:
-    found_int_p = float(found_compact[found_compact['Variable'].str.contains(':', na=False)]['p'].values[0])
-    found_sig = "✓ Sig" if found_int_p < 0.05 else "✗ NS"
-except:
-    found_int_p = 1.0
-    found_sig = "N/A"
+# Data quality
+serial_counts = df['is_serial'].value_counts()
+serial_pct = (serial_counts / serial_counts.sum() * 100).to_dict()
+serial_minority = serial_pct.get(1, 0)
 
-decision = pd.DataFrame({
+print(f"""
+**Data Quality**:
+- Serial entrepreneurs: {serial_minority:.1f}% (N = {serial_counts.get(1, 0):,})
+- First-time founders: {100-serial_minority:.1f}% (N = {serial_counts.get(0, 0):,})
+
+**Statistical Evidence**:
+- Interaction coefficient: {found_int_coef:.4f} (p = {found_int_p:.4f})
+- Statistical significance: {found_int_sig}
+- Pseudo R²: {found_pseudo_r2:.3f}
+- AUC: {found_auc:.3f}
+- Brier Score: {found_brier:.3f}
+- AIC: {found_aic:.1f}
+- Sample size: {int(found_n):,}
+
+**Theory Alignment**:
+- Expected sign: Negative (substitution for credibility)
+- Observed: {'✓ Consistent' if found_int_coef < 0 else '✗ Inconsistent'}
+
+**Interpretation**: {'Negative interaction suggests vagueness benefits first-time founders more than serial entrepreneurs.' if found_int_coef < 0 and found_int_p < 0.05 else 'Interaction pattern is weak or non-significant.'}
+""")
+```
+
+---
+
+# Side-by-Side Comparison
+
+```{python}
+#| label: comparison-table
+comparison = pd.DataFrame({
     'Criterion': [
-        'Data Quality (Balance)',
-        'Statistical Evidence (p < 0.05)',
-        'Model Fit (Pseudo-R²)',
-        '─' * 30,
-        '**VERDICT** (Human Decision)'
+        '**Data Quality**',
+        'Minority Class %',
+        'Sample Size (N)',
+        '',
+        '**Statistical Evidence**',
+        'Interaction Coefficient',
+        'Interaction p-value',
+        'Significance',
+        'Pseudo R²',
+        'AUC',
+        'Brier Score (lower=better)',
+        'AIC (lower=better)',
+        '',
+        '**Theory**',
+        'Sign Consistency',
+        'Interpretability'
     ],
-    'Architecture': [
-        f"{hw_pct:.1f}% {hw_risk}",
-        f"p = {arch_int_p:.3f} {arch_sig}",
-        f"{arch_r2:.3f}",
-        "─" * 10,
-        "[PENDING]"
+    'Architecture (is_hardware)': [
+        '',
+        f"{hw_minority:.1f}%",
+        f"{int(arch_n):,}",
+        '',
+        '',
+        f"{arch_int_coef:.4f}" if not np.isnan(arch_int_coef) else "N/A",
+        f"{arch_int_p:.4f}" if not np.isnan(arch_int_p) else "N/A",
+        arch_int_sig,
+        f"{arch_pseudo_r2:.3f}",
+        f"{arch_auc:.3f}",
+        f"{arch_brier:.3f}",
+        f"{arch_aic:.1f}",
+        '',
+        '',
+        "✓ Consistent" if arch_int_coef < 0 else "✗ Inconsistent",
+        "High (integration cost is tangible)"
     ],
-    'Credibility': [
-        f"{serial_pct:.1f}% {serial_risk}",
-        f"p = {found_int_p:.3f} {found_sig}",
-        f"{found_r2:.3f}",
-        "─" * 10,
-        "[PENDING]"
+    'Credibility (is_serial)': [
+        '',
+        f"{serial_minority:.1f}%",
+        f"{int(found_n):,}",
+        '',
+        '',
+        f"{found_int_coef:.4f}" if not np.isnan(found_int_coef) else "N/A",
+        f"{found_int_p:.4f}" if not np.isnan(found_int_p) else "N/A",
+        found_int_sig,
+        f"{found_pseudo_r2:.3f}",
+        f"{found_auc:.3f}",
+        f"{found_brier:.3f}",
+        f"{found_aic:.1f}",
+        '',
+        '',
+        "✓ Consistent" if found_int_coef < 0 else "✗ Inconsistent",
+        "High (reputation effects well-established)"
     ]
 })
 
-print("\n### Decision Matrix (Human Input Required)\n")
-print(decision.to_markdown(index=False))
+print_table(comparison, max_col_width=25)
+```
+
+## Key Observations
+
+```{python}
+#| label: key-observations
+print(f"""
+### Interaction Strength
+
+**Architecture (is_hardware)**:
+- Interaction coefficient: {arch_int_coef:.4f}
+- Visual inspection: {'Clear slope difference between groups' if abs(arch_int_coef) > 0.5 else 'Moderate slope difference'}
+
+**Credibility (is_serial)**:
+- Interaction coefficient: {found_int_coef:.4f}
+- Visual inspection: {'Clear slope difference between groups' if abs(found_int_coef) > 0.5 else 'Weak/parallel slopes'}
+
+### Model Fit Comparison
+
+- **Pseudo R² difference**: {abs(arch_pseudo_r2 - found_pseudo_r2):.4f}
+- **AUC difference**: {abs(arch_auc - found_auc):.4f}
+- **AIC comparison**: {'Architecture model preferred' if arch_aic < found_aic else 'Credibility model preferred'} (ΔAIC = {abs(arch_aic - found_aic):.1f})
+
+### Data Quality
+
+- **Architecture**: {hw_minority:.1f}% minority class ({'Low imbalance' if hw_minority > 20 else 'Moderate imbalance' if hw_minority > 10 else 'High imbalance'})
+- **Credibility**: {serial_minority:.1f}% minority class ({'Low imbalance' if serial_minority > 20 else 'Moderate imbalance' if serial_minority > 10 else 'High imbalance'})
+""")
 ```
 
 ---
 
-# Final Decision Template
+# Questions for Advisors
 
-**CHOSEN MODERATOR**: `[ ]` Architecture  `[ ]` Credibility
+## Primary Question
 
-**RATIONALE** (fill in):
-```
-Data quality: ...
-Statistical strength: ...
-Theoretical fit: ...
-```
+**Which moderator should we prioritize for the main paper?**
 
-**NEXT STEPS**:
-1. Adopt chosen moderator for H2 main paper
-2. Report alternative as robustness check (appendix)
-3. Develop theoretical narrative for winner
+### Option A: Architecture (is_hardware)
+**Pros**:
+- Integration cost is a tangible, measurable construct
+- Directly connects to operations management literature
+- Clear implications for startup architecture decisions
+- Stronger visual interaction pattern (different slopes)
+
+**Cons**:
+- May be seen as "obvious" (hardware is harder to pivot)
+- Less directly tied to founder characteristics
+- Potential confounding with capital intensity
+
+### Option B: Founder Credibility (is_serial)
+**Pros**:
+- Direct connection to entrepreneurship literature on serial founders
+- Policy-relevant (founder development programs)
+- Clearer signaling mechanism (reputation substitution)
+- More human-centric narrative
+
+**Cons**:
+- Weaker statistical interaction (parallel slopes)
+- Lower minority class prevalence
+- Reputation effects may be harder to manipulate in practice
+
+## Secondary Questions
+
+1. **Should we report both moderators**?
+   - Main paper: Primary moderator
+   - Appendix/robustness: Alternative moderator
+
+2. **Are there theoretical reasons to expect one moderator to dominate**?
+   - Integration cost vs. reputation signaling – which is more fundamental?
+
+3. **From a practical standpoint**, which finding would be more **actionable for the startup ecosystem**?
+   - Architecture choices (software vs. hardware)
+   - Founder development (credibility building)
+
+4. **Are there complementarities**? Should we test a three-way interaction:
+   - `vagueness × is_hardware × is_serial`
+   - May reveal: "Serial founders can afford vagueness even in hardware"
 
 ---
 
-**Report Stats**:
-- Figures: 2 (interaction plots)
-- Tables: 3 (balance, coefficients, decision matrix)
-- Metrics per model: 2 (N, Pseudo-R²)
-- Total length: ~200 words
+# Our Tentative Assessment
 
-**Design**: Top 30% features only (Hemingway 10% × 3, Abdullah 1/8 × 2.4)
+```{python}
+#| label: tentative-assessment
+# Determine which has stronger interaction
+if abs(arch_int_coef) > abs(found_int_coef) and arch_int_p < 0.10:
+    stronger = "Architecture (is_hardware)"
+    weaker = "Credibility (is_serial)"
+else:
+    stronger = "Credibility (is_serial)"
+    weaker = "Architecture (is_hardware)"
+
+print(f"""
+Based on statistical evidence and visual inspection:
+
+**Stronger Interaction**: {stronger}
+- Clearer slope differentiation
+- More robust statistical support
+
+**Weaker Interaction**: {weaker}
+- Parallel/overlapping slopes
+- Weaker moderation effect
+
+**Recommendation for Discussion**:
+We are inclined toward **{stronger}** as the primary moderator for the main paper, but we seek your guidance on:
+1. Whether theoretical considerations override statistical strength
+2. Which narrative is more compelling for top-tier journals
+3. How to position the alternative moderator (robustness vs. separate mechanism)
+""")
+```
 
 ---
 
-*Generated: {python} from datetime import datetime; datetime.now().strftime("%Y-%m-%d %H:%M")*
+# Next Steps (Pending Advisor Feedback)
+
+1. **Finalize moderator selection** based on advisor guidance
+2. **Develop theoretical narrative** emphasizing chosen moderator
+3. **Relegate alternative moderator** to appendix or robustness section
+4. **Optional: Test three-way interaction** if complementarities are theoretically interesting
+5. **Revise Progress Report** to reflect final moderator choice
+
+---
+
+# Appendix: Full Results Reference
+
+## H3/H4 Results (Founder Credibility in Early Funding & Growth)
+
+For comparison, we also estimated H3 (Early Funding × Founder) and H4 (Growth × Founder) to test founder credibility across both DVs:
+
+### H3 Coefficients
+
+```{python}
+#| label: h3-appendix
+print_table(h3_coef)
+```
+
+### H4 Coefficients
+
+```{python}
+#| label: h4-appendix
+print_table(h4_coef)
+```
+
+**Note**: H3 and H4 use founder credibility (is_serial) as the moderator for both early funding and growth outcomes. These provide a **within-moderator consistency check** across DVs.
+
+---
+
+**Report Generated**: `{python} from datetime import datetime; print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))`

@@ -1,7 +1,12 @@
+---
+성장:
+  - 2025-10-29T23:55:00-04:00
+  - 2025-10-30T11:13:54-04:00
+---
 # Progress Report: Strategic Ambiguity in Venture Capital (W1 Hypothesis Testing)
 
 **To:** Professors Charlie Fine and Scott Stern
-**From:** Research Team
+**From:** Research Team (Angie, ChatGPT, Claude, Gemini) + colleagues who loves entrepreneurship
 **Date:** October 29, 2025
 **Subject:** Dependent Variable Validation, Model Specifications, and Preliminary Results
 
@@ -9,11 +14,11 @@
 
 ## 1. Executive Summary
 
-This report documents our progress on testing the "Strategic Ambiguity" hypothesis framework, which posits a **reversal pattern** in how vagueness affects startup success across financing stages. Following Professor Stern's methodological guidance, we have implemented the **Series A(t₀) → Series B+(t₁)** framework for defining growth trajectories and validated our dependent variable construction against theoretical requirements.
+This report documents our progress on testing the "Strategic Ambiguity" hypothesis framework, which posits a **reversal pattern** in how vagueness affects startup success across financing stages. Following your methodological guidance, we have implemented the **Series A(t₀) → Series B+(t₁)** framework for defining growth trajectories and validated our dependent variable construction against theoretical requirements.
 
 **Key Accomplishments:**
 
-1. **DV Validation**: Confirmed that our H2/H4 dependent variable (Series B+ progression) correctly implements the at-risk cohort framework (companies at Series A at baseline, excluding prior B+ rounds).
+1. **DV Validation**: Confirmed that dependent variable (Series B+ progression) correctly implements the at-risk cohort framework (companies at Series A at baseline, excluding prior B+ rounds).
 
 2. **Methodological Refinement**: Implemented Series A filtering using PitchBook's "Early Stage VC" label to isolate true venture-backed companies and exclude angel/seed rounds from H1/H3 analysis.
 
@@ -23,7 +28,7 @@ This report documents our progress on testing the "Strategic Ambiguity" hypothes
 
 **Methodological Limitations Identified:**
 
-- **17-month follow-up constraint**: Our observation window (December 2021 – May 2023) captures only 17 months of post-Series A progression, well below the recommended 46-month window. This introduces right censoring (≈50-60% false negatives) and restricts our findings to "rapid progressors."
+- **17-month follow-up constraint**: Our observation window (December 2021 – May 2023) captures only 17 months of post-Series A progression, below the recommended 2 yr window, average time from seriesA to B. This introduces right censoring (≈30% false negatives) and restricts our findings to "rapid progressors."
 
 - **Cohort heterogeneity**: The at-risk cohort for H2/H4 does not filter by founding year, introducing potential vintage effects that may confound growth trajectories.
 
@@ -122,7 +127,7 @@ This methodological correction is documented in `features.py` (lines 242-282) an
 
 ## 4. Dependent Variable Validation & Refinement
 
-### 4.1 Scott Stern's Guidance: Series A(t₀) → Series B+(t₁) Framework
+### 4.1 Series A(t₀) → Series B+(t₁) Framework
 
 **Context**: Early iterations of our analysis encountered **singular matrix errors** during logistic regression, caused by dependent variables with near-zero variance (base rates <1%). Professor Stern advised us to adopt a **success-oriented progression framework** rather than survival analysis, focusing on companies that successfully transition from one financing stage to the next.
 
