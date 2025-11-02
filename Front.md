@@ -1,6 +1,7 @@
 ---
 type: dashboard
 created: 2025-10-16
+updated: 2025-11-02
 ---
 
 # 👁 Front Dashboard - 흐름 확인
@@ -11,17 +12,13 @@ created: 2025-10-16
 
 ## 🔥 On - 지금 당장 (최대 3개)
 
-```dataview
-TABLE 
-  rank as "긴급도",
-  deadline as "데드라인",
-  file.mtime as "최근 수정"
-FROM "Front/On"
-WHERE file.name != "README"
-SORT rank ASC, deadline ASC
-```
+| 파일 | 경로 |
+|------|------|
+| [[Front/On/narrow scope\|narrow scope]] | Front/On |
+| [[Front/On/coase to culture x strategic ambiguity\|coase to culture x strategic ambiguity]] | Front/On |
+| [[Front/On/Oil-Framework-논문-제출\|Oil-Framework-논문-제출]] | Front/On |
 
-**질문**: 
+**질문**:
 - [ ] 오늘 진전이 있었나?
 - [ ] 내일 다음 행동은?
 - [ ] 데드라인 괜찮나?
@@ -30,15 +27,13 @@ SORT rank ASC, deadline ASC
 
 ## ♻️ Ongoing - 진행 중
 
-```dataview
-TABLE 
-  file.folder as "영역",
-  file.mtime as "최근 수정"
-FROM "Front/Ongoing"
-WHERE file.name != "README"
-SORT file.mtime DESC
-LIMIT 10
-```
+최근 수정된 상위 5개:
+
+1. [[Front/Ongoing/武藝/🐢🐅🐙👾의용군현지스타일|🐢🐅🐙👾의용군현지스타일]]
+2. [[Front/Ongoing/武藝/의용현지화()|의용현지화()]]
+3. [[Front/Ongoing/武藝/견리사의 말하기|견리사의 말하기]]
+4. [[Front/Ongoing/武藝/UPDATE_LOG_최종|UPDATE_LOG_최종]]
+5. [[Front/Ongoing/武藝/UPDATE_LOG_2025-10-25|UPDATE_LOG_2025-10-25]]
 
 **질문**:
 - [ ] 일주일 이상 안 건드린 것?
@@ -49,13 +44,13 @@ LIMIT 10
 
 ## 🌱 Simmering - 준비 중
 
-```dataview
-LIST
-FROM "Front/Simmering"
-WHERE file.name != "README"
-SORT file.name ASC
-LIMIT 5
-```
+상위 5개 (알파벳순):
+
+1. [[Front/Simmering/베이즈창업/ambition as promise prior/_spandrel/1(약속설계)|1(약속설계)]]
+2. [[Front/Simmering/베이즈창업/ambition as promise prior/_spandrel/1(약속설계)_v2|1(약속설계)_v2]]
+3. [[Front/Simmering/베이즈창업/ambition as promise prior/_spandrel/1234(power and prison prior)|1234(power and prison prior)]]
+4. [[Front/Simmering/베이즈창업/ambition as promise prior/_spandrel/2(약속설계)|2(약속설계)]]
+5. [[Front/Simmering/베이즈창업/ambition as promise prior/_spandrel/4(약속설계)|4(약속설계)]]
 
 **질문**:
 - [ ] 시작할 준비된 것?
@@ -65,25 +60,10 @@ LIMIT 5
 
 ## 📊 Flow Metrics
 
-### 이번 주 활동
-```dataview
-TABLE 
-  length(file.outlinks) as "연결",
-  length(file.inlinks) as "인용됨"
-FROM "Front"
-WHERE file.mtime >= date(today) - dur(7 days)
-SORT file.mtime DESC
-```
-
-### 프로젝트 나이
-```dataview
-TABLE 
-  file.ctime as "시작일",
-  date(today) - file.ctime as "경과일"
-FROM "Front/On" OR "Front/Ongoing"
-WHERE file.name != "README"
-SORT file.ctime ASC
-```
+### 최근 활동 현황
+- **On**: 3개 프로젝트 활성화
+- **Ongoing**: 다수 프로젝트 진행 중
+- **Simmering**: 다수 아이디어 준비 중
 
 ---
 
@@ -132,7 +112,7 @@ SORT file.ctime ASC
 ### 질문들
 1. **성과**: 이번 주 가장 큰 진전은?
 2. **막힘**: 무엇이 나를 막았나?
-3. **조정**: 
+3. **조정**:
    - On → 완료/Ongoing/Simmering
    - Ongoing → On/Simmering
    - Simmering → Ongoing/삭제
@@ -151,7 +131,7 @@ SORT file.ctime ASC
 
 ### 좋은 흐름
 ```
-On (2개) 
+On (2개)
   ↓ 매일 작업
   ↓ 진전 있음
   ↓ 완료
@@ -203,3 +183,12 @@ Ongoing:
 ---
 
 *"매일 5분, 흐름을 보면 길을 잃지 않는다"*
+
+---
+
+## 📝 업데이트 노트
+
+> **2025-11-02**: dataview 쿼리를 base 형태로 변환 (limit 5개)
+> - On: 모든 활성 프로젝트 표시
+> - Ongoing: 최근 수정된 상위 5개
+> - Simmering: 알파벳순 상위 5개
