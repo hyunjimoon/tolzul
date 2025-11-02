@@ -1,7 +1,7 @@
 ---
 성장:
   - 2025-10-28T14:41:51-04:00
-  - 2025-11-01T22:25:20-04:00
+  - 2025-11-01T22:30:20-04:00
 ---
 # history of thought
 - two entities how to collaborate
