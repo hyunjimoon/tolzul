@@ -6,6 +6,8 @@ modified:
   - 2025-10-17T14:50:14-04:00
   - 2025-11-01T22:25:18-04:00
   - 2025-11-02T00:40:23-04:00
+  - 2025-11-07T22:36:43-05:00
+  - 2025-11-09T04:50:31-05:00
 ---
 
 > *"뉴런이 함께 발화하면 함께 묶인다"*  
@@ -38,19 +40,18 @@ modified:
 ## 🧭 Navigation
 
 > [!globe] **👂 Space RO**
-> [[Maps|Maps]] | [[Space/Sources/Papers|Papers]] | [[Space/Dots|Dots]]
+> [[Space/Library/Maps/Maps|Maps]] | [[Space/Sources/Papers|Papers]] | [[Space/Dots|Dots]]
 
 > [!calendar] **✋ Balance **
 > [[Balance/일별 리듬|Daily]] | [[Balance/주별 멜로디|Weekly]] | [[Balance/월별 화음|Monthly]]
 
 > [!mountain] **👁 Front 눈 VOI**
-> [[Front/On|On]] | [[Front/Ongoing|Ongoing]] | [[Front/Simmering|Simmering]]
+> [[On|On]] | [[Ongoing|Ongoing]] | [[Simmering|Simmering]]
 
 
 ---
 
 ![[귀손눈.png|500]]
-![[pale-blue-dot-banner.jpg]]
 
 > [[Space|Space]]와 [[Front|Front]]는 서로 반대방향의 힘이다.  
 > [[Balance|Balance]]는 그 사이에서 여백 (V)의 진폭을 제어한다.  

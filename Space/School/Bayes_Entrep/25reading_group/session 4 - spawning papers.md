@@ -26,4 +26,4 @@ response to questions
 	2. important problem - entrepreneurship is the most direct way to allow individual's use value to be captured into exchange value
 
 
-[[🛝mmi24_2]]
+[[Space/School/24_🚗Zhao23_behav_mob_ai/🛝mmi24_2]]

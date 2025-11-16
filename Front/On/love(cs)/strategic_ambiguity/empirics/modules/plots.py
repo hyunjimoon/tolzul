@@ -1390,8 +1390,1136 @@ def fig_founder_interactions(
     plt.close(fig)
 
 
+# =============================================================================
+# 3📊PLOT1: VARIABLE DISTRIBUTIONS
+# =============================================================================
+
+def plot_variable_distributions(df: pd.DataFrame, output_path: Optional[Path] = None) -> plt.Figure:
+    """Create 2x3 subplot of 5 core variables.
+
+    Layout:
+        [🧧E hist] [💰L bar] [🤙V hist]
+        [💪F bar]  [💸S hist] [empty]
+
+    Args:
+        df: DataFrame with core variables
+        output_path: Optional path to save figure
+
+    Returns:
+        Matplotlib figure object
+    """
+    fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+    fig.suptitle('Core Variable Distributions', fontsize=16, fontweight='bold', y=1.02)
+
+    # 🧧E: Early funding (continuous)
+    ax = axes[0, 0]
+    if 'early_funding_musd' in df.columns:
+        data = df['early_funding_musd'].dropna()
+        if len(data) > 0:
+            ax.hist(data, bins=50, edgecolor='black', alpha=0.7, color='steelblue')
+            ax.set_xlabel('Early Funding ($M)', fontweight='bold')
+            ax.set_ylabel('Count', fontweight='bold')
+            ax.set_title(f'🧧E: Early Funding (n={len(data):,})', fontweight='bold')
+            ax.text(0.95, 0.95, f'Mean: ${data.mean():.2f}M\nMedian: ${data.median():.2f}M',
+                   transform=ax.transAxes, va='top', ha='right',
+                   bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8))
+    ax.grid(True, alpha=0.3)
+
+    # 💰L: Growth (binary)
+    ax = axes[0, 1]
+    if 'growth' in df.columns:
+        counts = df['growth'].value_counts().sort_index()
+        colors = ['#d62728', '#2ca02c']
+        ax.bar(range(len(counts)), counts.values, color=colors, edgecolor='black', alpha=0.7)
+        ax.set_xticks(range(len(counts)))
+        ax.set_xticklabels(['No Growth (0)', 'Growth (1)'], rotation=0)
+        ax.set_ylabel('Count', fontweight='bold')
+        ax.set_title(f'💰L: Growth Achievement (n={counts.sum():,})', fontweight='bold')
+        pct = counts.get(1, 0) / counts.sum() * 100 if counts.sum() > 0 else 0
+        ax.text(0.95, 0.95, f'Growth rate: {pct:.1f}%',
+               transform=ax.transAxes, va='top', ha='right',
+               bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8))
+    ax.grid(True, alpha=0.3, axis='y')
+
+    # 🤙V: Vagueness (continuous)
+    ax = axes[0, 2]
+    if 'z_vagueness' in df.columns:
+        data = df['z_vagueness'].dropna()
+        if len(data) > 0:
+            ax.hist(data, bins=50, edgecolor='black', alpha=0.7, color='orange')
+            ax.axvline(0, color='red', linestyle='--', alpha=0.5, linewidth=2)
+            ax.set_xlabel('Vagueness (z-score)', fontweight='bold')
+            ax.set_ylabel('Count', fontweight='bold')
+            ax.set_title(f'🤙V: Vagueness (n={len(data):,})', fontweight='bold')
+            ax.text(0.95, 0.95, f'Mean: {data.mean():.2f}\nStd: {data.std():.2f}',
+                   transform=ax.transAxes, va='top', ha='right',
+                   bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8))
+    ax.grid(True, alpha=0.3)
+
+    # 💪F: Flexibility (binary)
+    ax = axes[1, 0]
+    if 'is_hardware' in df.columns:
+        # Note: is_hardware = 1 (hardware), 0 (software/flexible)
+        counts = df['is_hardware'].value_counts().sort_index()
+        colors = ['#1f77b4', '#8c564b']
+        ax.bar(range(len(counts)), counts.values, color=colors, edgecolor='black', alpha=0.7)
+        ax.set_xticks(range(len(counts)))
+        ax.set_xticklabels(['Software/Flexible (0)', 'Hardware/Rigid (1)'], rotation=0)
+        ax.set_ylabel('Count', fontweight='bold')
+        ax.set_title(f'💪F: Architecture (n={counts.sum():,})', fontweight='bold')
+        pct_soft = counts.get(0, 0) / counts.sum() * 100 if counts.sum() > 0 else 0
+        ax.text(0.95, 0.95, f'Software: {pct_soft:.1f}%',
+               transform=ax.transAxes, va='top', ha='right',
+               bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8))
+    ax.grid(True, alpha=0.3, axis='y')
+
+    # 💸S: Step-up (continuous, optional)
+    ax = axes[1, 1]
+    if 'valuation_stepup' in df.columns:
+        data = df['valuation_stepup'].dropna()
+        if len(data) > 10:
+            ax.hist(data, bins=50, edgecolor='black', alpha=0.7, color='purple')
+            ax.set_xlabel('Log(Valuation Step-up)', fontweight='bold')
+            ax.set_ylabel('Count', fontweight='bold')
+            ax.set_title(f'💸S: Valuation Step-up (n={len(data):,})', fontweight='bold')
+            ax.text(0.95, 0.95, f'Mean: {data.mean():.2f}\nMedian: {data.median():.2f}',
+                   transform=ax.transAxes, va='top', ha='right',
+                   bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8))
+        else:
+            ax.text(0.5, 0.5, 'Insufficient data\nfor valuation step-up',
+                   ha='center', va='center', transform=ax.transAxes, fontsize=12)
+            ax.set_title('💸S: Not Available', fontweight='bold')
+    else:
+        ax.text(0.5, 0.5, 'Valuation step-up\nnot available',
+               ha='center', va='center', transform=ax.transAxes, fontsize=12)
+        ax.set_title('💸S: Not Available', fontweight='bold')
+    ax.grid(True, alpha=0.3)
+
+    # Hide empty subplot
+    axes[1, 2].axis('off')
+
+    plt.tight_layout()
+
+    if output_path:
+        fig.savefig(output_path, dpi=300, bbox_inches='tight')
+        print(f"  ✓ Saved: {output_path}")
+
+    return fig
+
+
+# =============================================================================
+# 5📈PLOT2: MULTIVERSE ANALYSIS VISUALIZATIONS
+# =============================================================================
+
+def calculate_alignment(coef: float, pval: float, expected_sign: int) -> float:
+    """Calculate alignment score between expected and actual results.
+
+    Args:
+        coef: Coefficient estimate
+        pval: P-value
+        expected_sign: Expected sign (+1 or -1)
+
+    Returns:
+        Alignment score:
+            1.0: Perfect alignment (correct sign, significant)
+            0.25: Partial alignment (correct sign, not significant)
+            0.0: Neutral (not tested or inconclusive)
+           -0.25: Partial misalignment (wrong sign, not significant)
+           -1.0: Complete misalignment (wrong sign, significant)
+    """
+    if np.isnan(coef) or np.isnan(pval):
+        return 0.0
+
+    if pval >= 0.05:
+        if np.sign(coef) == expected_sign:
+            return 0.25  # Right direction but not significant
+        else:
+            return -0.25  # Wrong direction but not significant
+    else:
+        if np.sign(coef) == expected_sign:
+            return 1.0  # Confirmed hypothesis
+        else:
+            return -1.0  # Rejected hypothesis
+
+
+def plot_expectation_reality_heatmap(
+    results: pd.DataFrame,
+    output_path: Optional[Path] = None
+) -> plt.Figure:
+    """Create heatmap showing alignment between expected and actual results.
+
+    Visual encoding:
+        🟢 Green (+1.0): Expected positive, Got positive & significant
+        🔴 Red (-1.0): Expected positive, Got negative & significant
+        🟡 Yellow (0.25): Right direction, not significant
+        ⚫ Gray (0.0): Not tested or inconclusive
+
+    Args:
+        results: DataFrame with multiverse results
+        output_path: Optional path to save figure
+
+    Returns:
+        Matplotlib figure object
+    """
+    fig, axes = plt.subplots(2, 2, figsize=(16, 12))
+    fig.suptitle('Multiverse Analysis: Expectation vs Reality', fontsize=16, fontweight='bold', y=1.02)
+
+    # Define expectations for each hypothesis
+    hypotheses = {
+        'H1_early_funding': {'expected_sign': -1, 'label': 'Early Funding ↓', 'coef_col': 'coef_vagueness'},
+        'H2_growth': {'expected_sign': +1, 'label': 'Growth ↑', 'coef_col': 'coef_vagueness'},
+        'H2_interaction': {'expected_sign': -1, 'label': 'Growth×Hardware ↓', 'coef_col': 'coef_interaction'}
+    }
+
+    for idx, (hyp_name, hyp_info) in enumerate(list(hypotheses.items())[:3]):
+        ax = axes[idx // 2, idx % 2]
+
+        # Calculate alignment scores
+        if hyp_info['coef_col'] in results.columns and 'pvalue' in results.columns:
+            results_hyp = results.copy()
+            results_hyp['alignment'] = results_hyp.apply(
+                lambda row: calculate_alignment(
+                    row.get(hyp_info['coef_col'], np.nan),
+                    row.get('pvalue', np.nan),
+                    hyp_info['expected_sign']
+                ), axis=1
+            )
+
+            # Create heatmap matrix (simplified version)
+            if 'window' in results_hyp.columns and 'scaling' in results_hyp.columns:
+                matrix = results_hyp.pivot_table(
+                    values='alignment',
+                    index='window',
+                    columns='scaling',
+                    aggfunc='mean'
+                )
+
+                # Custom colormap: Red-Yellow-Green
+                colors = ['#d73027', '#fee08b', '#1a9850']
+                cmap = sns.blend_palette(colors, as_cmap=True)
+
+                # Plot heatmap
+                sns.heatmap(
+                    matrix,
+                    cmap=cmap,
+                    center=0,
+                    vmin=-1,
+                    vmax=1,
+                    annot=True,
+                    fmt='.2f',
+                    cbar_kws={'label': 'Alignment Score'},
+                    ax=ax,
+                    linewidths=0.5,
+                    linecolor='gray'
+                )
+
+                ax.set_title(f"{hyp_name}: {hyp_info['label']}", fontweight='bold')
+                ax.set_xlabel('Scaling Method', fontweight='bold')
+                ax.set_ylabel('Time Window', fontweight='bold')
+            else:
+                ax.text(0.5, 0.5, f'Data not available\nfor {hyp_name}',
+                       ha='center', va='center', transform=ax.transAxes, fontsize=12)
+        else:
+            ax.text(0.5, 0.5, f'Columns not found\nfor {hyp_name}',
+                   ha='center', va='center', transform=ax.transAxes, fontsize=12)
+
+    # Summary panel (bottom right)
+    ax_summary = axes[1, 1]
+    ax_summary.axis('off')
+
+    # Calculate summary statistics
+    summary_text = "Summary Statistics\n" + "="*40 + "\n\n"
+    for hyp_name, hyp_info in hypotheses.items():
+        if hyp_info['coef_col'] in results.columns:
+            results_hyp = results.copy()
+            results_hyp['alignment'] = results_hyp.apply(
+                lambda row: calculate_alignment(
+                    row.get(hyp_info['coef_col'], np.nan),
+                    row.get('pvalue', np.nan),
+                    hyp_info['expected_sign']
+                ), axis=1
+            )
+
+            confirmed = (results_hyp['alignment'] == 1.0).sum()
+            rejected = (results_hyp['alignment'] == -1.0).sum()
+            total = len(results_hyp)
+
+            summary_text += f"{hyp_name}:\n"
+            summary_text += f"  ✓ Confirmed: {confirmed}/{total} ({confirmed/total*100:.1f}%)\n"
+            summary_text += f"  ✗ Rejected: {rejected}/{total} ({rejected/total*100:.1f}%)\n\n"
+
+    ax_summary.text(0.1, 0.9, summary_text, transform=ax_summary.transAxes,
+                   va='top', ha='left', fontsize=10, family='monospace',
+                   bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8))
+
+    plt.tight_layout()
+
+    if output_path:
+        fig.savefig(output_path, dpi=300, bbox_inches='tight')
+        print(f"  ✓ Saved: {output_path}")
+
+    return fig
+
+
+def plot_enhanced_specification_curve(
+    results: pd.DataFrame,
+    hypothesis_name: str = 'vagueness_main',
+    expected_sign: int = 1,
+    output_path: Optional[Path] = None
+) -> plt.Figure:
+    """Create specification curve with visual emphasis on surprising results.
+
+    Args:
+        results: DataFrame with multiverse results
+        hypothesis_name: Name of hypothesis being tested
+        expected_sign: Expected sign of coefficient (+1 or -1)
+        output_path: Optional path to save figure
+
+    Returns:
+        Matplotlib figure object
+    """
+    fig = plt.figure(figsize=(16, 10))
+    gs = fig.add_gridspec(3, 1, height_ratios=[2, 1, 1], hspace=0.1)
+
+    # Prepare data
+    df = results.copy()
+
+    # Determine coefficient and p-value columns
+    coef_col = 'coefficient' if 'coefficient' in df.columns else 'coef_vagueness'
+    pval_col = 'pvalue' if 'pvalue' in df.columns else 'p_vagueness'
+
+    if coef_col not in df.columns or pval_col not in df.columns:
+        print(f"Warning: Required columns not found. Available: {df.columns.tolist()}")
+        return fig
+
+    # Calculate alignment
+    df['alignment'] = df.apply(
+        lambda row: calculate_alignment(row[coef_col], row[pval_col], expected_sign),
+        axis=1
+    )
+    df['matches_expectation'] = df['alignment'] > 0
+
+    # Sort by coefficient value
+    df_sorted = df.sort_values(coef_col).reset_index(drop=True)
+    x = np.arange(len(df_sorted))
+
+    # Panel 1: Coefficient curve with confidence bands
+    ax1 = fig.add_subplot(gs[0])
+
+    # Color code by alignment
+    colors = []
+    for _, row in df_sorted.iterrows():
+        if row[pval_col] < 0.05:
+            if row['matches_expectation']:
+                colors.append('#1a9850')  # Green: Confirmed
+            else:
+                colors.append('#d73027')  # Red: Surprising
+        else:
+            colors.append('#969696')  # Gray: Not significant
+
+    # Plot coefficients with error bars (if std_error available)
+    if 'std_error' in df_sorted.columns:
+        ax1.errorbar(
+            x,
+            df_sorted[coef_col],
+            yerr=1.96 * df_sorted['std_error'],
+            fmt='none',
+            alpha=0.3,
+            color='gray'
+        )
+
+    # Scatter plot with colors
+    ax1.scatter(
+        x,
+        df_sorted[coef_col],
+        c=colors,
+        s=30,
+        alpha=0.8,
+        edgecolors='black',
+        linewidth=0.5
+    )
+
+    # Add expectation zone
+    ylim = ax1.get_ylim()
+    if expected_sign > 0:
+        ax1.axhspan(0, ylim[1], alpha=0.1, color='green', label='Expected Zone')
+        ax1.axhspan(ylim[0], 0, alpha=0.1, color='red', label='Surprise Zone')
+    else:
+        ax1.axhspan(ylim[0], 0, alpha=0.1, color='green', label='Expected Zone')
+        ax1.axhspan(0, ylim[1], alpha=0.1, color='red', label='Surprise Zone')
+
+    ax1.axhline(0, color='black', linestyle='-', linewidth=1, alpha=0.5)
+    ax1.set_ylabel('Coefficient (β)', fontsize=12, fontweight='bold')
+    ax1.set_title(f'Specification Curve: {len(df_sorted)} Model Variants', fontsize=14, fontweight='bold')
+    ax1.grid(True, alpha=0.3)
+
+    # Add summary statistics
+    n_confirmed = sum(c == '#1a9850' for c in colors)
+    n_surprising = sum(c == '#d73027' for c in colors)
+    n_inconclusive = sum(c == '#969696' for c in colors)
+
+    ax1.text(
+        0.02, 0.98,
+        f'✓ Confirmed: {n_confirmed}/{len(df_sorted)} ({n_confirmed/len(df_sorted)*100:.1f}%)\n'
+        f'✗ Surprising: {n_surprising}/{len(df_sorted)} ({n_surprising/len(df_sorted)*100:.1f}%)\n'
+        f'○ Inconclusive: {n_inconclusive}/{len(df_sorted)} ({n_inconclusive/len(df_sorted)*100:.1f}%)',
+        transform=ax1.transAxes,
+        verticalalignment='top',
+        fontsize=10,
+        bbox=dict(boxstyle='round', facecolor='white', alpha=0.9)
+    )
+
+    # Panel 2: Specification indicators (placeholder)
+    ax2 = fig.add_subplot(gs[1], sharex=ax1)
+    ax2.set_ylabel('Spec Config', fontsize=10)
+    ax2.set_yticks([])
+    ax2.grid(True, alpha=0.3)
+
+    # Panel 3: P-value distribution
+    ax3 = fig.add_subplot(gs[2], sharex=ax1)
+    ax3.scatter(x, -np.log10(df_sorted[pval_col]), c=colors, s=10, alpha=0.6)
+    ax3.axhline(-np.log10(0.05), color='black', linestyle='--', alpha=0.5, label='p=0.05')
+    ax3.set_ylabel('-log₁₀(p)', fontsize=10, fontweight='bold')
+    ax3.set_xlabel('Specification Index', fontsize=12, fontweight='bold')
+    ax3.grid(True, alpha=0.3)
+    ax3.legend(loc='upper right')
+
+    plt.suptitle(f'Multiverse Analysis: {hypothesis_name}', fontsize=16, fontweight='bold', y=1.00)
+
+    if output_path:
+        fig.savefig(output_path, dpi=300, bbox_inches='tight')
+        print(f"  ✓ Saved: {output_path}")
+
+    return fig
+
+
+# =============================================================================
+# F-SERIES PLOTS (TWO-SNAPSHOT MODE: E/L/S/V/F)
+# =============================================================================
+
+# Strict color palette
+PALETTE = {"E": "red", "L": "blue", "V": "green", "S": "purple", "F": "skyblue", "C": "orange"}
+
+
+def _num_median(df: pd.DataFrame, col: str) -> float:
+    """Return numeric median, ignoring NA."""
+    return df[col].median() if col in df.columns else 0.0
+
+
+def _cat_mode(df: pd.DataFrame, col: str):
+    """Return most frequent value for categorical variable."""
+    if col not in df.columns:
+        return None
+    mode_vals = df[col].mode()
+    return mode_vals[0] if len(mode_vals) > 0 else None
+
+
+def _fix_controls_at_median_mode(df: pd.DataFrame, cols: list) -> dict:
+    """
+    Return a dict with median/mode values for prediction.
+
+    Args:
+        df: DataFrame with data
+        cols: List of column names to fix
+
+    Returns:
+        Dictionary with fixed values
+    """
+    fixed = {}
+    for col in cols:
+        if col not in df.columns:
+            continue
+        if df[col].dtype in ['object', 'category']:
+            fixed[col] = _cat_mode(df, col)
+        else:
+            fixed[col] = _num_median(df, col)
+    return fixed
+
+
+def fig_F1_E_vs_V(df: pd.DataFrame, hev: RegressionResultsWrapper, outdir: Path) -> Path:
+    """
+    F1: E vs V scatter with OLS fit line.
+
+    Args:
+        df: DataFrame with E, z_V
+        hev: OLS model from run_HEV
+        outdir: Output directory
+
+    Returns:
+        Path to saved PNG
+    """
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    # Determine E column (prefer E_scaled)
+    E_col = 'E_scaled' if 'E_scaled' in df.columns else 'E'
+    V_col = 'z_V'
+
+    # Scatter plot
+    df_plot = df.dropna(subset=[E_col, V_col])
+    ax.scatter(df_plot[V_col], df_plot[E_col], alpha=0.5, s=30, color=PALETTE['E'], edgecolors='k', linewidths=0.3)
+
+    # OLS fit line
+    V_range = np.linspace(df_plot[V_col].min(), df_plot[V_col].max(), 100)
+    pred_df = pd.DataFrame({V_col: V_range})
+
+    # Add controls at median/mode
+    control_cols = ['founding_cohort', 'region']
+    fixed = _fix_controls_at_median_mode(df_plot, control_cols)
+    for k, v in fixed.items():
+        if v is not None:
+            pred_df[k] = v
+
+    try:
+        predictions = hev.predict(pred_df)
+        ax.plot(V_range, predictions, color=PALETTE['E'], linewidth=2.5, label='OLS fit')
+    except Exception as e:
+        print(f"  ⚠️ Could not plot F1 fit line: {e}")
+
+    ax.set_xlabel('V (Vagueness, z-score)', fontsize=12, fontweight='bold', color=PALETTE['V'])
+    ax.set_ylabel('E (Early Funding)', fontsize=12, fontweight='bold', color=PALETTE['E'])
+    ax.set_title('F1. E vs V', fontsize=14, fontweight='bold')
+    ax.grid(True, alpha=0.3)
+
+    # Caption
+    ax.text(0.98, 0.02, 'Controls fixed at median/mode', transform=ax.transAxes,
+            fontsize=8, ha='right', va='bottom', style='italic', color='gray')
+
+    output_path = outdir / 'F1_E_vs_V.png'
+    fig.savefig(output_path, bbox_inches='tight', dpi=300)
+    plt.close(fig)
+    print(f"  ✓ Saved: {output_path}")
+    return output_path
+
+
+def fig_F2_PrL_vs_V(df: pd.DataFrame, hlvf: BinaryResultsWrapper, outdir: Path) -> Path:
+    """
+    F2: Predicted Pr(L=1) vs V, holding F at median.
+
+    Args:
+        df: DataFrame with L, z_V, F_flexibility
+        hlvf: Logit model from run_HLVF
+        outdir: Output directory
+
+    Returns:
+        Path to saved PNG
+    """
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    V_col = 'z_V'
+    df_plot = df.dropna(subset=['L', V_col, 'F_flexibility'])
+
+    # V range
+    V_range = np.linspace(df_plot[V_col].min(), df_plot[V_col].max(), 100)
+    pred_df = pd.DataFrame({V_col: V_range})
+
+    # Fix F at median
+    F_median = _num_median(df_plot, 'F_flexibility')
+    pred_df['F_flexibility'] = F_median
+
+    # Fix founder_serial at median if present
+    if 'founder_serial' in df_plot.columns:
+        pred_df['founder_serial'] = _num_median(df_plot, 'founder_serial')
+
+    # Fix controls at median/mode
+    control_cols = ['founding_cohort', 'region']
+    fixed = _fix_controls_at_median_mode(df_plot, control_cols)
+    for k, v in fixed.items():
+        if v is not None:
+            pred_df[k] = v
+
+    try:
+        predictions = hlvf.predict(pred_df)
+        ax.plot(V_range, predictions, color=PALETTE['L'], linewidth=2.5)
+    except Exception as e:
+        print(f"  ⚠️ Could not plot F2 predictions: {e}")
+
+    ax.set_xlabel('V (Vagueness, z-score)', fontsize=12, fontweight='bold', color=PALETTE['V'])
+    ax.set_ylabel('Pr(L = 1)', fontsize=12, fontweight='bold', color=PALETTE['L'])
+    ax.set_title('F2. Pr(L) vs V', fontsize=14, fontweight='bold')
+    ax.set_ylim([0, 1])
+    ax.grid(True, alpha=0.3)
+
+    # Caption
+    ax.text(0.98, 0.02, 'F at median; other moderator + controls fixed at median/mode',
+            transform=ax.transAxes, fontsize=8, ha='right', va='bottom', style='italic', color='gray')
+
+    output_path = outdir / 'F2_PrL_vs_V.png'
+    fig.savefig(output_path, bbox_inches='tight', dpi=300)
+    plt.close(fig)
+    print(f"  ✓ Saved: {output_path}")
+    return output_path
+
+
+def fig_F3a_L_given_F(df: pd.DataFrame, hlvf: BinaryResultsWrapper, outdir: Path) -> Path:
+    """
+    F3a: L | F (V×F curves). Two lines: F=1 (skyblue, solid, upward), F=0 (skyblue, dashed, downward).
+
+    Args:
+        df: DataFrame with L, z_V, F_flexibility
+        hlvf: Logit model from run_HLVF
+        outdir: Output directory
+
+    Returns:
+        Path to saved PNG
+    """
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    V_col = 'z_V'
+    df_plot = df.dropna(subset=['L', V_col, 'F_flexibility'])
+
+    # V range
+    V_range = np.linspace(df_plot[V_col].min(), df_plot[V_col].max(), 100)
+
+    # Fix founder_serial at median if present
+    founder_median = _num_median(df_plot, 'founder_serial') if 'founder_serial' in df_plot.columns else None
+
+    # Fix controls at median/mode
+    control_cols = ['founding_cohort', 'region']
+    fixed = _fix_controls_at_median_mode(df_plot, control_cols)
+
+    # Plot for F=0 (Hardware, dashed, downward slope expected)
+    pred_df_0 = pd.DataFrame({V_col: V_range, 'F_flexibility': 0})
+    if founder_median is not None:
+        pred_df_0['founder_serial'] = founder_median
+    for k, v in fixed.items():
+        if v is not None:
+            pred_df_0[k] = v
+
+    try:
+        pred_0 = hlvf.predict(pred_df_0)
+        ax.plot(V_range, pred_0, color=PALETTE['F'], linestyle='--', linewidth=2.5, label='F=0 (Hardware)')
+    except Exception as e:
+        print(f"  ⚠️ Could not plot F3a F=0 line: {e}")
+
+    # Plot for F=1 (Software/Flexible, solid, upward slope expected)
+    pred_df_1 = pd.DataFrame({V_col: V_range, 'F_flexibility': 1})
+    if founder_median is not None:
+        pred_df_1['founder_serial'] = founder_median
+    for k, v in fixed.items():
+        if v is not None:
+            pred_df_1[k] = v
+
+    try:
+        pred_1 = hlvf.predict(pred_df_1)
+        ax.plot(V_range, pred_1, color=PALETTE['F'], linestyle='-', linewidth=2.5, label='F=1 (Software/Flexible)')
+    except Exception as e:
+        print(f"  ⚠️ Could not plot F3a F=1 line: {e}")
+
+    ax.set_xlabel('V (Vagueness, z-score)', fontsize=12, fontweight='bold', color=PALETTE['V'])
+    ax.set_ylabel('Pr(L = 1)', fontsize=12, fontweight='bold', color=PALETTE['L'])
+    ax.set_title('F3a. L | F (V×F)', fontsize=14, fontweight='bold')
+    ax.set_ylim([0, 1])
+    ax.legend(loc='best', fontsize=10)
+    ax.grid(True, alpha=0.3)
+
+    # Caption
+    ax.text(0.98, 0.02, 'Other moderator + controls fixed at median/mode',
+            transform=ax.transAxes, fontsize=8, ha='right', va='bottom', style='italic', color='gray')
+
+    output_path = outdir / 'F3a_L_given_F.png'
+    fig.savefig(output_path, bbox_inches='tight', dpi=300)
+    plt.close(fig)
+    print(f"  ✓ Saved: {output_path}")
+    return output_path
+
+
+def fig_F3b_L_given_C(df: pd.DataFrame, h4: BinaryResultsWrapper, outdir: Path) -> Path:
+    """
+    F3b: L | C (V×C curves). Two lines: C=1 (orange, dash-dot), C=0 (orange, dotted).
+
+    Args:
+        df: DataFrame with growth (or L), z_V (or z_vagueness), founder_serial
+        h4: Logit model from test_h4_growth_interaction
+        outdir: Output directory
+
+    Returns:
+        Path to saved PNG
+    """
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    # Determine V column
+    V_col = 'z_V' if 'z_V' in df.columns else 'z_vagueness'
+
+    # Determine DV column (growth for h4)
+    DV_col = 'growth'
+
+    df_plot = df.dropna(subset=[DV_col, V_col, 'founder_serial'])
+
+    # V range
+    V_range = np.linspace(df_plot[V_col].min(), df_plot[V_col].max(), 100)
+
+    # Fix F at median if present
+    F_median = _num_median(df_plot, 'F_flexibility') if 'F_flexibility' in df_plot.columns else None
+
+    # Fix controls at median/mode
+    control_cols = ['founding_cohort', 'z_employees_log']
+    fixed = _fix_controls_at_median_mode(df_plot, control_cols)
+
+    # Plot for C=0 (First-time, dotted)
+    pred_df_0 = pd.DataFrame({V_col: V_range, 'founder_serial': 0})
+    if F_median is not None:
+        pred_df_0['F_flexibility'] = F_median
+    for k, v in fixed.items():
+        if v is not None:
+            pred_df_0[k] = v
+
+    try:
+        pred_0 = h4.predict(pred_df_0)
+        ax.plot(V_range, pred_0, color=PALETTE['C'], linestyle=':', linewidth=2.5, label='C=0 (First-time)')
+    except Exception as e:
+        print(f"  ⚠️ Could not plot F3b C=0 line: {e}")
+
+    # Plot for C=1 (Serial, dash-dot)
+    pred_df_1 = pd.DataFrame({V_col: V_range, 'founder_serial': 1})
+    if F_median is not None:
+        pred_df_1['F_flexibility'] = F_median
+    for k, v in fixed.items():
+        if v is not None:
+            pred_df_1[k] = v
+
+    try:
+        pred_1 = h4.predict(pred_df_1)
+        ax.plot(V_range, pred_1, color=PALETTE['C'], linestyle='-.', linewidth=2.5, label='C=1 (Serial)')
+    except Exception as e:
+        print(f"  ⚠️ Could not plot F3b C=1 line: {e}")
+
+    ax.set_xlabel('V (Vagueness, z-score)', fontsize=12, fontweight='bold', color=PALETTE['V'])
+    ax.set_ylabel('Pr(Growth = 1)', fontsize=12, fontweight='bold', color=PALETTE['L'])
+    ax.set_title('F3b. L | C (V×C)', fontsize=14, fontweight='bold')
+    ax.set_ylim([0, 1])
+    ax.legend(loc='best', fontsize=10)
+    ax.grid(True, alpha=0.3)
+
+    # Caption
+    ax.text(0.98, 0.02, 'F at median; controls fixed at median/mode',
+            transform=ax.transAxes, fontsize=8, ha='right', va='bottom', style='italic', color='gray')
+
+    output_path = outdir / 'F3b_L_given_C.png'
+    fig.savefig(output_path, bbox_inches='tight', dpi=300)
+    plt.close(fig)
+    print(f"  ✓ Saved: {output_path}")
+    return output_path
+
+
+def fig_F4_E(df: pd.DataFrame, outdir: Path) -> Path:
+    """
+    F4_E: Histogram of E (or E_scaled).
+
+    Args:
+        df: DataFrame with E or E_scaled
+        outdir: Output directory
+
+    Returns:
+        Path to saved PNG
+    """
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    fig, ax = plt.subplots(figsize=(8, 5))
+
+    E_col = 'E_scaled' if 'E_scaled' in df.columns else 'E'
+    data = df[E_col].dropna()
+
+    if len(data) == 0:
+        ax.text(0.5, 0.5, 'No data available for E', ha='center', va='center',
+                transform=ax.transAxes, fontsize=12)
+    elif data.nunique() <= 2:
+        # Binary E, use bar chart
+        counts = data.value_counts().sort_index()
+        ax.bar(range(len(counts)), counts.values, color=PALETTE['E'], edgecolor='black', alpha=0.7)
+        ax.set_xticks(range(len(counts)))
+        ax.set_xticklabels([f'{int(v)}' for v in counts.index])
+        ax.set_ylabel('Count', fontweight='bold')
+    else:
+        # Continuous E, use histogram
+        ax.hist(data, bins=30, color=PALETTE['E'], edgecolor='black', alpha=0.7)
+        ax.set_xlabel('E (Early Funding)', fontweight='bold')
+        ax.set_ylabel('Count', fontweight='bold')
+
+    ax.set_title(f'F4. E Distribution (n={len(data):,})', fontsize=14, fontweight='bold')
+    ax.grid(True, alpha=0.3)
+
+    output_path = outdir / 'F4_E.png'
+    fig.savefig(output_path, bbox_inches='tight', dpi=300)
+    plt.close(fig)
+    print(f"  ✓ Saved: {output_path}")
+    return output_path
+
+
+def fig_F4_L24(df: pd.DataFrame, outdir: Path) -> Path:
+    """
+    F4_L_2024: Bar chart of L_2024 (0/1 counts).
+
+    Args:
+        df: DataFrame with L_2024
+        outdir: Output directory
+
+    Returns:
+        Path to saved PNG
+    """
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    fig, ax = plt.subplots(figsize=(8, 5))
+
+    L_col = 'L_2024'
+    if L_col not in df.columns:
+        # Fallback to just 'L'
+        L_col = 'L' if 'L' in df.columns else None
+
+    if L_col is None or df[L_col].isna().all():
+        ax.text(0.5, 0.5, 'No data available for L_2024', ha='center', va='center',
+                transform=ax.transAxes, fontsize=12)
+    else:
+        data = df[L_col].dropna()
+        counts = data.value_counts().sort_index()
+        ax.bar(range(len(counts)), counts.values, color=PALETTE['L'], edgecolor='black', alpha=0.7)
+        ax.set_xticks(range(len(counts)))
+        ax.set_xticklabels([f'{int(v)}' for v in counts.index])
+        ax.set_ylabel('Count', fontweight='bold')
+        ax.set_title(f'F4. L_2024 Distribution (n={len(data):,})', fontsize=14, fontweight='bold')
+
+    ax.grid(True, alpha=0.3, axis='y')
+
+    output_path = outdir / 'F4_L_2024.png'
+    fig.savefig(output_path, bbox_inches='tight', dpi=300)
+    plt.close(fig)
+    print(f"  ✓ Saved: {output_path}")
+    return output_path
+
+
+def fig_F4_L25(df: pd.DataFrame, outdir: Path) -> Path:
+    """
+    F4_L_2025: Bar chart of L_2025 (0/1 counts).
+
+    Args:
+        df: DataFrame with L_2025
+        outdir: Output directory
+
+    Returns:
+        Path to saved PNG
+    """
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    fig, ax = plt.subplots(figsize=(8, 5))
+
+    L_col = 'L_2025'
+    if L_col not in df.columns:
+        # Fallback to just 'L'
+        L_col = 'L' if 'L' in df.columns else None
+
+    if L_col is None or df[L_col].isna().all():
+        ax.text(0.5, 0.5, 'No data available for L_2025', ha='center', va='center',
+                transform=ax.transAxes, fontsize=12)
+    else:
+        data = df[L_col].dropna()
+        counts = data.value_counts().sort_index()
+        ax.bar(range(len(counts)), counts.values, color=PALETTE['L'], edgecolor='black', alpha=0.7)
+        ax.set_xticks(range(len(counts)))
+        ax.set_xticklabels([f'{int(v)}' for v in counts.index])
+        ax.set_ylabel('Count', fontweight='bold')
+        ax.set_title(f'F4. L_2025 Distribution (n={len(data):,})', fontsize=14, fontweight='bold')
+
+    ax.grid(True, alpha=0.3, axis='y')
+
+    output_path = outdir / 'F4_L_2025.png'
+    fig.savefig(output_path, bbox_inches='tight', dpi=300)
+    plt.close(fig)
+    print(f"  ✓ Saved: {output_path}")
+    return output_path
+
+
+def fig_F4_V(df: pd.DataFrame, outdir: Path) -> Path:
+    """
+    F4_V: Histogram of z_V (or V).
+
+    Args:
+        df: DataFrame with z_V or V
+        outdir: Output directory
+
+    Returns:
+        Path to saved PNG
+    """
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    fig, ax = plt.subplots(figsize=(8, 5))
+
+    V_col = 'z_V' if 'z_V' in df.columns else 'V'
+    data = df[V_col].dropna()
+
+    if len(data) == 0:
+        ax.text(0.5, 0.5, 'No data available for V', ha='center', va='center',
+                transform=ax.transAxes, fontsize=12)
+    else:
+        ax.hist(data, bins=30, color=PALETTE['V'], edgecolor='black', alpha=0.7)
+        ax.set_xlabel('V (Vagueness, z-score)', fontweight='bold')
+        ax.set_ylabel('Count', fontweight='bold')
+        ax.set_title(f'F4. V Distribution (n={len(data):,})', fontsize=14, fontweight='bold')
+
+    ax.grid(True, alpha=0.3)
+
+    output_path = outdir / 'F4_V.png'
+    fig.savefig(output_path, bbox_inches='tight', dpi=300)
+    plt.close(fig)
+    print(f"  ✓ Saved: {output_path}")
+    return output_path
+
+
+def fig_F5_StepUp_by_F(df: pd.DataFrame, outdir: Path) -> Path:
+    """
+    F5: Step-up by F (survivors only). Boxplot of S_stepup_log by F_flexibility.
+
+    Args:
+        df: DataFrame with S_stepup_log, F_flexibility, L (or L_2025)
+        outdir: Output directory
+
+    Returns:
+        Path to saved PNG
+    """
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    fig, ax = plt.subplots(figsize=(8, 6))
+
+    # Filter to survivors (L==1)
+    L_col = 'L_2025' if 'L_2025' in df.columns else ('L' if 'L' in df.columns else None)
+
+    if L_col is None:
+        ax.text(0.5, 0.5, 'No L column available', ha='center', va='center',
+                transform=ax.transAxes, fontsize=12)
+    else:
+        df_surv = df[df[L_col] == 1].copy()
+        df_plot = df_surv.dropna(subset=['S_stepup_log', 'F_flexibility'])
+
+        if len(df_plot) < 5:
+            ax.text(0.5, 0.5, f'Insufficient survivor data (n={len(df_plot)})',
+                    ha='center', va='center', transform=ax.transAxes, fontsize=12)
+        else:
+            # Group by F
+            groups = []
+            labels = []
+            for f_val in sorted(df_plot['F_flexibility'].unique()):
+                subset = df_plot[df_plot['F_flexibility'] == f_val]['S_stepup_log']
+                groups.append(subset)
+                label = 'Software (F=1)' if f_val == 1 else 'Hardware (F=0)'
+                labels.append(f'{label}\n(n={len(subset)})')
+
+            bp = ax.boxplot(groups, labels=labels, patch_artist=True, widths=0.6)
+            for patch in bp['boxes']:
+                patch.set_facecolor(PALETTE['S'])
+                patch.set_alpha(0.7)
+
+            ax.set_ylabel('S (Step-up, log)', fontweight='bold', color=PALETTE['S'])
+            ax.set_title(f'F5. Step-up by F (Survivors only, n={len(df_plot):,})',
+                         fontsize=14, fontweight='bold')
+
+    ax.grid(True, alpha=0.3, axis='y')
+
+    output_path = outdir / 'F5_StepUp_by_F.png'
+    fig.savefig(output_path, bbox_inches='tight', dpi=300)
+    plt.close(fig)
+    print(f"  ✓ Saved: {output_path}")
+    return output_path
+
+
+def fig_F6_SpecCurve(spec_df: pd.DataFrame, outdir: Path) -> Path:
+    """
+    F6: Specification curve. Plot coefficients across specifications.
+
+    Args:
+        spec_df: DataFrame with columns: coefficient (or coef_vagueness), pvalue, term
+        outdir: Output directory
+
+    Returns:
+        Path to saved PNG
+    """
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    fig, ax = plt.subplots(figsize=(14, 6))
+
+    # Determine column names
+    coef_col = 'coefficient' if 'coefficient' in spec_df.columns else 'coef_vagueness'
+    pval_col = 'pvalue' if 'pvalue' in spec_df.columns else 'p_vagueness'
+
+    if coef_col not in spec_df.columns:
+        ax.text(0.5, 0.5, 'No coefficient column found in spec_df',
+                ha='center', va='center', transform=ax.transAxes, fontsize=12)
+    else:
+        df_plot = spec_df.copy()
+
+        # Sort by coefficient
+        df_plot = df_plot.sort_values(coef_col).reset_index(drop=True)
+        x = np.arange(len(df_plot))
+
+        # Color by term if available
+        if 'term' in df_plot.columns:
+            colors = []
+            for term in df_plot['term']:
+                if 'V' in str(term) and 'F' in str(term):
+                    colors.append(PALETTE['F'])  # V×F interaction
+                elif 'V' in str(term) and 'C' in str(term):
+                    colors.append(PALETTE['C'])  # V×C interaction
+                elif 'V' in str(term):
+                    colors.append(PALETTE['V'])  # V main effect
+                else:
+                    colors.append('gray')
+        else:
+            colors = [PALETTE['V']] * len(df_plot)
+
+        # Plot coefficients
+        ax.scatter(x, df_plot[coef_col], c=colors, s=40, alpha=0.7, edgecolors='black', linewidths=0.5)
+
+        # Add horizontal line at 0
+        ax.axhline(0, color='black', linestyle='--', linewidth=1, alpha=0.5)
+
+        # Add confidence bands if std_error available
+        if 'std_error' in df_plot.columns:
+            ax.errorbar(x, df_plot[coef_col], yerr=1.96 * df_plot['std_error'],
+                       fmt='none', alpha=0.2, color='gray')
+
+        ax.set_xlabel('Specification Index', fontsize=12, fontweight='bold')
+        ax.set_ylabel('Coefficient Estimate', fontsize=12, fontweight='bold')
+        ax.set_title(f'F6. Specification Curve (n={len(df_plot)} specs)', fontsize=14, fontweight='bold')
+        ax.grid(True, alpha=0.3)
+
+        # Legend if term column exists
+        if 'term' in df_plot.columns:
+            from matplotlib.patches import Patch
+            legend_elements = [
+                Patch(facecolor=PALETTE['V'], label='V (main)'),
+                Patch(facecolor=PALETTE['F'], label='V×F'),
+                Patch(facecolor=PALETTE['C'], label='V×C')
+            ]
+            ax.legend(handles=legend_elements, loc='best', fontsize=9)
+
+    output_path = outdir / 'F6_SpecCurve.png'
+    fig.savefig(output_path, bbox_inches='tight', dpi=300)
+    plt.close(fig)
+    print(f"  ✓ Saved: {output_path}")
+    return output_path
+
+
+def create_F_series(df: pd.DataFrame, results: dict, outdir: Path) -> dict:
+    """
+    Create all F-series plots (F1-F6) in one call.
+
+    Args:
+        df: DataFrame with analysis data
+        results: Dictionary with keys:
+            - 'hev': OLS from models.run_HEV(...)
+            - 'hlvf': Logit from models.run_HLVF(...)
+            - 'h4': Logit from models.test_h4_growth_interaction(...)
+            - 'hsf': (optional) OLS from models.run_HSF(...)
+            - 'spec_df': DataFrame for spec curve
+        outdir: Output directory for all plots
+
+    Returns:
+        Dictionary mapping figure names to Path objects:
+        {'F1': Path, 'F2': Path, 'F3a': Path, 'F3b': Path,
+         'F4_E': Path, 'F4_L24': Path, 'F4_L25': Path, 'F4_V': Path,
+         'F5': Path, 'F6': Path}
+    """
+    outdir = Path(outdir)
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    print("\n" + "="*80)
+    print("CREATING F-SERIES PLOTS")
+    print("="*80)
+
+    paths = {}
+
+    # F1: E vs V
+    if 'hev' in results and results['hev'] is not None:
+        print("\nF1: E vs V scatter with OLS fit...")
+        paths['F1'] = fig_F1_E_vs_V(df, results['hev'], outdir)
+    else:
+        print("\n⚠️  Skipping F1: hev model not provided")
+
+    # F2: Pr(L) vs V
+    if 'hlvf' in results and results['hlvf'] is not None:
+        print("\nF2: Pr(L) vs V...")
+        paths['F2'] = fig_F2_PrL_vs_V(df, results['hlvf'], outdir)
+    else:
+        print("\n⚠️  Skipping F2: hlvf model not provided")
+
+    # F3a: L|F
+    if 'hlvf' in results and results['hlvf'] is not None:
+        print("\nF3a: L | F (V×F curves)...")
+        paths['F3a'] = fig_F3a_L_given_F(df, results['hlvf'], outdir)
+    else:
+        print("\n⚠️  Skipping F3a: hlvf model not provided")
+
+    # F3b: L|C
+    if 'h4' in results and results['h4'] is not None:
+        print("\nF3b: L | C (V×C curves)...")
+        paths['F3b'] = fig_F3b_L_given_C(df, results['h4'], outdir)
+    else:
+        print("\n⚠️  Skipping F3b: h4 model not provided")
+
+    # F4: Distributions
+    print("\nF4: Variable distributions...")
+    paths['F4_E'] = fig_F4_E(df, outdir)
+    paths['F4_L24'] = fig_F4_L24(df, outdir)
+    paths['F4_L25'] = fig_F4_L25(df, outdir)
+    paths['F4_V'] = fig_F4_V(df, outdir)
+
+    # F5: Step-up by F
+    print("\nF5: Step-up by F (survivors only)...")
+    paths['F5'] = fig_F5_StepUp_by_F(df, outdir)
+
+    # F6: Spec curve
+    if 'spec_df' in results and results['spec_df'] is not None:
+        print("\nF6: Specification curve...")
+        paths['F6'] = fig_F6_SpecCurve(results['spec_df'], outdir)
+    else:
+        print("\n⚠️  Skipping F6: spec_df not provided")
+
+    print("\n" + "="*80)
+    print(f"✓ Created {len(paths)} F-series plots")
+    print("="*80)
+
+    return paths
+
+
+# =============================================================================
+# F-SERIES (HEV/HLVF/HSF) IMPORTS
+# =============================================================================
+# Import standardized F-series plotting functions with HEV/HLVF/HSF terminology
+# Reference: W2 slides - ELSVF palette & interaction conventions
+
+try:
+    from modules.plots_F_series import (
+        create_F_series,
+        fig_F1_E_vs_V,
+        fig_F2_PrL_vs_V,
+        fig_F3a_L_given_F,
+        fig_F3b_L_given_C,
+        fig_F4_E_dist,
+        fig_F4_L24_dist,
+        fig_F4_L25_dist,
+        fig_F4_V_dist,
+        fig_F4_F_dist,
+        fig_F5_stepup_by_F,
+        fig_F6_spec_curve,
+        PALETTE as F_SERIES_PALETTE
+    )
+    F_SERIES_AVAILABLE = True
+except ImportError:
+    F_SERIES_AVAILABLE = False
+    print("⚠️  F-series module not available. Install or check imports.")
+
+
 if __name__ == "__main__":
     print("Visualization Module - Standalone Test\n")
     print("=" * 80)
     print("This module is designed to be imported and used with real model results.")
-    print("Run the main pipeline script to generate visualizations.")
+    print("\nAvailable plotting suites:")
+    print("  • H1/H2 plots (legacy): plot_h1_scatter, plot_h2_interaction, etc.")
+    print("  • F-series (HEV/HLVF/HSF): create_F_series() from plots_F_series")
+    print("\nRun the main pipeline script to generate visualizations.")
+    print("=" * 80)

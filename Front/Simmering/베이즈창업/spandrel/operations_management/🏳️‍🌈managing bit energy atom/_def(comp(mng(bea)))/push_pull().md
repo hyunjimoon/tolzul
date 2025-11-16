@@ -429,7 +429,7 @@ The study of push-pull strategy remains a vibrant and essential domain within op
 By clearly articulating how it addresses one of the identified research gaps—for instance, by stating, "While much research has focused on the cost-service trade-off, this paper is the first to develop a quantitative model exploring the impact of AI-driven forecasting on the optimal CODP in a circular supply chain context"—an author can powerfully signal the novelty and importance of their work. The field is ripe for research that can provide clarity and guidance for managers designing the resilient, intelligent, and sustainable supply chains of the future.
 
 2025-06-20
-Pull vs Push Analysis Summary Table from [[michael_cusumano]] using[ primal-dual opt framework cld](https://claude.ai/chat/45957675-8b62-438a-a9bb-86d49b8f22b7)
+Pull vs Push Analysis Summary Table from [[michael_cusumano]] using[ primal-dual opt framework cld](https://claude.ai/chat/45957675-8b62-438a-a9bb-86d49b8f22b7)
 ## Table 1: Core Push-Pull Concepts and Characteristics
 
 | Row # | Category               | Push Characteristics                                     | Pull Characteristics                                       | Key Examples/Details                                          |

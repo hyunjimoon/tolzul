@@ -109,5 +109,5 @@ Paper1   Paper2   Paper3
 ---
 
 ## Related
-- [[Papers by Conversation]]
+- [[Space/Library/Maps/Papers by Conversation]]
 - [[Research Framework]]

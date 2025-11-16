@@ -5,8 +5,43 @@ modified:
   - 2025-10-20T21:52:14-04:00
   - 2025-10-21T08:54:28-04:00
   - 2025-10-22T08:41:46-04:00
+  - 2025-11-06T10:27:15-05:00
 URL: https://gemini.google.com/app/e605dca2904b1ced
 ---
+# choose customer
+
+⭐️you should be the one choosing the customer, not venture 
+
+in his leadership class, thomas malone emphasized the importance of "choosing to come to MIT". I can make other options, but the spirit and culture of "for the better world", I can't feel in other places.
+
+
+
+
+
+----
+# 10/24
+P.P.S. Erin chose “value chain strategy – unsung heroes” as her favorite strategies among the four. I think I committed too early to “architectural strategy”, instead of doing test two choose one.
+
+Hi Scott,
+
+could you offer a quick chat where I could learn your research agenda? 
+
+  
+
+After receiving the letter attached, I'm re-organizing myself to re-position. Moreover, I also chose "understanding others' needs" as a skill I should work on to pursue the academic career option I committed to recently. 
+
+  
+
+I know how busy you are so I'd prefer if you could share two to three papers you think will increase my absorptive capacity.
+
+  
+
+Angie
+
+P.S. Erin picked value chain strategy "unsung heros" as her favorite. I'm curious what your favorite is. Looking back, I committed too early to architectural strategy and would like to test value chain strategy, if that makes sense to you...
+
+---
+
 2025 [[10-21]], delivered my thoughts to scott via [[on love, bayes, what drives me]]
 
 # 초안

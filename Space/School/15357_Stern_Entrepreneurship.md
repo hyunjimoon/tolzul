@@ -1,13 +1,13 @@
 ---
 collection:
-  - "[[Courses]]"
+  - "[[Space/Library/Maps/Courses]]"
 by: "[[Scott Stern]]"
 year: 2024
 yearXP: 2024
-semester: "Spring 2024"
-courseCategory: "Innovation"
-courseStatus: "완료"
-institution: "MIT Sloan"
+semester: Spring 2024
+courseCategory: Innovation
+courseStatus: 완료
+institution: MIT Sloan
 courseCode: "15.357"
 image: ""
 created: 2024-01-01

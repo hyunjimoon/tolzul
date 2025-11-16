@@ -1,0 +1,23 @@
+MULTIVERSE ANALYSIS SUMMARY
+============================================================
+
+Total specifications: 288
+
+
+VAG_MAIN:
+----------------------------------------
+Consistent with hypothesis: 0 (0.0%)
+Significant surprises: 0 (0.0%)
+Mean evidence score: 0.12
+
+VAGXOPTION:
+----------------------------------------
+Consistent with hypothesis: 0 (0.0%)
+Significant surprises: 0 (0.0%)
+Mean evidence score: 0.00
+
+VAGXSOFTWARE:
+----------------------------------------
+Consistent with hypothesis: 0 (0.0%)
+Significant surprises: 0 (0.0%)
+Mean evidence score: -0.05

@@ -1,14 +1,14 @@
 ---
 collection:
-  - "[[Courses]]"
+  - "[[Space/Library/Maps/Courses]]"
 by: "[[Vikash Mansinghka]]"
 year: 2025
 yearXP: 2025
-semester: "Spring 2025"
-courseCategory: "CompBayes"
-courseStatus: "진행중"
-institution: "MIT EECS"
-courseCode: "6.S090"
+semester: Spring 2025
+courseCategory: CompBayes
+courseStatus: 진행중
+institution: MIT EECS
+courseCode: 6.S090
 image: ""
 created: 2025-01-01
 rank: 5

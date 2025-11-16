@@ -1,6 +1,6 @@
 ---
 collection:
-  - "[[Courses]]"
+  - "[[Space/Library/Maps/Courses]]"
 course: "[[15.911 Entrepreneurial Strategy]]"
 instructor: Scott Stern
 created: 2025-11-01

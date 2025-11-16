@@ -1,18 +1,22 @@
 ---
 collection:
-  - "[[Books]]"
+  - "[[Space/Library/Maps/Books]]"
   - "[[Sources]]"
 related:
 by:
   - "[[{{author}}]]"
 publisher: "[[{{publisher}}]]"
-published: {{publishDate}}
+published:
+  "{ publishDate }":
 created: "{{DATE:YYYY-MM-DD}}"
 bookType:
-bookCategory: {{category}}
+bookCategory:
+  "{ category }":
 bookGroup:
-pages: {{totalPage}}
-image: {{coverUrl}}
+pages:
+  "{ totalPage }":
+image:
+  "{ coverUrl }":
 year:
 yearXP:
 yearXPL:

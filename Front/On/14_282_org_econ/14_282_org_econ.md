@@ -1,6 +1,6 @@
 ---
 collection:
-  - "[[Courses]]"
+  - "[[Space/Library/Maps/Courses]]"
 by:
   - "[[Robert Gibbons]]"
   - "[[Namrata Kala]]"

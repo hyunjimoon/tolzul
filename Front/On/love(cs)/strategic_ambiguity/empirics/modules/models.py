@@ -365,3 +365,220 @@ def test_h4_growth_interaction(
         "See diagnostics above for details. Data may have perfect separation or "
         "severe multicollinearity."
     )
+
+
+# ========================================
+# TWO-SNAPSHOT MODE (E/L/S/V/F)
+# ========================================
+"""
+Simplified hypothesis tests for two-snapshot validation mode.
+
+Variables:
+  - E: Early event (1 if Series A at baseline)
+  - L: Later success (1 if Series B+ at endpoint)
+  - S: Step-up = PreMoney_t2 / PostMoney_t1 (Nanda 2024)
+  - V: Vagueness (z-scored)
+  - F: Flexibility = 1 - is_hardware
+"""
+
+def run_HEV(
+    df: pd.DataFrame,
+    formula: str = "E ~ z_V + C(founding_cohort) + C(region)"
+) -> RegressionResultsWrapper:
+    """
+    H1 (Two-snapshot): Early event ~ Vagueness
+
+    Model: E ~ V + Controls (OLS)
+    Expected: α₁ < 0 (vagueness reduces early funding likelihood)
+
+    Args:
+        df: DataFrame with E, z_V, founding_cohort, region
+        formula: R-style formula (default includes cohort and region controls)
+
+    Returns:
+        Statsmodels OLS results object
+    """
+    d = df.dropna(subset=['E', 'z_V']).copy()
+
+    print(f"\n  📊 H1 (E~V) Diagnostics:")
+    print(f"     Sample size: {len(d):,}")
+    print(f"     E rate: {d['E'].mean():.1%}")
+    print(f"     V mean: {d['z_V'].mean():.3f}, std: {d['z_V'].std():.3f}")
+
+    model = smf.ols(formula, data=d).fit()
+    return model
+
+
+def run_HLVF(
+    df: pd.DataFrame,
+    formula: str = "L ~ z_V * F_flexibility + C(founding_cohort) + C(region)"
+) -> BinaryResultsWrapper:
+    """
+    H2 (Two-snapshot): Later success ~ Vagueness × Flexibility
+
+    Model: L ~ V × F + Controls (Logit)
+    Expected: β₁ > 0 (positive main effect of vagueness)
+              β₃ > 0 (POSITIVE interaction: flexibility AMPLIFIES vagueness benefit)
+
+    Args:
+        df: DataFrame with L, z_V, F_flexibility, founding_cohort, region
+        formula: R-style formula (default includes cohort and region controls)
+
+    Returns:
+        Statsmodels logit results object
+    """
+    d = df.dropna(subset=['L', 'z_V', 'F_flexibility']).copy()
+
+    print(f"\n  📊 H2 (L~V×F) Diagnostics:")
+    print(f"     Sample size: {len(d):,}")
+    print(f"     L rate: {d['L'].mean():.1%}")
+    print(f"     F mean: {d['F_flexibility'].mean():.3f}, std: {d['F_flexibility'].std():.3f}")
+
+    flexibility_dist = d['F_flexibility'].value_counts()
+    print(f"     Flexibility distribution:")
+    for val, count in flexibility_dist.items():
+        pct = count / len(d) * 100
+        label = 'Software (Flexible)' if val == 1 else 'Hardware (Rigid)'
+        print(f"       {label}: {count:,} ({pct:.1f}%)")
+
+    if len(flexibility_dist) > 1:
+        L_by_F = d.groupby('F_flexibility')['L'].agg(['mean', 'count'])
+        print(f"     L rate by flexibility:")
+        for idx, row in L_by_F.iterrows():
+            label = 'Software' if idx == 1 else 'Hardware'
+            print(f"       {label}: {row['mean']:.1%} (n={int(row['count']):,})")
+
+    print(f"\n  🔧 Fitting H2 model...")
+
+    # Try normal fit
+    try:
+        print(f"     Stage 1: Attempting standard logit fit...")
+        model = smf.logit(formula, data=d).fit(disp=False)
+        print(f"     ✓ Standard fit successful")
+        return model
+    except Exception:
+        print(f"     ✗ Standard fit failed, trying L1 regularization...")
+
+    # Try L1 regularization
+    try:
+        print(f"     Stage 2: Attempting L1 regularization (alpha=0.1)...")
+        model = smf.logit(formula, data=d).fit_regularized(
+            method='l1', alpha=0.1, disp=False, maxiter=200, warn_convergence=False
+        )
+        print(f"     ✓ L1 (alpha=0.1) successful")
+        return model
+    except Exception:
+        print(f"     ✗ L1 (alpha=0.1) failed, trying stronger regularization...")
+
+    # Try stronger regularization
+    try:
+        print(f"     Stage 3: Attempting L1 regularization (alpha=0.5)...")
+        model = smf.logit(formula, data=d).fit_regularized(
+            method='l1', alpha=0.5, disp=False, maxiter=200, warn_convergence=False
+        )
+        print(f"     ✓ L1 (alpha=0.5) successful")
+        return model
+    except Exception:
+        raise RuntimeError(
+            "H2 (L~V×F) model convergence failed. See diagnostics above. "
+            "Data may have perfect separation or severe multicollinearity."
+        )
+
+
+def run_HSF(
+    df: pd.DataFrame,
+    formula: str = "S_stepup_log ~ z_V * F_flexibility + C(founding_cohort) + C(region)"
+) -> RegressionResultsWrapper:
+    """
+    H3 (Two-snapshot): Step-up ~ Vagueness × Flexibility
+
+    Model: log(S) ~ V × F + Controls (OLS, L==1 only)
+    Expected: β₁ > 0 (positive main effect of vagueness)
+              β₃ > 0 (POSITIVE interaction: flexibility AMPLIFIES vagueness benefit)
+
+    IMPORTANT: Only analyzes companies with L==1 (achieved Series B+)
+
+    Args:
+        df: DataFrame with S_stepup_log, z_V, F_flexibility, L, founding_cohort, region
+        formula: R-style formula (default includes cohort and region controls)
+
+    Returns:
+        Statsmodels OLS results object
+
+    Note:
+        S (Step-up) = PreMoney_t2 / PostMoney_t1 (Nanda 2024)
+        Higher S indicates larger valuation jump between rounds
+    """
+    # Filter to L==1 companies only
+    d = df[df['L'] == 1].copy()
+    d = d.dropna(subset=['S_stepup_log', 'z_V', 'F_flexibility']).copy()
+
+    print(f"\n  📊 H3 (S~V×F, L==1 only) Diagnostics:")
+    print(f"     Sample size: {len(d):,} (filtered from {len(df):,} total)")
+
+    # Early exit if no data
+    if len(d) == 0:
+        print(f"\n  ❌ ERROR: No valid data for H3 analysis")
+        print(f"     Possible causes:")
+        print(f"       - No companies with L==1 (achieved later success)")
+        print(f"       - No valid S_stepup_log values (missing valuation data)")
+        print(f"       - All survivors missing z_V or F_flexibility")
+        print(f"\n     Debug info:")
+        print(f"       Total companies: {len(df):,}")
+        print(f"       L==1 survivors: {(df['L']==1).sum():,}")
+        print(f"       Valid S_stepup_log: {df['S_stepup_log'].notna().sum():,}")
+        print(f"       Valid z_V: {df['z_V'].notna().sum():,}")
+        print(f"       Valid F_flexibility: {df['F_flexibility'].notna().sum():,}")
+        raise ValueError(
+            "H3 (run_HSF) requires survivors with valid step-up data. "
+            "Found 0 valid observations after filtering to L==1 and dropping NAs. "
+            "Check your valuation data pipeline."
+        )
+
+    print(f"     S_log mean: {d['S_stepup_log'].mean():.3f}, std: {d['S_stepup_log'].std():.3f}")
+    print(f"     V mean: {d['z_V'].mean():.3f}, std: {d['z_V'].std():.3f}")
+
+    flexibility_dist = d['F_flexibility'].value_counts()
+    print(f"     Flexibility distribution:")
+    for val, count in flexibility_dist.items():
+        pct = count / len(d) * 100
+        label = 'Software (Flexible)' if val == 1 else 'Hardware (Rigid)'
+        print(f"       {label}: {count:,} ({pct:.1f}%)")
+
+    if len(flexibility_dist) > 1:
+        S_by_F = d.groupby('F_flexibility')['S_stepup_log'].agg(['mean', 'std', 'count'])
+        print(f"     S_log by flexibility:")
+        for idx, row in S_by_F.iterrows():
+            label = 'Software' if idx == 1 else 'Hardware'
+            print(f"       {label}: {row['mean']:.3f} (±{row['std']:.3f}, n={int(row['count']):,})")
+
+    print(f"\n  🔧 Fitting H3 model...")
+
+    # Check if we have enough categories for controls
+    cohort_levels = d['founding_cohort'].nunique() if 'founding_cohort' in d.columns else 0
+    region_levels = d['region'].nunique() if 'region' in d.columns else 0
+
+    # Build formula based on available categorical levels
+    if cohort_levels < 2 and region_levels < 2:
+        # No categorical controls available
+        simple_formula = "S_stepup_log ~ z_V * F_flexibility"
+        print(f"     ⚠️  Warning: Insufficient categorical levels. Using simplified model without controls.")
+        print(f"        founding_cohort levels: {cohort_levels}, region levels: {region_levels}")
+        model = smf.ols(simple_formula, data=d).fit()
+    elif cohort_levels < 2:
+        # Only region control available
+        partial_formula = "S_stepup_log ~ z_V * F_flexibility + C(region)"
+        print(f"     ⚠️  Warning: Insufficient founding_cohort levels ({cohort_levels}). Using region control only.")
+        model = smf.ols(partial_formula, data=d).fit()
+    elif region_levels < 2:
+        # Only cohort control available
+        partial_formula = "S_stepup_log ~ z_V * F_flexibility + C(founding_cohort)"
+        print(f"     ⚠️  Warning: Insufficient region levels ({region_levels}). Using cohort control only.")
+        model = smf.ols(partial_formula, data=d).fit()
+    else:
+        # Full model with both controls
+        model = smf.ols(formula, data=d).fit()
+
+    print(f"     ✓ OLS fit successful")
+
+    return model

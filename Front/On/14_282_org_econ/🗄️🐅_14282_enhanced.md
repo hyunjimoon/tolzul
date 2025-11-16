@@ -1,6 +1,6 @@
 ---
 collection:
-  - "[[Courses]]"
+  - "[[Space/Library/Maps/Courses]]"
 course: "[[14.282 Organizational Economics]]"
 created: 2025-10-19
 modified:

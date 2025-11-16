@@ -4,4 +4,4 @@ mapState:
   - 🟨
   - 🟩
 ---
-This note has all of the possible values for the above fields to be used in [[Maps]]
+This note has all of the possible values for the above fields to be used in [[Space/Library/Maps/Maps]]

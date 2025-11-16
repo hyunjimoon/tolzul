@@ -1,13 +1,16 @@
 ---
 collection:
-- '[[People]]'
+  - "[[People]]"
 field:
-- 🐙ops
-- 🐢inv
+  - 🐙ops
+  - 🐢inv
 atom: 👓atom(BE🔄)
-created: '2025-04-03'
+created: 2025-04-03
+modified:
+  - 2025-11-08T06:18:20-05:00
 ---
-
+25-11-06
+![[x/Images/ocean_jangda 2025_11_08.excalidraw]]
 [[09-30|25-09-30]]
 
 fire, crops, wind/water, coal, oil/gas, electricity

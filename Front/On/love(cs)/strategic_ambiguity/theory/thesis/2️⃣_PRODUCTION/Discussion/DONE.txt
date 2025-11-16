@@ -1,0 +1,106 @@
+# ✅ Discussion Section Complete
+
+**Date:** 2025-11-16  
+**Status:** Production-ready draft completed  
+**Next:** Final review and compilation to paper.pdf
+
+---
+
+## 📊 Section Contents
+
+### **1. Theoretical Implications (3 pages)**
+- ✅ Temporal reversal mechanism
+- ✅ Architecture as boundary condition  
+- ✅ Reconciliation of information vs. options schools
+
+### **2. Managerial Implications (2 pages)**
+- ✅ Promise design strategies (by architecture)
+- ✅ Pivot planning guidelines
+- ✅ Investor evaluation heuristics
+
+### **3. Limitations (1.5 pages)**
+- ✅ Selection bias (with Heckman correction)
+- ✅ Context specificity (generalization checks)
+- ✅ Measurement issues (vagueness & pivot coding)
+
+### **4. Future Research (1 page)**
+- ✅ Other industries
+- ✅ Oral vs. written promises
+- ✅ Investor heterogeneity
+- ✅ Dynamic promise updating
+
+### **5. Conclusion (0.5 pages)**
+- ✅ Core message summary
+- ✅ Key contributions table
+- ✅ Closing thought
+
+**Total:** ~8 pages (within standard Discussion section length for MS journals)
+
+---
+
+## 🔗 Integration with Other Sections
+
+### **Backward Links:**
+- Theory → Discussion: VOI vs. RO framework applied
+- Empirics_Early → Discussion: H1 results referenced in temporal reversal
+- Empirics_Later → Discussion: H2a/b/c results fully integrated
+
+### **Forward Links:**
+- None (Discussion is final section before appendices)
+
+---
+
+## 📚 References to Add
+
+**New citations introduced in Discussion:**
+1. McGrath, R. G. (1997). A real options logic for initiating technology positioning investments. *AMR*, 22(4), 974-996.
+2. Kogut, B., & Kulatilaka, N. (2001). Capabilities as real options. *Organization Science*, 12(6), 744-758.
+3. Fine, C. H. (2000). *Clockspeed: Winning Industry Control in the Age of Temporary Advantage*. Basic Books.
+
+**Already in References (from earlier sections):**
+- Zuckerman (1999), Hannan et al. (2007), Pontikes (2012), Granqvist et al. (2013), Pan et al. (2018)
+
+---
+
+## 🎯 Deliverables Checklist
+
+- [x] draft.md written
+- [x] Key contributions clearly stated
+- [x] Limitations honestly addressed
+- [x] Future research directions identified
+- [x] Closing thought memorable
+- [ ] Proofread by advisor (Scott/Charlie)
+- [ ] Integrated into full paper LaTeX template
+
+---
+
+## 🚀 Next Steps
+
+1. **Compile full paper:**
+   ```bash
+   cd 2️⃣_PRODUCTION
+   pandoc \
+     Theory/draft.md \
+     Empirics_Early/draft.md \
+     Empirics_Later/draft.md \
+     Discussion/draft.md \
+     -o ../3️⃣_OUTPUT/paper.pdf \
+     --bibliography=references.bib \
+     --csl=chicago-author-date.csl
+   ```
+
+2. **Generate STATUS.md:**
+   ```bash
+   cd ../../
+   python scripts/generate_status.py
+   ```
+
+3. **Final review:**
+   - Scott: Theory + Implications alignment
+   - Charlie: Managerial + Operations clarity
+   - 김완: Empirics integration
+
+---
+
+*Last updated: 2025-11-16*  
+*Completed by: 권준/나대용 (中軍)*

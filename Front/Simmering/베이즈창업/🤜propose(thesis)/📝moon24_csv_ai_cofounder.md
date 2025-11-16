@@ -1,5 +1,5 @@
 2025-03-12
-reacting to [[charlie_fine]]'s need on venturing in transportation , i applied theories from below to [[🛝mmi24_2]], [[MMI forum]], [[mmi2024]] for my [[⭐️thesis]]
+reacting to [[charlie_fine]]'s need on venturing in transportation , i applied theories from below to [[Space/School/24_🚗Zhao23_behav_mob_ai/🛝mmi24_2]], [[MMI forum]], [[mmi2024]] for my [[⭐️thesis]]
 
 [[3.1 Entrepreneurs are not secretaries]]
  [[3.2 bayesian_calibration]]

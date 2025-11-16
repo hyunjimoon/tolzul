@@ -1,12 +1,14 @@
 ---
 collection:
-  - "[[Courses]]"
+  - "[[Space/Library/Maps/Courses]]"
 course: "[[14.282 Organizational Economics]]"
 created: 2025-10-19
 modified:
   - 2025-10-19T18:00:00-04:00
+  - 2025-11-06T11:32:35-05:00
+  - 2025-11-15T07:19:51-05:00
 ---
-
+to bob and charlie: This class contributed to my commitment to academic career. Bob's instruction style and devotion (using his word) to his field mesmerized me. (Ironically가 더 나았다) However,  I chose to focus more deeply on my research. 
 # 🗄️🐢🐢 - 14.282 Organizational Economics
 
 > *"From Incentives to Control to Adaptation: How visible hands build equilibria"*
@@ -117,14 +119,15 @@ modified:
 
 **Core Question**: How do firms collaborate without integration? What sustains relational contracts?
 
-| **Paper** | **Author(s)** | **Year** | **Key Insight** | **Status** |
-|-----------|--------------|----------|-----------------|-----------|
-| On the Management of Innovation | Aghion & Tirole | 1994 | Control allocation | [[📜aghion94_innovation]] |
-| Relational Contracts and Theory of Firm | Baker, Gibbons, Murphy | 2002 | RC & firm boundaries | ⭐️ [[📜bgm02_relational]] |
-| Value of Relationships: Kenya Roses | Macchiavello & Morjaria | 2015 | Supply shock & relationships | ⭐️ [[📜mm15_kenya_roses]] |
-| Competition and Relational Contracts: Rwanda Coffee | Macchiavello & Morjaria | 2021 | Competition effects | [[📜mm21_rwanda_coffee]] |
-| Strategic Default in Coffee Market | Blouin & Macchiavello | 2019 | Default incentives | [[📜blouin19_default]] |
-| Multinational Enforcement of Labor Law | Boudreau | 2024 | OSH committees | [[📜boudreau24_osh]] |
+| **Paper**                                           | **Author(s)**           | **Year** | **Key Insight**              | **Status**                |
+| --------------------------------------------------- | ----------------------- | -------- | ---------------------------- | ------------------------- |
+| On the Management of Innovation                     | Aghion & Tirole         | 1994     | Control allocation           | [[📜aghion94_innovation]] |
+| Relational Contracts and Theory of Firm             | Baker, Gibbons, Murphy  | 2002     | RC & firm boundaries         | ⭐️ [[📜bgm02_relational]] |
+| Value of Relationships: Kenya Roses                 | Macchiavello & Morjaria | 2015     | Supply shock & relationships | ⭐️ [[📜mm15_kenya_roses]] |
+| Competition and Relational Contracts: Rwanda Coffee | Macchiavello & Morjaria | 2021     | Competition effects          | [[📜mm21_rwanda_coffee]]  |
+| Strategic Default in Coffee Market                  | Blouin & Macchiavello   | 2019     | Default incentives           | [[📜blouin19_default]]    |
+| Multinational Enforcement of Labor Law              | Boudreau                | 2024     | OSH committees               | [[📜boudreau24_osh]]      |
+|                                                     |                         |          |                              |                           |
 
 **Critical Themes**:
 - Relational contracts sustained by future rents

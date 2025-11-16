@@ -1,0 +1,446 @@
+think Charlie is here Good Morning. I'm coming to Charlie. I
+
+David is here.
+
+Bucha. Bucha. Sally
+
+Bunger i i was excited to meet you this morning, so I sent a minimal, sufficient decision that we need to make. And in order to make a decision, we have to know a lot of all my two weeks thought processes concise in it. So let's start from there. But before starting, I want to ask like, what's your expected expectation of the output of the meeting today?
+
+So what is the paper due?
+
+Is it 20s? Yeah, two days from now.
+
+So I would say the output of this meeting has to be plans or how we're going to finish the paper.
+
+How about you, Jamie, a little more like process specific. What do you think is the priority for today?
+
+Same goal, finishing the paper and making sure we don't add any more stuff. At this point, we only review what we have, and even if we don't love it, we have to work with what we have, because every week we wrote a new paper, which is super exciting, but at this point, we have to work with what is that at hand and stick to it all the rest could make lots of other papers in the future. And I, I wish us this happen, happening. But for this one, we have to be very, yeah, stable on that.
+
+To be honest. I think the best way to implement that is for me to more here than talk.
+
+You have to tell us what is the core paper that you think we have? Yes, and then we'll work around that. Got it at
+
+this point, I think the most efficient use of our time would be that you go through the paper and explain it to Charlie, because we also work in it in interval. So then we check, and Charlie help us to check that the outline or the structure makes sense and and then we can pinpoint some specific aspect of it, because we have lots of other material that we did not include in this one after a lot of back and forth. So first we want to make sure that this paper structure makes sense, that there is an argument, that it's kind of cohesive them, and then we can finish it in the next two days. There is a second point, which is not the content, it's more the form. But we have an overly paper and they are expecting a world paper, so we have to keep, sometimes, like two or three hours just for reformatting of the papers between me and you, but I wanted to say it, yeah. Do
+
+you think scheduling a meeting for reformatting would be needed or, like your preference? No,
+
+asynchronous. We do it. Asynchronous.
+
+Got it. So on the right is our over live paper, and just for your information. JB, I had gone through one synchronization with Charlie on Monday, so Okay, let's go. He is, yeah, yeah, he is aware of the abstract. And the main thing that we have, Charlie helped me do was to somehow make very concrete what the different examples of the uncertainty opportunity is, and I went through them again today. Let me just share you what Charlie and I had gone through and what I had distilled based on that. Yeah, so, so where this uncertainty comes in is in the hierarchy the entrepreneurs go through the hierarchy of opportunity class. So this is like a high, hyper prior level. And based on that, what is their sampling strategy? And this is where our apparel accepted, versus configurative and sequential adaptive comes in. And based on that, they choose the operational parameter. So I try to build some more Bayesian way of how options are created. And option, I am using that word to imply that there is some exchangeability among them. So kind of go and and for the power wall or I wasn't sure whether I should view power wall as one organism, or Tesla as one organism. Because, as you can see in this confusion, this is viewing Tesla as one organism, but maybe we should change it as a Yeah, Tesla or powerwall. Powerwall
+
+is the house battery system, yeah.
+
+And originally I used this for BYD so they had the safe and dance and cheap features coming together. So we can think it as three things, even though, BYD may not have intended that those different options of products that is a result of like either cheap or dense or safe, that combinations creates this so,
+
+So Angie, you're in the middle. Okay, let's go to this top. Got it? Sorry, yeah,
+
+thanks for the comment. When you say top, you mean where we are heading. What's
+
+the high level story? The high level assertions, claims, contributions, whatever you want to say, yeah. And then this, how does it illustrate those? This is the heart of the paper, yeah, the exam. Or an example illustrating the heart of what we're doing. Then how does that illustrate what we are asserting at the at the top of the paper got
+
+it. Thanks for your injection. And I think the main contribution of the paper started from trying to prescribe different sampling algorithms or strategy given the uncertainty level
+
+go higher. Okay. Whose problem are we solving? Are we solving the problem of an entrepreneur? Yes. Okay. And what problem does that entrepreneur
+
+face first? They don't know how uncertain their idea is like, whether among the four quadrant,
+
+what the entrepreneur's starting point is, he or she thinks he has product idea and a target market is that
+
+like need and solution, need and solution? Yes, yes. So
+
+I have a need that I've identified and have a potential solution, yes, yes. Okay, so what? So now state my problem. Um,
+
+this is in this level. I don't know where my need and solution is, and I think it's kind of mixture of all of them. But why choosing classifying isn't
+
+my problem, that I need to gather information to refine my understanding of the need, my understanding, and therefore my understanding of what product will satisfy, the need that there's a there's an infinite that we need to learn, yeah, and we need to create or design or adapt exact, right is that kind of the core of the story? Yeah,
+
+and I think this is in a more level of a learning part, and some like going to Mars with the new technology, may be in a high uncertainty thing in 2020 but 10 year or 20 years from now, that uncertainty would change, so how to adapt their or how their sampling strategy should evolve based on the uncertainty level identified that process is what I'm trying to address. So
+
+so we might characterize entrepreneurs. So if we say we are, we're going to serve our this model serves an entrepreneur who has an idea about a need and an idea about solution. The next is the next step to identify which quadrant this entrepreneur lives in, this entrepreneur living in trying to go to Mars, the high or is this entrepreneur living in trying to create a pizza restaurant? Good, yeah. I agree with that. Yes. Yes, yes. So we have an entrepreneur with a need and a solution idea, our algorithm for this entrepreneur is, first, we want to identify which quadrant you're in of these four quadrants, and then we want to help you with a strategy. Given the quadrant here
+
+is this, yes? Is that right? Yes. And so
+
+that sound right to you.
+
+That sounds good to me. I need maybe some concrete example of that, especially also, why do we choose transportation? But yeah, that's that makes sense to me. Well, this is
+
+not all transportation anymore, because we put the pizza franchise in there, but we can put car rental instead of pizza franchise. If you okay, the pizza franchise came out of a conversation.
+
+I mean, you can, you can have pizza in your car. Well, but
+
+I was using pizza franchise as an example of, yeah, there's not a lot of innovation there, but you have, if you want to, well, never mind. We don't have to go there. Okay, so, but, but in terms of structuring the paper, yeah, we want to start out by saying, I think that we are building a model for to support the needs of an entrepreneur. We have some particular ideas about that. But step one is we want to characterize our entrepreneur by where he or she lives in this four quadrant space, and then depending upon where they live, then we're going to suggest different strategies, adaptation, excitation, whatever is that right? Yes. Is that the right sequence of
+
+thought? Sequence? Yes. And I think this, I want
+
+to hear JBS response too. Thanks.
+
+I think so. But to be honest, this is pretty new to me, also this new quadrant and all these missing because it's only one week old. So I have to to understand this as well. So I'm also curious to learn more.
+
+So it was new to me on Monday. Now it's two days old in my life, but I guess my sense was that Angie was proposing this two by two as the an organizing structure that that leads us to to the issues about whether what's required is adaptation or acceptation or or the or the other strategies that we identify, and We have to make sure that makes logical sense. And so in addition to what you have here, Tesla, powerwall and pizza franchise, I think you need to put, where does adaptation come in? Where does acceptation come in? Yeah, those things, right, yes,
+
+yeah, I'm trying to think of a best way to summarize my thought journey, but it's very challenging because so I started by thinking about, what are some conditions where parallel, they accept the CO opted non adaptation would be best, and what I went through you together the mid journey was there are some time components. If the implementation time is very long, then parallel is good. And if you have a lot of resource, parallel is good. And so what I try to characterize is, what are some fundamental root causes that seems to be the cause of all the conditions where parallel might be good. And that led me to this simple two by two, because there are some sequence in it, meaning low to medium to high, just like we had the adaptive to co opted adaptive, and also the CO opted non action, and also medium, some mix of low and high, meaning that it is the newness of the need or newness of the solution. So I thought this two by two represent very well what the table that we have constructed last time, which is this table? Yeah, so this CO opted adaptation is the medium and hold up, yeah, co opted adaptation is medium and adaptive is sequential improvement, so it is low, and CO opted, non option is high. So many different features, assembly and come like no function becomes a new function.
+
+So just one comment. So just one comment. I did my PhD on exaptation. I'm working for the last months and few weeks with you on this I didn't understand that at all in this quadrant, and I am a super expert on the field, so I have a problem to relate what you just said. I really like what you said, but I don't see it in this quadrant. It's very hard for me to sorry to be blunt, but it's very hard for me to relate what you said to what I see. Yeah.
+
+Have you studied acceptation in a prescription sense? Because what I felt was most of the research are very descriptive, and this is relevant to what I mentioned as not replicating the biological implementation of the nature, but abstracting and applying to prescribe to the entrepreneurs.
+
+Yes, so historically, adaptation, adaptation is retrospective. It's coming from biology. Is like we look at the world and then we try to understand what happened. And we said, this happened, and we call it this adaptive, this appendices executive. But when the shift went from biology to economy to innovation, then it's some people started to use it as a generative model, not just as a descriptive of the past, but trying to use it as a matrix to predict different kind of options and futures. And in this respect, yes, exaptation has been trying to be used by people qualitatively as a way to open new options. Very few people managed to do that quantitatively. And I think our our article trying to connect by Asian thinking to these qualitative theories would be an attempt to do that. So I think maybe one of the strategy we should, we should use, is trying not to shove into this paper too much stuff, but really doing step by step, so we can already be one of these first papers doing quantitative exam, because there are very few. There is one or two in the literature review we've done that are doing that, but very little. One of them is by the head of the Sony Computer Lab in Paris, this Italian Vittorio, this Italian guy. But very few people have managed to do that. So yeah. Does that answer your question? Yeah.
+
+Yes, and I was trying to do was just like having some exchangeable option gives you a better sense of how to evaluate your final choice. What I the kind of work style of me is trying to give different spectrum of the final product, so that both you and Charlie can give me, like, what is the best boundary to present in the outer world? I know it has been some very like confusing because there are different variants of it, but I hope, like, in order to know what food is tasty, you need to know like, what Food is not tasty as well. So, yeah, that's
+
+right, but, but this is the the buffet kind of model coming from French cuisine. There is a menu with an entree, with a starter entree and a dessert. It's linear and it's very legible compared to you have so many options, but at the end. So I also need some linear structure in order to understand what we are doing, because I think the time of exploring the space as ly should stop today, and now we have to linearize. We have to agree, and then we have to turn this PDF from latex into a Microsoft Word and send it. I think this is what we should do now, yeah, I
+
+agree. In that sense, I need some honest feedback. Do you think adding this two by two is a good choice or a bad choice?
+
+I think at this point, and maybe I try to imagine what Charlie is looking at now, maybe we should have a look over to all the article the structure, not just this point for the moment. So we agree on what is the global narrative we want to say, and then we can see if this particular diagram or visualization makes sense in that would that make sense to you? Charlie, yes,
+
+absolutely. And I was just thinking maybe we should start at the end. That is, you said your one of your objectives is to have a paper that provides a mathematization of acceptation and and. So if that's our end goal, that is to have mathematized some aspect of examination, do we know what that looks like? Do we do we know what that I
+
+think that was a question to Eugene, well,
+
+to both of you, you wrote all the math in the paper, though, is it right? I
+
+tried to suggest many different mathematizing of it, but I wasn't sure whether JB liked it or not. Like exchangeability or the decision quality was too much that I suggested from the Yes,
+
+I like the exchange ability. I think it makes, it makes a lot of sense. I think the two core contribution of this paper is to
+
+is
+
+to introduce an attempt to quantify exaptation, and especially prescriptive acceptation, not just retrospective, not just was this adaptation compared to if I do this and that will I? Will I obtain adaptation in the future? Because this is what is more interesting for entrepreneur, to for to strategize, to have options, not just to review what they've done in the past, which is also important, but not enough. And the second one is the exchangeability framework that could help with that. And and I trust you to give the best mathematization of it through your Bayesian knowledge, because there are so many ways also to mathematize that. So yeah.
+
+So as you're talking I was thinking, is the title of this paper? I know we already have a title, but should the title essentially be prescriptive acceptation, colon and application and entrepreneurship, something like that. Is that prescriptive acceptation with application and on the correction, is that what we're trying to deliver?
+
+I Yeah, I think so. Because motivation, after reading tables to disruptive tech destructive paper was it is important to have the functional access and not only backward looking, but also forward looking. And I think that is the core goal of how to mathematize that functional access, and that was where a lot of option created from exchangeability. Maybe JV has different opinions.
+
+No, no, I like this title. I think it's it's concise, it contains all the important difference different shaders of our article and the one we have now. So so far, let me look at it, because I changed it also based on what you said. Angie, so let me look over this. So now, so it's now recovering beyond known how exactation and exchangeability guide entrepreneurial innovation. Okay, so I think we try to shove too much, too much concept in that. And I think for the sake of clarity, no, sorry to be blunt, but for the sake of clarity, I think it makes more sense what Charlie proposed. And then in the abstract, we can introduce other concepts, such as exchangeability, which is an operational concept for us. But the key concept here is more acceptation, because this is what we discuss as different way. Because naively, we were like, We think adaptation is the only model to innovate. You know, you have something doesn't work. You adapt. You adapt it, and works a bit better under selective pressure of an environment. Why would it be something else than this? Why talking about something else and then suddenly you were like, No, we can refine our view on adaptation. There are different kind of adaptations, and this is why we have adaptations and different kind of adaptations. So we refined our lens to look at how we innovate. So prescriptive, prescriptive, prescriptive, we could even say application in we could even mention transportation as the field we apply it to, to be specific, but application entrepreneurship, yeah, yeah. What makes sense for me?
+
+So this paper isn't, doesn't go very deep into transportation, right? It just uses transportation as an example.
+
+Yeah, shed
+
+light on transportation in any particular sense. It's just using it as an example. So I, I think it would be a little misleading to put transit, yeah,
+
+you're right. You're right. So application and entrepreneurship and like this, it's very concise. I like it,
+
+okay? And then, JB, you said something that I think should go right at the front end, which is that adaptation is not the only strategy, right? That that's
+
+That's right, that's right. That's what we learn from from nature, that adaptation in the pure Darwinian sense, is not the only strategy. And this is why Stefan J gold paper was such revolutionary. Because without refuting adaptation, but by embedding and bending it and bending it into a more global structure, he shows that sometimes adaptation is not the explanation of evolution, which is a revolution for biology, yeah,
+
+would be useful if we early in the paper, or may have some references to papers that are suggesting that adaptation is the strategy entrepreneurs should use, right? That's our foil, yeah, some sense we want to say, well, just like in biology, it was revolutionary to say adaptation isn't the only strategy. We wanted to be able to say, well, entrepreneurs, entrepreneurship, I've been thinking the same way that adaptation is the primary strategy one needs to think about. And we want to introduce something different, right? But, but question Is that true? Is it true that the literature is primarily about adaptation, and got it doesn't
+
+sound Sure. So one, one weaker way to express what you just said, oh, sorry. You want to express, please. Sorry.
+
+Good comments. I was trying to explain that like nature offers an alternative. So I, in the middle of writing this paper, I changed my attitude in a little more pro acceptation. So this was one attempt to it. And second was what just Charlie mentioned in this line, I tried to review the papers that functional essentialism is more adaptive. Function access, this is tapos and Kaufman's paper. And exploratory compared to stepwise is more acceptive Pro and integrative versus modular. Modular is more accepted Pro? So I try to have some literature that are advocating for the acceptation. Sorry, go on, Jamie.
+
+So you said lot of things, and now there are numbers, not references. So maybe just to stay on this one second. So the first part, I got it, and then the literature discusses innovation through various lenses. I remember the literature because I read it. You have a lot of the net, right? Richard, the net, you have a lot of lots of hardcore theoretical biology things. So functional essentialism versus functional access, I understand. But then step wise versus exploratory, integrity versus modular. So can we look at the reference? Just so we we know what you talk about.
+
+References are entrepreneurship. References both, okay,
+
+got it, got it Okay, zero to one, okay, got it okay. Then
+
+startup is more adaptive and zero response more accepted.
+
+Okay, got it? Okay, that's, that's an interesting, interesting connection. So to answer your question, now, at some point in the in this paper, we discussed the Double Diamond, you remember, and as a as an innovation practitioner, I worked for Bell Labs, for example, for a few years. We use the double diamond as a tool to innovate. We had ideas brainstorming. Then a lot of them. We cut some of them. We have less of them, so then we could prototype some stuff, prototype, prototype, and then we can evaluate the prototype. But basically it's kind of a linear view of innovation. You think, you create some stuff, you test it, and rinse and repeat. This is totally adaptive. This is a case, a great example of adaptation, where basically the feedback loop is a selective pressure, and you will refine this loop based the features, the functions based on this. So I think it's fair to argue that models linear corrective model like the Double Diamond, are very well spread in innovation theory or innovation literature, where you have a step by step, a 123, or five steps in the design thinking, and then refine and rinse and repeat. This is, this is exactly what is adaptation, and you try to evolve. It's an evolutionary kind of innovation. And you refined through this loop. Yeah, this kind, for example. But the Double Diamond, the IDEO, the David Kelly, I do five steps or four steps. It's very similar to that, in a way, we we criticize this, yeah. Do
+
+we have a diagram to illustrate acceptation to as to, as a counterpoint to Yes?
+
+We Yeah. We created three diagrams. One was the adaptation diagram of double diamond, and then we did two variation of it with one exaptation as CO opted adaptation, and the second as CO opted non option. So maybe Angie, you could show them.
+
+I have one comment. I agree with what you just said that feedback is a selective pressure, because I think there can be a lot of new use cases injected in the feedback that is not purely selective pressure, and I'm not purely adaptive. So I wasn't as I was making a diagram comparing with the double diamond, somehow changed my mind that double diamond is fully adaptive.
+
+So what you say now is that the double diamond is not adaptive. Yeah, because,
+
+because you can have many new use cases injected in the feedback process, so it's not purely So, like for instance,
+
+maybe you can show the diagram so Charlie can follow what we talk about. Okay, I
+
+so while you're looking for it, we used Vensim software to create diagram of adaptation and the two different flavors of adaptations that we are discussing in the article.
+
+I wonder whether it is on
+
+the previous version of the article. Oh yeah, it's there. Exactly this one, for example,
+
+I will download or higher. So, like, maybe I need your help in explaining this. Oh, yeah, I
+
+can explain it. No problem. It looks a bit complex, but, yeah, it looks a bit complex, but it's it's less complex than it seems. So the one in the in the first line is the double diamond. It's a simplified so, can you zoom just on the double diamond? First one? Yeah, this one, can you zoom on it? Yeah, yeah. It's no quality. It's okay. So basically, the double diamond is first discovery, understanding needs. Then we have to develop some kind of a prototype that then we will test, right? And these three colors, one is the discovery phase, the purple, the green is the developing phase, the prototyping, and the red is the evaluation, which is a classical Double Diamond, okay, and we modeled it in Vensim, which I thought, for me, was also interesting, because if we could not only go from a qualitative model to a Bayesian modernization of it, so some kind of a quantitative modalization up to An implementation in Vensim, that would be interesting, because then we could test out options. We could, we could, our paper could be used, also by this community, to say, maybe it's an imperfect model, but it's a first step to simulate different kind of futures and possibles based on this modernization. So then on the right, because Vensim has 16 layers of complexity, it's the more layers of Vensim, where we show some of the internal feedback loops of the the traditional double diamond, where you are assessing the needs through observation, ethnography, different kind of methods, and you have different kind of loops there for discovery. Then you are creating a prototype, and the same, you refine it, and at the end, you create a product that you implement and test. All of this gives us this core, which is the calculative value, which is very interesting for us. And at the end, we show that this whole process from left to right is risk taking, that is measurable, that is confronted to a fundamental uncertainty, which are like markets, people, choices and desires, and it's this kind of opposition we show here, and this is why we put also at the end, market one, market two, because depending on the products you are making and the market reception, you will have different kind of feedback for these Two, like the big red arrows that go back. So it's a bit complex, but I hope it makes sense to you that, because you know the double diamond, and now we try to systematize it in a way,
+
+my interpretation or understanding the Double Diamond was that the first diamond is about discovering market needs, yep, second time, about converging on a product design or a prototype design. So
+
+I think, I think you're, I think it's, it's, it's almost this, I worked a lot with a double diamond as a professional. And I actually even work with Nesta in the UK that created the double diamond. The way I understand it is that the first diamond is ideation, brainstorming, mock ups. It's everything but the market, you diverge lots of ideas, then you converge to what you're going to mock up, what's going to be your prototype. And in the core, when the two diamond detach, this is when you go from we stop to having ideas now we will implement only one thing, and then the second diamond, where the ramp up of it is all the prototypes that you do, and at the end of the top of the diamond, then you will you so you diverge, you diverge, and then you converge to the product. This is the way it's, it's, it's, it's done. Yeah, yeah. There are different expansion of it
+
+from this version that that Angie just put up, right? Because in this version, which is the one I understood, first part, has nothing to do with prototyping. It's just about
+
+ideation,
+
+not ideation. It's about customer discovery. That is what? Yes, finding customers pain points, what? What is the customer need? And you converge on a need without necessarily coming up with any kind of a solution. And then the second diamond is, first diverge on possible solutions and then converging to some initial MVP. So
+
+it's very interesting, I had a double life, not because I was a diplomat in something else. It's because I was a designer and I was an engineer. Okay, so what you just described is the reading of the double diamond from an engineer point of view. And an engineer, what, what engineer? What they are doing. They are looking at the world, and they're like, oh, it's complex. Let's understand it. And then they have some insights. This is first diamond. And then they say, Let's go to the workshop and let's prototype something. From what we understood from our observation in the world, from the way I explained it to you, is from the design point of view. From the design point of view, you have observation, but you have also ideation, because a designer just don't look at the world, is also projecting his own ideas to the world, and he's also creating mock ups in the first diamond, this is the one I explained to you. I think both version are good because David Kelly, the people from IDEO Nestor, they really try to connect engineering with design, and try to put in the double diamonds. It's two notions. So I think we are both right in what, in what we say, the way I understand it.
+
+Well. Just to add a little more to that, I like to think about new products can either come from customer pull or technology push. And maybe we talked
+
+Right, yeah, yeah. Well,
+
+you start purely with the customer pain point. Okay, global warming, we have a pain point. We don't have any solutions yet, but we have a pain point. We narrow it down to carbon dioxide. So, yeah, how do we do
+
+a solution? We need a solution. We need a solution to a problem. Yeah, that's,
+
+that's customer pull. Technology push is, well, I've got this thing called the transformer model. What can I use it for? Create something like that, right? So, that's technology push. So, so that's comfortable solution first. And I've given Angie the example of the iPad. You know, we have an iPad. Nobody's an iPad. Or we created the internet. No one was asking for the Internet, whatever it might be, right? So, so you can have innovation come either from customer pull or technology push, or some combination. But this one I think of as the customer pull version, what you are describing is the design as the technology push version, and either or valid. And I think distinguishing them is use. Ultimately, you want to iterate between customer pull and technology push. You want to say, with a customer like this, what's the idea? Etc. But where is your starting point? In some sense, maybe matters. Is that useful? I
+
+think it's useful in the way we read the diagram. I think nonetheless, the modalization we've done in Vensim might apply to both this angles on innovation, I think we capture in the in the vent diagram we did with Angie, both both version, and maybe we could Go back to it at this point.
+
+So I, I have one comment to make sure. I just put it in a chat. What I think need and solution can be mapped into the this double diamond. I don't know how to write something
+
+in here. Can I make a meta comment? Yes. So, after all, you are in Eric Von Hippel office. No, so, so I think it's a it's interesting, related to the conversation we just had, very good so, yeah, yeah. I'm very well aware of representing also the user and not just the engineer that have an idea or a designer that want to push it. So yeah, and very for it as well. So big fun.
+
+Have to comment. It goes to their voice.
+
+So what I well, I think about the Double Diamond situation is and also related to Eric's comment that you can solve a problem without framing a problem. I think that is related to why. So, okay, so the basic assumption is the value is created whenever need is met with solution. So he calls it need and solution pair. And what Double Diamond right here, the Charlie was criticizing this somewhat limited is they start from need and they somehow diverge into need one and need two, and then converge into need one, and conditional on that choice, they diverge like so this is the what Bayesian call, like conditional expectation. Every measure after this is conditional on this, but you are, you completely abandon the need to options. Um, so based on this solution, one diverges to solution one and two, and then you reach the solution two. And compared to this, I accepted is more about you have a joint distribution of need one, need two, and solution one and solution two, and everything is combined there. So that's what I think, or actually what I was trying to represent in the exchangeability part, did I somehow take away or summarize what you were discussing like two different views of customer pull versus technology push. So customer pull is this way and technology push would be the other way around. You start from solution and solution one, solution two, solution one and need one, need one, two, and then conversion one thing. But I want to criticize both of them.
+
+Okay, so just if we can take just two minutes on the two other cases on the Vensim, just if we want to ditch it, at least we could have said we looked at it, we did it, bye, bye, and so, so now mini there, but I have a strong feeling that Angie wants to go to something basically. Let me give another meta comment. Here is an attempt to take a 1d process, a linear process, into 1.5 d, and what you propose Angie is to make this as a 2d process. My belief is that it's harder for people to understand 2d complexity. Compared to line error with variation. So it's also the way we frame argumentation and the model reception from people. If already myself, I have hard time to understand what you say. I think it might, it might be something we should discuss, because I need, at minimum to understand the article where my name is on it. So, so that's that's very important for me. So the the bird sequential. So now we have co opted adaptation. The difference between the diagram on the top of adaptation and the second one, co opted adaptation is now suddenly in the prototyping phase. The idea is the same, the product quality and evaluation is the same, but the green part in the in the bottom, suddenly we had prototype one, and now we have prototype two, and prototype two is derivated from prototype one, but is not the same. Why is there an arrow and is derivative? Because it keeps some features, or, let's say, some aspects, to be more precise, but on the feature point of view, on the functional point of view, one function begat another function. One function became another function. Suddenly, thermal regulation of the wings of birds, keeping the body temperature. They did it fast enough that then they flew. It becomes flight. Termic regulation became flight. Okay, this is one classic example of exaptation. So here suddenly you had one prototype with this function that become another prototype with another function. So this is CO opted adaptation, and it's still adaptation, because there is this linear kind of evolution, right? You add one prototype with some functions, now you have another one. You add one car with some features, and from this car, then you have another one with different features, okay, then the last one, co opted, non option, if you can scroll down. I mean, yes. And this one basically if you could zoom a little bit, because my eyes cannot see, but basically the same observation and the quality of product, like purple and red are the same, but for the green, which is the functions and The prototypes, suddenly you have a parallel set of features that comes into prototypes. And on the blue, on the right, if you can, because I don't see it, you have, also here some feedback from markets. You have basic basically, now the selective pressure is not coming only internally from the evolution of your prototype, but from the environment. So it's an epigenetic pressure compared to a genetic pressure. So it will be a bit precise in this but it's basically now the environment. And for me, what I like about that is that it captures, for example, Eric Van eppel, ideas that suddenly, it's not me, the king engineer or king designer that is making prototype one to prototype two, or God for evolution. Suddenly it's the world that is informing back that some features or function that I didn't think about are now imposed to me and are put in the mix, which I think is interesting, interesting because it's internal, basically innovation compared to more external innovation. If I may say, My words are not the best, but it's to try to translate this. Yeah, that's it.
+
+Thank you. That was really helpful. Let me ask if you think the following example fits. So during World War Two, the Americans developed the jeep. Jeep to go over rugged terrain, carry a few men into battle, or take them out of battle, whatever. And so it was developed for the military, for military applications for rugged terrains after the war, people in peaceful environments. Who, particularly who lived in rugged areas, found that this was a useful consumer product. So different market, different use, maybe evolution of the product a little bit, and over time, people expanded its use to family SUV, travel, pickle SUV, with more creature comforts and more horsepower and maybe less adapted to rugged terrains, as rugged terrain As it originally was designed for because as a compromise between comfort and rugby journey. So
+
+that fifth at all, yes, so first, thank you for choosing this example, because I learned how to drive on a Jeep HOTCH CAs that my father bought from the American military and let me dry drive when I was seven years old. At beginning, he was he was touching the pedals, and I could only change gears. And then when I was tall enough to touch the pedal, then I could drive it myself. I grew up in a farm. My father is a farmer, so thank you for the example. Yes, I think this is a great example of CO opted adaptation. First you have a first product that evolved through selective pressure of an environment. There is a war, the traditional car will be stuck. We need another new car for this environment, selective pressure of the rugged terrain. We need a rugged terrain car. This is a Jeep, okay? And it should be lightweight, lots of things, but all of this is to adapt to the rugged, the ruggedness of the terrain, okay, or the constraints of the war, something like this. Then the same vehicle evolves and some of its features now are asked to uh answer to different kind of needs. Okay, so this is a great example of how adaptation is CO opted by different kind of environment. And the second version that you said was from the military Jeep to the civilian version is actually the one my father bought. It was they made it civilian. And I remember the smell of gas because you you drive this Jeep, the ass on the fuel tank. It's really not safe at all. So to go from a military things that it's okay if it we, if we blow up some of some of the Jeep, because we blow up some people sometimes, to the normal road, you have to adapt lots of things for that, okay, but most of it. It's an acceptation, because now suddenly it serves totally different purposes, with different regulations, with these different things. So it's a reconfiguration as Lucy such man that maybe you know Lucy Suchman. You met her. She studied with with Wanda orlikowski that you might have met at Sloan. But basically in our book human machine reconfiguration, she talks exactly about that, about this kind of exaptation. In our article, we also explain a different kind of exaptation, which is not the evolution of a pre existing function. It's basically suddenly there is a new vehicle. And there was no vehicle before. There was no Jeep, there was no war, there was a discrete set of different things, and they assembled it to a new function, a new product that never existed from before. And this is what is also refreshing in the the exaptation literature, most of what we think about innovation is to do better from a past we know. But what if we don't know the past and suddenly something appear emerge, right? It's a complex emergence. Of course, nothing emerged from out of nothing. But let's say it's a non functional past. And this is the third one of the exaptation, the CO opted non option. And I think this is one of the value of the paper, so is to open the mind of adaptive people, because most of adaptive the CAS world, they are very evolutionary, in a way, as optimization. We had something in the past. We will optimize to do a better future. But what if there is no past, okay, in in some or no functional past? And this is, I think, what we try to say in this article. I Sorry, I was a bit long, but I wanted to explain this.
+
+Go from the Jeep that your father bought the modern Su is that CO opted exactation. What do we label that?
+
+It's co opted adaptation. It's it's the first kind of exactation in the diagram we have in the article we talk about it. And I like how Angie also put it with the green, like the diagram you put on it. I think it's very clear, if you can go on the article, on the the beginning of our article, let
+
+me just make a quick two comments first, if I may. So from your diagram. JB, you had a not a mark versus market. That is a difference of the two patients are actually cool acceptation. And by the way, I think because our title is prescriptive, acceptation, first contribution should be differentiating this understanding how the description differs, we need to know before prescribing it. So that's our first contribution. Of course, first is through exchangeability concept, and second is through whether there is a market or not. So in this axis of existing need versus new need, I was trying to represent your concept of not a market. So maybe Eric would say that users, the lead users, already know there would be some market, because they for them. The uncertainty of the latent need is much lower, but there is not a concrete market for them. Yeah, we
+
+could even write, not yet, a market like mountain bike. You know, people that created the first mountain bike, it's one of his best example. That's Fauci. You had a comment Charlie on the Jeep.
+
+I just I if we go from the military Jeep to the Jeep that your father had, to the Ford Bronco in the 1970s to the Lexus SUV of today, or Mercedes SUV.
+
+Just so you just so, you know, I got you, but my father now owns a Porsche Cayenne. He has a Porsche SUV. So that's the evolution, yeah.
+
+So which, which can we be concrete about points in time, if we wanted to use this as an example. So which, which, which points in time will we label? And can we label the transitions as the three different kinds of of innovation that that we're trying to represent in the paper? That is, can we No,
+
+no, the No, it doesn't work. It doesn't work for me. For me, what you described, the first one is an adaptation. The Jeep watch Cas is an adaptation. And the sub subsequent SUV and different kind of four by four and vehicles you described, they are subsequent exaptation of the first adaptation. So we go from the first one, the adaptation, to the second one, and we stay there. The third one is, how do you have, in the first place,
+
+an heterogeneous set of stuff that are not the result of selective pressure. They are features, morphological features for animals, but it could be different kind of features, of technology, of markets, of people that, in the case of mountain bike, people were living in the mountain Okay, and the bike they were using was not working there. Okay? So that this problem, so out from a different set of stuff, then we have a new function. And this is what is traditionally not well captured in in in innovation literature. And this is what I believe would correspond to ERIC VAN ripple theories of lead user innovation, because basically, it's bits of functions that the industry didn't capture yet. So couldn't innovate, couldn't exact, couldn't evolve, because they didn't have the seed. It was out of their radar, basically, and this is what I try to represent from not a market on the blue back arrow in the in the last one, basically. Does it make sense?
+
+Yeah. So I feel concerned that this isn't converging fast enough. Yeah, for two days, yeah.
+
+JB, how much time do you have to invest in this paper? Because I'm okay with focusing on comparing the diamond and the existing literature out there, but I didn't have the capability to do it myself. So that was why I just shifted exchangeability, because that is what I'm good at. But if you have time, I'm
+
+so let maybe what could be useful would be to look at the whole paper again, to see what we have as a narrative, and try to see how possible it is to to integrate these ideas in this one or if we keep it for something else. I'm totally, totally fine with ditching as much as possible. I'm not attached to anything. What I want is operational results. That's what we propose to CAS. To CAS conference would be meaningful. Yeah.
+
+So I think being able to represent the ideas with the models, the system dynamics models, is a really productive way to represent the ideas. We may not have time to do the mathematics of those models. So might have to be that we just have the diagrammatic representation and the verbal presentation, and we we cannot mathematize them at this time. So we maybe can talk about Bayesian inference, but we don't put any Bayes in there, I just feel like there's such a challenge here just to articulate the ideas and the representation of just it doesn't feel like it's realistic To get mathematics of this in time domain.
+
+I agree with that.
+
+Sorry. Oh, please, please.
+
+Sorry, I'm listening. I
+
+try to mathematize this in system dynamics model. But the difficult thing was trying to represent the quality, because I follow Charles definition as the fitness of use for the Fauci definition. And in order to represent some epigenetic thing, you need to model how the environment changes. But even with the SD tool that is most apt at representing the environmental change, it was very hard, at least from the skills that I have. And I think the key point I wanted to represent here is the acceptation is important because it is keeping the option open to hedge against the new environment. And the new environment can be either from different space, like within Texas, all people like the US battery, but if you change the space to California, you pivot the market, then the people like Japan battery, so that kind of the ordering of the value can change. So it's kind of bad to early abandon. One of the option is, I think the core of acceptation correct me if I'm wrong. JV, so like say it again.
+
+Say it again with an example.
+
+Got it so keeping the two option open, not early, killing one of the option, because there are heterogeneity in both the space and time. Space example is California and Texas has different preference of Japan versus the US battery and the time is the example that we had last time about the Swiss precision engineering. Previously, people loved watch, but now they're more preference on the war application. But word may change again that people would love Watch again. So yeah, the point I was trying to make is there can be some maximum of value of need one and need two, or solution or solution two can change around because we are not living in an equilibrium world. So that's one thing I wanted to say, and the formal way to model this is through probabilistic reasoning, where for like, 30% of the chance you are living in Ward one, where the war is still going on. So like for the gyp, you have military use versus the comfort use. So in this war going on, cases need one will survive, but in the word two, where word has ended, 70% need two of the comfort, customer comfort, survive. So how to keep this at the same time? Think the essence of the acceptation. Did I understand that correctly?
+
+Yes. And I like, I like, when you present it like this, was this example. I think it's, I really like the it's really clear from the evolution of the Jeep that basically the new features of the Jeep all the luxury features, because SUV is, let's say, some kind of a luxury jeep. Basically, it's still all terrain, but now it's all comfort as well, which you don't need for the world because you cannot and blah, blah, blah. So I like how you you, you show that different kind of context is translated into the product, basically. So what is hard for me is how to articulate this and the quadrant with the Vensim diagrams that we had that were more like the Vensim was more some kind of an equation turn into a diagram. And I could, I could imagine, to have some inputs, to put some, you know, data in it, and then it will, it will process, and I will have an answer with your diagram. It's more descriptive. So I think we went from generative to descriptive, and maybe there would be a way to to, I don't know, to capture this the reasoning we had with the generative maybe just to talk about it. Maybe again, maybe we could go to the article again. Yeah, so that's the diagram we were referring before. Yeah, please.
+
+The question was, I was trying to replace this kind of diagram. Maybe I should add some feedback loop into it. Can we replace the concept in your diagram into this. And I don't think this is a ditching because every idea in that somehow helped me process. And I don't think, sorry, I'll add one more thing, and I don't think this is a descriptive model, because I was trying to represent the heterogeneity across time and space as a high uncertainty. So this is, I think, more prescriptive, because, okay, when is good, when you have a lot of heterogeneity, and that it calls high uncertainty, okay,
+
+okay, so then what I have a hard time understand is what would be the next step on this quadrant, because, for the moment, it described what exists, what would be the next version, basically the next product or the next prototype, yeah,
+
+just like Charlie will articulate it as Our kind of goal first, like entrepreneurs have some conception of their idea as a function of need and solution, and they identify whether this is high uncertainty or medium uncertainty or low end, right? I added the key examples is people can form more informative prior on their inference of where they belong to. By looking at the examples, like, if I'm a bird, if I see like what the bird forms are looked like, I can better classify myself in a whole tree of the
+
+animals. You can identify yourself. Okay, so, so I have a hard I have a hard time connecting this diagram that I like very much. I really like this diagram because I'm also an entrepreneur, and if you show me three different kind of uncertainty, suddenly this angst or anxious uncertainty, words you start to discretize into, oh no. There are different kind of uncertainty. Suddenly I'm reassured as an entrepreneur, because, like, Okay, I was so afraid, but with Angie and Charlie, now, I will live better. It's, it's an argument that has been made, also for basically, Astro, Astro Nomi, that became astrology basically in the enlightenment, before we were like, Oh, the moon. Oh, it's scary. And then suddenly, no, no, actually, we studied it. There are some spots and it's rotating. Oh, now I feel fine. So I think what you give in this diagram is a way to to work on the anxiety of entrepreneurs. So I really like it, and I also really like how you connected high uncertainty to the parallel executive, which is the CO opted non option, which is basically the innovation when there is no prior or no clear prior, most of innovation models, they are linear, and they have somehow good determination of what was the prior in this in this high uncertainty, no prior, suddenly you give an answer to some of real Question of entrepreneurs, where the traditional model of adaptation, or one of the exaptation cannot work, because maybe there is no market, maybe there is no technology to answer a need, you know, and maybe entrepreneur, they have this angst. So I think this could be one of the value of the paper, at least, to talk about it, to define it, even, as Charlie said, if we could not mathematize it yet.
+
+Angie on the other thing, had going to Mars, right? That that feels like a high uncertainty box, right? Is there a market for going to Mars, and is there a technology for going to Mars? High uncertainty on both sides, right? Three nuclear fusion, there's high need, but also high uncertainty about whether we can deliver but
+
+so there What's another example of high uncertainty on both the market side and the so I would say electric vehicles. 20 years ago, there was no market and no technology, right that, yes, the nobody believed, after the failure of GM impact and the failure of better place. Nobody believed that there was a market for electric vehicles. Nor did they believe that there was a product that's right.
+
+So that's right
+
+on both the market side and the and the technology side and and Tesla broke through that.
+
+So if I may, this comes back to our first minimum sufficient prior we I think we are somewhat converging toward it. So I was trying to make an example to explain this easier, like Tesla rules or, sorry, Tesla rules. Store is the high case, high uncertainty case, and power wall is the medium case, where you have existing solution, but you need Ford Model T is medium in that it has new solution of mass production, but people still needed some urban transportation. Toyota Lean is slow. And the question I was asking here was, is it better to replace which is better between Ford Model T versus Tesla Model S? I know this is a very like kind of low level question, but that would help me making the distinction more clear. You're
+
+talking about the media lower medium box, yes, yes, yes. You whether we should use the Model T example of the Model S, yeah. I
+
+Well, part of me thinks that because you have Tesla and the two upper boxes having tests with them, there maybe is use Tesla all around another part of me thinks each box should have a different company represented more orthogonal you guys. I like actually, because the Tesla Model S is a derivative of the of the Roadster, yeah. And the Tesla power wall is also a derivative of the Roadster, yeah, yeah, roads, yeah, right. So those are both after having gone through the high uncertainty box, if you will. Then we have two. Those are adaptation. Those adaptations are acceptations the model,
+
+except the so to make you comfortable, exaptations are adaptations, but they are the two different kind of adaptation. Some of them are adaptation of a previous adaptation. That's the CO opted adaptation, and some of them are an adaptation of a disassembled set of priors that were not adaptations. And this is a co opted non option. Whether the prior was an adaptation or not, will define what is the flavor of adaptation, and this is why adaptation, yeah,
+
+oh, sorry, that was that differs from what I understood, because I thought the CO opted non option was not adaptive. So I thought that was not adaptation.
+
+The the CO opted non option is not adaptive because it's from a non it's from non functional priors. No function, no functional prior. You have a first function. So it's, this is why it's called non active, because it was it the prior was not an adaptive prior. It was not the result of selective pressure of the environment. It's usually more the chance random organization features, morphological for example,
+
+is a Tesla Roadster, co opted, non action, no,
+
+no, the Tesla, the Tesla Road, yeah, Tesla Roadster is an adaptation. It's an adaptation in the sense that, basically, they turned a vehicle which was a Lotus Elise, I think, from Lotus, English car maker, and they put a battery in it. So it's an adaptation, in the sense that they adapted to a selective pressure environment, and they try to optimize something for this selective pressure
+
+motorized automobile, also an adaptation, because they just replace the horse with a horsepower engine.
+
+That's, that's,
+
+I need to think about it. I need to think about it. I would say it's not an adaptation, because it's not a horse in many it's, it's made. It's too different. So I cannot see how there is a maybe the idea, maybe the idea of the automobile is, would be an adaptation
+
+you had vehicles with four wheels, and you replace the power source of horse with the power source of a motor.
+
+So, okay, so the carriage, the carriage of the horse, yes, I think the car. The car is an exception of the carriage, hence the name. The name car might come from carriage, by the way. No,
+
+yeah, Jamie, I think real star is like exception exceptation, because the function appeared like we want to a new battery, eco friendly battery, to address the new needs those people who need both echo, aware, perceive and also they want some fast racing and form followed function. So your argument that because it was somewhat adapted from the existing Lotus hardware. Is not a reason why that is not an acceptation. To summarize, I think the new functional,
+
+the because there is no in the in the Tesla roster, there is no new function. What is the new function in the Tesla roaster. What was, what was function one and function two in the Tesla roster, you had function one, that was, let's say, a termic car, and then you have function one plus it's, it's still a car, but now it's not termic. It's electric. Okay, we are not saying that the electric engine is derivated from the fuel engine, because it's not the case. We are saying that we put an electric engine into a car engine. And this is the reference, actually, I put in this in the chat I did some research about Porsche, because I just bought one and eight years before the Ford Model T, Porsche created its first car, and it was electric. So actually, Porsche went from electric to to fuel when most of the car industry went from fuel to electric. Porsche was one of the first to innovate to create an electric car in 19 108, years before the Ford Model T. Of course, a car is not just an engine and wheels. It's also a factory that is building it, people wanting it. And this is why it's so hard to talk about this paper, because so many factors come into what we we we describe as a car. I worked a bit with Bruno Latour, and you would say that the car is as much the company, the society buying it, than the metal and the plastic. You know, where do you you put the limit of where is an object, right? But let's not enter this debate. I think, of course, we have some reduction, operational reduction in our model, and I think it's fine that we have them to answer your question. Okay,
+
+so the function I thought the Tesla Roadster represented was the eco friendly sports car, but is your example of a Porsche counter example for this? It's
+
+not eco friendly, that's for sure. But the example of the Porsche I took was to show that, in terms of pure innovation, it would be wrong to say that electric car is the next generation of the fuel car. Because in the example of Porsche, it's not the case. It's basically the the abundance the electric motor to go to the to the fuel engine, not the other way around. It was to illustrate what, what we talked about just before. I
+
+think that's because there were in an environment where the electric is less preferred than ice. But that's
+
+right, that's right,
+
+yeah, order change, right. So I don't know whether I should look at creation of a function or kind of latent function, like dormant function appeared,
+
+or
+
+this is why it's very hard, and this is why it's very hard, because it's the it's the same debates and genetic epigenetic, between is the product evolving or the pressure of the environment that makes the product evolve. And this is illustrated by what Charlie also said about the two kind of push or pull innovation, basically, is it created by engineer, designers, or is it asked by market or not yet market people? And it's, it's a co evolution. It's a very hard question to answer, and I don't think we will answer it with this paper, honestly. So
+
+long story of why I ended up giving up this SD model. Yes, like,
+
+yeah, so, okay, I'm fine. I hear two things. First, I hear what Charlie said. Before he said, This is Cas, CAS conference, complex adaptive system. I read some of the papers of the conference to have a taste a gusto of the conference. First I tasted heterogeneity. People from so many different fields converge to how we are all doing complex adaptive systems. First thing. Second, very low expectation of solid, robust mathematical models. What I saw in most of the papers were more qualitative proposals of how a system is behaving, and these are the first steps of attempts to mathematize it. This was my feeling about the CAS Conference, which is great, because it's a great conference to test out ideas of how we envision the modernization of something before mathematizing it. In this sense, I think it really what Charlie said really makes sense in the context of this conference. It's a great conference to say, Oh, these are some ideas about something related with evolution, adaptation. And let's try to go from our qualitative understanding of it to a more, let's say, formal description of it, either backwards formalism, what happened in the past, or generative, what could happen with different options, and then from from that, maybe in the future, some people might take it and mathematize it. This is my understanding of this conference. So I think this would push to, let's try to keep this paper as qualitative as possible, and few quantitative instead of here is the answer. It's the perfect math model, and we have it for the moment. That's my my feeling, yeah, sharing with you.
+
+So I feel there is some core ideas we have discussed today, and under the CAS environment, some ideas may be like, higher, more preferable than the other idea. So I need some help in shaping the product from this idea. Like, because I, to be honest, less interested in the call, um, qualitative representation, but more like, it's just more fun for me. But I had not somehow saying that I wouldn't do some qualitative thing, but I don't know much about the what the qualitative audience expect, so I want to learn more about
+
+I agree. I think it's also a paper that is not too long. I think we should focus our force and our effort to frame a problem, introduce some kind of a theory, theoretical framework to understand this problem, or to represent this problem and promises from this representation, maybe give a first attempt to maximize it, to mathematize it. But very simple, maybe the first step. Maybe we discuss about how we would mathematize it, and we have one first implementation of it, very simple, maybe one equation, one first concrete example of using this equation in the transportation world. And that's it, not trying to develop the mathematical part too much, but not being too qualitative, neither that would be, I think, a great contribution, because actually connected qualitative world and the mathematical world is very hard if we manage to have it in this article, I think it's, it's a great contribution. That's my feeling
+
+Angie's statement that he wants to do mathematics and doesn't feel comfortable with the qualitative piece, because that's troubling to me, because if you can't articulate things qualitatively, how do you know your mathematize directly? How can you do the mathematics without knowing what the mathematics story is supposed to tell? I mean, it's sort of like the black box of chat. GBT, how did you get this answer? We have no idea. It just came out right that that's not necessarily helpful in trying to help us understand things. The
+
+point I was trying to make is I think mass models are more accumulative, like model N and Model B is very easy to compare, but if you just give a two description, like function and form. We have been discussing that for several hours, but still, I'm confused about acceptation and adaptation. So, and that's because
+
+you mathematize them. Can you give us a mathematical definition of adaptation
+
+versus acceptation? That's, I think, where I want to converge to at some point. But can
+
+you, I mean, if you can, we can put it in, but if you don't understand it verbally, how can you mathematize it? I
+
+think we made some progress on that. Yeah, yeah,
+
+partial exchangeability, fully exchangeability, or some way to differentiate the CO opted adaptation and quality management,
+
+the two flavors of acceptation.
+
+This, this, this,
+
+so show me the mathematics of each if you can
+
+explain it. I tried to, yeah, this is what I wrote, and this is my way to and maybe I didn't express it well enough, but I was trying to say that I'm okay with going through some qualitative process in order to reach to the quantitative form, but I hope to our contribution to be More like math representative so
+
+you can mathematically describe, if you go back to that three, three components, model, adaptive more. This one, no, the diagram.
+
+Oh, the top, yeah, yeah. This one, yeah,
+
+mathematical definition of each of these three lines. Can you capture that mathematically of what's the difference?
+
+That was what I was trying to do in the appendix. But we had this conversation that you don't think this is the full representation of strict dependence. Do you do you think this would be kind of the core? This can be the core of this paper, like mathematic representation of the three different things.
+
+So each of these is a system, right? It's not just an equation, right? Is these things.
+
+I didn't follow your What do you mean by system versus so
+
+adaptation? Is the process going from some thing to something else? Is there a function one to function one plus
+
+it's not something else, it's the same function that is evolving, but it's the same function. For example, if it's flying, you still fly. Maybe you fly better, you fly faster, but you're still flying. It's not a new function. It's a it's an optimization of a pre existing function, but it's not a new function. You are not teleportation. Suddenly, you're still going from point A to point B by air, faster, better, but still flying.
+
+And so adaptation is the quote, unquote optimal solution to some problem, right? That's right problem in the world, and my optimal solution is to adapt from function one. That's right.
+
+Adaptation is also an optimal solution, but that's
+
+right, different problem, exactly,
+
+so. So in my mind, if you're going to mathematize this, you have to describe the state, describe the problem, and describe how each of these three solutions is optimal in the environment that we're talking to. If you can do that, to me, that would be a mathematization. That's what I mean by a system. Does that make sense to you? Angie, I see, yeah,
+
+yeah. Like, I think one way to do that is
+
+so for instance, I think the adaptation is you are you have some objective function very fixed and constraint fixed, and you are doing the gradient update from initial point to the next point. But the adaptation, the CO opted adaptation, you now have some new needs. You discover a new home market that is not EV so perhaps your objective function change, and also you have some added constraints on it. So
+
+like in the or like in the exam, or like in the example of Charlie, you had the military market, and suddenly you have the mother with five children market. Okay, and how the Jeep watch CAS now can fit the five children and the beverage cup holders that the GIS they didn't need?
+
+Oh, yeah. So discovery of a new objective that can change your goal, like if the Tesla's goal is to maximize your profit, then they found a new f1 plus f2 that would change the optimal solution. Eventually. I don't have a clear idea on how to represent this non adaptation, though, because it seems the dimension of the variable somehow increased. So
+
+for you're talking about non option now the third one, right? Yes. So just to clarify for Charlie, because we discussed the two. First one, it's clear for you Charlie, right one is optimization. And the second one is, suddenly you have a new context, so you're not optimizing, you're not making a better sports car in a race track. Suddenly you have your sports car, but you are in the jungle. So how do you do that? How do you optimize in a new context. The third one, yeah, the third one is how from no prior, no a priori function, you get a first function. And it's basically a function that has no functional past. So it's a bit more complex to understand, but I think I would feel that it fits perfectly Eric Van eppel, or your example of customer push innovation, you know, customer centric innovation, or customer created innovation, customer centric, where basically people who are doing something, but there was no product or function in the market for that. But still, there were existing needs for something, but no product, so no function could answer a need that was not expressed. Basically, okay, so, yeah,
+
+we think about prehistoric humans the capture and control of fire, yeah, or heat was co opted, non action, yes, right? That previously, fire was something created by lightning. That was a terror, source of terror, right? And then the ability to control fire for cooking and heat, there was no function for cooking and no function for heat prior to fire. And we, we captured fire to provide those functions
+
+is that, yes,
+
+nothing, there was nothing. There was fire, and we could cook, and we could heat and,
+
+and it's very interesting example, because it's not that, it's not that, before capturing fire, there was, there was no fire, but it was, there was no mastery of the fire by the humans, because, basically, fire was living in its own ontological space, but it was not connected, not congruent to the human space. And at some point this space is connected, and then human intentionality projected a function on the thing that they received. I would say that for the lead user theory of Eric Van ippel, because I read, I'm a mountain biker. So I read a lot about mountain bike innovation theory from from him, and also because lots of mountain bike historically was created in Marin County in Colorado. Lots of these great mountain bike brands are from the US. So I like these histories of the 60s and 70s. Basically, it's not, it's not the selective pressure of the market that created the mountain bike. Is definitely what people wanted to do with the bike that was not adapted to the terrain. So a new terrain created the features, or the the seeds of the technological features that the mountain bike should have. And they did, and the lead user actually built them. They were the R and D lab that adapted basically what their need to the configuration of the terrain they wanted their their bike to go in, basically. But there was no
+
+adaptation or non option. This
+
+is, this is not, this is CO opted non option because before
+
+last time we were discussing an adaptation case,
+
+the mountain bike
+
+co opted to go.
+
+So the
+
+It's confusing. No, it's very complex to explain. Because, are we talking about the function itself, or the of the or the product? Basically because, because the product itself, you could say, okay, there was a bike for the road, and then people, they put it in the mountain and now you have the mountain bike. So in this sense, this is CO opted adaptation. You had a function one, which is a bike for the road, and now you have a bike for the off road, off road bike. But if you look at the lead user theories, the way the bikes they were they were built lots of pieces of this bike. They were created not from pre existing functions. They were created by people as taking stuff they had in the environment and they tried to adapt it to create what they wanted. So this is why it's very complex, because it depends to which part of the object you are talking about. Is it the whole function of the bike, or is it each element that led to the to the object? So I would say for the mountain bike, it's a mix of both. So that
+
+first computer is that CO opted non Hampshire? Would you say so
+
+the first computer? Which one is it? Is it Leibniz or Pascal? Or is it the analog computer of Vannevar Bush, or is it the Conran Zeus from the Nazi I don't know already, but let's say the first computer. If it's the Turing machine, if it's the Turing machine, I would say the first digital computer. I would say it's more a co opted non option, because it's putting different things together. It's a very hard push. I need to think more about it.
+
+I feel like we're ready to talk about CO opted, non action, and it's a foreign concept to most people. We have to have some example, really clean.
+
+So, yeah, you're right in technology or in biology,
+
+technology, I mean, as I understand and read it, in biology, there's a lot of clear examples, and maybe it's worth mentioning a few of the paper for purposes of warming people up, but then we have To tell them examples of each of these three in business examples, or technology business examples, but that are not biology. I think if we have to be super clear about that, so that after someone's read the paper, they can teach it, that is, they can explain to someone, yes, what is the difference categories and what are some good examples of them? And I'm still struggling with that.
+
+Yes, I agree. I agree. Okay, we need to work on this.
+
+Got it so I think
+
+first airplane is another one, right? The Wright brothers maybe
+
+yes.
+
+Non adaptation,
+
+co opted, non action, no. There was no function for flying before, right? And so I just feel like we had some clear examples and compelling that were compelling so people could understand it well. That would just be super helpful, also helpful in mathematizing it, because then you can check whether the mathematics fits the stories, yes,
+
+another, another one is also, do you know Alan Kay, the computer scientist?
+
+Yeah? From Yes,
+
+yes, exactly Atari. He is giving this example very often, for innovation. He says you had cars with a gearbox compared to CAS engine. So basically said at the beginning, it was all about engines. So you had an engine, a faster engine, a faster engine, and suddenly, some, some guy, came up with a gearbox. So you would have, you could have a very, very slow engine, but you would be faster than everybody. So this is one of the example of you put two things together, and now you have this new function. But each, each each prior is not defining what will be the future. It's just the assembly that will create the new function. And this is what are non option. It's a unrelated set of priors that are creating a function, compared to adaptation, adaptive exaptation, which is more like you had a prior one. It became prior to which is lots of the example we were discussing. Does it help to understand,
+
+just as a as a side note, when they were developing the Tesla Roadster, they had a huge fight over whether it should be a one speed or a two speed, about whether they should have a it was a enormous, super
+
+interesting, super interesting. Yeah,
+
+about whether we want gearbox or
+
+not, sorry, sorry. Why is that relevant to our context?
+
+No, it's just relevant to his comment about
+
+my example, Angie Charlie. I'm really sorry, but I have a hard stop now, actually, maybe I should have said this before, because we we spend maybe more time than than the slots I have another person waiting for me in another chat room. Okay? For for next step, what I what I get? What I got from this meeting is comments from Charlie and comment from you, Angie, about what will be in the paper at the end, for the moment, we have a big mathematical part, which is half of the paper, and the rest is how we go to that. And I think we were discussing today that we should have a good balance between a qualitative argumentation of why, why do we need the math? What our maths are doing, basically, is that correct? Do I understand correctly what we talked about today? Yeah, yeah, okay. I think we're almost there. We have, we have lots of content, and I think we have the luxury of having too much content. I think if we want to propose this paper for CAS conference, we have basically to have some drastic cuts on some of the article, maybe to have a simpler mathematical model. I like the quadrant, for example, what you proposed. I like also the exchangeability, because after you explain this to me, I understood it, and I think it makes sense, because it's it made sense for me as one of the possible mathematical model to to be applied there. Let's be honest. We will not crack the let's mathematical. Let's, let's mathematize acceptation, because I think it's out of the scope of this paper. It's a very hard question to answer, but we can give first steps to mathematical answer to the framing of this kind of problems we introduce in the article. I think that this is the ambition we can have. If that makes sense,
+
+maybe what I would buy tomorrow is I will mathematize like based on the story that Charlie and you shared. I have some idea to address the new creation of a function as an element of existing things for fire and the airplane case, yes, and I think Ray will contain some partial exchangeability. I'm not sure about partial exchange ability yet, but at least the creation of a new function as a new decision variable somehow match with my conception of the full exchangeability. So I will write up like one page, write up on this, and I think that is the only thing that should be going to the math version. I think everything else should be cut out.
+
+Yes,
+
+everything and but I want your feedback on whether there are some parts where the innovation case there are two chapters, 3.3, and point three that I applied thinking to the examples. I need your feedback on that. And is it okay if I lean on you for the final assembly of all this?
+
+Yes, no problem. I can do that. I have time for that. I would be happy to help you doing that, and to take the lead on this.
+
+Got it So to conclude, the comparison table is what I want to go in and what I think should go in, and this is what I should go in. And the two by two uncertainty prescription is the end figure, and I will send you by tomorrow the mathematical formulation that would somehow support this. Is that a good expectation? that sounds good enough.
+
+Yes, it's very good.
+
+We'll let you go. Thank you.
+
+Thank you, guys. Sorry again to leave. Bye bye.
+

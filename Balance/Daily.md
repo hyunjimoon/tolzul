@@ -6,7 +6,7 @@ rank: 5
 
 ~ [[Balance]]
 
-> [!calendar] **[[Daily]]** | [[Weekly]] | [[Monthly]]
+> [!calendar] **[[Balance/Daily]]** | [[Weekly]] | [[Monthly]]
 
 **Daily = 일별 리듬**
 

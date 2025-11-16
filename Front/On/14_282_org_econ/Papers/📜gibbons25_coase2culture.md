@@ -1,6 +1,6 @@
 ---
 collection:
-  - "[[Papers]]"
+  - "[[Space/Library/Maps/Papers]]"
 author_ids:
   - Robert Gibbons
 field: 🐢inv/👾cog/🐙ops

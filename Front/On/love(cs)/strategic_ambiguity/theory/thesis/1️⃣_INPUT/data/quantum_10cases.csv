@@ -1,0 +1,11 @@
+company_id,company_name,founding_year,approach,series_a_amount,series_b_reached,promise_vagueness,pivot_count,hq_country
+QC001,IonQ,2015,HW,2.0,1,0.35,0,USA
+QC002,Rigetti Computing,2013,HW,5.0,1,0.42,1,USA
+QC003,PsiQuantum,2016,HW,10.0,0,0.65,0,USA
+QC004,Xanadu,2016,SW,9.0,1,0.78,2,Canada
+QC005,Zapata Computing,2017,SW,5.5,1,0.82,3,USA
+QC006,QC Ware,2014,SW,6.5,1,0.71,2,USA
+QC007,Atom Computing,2018,HW,5.0,0,0.38,0,USA
+QC008,Pasqal,2019,HW,3.5,0,0.45,1,France
+QC009,Classiq,2020,SW,4.0,1,0.88,1,Israel
+QC010,Q-CTRL,2017,SW,7.5,1,0.75,2,Australia

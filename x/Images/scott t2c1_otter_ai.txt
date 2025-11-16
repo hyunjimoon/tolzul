@@ -1,0 +1,700 @@
+scott  0:12  
+Crazy,
+
+Unknown Speaker  0:13  
+Chicago, PhD,
+
+scott  0:13  
+we'll see how it goes.
+
+Unknown Speaker  0:17  
+Thank you. Say, have a great time. Okay, hi, hi, okay,
+
+Unknown Speaker  0:23  
+can you do this? Or
+
+Unknown Speaker  0:24  
+do you need a little
+
+Unknown Speaker  0:26  
+I'm okay with this.
+
+Unknown Speaker  0:30  
+I needed to find something at the bottom of this pile,
+
+scott  0:33  
+and it all went for clue. Angie went for clue. I have, let's call it. You have one half hour from a minute.
+
+Angie Moon  0:47  
+Yes, here it's three. A lot of agenda sitting, but everything is revolved around, revolving around test to choose one that's good, right?
+
+scott  1:06  
+Okay, what? Why don't we start
+
+Unknown Speaker  1:08  
+one for purpose of
+
+Angie Moon  1:10  
+this? Yes, so thinking the goal and thinking how and what I'm doing, that's today's goal, so I want to understand more about test to choose one. And perhaps I can't imagine applying that to beta entrepreneurship and evolutionary entrepreneurship, because it seems like you collect information until you have x and t equal expected return, right? Yeah, yeah. And the goal for more concrete goal for today, is because the
+
+scott  1:47  
+inference that you take from having multiple two is not necessarily the exact right answer, but it's more than one yes. Having multiple options that could work suggests that the idea, it allows you to update sufficiently on the underlying idea that it's worthwhile to not go back to the
+
+Angie Moon  2:09  
+test. Got it. So I want to make that argument more mathematically concrete, and I think definitely theorem of exchangeability, which are gonna introduce it and base. And I think the parallel entrepreneurship concept is a little connected. And the reason I'm saying that is I'm preparing the multiple
+
+Unknown Speaker  2:34  
+entrepreneurs, or multiple paths, multiple paths,
+
+Unknown Speaker  2:39  
+like noubar. I Yeah.
+
+Angie Moon  2:44  
+And good news is, I'm transitioned to the focusing mode because Bucha Charlie and you all agreed on that, so that's good thing. I think
+
+scott  2:53  
+yes. I Yeah. So you can do whatever you want when you're super famous and tenure, until then, you need to learn papers with your name on them. Yeah.
+
+Angie Moon  3:02  
+So I'm writing a paper due December 20 for the complex adaptive system conference in MIT, and kind of like moving with Bayesian lens, that's the mock title, and I would love to get your feedback, if I may. So based on condition, on the two goals we have, I have three proposals, and I want to start by discussing the test to choose one from your paper and from textbook. So based on that, I want to propose one, two and three. So let's jump into 12345, so you have the paper with you here. Bucha, I want to understand more about the word, how you're using business risk and the fundamental uncertainty, and whether that is related to epistemic uncertainty and aleatory uncertainty and statistics.
+
+scott  4:01  
+Yes, I mean not as precisely. I mean, those are big topics, but
+
+Angie Moon  4:07  
+I don't know how, but you
+
+scott  4:09  
+are correct that I think of i
+
+scott  4:24  
+i have always been attracted to the notion of individual So, and I probably Want to get this wrong,
+
+Unknown Speaker  4:40  
+don't write a book.
+
+Angie Moon  4:46  
+Okay, I'll keep the secret.
+
+Angie Moon  4:52  
+Hey, let's let's not, let's not get distracted by this. We have a long agenda.
+
+Speaker 1  5:00  
+That way you guys can So, so the for the textbook,
+
+scott  5:13  
+I would say that we are using words that people understand, yes, not expecting the average, got it,
+
+Angie Moon  5:19  
+got it. Got it.
+
+scott  5:25  
+What I would also say is, as you know from many discussions that we've had, is that I do not like, as a general matter, I think, I think that a lot of the reasoning within the entrepreneurship literature around 90 and uncertainty is not very it's not even that. It's wrong. It sort of distracts you from the right answers. If you ask me, within the world of statistics, as I understand it, the notion of I once again, it's been a few years since I've thought about this in a careful way, but I remember that there was a, I think it's called individual epistemic fields. Like, I don't know something. Like, the world might do it, you know, like, like, I as the decision maker, I'm aware that there's something I don't there's some probability. Like, like, like, I want to get to New York, right? I know that there's a train, but I don't know the schedule yet. You see what I'm saying. I form some expectation based on my beliefs about the train schedule. You see what I'm saying, but I can look up the train schedule. And once I look up the train schedule, I still don't know when I'm going to get to New York because the train might be late relative to schedule. But that dramatically reshapes my expectation, right? I completely believe in that. So if you call that epistemic uncertainty, which I think is roughly what statisticians mean by that.
+
+Angie Moon  6:53  
+So it's Andrew's term, like his definition is randomness and ignorance for the electric and
+
+scott  7:02  
+the other words, in other words, uncertain, your randomness is, is what happens once I get on the train, like, you know, once I get on the train, it might stop. Yeah, I'm saying, you know, right? Yeah. That's inherent to the process epistemic uncertainty. If I remember once again, got it, got it, got it, got it. I have no problem with the notion of in fact, I think that okay. I think to be clear, though, we should, we should understand that night was super confusing on this point. Okay, well, not just a little bit okay, like, massively.
+
+Angie Moon  7:37  
+I haven't heard about nation uncertainty
+
+scott  7:39  
+before. I knew, but that's a big topic in economics, in economics and in business, no one knows who Andrew Gelman is, and a lot of people know who that is, okay, okay, you know a few other people Yeah, like he's famous in statistics among people who do their stuff. You know, if you Yeah, did a social science his blog, you don't want to be on that, but sort of right.
+
+Angie Moon  8:02  
+I am already on that,
+
+scott  8:07  
+but the notion of epistemic uncertainty got it is a very valuable concept.
+
+Angie Moon  8:12  
+Next question, so does the epistemic uncertainty lower the more you test, you have test, yeah. So
+
+Speaker 2  8:19  
+one way of thinking about
+
+scott  8:24  
+No, no. What's true, of course, is that, suppose I had infinite resources, and it was really or I'll even give you an example. Let's use our example, the train, just because it's very concrete. I might, in fact, go on Google and see what's the expected delay time to this particular time they have that now. Yeah, so that turned something that used to be in aleatoric, I'm not sure. Oh, I see, I turned it into epistemic because it's a knowable fact that you have to find. So
+
+Angie Moon  8:59  
+you're saying the development of a measurement technology changes the uncertainty from military, yes.
+
+scott  9:05  
+So, for example, a lot of work that Jay Moon did a number of years ago was done exactly that what we can measure systems for measurement, you know to do, you know this is change what is knowable to a decision maker, relative. Okay,
+
+Angie Moon  9:21  
+so, okay. And last question is
+
+Unknown Speaker  9:24  
+talking with recently,
+
+Speaker 3  9:31  
+you know, used to be the case like that, people for cell phones, you
+
+Speaker 2  9:38  
+would just go to people's houses and you knock on the door, okay, hoping they'd be home. Okay,
+
+Angie Moon  9:50  
+I sometimes knock on your door so fundamental uncertainty or this one is not modeled in test to choose one explicitly,
+
+scott  10:03  
+right? Well, that's a triviality. That's okay. What I mean by that is, it's the expected value conditional on the task. Doesn't mean there's still it doesn't mean there's it's a convenience to say there's still uncertainty. And in fact, you could have you are risk neutral agent. You're not going to care about all the authority if you're a risk averse agent, that could be a parameter of the payoff function itself, which is like say, the architectural strategy is much more risky but higher payoff. The value chain strategy is lower risk but lower payoff, but they might be equal in expected value, because I'm a risk averse agent, in expected utilities.
+
+Angie Moon  10:44  
+So you're saying, given this is the same agent it is the preference is not affected by the electric uncertainty.
+
+Unknown Speaker  10:49  
+The I think what I'm saying
+
+scott  10:51  
+is that as a convenience for modeling the post that for a given technology of epistemic uncertainty that can be tested without commitment to first approximation. That the first approximation, the, what you're calling all the electronic uncertainty, or mental uncertainty, is things, the things you cannot know until you do that. Yeah,
+
+Angie Moon  11:13  
+got it. Got it. I think today's topic would be about this is the whole electric uncertainty, and how we are going to level up, yeah?
+
+scott  11:21  
+But just, just, you know, I might, you know, a saber nutrition, you know, a statistician of sports might tell you, might use the best and greatest algorithm to bet on a game, right? They still have to play the game, yeah? And if, and if it's a second inning, you know, the star hitter gets a tummy ache and it's bad. Oh, yeah, there's nothing we could, you know, we might have had a probability in the model very low, if you guys, yeah, you see what I'm saying, right? Like, you remember when C mobile, she's like, didn't win the Olympics two years ago, okay? But she is, she literally just she couldn't perform
+
+Angie Moon  12:05  
+Point taken. Yeah, next question, so I want to understand how you decided to frame test to choose one as a search stopping rule. Is that word from stopping time in your paper? 19? Yes,
+
+scott  12:19  
+that is from a there's a literature that you're probably more knowledgeable than I referenced.
+
+Unknown Speaker  12:30  
+It goes back to whites in 1978
+
+scott  12:35  
+there's a number of papers right
+
+Speaker 1  12:37  
+that, but there's a whole statistics literature that, once again, I'm sure you're much more familiar with
+
+scott  12:43  
+the need that only makes the point that, if you have
+
+Unknown Speaker  12:51  
+and once again, I might be misusing the words because it's
+
+Unknown Speaker  12:54  
+okay, It's okay, but
+
+Speaker 4  12:59  
+the under a Weitzman set the classic whitesman set up
+
+scott  13:05  
+the appropriate, what I would call stopping rule, right? So stopping time is a little different. Stopping rule is the, could be a time, but it's the rule you use yes to determine how much effort and time to spend. Yep, is that a stopping one stopping rule is keep on drawing from this distribution until you exceed a critical value, x star, which is fixed before you start searching. So if I know the distribution from which I'm drawing,
+
+Speaker 4  13:40  
+and I know it's a positive value expectation I should
+
+scott  13:47  
+and the expected value of each it costs money to crawl. And then, you know, then you get your return for sure, if I know the distribution in advance, and there's no uncertainty about that. Then I choose an x star. And once I get greater than an x star strategy, I sign, oh, and that could be after one child, after two, after three, you have saved a time. It could be whatever. And the point is, four, I don't search at all. But once I commit to searching, the expected value of consumer. So that goes, That's goes, probably after Blackwell saying, like, I think Blackwell solved that problem in the 50s. There's, of course, if you don't know about the distribution, or you're uncertain, that threshold is itself, changing with the draws you take. Yeah, right. So if all you get are crappy, if all you get are bad draws, you either decide to stop, right? Yeah. And so that's the motivation. When you are uncertain, are you on a medium good distribution, or really excellent distribution? If you get a very high draw, in our framework, you don't,
+
+Speaker 4  15:03  
+it's so high that you're like, Well, I thought I would stop, but in fact, I'm going to continue because, because I'm now in this really good domain. Do you see what I'm saying? And that's like the Jeff Bezos.
+
+Angie Moon  15:20  
+So what's the stopping rule in that case?
+
+scott  15:24  
+Stopping rule in that case is what then, interestingly, so in our in our theory driven entrepreneurial search, in the Core Model, or only two distribution, yeah, once I'm sufficiently certain that I'm basically on the good distribution. So there's, like, think of it this way. There's
+
+Unknown Speaker  15:42  
+two distributions
+
+scott  15:46  
+for each of them. If I, if I told you for sure which distribution you're on, there'd be an x star, just be a white man. Okay, yeah, yeah. And so then it turns out that, basically, if I'm sure I'm like, I can't remember exactly how we characterized it, but basically, once I get sure I'm here, I basically then have my little x star,
+
+Angie Moon  16:09  
+got it, got it so it somehow represents the fat tail, every part, right?
+
+scott  16:14  
+And do we have a perfect representation of that in any of our papers? No, we got it. Anchor, anchor, who's more methodically skilled than I am. Played around with a lot of things, with the continuous families. And once again, I think I mentioned this to you. All of this is related to the old Susan Angie.
+
+Speaker 1  16:33  
+Information, how? Working.
+
+Angie Moon  16:42  
+Okay, cool. So you were trying to say here, like test, so I was a little confused how many steps there are in test to choose one, so testing two, until testing two is commitment free, and then among the two, it is one is commitment, right?
+
+scott  16:56  
+Yeah, just to be clear, you know, there's a little bit here, both translation to practitioners, the lack of knowledge of what the exact answer is, right, but Right, but the the right answer is something like the following, just once again, you're asking good questions.
+
+Unknown Speaker  17:14  
+Is, if you're correct,
+
+scott  17:17  
+is, in reality, we know that you don't go from commitment free to total commitment, right? They're sort of like partial, yeah, and we do not have to date. We do not have a great formal model of partial, you know, my you know, and I think you've seen it many times where I show the light bulb is over here, right? There's a little version of the light bulb, and then there's the strategy. And here's the light bulb and the strategy, right? And many years ago, I could probably find it on my computer. You know, we spent time writing models like this, just right? Is the idea that, well, at some point this is commitment free, so if you're sitting over here. But imagine I decide to walk over here and test the kind of blue version of light bulb. If I get positive views, I go over here. And then I always say in my slides, but if you go too far this way, now the now, if I decide this is a loser, now this distance is now too far. Do you see what I'm saying? Or even the distance here it's too far. So if you go too far this way, you can't pick it back. And so the we've never had a sad like, if you said, what's a good formal problem to solve? I think I've mentioned this to you before, looking at this clearly, a very good formal problem to solve is this optim like, how much do you move like it's literally this problem. You know, I'm at the zero, right? And just, just think of it as exactly this problem. Don't think, I know there's a pot of gold with one half probability, okay, there might be pots of gold on both. Yeah, but we'll take the even the easier question, okay, it's half and half. Yeah, there's only one pot of gold. Okay, okay, so it's like one thing works and the other doesn't. The other is total disaster. The other is total success. Okay, how far should you walk down? And imagine you have, like a little flashlight, okay, that you can use to get some information, you know, some noisy signal. Do you see what I'm saying? I hope you find this. I've been totally outside for many years. How far should you walk down? Like, it's a very simple problem. I start here. There are two equally sized roots. There's a pot of gold on one, but not the other, yeah. And I have, like, it's almost like a video game. I have a fixed top spot, yeah? So, so if I walk all the way here, let's look right all the way here. There's nothing here. I don't have enough energy to make it all used to put that as a constraint. And I can use, at some cost to my health budget, I can use, I can, like, Shine a flashlight, and maybe I get, you know, like, here, I might get a very weak signal. It's very noisy, but it's informative. So
+
+Angie Moon  20:24  
+the closer you get, the less if I go all the way, I
+
+scott  20:27  
+can, for sure, find okay, but if I go all the way and wrong, I totally lose out on this option. Do you see what I'm saying? What's the objective function here? Very easy. I'd like to find the particles, I mean, in
+
+Angie Moon  20:38  
+a given time. So I care about time. Like, for me, this is Bayesian entrepreneurship, and this is evolutionary entrepreneurship, and I have to graduate within four years, right?
+
+scott  20:50  
+What I'm saying just a pure at a pure mathematical level. Just imagine the pot of gold is, you know, many dollar signs and the cost, like, I don't have enough resources to explore both things, you know. So if I'm, you know,
+
+Unknown Speaker  21:09  
+Google,
+
+scott  21:11  
+I can send one person this way, one person this way, and it's worthwhile, because there's a pot of gold down one path, and one person looks like a total failure, and we sort of promote them anyway. The other person finds, you know, YouTube or something like that, right? Did you see what I'm saying? So if I'm, if I'm a big company, the right strategies here would be, it would be worthwhile. We said two people each one direction, that's what they're all so what the military does, by the way, hope your families will know, yeah, a little bit challenging. I have half my friends in Korea were like, Oh, finally things are gonna, you know, we're gonna finally do something. Yeah, they're half or, like, I'm worried for my life. So it's, like,
+
+Unknown Speaker  21:51  
+dynamic Korea, yeah,
+
+scott  21:53  
+it's show the little. Really hope your family's okay there. Yeah, thanks
+
+Unknown Speaker  22:00  
+for asking. Okay, right? But let's say
+
+scott  22:03  
+I'm an individual decision, and you're asking the right question, how far do you go down this route at what level signal do you need to get? And at some point you're too far to go back here. So there's a trade off, like the at the thing that's maximally informative here also is that the opportunity cost everywhere. We do not have a great model of that. There might be others in the literature. I know people are working on this kind of problem, but I found this problem very fascinating for a long time. And you could be you could write up a short five page memo on exactly that topic that really grappled with the literature. And maybe people in Bayesian statistics have worked on it. Maybe people in operations have worked on it. I don't know. I assume they have.
+
+Angie Moon  22:53  
+Yes, I don't I don't think this. I hear you that this is a very clear description, but I don't think that is very realistic model, like meaning sometimes the constraint, that constraint becomes a choice variable in the next stage,
+
+scott  23:13  
+true. But let me, let me tell you the part that is real is this. So you're correct. That doesn't seem very realistic, except if you think about one thing,
+
+scott  23:29  
+and once again, you're a very smart person, and some of you might be the person that explains exactly how to think about this, the value of success from these sorts of entrepreneurial ventures, right? Is so high relative to the kind of you know exactly what you're doing for the next six months, kind of question, that it's bizarre that people find it difficult, like, in other words, in other words, if I told you usually have to work for the next two years. You have to work really, really hard. But then for sure, like, if you, if you somehow could make it so that you get the pot of gold, for sure you'd be ability. Got it.
+
+Angie Moon  24:12  
+Maybe revisit this after I go. Just, just,
+
+scott  24:15  
+yeah, you asked me a question. Got it? Got it? The answer is, this is, to me, a very fascinating little problem I have. A few years ago, I've had others, other people in this office, retsef, for example, once spent two or three hours trying to write it down. He claimed it hadn't been done, but I don't know that he knew it.
+
+Angie Moon  24:36  
+Yeah, I would like to argue that as you walk through somewhere, you find the exchangeability of the options ahead of you, and that, just to be clear, you
+
+scott  24:48  
+might provide a framework that helps me think through this part.
+
+Angie Moon  24:54  
+Thanks. And here I wanted to understand this part of your textbook, and so this was a noisy learning part where the designer and I want to just clarify the manufacturer will give designer distorted feedback due to one's intention. Is what you are trying to deliver here, the Negative feedback the supplier negative feedback about their idea. Let
+
+scott  25:57  
+we struggled with this, and I think it was that it's a good question.
+
+Angie Moon  26:04  
+So what? So my question is, who is giving a negative feedback? Is it a manufacturer,
+
+scott  26:09  
+if I want to do okay, okay, so we can agree that I would like, as the entrepreneur, to conserve my limited resources, small scale plan, right? Yeah. But if I use a small scale plan, the person who I depend on, my manufacturer don't like that, right? So they're like, Oh, this is, this is not real. Got it, got it. So they put no effort in. And then I get like, and then they don't have any sales. Did you see what I'm saying? Got it, got it. And so what happens is, this is very much. This is actually, this is almost like a hint of, almost that best for four if I do the minimum viable plant, let's call it, I will tend to get negative feedback, yeah, which weirdly is actually highly biased against this. So that is low bar, right, yeah. So if I do the low bar, you see what I'm saying. So this is implicitly an example, yeah, low bar versus a high bar experiment. Got it or sorry, actually, reverse minimum viable product is high bar because it only works if it's really but that sort of it sort of, sort of it fails even when it actually
+
+Angie Moon  27:30  
+have a viable thing. So telling them, telling your manufacturer, small scale somehow shows how confident you are about the quality of your idea. Yes, and it's a high bar,
+
+scott  27:39  
+yeah. This is if I think, if looking at I probably haven't read this particular paragraph for three years, I'm not I think we might have slightly tweaked, okay, in the sense of, it's a very this is a concept. I'm just going to be very honest with you, where, if you think about it in a formal model, it's quite important, because usually, if you go through the first three steps with people, they don't kind of need this to kind of get the intuition for testing. And we don't want to. There was a lot of feedback that, like giving people a very precise thing here was sort of overly made it overly complicated. So I think we, I think we're several, I can show you the several rounds of editing that,
+
+Angie Moon  28:20  
+oh yeah, I'll be interested in how, but
+
+scott  28:27  
+just take it as given that this resulted from a negotiation. Not
+
+Angie Moon  28:33  
+so. One more question here is, like you might in other
+
+scott  28:36  
+words, your initial requirements are just too limited, generating inaccurate, noisy learning. That's the point. It's just to deliver that point that,
+
+Angie Moon  28:44  
+yeah, yeah, yeah. But here, like, when you say, reveal their their idea is valuable. I'm just curious, is it revealing to themselves or to the manufacturer?
+
+Unknown Speaker  28:54  
+So that might have been, and
+
+Angie Moon  28:59  
+I don't care about the past, life, just discuss today.
+
+scott  29:01  
+No. In other words, it's that if they built the big plan, they would get that would be more like the low BAR experiment, you know, saying it would be a best foot forward, but it would be more costly to do so. The thing we don't have in the these in entrepreneurship experimental setup is the idea that the best foot forward is a more costly experiment itself. The interplay between inference and commitment is at the heart of all this, right? And so in your, your your opinion, on a good detail,
+
+Angie Moon  29:36  
+could you elaborate a little more inference and commitment Interplay
+
+Speaker 2  29:41  
+the sorts of things you do to know something for sure
+
+scott  29:46  
+involve more resources and more commitment to that path. Like involve more commitment to the venture in general, but involve more commitment to the path in particular. Did you see what I'm saying?
+
+Angie Moon  29:58  
+So you have to balance between how the value of the information versus how much you spent, and
+
+scott  30:04  
+that's just pure black, yeah,
+
+Angie Moon  30:08  
+but yes,
+
+scott  30:13  
+the kind of relevant cost here is we tend to not to have a fully dynamic, you know, setup with, you know, multiple experimentation
+
+Unknown Speaker  30:25  
+change too much.
+
+Unknown Speaker  30:28  
+Okay, so keep on going. Okay, very, good questions.
+
+Angie Moon  30:30  
+So kind of the, let's say this is the size of the scale that you want to experiment for manufacturing, the order amount. And this is the kind of return of learning that you get,
+
+scott  30:49  
+okay, right? And just so you have it exactly right. You know, there's this old paper that I think you might have compressed, which is on, you know, like, segue should have done user interviews. Oh, yeah, right, yeah, it's a nice paper, right? Like, they sort of say what would been the sequence that would have reduced the experiment at much lower cost. That is a but you have to remember that paper is not highly site is not, you know, it's not like the whole literature
+
+Unknown Speaker  31:23  
+that explains that, you know, I'm
+
+scott  31:26  
+saying like, it's a great example, but like senses that people have just not
+
+Speaker 1  31:32  
+you, if you might tell me, oh, Scott, if you read over in this other literature, but you know,
+
+Angie Moon  31:37  
+I haven't read that before, just just to make sure I'm Following you small plan and big plan. And this is high bar and low bars. What do you think? Yes,
+
+scott  31:45  
+right, like the right. Yeah, I will say that in the example that we wrote down, they're slightly conflated.
+
+scott  31:53  
+You only get success if it's really, really good under the small plan, versus just pure the cheap, a cheap experiment is inherently
+
+Unknown Speaker  32:07  
+I'm not following, okay,
+
+scott  32:09  
+so one would be a informationally unbiased but nonetheless noisy experiment, and you could pay A certain amount of money to reduce the variance. So if I pay $100 I get exactly what's going to happen to me, yeah, but it's not worthwhile, because the whole prize is worth $100 right? Yeah. If I pay $1 I get infinite variance. So these so even right, I don't get any information. Well, how much should I spend? And imagine, imagine that the reduction in variance is equal to, sort of like the log of cost. You see what I'm saying. Got it right? So that's an information unbiased one, the one we happen to have discussed in the book, I think, with some notions that were more implicit, is that a low cost experiment leaves upside on the table. An over commitment experiment, an expensive experiment, means that you know, if you could ever make it work, it's going to work, but you've already committed to it, so you might lose a lot of money, and there's no great paper that characterizes the optimal experiment. Is
+
+Angie Moon  33:30  
+optimal experiment the mix of the two? Or are you focusing more on the second one?
+
+scott  33:37  
+Both in our Daisy and entrepreneurship paper that has that technology of experimentation that Joshua developed for his earlier paper, right? That which I think is not used very much, but it's a very powerful, you know, this kind of budget of type one, type two, arrow, type experiment, the cost of the alternative experiments are equal. It's just you're choosing what to do because you're trying to update. You know, saying, The point of that paper is to say, oh, whose priors you're trying to change? Do you see what I'm saying? Assuming that the sort of cost of doing so is the same, but you might think that the minimum viable product experiments are cheaper or lower commitment, and the best foot forward, experiments are both more expensive and more commitment. I am not you there might exist out there. I'm not, you know, like either the recent literature or some literature, something that you see I'm saying, but there's a lot of work in statistics that you know, like, from the, you know, the Secretary problem, yeah, right, all those sorts of things are, you know, you have to make a commitment choice. You're inferring off of unknown distributions. You know, that's very well, yeah,
+
+Angie Moon  34:50  
+one challenge I'm facing when I'm comparing sequential versus parallel, like, example of test for choose one versus test to choose one twice. Kind of, yeah, the cost differs. The experiment cost differs. You
+
+scott  35:04  
+should read me Angie as this is a very productive meeting relative to average. And the reason, no, no, just so we have it exactly right. You're right. Guess what? No one knows the answer to that. Like,
+
+Angie Moon  35:17  
+am I hit this one? Ever in
+
+scott  35:23  
+your place. It's more like focus, okay, you are correct that night, that certainly I have not been, but I've but, and while I think about a lot of things, so I don't know the details of every single thing in my mental framework, how you create kind of like. How many are like? Is it like? But is it even saying our four box frame? Is it like? Should you be testing two at a time and then testing the other two, taking the winner from each and then comparing critical and no idea, and we just haven't put in the effort to do that. Thank you. Sounds like a great
+
+Angie Moon  36:01  
+day. I'm excited. So I want to understand good. Good test generates an option to proceed without actually committing to do so I want to understand this more. And my interpretation of this is new observation, like, for instance, in the boost boot case, they discovered this essential need for the boot is there, but it's just they're implementing it. Yeah, they're implementing this wrong. So I was, I wanted to frame this as a new creation or option through latent variable. And when I say latent variable, they understand there is a latent layered needs within desirability testing. One is the inherent need and also how it is prioritized?
+
+Speaker 2  36:41  
+So I think that we're not saying he's wrong. We're sort of like working it through in that example. This one, I do remember.
+
+scott  36:53  
+This is a good example. There is no better time to write a textbook than in a pandemic. You know, this is many hours of research. You know, this one page probably two
+
+Angie Moon  37:02  
+days ago. Oh, yeah, okay, I
+
+scott  37:03  
+agree. It's a very compelling exam. Yeah, because everyone knows, LL Bean and you know, it's a kind of funny exam, right? Interesting. So what's the Okay, so let's make sure we have the two things we're trying to get people to avoid in this condition. And so it's very carefully written to be synthetic without being overly pedantic. Okay, yeah, that's bad for academics, because we like pedanticism, yeah, because then we know what you're actually talking about. So this is a bit of communicating to students who are not going to take separate courses in optimal statistical control theory, okay, okay, or whatever you
+
+Unknown Speaker  37:43  
+might call it, right, okay.
+
+scott  37:46  
+Is that we observe, and I think if you look at your friends and even yourself, there are two mistakes that entrepreneurs tend, particularly stupid entrepreneurs. One is they undertake experiments that provide very little viable information. You know, information about whether or not the product or service they're going to offer is viable or not. Like, they'll change the color of the website. They'll they'll do an experiment. You're saying, like, they'll say they're experimenting. We try everything. Okay? But actually, they're not really well chosen experiments for there might be interesting to do
+
+Angie Moon  38:27  
+you say? So design experiments that is not deep enough or getting too much affected by the result of the experiments, or
+
+scott  38:34  
+the problem is that the experiment itself, you know, let's take the classic example, which has come very close to So I'll tell you what was here before. Okay, so I do a Kickstarter, okay, right? Like, Ministry of Supply. And then I'm late. I get good, positive banned. But basically, what I thought was an experiment, I've now committed myself to making 10,000 shirts. You see what I'm saying, not 10,000 2000 Yeah. And also quitting business school, like they hadn't planned to leave Business School. Nice. They basically did an experiment that, because it worked, it showed positive news. They basically found themselves having committed like,
+
+Speaker 1  39:19  
+I will tell you, Raphael, i right? So, Raphael was the president of MIT, right?
+
+scott  39:30  
+You came to attack when he was provost. Were you here when he was president? You know, who did? Yeah, okay, but you know, no government, right? Let's agree. So let's agree that the President MIT is not a stupid person,
+
+Speaker 3  39:41  
+okay, yeah, given that it's true, yeah, okay, yeah.
+
+scott  39:48  
+And He came to describe his big enthusiasm was at
+
+Unknown Speaker  39:52  
+the online work and faculty
+
+scott  40:00  
+at school, but I'd also been on the committee that was advising whether or not to go forward.
+
+scott  40:09  
+And he said, This is a great experiment. Not me. It's pretty quiet. I asked one question. I'll tell you have a conversation. He said, We're gonna spend $50 million
+
+Speaker 2  40:24  
+we're developing 50 courses, whatever we'll see, you know, and he said, we'll learn along the way.
+
+Speaker 3  40:29  
+Okay, we'll learn. We'll do experiments.
+
+scott  40:34  
+And somebody, I think maybe you know, one of the people more, the kind of, you know, poverty, the J pal said, Oh, we're
+
+Speaker 3  40:44  
+going to do an RCT control group. We'll see if it actually works.
+
+Speaker 2  40:50  
+Oh, no, we're not going to do that. We'll just see how things do, okay, and somebody else. But that's not an experiment that's just a strategy like, you know, you've committed, you're committing the institute to 100, you know, at that point, essentially a hundreds of millions of dollars and a brand risk, because we're gonna offer online education for the first time,
+
+scott  41:21  
+and a financial risk
+
+Speaker 2  41:25  
+that's done, and people are that an experiment that made it be a good idea, but and we might learn along the way. And he literally didn't. It was like, weird, because I'm just being honest, like he's not a dumb but he was like, no, no, we're gonna experiment. He's like, engineering. And then they were like, No, that's really not an experiment. And so they were using the word experiment in sort of these two ways. Some people use the word experiment to mean hypothesis test. Some people use the experiment
+
+scott  41:54  
+to mean I tried this out, and then I used my general knowledge of the world course graph.
+
+Angie Moon  42:01  
+I don't think there is a pure experiment, because you're using your time, yep. So the two example was, you went too far versus You went too little, right? The two examples that you're trying to do interest of time I was gonna skip, but this is kind of seven reasons from why test to choose one for your textbook. And I wanted to ask what is most relevant to the Bayesian or the framework that we are trying to go but I'll come back if I have time. Okay,
+
+scott  42:32  
+so this is all very interesting. Okay, so, so why did you get to Yeah,
+
+Angie Moon  42:36  
+so, given our discussion, definitely. So yeah, we discuss topic time, uncertainty and latent option creation, yeah. So are we on the same page that my framing or understanding of a latent option creation? I think we didn't agree on that. So that was my understanding that they observed something that like, yeah, that's sort of, that's, this is not a bad framing for the
+
+Unknown Speaker  43:02  
+purposes of this. That's, that's a good way got it,
+
+Angie Moon  43:06  
+because there are sometimes like in physical science, yeah,
+
+scott  43:10  
+yes, for the purposes of what you want to say.
+
+Angie Moon  43:16  
+Let me finish the sentence. In physics, there are some examples where latent variable does not exist. But I think entrepreneurship, your belief about the quality itself, is some you need some formation for that. And I think we've discussed this, that you
+
+scott  43:31  
+are, you're, you are. What do you just agree? Okay,
+
+Angie Moon  43:35  
+so here, what I'm trying to establish is the second one disappeared, but I was trying to argue that it's two step process of verifying exchangeability forms latent variable and,
+
+Angie Moon  44:02  
+yeah, forming latent variable creates new option. That was what I was trying to argue with this figure, given that definitely theorem is exchangeable, observations are conditionally independent relative to some latent variable and what's
+
+Unknown Speaker  44:21  
+here is the idea, quality
+
+Angie Moon  44:23  
+of the idea, or something. Yeah, that is deeper. But what is very revolutionary about this was it does not like construction of subjective probability matter is independent to actual chances existence. And how much you know about this.
+
+scott  44:41  
+So I've heard of this, you know, I'd have to think about it, whatever. But let me just say it this way. Okay, you are so let's so let me just pin the part that I think is exactly right. If you ask me, in a deep sense, what we're sorry. I
+
+Angie Moon  45:02  
+just wanted to share to show you this part of the book.
+
+scott  45:09  
+Yeah, I mean, a number of years ago I thought about almost, I'm not sure, I don't know where that paragraph came from, but was roughly in that world, you know, I'm saying you are correct, so let's make sure I say this exactly right, a topic upon which I probably spent six
+
+Speaker 1  45:33  
+months Okay, of my life, okay. And I think Joshua spent a similar
+
+scott  45:39  
+but it also Fiona like so when Fiona and Josh and I first talked about this, he spent a lot of time. In fact, it was earlier than that. So I think you know the paper by, say, Fiona and myself on patent paper pairs, yeah, you know, work by Jeff fergu and myself on citations, right? So, one good question, right? So you would agree that there were
+
+Speaker 1  46:11  
+some good academic papers most exciting,
+
+Unknown Speaker  46:17  
+yeah, okay, just
+
+Unknown Speaker  46:18  
+hear me out. I uh,
+
+scott  46:24  
+one of the big and we were not the only people to do it, but a very big change in my thinking about the world
+
+Unknown Speaker  46:32  
+was when I said, Oh,
+
+scott  46:36  
+entrepreneurs have things called ideas. What's vague about what they are, that they are quality, and then strategies are ways of implementing those ideas, yep, that are separate from the idea.
+
+Unknown Speaker  46:54  
+And there might be
+
+scott  46:56  
+generic strategies, as we do in the book, or they might be highly tempted. That's actually important, right? And that gave a very powerful way to think about the role of strategy and entrepreneurship, but also how to study how to study entrepreneurship. You could study ideas, for example, the form of an academic paper, and then either gets patented or not, and then you've said the idea that ideas are sort of latent, yes or hard to write, and then they get instantiated, a paper, a patent, a business product, a product, yes, yes, right? Was a very big advance in my COVID. I mean, it's like it took me many years, probably, to sort of internalize how deep that was. And I have found that both in work on innovation and entrepreneurship, very valuable anchor in the way of within that
+
+Unknown Speaker  47:59  
+the notion of exchangeability. I ability
+
+scott  48:03  
+and the notion of I would, you would know better than
+
+Unknown Speaker  48:08  
+me, because you know more basic statistics
+
+Unknown Speaker  48:17  
+within a Bayesian decision
+
+scott  48:21  
+making, the idea that the actor is grappling with these kind of the thing that no one can really observe, which is the idea and then they are making, doesn't make choices that are, you know,
+
+Unknown Speaker  48:35  
+you know, you know,
+
+scott  48:37  
+Disney has the notion of family oriented cartoons. And then he makes a choice to make either Oswald or Mickey. Oswald and Mickey are instantiations of the same idea. You see what I'm saying? Yeah.
+
+Unknown Speaker  48:53  
+How that relates?
+
+scott  48:57  
+Okay? And so as I understand exchangeability is it has a very precise set of conditions around it. Basically, it's saying that it's the thing that sort of, it's that piece of statistical information which is independent of the particular downstream forms in the trade. So, I'm grappling with this for many years, right? So here's the idea, and here's strategy one and Strategy two, okay? And the question is, and this has like a theta, and maybe this is like theta times delta two, and this is theta times delta in terms of, that's what we get. It. How do you write the the object theta is that object which is identified separate from data to the one and delta two I would or like, like, the expectation
+
+Speaker 2  49:59  
+I you know. So theta
+
+scott  50:04  
+is equal to, you know, essentially the probability you know that you go down root one times you see like like, by construction, the real value of theta, which is latent, is is sort of got to match up with the relative weighted value of these two strategies. Did you see what I'm saying? Like, if you saw both of these and you knew their probability distribution, you'd be able to infer theta itself, and that's and therefore you would be able to identify theta. I'm
+
+Angie Moon  50:38  
+not sure I'm gonna call that infer, but like it's constructing a probability measure that is one level higher up. Yes,
+
+scott  50:45  
+and it is, and you are correct that there's a huge literature that I do not
+
+Angie Moon  50:53  
+understand, okay, and theory
+
+scott  50:55  
+as a generalization of difficulty,
+
+Angie Moon  50:57  
+but yeah, this is the image that I will want to keep coming back later. Yeah, I know we are out of time. Yeah,
+
+Unknown Speaker  51:03  
+we're 4050,
+
+scott  51:07  
+minutes. So okay, so we could meet again. Okay, why don't we do this, rather than try to shoe more? Got it?
+
+Unknown Speaker  51:15  
+This was a good catch up meeting.
+
+scott  51:18  
+Why don't you We can talk later this week, or even early
+
+Angie Moon  51:20  
+next week. Yes, later this week. Thank you. Okay, yes,
+
+Unknown Speaker  51:26  
+and we can meet again and
+
+Speaker 1  51:27  
+just try to go through this a little bit more slowly. Yeah, yeah, yeah. But
+
+Unknown Speaker  51:32  
+to be honest, my sense is
+
+scott  51:37  
+I don't know where quite you're going with this, but the idea of writing down some sort of characterized model of search or decision making that yields direct comparative status, either about sequential versus parallel search that
+
+Unknown Speaker  51:56  
+yields insights into the
+
+scott  52:00  
+conditions under which entrepreneurs are able to assess the idea, or able to able to abstract out an idea relative to the strategy return, see.
+
+Speaker 4  52:11  
+So the idea is, because it's a little bit messy. Just so, you know, everyone I said before that the epistemic uncertainty, yeah. So why change with the measurement technology?
+
+Angie Moon  52:23  
+Yeah. What I'm trying to say is, this is test two. What you're doing is test two, and you verify that the expected, yeah. And what I'd
+
+Speaker 4  52:32  
+say is just, so you know what I mean by test two, choose one is that?
+
+scott  52:38  
+The that? So you put a little bit more structural. I imagine each experiment is expensive. The it should be the expectation of oh one and the expectation of oh two. The difference between them
+
+Angie Moon  52:56  
+always is.
+
+scott  52:57  
+The difference between them is within some delta such that an extra experiment got it is not going to be worthwhile. Showtime, yeah, I verified that these two things are close enough, you know, time, they're not statistically significant differently than each other, and even using a Bayesian inference, yeah, right. So they have overlapping distributions of support. So think about it is if I formally let me just be classes for a second, if I formulate the hype, it is the hypothesis that expectation of oh one is equal to the expectation of oh two. You see what I'm saying. So I cannot reject that hypothesis and an additional commitment free experiment is not worthwhile, given the difference. That is really what testing tools.
+
+Angie Moon  53:49  
+So the cost of data is commitment free? Yeah,
+
+scott  53:52  
+the cost of an additional experiment that doesn't bias me towards one of the directions. So we're still staying here. That that. In other words, these look on two good options. Remember, my other option is go to McKinsey, right? These look so the conditions are,
+
+Unknown Speaker  54:15  
+this looks good, and this looks good.
+
+scott  54:17  
+Once again, maybe I don't know why or set what I found at least two. And once again, you might tell me it's really five, but more than one. I can tell you that I find more than one that's good. Both of these tell me that the underlying theta is sufficiently high so that I don't want to go back to McKinsey. Okay, I want to pursue one of them, but the value of an additional commitment free experiment is now less than the cost of implementing that experience, the informational value that's when you commit to, yeah, and so then you would take, you would then the next experiment in the sequence would be biased towards one direction, involving partial commitment, meaning that you're right. You would be kind of at the expense perhaps of another opportunity.
+
+Unknown Speaker  55:08  
+Got it. Thank you. Okay, yes,
+
+scott  55:12  
+if you can show you are correct that, Scott, but I am very focused on it. And once again, you I'm very I'm very broad is like, like, I don't have a particular I think there are many things. There are many things to study in that domain. You understand, like, there are lots of interesting things to know about. And so I gave you one or two. Okay, let's be together. Okay, so there
+
+Angie Moon  55:51  
+was not regular. This is so you're
+
+Unknown Speaker  55:53  
+getting closer, but no, okay,
+
+Angie Moon  55:58  
+well, let's come about this idea and strategy in infectious disease you have, like how strong this virus is, and then how the policy, like non pharmaceutical intervention, is,
+
+Unknown Speaker  56:10  
+it is.
+
+scott  56:14  
+We did not invent the notion of the latent variable,
+
+Speaker 4  56:18  
+but all I care about
+
+scott  56:21  
+got it are oxidored to innovators. Me too. And so the idea that in some other literature, there's,
+
+Angie Moon  56:31  
+I was making a point that higher covidian is very strong in that we can apply this.
+
+Speaker 4  56:38  
+I agree with that. I guess, hierarchical, subjective. I mean,
+
+scott  56:44  
+when I have gone down this route in the past, I've not fully gone down. I've never been able to, like,
+
+Speaker 4  56:52  
+come up with the result you're saying, like, like, the reason to put it a slightly different breath. It's only in the past three years that I explicitly understood the problem as an explicitly Bayesian problem. You say, Okay, like, and you saw that in our conference that we did earlier this year, like people have been hunting around and the idea that there are these tools for Bayesian statistics and Bayesian decision making that are helpful, but usually when I've gone down that route by myself or with, you know, potential collaborators or whatever I've often done that I get stuck because it's not quite what I'm looking for. Do you see what I'm saying? But you're getting closer. Okay?
+
+Angie Moon  57:38  
+It was really helpful. This is very good, very good. Thank you.
+
+Transcribed by https://otter.ai

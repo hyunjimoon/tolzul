@@ -1,0 +1,14 @@
+---
+collection:
+  - "[[Space/Lab/Papers]]"
+author_ids:
+  - mastrogiorgio
+field:
+  - 🐢inv
+year: 2016
+created: 2024-11-25
+---
+
+The concept of exaptation has been recently introduced in innovation studies. Previous empirical studies have only focused on the organization-level conditions of exaptation. This paper ﬁlls the gaps by focusing on invention and inventor-level conditions such as technological complexity, inventors’ analogical ability, and patent scope. To test our hypotheses, we analyse a large sample of U.S. patents obtained from the USPTO and NBER databases. Based on our ﬁndings, we discuss a number of implications of exaptation for the management of innovation as well as for policy makers.
+
+🔑: #Exaptation #Complexity #Analogy Patents #Recombination #Innovation
