@@ -1,8 +1,10 @@
 ---
 modified:
   - 2025-11-15T11:38:28-05:00
+  - 2025-11-17T15:37:50-05:00
 ---
 
+test
 ### 1. The _Clockspeed_ Research Hypothesis
 
 Charlie explains that his research for the _Clockspeed_ book started with a hypothesis comparing Japanese and American manufacturing in the 1980s and 90s.
