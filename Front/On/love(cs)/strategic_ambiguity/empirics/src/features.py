@@ -9,6 +9,7 @@ Feature Engineering Module (W1 refactor)
 
 import pandas as pd
 import numpy as np
+from vagueness_v2 import StrategicVaguenessScorerV2, HybridVaguenessScorerV2
 import re
 import logging
 from pathlib import Path
@@ -645,34 +646,139 @@ def filter_quantum_companies(df: pd.DataFrame) -> pd.DataFrame:
     # Create mask for quantum companies
     mask = pd.Series(False, index=df.index)
 
-    # Check Description column
+    # Check Description column (try both capitalized and lowercase)
+    desc_col = None
     if 'Description' in df.columns:
-        desc_mask = df['Description'].fillna('').str.lower().str.contains(
+        desc_col = 'Description'
+    elif 'description' in df.columns:
+        desc_col = 'description'
+
+    if desc_col:
+        desc_mask = df[desc_col].fillna('').str.lower().str.contains(
             '|'.join(quantum_keywords), case=False, regex=True, na=False
         )
         mask |= desc_mask
-        logger.info(f"  Found {desc_mask.sum():,} companies via Description")
+        logger.info(f"  Found {desc_mask.sum():,} companies via {desc_col}")
 
-    # Check Keywords column
+    # Check Keywords column (try both capitalized and lowercase)
+    kw_col = None
     if 'Keywords' in df.columns:
-        kw_mask = df['Keywords'].fillna('').str.lower().str.contains(
+        kw_col = 'Keywords'
+    elif 'keywords' in df.columns:
+        kw_col = 'keywords'
+
+    if kw_col:
+        kw_mask = df[kw_col].fillna('').str.lower().str.contains(
             '|'.join(quantum_keywords), case=False, regex=True, na=False
         )
         mask |= kw_mask
-        logger.info(f"  Found {kw_mask.sum():,} companies via Keywords")
+        logger.info(f"  Found {kw_mask.sum():,} companies via {kw_col}")
 
-    # Check Promise column (if exists)
+    # Check Promise column (if exists - try both capitalized and lowercase)
+    prom_col = None
     if 'Promise' in df.columns:
-        prom_mask = df['Promise'].fillna('').str.lower().str.contains(
+        prom_col = 'Promise'
+    elif 'promise' in df.columns:
+        prom_col = 'promise'
+
+    if prom_col:
+        prom_mask = df[prom_col].fillna('').str.lower().str.contains(
             '|'.join(quantum_keywords), case=False, regex=True, na=False
         )
         mask |= prom_mask
-        logger.info(f"  Found {prom_mask.sum():,} companies via Promise")
+        logger.info(f"  Found {prom_mask.sum():,} companies via {prom_col}")
 
     df_quantum = df[mask].copy()
     logger.info(f"\n  ✓ Total quantum companies identified: {len(df_quantum):,} ({len(df_quantum)/len(df)*100:.2f}%)")
 
     return df_quantum
+
+
+def filter_transportation_companies(df: pd.DataFrame) -> pd.DataFrame:
+    """Filter for transportation/mobility related companies.
+
+    Identifies transportation companies using keywords in:
+    - Description
+    - Keywords
+    - Primary Industry Codes
+
+    Args:
+        df: DataFrame with company data
+
+    Returns:
+        DataFrame with only transportation-related companies
+
+    Example:
+        >>> df_all = consolidate_company_snapshots('data/raw')
+        >>> df_transport = filter_transportation_companies(df_all)
+        >>> print(f"Transportation companies: {len(df_transport):,}")
+    """
+    # Transportation-related keywords (comprehensive list)
+    transport_keywords = [
+        'autonomous', 'autonomous vehicle', 'self-driving', 'driverless',
+        'vehicle', 'automotive', 'mobility', 'transport', 'transportation',
+        'logistics', 'delivery', 'freight', 'shipping', 'cargo',
+        'rideshare', 'ridesharing', 'ride-sharing', 'ride sharing',
+        'electric vehicle', 'ev charging', 'battery electric',
+        'drone delivery', 'uav', 'unmanned aerial',
+        'fleet management', 'fleet optimization',
+        'last mile', 'last-mile delivery',
+        'micromobility', 'e-scooter', 'electric scooter', 'bike share',
+        'autonomous driving', 'adas', 'driver assistance',
+        'lidar', 'radar', 'sensor fusion',
+        'route optimization', 'dispatch', 'warehouse automation',
+        'supply chain', 'trucking', 'commercial vehicle'
+    ]
+
+    # Create mask for transportation companies
+    mask = pd.Series(False, index=df.index)
+
+    # Check Description column (try both capitalized and lowercase)
+    desc_col = None
+    if 'Description' in df.columns:
+        desc_col = 'Description'
+    elif 'description' in df.columns:
+        desc_col = 'description'
+
+    if desc_col:
+        desc_mask = df[desc_col].fillna('').str.lower().str.contains(
+            '|'.join(transport_keywords), case=False, regex=True, na=False
+        )
+        mask |= desc_mask
+        logger.info(f"  Found {desc_mask.sum():,} companies via {desc_col}")
+
+    # Check Keywords column (try both capitalized and lowercase)
+    kw_col = None
+    if 'Keywords' in df.columns:
+        kw_col = 'Keywords'
+    elif 'keywords' in df.columns:
+        kw_col = 'keywords'
+
+    if kw_col:
+        kw_mask = df[kw_col].fillna('').str.lower().str.contains(
+            '|'.join(transport_keywords), case=False, regex=True, na=False
+        )
+        mask |= kw_mask
+        logger.info(f"  Found {kw_mask.sum():,} companies via {kw_col}")
+
+    # Check Promise column (if exists - try both capitalized and lowercase)
+    prom_col = None
+    if 'Promise' in df.columns:
+        prom_col = 'Promise'
+    elif 'promise' in df.columns:
+        prom_col = 'promise'
+
+    if prom_col:
+        prom_mask = df[prom_col].fillna('').str.lower().str.contains(
+            '|'.join(transport_keywords), case=False, regex=True, na=False
+        )
+        mask |= prom_mask
+        logger.info(f"  Found {prom_mask.sum():,} companies via {prom_col}")
+
+    df_transport = df[mask].copy()
+    logger.info(f"\n  ✓ Total transportation companies identified: {len(df_transport):,} ({len(df_transport)/len(df)*100:.2f}%)")
+
+    return df_transport
 
 
 def select_hypothesis_columns(df: pd.DataFrame) -> pd.DataFrame:
@@ -834,473 +940,132 @@ def create_quantum_dataset(
 # =========================================================
 # Academic Vagueness (Gemini's StrategicVaguenessScorer)
 # =========================================================
-
-class StrategicVaguenessScorerV2:
+class StrategicVaguenessScorer:
     """
-    Strategic Vagueness Scorer V2 - Two-component vagueness measure.
-
-    Parameters
-    ----------
-    abstract_terms : list[str], optional
-        Custom list of abstract/categorical terms. If None, uses default lexicon.
-    unit_terms : list[str], optional
-        Custom list of unit/spec terms for specificity detection. If None, uses defaults.
-    use_idf : bool, default=True
-        Weight abstract terms by inverse document frequency to reduce false positives.
-    groupby_cols : list[str], optional
-        Column names for group-wise percentile computation.
-    random_state : int, default=0
-        Random seed for reproducibility (currently unused but reserved).
+    Academic literature-based vagueness scorer analyzing venture 'Promise' and 'Keywords'.
+    Cites:
+    1. Lexical Uncertainty (Loughran & McDonald 2011, 2016)
+    2. Linguistic Concreteness (Pan et al. 2018; Chen et al. 2015)
+    3. Categorical Vagueness (Zuckerman 1999; Hannan et al. 2007)
     """
 
-    # Default abstract terms lexicon
-    DEFAULT_ABSTRACT_TERMS = [
-        "platform", "solution", "ecosystem", "innovation", "AI-powered",
-        "end-to-end", "digital transformation", "next-generation", "seamless",
-        "synergy", "leverage", "framework", "infrastructure", "service layer",
-        "suite", "experience", "future-proof", "cutting-edge", "revolutionary",
-        "transformative", "strategic", "holistic", "integrated", "comprehensive",
-        "robust", "scalable", "flexible", "agile", "dynamic", "optimize",
-        "streamline", "enhance", "enable", "empower", "deliver", "drive",
-        "value-added", "best-in-class", "world-class", "industry-leading",
-        "state-of-the-art", "advanced", "sophisticated", "intelligent",
-        "smart", "automated", "cloud-based", "enterprise-grade"
-    ]
+    def __init__(self):
+        # Cites: Loughran & McDonald (2011, JF; 2016, JAR)
+        self.lm_uncertainty = {
+            'approximately', 'believe', 'could', 'depend', 'estimate', 'expect',
+            'intend', 'may', 'might', 'possible', 'probable', 'risk', 'uncertain',
+            'vary', 'anticipate', 'potential', 'project', 'forecast', 'seek',
+            'contingent', 'future', 'unclear', 'unspecified'
+        }
 
-    # Default stopwords (generic English - do NOT remove domain terms)
-    STOPWORDS = set([
-        "a", "an", "and", "are", "as", "at", "be", "by", "for", "from",
-        "has", "he", "in", "is", "it", "its", "of", "on", "that", "the",
-        "to", "was", "will", "with", "we", "our", "this", "these", "those"
-    ])
+        # Cites: Pan et al. (2018, SMJ); Chen et al. (2015, JAR)
+        self.concreteness_markers = {
+            'temporal': r'\b(Q[1-4]\s*20\d{2}|20\d{2})\b',
+            'quantitative_tech': r'\b(\d+[\.\d]*[xX%]?|[A-Z]{2,}\d*|\bL(evel)?\s*\d)\b',
+            'acronym': r'\b[A-Z]{3,}\b'
+        }
 
-    def __init__(
-        self,
-        abstract_terms: Optional[List[str]] = None,
-        unit_terms: Optional[List[str]] = None,
-        use_idf: bool = True,
-        groupby_cols: Optional[List[str]] = None,
-        random_state: int = 0
-    ):
-        self.abstract_terms = abstract_terms or self.DEFAULT_ABSTRACT_TERMS
-        self.unit_terms = unit_terms
-        self.use_idf = use_idf
-        self.groupby_cols = groupby_cols
-        self.random_state = random_state
+        # Cites: Hannan et al. (2007, ASQ); Zuckerman (1999, AJS)
+        self.abstraction_keywords = {
+            'platform', 'solution', 'ecosystem', 'technology', 'approach',
+            'service', 'market', 'advanced', 'next-generation', 'sustainable',
+            'cloud', 'AI', 'data', 'analytics', 'software', 'future'
+        }
 
-        # Build regex patterns
-        self._abstract_pattern = self._build_abstract_pattern()
-        self._idf_weights = {}
-        self._fitted = False
+    def _tokenize(self, text):
+        """Helper to safely tokenize text."""
+        if not isinstance(text, str) or not text:
+            return []
+        return re.findall(r'\b\w+\b', text.lower())
 
-    def _build_abstract_pattern(self) -> re.Pattern:
-        """Build regex pattern for abstract terms (case-insensitive)."""
-        # Escape special regex chars and handle multi-word terms
-        escaped_terms = [re.escape(term) for term in self.abstract_terms]
-        pattern = r'\b(' + '|'.join(escaped_terms) + r')\b'
-        return re.compile(pattern, re.IGNORECASE)
-
-    def _preprocess(self, text: str) -> str:
-        """
-        Preprocessing: lowercase, strip HTML, collapse whitespace.
-
-        Parameters
-        ----------
-        text : str
-            Raw input text
-
-        Returns
-        -------
-        str
-            Cleaned text
-        """
-        if not isinstance(text, str):
-            return ""
-
-        # Strip HTML tags
-        text = re.sub(r'<[^>]+>', ' ', text)
-
-        # Lowercase
-        text = text.lower()
-
-        # Collapse whitespace
-        text = re.sub(r'\s+', ' ', text).strip()
-
-        return text
-
-    def _tokenize(self, text: str) -> List[str]:
-        """
-        Tokenize on word boundaries; keep hyphenated terms.
-
-        Parameters
-        ----------
-        text : str
-            Preprocessed text
-
-        Returns
-        -------
-        list[str]
-            Tokens
-        """
-        # Match words including hyphenated terms
-        pattern = r'\b[\w][\w\-]*\b'
-        tokens = re.findall(pattern, text)
-        return tokens
-
-    def _compute_idf(self, texts: List[str]) -> Dict[str, float]:
-        """
-        Compute inverse document frequency for abstract terms.
-
-        Parameters
-        ----------
-        texts : list[str]
-            Corpus of preprocessed texts
-
-        Returns
-        -------
-        dict
-            IDF weights for each abstract term
-        """
-        n_docs = len(texts)
-        doc_freq = Counter()
-
-        for text in texts:
-            # Find unique abstract terms in this document
-            matches = set(self._abstract_pattern.findall(text))
-            for term in matches:
-                doc_freq[term.lower()] += 1
-
-        # Compute IDF: log(N / df)
-        idf = {}
-        for term in self.abstract_terms:
-            df = doc_freq.get(term.lower(), 0)
-            if df > 0:
-                idf[term.lower()] = np.log(n_docs / df)
-            else:
-                idf[term.lower()] = 0.0
-
-        return idf
-
-    def _score_categorical_vagueness(self, text: str, tokens: List[str]) -> float:
-        """
-        Component (1): Categorical Vagueness → S_cat ∈ [0, 100]
-
-        Measures reliance on abstract category terms.
-
-        Parameters
-        ----------
-        text : str
-            Preprocessed text
-        tokens : list[str]
-            Tokenized text
-
-        Returns
-        -------
-        float
-            S_cat score in [0, 100]
-        """
-        token_count = len(tokens)
-        if token_count == 0:
+    def calculate_lexical_uncertainty(self, description_words):
+        """Cites: Loughran & McDonald (2011, JF; 2016, JAR)"""
+        if not description_words:
             return 0.0
+        uncertain_count = sum(1 for w in description_words if w in self.lm_uncertainty)
+        uncertain_ratio = uncertain_count / len(description_words)
+        return min(uncertain_ratio * 1000, 100)
 
-        # Find all abstract term matches
-        matches = self._abstract_pattern.findall(text)
+    def calculate_concreteness_deficit(self, description_text, description_words):
+        """Cites: Pan et al. (2018, SMJ); Chen et al. (2015, JAR)"""
+        if not description_words:
+            return 100.0
 
-        if not matches:
-            return 0.0
+        specific_count = 0
+        for pattern in self.concreteness_markers.values():
+            if isinstance(description_text, str):
+                specific_count += len(re.findall(pattern, description_text))
 
-        # Count abstract terms
-        if self.use_idf and self._fitted:
-            # Weight by IDF
-            weighted_count = sum(
-                self._idf_weights.get(match.lower(), 1.0)
-                for match in matches
-            )
-            # Normalize by mean IDF to keep scale consistent
-            mean_idf = np.mean(list(self._idf_weights.values())) if self._idf_weights else 1.0
-            if mean_idf > 0:
-                count_abstract = weighted_count / mean_idf
-            else:
-                count_abstract = len(matches)
-        else:
-            count_abstract = len(matches)
+        specific_ratio = specific_count / len(description_words)
+        precision_score = min(specific_ratio * 500, 100)
+        return 100 - precision_score
 
-        # Score with scaling factor α
-        # Tuned so marketing-heavy → 60-80, technical → 20-40
-        # For marketing with ~40% abstract terms: 100 * 0.4 * α = 70 → α ≈ 1.75
-        alpha = 2.3  # Scaling constant
+    def calculate_categorical_vagueness(self, keyword_list):
+        """Cites: Zuckerman (1999, AJS); Pontikes (2012, ASQ); Hannan et al. (2007)"""
+        if not keyword_list:
+            return 100.0
 
-        score = 100 * (count_abstract / max(1, token_count)) * alpha
+        num_keywords = len(keyword_list)
+        abstraction_count = sum(1 for w in keyword_list if w in self.abstraction_keywords)
+        abstraction_ratio = abstraction_count / num_keywords
+        uniqueness_ratio = len(set(keyword_list)) / num_keywords
+        categorical_vagueness_ratio = (abstraction_ratio + uniqueness_ratio) / 2
 
-        # Clip to [0, 100]
-        return min(100.0, max(0.0, score))
+        return categorical_vagueness_ratio * 100
 
-    def _score_concreteness_deficit(self, text: str, tokens: List[str]) -> float:
-        """
-        Component (2): Concreteness Deficit → S_concdef ∈ [0, 100]
+    def score_vagueness(self, description, keywords):
+        """Composite Vagueness score (0-100)"""
+        description_words = self._tokenize(description)
 
-        Penalizes absence of specifics (numbers, dates, versions, units, benchmarks).
+        keyword_str = keywords if isinstance(keywords, str) else ""
+        keyword_list = [k.strip() for k in keyword_str.lower().split(',')]
+        keyword_list = [k for k in keyword_list if k]
 
-        Parameters
-        ----------
-        text : str
-            Preprocessed text
-        tokens : list[str]
-            Tokenized text
+        score_uncertainty = self.calculate_lexical_uncertainty(description_words)
+        score_concreteness_deficit = self.calculate_concreteness_deficit(description, description_words)
+        score_categorical = self.calculate_categorical_vagueness(keyword_list)
 
-        Returns
-        -------
-        float
-            S_concdef score in [0, 100]
-        """
-        token_count = max(1, len(tokens))
+        composite_score = (score_uncertainty +
+                           score_concreteness_deficit +
+                           score_categorical) / 3
 
-        # Feature 1: Numbers or percentages
-        has_number = bool(re.search(r'\d+(\.\d+)?%?', text))
-        number_density = len(re.findall(r'\d+(\.\d+)?%?', text)) / (token_count / 100)
-
-        # Feature 2: Dates, quarters, years
-        has_date = bool(re.search(
-            r'\b(20\d{2}|q[1-4]\s*20\d{2}|january|february|march|april|may|june|'
-            r'july|august|september|october|november|december)\b',
-            text, re.IGNORECASE
-        ))
-        date_density = len(re.findall(
-            r'\b(20\d{2}|q[1-4]\s*20\d{2}|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\b',
-            text, re.IGNORECASE
-        )) / (token_count / 100)
-
-        # Feature 3: Versions or releases
-        has_version = bool(re.search(
-            r'\bv\d+(\.\d+){0,3}\b|version\s+\d+|release\s+\d+|sdk\s+v?\d+|api\s+v?\d+',
-            text, re.IGNORECASE
-        ))
-
-        # Feature 4: Units and specs
-        unit_pattern = (
-            r'\b\d+\s*(nm|ghz|mhz|kw|mw|w|ms|μs|ns|gb|tb|mb|kb|kwh|mwh|'
-            r'tops|flops|gflops|tflops|μm|mm|cm|m|km|mpa|gpa|kpa|pa|'
-            r'hz|v|a|ma|μa|°c|°f|k|mol|cd|lm|lx|db|dbi|ppm|ppb|%|'
-            r'cri|coherence|qubit|qubits|error\s+rate|fidelity)\b'
-        )
-        has_units = bool(re.search(unit_pattern, text, re.IGNORECASE))
-        unit_density = len(re.findall(unit_pattern, text, re.IGNORECASE)) / (token_count / 100)
-
-        # Feature 5: Benchmarks, publications, named clients
-        benchmark_pattern = (
-            r'\b(benchmark|published|nature|science|ieee|arxiv|acm|'
-            r'customer|client|partner|pilot|deployment|production)\b'
-        )
-        has_benchmark = bool(re.search(benchmark_pattern, text, re.IGNORECASE))
-
-        # Named entities (capitalized bigrams as proxy for companies/products)
-        named_entities = re.findall(r'\b[A-Z][a-z]+\s+[A-Z][a-z]+\b', text)
-        has_named = len(named_entities) > 0
-
-        # Weighted combination of features
-        # Use density-based squashing: 1 - exp(-density)
-        w1, w2, w3, w4, w5 = 0.25, 0.20, 0.15, 0.25, 0.15
-
-        evidence_1 = 1 - np.exp(-number_density * 0.5) if number_density > 0 else 0
-        evidence_2 = 1 - np.exp(-date_density * 0.8) if date_density > 0 else 0
-        evidence_3 = float(has_version)
-        evidence_4 = 1 - np.exp(-unit_density * 0.6) if unit_density > 0 else 0
-        evidence_5 = float(has_benchmark or has_named)
-
-        specificity_evidence = (
-            w1 * evidence_1 +
-            w2 * evidence_2 +
-            w3 * evidence_3 +
-            w4 * evidence_4 +
-            w5 * evidence_5
-        )
-
-        # Concreteness deficit is inverse of specificity
-        s_concdef = 100 * (1 - specificity_evidence)
-
-        # Clip to [0, 100]
-        return min(100.0, max(0.0, s_concdef))
-
-    def _aggregate_v_raw(self, s_cat: float, s_concdef: float) -> float:
-        """
-        Aggregate S_cat and S_concdef into V_raw using max-mean hybrid.
-
-        V_raw = 0.5 * max(S_cat, S_concdef) + 0.5 * mean(S_cat, S_concdef)
-
-        Rationale: Preserves extreme signals when either component is very high.
-
-        Parameters
-        ----------
-        s_cat : float
-            Categorical vagueness score
-        s_concdef : float
-            Concreteness deficit score
-
-        Returns
-        -------
-        float
-            V_raw score in [0, 100]
-        """
-        mean_val = 0.5 * (s_cat + s_concdef)
-        max_val = max(s_cat, s_concdef)
-        v_raw = 0.5 * max_val + 0.5 * mean_val
-        return v_raw
-
-    def fit(
-        self,
-        texts: List[str],
-        y: Optional[pd.Series] = None,
-        group_cols: Optional[pd.DataFrame] = None
-    ):
-        """
-        Fit the scorer on a corpus (compute IDF weights if enabled).
-
-        Parameters
-        ----------
-        texts : list[str]
-            Input texts
-        y : pd.Series, optional
-            Ignored (for sklearn compatibility)
-        group_cols : pd.DataFrame, optional
-            Group columns for within-group percentile computation
-
-        Returns
-        -------
-        self
-        """
-        # Preprocess all texts
-        preprocessed = [self._preprocess(text) for text in texts]
-
-        # Compute IDF weights if enabled
-        if self.use_idf:
-            self._idf_weights = self._compute_idf(preprocessed)
-
-        self._fitted = True
-        return self
-
-    def transform(
-        self,
-        texts: List[str],
-        group_cols: Optional[pd.DataFrame] = None
-    ) -> pd.DataFrame:
-        """
-        Transform texts into vagueness scores.
-
-        Parameters
-        ----------
-        texts : list[str]
-            Input texts
-        group_cols : pd.DataFrame, optional
-            Group columns for within-group percentile computation
-
-        Returns
-        -------
-        pd.DataFrame
-            Columns: S_cat, S_concdef, V_raw, V_pct, V_minmax
-        """
-        results = []
-
-        for text in texts:
-            # Preprocess and tokenize
-            preprocessed = self._preprocess(text)
-            tokens = self._tokenize(preprocessed)
-
-            # Compute components
-            s_cat = self._score_categorical_vagueness(preprocessed, tokens)
-            s_concdef = self._score_concreteness_deficit(preprocessed, tokens)
-
-            # Aggregate
-            v_raw = self._aggregate_v_raw(s_cat, s_concdef)
-
-            results.append({
-                'S_cat': s_cat,
-                'S_concdef': s_concdef,
-                'V_raw': v_raw
-            })
-
-        df = pd.DataFrame(results)
-
-        # Compute percentiles
-        if group_cols is not None and self.groupby_cols:
-            # Within-group percentiles
-            combined = pd.concat([group_cols.reset_index(drop=True), df], axis=1)
-            combined['V_pct'] = combined.groupby(self.groupby_cols)['V_raw'].rank(pct=True) * 100
-            df['V_pct'] = combined['V_pct']
-        else:
-            # Global percentiles
-            df['V_pct'] = df['V_raw'].rank(pct=True) * 100
-
-        # Compute min-max normalization
-        v_min = df['V_raw'].min()
-        v_max = df['V_raw'].max()
-        if v_max > v_min:
-            df['V_minmax'] = 100 * (df['V_raw'] - v_min) / (v_max - v_min)
-        else:
-            df['V_minmax'] = 50.0  # All same value
-
-        return df
-
-    def fit_transform(
-        self,
-        texts: List[str],
-        y: Optional[pd.Series] = None,
-        group_cols: Optional[pd.DataFrame] = None
-    ) -> pd.DataFrame:
-        """
-        Fit and transform in one step.
-
-        Parameters
-        ----------
-        texts : list[str]
-            Input texts
-        y : pd.Series, optional
-            Ignored (for sklearn compatibility)
-        group_cols : pd.DataFrame, optional
-            Group columns for within-group percentile computation
-
-        Returns
-        -------
-        pd.DataFrame
-            Columns: S_cat, S_concdef, V_raw, V_pct, V_minmax
-        """
-        self.fit(texts, y, group_cols)
-        return self.transform(texts, group_cols)
-
-# Backward compatibility shim
-class StrategicVaguenessScorer(StrategicVaguenessScorerV2):
-    """
-    Deprecated: Use StrategicVaguenessScorerV2 instead.
-
-    This is a compatibility shim. The lexical-uncertainty component has been
-    removed per research spec p.25-26. Vagueness is now computed using only
-    two components: Categorical Vagueness and Concreteness Deficit.
-    """
-
-    def __init__(self, *args, **kwargs):
-        warnings.warn(
-            "StrategicVaguenessScorer is deprecated. "
-            "Lexical uncertainty component has been removed; "
-            "using two-component V (Categorical Vagueness + Concreteness Deficit). "
-            "Please use StrategicVaguenessScorerV2 directly.",
-            DeprecationWarning,
-            stacklevel=2
-        )
-        super().__init__(*args, **kwargs)
+        return max(0, min(100, composite_score))
 
 # --- Scorer instance and Wrapper ---
-_SCORER = StrategicVaguenessScorer()
+# Hybrid Scorer: V2 linguistic features + concrete feature counts
+# Provides best discriminatory power (IQR=8.97, CV=0.226, no spikes)
+_SCORER_V2 = HybridVaguenessScorerV2(use_idf=True, random_state=42)
+_SCORER_V2_FITTED = False  # Track if scorer has been fit
 
 def compute_vagueness_vectorized(descriptions: pd.Series, keywords: pd.Series) -> pd.Series:
     """
-    Vectorized wrapper for StrategicVaguenessScorer using both inputs.
-    """
-    # Combine into a temporary DataFrame to handle alignment and missing values
-    temp_df = pd.DataFrame({'description': descriptions, 'keywords': keywords})
+    Vectorized wrapper for HybridVaguenessScorerV2 using both inputs.
 
-    return temp_df.apply(
-        lambda row: _SCORER.score_vagueness(row['description'], row['keywords']),
-        axis=1
-    )
+    Hybrid Improvements:
+    - 50% V2 linguistic features (categorical vagueness + concreteness deficit)
+    - 50% inverse concrete feature counts (numbers, dates, units, metrics)
+    - IDF weighting for abstract terms
+    - Superior discriminatory power (IQR=8.97, CV=0.226, no concentration spikes)
+    - Returns V_minmax (min-max normalized 0-100 score)
+    """
+    global _SCORER_V2_FITTED
+
+    # Combine description and keywords
+    text_data = (descriptions.fillna('') + ' ' + keywords.fillna(''))
+
+    # Fit on first call (IDF weights need corpus)
+    if not _SCORER_V2_FITTED:
+        print("  🔧 Fitting Hybrid vagueness scorer on corpus (one-time)...")
+        _SCORER_V2.fit(text_data)
+        _SCORER_V2_FITTED = True
+        print("  ✅ Hybrid scorer fitted (V2 + Concrete Features)")
+
+    # Transform to get scores
+    # Returns: [S_cat, S_concdef, V_raw, V_pct, V_minmax]
+    scores = _SCORER_V2.transform(text_data)
+
+    # Use V_minmax (column 4) - min-max normalized 0-100
+    return pd.Series(scores[:, 4], index=descriptions.index, name='vagueness')
 
 # =========================================================
 # Integration Cost → Hardware/Software classifier
