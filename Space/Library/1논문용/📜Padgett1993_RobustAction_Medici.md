@@ -5,11 +5,11 @@ author_ids:
   - John F. Padgett
   - Christopher K. Ansell
 field:
-  - 🎯str  # Strategy
-  - 👾cog  # Cognition
-  - 🐅cba  # Causality-Based Action
+  - 🎯str
+  - 👾cog
+  - 🐅cba
 year: 1993
-rank: 10  # Foundational classic
+rank: 10
 research_stream:
   - Strategic Ambiguity
   - Network Theory
@@ -25,16 +25,18 @@ tags:
 created: 2025-11-05
 modified:
   - 2025-11-05T00:00:00-05:00
+  - 2025-11-19T05:02:29-05:00
 connections:
   extends:
-    - "[[📜granovetter78_model(collective-behavior, thresholds)]]"  # Network theory
+    - "[[📜granovetter78_model(collective-behavior, thresholds)]]"
   applied_in:
     - "[[📜Ferraro2015_GrandChallenges_RobustAction]]"
     - "[[📜Sillince2012_Rhetoric_Ambiguity]]"
     - "[[📜Abdallah2014_DoubleEdge_Ambiguity]]"
   related_to:
-    - "[[📜Eisenberg1984_Ambiguity_Communication]]"  # Parallel development
+    - "[[📜Eisenberg1984_Ambiguity_Communication]]"
 ---
+
 
 # 📜 Robust Action and the Rise of the Medici, 1400-1434
 

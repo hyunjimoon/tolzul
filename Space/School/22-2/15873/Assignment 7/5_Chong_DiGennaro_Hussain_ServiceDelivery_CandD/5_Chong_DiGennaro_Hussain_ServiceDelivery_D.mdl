@@ -1,0 +1,943 @@
+{UTF-8}
+Labor Productivity=
+	(Task Completion Rate/Labor Force)*Effect of Burnout on Productivity
+	~	Tasks/Day/Person
+	~	Rate at which tasks are completed by each individual employee, affected by \
+		the level of burnout experienced by the employees based on current \
+		schedule pressure.
+	|
+
+Burnout=
+	MIN(1, MAX(0, Effect of Schedule Pressure on Workday-1))
+	~	Dmnl
+	~	We assume that a burnout of 0 indicates no burnout, and as the effect of \
+		schedule pressure on the workday increases, burnout increases above 0. As \
+		burnout approaches 1, the maximum value, productivity approaches zero and \
+		attrition approaches its maximal value. Burnout must be a fractional value.
+	|
+
+Attrition Rate=
+	Baseline Attrition Rate*(1+Burnout)
+	~	People/Day
+	~	The attrition rate, accounting for the baseline and increasing as the \
+		current level of burnout experienced by employees increases (and vice \
+		versa).
+	|
+
+Baseline Attrition Rate=
+	0.001
+	~	People/Day
+	~	Assuming that there is an annual turnover rate of 45%, this is the daily \
+		turnover rate.
+	|
+
+Effect of Burnout on Productivity=
+	Table for Burnout on Productivity(Burnout)
+	~	Dmnl
+	~	The effect of burnout on productivity as determined by the decreasing \
+		functional form with a decreasing slope.
+	|
+
+Table for Burnout on Productivity(
+	[(0,0)-(10,10)],(0,1),(0.2,0.9),(0.402266,0.761364),(0.603399,0.587121),(0.8017,0.367424\
+		),(1,0))
+	~	Dmnl
+	~	We assume that an initially small level of burnout has a negative impact \
+		on productivity, but increasing levels of burnout have increasingly \
+		negative impacts on productivity.
+	|
+
+Average Revenue from Cross Selling=
+	Table for Effect of Time per Task on Average Cross Sell Revenue per Task(Time per Task\
+		/Reference Standard Time per Task)*
+	Standard Revenue from Cross Selling per Task
+	~	Dollars/Task
+	~	Average revenue achieved from cross-selling per task
+	|
+
+Reference Standard Time per Task=
+	1
+	~	People*Hours/Tasks
+	~	Typical time spent by the equivalent of one person on one task. Assumed \
+		constant.
+	|
+
+Labor Force= INTEG (
+	Hiring Rate-Attrition Rate,
+		100)
+	~	People
+	~	Number of employees at the company.
+	|
+
+Adjustment to Labor Force=
+	MAX(Desired Number of People-Labor Force, 0)
+	~	People
+	~	The number of workers needed to reach desired employment level is equal to \
+		the difference between the number of workers needed to meet the desired \
+		production level and the current labor force.
+	|
+
+Average Daily Cost per Worker=
+	160
+	~	Dollars/Day
+	~	Wage of one worker per day
+	|
+
+Net Labor=
+	Labor Force*(1-Absenteeism)
+	~	People
+	~	The net labor force at any time is the labor force less any absenteeism.  \
+		Absenteeism is modeled as a fraction of the labor force.
+	|
+
+Hiring Rate=
+	MAX(0,(Adjustment to Labor Force/Time to Adjust to Desired Employment Level) + Attrition Rate\
+		)
+	~	People/Day
+	~	Rate at which workers are hired
+	|
+
+Desired Number of People=
+	MIN(Labor Force Budget/Average Daily Cost per Worker, Labor Force Needed for Desired Task Completion Rate\
+		)
+	~	People
+	~	Number of people management wants on the labor force, which is the \
+		required number of people to meet company goals or the maximum number of \
+		people that can be paid for, whichever is lower.
+	|
+
+Labor Force Needed for Desired Task Completion Rate=
+	Standard Time per Task*Desired Completion Rate/Standard Workday
+	~	People
+	~	Number of people needed to reach the goals completion rate
+	|
+
+Time to Adjust to Desired Employment Level=
+	56
+	~	Day
+	~	Time needed for company to adjust to authorized employment level. Given at \
+		56 days, consistent with widgets model.
+	|
+
+Labor Force Budget=
+	(2/3)*Total Revenue
+	~	Dollars/Day
+	~	Budget allocated to labor force, equal to 2/3 the total revenue
+	|
+
+Revenue from Cross Selling=
+	Average Revenue from Cross Selling*Task Completion Rate
+	~	Dollars/Day
+	~	Revenue achieved from cross-selling during task completion
+	|
+
+Net Change in Standard Time per Task=
+	(Time per Task-Standard Time per Task)/Standard Time per Task Adjustment Time
+	~	Person*Hour/Task/Day
+	~	Rate of adjustment of the standard time per task goal, equal to the \
+		difference between the current state and the goal state over the \
+		empirically determined adjustment time.
+	|
+
+Standard Time per Task Adjustment Time=
+	90
+	~	Day
+	~	Adjustment period over which goals for time per task are updated based on \
+		the real time per task.
+	|
+
+Standard Completion Rate=
+	Net Labor*Standard Workday/Standard Time per Task
+	~	Tasks/Day
+	~	The typical rate at which tasks are completed, given current resources of \
+		labor and hours, and the typical time needed for one task by the \
+		equivalent of one person
+	|
+
+Time per Task=
+	Standard Time per Task*Effect of Schedule Pressure on Time per Task
+	~	People*Hours/Tasks
+	~	Current time needed for the equivalent of one person to complete one task, \
+		given schedule pressure.
+	|
+
+Standard Time per Task= INTEG (
+	Net Change in Standard Time per Task,
+		1)
+	~	Person*Hour/Task
+	~	Goal for the amount of time needed for the equivalent of one person to \
+		complete one task, given schedule pressure.
+	|
+
+Total Revenue=
+	Base Revenue+Revenue from Cross Selling
+	~	Dollars/Day
+	~	Aggregate flow of revenue from the base level and from cross selling
+	|
+
+Base Revenue=
+	12000
+	~	Dollars/Day
+	~	Revenue that comes from account maintenance fees, other fees and interest \
+		income generated by the customer base in the LC’s service region,
+	|
+
+Table for Effect of Time per Task on Average Cross Sell Revenue per Task(
+	[(0,0)-(10,10)],(0,0),(0.373938,0.2),(0.645892,0.42),(0.849858,0.71),(1,1),(1.13314,\
+		1.35),(1.31445,1.71),(1.56374,2.09),(1.83569,2.5),(2.17564,2.95),(2.53824,3.29),(3.05949\
+		,3.59),(3.49008,3.84),(4,4))
+	~	Dmnl
+	~	Average cross selling revenue per task depends on the time spent per task. \
+		As Time per Task approaches zero, cross sell revenue also declines to zero \
+		(there is no time to cross sell). At the reference value of time per task \
+		equal to 1, average cross sell is also at its normal value of 1. As time \
+		per task increases, revenue from cross selling increases as well, but more \
+		slowly as it approaches a theoretical maximum of four times the normal \
+		value (assumed based on Fig.1)
+	|
+
+Standard Revenue from Cross Selling per Task=
+	15
+	~	Dollars/Task
+	~	Assumed revenue from cross selling when the time per task is at its normal \
+		value of 1 hour/task.
+	|
+
+Table for Workday(
+	[(0,0)-(10,10)],(0,1),(1,1),(1.12748,1.125),(1.26346,1.21023),(1.4221,1.28977),(1.55807\
+		,1.35795),(1.69405,1.40909),(1.84136,1.44886),(2,1.5))
+	~	Dmnl
+	~	We assume no under-time, so regardless of schedule pressure at or below 1, \
+		standard workdays are worked. As schedule pressure increases above 1, the \
+		function increases with an increasing slope until the workday reaches 1.5 \
+		times its normal value, i.e., 12 hours per day, which we assume to be a \
+		legal or firm-level maximum workday.
+	|
+
+Table for Effect of Schedule Pressure on Time per Task(
+	[(0,0)-(10,10)],(0,1.42045),(0.18538,1.38636),(0.381994,1.33523),(0.539286,1.25568),\
+		(0.730283,1.15341),(1,1),(1.2068,0.840909),(1.50708,0.681818),(1.74504,0.586364),(1.983\
+		,0.495455))
+	~	Dmnl
+	~	We assume that tasks can take slightly longer if schedule pressure is low, \
+		and that tasks can take slightly less time if schedule pressure is high. \
+		The reference point is that when schedule pressure is normal (1), time per \
+		task should be normal. We assume an s-shaped curve because employees will \
+		approach the time per task limits more slowly towards the extremes of \
+		schedule pressure than when schedule pressure first deviates from normal.
+	|
+
+Backlog= INTEG (
+	Task Arrival Rate-Task Completion Rate,
+		Initial Arrival Rate*Target Delivery Delay)
+	~	Tasks
+	~	Number of tasks remaining to be done
+		Another eq. condition is initial value = Initial Arrival Rate*Target Delivery Delay
+		(Net Labor * Standard Workday/Standard Time per Task) * Target Delivery \
+		Delay
+	|
+
+Schedule Pressure=
+	Desired Completion Rate/Standard Completion Rate
+	~	Dmnl
+	~	Relative ratio of desired and standard completion rates, representing \
+		schedule pressure. When desired levels are greater than standard levels, \
+		schedule pressure increases past 1 (the typical value) and when they are \
+		smaller than standard levels, schedule pressure drops below 1.
+	|
+
+Task Completion Rate=
+	MIN(Maximum Completion Rate,Potential Completion Rate)
+	~	Tasks/Day
+	~	Task completion rate is the potential completion rate given current \
+		resources or the maximum possible completion rate, whichever is smaller.
+	|
+
+Delivery Delay=
+	Backlog/Task Completion Rate
+	~	Day
+	~	Delay in task delivery depending on number of tasks and the task \
+		completion rate.
+	|
+
+Desired Completion Rate=
+	Backlog/Target Delivery Delay
+	~	Tasks/Day
+	~	Given the target delivery delay and current backlog, the company's goal \
+		for work pace.
+	|
+
+Effect of Schedule Pressure on Time per Task=
+	Table for Effect of Schedule Pressure on Time per Task(Schedule Pressure)
+	~	Dmnl
+	~	The impact of schedule pressure on time per task, given the non-linear \
+		relationship between schedule pressure and time per task.
+	|
+
+Effect of Schedule Pressure on Workday=
+	Table for Workday(Schedule Pressure)
+	~	Dmnl
+	~	The impact of schedule pressure on workday given the non-linear \
+		relationship between schedule pressure and workday.
+	|
+
+Target Delivery Delay=
+	1
+	~	Day
+	~	Company goal for the time needed to deliver a task
+	|
+
+Standard Workday=
+	8
+	~	Hours/Day
+	~	Typical amount of time an employee spends at work
+	|
+
+Maximum Completion Rate=
+	Backlog/Minimum Delivery Delay
+	~	Tasks/Day
+	~	Given the minimum delivery delay, the highest possible completion rate
+	|
+
+Potential Completion Rate=
+	(Net Labor*Workday)/Time per Task
+	~	Tasks/Day
+	~	Possible rate at which tasks are completed, given current labor and hours \
+		resources and the current time taken for one task by the equivalent of one \
+		person.
+	|
+
+Minimum Delivery Delay=
+	0.25
+	~	Day
+	~	Minimum possible delivery delay for a task
+	|
+
+Workday=
+	Standard Workday*Effect of Schedule Pressure on Workday
+	~	Hours/Day
+	~	Current workday, given schedule pressure.
+	|
+
+Absenteeism=
+	MIN(MAX(0, Input 0-1), 1)
+	~	Dimensionless
+	~	Absenteeism as a fraction of the labor force is determined by the test \
+		generator input for absenteeism (Input 0).  Absenteeism is never less than \
+		zero (workers often fail to show up for their shift but never show up when \
+		they are not scheduled).
+	|
+
+Ramp Start Time 0=
+	0
+	~	Day
+	~	Start time for the ramp input.
+	|
+
+Pulse Time 0=
+	0
+	~	Day
+	~	Time at which the pulse in Input occurs.
+	|
+
+Change in Pink Noise 0 = (White Noise 0 - Pink Noise 0)/Noise Correlation Time 0
+	~	1/Day
+	~	Change in the pink noise value; Pink noise is a first order exponential smoothing \
+		delay of the white
+		         noise input.
+	|
+
+Ramp End Time 0=1e+09
+	~	Day
+	~	End time for the ramp input.
+	|
+
+Step Time 0=
+	0
+	~	Day
+	~	Time for the step input.
+	|
+
+Ramp Slope 0=0
+	~	1/Day
+	~	Slope of the ramp input, as a fraction of the base value (per year).
+	|
+
+Noise Standard Deviation 0=
+	0
+	~	Dimensionless [0,2,0.1]
+	~	The standard deviation of the pink noise process.
+	|
+
+Task Arrival Rate=
+	Exogenous Task Arrival Rate
+	~	Tasks/Day
+	~	The task arrival rate is set to an exogenous input.  Use the Test \
+		Generator for Arrivals to choose different patterns for the task arrival \
+		rate.
+	|
+
+Pink Noise 0 = INTEG(Change in Pink Noise 0,0)
+	~	Dimensionless
+	~	Pink Noise is first-order autocorrelated noise.  Pink noise provides a realistic \
+		noise input to
+		        models in which the next random shock depends in part on the previous \
+		shocks.  The user
+		        can specify the correlation time.  The mean is 0 and the standard deviation \
+		is specified
+		         by the user.
+	|
+
+Input 0=
+	1+STEP(Step Height 0,Step Time 0)+
+	(Pulse Quantity 0/Pulse Duration 0)*PULSE(Pulse Time 0,Pulse Duration 0)+
+	RAMP(Ramp Slope 0,Ramp Start Time 0,Ramp End Time 0)+
+	Sine Amplitude 0*SIN(2*3.14159*Time/Sine Period 0)+
+	  	STEP(1,Noise Start Time 0)*Pink Noise 0
+	~	Dimensionless
+	~	Input is a dimensionless variable which provides a variety of test input patterns, \
+		including a step,
+		         pulse, sine wave, and random noise.
+	|
+
+Sine Period 0=
+	4
+	~	Day
+	~	Period of sine wave in customer demand.  Set initially to 4 years to \
+		simulate the business cycle
+	|
+
+Pulse Duration 0=
+	1
+	~	Day
+	~	Duration of pulse input.  Set to Time Step for an impulse.
+	|
+
+White Noise 0 = Noise Standard Deviation 0*((24*Noise Correlation Time 0/TIME STEP)^0.5\
+		*(RANDOM 0 1() - 0.5
+))
+	~	Dimensionless
+	~	White noise input to the pink noise process.
+	|
+
+Noise Start Time 0=
+	0
+	~	Day
+	~	Start time for the random input.
+	|
+
+Noise Correlation Time 0=
+	7
+	~	Day
+	~	The correlation time constant for Pink Noise.
+	|
+
+Step Height 0=
+	0
+	~	Dimensionless
+	~	Height of step input to customer orders, as fraction of initial value.
+	|
+
+Noise Seed 0=
+	 2
+	~	Dimensionless
+	~	Random number generator seed.  Vary to generate a different sequence of \
+		random numbers.
+	|
+
+Pulse Quantity 0=
+	0
+	~	Dimensionless*Day
+	~	The quantity to be injected to customer orders, as a fraction of the base value of \
+		Input. 
+		        For example, to pulse in a quantity equal to 50% of the current value of \
+		input, set to
+		         .50.
+	|
+
+Sine Amplitude 0=0
+	~	Dimensionless
+	~	Amplitude of sine wave in customer orders (fraction of mean).
+	|
+
+Pulse Time=
+	0
+	~	Day
+	~	Time at which the pulse in Input occurs.
+	|
+
+Change in Pink Noise = (White Noise - Pink Noise)/Noise Correlation Time
+	~	1/Day
+	~	Change in the pink noise value; Pink noise is a first order exponential smoothing \
+		delay of the white
+		         noise input.
+	|
+
+Ramp Slope=0
+	~	1/Day [0,0.1]
+	~	Slope of the ramp input, as a fraction of the base value (per year).
+	|
+
+Ramp Start Time=
+	0
+	~	Day
+	~	Start time for the ramp input.
+	|
+
+Noise Standard Deviation=
+	0
+	~	Dimensionless [0,2]
+	~	The standard deviation of the pink noise process.
+	|
+
+Sine Amplitude=0
+	~	Dimensionless
+	~	Amplitude of sine wave in customer orders (fraction of mean).
+	|
+
+Exogenous Task Arrival Rate=
+	Initial Arrival Rate*Input
+	~	Tasks/Day
+	~	The exogenous task arrival rate can be configured to include a range of \
+		test inputs.  It is set to the product of the initial arrival rate and the \
+		test input.  The test input allows users to specify a range of input \
+		patterns, including a step, pulse, ramp, cycle, and pink noise, or \
+		combinations of these.
+	|
+
+Initial Arrival Rate= INITIAL(
+	Standard Completion Rate)
+	~	Tasks/Day
+	~	The initial rate at which work arrives is set to the initial value of the \
+		standard completion rate.  Note that the equation type is INITIAL, which \
+		ensures that the initial arrival rate remains constant even if the \
+		standard completion rate varies.  By setting the initial arrival rate to \
+		the standard completion rate we ensure that tasks arrive at exactly the \
+		rate the organization can handle given the initial staff and standard \
+		values for the workday and time per task.
+	|
+
+Input=
+	1+STEP(Step Height,Step Time)+
+	(Pulse Quantity/Pulse Duration)*PULSE(Pulse Time,Pulse Duration)+
+	RAMP(Ramp Slope,Ramp Start Time,Ramp End Time)+
+	Sine Amplitude*SIN(2*3.14159*Time/Sine Period)+
+	  	STEP(1,Noise Start Time)*Pink Noise
+	~	Dimensionless
+	~	Input is a dimensionless variable which provides a variety of test input patterns, \
+		including a step,
+		         pulse, sine wave, and random noise.
+	|
+
+Pulse Quantity=
+	0
+	~	Dimensionless*Day
+	~	The quantity to be injected to customer orders, as a fraction of the base value of \
+		Input. 
+		        For example, to pulse in a quantity equal to 50% of the current value of \
+		input, set to
+		         .50.
+	|
+
+Step Height=
+	0
+	~	Dimensionless [0,1,0.01]
+	~	Height of step input to customer orders, as fraction of initial value.
+	|
+
+Step Time=
+	5
+	~	Day
+	~	Time for the step input.
+	|
+
+Noise Correlation Time=
+	7
+	~	Day
+	~	The correlation time constant for Pink Noise.
+	|
+
+Noise Seed=
+	 2
+	~	Dimensionless
+	~	Random number generator seed.  Vary to generate a different sequence of \
+		random numbers.
+	|
+
+Pink Noise = INTEG(Change in Pink Noise,0)
+	~	Dimensionless
+	~	Pink Noise is first-order autocorrelated noise.  Pink noise provides a realistic \
+		noise input to
+		        models in which the next random shock depends in part on the previous \
+		shocks.  The user
+		        can specify the correlation time.  The mean is 0 and the standard deviation \
+		is specified
+		         by the user.
+	|
+
+Noise Start Time=
+	20
+	~	Day
+	~	Start time for the random input.
+	|
+
+Pulse Duration=
+	1
+	~	Day
+	~	Duration of pulse input.  Set to Time Step for an impulse.
+	|
+
+Ramp End Time=1e+09
+	~	Day
+	~	End time for the ramp input.
+	|
+
+White Noise = Noise Standard Deviation*((24*Noise Correlation Time/TIME STEP)^0.5*(RANDOM 0 1\
+		() - 0.5
+))
+	~	Dimensionless
+	~	White noise input to the pink noise process.
+	|
+
+Sine Period=
+	4
+	~	Day
+	~	Period of sine wave in customer demand.  Set initially to 4 years to \
+		simulate the business cycle
+	|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Paramaters
+	|
+
+FINAL TIME  = 2000
+	~	Day
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Day
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Day
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.125
+	~	Day
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Backlog and Task Completion
+$192-192-192,0,Helvetica|12|B|0-0-0|0-0-0|0-0-0|-1--1--1|-1--1--1|96,96,82,0
+10,1,Backlog,602,172,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+12,2,48,273,173,25,15,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,3,5,1,4,0,0,22,0,0,0,-1--1--1,,1|(451,173)|
+1,4,5,2,100,0,0,22,0,0,0,-1--1--1,,1|(313,173)|
+11,5,0,335,173,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,6,Task Arrival Rate,335,210,31,29,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,7,48,968,173,25,15,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,8,10,7,4,0,0,22,0,0,0,-1--1--1,,1|(860,173)|
+1,9,10,1,100,0,0,22,0,0,0,-1--1--1,,1|(703,173)|
+11,10,0,771,173,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,11,Task Completion Rate,771,205,41,24,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,12,Delivery Delay,694,130,44,20,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,13,1,12,1,0,43,0,0,192,0,-1--1--1,,1|(642,133)|
+1,14,10,12,1,0,45,0,0,192,0,-1--1--1,,1|(745,137)|
+10,15,Desired Completion Rate,459,286,59,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,16,Target Delivery Delay,402,372,44,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,17,1,15,1,0,43,0,0,192,0,-1--1--1,,1|(492,227)|
+1,18,16,15,1,0,45,0,0,192,0,-1--1--1,,1|(415,301)|
+10,19,Net Labor,972,322,51,13,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,20,0,853,409,20,20,5,4,0,0,-1,0,0,0,0,0,0,0,0,0
+B
+10,21,Time per Task,826,488,47,20,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,22,Schedule Pressure,490,395,49,20,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,23,15,22,1,0,43,0,0,192,0,-1--1--1,,1|(458,324)|
+12,24,0,854,440,32,20,8,4,0,8,-1,0,0,0,0-0-0,0-0-0,|10|B|0-0-0,0,0,0,0,0,0
+Corner Cutting
+10,25,Standard Completion Rate,636,621,59,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,26,25,22,1,0,45,0,0,192,0,-1--1--1,,1|(471,507)|
+10,27,Maximum Completion Rate,639,286,59,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,28,Minimum Delivery Delay,558,321,48,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,29,1,27,1,0,43,0,0,192,0,-1--1--1,,1|(589,246)|
+1,30,27,11,1,0,43,0,0,192,0,-1--1--1,,1|(712,276)|
+1,31,28,27,1,0,45,0,0,192,0,-1--1--1,,1|(638,323)|
+12,32,0,681,204,20,20,5,4,0,0,-1,0,0,0,0,0,0,0,0,0
+B
+12,33,0,682,240,32,20,8,4,0,8,-1,0,0,0,0-0-0,0-0-0,|10|B|0-0-0,0,0,0,0,0,0
+Work Availability
+10,34,Potential Completion Rate,871,284,59,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,35,34,11,1,0,43,0,0,192,0,-1--1--1,,1|(826,216)|
+1,36,21,34,1,0,45,0,0,192,0,-1--1--1,,1|(902,342)|
+10,37,Workday,785,389,47,13,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,38,37,34,1,0,43,0,0,192,0,-1--1--1,,1|(861,308)|
+1,39,19,34,1,0,43,0,0,192,0,-1--1--1,,1|(919,294)|
+12,40,0,743,307,20,20,5,4,0,0,-1,0,0,0,0,0,0,0,0,0
+B
+12,41,0,745,343,29,13,8,4,0,8,-1,0,0,0,0-0-0,0-0-0,|10|B|0-0-0,0,0,0,0,0,0
+Midnight Oil
+10,42,Standard Workday,735,458,48,20,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,43,Effect of Schedule Pressure on Workday,647,416,63,34,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,44,43,37,1,0,43,0,0,192,0,-1--1--1,,1|(743,412)|
+1,45,22,43,1,0,43,0,0,192,0,-1--1--1,,1|(540,417)|
+10,46,Table for Workday,607,484,47,20,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,47,46,43,1,0,0,0,0,64,0,-1--1--1,,1|(647,454)|
+10,48,Standard Workday,463,618,54,20,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,||B|128-128-128,0,0,0,0,0,0
+1,49,48,25,1,0,43,0,0,192,0,-1--1--1,,1|(544,637)|
+1,50,42,37,1,0,43,0,0,192,0,-1--1--1,,1|(781,426)|
+10,51,Effect of Schedule Pressure on Time per Task,683,528,72,34,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,52,22,51,1,0,45,0,0,192,0,-1--1--1,,1|(575,510)|
+1,53,51,21,1,0,43,0,0,192,0,-1--1--1,,1|(783,517)|
+10,54,Table for Effect of Schedule Pressure on Time per Task,571,565,76,34,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,55,54,51,1,0,0,0,0,64,0,-1--1--1,,1|(649,570)|
+10,56,Exogenous Task Arrival Rate,264,304,64,27,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,57,56,6,1,0,43,0,2,64,0,-1--1--1,|||0-0-0,1|(273,250)|
+10,58,Net Labor,753,690,62,13,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,59,58,25,1,0,43,0,2,192,0,-1--1--1,|||0-0-0,1|(707,676)|
+10,60,Absenteeism,1018,391,77,13,8,130,0,2,0,0,0,0,0-0-0,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,61,60,19,1,0,45,0,2,192,0,-1--1--1,|||0-0-0,1|(1001,351)|
+1,62,16,1,0,0,0,0,0,64,1,-1--1--1,,1|(0,0)|
+10,63,Initial Arrival Rate,595,86,54,19,8,2,1,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,64,Labor Productivity,1000,237,60,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,65,11,64,1,0,43,0,0,192,0,-1--1--1,,1|(913,206)|
+10,66,Total Revenue,361,44,44,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,67,Base Revenue,241,-54,44,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,68,Revenue from Cross Selling,456,-55,56,25,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,69,67,66,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+1,70,68,66,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+10,71,Table for Effect of Time per Task on Average Cross Sell Revenue per Task,415,-272,62,32,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,72,11,68,1,0,43,0,0,192,0,-1--1--1,,1|(675,-27)|
+10,73,Time per Task,127,247,50,18,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,74,Effect of Schedule Pressure on Time per Task,117,-145,86,32,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,75,Standard Revenue from Cross Selling per Task,626,-142,56,32,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,76,Standard Time per Task,950,612,46,25,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,77,48,947,506,25,15,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,78,80,77,100,0,0,22,0,192,0,-1--1--1,,1|(947,534)|
+1,79,80,76,4,0,0,22,0,192,0,-1--1--1,,1|(947,573)|
+11,80,0,947,554,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,81,Net Change in Standard Time per Task,1012,554,57,32,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,82,Standard Time per Task Adjustment Time,1132,627,72,32,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,83,82,81,1,0,45,0,0,192,0,-1--1--1,,1|(1095,553)|
+1,84,76,81,1,0,45,0,0,192,0,-1--1--1,,1|(1037,625)|
+1,85,21,81,1,0,43,0,0,192,0,-1--1--1,,1|(894,548)|
+1,86,76,25,1,0,45,0,0,192,0,-1--1--1,,1|(751,653)|
+1,87,76,21,1,0,43,0,0,192,0,-1--1--1,,1|(872,560)|
+10,88,Initial Arrival Rate,620,239,54,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,89,88,1,0,0,0,0,0,64,1,-1--1--1,,1|(0,0)|
+10,90,Average Revenue from Cross Selling,366,-152,56,32,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,91,71,90,1,0,0,0,0,192,0,-1--1--1,,1|(350,-181)|
+1,92,75,90,1,0,43,0,0,192,0,-1--1--1,,1|(406,-185)|
+1,93,90,68,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+10,94,Labor Force,1221,280,61,23,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,95,48,1209,160,25,15,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,96,98,95,100,0,0,22,0,192,0,-1--1--1,,1|(1209,192)|
+1,97,98,94,4,0,0,22,0,192,0,-1--1--1,,1|(1209,239)|
+11,98,0,1209,216,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,99,Hiring Rate,1271,216,54,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,100,48,1215,394,25,15,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,101,103,94,100,0,0,22,0,192,0,-1--1--1,,1|(1215,319)|
+1,102,103,100,4,0,0,22,0,192,0,-1--1--1,,1|(1215,363)|
+11,103,0,1215,341,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,104,Attrition Rate,1269,341,46,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,105,Labor Force Budget,1056,39,61,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,106,Total Revenue,1059,-92,50,18,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,107,106,105,1,0,43,0,0,192,0,-1--1--1,,1|(998,-3)|
+10,108,Average Daily Cost per Worker,1200,-78,55,25,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,109,Labor Force Needed for Desired Task Completion Rate,1362,90,65,39,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,110,Desired Completion Rate,1316,-66,57,25,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,111,Standard Workday,1427,-61,52,18,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,112,Standard Time per Task,1471,12,52,25,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,113,110,109,1,0,43,0,0,192,0,-1--1--1,,1|(1313,15)|
+1,114,111,109,1,0,45,0,0,192,0,-1--1--1,,1|(1388,19)|
+1,115,112,109,1,0,43,0,0,192,0,-1--1--1,,1|(1472,108)|
+10,116,Desired Number of People,1173,39,52,25,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,117,105,116,1,0,43,0,0,192,0,-1--1--1,,1|(1138,94)|
+1,118,108,116,1,0,45,0,0,192,0,-1--1--1,,1|(1181,15)|
+1,119,109,116,1,0,43,0,0,192,0,-1--1--1,,1|(1233,82)|
+10,120,Adjustment to Labor Force,1362,160,56,25,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,121,116,120,1,0,43,0,0,192,0,-1--1--1,,1|(1301,138)|
+1,122,94,120,1,0,45,0,0,192,0,-1--1--1,,1|(1342,236)|
+10,123,Time to Adjust to Desired Employment Level,1450,267,70,32,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,124,123,99,1,0,45,0,0,192,0,-1--1--1,,1|(1378,227)|
+1,125,104,99,1,0,43,0,0,192,0,-1--1--1,,1|(1341,310)|
+1,126,120,99,1,0,45,0,0,192,0,-1--1--1,,1|(1268,191)|
+1,127,94,64,1,0,45,0,0,192,0,-1--1--1,,1|(1086,216)|
+1,128,94,19,1,0,43,0,0,192,0,-1--1--1,,1|(1093,328)|
+10,129,Reference Standard Time per Task,143,-318,51,32,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,130,129,90,1,0,0,0,0,192,0,-1--1--1,,1|(240,-257)|
+10,131,Time per Task,297,-309,50,18,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,132,131,90,1,0,0,0,0,192,0,-1--1--1,,1|(296,-250)|
+10,133,Burnout,981,454,43,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,134,Effect of Burnout on Productivity,1135,445,60,25,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,135,Table for Burnout on Productivity,1132,509,45,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,136,43,133,1,0,43,0,0,192,0,-1--1--1,,1|(911,458)|
+1,137,133,134,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+1,138,135,134,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,139,134,64,1,0,0,0,0,192,0,-1--1--1,,1|(1087,271)|
+10,140,Baseline Attrition Rate,1343,421,63,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,141,140,104,1,0,43,0,0,192,0,-1--1--1,,1|(1331,393)|
+1,142,133,104,1,0,43,0,0,192,0,-1--1--1,,1|(1160,375)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Task Arrivals and Absenteeism
+$192-192-192,0,Arial|10|B|0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Input,193,151,75,30,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,2,Pink Noise,445,98,30,15,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+12,3,48,544,101,25,15,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,4,White Noise,465,175,51,12,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,5,Noise Standard Deviation,385,196,65,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,6,TIME STEP,395,145,75,30,0,2,0,3,-1,0,0,0,128-128-128,0-0-0,||B|128-128-128,0,0,0,0,0,0
+10,7,Pink Noise,134,113,75,30,0,2,0,3,-1,0,0,0,128-128-128,0-0-0,||B|128-128-128,0,0,0,0,0,0
+10,8,Noise Start Time,203,99,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,9,Pulse Quantity,260,119,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,10,Pulse Time,284,159,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,11,Ramp End Time,128,207,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,12,Ramp Slope,106,168,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,13,Ramp Start Time,106,188,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,14,Sine Amplitude,284,178,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,15,Sine Period,259,200,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,16,Step Height,173,239,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,17,Step Time,221,212,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,18,Time,116,137,75,30,0,2,0,3,-1,0,0,0,128-128-128,0-0-0,||B|128-128-128,0,0,0,0,0,0
+11,19,0,512,101,5,6,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,20,Change in Pink Noise,512,122,39,12,40,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,21,Noise Correlation Time,563,161,48,24,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,22,8,1,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,23,9,1,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,24,10,1,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,25,11,1,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,26,12,1,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,27,13,1,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,28,14,1,1,0,0,0,0,0,0,-1--1--1,,1|(224,163)|
+1,29,15,1,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,30,16,1,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,31,17,1,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,32,18,1,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,33,19,2,4,0,0,22,0,0,0,-1--1--1,,1|(491,101)|
+1,34,19,3,100,0,0,22,0,0,0,-1--1--1,,1|(518,101)|
+1,35,2,20,2,0,0,0,0,0,0,-1--1--1,,1|(482,139)|
+1,36,4,20,2,0,0,0,0,0,0,-1--1--1,,1|(510,150)|
+1,37,21,20,2,0,0,0,0,0,0,-1--1--1,,1|(552,125)|
+1,38,21,4,1,0,0,0,0,0,0,-1--1--1,,1|(510,188)|
+1,39,6,4,1,0,0,0,0,0,0,-1--1--1,,1|(418,177)|
+1,40,5,4,1,0,0,0,0,0,0,-1--1--1,,1|(461,198)|
+1,41,7,1,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+10,42,Noise Seed,465,239,49,12,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,43,Pulse Duration,294,138,62,12,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,44,43,1,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+10,45,Input,137,-4,75,30,0,2,0,3,-1,0,0,0,128-128-128,0-0-0,||B|128-128-128,0,0,0,0,0,0
+10,46,Initial Arrival Rate,130,41,52,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,47,Exogenous Task Arrival Rate,233,20,51,24,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,48,45,47,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+1,49,46,47,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+10,50,Standard Completion Rate,130,60,50,24,8,2,1,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,51,50,46,0,1,0,0,0,64,1,-1--1--1,,1|(0,0)|
+10,52,Input 0,197,429,75,30,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,53,Pink Noise 0,449,376,30,15,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+12,54,48,548,379,25,15,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,55,White Noise 0,469,453,58,12,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,56,Noise Standard Deviation 0,389,474,65,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,57,TIME STEP,399,423,75,30,0,2,0,3,-1,0,0,0,128-128-128,0-0-0,||B|128-128-128,0,0,0,0,0,0
+10,58,Pink Noise 0,138,392,75,30,0,2,0,3,-1,0,0,0,128-128-128,0-0-0,||B|128-128-128,0,0,0,0,0,0
+10,59,Noise Start Time 0,207,377,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,60,Pulse Quantity 0,263,397,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,61,Pulse Time 0,287,437,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,62,Ramp End Time 0,131,485,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,63,Ramp Slope 0,110,446,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,64,Ramp Start Time 0,110,466,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,65,Sine Amplitude 0,288,456,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,66,Sine Period 0,263,478,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,67,Step Height 0,180,505,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,68,Step Time 0,225,490,75,30,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,||B|0-0-0,0,0,0,0,0,0
+10,69,Time,119,416,75,30,0,2,0,3,-1,0,0,0,128-128-128,0-0-0,||B|128-128-128,0,0,0,0,0,0
+11,70,0,516,379,5,6,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,71,Change in Pink Noise 0,516,400,39,12,40,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,72,Noise Correlation Time 0,566,439,48,24,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,73,59,52,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,74,60,52,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,75,61,52,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,76,62,52,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,77,63,52,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,78,64,52,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,79,65,52,1,0,0,0,0,0,0,-1--1--1,,1|(227,441)|
+1,80,66,52,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,81,67,52,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,82,68,52,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,83,69,52,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,84,70,53,4,0,0,22,0,0,0,-1--1--1,,1|(495,379)|
+1,85,70,54,100,0,0,22,0,0,0,-1--1--1,,1|(522,379)|
+1,86,53,71,2,0,0,0,0,0,0,-1--1--1,,1|(485,417)|
+1,87,55,71,2,0,0,0,0,0,0,-1--1--1,,1|(514,428)|
+1,88,72,71,2,0,0,0,0,0,0,-1--1--1,,1|(556,403)|
+1,89,72,55,1,0,0,0,0,0,0,-1--1--1,,1|(514,467)|
+1,90,57,55,1,0,0,0,0,0,0,-1--1--1,,1|(449,423)|
+1,91,56,55,1,0,0,0,0,0,0,-1--1--1,,1|(443,485)|
+1,92,58,52,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+10,93,Noise Seed 0,469,518,56,12,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,94,Pulse Duration 0,298,416,62,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,95,94,52,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+10,96,Standard Completion Rate,137,299,50,24,8,2,1,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+12,97,0,326,-25,60,18,8,4,0,10,-1,0,0,0,0-0-0,0-0-0,|16||0-0-255,0,0,0,0,0,0
+Test Generator for Arrivals
+12,98,0,328,287,75,21,8,132,0,10,-1,0,0,0,0-0-0,0-0-0,|16||0-0-255,0,0,0,0,0,0
+Test Generator for Absenteeism
+10,99,Absenteeism,245,323,55,12,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,100,Input 0,170,339,41,12,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,101,100,99,1,0,43,0,2,64,0,-1--1--1,|||0-0-0,1|(194,327)|
+12,102,0,773,150,150,150,0,15,0,0,2,0,0,0,0,0,0,0,0,0
+Revenue from Cross Selling,Graph
+12,103,0,1071,151,150,150,0,15,0,0,2,0,0,0,0,0,0,0,0,0
+Total Revenue,Graph
+///---\\\
+:GRAPH Workday_and_LP
+:TITLE Workday_and_LP
+:X-AXIS Time
+:SCALE
+:VAR Workday
+:SCALE
+:VAR Labor Productivity
+:L<%^E!@
+1:labor_force.vdfx
+1:labor_force_steps.vdfx
+4:Time
+5:Step Height
+9:labor_force_steps
+19:82,0
+24:0
+25:2000
+26:2000
+22:Hour,Hours
+22:Task,Tasks
+22:People,Person
+23:0
+15:0,0,0,0,0,0
+27:0,
+34:0,
+42:0
+72:0
+73:0
+95:0
+96:0
+97:0
+77:0
+78:0
+102:0
+93:0
+94:0
+92:0
+91:0
+90:0
+87:0
+75:
+43:
+103:8,8,8,3,8
+105:0,0,0,0,0,0,0,0,0,0
+104:Times New Roman|12||0-0-0|0-0-0|-1--1--1|0-0-255|192-192-192|-1--1--1

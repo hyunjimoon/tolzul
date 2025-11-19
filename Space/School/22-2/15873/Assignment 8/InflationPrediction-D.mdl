@@ -1,0 +1,314 @@
+{UTF-8}
+Average Inflation over Lookback Time=
+	GET DATA MEAN(Inflation Data, Time-Lookback Time , Time )
+	~	Percent/Year
+	~		|
+
+Predicted Inflation Based on Trend=
+	Average Inflation over Lookback Time
+	~	Percent/Year
+	~	Prediction of inflation based on prior anchor and predictions based on \
+		inflation trends, mediated by how much weight is placed on the anchor \
+		versus the observed trends.
+	|
+
+Lookback Time=
+	1
+	~	Year
+	~		|
+
+Panel Prediction Matching ErrorRIPD=
+	if then else(Time<Start TimeRIPD :OR: Time>End TimeRIPD :OR: Realized Inflation for Predicted Dates\
+		=:NA:,0,ABS(Predicted Inflation Based on Trend
+	-Realized Inflation for Predicted Dates))/TIME STEP
+	~	Percent/(Year*Year)
+	~		|
+
+End TimeRIPD=
+	2022
+	~	Year
+	~		|
+
+Cumulative Absolute Matching ErrorRIPD= INTEG (
+	Panel Prediction Matching ErrorRIPD,
+		0)
+	~	Percent/Year
+	~		|
+
+Mean Absolute Error in MatchingRIPD=
+	ZIDZ(Cumulative Absolute Matching ErrorRIPD,Total Number of Data PointsRIPD)
+	~	Percent/Year
+	~		|
+
+Forward Looking Prediction=
+	Inflation Data+(Inflation Trend*One Year Time Horizon)
+	~	Percent/Year
+	~	Prediction of inflation over the next year based on the past data and the \
+		current perceived inflation trend
+	|
+
+Start TimeRIPD=
+	1946
+	~	Year
+	~		|
+
+New Data PointsRIPD=
+	if then else(Time<Start TimeRIPD :OR: Time>End TimeRIPD :OR: Realized Inflation for Predicted Dates\
+		=:NA:,0,1)/TIME STEP
+	~	Dmnl/Year
+	~		|
+
+Total Number of Data PointsRIPD= INTEG (
+	New Data PointsRIPD,
+		0)
+	~	Dmnl
+	~		|
+
+Past Inflation= INTEG (
+	Past Inflation Updating Rate,
+		0)
+	~	Percent/Year
+	~	Perceived past inflation rate.
+	|
+
+Past Inflation Updating Rate=
+	(Inflation Data-Past Inflation)/Trend Horizon
+	~	Percent/(Year*Year)
+	~	Rate at which the perception of historical inflation is updated.
+	|
+
+Trend Horizon=
+	1
+	~	Year
+	~	Period over which trend is smoothed.
+	|
+
+Inflation Trend=
+	(Inflation Data-Past Inflation)/Trend Horizon
+	~	Percent/(Year*Year)
+	~	Trend based upon perceived recent changes in inflation
+	|
+
+One Year Time Horizon=
+	1
+	~	Year
+	~	Inflation predictions are made over a one year time horizon.
+	|
+
+New Data Points=
+	if then else(Time<Start Time :OR: Time>End Time :OR: Panel Inflation Predictions=:NA:\
+		,0,1)/TIME STEP
+	~	Dmnl/Year
+	~		|
+
+Cumulative Absolute Matching Error= INTEG (
+	Panel Prediction Matching Error,
+		0)
+	~	Percent/Year
+	~		|
+
+Mean Absolute Error in Matching=
+	ZIDZ(Cumulative Absolute Matching Error,Total Number of Data Points)
+	~	Percent/Year
+	~		|
+
+Panel Prediction Matching Error=
+	if then else(Time<Start Time :OR: Time>End Time :OR: Panel Inflation Predictions=:NA:\
+		,0,ABS(Predicted Inflation Based on Trend-Panel Inflation Predictions))/TIME STEP
+	~	Percent/(Year*Year)
+	~		|
+
+Total Number of Data Points= INTEG (
+	New Data Points,
+		0)
+	~	Dmnl
+	~		|
+
+Start Time=
+	1946
+	~	Year
+	~		|
+
+End Time=
+	2022
+	~	Year
+	~		|
+
+CPI Data:INTERPOLATE:
+	~	Dmnl
+	~		|
+
+Inflation Data:INTERPOLATE:
+	~	Percent/Year
+	~		|
+
+Panel Inflation Predictions:RAW:
+	~	Percent/Year
+	~		|
+
+Realized Inflation for Predicted Dates:RAW:
+	~	Percent/Year
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 2023
+	~	Year
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 1914
+	~	Year
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP 
+	~	Year [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.125
+	~	Year [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$-1--1--1,0,|12||-1--1--1|-1--1--1|-1--1--1|-1--1--1|-1--1--1|96,96,100,0
+10,1,Inflation Data,630,224,52,23,8,3,0,2,-1,0,0,0,0-0-0,0-0-0,|||0-0-255,0,0,0,0,0,0
+10,2,Panel Inflation Predictions,416,423,55,23,8,3,0,2,-1,0,0,0,0-0-0,0-0-0,|||0-0-255,0,0,0,0,0,0
+10,3,Realized Inflation for Predicted Dates,551,837,62,23,8,3,0,2,-1,0,0,0,0-0-0,0-0-0,|||0-0-255,0,0,0,0,0,0
+10,4,CPI Data,799,129,43,23,8,3,0,2,-1,0,0,0,0-0-0,0-0-0,|||0-0-255,0,0,0,0,0,0
+10,5,Start Time,276,416,43,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,6,End Time,167,420,32,9,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,7,Predicted Inflation Based on Trend,100,125,57,30,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,8,Time,84,415,26,9,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,9,TIME STEP,-7,416,46,9,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,10,Cumulative Absolute Matching Error,-24,255,53,23,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,11,48,171,262,25,15,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,12,14,11,100,0,0,22,0,192,0,-1--1--1,,1|(129,262)|
+1,13,14,10,4,0,0,22,0,192,0,-1--1--1,,1|(64,262)|
+11,14,0,106,262,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,15,Panel Prediction Matching Error,106,303,47,33,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,16,Total Number of Data Points,-48,560,54,23,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,17,48,187,560,25,15,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,18,20,17,100,0,0,22,0,192,0,-1--1--1,,1|(127,560)|
+1,19,20,16,4,0,0,22,0,192,0,-1--1--1,,1|(43,560)|
+11,20,0,87,560,6,8,34,3,0,0,3,0,0,0,0,0,0,0,0,0
+10,21,New Data Points,87,529,44,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,22,2,21,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,23,6,15,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,24,2,15,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,25,7,14,1,0,0,0,0,64,0,-1--1--1,,1|(93,221)|
+1,26,5,15,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,27,8,15,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,28,9,15,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,29,6,21,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,30,5,21,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,31,8,21,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,32,9,21,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+10,33,Mean Absolute Error in Matching,-147,398,59,23,8,3,0,2,-1,0,0,0,0-0-0,0-0-0,|||128-0-255,0,0,0,0,0,0
+1,34,10,33,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,35,16,33,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,36,Past Inflation,552,489,51,23,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,37,48,804,486,25,15,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,38,40,37,100,0,0,22,0,192,0,-1--1--1,,1|(736,486)|
+1,39,40,36,4,0,0,22,0,192,0,-1--1--1,,1|(642,486)|
+11,40,0,687,486,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,41,Past Inflation Updating Rate,687,517,55,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,42,Trend Horizon,720,402,55,23,8,3,0,2,-1,0,0,0,-1--1--1,-1--1--1,|||0-128-0,0,0,0,0,0,0
+1,43,42,41,1,0,45,0,0,192,0,-1--1--1,,1|(675,444)|
+10,44,Inflation Trend,480,379,56,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,45,36,44,1,0,0,0,0,192,0,-1--1--1,,1|(489,420)|
+1,46,42,44,1,0,0,0,0,192,0,-1--1--1,,1|(516,368)|
+10,47,One Year Time Horizon,356,202,59,23,8,3,0,16,-1,0,0,0,0-0-0,0-0-0,|||0-0-0,0,0,0,0,0,0
+10,48,Forward Looking Prediction,402,308,43,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,49,47,48,1,0,0,0,0,192,0,-1--1--1,,1|(423,245)|
+1,50,44,48,1,0,0,0,0,192,0,-1--1--1,,1|(406,360)|
+1,51,1,48,1,0,0,0,0,192,0,-1--1--1,,1|(515,288)|
+1,52,36,41,0,0,45,0,0,64,0,-1--1--1,,1|(0,0)|
+10,53,Inflation Trend,347,-149,37,17,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,54,Start TimeRIPD,250,824,57,10,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,55,End TimeRIPD,141,828,54,10,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,56,Time,58,823,29,10,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,57,TIME STEP,-33,824,52,10,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,58,Cumulative Absolute Matching ErrorRIPD,-46,667,61,30,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,59,48,145,670,25,15,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,60,62,59,100,0,0,22,0,192,0,-1--1--1,,1|(103,670)|
+1,61,62,58,4,0,0,22,0,192,0,-1--1--1,,1|(44,670)|
+11,62,0,80,670,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,63,Panel Prediction Matching ErrorRIPD,80,696,73,18,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,64,Total Number of Data PointsRIPD,-74,968,54,23,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,65,48,161,968,25,15,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,66,68,65,100,0,0,22,0,192,0,-1--1--1,,1|(101,968)|
+1,67,68,64,4,0,0,22,0,192,0,-1--1--1,,1|(17,968)|
+11,68,0,61,968,6,8,34,3,0,0,3,0,0,0,0,0,0,0,0,0
+10,69,New Data PointsRIPD,61,942,43,18,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,70,55,63,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,71,54,63,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,72,56,63,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,73,57,63,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,74,55,69,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,75,54,69,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,76,56,69,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,77,57,69,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+10,78,Mean Absolute Error in MatchingRIPD,-173,806,75,18,8,3,0,2,-1,0,0,0,0-0-0,0-0-0,|||128-0-255,0,0,0,0,0,0
+1,79,58,78,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,80,64,78,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,81,3,63,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,82,3,69,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,83,7,63,1,0,0,0,0,64,0,-1--1--1,,1|(-307,423)|
+1,84,1,44,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,85,1,41,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+10,86,Average Inflation over Lookback Time,448,96,60,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,87,Lookback Time,614,78,59,23,8,3,0,2,-1,0,0,0,-1--1--1,-1--1--1,|||0-128-0,0,0,0,0,0,0
+1,88,1,86,1,0,0,0,0,192,0,-1--1--1,,1|(497,172)|
+1,89,87,86,1,0,0,0,0,192,0,-1--1--1,,1|(533,43)|
+10,90,Time,265,87,29,10,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,91,90,86,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,92,86,7,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+///---\\\
+:L<%^E!@
+1:RIPDOptim_naiveaverage.vdfx
+1:InflationPredictionData.vdfx
+4:Time
+5:Average Inflation over Lookback Time
+9:RIPDOptim_naiveaverage
+19:100,0
+24:1914
+25:2023
+26:2023
+11:FitCPISimple.voc
+100:Optimization.voc
+12:InflationFitMAE.vpd
+101:InflationOptim.vpd
+13:InflationPredictionData.vdfx
+15:1,0,0,0,0,0
+27:0,
+34:0,
+42:0
+72:0
+73:0
+95:0
+96:0
+97:0
+77:0
+78:0
+102:0
+93:0
+94:0
+92:0
+91:0
+90:0
+87:0
+75:
+43:
+103:8,8,8,3,8
+105:0,0,0,0,0,0,0,0,0,0
+104:Arial|11||0-0-0|0-0-0|-1--1--1|0-0-255|192-192-192|-1--1--1

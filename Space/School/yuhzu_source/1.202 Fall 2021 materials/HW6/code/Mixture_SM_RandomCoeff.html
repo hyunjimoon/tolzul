@@ -1,0 +1,193 @@
+<html>
+<head>
+<script src="http://transp-or.epfl.ch/biogeme/sorttable.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mixture_SM_RandomCoeff - Report from biogeme 3.2.8 [2022-05-02]</title>
+<meta name="keywords" content="biogeme, discrete choice, random utility">
+<meta name="description" content="Report from biogeme 3.2.8 [2022-05-02]">
+<meta name="author" content="{bv.author}">
+<style type=text/css>
+.biostyle
+	{font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	font-family:Courier;}
+.boundstyle
+	{font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	font-family:Courier;
+        color:red}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<p>biogeme 3.2.8 [2022-05-02]</p>
+<p><a href="https://www.python.org/" target="_blank">Python</a> package</p>
+<p>Home page: <a href="http://biogeme.epfl.ch" target="_blank">http://biogeme.epfl.ch</a></p>
+<p>Submit questions to <a href="https://groups.google.com/d/forum/biogeme" target="_blank">https://groups.google.com/d/forum/biogeme</a></p>
+<p><a href="http://people.epfl.ch/michel.bierlaire">Michel Bierlaire</a>, <a href="http://transp-or.epfl.ch">Transport and Mobility Laboratory</a>, <a href="http://www.epfl.ch">Ecole Polytechnique F&#233;d&#233;rale de Lausanne (EPFL)</a></p>
+<p>This file has automatically been generated on 2022-05-02 15:04:28.669088</p>
+<table>
+<tr class=biostyle><td align=right><strong>Report file</strong>:	</td><td>Mixture_SM_RandomCoeff.html</td></tr>
+<tr class=biostyle><td align=right><strong>Database name</strong>:	</td><td>swissmetro</td></tr>
+</table>
+<h1>Estimation report</h1>
+<table border="0">
+<tr class=biostyle><td align=right ><strong>Number of estimated parameters</strong>: </td> <td>15</td></tr>
+<tr class=biostyle><td align=right ><strong>Sample size</strong>: </td> <td>6768</td></tr>
+<tr class=biostyle><td align=right ><strong>Excluded observations</strong>: </td> <td>3960</td></tr>
+<tr class=biostyle><td align=right ><strong>Init log likelihood</strong>: </td> <td>-4914.276</td></tr>
+<tr class=biostyle><td align=right ><strong>Final log likelihood</strong>: </td> <td>-4838.257</td></tr>
+<tr class=biostyle><td align=right ><strong>Likelihood ratio test for the init. model</strong>: </td> <td>152.0397</td></tr>
+<tr class=biostyle><td align=right ><strong>Rho-square for the init. model</strong>: </td> <td>0.0155</td></tr>
+<tr class=biostyle><td align=right ><strong>Rho-square-bar for the init. model</strong>: </td> <td>0.0124</td></tr>
+<tr class=biostyle><td align=right ><strong>Akaike Information Criterion</strong>: </td> <td>9706.513</td></tr>
+<tr class=biostyle><td align=right ><strong>Bayesian Information Criterion</strong>: </td> <td>9808.812</td></tr>
+<tr class=biostyle><td align=right ><strong>Final gradient norm</strong>: </td> <td>4.0051E-02</td></tr>
+<tr class=biostyle><td align=right ><strong>Number of draws</strong>: </td> <td>1000</td></tr>
+<tr class=biostyle><td align=right ><strong>Draws generation time</strong>: </td> <td>0:00:23.781350</td></tr>
+<tr class=biostyle><td align=right ><strong>Types of draws</strong>: </td> <td>['BETA_CAR_COST_random: NORMAL', 'BETA_GA_random: NORMAL', 'BETA_HE_random: NORMAL', 'BETA_SENIOR_random: NORMAL', 'BETA_SM_COST_random: NORMAL', 'BETA_TRAIN_COST_random: NORMAL']</td></tr>
+<tr class=biostyle><td align=right ><strong>Nbr of threads</strong>: </td> <td>12</td></tr>
+<tr class=biostyle><td align=right ><strong>Algorithm</strong>: </td> <td>Newton with trust region for simple bound constraints</td></tr>
+<tr class=biostyle><td align=right ><strong>Proportion analytical hessian</strong>: </td> <td>100.0%</td></tr>
+<tr class=biostyle><td align=right ><strong>Relative projected gradient</strong>: </td> <td>5.940165e-06</td></tr>
+<tr class=biostyle><td align=right ><strong>Relative change</strong>: </td> <td>0.0008738824865558437</td></tr>
+<tr class=biostyle><td align=right ><strong>Number of iterations</strong>: </td> <td>5</td></tr>
+<tr class=biostyle><td align=right ><strong>Number of function evaluations</strong>: </td> <td>16</td></tr>
+<tr class=biostyle><td align=right ><strong>Number of gradient evaluations</strong>: </td> <td>6</td></tr>
+<tr class=biostyle><td align=right ><strong>Number of hessian evaluations</strong>: </td> <td>6</td></tr>
+<tr class=biostyle><td align=right ><strong>Cause of termination</strong>: </td> <td>Relative gradient = 5.9e-06 <= 6.1e-06</td></tr>
+<tr class=biostyle><td align=right ><strong>Optimization time</strong>: </td> <td>0:05:38.050281</td></tr>
+</table>
+<h1>Estimated parameters</h1>
+<table border="1">
+<tr class=biostyle><th>Name</th><th>Value</th><th>Std err</th><th>t-test</th><th>p-value</th><th>Rob. Std err</th><th>Rob. t-test</th><th>Rob. p-value</th></tr>
+<tr class=biostyle><td>ASC_CAR</td><td>-0.752</td><td>0.208</td><td>-3.61</td><td>0.000308</td><td>0.239</td><td>-3.14</td><td>0.00169</td></tr>
+<tr class=biostyle><td>ASC_SM</td><td>-0.153</td><td>0.184</td><td>-0.834</td><td>0.405</td><td>0.218</td><td>-0.703</td><td>0.482</td></tr>
+<tr class=biostyle><td>BETA_CAR_COST_mean</td><td>-1.84</td><td>0.262</td><td>-7</td><td>2.61e-12</td><td>0.461</td><td>-3.98</td><td>6.85e-05</td></tr>
+<tr class=biostyle><td>BETA_CAR_COST_std</td><td>1.03</td><td>0.209</td><td>4.93</td><td>8.19e-07</td><td>0.362</td><td>2.84</td><td>0.00449</td></tr>
+<tr class=biostyle><td>BETA_GA_mean</td><td>0.656</td><td>0.193</td><td>3.41</td><td>0.000655</td><td>0.197</td><td>3.33</td><td>0.000883</td></tr>
+<tr class=biostyle><td>BETA_GA_std</td><td>-1.25</td><td>0.39</td><td>-3.2</td><td>0.00137</td><td>0.453</td><td>-2.75</td><td>0.00591</td></tr>
+<tr class=biostyle><td>BETA_HE_mean</td><td>-0.793</td><td>0.138</td><td>-5.73</td><td>1.01e-08</td><td>0.142</td><td>-5.58</td><td>2.41e-08</td></tr>
+<tr class=biostyle><td>BETA_HE_std</td><td>0.0562</td><td>0.725</td><td>0.0776</td><td>0.938</td><td>0.346</td><td>0.163</td><td>0.871</td></tr>
+<tr class=biostyle><td>BETA_SENIOR_mean</td><td>-2.31</td><td>0.187</td><td>-12.4</td><td>0</td><td>0.201</td><td>-11.5</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_SENIOR_std</td><td>-0.0115</td><td>0.494</td><td>-0.0233</td><td>0.981</td><td>0.056</td><td>-0.206</td><td>0.837</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_mean</td><td>-1.77</td><td>0.158</td><td>-11.2</td><td>0</td><td>0.268</td><td>-6.6</td><td>4.25e-11</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_std</td><td>-0.971</td><td>0.164</td><td>-5.93</td><td>2.99e-09</td><td>0.268</td><td>-3.63</td><td>0.000286</td></tr>
+<tr class=biostyle><td>BETA_TIME</td><td>-1.43</td><td>0.0977</td><td>-14.6</td><td>0</td><td>0.219</td><td>-6.53</td><td>6.76e-11</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_mean</td><td>-4.64</td><td>0.552</td><td>-8.41</td><td>0</td><td>0.738</td><td>-6.29</td><td>3.2e-10</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_std</td><td>-1.8</td><td>0.269</td><td>-6.69</td><td>2.19e-11</td><td>0.31</td><td>-5.8</td><td>6.52e-09</td></tr>
+</table>
+<h2>Correlation of coefficients</h2>
+<table border="1">
+<tr class=biostyle><th>Coefficient1</th><th>Coefficient2</th><th>Covariance</th><th>Correlation</th><th>t-test</th><th>p-value</th><th>Rob. cov.</th><th>Rob. corr.</th><th>Rob. t-test</th><th>Rob. p-value</th></tr>
+<tr class=biostyle><td>ASC_SM</td><td>ASC_CAR</td><td>0.0329</td><td>0.859</td><td>5.61</td><td>2.05e-08</td><td>0.0467</td><td>0.893</td><td>5.55</td><td>2.81e-08</td></tr>
+<tr class=biostyle><td>BETA_CAR_COST_mean</td><td>ASC_CAR</td><td>0.00239</td><td>0.0438</td><td>-3.31</td><td>0.000941</td><td>0.0135</td><td>0.122</td><td>-2.2</td><td>0.0278</td></tr>
+<tr class=biostyle><td>BETA_CAR_COST_mean</td><td>ASC_SM</td><td>0.014</td><td>0.29</td><td>-6.16</td><td>7.37e-10</td><td>0.0347</td><td>0.344</td><td>-3.85</td><td>0.000118</td></tr>
+<tr class=biostyle><td>BETA_CAR_COST_std</td><td>ASC_CAR</td><td>-0.00585</td><td>-0.134</td><td>5.67</td><td>1.43e-08</td><td>-0.0213</td><td>-0.245</td><td>3.71</td><td>0.000211</td></tr>
+<tr class=biostyle><td>BETA_CAR_COST_std</td><td>ASC_SM</td><td>-0.0104</td><td>-0.271</td><td>3.77</td><td>0.000161</td><td>-0.032</td><td>-0.404</td><td>2.4</td><td>0.0164</td></tr>
+<tr class=biostyle><td>BETA_CAR_COST_std</td><td>BETA_CAR_COST_mean</td><td>-0.046</td><td>-0.84</td><td>6.34</td><td>2.34e-10</td><td>-0.156</td><td>-0.932</td><td>3.54</td><td>0.000401</td></tr>
+<tr class=biostyle><td>BETA_GA_mean</td><td>ASC_CAR</td><td>0.0256</td><td>0.637</td><td>8.22</td><td>2.22e-16</td><td>0.0257</td><td>0.544</td><td>6.65</td><td>2.9e-11</td></tr>
+<tr class=biostyle><td>BETA_GA_mean</td><td>ASC_SM</td><td>0.0273</td><td>0.772</td><td>6.35</td><td>2.15e-10</td><td>0.0297</td><td>0.689</td><td>4.91</td><td>9.14e-07</td></tr>
+<tr class=biostyle><td>BETA_GA_mean</td><td>BETA_CAR_COST_mean</td><td>0.0103</td><td>0.204</td><td>8.53</td><td>0</td><td>0.0335</td><td>0.368</td><td>5.8</td><td>6.63e-09</td></tr>
+<tr class=biostyle><td>BETA_GA_mean</td><td>BETA_CAR_COST_std</td><td>-0.00622</td><td>-0.155</td><td>-1.22</td><td>0.221</td><td>-0.024</td><td>-0.336</td><td>-0.799</td><td>0.424</td></tr>
+<tr class=biostyle><td>BETA_GA_std</td><td>ASC_CAR</td><td>0.0175</td><td>0.216</td><td>-1.24</td><td>0.216</td><td>0.0511</td><td>0.471</td><td>-1.24</td><td>0.216</td></tr>
+<tr class=biostyle><td>BETA_GA_std</td><td>ASC_SM</td><td>0.017</td><td>0.237</td><td>-2.81</td><td>0.00498</td><td>0.0473</td><td>0.478</td><td>-2.75</td><td>0.00597</td></tr>
+<tr class=biostyle><td>BETA_GA_std</td><td>BETA_CAR_COST_mean</td><td>0.0188</td><td>0.183</td><td>1.38</td><td>0.169</td><td>0.0429</td><td>0.205</td><td>1.02</td><td>0.307</td></tr>
+<tr class=biostyle><td>BETA_GA_std</td><td>BETA_CAR_COST_std</td><td>-0.0149</td><td>-0.183</td><td>-4.8</td><td>1.61e-06</td><td>-0.0466</td><td>-0.284</td><td>-3.47</td><td>0.000515</td></tr>
+<tr class=biostyle><td>BETA_GA_std</td><td>BETA_GA_mean</td><td>0.0175</td><td>0.233</td><td>-4.85</td><td>1.23e-06</td><td>0.0158</td><td>0.176</td><td>-4.13</td><td>3.67e-05</td></tr>
+<tr class=biostyle><td>BETA_HE_mean</td><td>ASC_CAR</td><td>0.0133</td><td>0.462</td><td>-0.216</td><td>0.829</td><td>0.0171</td><td>0.501</td><td>-0.197</td><td>0.844</td></tr>
+<tr class=biostyle><td>BETA_HE_mean</td><td>ASC_SM</td><td>0.00999</td><td>0.392</td><td>-3.52</td><td>0.000431</td><td>0.0136</td><td>0.439</td><td>-3.17</td><td>0.0015</td></tr>
+<tr class=biostyle><td>BETA_HE_mean</td><td>BETA_CAR_COST_mean</td><td>0.00396</td><td>0.109</td><td>3.69</td><td>0.000227</td><td>0.0085</td><td>0.13</td><td>2.25</td><td>0.0247</td></tr>
+<tr class=biostyle><td>BETA_HE_mean</td><td>BETA_CAR_COST_std</td><td>-0.00267</td><td>-0.0925</td><td>-6.98</td><td>2.87e-12</td><td>-0.0077</td><td>-0.15</td><td>-4.46</td><td>8.16e-06</td></tr>
+<tr class=biostyle><td>BETA_HE_mean</td><td>BETA_GA_mean</td><td>0.00118</td><td>0.0444</td><td>-6.24</td><td>4.28e-10</td><td>0.00216</td><td>0.077</td><td>-6.19</td><td>6.06e-10</td></tr>
+<tr class=biostyle><td>BETA_HE_mean</td><td>BETA_GA_std</td><td>0.0127</td><td>0.236</td><td>1.19</td><td>0.233</td><td>0.0185</td><td>0.287</td><td>1.05</td><td>0.295</td></tr>
+<tr class=biostyle><td>BETA_HE_std</td><td>ASC_CAR</td><td>0.00249</td><td>0.0165</td><td>1.08</td><td>0.282</td><td>0.0119</td><td>0.144</td><td>2.07</td><td>0.0388</td></tr>
+<tr class=biostyle><td>BETA_HE_std</td><td>ASC_SM</td><td>0.00619</td><td>0.0464</td><td>0.283</td><td>0.777</td><td>0.0132</td><td>0.176</td><td>0.559</td><td>0.576</td></tr>
+<tr class=biostyle><td>BETA_HE_std</td><td>BETA_CAR_COST_mean</td><td>0.00634</td><td>0.0333</td><td>2.48</td><td>0.013</td><td>0.0318</td><td>0.199</td><td>3.65</td><td>0.000261</td></tr>
+<tr class=biostyle><td>BETA_HE_std</td><td>BETA_CAR_COST_std</td><td>-0.00404</td><td>-0.0267</td><td>-1.28</td><td>0.2</td><td>-0.0262</td><td>-0.209</td><td>-1.77</td><td>0.077</td></tr>
+<tr class=biostyle><td>BETA_HE_std</td><td>BETA_GA_mean</td><td>0.0107</td><td>0.0768</td><td>-0.816</td><td>0.414</td><td>0.0081</td><td>0.119</td><td>-1.59</td><td>0.111</td></tr>
+<tr class=biostyle><td>BETA_HE_std</td><td>BETA_GA_std</td><td>0.0156</td><td>0.0552</td><td>1.62</td><td>0.105</td><td>0.0322</td><td>0.206</td><td>2.56</td><td>0.0106</td></tr>
+<tr class=biostyle><td>BETA_HE_std</td><td>BETA_HE_mean</td><td>-0.0135</td><td>-0.134</td><td>1.12</td><td>0.261</td><td>-0.000821</td><td>-0.0167</td><td>2.26</td><td>0.0239</td></tr>
+<tr class=biostyle><td>BETA_SENIOR_mean</td><td>ASC_CAR</td><td>0.00892</td><td>0.229</td><td>-6.34</td><td>2.24e-10</td><td>0.0193</td><td>0.401</td><td>-6.42</td><td>1.41e-10</td></tr>
+<tr class=biostyle><td>BETA_SENIOR_mean</td><td>ASC_SM</td><td>0.00913</td><td>0.266</td><td>-9.61</td><td>0</td><td>0.0203</td><td>0.463</td><td>-9.91</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_SENIOR_mean</td><td>BETA_CAR_COST_mean</td><td>0.0136</td><td>0.278</td><td>-1.72</td><td>0.0852</td><td>0.0396</td><td>0.427</td><td>-1.14</td><td>0.254</td></tr>
+<tr class=biostyle><td>BETA_SENIOR_mean</td><td>BETA_CAR_COST_std</td><td>-0.01</td><td>-0.257</td><td>-10.6</td><td>0</td><td>-0.0338</td><td>-0.463</td><td>-6.83</td><td>8.46e-12</td></tr>
+<tr class=biostyle><td>BETA_SENIOR_mean</td><td>BETA_GA_mean</td><td>0.0111</td><td>0.309</td><td>-13.3</td><td>0</td><td>0.015</td><td>0.377</td><td>-13.3</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_SENIOR_mean</td><td>BETA_GA_std</td><td>0.0311</td><td>0.427</td><td>-3.02</td><td>0.00256</td><td>0.0433</td><td>0.475</td><td>-2.67</td><td>0.00762</td></tr>
+<tr class=biostyle><td>BETA_SENIOR_mean</td><td>BETA_HE_mean</td><td>0.00473</td><td>0.183</td><td>-7.19</td><td>6.35e-13</td><td>0.00667</td><td>0.233</td><td>-6.98</td><td>2.9e-12</td></tr>
+<tr class=biostyle><td>BETA_SENIOR_mean</td><td>BETA_HE_std</td><td>-0.00074</td><td>-0.00546</td><td>-3.16</td><td>0.00157</td><td>0.0112</td><td>0.161</td><td>-6.39</td><td>1.68e-10</td></tr>
+<tr class=biostyle><td>BETA_SENIOR_std</td><td>ASC_CAR</td><td>-6.66e-05</td><td>-0.000646</td><td>1.38</td><td>0.168</td><td>-0.000491</td><td>-0.0366</td><td>2.99</td><td>0.00282</td></tr>
+<tr class=biostyle><td>BETA_SENIOR_std</td><td>ASC_SM</td><td>-0.000187</td><td>-0.00206</td><td>0.269</td><td>0.788</td><td>-0.000618</td><td>-0.0506</td><td>0.622</td><td>0.534</td></tr>
+<tr class=biostyle><td>BETA_SENIOR_std</td><td>BETA_CAR_COST_mean</td><td>8.83e-05</td><td>0.000681</td><td>3.26</td><td>0.00111</td><td>-3.23e-05</td><td>-0.00125</td><td>3.93</td><td>8.6e-05</td></tr>
+<tr class=biostyle><td>BETA_SENIOR_std</td><td>BETA_CAR_COST_std</td><td>-0.000182</td><td>-0.00177</td><td>-1.94</td><td>0.0526</td><td>-8.2e-06</td><td>-0.000404</td><td>-2.84</td><td>0.00452</td></tr>
+<tr class=biostyle><td>BETA_SENIOR_std</td><td>BETA_GA_mean</td><td>-0.000441</td><td>-0.00463</td><td>-1.26</td><td>0.209</td><td>-0.000579</td><td>-0.0524</td><td>-3.21</td><td>0.00132</td></tr>
+<tr class=biostyle><td>BETA_SENIOR_std</td><td>BETA_GA_std</td><td>-0.00062</td><td>-0.00321</td><td>1.96</td><td>0.05</td><td>-0.0003</td><td>-0.0118</td><td>2.7</td><td>0.00688</td></tr>
+<tr class=biostyle><td>BETA_SENIOR_std</td><td>BETA_HE_mean</td><td>0.000341</td><td>0.00498</td><td>1.52</td><td>0.128</td><td>-5.43e-05</td><td>-0.00682</td><td>5.1</td><td>3.32e-07</td></tr>
+<tr class=biostyle><td>BETA_SENIOR_std</td><td>BETA_HE_std</td><td>-0.0143</td><td>-0.0398</td><td>-0.0758</td><td>0.94</td><td>-0.00317</td><td>-0.164</td><td>-0.189</td><td>0.85</td></tr>
+<tr class=biostyle><td>BETA_SENIOR_std</td><td>BETA_SENIOR_mean</td><td>0.000204</td><td>0.00221</td><td>4.36</td><td>1.33e-05</td><td>-9.06e-05</td><td>-0.00805</td><td>11</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_mean</td><td>ASC_CAR</td><td>0.00908</td><td>0.276</td><td>-4.54</td><td>5.5e-06</td><td>0.0246</td><td>0.383</td><td>-3.6</td><td>0.000321</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_mean</td><td>ASC_SM</td><td>0.0087</td><td>0.299</td><td>-7.95</td><td>2e-15</td><td>0.0282</td><td>0.482</td><td>-6.43</td><td>1.28e-10</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_mean</td><td>BETA_CAR_COST_mean</td><td>0.035</td><td>0.844</td><td>0.426</td><td>0.67</td><td>0.111</td><td>0.893</td><td>0.261</td><td>0.794</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_mean</td><td>BETA_CAR_COST_std</td><td>-0.0251</td><td>-0.762</td><td>-8.12</td><td>4.44e-16</td><td>-0.0872</td><td>-0.897</td><td>-4.56</td><td>5.23e-06</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_mean</td><td>BETA_GA_mean</td><td>0.00527</td><td>0.173</td><td>-10.7</td><td>0</td><td>0.0168</td><td>0.318</td><td>-8.72</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_mean</td><td>BETA_GA_std</td><td>0.0148</td><td>0.24</td><td>-1.36</td><td>0.173</td><td>0.0497</td><td>0.409</td><td>-1.24</td><td>0.215</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_mean</td><td>BETA_HE_mean</td><td>0.00265</td><td>0.121</td><td>-4.96</td><td>7.03e-07</td><td>0.0067</td><td>0.176</td><td>-3.48</td><td>0.000499</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_mean</td><td>BETA_HE_std</td><td>0.00484</td><td>0.0423</td><td>-2.49</td><td>0.0129</td><td>0.0236</td><td>0.254</td><td>-4.81</td><td>1.53e-06</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_mean</td><td>BETA_SENIOR_mean</td><td>0.00916</td><td>0.31</td><td>2.66</td><td>0.0079</td><td>0.028</td><td>0.518</td><td>2.28</td><td>0.0227</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_mean</td><td>BETA_SENIOR_std</td><td>9.13e-05</td><td>0.00117</td><td>-3.39</td><td>0.000701</td><td>1.43e-05</td><td>0.000949</td><td>-6.42</td><td>1.4e-10</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_std</td><td>ASC_CAR</td><td>0.00803</td><td>0.235</td><td>-0.94</td><td>0.347</td><td>0.0215</td><td>0.335</td><td>-0.746</td><td>0.456</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_std</td><td>ASC_SM</td><td>0.00894</td><td>0.297</td><td>-3.95</td><td>7.71e-05</td><td>0.026</td><td>0.445</td><td>-3.15</td><td>0.00162</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_std</td><td>BETA_CAR_COST_mean</td><td>0.0282</td><td>0.657</td><td>4.37</td><td>1.23e-05</td><td>0.102</td><td>0.827</td><td>3.05</td><td>0.00225</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_std</td><td>BETA_CAR_COST_std</td><td>-0.0186</td><td>-0.546</td><td>-6.1</td><td>1.09e-09</td><td>-0.08</td><td>-0.825</td><td>-3.32</td><td>0.000898</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_std</td><td>BETA_GA_mean</td><td>0.00561</td><td>0.178</td><td>-7.09</td><td>1.33e-12</td><td>0.0162</td><td>0.306</td><td>-5.82</td><td>5.94e-09</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_std</td><td>BETA_GA_std</td><td>0.0149</td><td>0.233</td><td>0.718</td><td>0.473</td><td>0.045</td><td>0.371</td><td>0.64</td><td>0.522</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_std</td><td>BETA_HE_mean</td><td>0.00274</td><td>0.121</td><td>-0.884</td><td>0.377</td><td>0.00612</td><td>0.161</td><td>-0.63</td><td>0.529</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_std</td><td>BETA_HE_std</td><td>0.00904</td><td>0.0763</td><td>-1.41</td><td>0.16</td><td>0.0275</td><td>0.298</td><td>-2.78</td><td>0.00536</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_std</td><td>BETA_SENIOR_mean</td><td>0.00925</td><td>0.302</td><td>6.45</td><td>1.09e-10</td><td>0.0264</td><td>0.49</td><td>5.51</td><td>3.59e-08</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_std</td><td>BETA_SENIOR_std</td><td>0.000219</td><td>0.00271</td><td>-1.84</td><td>0.0654</td><td>0.000223</td><td>0.0149</td><td>-3.52</td><td>0.000433</td></tr>
+<tr class=biostyle><td>BETA_SM_COST_std</td><td>BETA_SM_COST_mean</td><td>0.019</td><td>0.734</td><td>6.81</td><td>9.59e-12</td><td>0.0638</td><td>0.888</td><td>6.31</td><td>2.79e-10</td></tr>
+<tr class=biostyle><td>BETA_TIME</td><td>ASC_CAR</td><td>0.00584</td><td>0.287</td><td>-3.32</td><td>0.000888</td><td>0.0307</td><td>0.586</td><td>-3.23</td><td>0.00125</td></tr>
+<tr class=biostyle><td>BETA_TIME</td><td>ASC_SM</td><td>0.00652</td><td>0.363</td><td>-7.31</td><td>2.59e-13</td><td>0.028</td><td>0.588</td><td>-6.42</td><td>1.36e-10</td></tr>
+<tr class=biostyle><td>BETA_TIME</td><td>BETA_CAR_COST_mean</td><td>0.00887</td><td>0.346</td><td>1.66</td><td>0.0966</td><td>0.0127</td><td>0.126</td><td>0.844</td><td>0.399</td></tr>
+<tr class=biostyle><td>BETA_TIME</td><td>BETA_CAR_COST_std</td><td>-0.00893</td><td>-0.438</td><td>-9.22</td><td>0</td><td>-0.022</td><td>-0.277</td><td>-5.2</td><td>1.98e-07</td></tr>
+<tr class=biostyle><td>BETA_TIME</td><td>BETA_GA_mean</td><td>0.0014</td><td>0.0747</td><td>-9.95</td><td>0</td><td>0.00217</td><td>0.0503</td><td>-7.26</td><td>3.98e-13</td></tr>
+<tr class=biostyle><td>BETA_TIME</td><td>BETA_GA_std</td><td>0.0127</td><td>0.334</td><td>-0.487</td><td>0.627</td><td>0.063</td><td>0.636</td><td>-0.503</td><td>0.615</td></tr>
+<tr class=biostyle><td>BETA_TIME</td><td>BETA_HE_mean</td><td>0.00152</td><td>0.113</td><td>-3.96</td><td>7.47e-05</td><td>0.00587</td><td>0.189</td><td>-2.67</td><td>0.0075</td></tr>
+<tr class=biostyle><td>BETA_TIME</td><td>BETA_HE_std</td><td>0.00278</td><td>0.0393</td><td>-2.04</td><td>0.0414</td><td>0.0149</td><td>0.198</td><td>-4</td><td>6.28e-05</td></tr>
+<tr class=biostyle><td>BETA_TIME</td><td>BETA_SENIOR_mean</td><td>0.00464</td><td>0.254</td><td>4.72</td><td>2.38e-06</td><td>0.0179</td><td>0.407</td><td>3.87</td><td>0.000111</td></tr>
+<tr class=biostyle><td>BETA_TIME</td><td>BETA_SENIOR_std</td><td>5.92e-05</td><td>0.00123</td><td>-2.81</td><td>0.00497</td><td>-0.000115</td><td>-0.00939</td><td>-6.26</td><td>3.93e-10</td></tr>
+<tr class=biostyle><td>BETA_TIME</td><td>BETA_SM_COST_mean</td><td>0.00811</td><td>0.525</td><td>2.54</td><td>0.0112</td><td>0.0273</td><td>0.465</td><td>1.34</td><td>0.179</td></tr>
+<tr class=biostyle><td>BETA_TIME</td><td>BETA_SM_COST_std</td><td>0.00761</td><td>0.476</td><td>-3.14</td><td>0.00167</td><td>0.024</td><td>0.41</td><td>-1.71</td><td>0.0877</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_mean</td><td>ASC_CAR</td><td>0.0768</td><td>0.667</td><td>-8.82</td><td>0</td><td>0.102</td><td>0.578</td><td>-6.17</td><td>6.97e-10</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_mean</td><td>ASC_SM</td><td>0.0789</td><td>0.776</td><td>-10.6</td><td>0</td><td>0.116</td><td>0.723</td><td>-7.48</td><td>7.19e-14</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_mean</td><td>BETA_CAR_COST_mean</td><td>0.0857</td><td>0.591</td><td>-6.24</td><td>4.41e-10</td><td>0.272</td><td>0.798</td><td>-6.06</td><td>1.35e-09</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_mean</td><td>BETA_CAR_COST_std</td><td>-0.0587</td><td>-0.509</td><td>-8.31</td><td>0</td><td>-0.21</td><td>-0.786</td><td>-5.42</td><td>6.11e-08</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_mean</td><td>BETA_GA_mean</td><td>0.0736</td><td>0.692</td><td>-12</td><td>0</td><td>0.0978</td><td>0.671</td><td>-8.5</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_mean</td><td>BETA_GA_std</td><td>0.0538</td><td>0.25</td><td>-5.75</td><td>9.16e-09</td><td>0.12</td><td>0.358</td><td>-4.75</td><td>2.02e-06</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_mean</td><td>BETA_HE_mean</td><td>0.0111</td><td>0.146</td><td>-7.01</td><td>2.4e-12</td><td>0.0207</td><td>0.197</td><td>-5.32</td><td>1.04e-07</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_mean</td><td>BETA_HE_std</td><td>0.0235</td><td>0.0589</td><td>-5.31</td><td>1.09e-07</td><td>0.0583</td><td>0.229</td><td>-6.35</td><td>2.17e-10</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_mean</td><td>BETA_SENIOR_mean</td><td>0.0458</td><td>0.444</td><td>-4.68</td><td>2.89e-06</td><td>0.0898</td><td>0.604</td><td>-3.66</td><td>0.000255</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_mean</td><td>BETA_SENIOR_std</td><td>-0.000572</td><td>-0.00209</td><td>-6.24</td><td>4.32e-10</td><td>-0.00162</td><td>-0.0391</td><td>-6.24</td><td>4.47e-10</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_mean</td><td>BETA_SM_COST_mean</td><td>0.0562</td><td>0.644</td><td>-6.16</td><td>7.32e-10</td><td>0.164</td><td>0.828</td><td>-5.35</td><td>9.02e-08</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_mean</td><td>BETA_SM_COST_std</td><td>0.0504</td><td>0.558</td><td>-7.64</td><td>2.13e-14</td><td>0.152</td><td>0.768</td><td>-6.56</td><td>5.27e-11</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_mean</td><td>BETA_TIME</td><td>0.0179</td><td>0.332</td><td>-6.09</td><td>1.11e-09</td><td>0.0526</td><td>0.326</td><td>-4.6</td><td>4.13e-06</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_std</td><td>ASC_CAR</td><td>0.0343</td><td>0.611</td><td>-4.83</td><td>1.38e-06</td><td>0.0447</td><td>0.602</td><td>-4.14</td><td>3.44e-05</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_std</td><td>ASC_SM</td><td>0.0348</td><td>0.703</td><td>-8.61</td><td>0</td><td>0.0483</td><td>0.713</td><td>-7.57</td><td>3.82e-14</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_std</td><td>BETA_CAR_COST_mean</td><td>0.0284</td><td>0.402</td><td>0.119</td><td>0.905</td><td>0.0823</td><td>0.574</td><td>0.091</td><td>0.927</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_std</td><td>BETA_CAR_COST_std</td><td>-0.0193</td><td>-0.344</td><td>-7.2</td><td>6.11e-13</td><td>-0.0664</td><td>-0.59</td><td>-4.72</td><td>2.42e-06</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_std</td><td>BETA_GA_mean</td><td>0.0329</td><td>0.634</td><td>-11.7</td><td>0</td><td>0.0387</td><td>0.631</td><td>-10.2</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_std</td><td>BETA_GA_std</td><td>0.026</td><td>0.248</td><td>-1.33</td><td>0.182</td><td>0.0527</td><td>0.375</td><td>-1.25</td><td>0.211</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_std</td><td>BETA_HE_mean</td><td>0.00579</td><td>0.155</td><td>-3.57</td><td>0.000362</td><td>0.00961</td><td>0.218</td><td>-3.23</td><td>0.00122</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_std</td><td>BETA_HE_std</td><td>0.0113</td><td>0.0582</td><td>-2.45</td><td>0.0143</td><td>0.0212</td><td>0.197</td><td>-4.46</td><td>8.17e-06</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_std</td><td>BETA_SENIOR_mean</td><td>0.0233</td><td>0.463</td><td>2.07</td><td>0.0384</td><td>0.039</td><td>0.624</td><td>2.11</td><td>0.0353</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_std</td><td>BETA_SENIOR_std</td><td>-0.000516</td><td>-0.00388</td><td>-3.17</td><td>0.0015</td><td>-0.00108</td><td>-0.0621</td><td>-5.61</td><td>1.98e-08</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_std</td><td>BETA_SM_COST_mean</td><td>0.019</td><td>0.448</td><td>-0.128</td><td>0.898</td><td>0.0527</td><td>0.632</td><td>-0.124</td><td>0.901</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_std</td><td>BETA_SM_COST_std</td><td>0.0181</td><td>0.41</td><td>-3.31</td><td>0.000935</td><td>0.0482</td><td>0.58</td><td>-3.11</td><td>0.00189</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_std</td><td>BETA_TIME</td><td>0.0073</td><td>0.278</td><td>-1.44</td><td>0.149</td><td>0.024</td><td>0.353</td><td>-1.21</td><td>0.227</td></tr>
+<tr class=biostyle><td>BETA_TRAIN_COST_std</td><td>BETA_TRAIN_COST_mean</td><td>0.137</td><td>0.921</td><td>8.83</td><td>0</td><td>0.209</td><td>0.911</td><td>6.01</td><td>1.9e-09</td></tr>
+</table>
+<p>Smallest eigenvalue: 1.81309</p>
+<p>Largest eigenvalue: 2428.01</p>
+<p>Condition number: 1339.16</p>
+</html>

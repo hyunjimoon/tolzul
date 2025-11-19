@@ -1,0 +1,174 @@
+{UTF-8}
+Prior Stdev=
+	1
+	~	Minute
+	~		|
+
+Prior Mean=
+	10
+	~	Minute
+	~		|
+
+Prior Penalty=
+	-(Shopping Time-Prior Mean)^2/Prior Stdev^2
+	~	dmnl
+	~		|
+
+CmltLogLikelihood= INTEG (
+	LL Poisson,
+		0)
+	~	Minute
+	~		|
+
+Customer Entry Data:INTERPOLATE:
+	~	Customer/Minute
+	~		|
+
+Customer Exit=
+	SW State Resetting*Customer Exit Data+(1-SW State Resetting)*Expected Customer Exit
+	~	Customer/Minute
+	~		|
+
+Customer Exit Data:INTERPOLATE:
+	~	
+	~		|
+
+Customers in Store= INTEG (
+	Customer Entry Data-Customer Exit,
+		0)
+	~	Customer
+	~		|
+
+Expected Customer Exit=
+	Customers in Store/Shopping Time
+	~	Customer/Minute
+	~		|
+
+LL Poisson=
+	if then else(Expected Customer Exit<=0,0,Customer Exit Data*ln(Expected Customer Exit\
+		)-Expected Customer Exit-GAMMA LN(Customer Exit Data+1))
+	~	dmnl
+	~		|
+
+Shopping Time=
+	10
+	~	Minute
+	~		|
+
+SW State Resetting=
+	0
+	~	dmnl [0,10000,1]
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 100
+	~	Minute
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Minute
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Minute [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Minute [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$-1--1--1,0,|12||-1--1--1|-1--1--1|-1--1--1|-1--1--1|-1--1--1|96,96,100,0
+10,1,Customers in Store,603,349,52,23,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,2,48,363,347,25,15,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,3,5,2,100,0,0,22,0,192,0,-1--1--1,,1|(425,347)|
+1,4,5,1,4,0,0,22,0,192,0,-1--1--1,,1|(513,347)|
+11,5,0,469,347,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,6,Customer Entry Data,469,378,61,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,7,48,889,349,25,15,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,8,10,1,100,0,0,22,0,192,0,-1--1--1,,1|(704,349)|
+1,9,10,7,4,0,0,22,0,192,0,-1--1--1,,1|(814,349)|
+11,10,0,759,349,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,11,Customer Exit,759,380,58,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,12,SW State Resetting,744,540,43,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,13,1,19,1,0,0,0,0,192,0,-1--1--1,,1|(701,274)|
+1,14,12,11,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+10,15,Shopping Time,606,174,50,9,8,3,0,2,-1,0,0,0,0-0-0,0-0-0,|||0-128-0,0,0,0,0,0,0
+1,16,15,19,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+12,17,0,11,365,276,232,8,79,0,0,2,0,0,0,0,0,0,0,0,0
+Customers in Store,Graph
+10,18,Customer Exit Data,931,203,54,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,19,Expected Customer Exit,720,255,54,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,20,18,10,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,21,19,10,1,0,0,0,0,192,0,-1--1--1,,1|(764,295)|
+10,22,CmltLogLikelihood,912,45,70,23,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,23,48,672,42,25,15,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,24,26,23,100,0,0,22,0,192,0,-1--1--1,,1|(730,42)|
+1,25,26,22,4,0,0,22,0,192,0,-1--1--1,,1|(808,42)|
+11,26,0,769,42,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,27,LL Poisson,769,73,44,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,28,19,27,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,29,18,27,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,30,Prior Mean,387,-8,44,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,31,Prior Stdev,378,82,44,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,32,Prior Penalty,544,58,51,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,33,15,32,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,34,31,32,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,35,30,32,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+///---\\\
+:L<%^E!@
+1:BaseWithoutReset.vdfx
+1:BaseWithReset.vdfx
+1:BaseNoReset.vdfx
+4:Time
+5:LL Poisson
+9:BaseWithoutReset
+19:100,0
+24:0
+25:100
+26:100
+11:StoreMLE.voc
+12:StoreMLE-WithPrior.vpd
+13:DataGen.vdfx
+15:0,0,0,0,0,0
+27:0,
+34:0,
+42:1
+72:0
+73:0
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:6
+41:0
+95:0
+96:0
+97:0
+77:0
+78:0
+102:0
+93:0
+94:0
+92:0
+91:0
+90:0
+87:0
+75:
+43:
+103:8,8,8,3,8
+105:0,0,0,0,0,0,0,0,0,0
+104:Arial|11||0-0-0|0-0-0|-1--1--1|0-0-255|192-192-192|-1--1--1

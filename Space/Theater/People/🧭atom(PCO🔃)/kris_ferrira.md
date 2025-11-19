@@ -8,6 +8,17 @@ atom: 🧭atom(PCO🔃)
 created: 2024-04-26
 modified:
   - 2025-10-19T02:08:28-04:00
+  - 2025-11-18T09:48:12-05:00
+---
+
+  
+
+Inference model translates observation to meaning and decision model translates meaning + utility to decision, with a caveat that models themselves evolve. INF is projection to states (meaning) and , utility is a function of state and action 
+
+
+observation -> INF -> meaning + utility -> DEC -> decision
+
+
 ---
 A handful of titles I wish to earn; one of them, a student who makes Kris smile. So here's another attempt:
 

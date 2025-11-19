@@ -1,0 +1,202 @@
+INFO:        Iteration 224.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.383929.
+INFO:        	Max PSRF 3.17884, 1/9 < 1.2.
+INFO:        Iteration 448.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.233333.
+INFO:        	Max PSRF 2.3225, 2/9 < 1.2.
+INFO:        Iteration 672.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.176948.
+INFO:        	Max PSRF 3.7067, 1/9 < 1.2.
+INFO:        Iteration 912.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.146028.
+INFO:        	Max PSRF 2.70167, 1/9 < 1.2.
+INFO:        Iteration 1168.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.123536.
+INFO:        	Max PSRF 2.71827, 4/9 < 1.2.
+INFO:        Iteration 1424.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.112971.
+INFO:        	Max PSRF 2.0367, 5/9 < 1.2.
+INFO:        Iteration 1696.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.107021.
+INFO:        	Max PSRF 1.83887, 3/9 < 1.2.
+INFO:        Iteration 1984.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.098301.
+INFO:        	Max PSRF 1.74367, 7/9 < 1.2.
+INFO:        Iteration 2288.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.0968238.
+INFO:        	Max PSRF 1.58629, 8/9 < 1.2.
+INFO:        Iteration 2608.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.0919894.
+INFO:        	Max PSRF 1.52034, 8/9 < 1.2.
+INFO:        Iteration 2944.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.0916411.
+INFO:        	Max PSRF 1.47254, 7/9 < 1.2.
+INFO:        Iteration 3296.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.0864865.
+INFO:        	Max PSRF 1.43214, 6/9 < 1.2.
+INFO:        Iteration 3664.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.0890217.
+INFO:        	Max PSRF 1.87156, 3/9 < 1.2.
+INFO:        NOTE Payoff (-2149.41) realized at multiple parameter values.
+INFO:        With alpha 0[USA] = 10 and 4.8521.
+INFO:        Iteration 4048.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.096662.
+INFO:        	Max PSRF 1.32839, 8/9 < 1.2.
+INFO:        Iteration 4464.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.100979.
+INFO:        	Max PSRF 1.25923, 8/9 < 1.2.
+INFO:        	Cross-match convergence P = 1.
+INFO:        Iteration 4896.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.106694.
+INFO:        	Max PSRF 1.2085, 8/9 < 1.2.
+INFO:        Iteration 5344.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.109562.
+INFO:        	Max PSRF 1.20897, 8/9 < 1.2.
+INFO:        NOTE Payoff (-2112.59) realized at multiple parameter values.
+INFO:        With DiseaseDuration = 7.80399 and 7.83155.
+INFO:        Iteration 5824.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.116425.
+INFO:        	Max PSRF 1.13489, 9/9 < 1.2.
+INFO:        	Cross-match convergence P = 1.
+INFO:        Iteration 6320.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.118714.
+INFO:        	Max PSRF 1.1144, 9/9 < 1.2.
+INFO:        Iteration 6848.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.134602.
+INFO:        	Max PSRF 1.06115, 9/9 < 1.2.
+INFO:        Iteration 7392.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.141475.
+INFO:        	Max PSRF 1.04142, 9/9 < 1.2.
+INFO:        	Cross-match convergence P = 1.
+INFO:        NOTE Payoff (-2041.53) realized at multiple parameter values.
+INFO:        With DiseaseDuration = 7.60195 and 7.71015.
+INFO:        Iteration 7968.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.141985.
+INFO:        	Max PSRF 1.038, 9/9 < 1.2.
+INFO:        Iteration 8576.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.13623.
+INFO:        	Max PSRF 1.06362, 9/9 < 1.2.
+INFO:        Iteration 9216.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.127995.
+INFO:        	Max PSRF 1.11031, 9/9 < 1.2.
+INFO:        Iteration 9888.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.121638.
+INFO:        	Max PSRF 1.14381, 9/9 < 1.2.
+INFO:        	Cross-match convergence P = 1.
+INFO:        Iteration 10592.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.120528.
+INFO:        	Max PSRF 1.04923, 9/9 < 1.2.
+INFO:        NOTE Payoff (-2013.88) realized at multiple parameter values.
+INFO:        With DiseaseDuration = 7.58721 and 7.53884.
+INFO:        Iteration 11344.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.12784.
+INFO:        	Max PSRF 1.12227, 9/9 < 1.2.
+INFO:        	Cross-match convergence P = 1.
+INFO:        Iteration 12128.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.140569.
+INFO:        	Max PSRF 1.09507, 9/9 < 1.2.
+INFO:        Iteration 12944.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.15205.
+INFO:        	Max PSRF 1.07919, 9/9 < 1.2.
+INFO:        	Cross-match convergence P = 1.
+INFO:        NOTE Payoff (-2012.35) realized at multiple parameter values.
+INFO:        With DiseaseDuration = 7.62582 and 7.62618.
+INFO:        Iteration 13808.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.164948.
+INFO:        	Max PSRF 1.05815, 9/9 < 1.2.
+INFO:        	Cross-match convergence P = 0.000406952.
+INFO:        Iteration 14720.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.174676.
+INFO:        	Max PSRF 1.05097, 9/9 < 1.2.
+INFO:        	Cross-match convergence P = 0.0659921.
+INFO:        Iteration 15680.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.184304.
+INFO:        	Max PSRF 1.04014, 9/9 < 1.2.
+INFO:        	Cross-match convergence P = 1.
+INFO:        Iteration 16688.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.191289.
+INFO:        	Max PSRF 1.03771, 9/9 < 1.2.
+INFO:        	Cross-match convergence P = 0.671373.
+INFO:        Iteration 17744.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.193873.
+INFO:        	Max PSRF 1.03389, 9/9 < 1.2.
+INFO:        	Cross-match convergence P = 0.00186285.
+INFO:        Iteration 18864.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.19812.
+INFO:        	Max PSRF 1.02638, 9/9 < 1.2.
+INFO:        	Cross-match convergence P = 0.0338949.
+INFO:        Iteration 20032.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.20135.
+INFO:        	Max PSRF 1.02184, 9/9 < 1.2.
+INFO:        	Cross-match convergence P = 0.089686.
+INFO:        Iteration 21264.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.272727.
+INFO:        	Max PSRF 1.20957, 8/9 < 1.2.
+INFO:        	Cross-match convergence P = 0.0162095.
+INFO:        Iteration 22560.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.249604.
+INFO:        	Max PSRF 1.25553, 6/9 < 1.2.
+INFO:        	Cross-match convergence P = 0.777297.
+INFO:        Iteration 23920.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.244084.
+INFO:        	Max PSRF 1.08103, 9/9 < 1.2.
+INFO:        	Cross-match convergence P = 0.4795.
+INFO:        Iteration 25360.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.238363.
+INFO:        	Max PSRF 1.11008, 9/9 < 1.2.
+INFO:        	Cross-match convergence P = 0.671373.
+INFO:        Iteration 26864.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.231557.
+INFO:        	Max PSRF 1.08598, 9/9 < 1.2.
+INFO:        	Cross-match convergence P = 0.887537.
+INFO:        Iteration 28448.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.229682.
+INFO:        	Max PSRF 1.07385, 9/9 < 1.2.
+INFO:        	Cross-match convergence P = 0.257899.
+INFO:        Iteration 30000.
+INFO:        	Annealing temperature = 1.
+INFO:        	Acceptance Rate = 0.232343.
+INFO:        	Max PSRF 1.04913, 9/9 < 1.2.
+INFO:        	Cross-match convergence P = 0.887537.

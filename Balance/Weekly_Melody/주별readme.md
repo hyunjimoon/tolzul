@@ -1,7 +1,14 @@
 ---
 modified:
   - 2025-10-20T21:12:52-04:00
+  - 2025-11-17T15:54:15-05:00
 ---
+
+ ⭐️일요일은 pr 정리 [Comparing master...main · hyunjimoon/tolzul · GitHub](https://github.com/hyunjimoon/tolzul/compare/main?expand=1)
+
+
+----
+ 
  # 💧 주별 멜로디 - 水 (기억 장치)
 
 > *"시간과 공간 사이의 기억 장치"*  

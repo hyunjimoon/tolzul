@@ -1,3 +1,7 @@
+---
+modified:
+  - 2025-11-19T10:00:16-05:00
+---
  - [[#Table 1: Definition and example of Four Axioms of Entrepreneurial Strategy|Table 1: Definition and example of Four Axioms of Entrepreneurial Strategy]]
 - [[#Table 2: Entrepreneurial Strategy Compass with Detailed Explanations and Examples|Table 2: Entrepreneurial Strategy Compass with Detailed Explanations and Examples]]
 - [[#Table 3: Categorization and Definition of Key Choices in Entrepreneurial Strategy|Table 3: Categorization and Definition of Key Choices in Entrepreneurial Strategy]]
@@ -117,13 +121,13 @@ using [conv(jb, scott|charlie) cld](https://claude.ai/chat/9784e8f4-8480-4825-bc
 
 | Strategic Element     | Core Concept                                                          | Key Examples                                                                              | Implementation Principles                                                                                |
 | --------------------- | --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| ⭐️Innovation Quality  | Create robust solutions through systematic exploration                | Vera Wang's revolutionary designs; <br>L.L. Bean's waterproof boot development            | - Think deeply about value creation<br>- Solve problems creatively<br>- Build on validated insights      |
 | Risk Reduction        | Multiple viable strategies reduce dependency on single approaches     | Fyre Festival failure due to single-path strategy; <br>Amazon's early category testing    | - Test multiple paths before commitment<br>- Validate core assumptions<br>- Maintain alternative options |
 | Resource Optimization | Identify most efficient route through comparative testing             | Jeff Bezos testing books alongside other categories; <br>OpenTable's focused market entry | - Compare cost/benefit ratios<br>- Start small, scale proven approaches<br>- Minimize sunk costs         |
 | Market Learning       | Generate comprehensive customer insights through different approaches | L.L. Bean's boot testing with hunters; <br>Vera Wang's bridal salon experiment            | - Gather diverse customer feedback<br>- Test in real market conditions<br>- Validate customer needs      |
 | Strategic Flexibility | Maintain ability to pivot while gathering critical information        | Vera Wang's limited initial investment; <br>OpenTable's city-by-city expansion            | - Keep initial commitments limited<br>- Build in adaptation options<br>- Preserve pivot capability       |
 | Competitive Advantage | Build stronger market position through informed testing               | OpenTable's focused San Francisco testing; <br>Amazon's category selection                | - Understand market alternatives<br>- Position strategically<br>- Build scaling foundation               |
 | Failure Prevention    | Identify critical flaws before major investment                       | Juicero's $400 juicer failure; <br>L.L. Bean's prototype testing                          | - Test core assumptions early<br>- Identify potential pitfalls<br>- Validate before scaling              |
-| Innovation Quality    | Create robust solutions through systematic exploration                | Vera Wang's revolutionary designs; <br>L.L. Bean's waterproof boot development            | - Think deeply about value creation<br>- Solve problems creatively<br>- Build on validated insights      |
 examples from [[Scott_school.pdf]]
 p.1: 🎲fundaments uncertainty on knowing unfair dice
 
@@ -142,13 +146,21 @@ p.5: 🥾bean boot mixed learning (bad operations, good market) i.e. option crea
 p.6: 👗vera wang’s testing of critical hypothesis with high-fidelity and low opportunity costs
 
 #scott
-[[val(scott).png]]
+[[val(scott).png ]]
 - role: evaluate, segment
 - hypothesis: best segment for persuasion
 - marginnote3app://note/FDFC2128-3EB3-4F93-A4DD-7D895BB4CA77
 - evaluates [[4🔴metrics]], [[T5_💜mob_innov_msr]], [[T4_💙ENT_DSL]]
 
+[[2025-11-19]]
+테스트는 아이디어·전략의 결합된 신호이므로 “둘 다에 대한 분리”를 점진적으로 만들어냅니다.
 
+구현은 “전략층 분리”를 확정하지만, 기회비용 k 때문에 다른 경로를 소거할 위험이 있습니다. 
+이 때문에 선(先)테스트 → 필요하면 추가테스트 → 하나 선택이라는 순서가 나옵니다. 
+
+[[Front/On/love(cs)/thesis/📝product/00_TOC|00_TOC]]
+
+----
 
 ## Table 8. Uncertainty in Start-Up Ideas
 
