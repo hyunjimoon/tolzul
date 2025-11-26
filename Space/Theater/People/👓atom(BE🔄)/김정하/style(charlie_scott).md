@@ -1,3 +1,7 @@
+---
+modified:
+  - 2025-11-25T07:00:30-05:00
+---
 [[09-23|25-09-23]]
 definitions [[🗄️🧠charlie]], [[🗄️🧠scott]]'ve made
 
@@ -7,3 +11,4 @@ definitions [[🗄️🧠charlie]], [[🗄️🧠scott]]'ve made
  4. product: The set of potential product or service designs, features, and attributes. 
  5. customer: The set of potential person, groups, or organizations who will pay for its goods or services.
  6. competitor: The set of potential ﬁrms providing similar products or services (or otherwise solves the same or similar customer need) to a startup’s chosen customer.
+

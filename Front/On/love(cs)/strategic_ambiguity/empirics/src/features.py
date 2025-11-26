@@ -9,7 +9,7 @@ Feature Engineering Module (W1 refactor)
 
 import pandas as pd
 import numpy as np
-from vagueness_v2 import StrategicVaguenessScorerV2, HybridVaguenessScorerV2
+from .vagueness_v2 import StrategicVaguenessScorerV2, HybridVaguenessScorerV2
 import re
 import logging
 from pathlib import Path

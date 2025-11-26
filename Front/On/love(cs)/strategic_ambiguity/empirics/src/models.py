@@ -20,8 +20,8 @@ from statsmodels.discrete.discrete_model import BinaryResultsWrapper
 # -----------------------------
 def test_h1_early_funding(
     df: pd.DataFrame,
-    formula: str = ("early_funding_musd ~ z_vagueness + z_employees_log + "
-                    "C(sector_fe) + C(founding_cohort)")
+    formula: str = ("early_funding_musd ~ z_vagueness + z_employees_log + founder_serial + "
+                    "is_hardware + z_firm_age + C(sector_fe) + C(founding_cohort)")
 ) -> RegressionResultsWrapper:
     """
     Test H1: Early funding amount is negatively affected by vagueness.
@@ -30,8 +30,21 @@ def test_h1_early_funding(
     Expected: α₁ < 0 (vagueness reduces early funding)
 
     Full specification:
-        early_funding_musd ~ z_vagueness + z_employees_log +
-                           C(sector_fe) + C(founding_cohort)
+        early_funding_musd ~ z_vagueness + z_employees_log + founder_serial +
+                           is_hardware + z_firm_age + C(sector_fe) + C(founding_cohort)
+
+    Controls:
+        - z_employees_log: Firm size (log-transformed and z-scored)
+        - founder_serial: Serial entrepreneur indicator (1=serial, 0=first-time)
+        - is_hardware: Hardware/integrated architecture (1=HW, 0=SW)
+        - z_firm_age: Company age in years (z-scored)
+        - sector_fe: Industry fixed effects
+        - founding_cohort: Cohort fixed effects
+
+    Rationale for controls:
+        - is_hardware: HW companies are capital-intensive → expect higher early funding
+        - z_firm_age: Older companies may have different funding patterns
+        - Together these controls should improve R² by capturing variance beyond vagueness
 
     Args:
         df: DataFrame with required variables
@@ -41,7 +54,20 @@ def test_h1_early_funding(
         Statsmodels OLS results object
     """
     d = df.dropna(subset=['early_funding_musd', 'z_vagueness']).copy()
-    model = smf.ols(formula, data=d).fit()
+
+    # Check for constant variables and adjust formula
+    adjusted_formula = formula
+
+    # Check if founder_serial has variance (not constant)
+    if 'founder_serial' in d.columns:
+        founder_serial_std = d['founder_serial'].std()
+        if pd.isna(founder_serial_std) or founder_serial_std == 0:
+            # Remove founder_serial from formula if it's constant
+            adjusted_formula = adjusted_formula.replace('+ founder_serial ', '')
+            adjusted_formula = adjusted_formula.replace(' + founder_serial', '')
+            print(f"  ⚠️  founder_serial is constant (std=0), removed from H1 formula")
+
+    model = smf.ols(adjusted_formula, data=d).fit()
     return model
 
 # -----------------------------
@@ -49,22 +75,26 @@ def test_h1_early_funding(
 # -----------------------------
 def test_h2_main_growth(
     df: pd.DataFrame,
-    formula: str = ("growth ~ z_vagueness * is_hardware + "
-                    "C(founding_cohort)")
-               #🚨      "z_employees_log + C(founding_cohort)")
+    formula: str = ("growth ~ z_vagueness * is_hardware + founder_serial + "
+                    "z_employees_log + C(founding_cohort)")
 ) -> BinaryResultsWrapper:
     """
     Test H2 Main: Vagueness effect on growth is moderated by integration cost.
 
     ⚠️  CRITICAL: NO early_funding control (it's a MEDIATOR, not confounder)
 
-    Model: growth ~ Vagueness × is_hardware + Controls
+    Model: growth ~ Vagueness × Hardware + Controls
     Expected: β₁ > 0 (positive in software sectors)
               β₃ < 0 (negative interaction, attenuated in hardware sectors)
 
     Full specification:
-        growth ~ z_vagueness * is_hardware +
+        growth ~ z_vagueness * is_hardware + founder_serial +
                  z_employees_log + C(founding_cohort)
+
+    Controls:
+        - founder_serial: Serial entrepreneur indicator (1=serial, 0=first-time)
+        - z_employees_log: Firm size
+        - founding_cohort: Cohort fixed effects
 
     Args:
         df: DataFrame with required variables
@@ -80,6 +110,18 @@ def test_h2_main_growth(
         - NO early_funding: it's a mediator in causal chain vagueness→funding→growth
     """
     d = df.dropna(subset=['growth', 'z_vagueness', 'is_hardware']).copy()
+
+    # Check for constant variables and adjust formula
+    adjusted_formula = formula
+
+    # Check if founder_serial has variance (not constant)
+    if 'founder_serial' in d.columns:
+        founder_serial_std = d['founder_serial'].std()
+        if pd.isna(founder_serial_std) or founder_serial_std == 0:
+            # Remove founder_serial from formula if it's constant
+            adjusted_formula = adjusted_formula.replace('+ founder_serial ', '')
+            adjusted_formula = adjusted_formula.replace(' + founder_serial', '')
+            print(f"     ⚠️  founder_serial is constant (std=0), removed from formula")
 
     # Print diagnostics
     print(f"\n  📊 H2 (Architecture) Diagnostics:")
@@ -101,11 +143,12 @@ def test_h2_main_growth(
             print(f"       {label}: {row['mean']:.1%} (n={int(row['count']):,})")
 
     print(f"\n  🔧 Fitting H2 model...")
+    print(f"     Formula: {adjusted_formula}")
 
     # Try normal fit
     try:
         print(f"     Stage 1: Attempting standard logit fit...")
-        model = smf.logit(formula, data=d).fit(disp=False)
+        model = smf.logit(adjusted_formula, data=d).fit(disp=False)
         print(f"     ✓ Standard fit successful")
         return model
     except Exception:
@@ -114,7 +157,7 @@ def test_h2_main_growth(
     # Try L1 regularization
     try:
         print(f"     Stage 2: Attempting L1 regularization (alpha=0.1)...")
-        model = smf.logit(formula, data=d).fit_regularized(
+        model = smf.logit(adjusted_formula, data=d).fit_regularized(
             method='l1', alpha=0.1, disp=False, maxiter=200, warn_convergence=False
         )
         print(f"     ✓ L1 (alpha=0.1) successful")
@@ -125,7 +168,7 @@ def test_h2_main_growth(
     # Try stronger regularization
     try:
         print(f"     Stage 3: Attempting L1 regularization (alpha=0.5)...")
-        model = smf.logit(formula, data=d).fit_regularized(
+        model = smf.logit(adjusted_formula, data=d).fit_regularized(
             method='l1', alpha=0.5, disp=False, maxiter=200, warn_convergence=False
         )
         print(f"     ✓ L1 (alpha=0.5) successful")

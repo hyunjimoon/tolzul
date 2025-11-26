@@ -309,7 +309,7 @@ Like Tesla's shift from "Silicon Valley startup" outsourcing to vertical integra
 ---
 Spandrel
 
-- [ ] include medical examples from  [[2024-11-27🌱🦅🐠]] (@2024-11-28)
+- [x] include medical examples from  [[2024-11-27🌱🦅🐠]] (@2024-11-28)
 - [ ] check projection from  [[🚰tap-atp🗺️]], consistency with [[🗄️🪶product2]]
 - [ ] [[📝🪶Sequential Evolutionary and Parallel Bayesian Startup Adaptations]]
 - [ ] [[🧠👁️🤜scientist_artist_judge]] and ready-fire-aim VS ready-aim-fire

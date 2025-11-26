@@ -36,6 +36,7 @@ modified:
 - **저녁:** ✋ [[Balance|Balance (손)]] — 리듬을 조율하기 → 여백 안정화 *(Control)*
 
 ---
+[[전라좌수군 견리사의 군령]]
 
 ## 🧭 Navigation
 

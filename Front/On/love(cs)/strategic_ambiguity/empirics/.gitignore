@@ -84,3 +84,7 @@ Front/On/💌찰리스캇 러브레터 플�
 vagueness_diagnosis.txt
 *.pkl
 *.csv
+*.nc
+
+# Paper generation output (regenerated files)
+src/scripts/paper_generation/output/

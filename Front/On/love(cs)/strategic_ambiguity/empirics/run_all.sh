@@ -82,7 +82,7 @@ START_TIME=$(date +%s)
 if [ "$QUICK_MODE" = false ]; then
     echo -e "${YELLOW}▶ STEP 1: Load Data${NC}"
     echo "────────────────────────────────────────────────────────────────────"
-    python3 pipeline/01_load_data.py
+    python3 -m src.cli load-data
     echo ""
 else
     echo -e "${YELLOW}⏭  STEP 1: Skipped (quick mode)${NC}"
@@ -94,7 +94,7 @@ fi
 # ============================================================================
 echo -e "${YELLOW}▶ STEP 2: Engineer Features${NC}"
 echo "────────────────────────────────────────────────────────────────────"
-python3 pipeline/02_engineer_features.py
+python3 -m src.cli engineer-features
 echo ""
 
 # ============================================================================
@@ -102,7 +102,7 @@ echo ""
 # ============================================================================
 echo -e "${YELLOW}▶ STEP 3: Filter Datasets${NC}"
 echo "────────────────────────────────────────────────────────────────────"
-python3 pipeline/03_filter_datasets.py
+python3 -m src.cli filter-datasets
 echo ""
 
 # ============================================================================
@@ -110,18 +110,8 @@ echo ""
 # ============================================================================
 echo -e "${YELLOW}▶ STEP 4: Run Models${NC}"
 echo "────────────────────────────────────────────────────────────────────"
-
-if [ "$DATASET_FILTER" = "all" ]; then
-    # Run for all three datasets
-    echo -e "${BLUE}Running models for all datasets...${NC}"
-    python3 pipeline/04_run_models.py all
-    python3 pipeline/04_run_models.py quantum
-    python3 pipeline/04_run_models.py transportation
-else
-    # Run for specified dataset only
-    echo -e "${BLUE}Running models for $DATASET_FILTER dataset...${NC}"
-    python3 pipeline/04_run_models.py "$DATASET_FILTER"
-fi
+echo -e "${BLUE}Running models for $DATASET_FILTER dataset(s)...${NC}"
+python3 -m src.cli run-models --dataset "$DATASET_FILTER"
 echo ""
 
 # ============================================================================
@@ -129,18 +119,8 @@ echo ""
 # ============================================================================
 echo -e "${YELLOW}▶ STEP 5: Generate Plots${NC}"
 echo "────────────────────────────────────────────────────────────────────"
-
-if [ "$DATASET_FILTER" = "all" ]; then
-    # Generate for all three datasets
-    echo -e "${BLUE}Generating plots for all datasets...${NC}"
-    python3 pipeline/05_generate_plots.py all
-    python3 pipeline/05_generate_plots.py quantum
-    python3 pipeline/05_generate_plots.py transportation
-else
-    # Generate for specified dataset only
-    echo -e "${BLUE}Generating plots for $DATASET_FILTER dataset...${NC}"
-    python3 pipeline/05_generate_plots.py "$DATASET_FILTER"
-fi
+echo -e "${BLUE}Generating plots for $DATASET_FILTER dataset(s)...${NC}"
+python3 -m src.cli generate-plots --dataset "$DATASET_FILTER"
 echo ""
 
 # ============================================================================

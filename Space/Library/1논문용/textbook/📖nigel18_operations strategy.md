@@ -1,3 +1,7 @@
+---
+modified:
+  - 2025-11-19T20:32:14-05:00
+---
 using [ops strat framework cld](https://claude.ai/chat/2e200ad6-f8ff-43b7-a536-80d44c9227db), paired with [[📖anupindi13_mng(process(business))]]
 
 ![[operations strategy 2025-06-15-10.svg]]
@@ -68,7 +72,7 @@ This operations strategy framework makes several significant contributions:
 2. **Systematic Decision Framework**: It provides structured approaches to major operational decisions (capacity, supply, technology, improvement) while maintaining strategic coherence.
     
 3. **Dynamic Implementation Process**: The framework addresses both strategy formulation and implementation, recognizing that operations strategy is an ongoing process requiring continuous alignment and adaptation.
-    
+
 
 The framework addresses a fundamental challenge in management: how to ensure that operational excellence contributes to strategic success rather than simply improving efficiency in isolation. By providing systematic approaches to both content decisions and process management, it offers a comprehensive guide for creating operations-based competitive advantage.
 
