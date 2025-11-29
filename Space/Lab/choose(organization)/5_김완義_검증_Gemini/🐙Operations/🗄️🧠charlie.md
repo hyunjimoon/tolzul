@@ -359,7 +359,7 @@ In a research project at General Motors, we analyzed one of the key bottlenecks 
 
 # operations strategy
 
-from [[📖nigel18_operations strategy]]
+from [[Space/Library/1논문용/textbook/📖nigel18_operations strategy]]
 ## **How Operational Excellence Pushes the Trade-off Frontier**
 
 The operations management document provides crucial support for your argument through the **efficient frontier** concept. Here's the key insight:

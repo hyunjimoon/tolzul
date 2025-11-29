@@ -4,11 +4,20 @@ modified:
   - 2025-11-21T16:33:45-05:00
   - 2025-11-22T18:27:32-05:00
   - 2025-11-23T19:05:48-05:00
+  - 2025-11-27T04:26:57-05:00
 ---
-# how a strategic communication choice interacts with operational architecture to shape staged funding outcomes.
+[[2025-11-24]]
+- how a strategic communication choice interacts with operational architecture to shape staged funding outcomes
 
+[[2025-11-27]]
+- Waymo의 **Concrete Commitment**는 **미래 옵션을 희생**하여 현재의 **π(K) (현재 이익/평가)**를 극대화하는 전략
+- **Bellman 최적화** 프레임워크($V(K) = \max\{\pi(K), E[V(K')] - C\}$)에서 $C$ (전환 비용)가 높아지면 최적의 스위칭 정책은 **현재 시스템(K)**을 고수하게 만듭니다. 이는 **운영 시스템이 경직되어(Integrated Systems)** 변화에 적응하지 못하고 결국 **스케일링에 실패**하는 **운영적 위험(Scaling Risk)**을 수리적으로 보여줍니다.
+- Concrete Path의 Commitment가 Scaling Risk로 변모하는 과정
 
+  
+- 강력한 Commitment는 기술적, 운영적 **'경로 의존성(Path Dependence)'
 
+- 기술에 대한 강한 기대와 독점적 특허(Commitment)가, 오히려 표준화와 대량 채택을 위해 필수적인 이해관계자들의 컨센서스를 이끌어내지 못하여 Scale-up의 발목을 잡는 위험(Scaling Risk)으로 발현된다
 
 ---
 

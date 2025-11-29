@@ -1,0 +1,396 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="turtleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4ade80"/>
+      <stop offset="100%" style="stop-color:#22c55e"/>
+    </linearGradient>
+    <linearGradient id="tigerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fb923c"/>
+      <stop offset="100%" style="stop-color:#f97316"/>
+    </linearGradient>
+    <linearGradient id="octopusGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f87171"/>
+      <stop offset="100%" style="stop-color:#ef4444"/>
+    </linearGradient>
+    <linearGradient id="alienGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a78bfa"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="1600" fill="url(#bgGrad)"/>
+  
+  <!-- Title Section -->
+  <text x="600" y="60" text-anchor="middle" fill="#e2e8f0" font-family="Georgia, serif" font-size="28" font-weight="bold">
+    Start-up Inertia versus Flexibility
+  </text>
+  <text x="600" y="90" text-anchor="middle" fill="#94a3b8" font-family="Georgia, serif" font-size="18">
+    The Role of Founder Identity in a Nascent Industry
+  </text>
+  <text x="600" y="115" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="14">
+    Zuzul &amp; Tripsas (2020) | Administrative Science Quarterly
+  </text>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- SECTION 1: 기(起) - 🐢 Hook/Problem -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <rect x="30" y="140" width="560" height="340" rx="15" fill="#0f172a" stroke="url(#turtleGrad)" stroke-width="3"/>
+  
+  <!-- Section Header -->
+  <rect x="30" y="140" width="560" height="45" rx="15" fill="url(#turtleGrad)" opacity="0.9"/>
+  <text x="60" y="170" fill="#0f172a" font-family="Arial, sans-serif" font-size="24" font-weight="bold">
+    🐢 기(起) THE PUZZLE
+  </text>
+  <text x="520" y="170" fill="#0f172a" font-family="Arial, sans-serif" font-size="14">정운 | 선봉</text>
+  
+  <!-- Central Question Box -->
+  <rect x="50" y="200" width="520" height="60" rx="10" fill="#1e293b" stroke="#4ade80" stroke-width="1"/>
+  <text x="310" y="225" text-anchor="middle" fill="#fbbf24" font-family="Georgia, serif" font-size="16" font-style="italic">
+    "스타트업은 유연하다" — 정말 그럴까?
+  </text>
+  <text x="310" y="250" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="14">
+    Why do some start-ups exhibit INERTIA in nascent industries?
+  </text>
+  
+  <!-- Visual: Two Paths Diverge -->
+  <g transform="translate(80, 280)">
+    <!-- Flexible Path -->
+    <path d="M100,20 Q150,40 200,30 Q250,20 300,40" stroke="#4ade80" stroke-width="3" fill="none" stroke-dasharray="5,5"/>
+    <text x="200" y="60" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="12">FLEXIBILITY</text>
+    <text x="200" y="75" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">지속적 실험 &amp; 적응</text>
+    
+    <!-- Inertial Path -->
+    <path d="M100,100 L300,100" stroke="#f87171" stroke-width="3" fill="none"/>
+    <text x="200" y="120" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="12">INERTIA</text>
+    <text x="200" y="135" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">초기 모델 고착</text>
+    
+    <!-- Fork Point -->
+    <circle cx="100" cy="60" r="15" fill="#fbbf24"/>
+    <text x="100" y="65" text-anchor="middle" fill="#0f172a" font-family="Arial, sans-serif" font-size="12" font-weight="bold">?</text>
+    <text x="30" y="65" text-anchor="end" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">Start</text>
+  </g>
+  
+  <!-- Key Insight -->
+  <rect x="50" y="420" width="520" height="45" rx="8" fill="#1e3a2f" stroke="#4ade80" stroke-width="1"/>
+  <text x="310" y="448" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    💡 핵심: 창업자 정체성(Founder Identity)이 분기점을 결정한다
+  </text>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- SECTION 2: 승(承) - 🐅 Theory/Framework -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <rect x="610" y="140" width="560" height="340" rx="15" fill="#0f172a" stroke="url(#tigerGrad)" stroke-width="3"/>
+  
+  <!-- Section Header -->
+  <rect x="610" y="140" width="560" height="45" rx="15" fill="url(#tigerGrad)" opacity="0.9"/>
+  <text x="640" y="170" fill="#0f172a" font-family="Arial, sans-serif" font-size="24" font-weight="bold">
+    🐅 승(承) TWO IDENTITIES
+  </text>
+  <text x="1100" y="170" fill="#0f172a" font-family="Arial, sans-serif" font-size="14">권준 | 중군</text>
+  
+  <!-- Revolutionary Identity Card -->
+  <rect x="630" y="200" width="250" height="180" rx="10" fill="#2d1b1b" stroke="#f87171" stroke-width="2"/>
+  <text x="755" y="225" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+    🔥 REVOLUTIONARY
+  </text>
+  <text x="755" y="245" text-anchor="middle" fill="#fbbf24" font-family="Georgia, serif" font-size="13" font-style="italic">
+    "나는 세상을 바꾸는 혁명가다"
+  </text>
+  <line x1="650" y1="255" x2="860" y2="255" stroke="#f87171" stroke-width="1" opacity="0.5"/>
+  
+  <text x="645" y="275" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• 동기: 새로운 것(Novel) 창조</text>
+  <text x="645" y="295" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• 목표: 근본적 변화, 산업 형성</text>
+  <text x="645" y="315" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• 행동: 급진적 비전에 집착</text>
+  <text x="645" y="335" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• 기술: 혁신 기술 고수</text>
+  <text x="645" y="355" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• 범주: 새로운 레이블 주장</text>
+  <text x="755" y="375" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="13" font-weight="bold">
+    → INERTIA
+  </text>
+  
+  <!-- Discoverer Identity Card -->
+  <rect x="900" y="200" width="250" height="180" rx="10" fill="#1b2d1b" stroke="#4ade80" stroke-width="2"/>
+  <text x="1025" y="225" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+    🔍 DISCOVERER
+  </text>
+  <text x="1025" y="245" text-anchor="middle" fill="#fbbf24" font-family="Georgia, serif" font-size="13" font-style="italic">
+    "나는 기회를 발견하는 탐험가다"
+  </text>
+  <line x1="920" y1="255" x2="1130" y2="255" stroke="#4ade80" stroke-width="1" opacity="0.5"/>
+  
+  <text x="915" y="275" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• 동기: 외부 기회 포착</text>
+  <text x="915" y="295" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• 목표: 성공적 비즈니스 구축</text>
+  <text x="915" y="315" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• 행동: 지속적 실험과 적응</text>
+  <text x="915" y="335" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• 기술: 다양한 기술 유연 채택</text>
+  <text x="915" y="355" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• 범주: 상황 맞춤 레이블</text>
+  <text x="1025" y="375" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="13" font-weight="bold">
+    → FLEXIBILITY
+  </text>
+  
+  <!-- Mechanism Label -->
+  <rect x="630" y="395" width="520" height="70" rx="10" fill="#1e293b" stroke="#fb923c" stroke-width="2"/>
+  <text x="890" y="420" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    🔄 IDENTITY AFFIRMATION MECHANISM
+  </text>
+  <text x="890" y="445" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="12">
+    정체성에 부합하는 행동 → 자아 확인 → 행동 강화 → 자기충족적 순환
+  </text>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- SECTION 3: 전(轉) - 🐙 Evidence/Cases -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <rect x="30" y="500" width="560" height="380" rx="15" fill="#0f172a" stroke="url(#octopusGrad)" stroke-width="3"/>
+  
+  <!-- Section Header -->
+  <rect x="30" y="500" width="560" height="45" rx="15" fill="url(#octopusGrad)" opacity="0.9"/>
+  <text x="60" y="530" fill="#0f172a" font-family="Arial, sans-serif" font-size="24" font-weight="bold">
+    🐙 전(轉) AIR TAXI CASES
+  </text>
+  <text x="520" y="530" fill="#0f172a" font-family="Arial, sans-serif" font-size="14">김완 | 후군</text>
+  
+  <!-- Case Comparison Table -->
+  <g transform="translate(50, 560)">
+    <!-- Table Header -->
+    <rect x="0" y="0" width="520" height="30" fill="#1e293b"/>
+    <text x="70" y="20" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11" font-weight="bold">기업</text>
+    <text x="170" y="20" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11" font-weight="bold">정체성</text>
+    <text x="280" y="20" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11" font-weight="bold">비즈니스 모델 변화</text>
+    <text x="420" y="20" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11" font-weight="bold">결과</text>
+    
+    <!-- DayJet Row -->
+    <rect x="0" y="35" width="520" height="40" fill="#1a1a2e" stroke="#f87171" stroke-width="1"/>
+    <text x="70" y="58" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="12" font-weight="bold">DayJet</text>
+    <text x="170" y="58" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="11">Revolutionary</text>
+    <text x="280" y="55" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="10">1회 (파산 직전 임시)</text>
+    <text x="280" y="68" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Eclipse 500 고수</text>
+    <text x="420" y="58" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="11">2008 파산</text>
+    
+    <!-- SATSAir Row -->
+    <rect x="0" y="80" width="520" height="40" fill="#1a1a2e" stroke="#f87171" stroke-width="1"/>
+    <text x="70" y="103" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="12" font-weight="bold">SATSAir</text>
+    <text x="170" y="103" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="11">Revolutionary</text>
+    <text x="280" y="100" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="10">3회 (모델 강화 중심)</text>
+    <text x="280" y="113" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Cirrus SR-22 고수</text>
+    <text x="420" y="103" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="11">2009 파산</text>
+    
+    <!-- Linear Air Row -->
+    <rect x="0" y="125" width="520" height="40" fill="#1a1a2e" stroke="#4ade80" stroke-width="1"/>
+    <text x="70" y="148" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Linear Air</text>
+    <text x="170" y="148" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="11">Discoverer</text>
+    <text x="280" y="145" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="10">11회+ (지속적 실험)</text>
+    <text x="280" y="158" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Cessna→Eclipse 유연전환</text>
+    <text x="420" y="148" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="11">생존</text>
+    
+    <!-- ImagineAir Row -->
+    <rect x="0" y="170" width="520" height="40" fill="#1a1a2e" stroke="#4ade80" stroke-width="1"/>
+    <text x="70" y="193" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="12" font-weight="bold">ImagineAir</text>
+    <text x="170" y="193" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="11">Discoverer</text>
+    <text x="280" y="190" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="10">9회+ (적응적 변화)</text>
+    <text x="280" y="203" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">차터 브로커 활용</text>
+    <text x="420" y="193" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="11">생존</text>
+  </g>
+  
+  <!-- Key Quotes -->
+  <rect x="50" y="790" width="520" height="75" rx="8" fill="#1e293b"/>
+  <text x="310" y="812" text-anchor="middle" fill="#f87171" font-family="Georgia, serif" font-size="11" font-style="italic">
+    "Nobody has ever done this before. That's how we got started."
+  </text>
+  <text x="310" y="828" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">— DayJet 창업자</text>
+  <text x="310" y="848" text-anchor="middle" fill="#4ade80" font-family="Georgia, serif" font-size="11" font-style="italic">
+    "The basic approach is test and learn. All about being nimble!"
+  </text>
+  <text x="310" y="864" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">— Linear Air 창업자</text>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- SECTION 4: 결(結) - 👾 Framework/Implications -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <rect x="610" y="500" width="560" height="380" rx="15" fill="#0f172a" stroke="url(#alienGrad)" stroke-width="3"/>
+  
+  <!-- Section Header -->
+  <rect x="610" y="500" width="560" height="45" rx="15" fill="url(#alienGrad)" opacity="0.9"/>
+  <text x="640" y="530" fill="#0f172a" font-family="Arial, sans-serif" font-size="24" font-weight="bold">
+    👾 결(結) SELF-REINFORCING CYCLE
+  </text>
+  <text x="1100" y="530" fill="#0f172a" font-family="Arial, sans-serif" font-size="14">어영담 | 척후</text>
+  
+  <!-- Cycle Diagram -->
+  <g transform="translate(720, 580)">
+    <!-- Central Node: Founder Identity -->
+    <circle cx="170" cy="40" r="35" fill="#8b5cf6" filter="url(#glow)"/>
+    <text x="170" y="35" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">FOUNDER</text>
+    <text x="170" y="48" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">IDENTITY</text>
+    
+    <!-- Arrow Down to Affirmation -->
+    <path d="M170,75 L170,100" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Identity Affirmation Node -->
+    <rect x="95" y="105" width="150" height="35" rx="5" fill="#4c1d95"/>
+    <text x="170" y="128" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11">Identity Affirmation</text>
+    
+    <!-- Two Branches -->
+    <!-- Left Branch: Revolutionary -->
+    <path d="M95,122 L30,122 L30,180" stroke="#f87171" stroke-width="2"/>
+    <rect x="-20" y="175" width="100" height="50" rx="5" fill="#7f1d1d"/>
+    <text x="30" y="195" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="10" font-weight="bold">COMMIT</text>
+    <text x="30" y="210" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="9">강한 약속</text>
+    
+    <!-- Right Branch: Discoverer -->
+    <path d="M245,122 L310,122 L310,180" stroke="#4ade80" stroke-width="2"/>
+    <rect x="260" y="175" width="100" height="50" rx="5" fill="#14532d"/>
+    <text x="310" y="195" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="10" font-weight="bold">EXPERIMENT</text>
+    <text x="310" y="210" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="9">지속 실험</text>
+    
+    <!-- Audience Expectations -->
+    <path d="M30,225 L30,260" stroke="#f87171" stroke-width="2"/>
+    <rect x="-25" y="255" width="110" height="40" rx="5" fill="#1e293b" stroke="#f87171"/>
+    <text x="30" y="275" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="9">청중 기대: 명확</text>
+    <text x="30" y="288" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">"혁신적이어야 해"</text>
+    
+    <path d="M310,225 L310,260" stroke="#4ade80" stroke-width="2"/>
+    <rect x="255" y="255" width="110" height="40" rx="5" fill="#1e293b" stroke="#4ade80"/>
+    <text x="310" y="275" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="9">청중 기대: 모호</text>
+    <text x="310" y="288" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">"적응해도 OK"</text>
+    
+    <!-- Final Outcomes -->
+    <path d="M30,295 L30,320" stroke="#f87171" stroke-width="2"/>
+    <rect x="-15" y="315" width="90" height="30" rx="5" fill="#f87171"/>
+    <text x="30" y="335" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">INERTIA</text>
+    
+    <path d="M310,295 L310,320" stroke="#4ade80" stroke-width="2"/>
+    <rect x="255" y="315" width="110" height="30" rx="5" fill="#4ade80"/>
+    <text x="310" y="335" text-anchor="middle" fill="#0f172a" font-family="Arial, sans-serif" font-size="11" font-weight="bold">FLEXIBILITY</text>
+    
+    <!-- Feedback Loop Arrows -->
+    <path d="M-15,330 Q-50,200 170,75" stroke="#f87171" stroke-width="1.5" stroke-dasharray="4,2" fill="none"/>
+    <path d="M365,330 Q390,200 205,75" stroke="#4ade80" stroke-width="1.5" stroke-dasharray="4,2" fill="none"/>
+  </g>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- BOTTOM SECTIONS: Must Read & For Your Paper -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  
+  <!-- Must Read Section -->
+  <rect x="30" y="900" width="560" height="180" rx="15" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
+  <rect x="30" y="900" width="560" height="35" rx="15" fill="#334155"/>
+  <text x="60" y="924" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+    📚 MUST READ: Key Literature
+  </text>
+  
+  <g transform="translate(50, 950)">
+    <text x="0" y="0" fill="#4ade80" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🐢 기(起)</text>
+    <text x="50" y="0" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">Stinchcombe (1965) 조직 각인 | Hannan &amp; Freeman (1984) 구조적 관성</text>
+    
+    <text x="0" y="25" fill="#fb923c" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🐅 승(承)</text>
+    <text x="50" y="25" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">Fauchart &amp; Gruber (2011) 창업자 정체성 | Powell &amp; Baker (2014) 정체성과 역경</text>
+    
+    <text x="0" y="50" fill="#f87171" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🐙 전(轉)</text>
+    <text x="50" y="50" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">Eisenhardt &amp; Graebner (2007) 사례연구 | Rindova &amp; Kotha (2001) 지속적 변형</text>
+    
+    <text x="0" y="75" fill="#a78bfa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">👾 결(結)</text>
+    <text x="50" y="75" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">Santos &amp; Eisenhardt (2009) 경계 구축 | Navis &amp; Glynn (2010) 정당성과 정체성</text>
+  </g>
+  
+  <!-- For Your Paper Section -->
+  <rect x="610" y="900" width="560" height="180" rx="15" fill="#0f172a" stroke="#fbbf24" stroke-width="2"/>
+  <rect x="610" y="900" width="560" height="35" rx="15" fill="#78350f"/>
+  <text x="640" y="924" fill="#fbbf24" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+    ✍️ FOR YOUR PAPER: Strategic Ambiguity
+  </text>
+  
+  <g transform="translate(630, 950)">
+    <text x="0" y="0" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12" font-weight="bold">핵심 연결점:</text>
+    <text x="0" y="20" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• Revolutionary: 명확한 비전 → 모호성 기피 → 이해관계자 조정 경직</text>
+    <text x="0" y="40" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• Discoverer: 탐색적 태도 → 전략적 모호성 활용 → 유연한 조정</text>
+    
+    <text x="0" y="65" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12" font-weight="bold">가설 제안:</text>
+    <rect x="0" y="75" width="500" height="30" rx="5" fill="#1e293b" stroke="#fbbf24"/>
+    <text x="250" y="95" text-anchor="middle" fill="#e2e8f0" font-family="Georgia, serif" font-size="11" font-style="italic">
+      H: Discoverer 정체성 창업자일수록 가치 제안의 전략적 모호성을 더 많이 활용
+    </text>
+  </g>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- FLEXIBILITY DEFINITION SECTION -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <rect x="30" y="1100" width="1140" height="200" rx="15" fill="#0f172a" stroke="#22d3ee" stroke-width="3"/>
+  <rect x="30" y="1100" width="1140" height="40" rx="15" fill="#164e63"/>
+  <text x="600" y="1128" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    📖 FLEXIBILITY의 정의와 연관성
+  </text>
+  
+  <g transform="translate(50, 1160)">
+    <!-- Definition Box -->
+    <rect x="0" y="0" width="540" height="120" rx="10" fill="#1e293b" stroke="#22d3ee" stroke-width="1"/>
+    <text x="270" y="25" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="14" font-weight="bold">학술적 정의 (Academic Definition)</text>
+    <text x="20" y="50" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">
+      • 전략적 재구성: "방향을 빠르게 전환하고, 자원·고객·기술·비즈니스 모델을
+    </text>
+    <text x="35" y="65" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">
+      전략적으로 재구성하는 능력" (Nadkarni &amp; Herrmann, 2010)
+    </text>
+    <text x="20" y="85" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">
+      • 지속적 실험: "ongoing experimentation and adaptation"을 통해 구현
+    </text>
+    <text x="20" y="105" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">
+      • 적응적 발견: 환경 변화에 맞춰 최선의 경로를 찾아가는 과정
+    </text>
+    
+    <!-- Connection Box -->
+    <rect x="560" y="0" width="540" height="120" rx="10" fill="#1e293b" stroke="#fbbf24" stroke-width="1"/>
+    <text x="830" y="25" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="14" font-weight="bold">나의 논문과의 연관성</text>
+    <text x="580" y="50" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">
+      • Scott Stern 관점: Discoverer는 "증거 기반 학습" → "전략적 선택"으로 수렴
+    </text>
+    <text x="580" y="70" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">
+      • Charlie Fine 관점: 유연성 = 운영 시스템의 적응성 → 스케일링 리스크 관리
+    </text>
+    <text x="580" y="90" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">
+      • 핵심 통찰: Discoverer의 낮은 Commitment → 전략적 모호성 활용 가능
+    </text>
+    <text x="580" y="110" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">
+      • 실증 함의: 가치 제안의 모호성 수준 측정 → 이해관계자 조정 효과 분석
+    </text>
+  </g>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- Footer with Key Insight -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <rect x="30" y="1320" width="1140" height="80" rx="15" fill="#1e1b4b" stroke="#a78bfa" stroke-width="2"/>
+  <text x="600" y="1355" text-anchor="middle" fill="#fbbf24" font-family="Georgia, serif" font-size="18" font-style="italic">
+    "The quest for creativity and novelty might actually constrain flexibility."
+  </text>
+  <text x="600" y="1380" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="14">
+    창의성과 새로움을 향한 열망이 오히려 유연성을 제약할 수 있다 — Zuzul &amp; Tripsas (2020)의 역설
+  </text>
+  
+  <!-- Signature -->
+  <text x="600" y="1420" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="12">
+    🐅 권준 | 전라좌수군 시스템 | "구조 &gt; 속도"
+  </text>
+  
+  <!-- 4 Framework Icons Legend -->
+  <g transform="translate(350, 1440)">
+    <text x="0" y="0" fill="#4ade80" font-family="Arial, sans-serif" font-size="11">🐢 정운(기)</text>
+    <text x="120" y="0" fill="#fb923c" font-family="Arial, sans-serif" font-size="11">🐅 권준(승)</text>
+    <text x="240" y="0" fill="#f87171" font-family="Arial, sans-serif" font-size="11">🐙 김완(전)</text>
+    <text x="360" y="0" fill="#a78bfa" font-family="Arial, sans-serif" font-size="11">👾 어영담(결)</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#a78bfa"/>
+    </marker>
+  </defs>
+</svg>

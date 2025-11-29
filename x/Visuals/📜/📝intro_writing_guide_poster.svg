@@ -1,0 +1,299 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="section1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa"/>
+      <stop offset="100%" style="stop-color:#e9ecef"/>
+    </linearGradient>
+    <linearGradient id="section2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff3e0"/>
+      <stop offset="100%" style="stop-color:#ffe0b2"/>
+    </linearGradient>
+    <linearGradient id="section3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffebee"/>
+      <stop offset="100%" style="stop-color:#ffcdd2"/>
+    </linearGradient>
+    <linearGradient id="section4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f3e5f5"/>
+      <stop offset="100%" style="stop-color:#e1bee7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="1600" fill="#fafafa"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="120" fill="url(#headerGrad)"/>
+  <text x="600" y="50" font-family="Georgia, serif" font-size="32" fill="white" text-anchor="middle" font-weight="bold">📝 경영 논문 서론 작문법</text>
+  <text x="600" y="85" font-family="Arial, sans-serif" font-size="18" fill="#aaa" text-anchor="middle">They Say / I Say × Cachon-Posen Framework 통합 가이드</text>
+
+  <!-- Section 1: 기(起) - X→Y 공식 -->
+  <rect x="20" y="140" width="570" height="340" rx="15" fill="url(#section1)" stroke="#dee2e6" stroke-width="2"/>
+  <rect x="20" y="140" width="570" height="45" rx="15" fill="#495057"/>
+  <rect x="20" y="170" width="570" height="15" fill="#495057"/>
+  <text x="40" y="170" font-family="Arial, sans-serif" font-size="18" fill="white" font-weight="bold">🐢 기(起): X→Y 공식의 본질</text>
+  
+  <!-- X→Y→Z→X' Flow -->
+  <g transform="translate(40, 200)">
+    <rect x="0" y="0" width="100" height="50" rx="8" fill="#6c757d"/>
+    <text x="50" y="30" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">X</text>
+    <text x="50" y="65" font-family="Arial" font-size="11" fill="#495057" text-anchor="middle">They Say</text>
+    <text x="50" y="80" font-family="Arial" font-size="10" fill="#868e96" text-anchor="middle">"분야의 복음"</text>
+    
+    <path d="M105 25 L125 25" stroke="#495057" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="130" y="0" width="100" height="50" rx="8" fill="#e74c3c"/>
+    <text x="180" y="30" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Y</text>
+    <text x="180" y="65" font-family="Arial" font-size="11" fill="#495057" text-anchor="middle">But/And Yet</text>
+    <text x="180" y="80" font-family="Arial" font-size="10" fill="#868e96" text-anchor="middle">"역설/퍼즐"</text>
+    
+    <path d="M235 25 L255 25" stroke="#495057" stroke-width="2"/>
+    
+    <rect x="260" y="0" width="100" height="50" rx="8" fill="#3498db"/>
+    <text x="310" y="30" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Z</text>
+    <text x="310" y="65" font-family="Arial" font-size="11" fill="#495057" text-anchor="middle">I Say</text>
+    <text x="310" y="80" font-family="Arial" font-size="10" fill="#868e96" text-anchor="middle">"새 렌즈"</text>
+    
+    <path d="M365 25 L385 25" stroke="#495057" stroke-width="2"/>
+    
+    <rect x="390" y="0" width="100" height="50" rx="8" fill="#27ae60"/>
+    <text x="440" y="30" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">X'</text>
+    <text x="440" y="65" font-family="Arial" font-size="11" fill="#495057" text-anchor="middle">So What?</text>
+    <text x="440" y="80" font-family="Arial" font-size="10" fill="#868e96" text-anchor="middle">"업데이트된 믿음"</text>
+  </g>
+
+  <!-- Cognitive Process -->
+  <g transform="translate(40, 310)">
+    <text font-family="Arial" font-size="12" fill="#495057" font-weight="bold">독자의 뇌에서 일어나는 일:</text>
+    <text y="20" font-family="Arial" font-size="11" fill="#6c757d">1. X를 믿고 있음 → 2. Y 발견! 인지부조화 →</text>
+    <text y="38" font-family="Arial" font-size="11" fill="#6c757d">3. Z로 해결! "아하!" → 4. X'로 업데이트</text>
+  </g>
+
+  <!-- Key Quote -->
+  <rect x="40" y="380" width="530" height="80" rx="8" fill="white" stroke="#dee2e6"/>
+  <text x="60" y="405" font-family="Georgia, italic" font-size="13" fill="#495057">"학술 논문은 대화(Conversation)다.</text>
+  <text x="60" y="425" font-family="Georgia, italic" font-size="13" fill="#495057">혼자 말하는 것이 아니라, 기존 학계가 무엇을 말했는지</text>
+  <text x="60" y="445" font-family="Georgia, italic" font-size="13" fill="#495057">(They Say)에 대한 응답(I Say)으로 구성된다."</text>
+
+  <!-- Section 2: 승(承) - 6가지 스타일 -->
+  <rect x="610" y="140" width="570" height="340" rx="15" fill="url(#section2)" stroke="#f5c6cb" stroke-width="2"/>
+  <rect x="610" y="140" width="570" height="45" rx="15" fill="#e67e22"/>
+  <rect x="610" y="170" width="570" height="15" fill="#e67e22"/>
+  <text x="630" y="170" font-family="Arial, sans-serif" font-size="18" fill="white" font-weight="bold">🐅 승(承): 6가지 핵심 기법</text>
+
+  <!-- Techniques Table -->
+  <g transform="translate(625, 200)">
+    <!-- Headers -->
+    <rect x="0" y="0" width="160" height="25" fill="#d35400"/>
+    <rect x="165" y="0" width="200" height="25" fill="#d35400"/>
+    <rect x="370" y="0" width="170" height="25" fill="#d35400"/>
+    <text x="80" y="17" font-family="Arial" font-size="11" fill="white" text-anchor="middle" font-weight="bold">논문</text>
+    <text x="265" y="17" font-family="Arial" font-size="11" fill="white" text-anchor="middle" font-weight="bold">핵심 기법</text>
+    <text x="455" y="17" font-family="Arial" font-size="11" fill="white" text-anchor="middle" font-weight="bold">한 줄 공식</text>
+
+    <!-- Row 1 -->
+    <rect x="0" y="30" width="160" height="35" fill="white" stroke="#ddd"/>
+    <rect x="165" y="30" width="200" height="35" fill="white" stroke="#ddd"/>
+    <rect x="370" y="30" width="170" height="35" fill="white" stroke="#ddd"/>
+    <text x="10" y="52" font-family="Arial" font-size="10" fill="#495057" font-weight="bold">Fine (1986)</text>
+    <text x="175" y="52" font-family="Arial" font-size="10" fill="#495057">두 문헌 결합</text>
+    <text x="380" y="47" font-family="Arial" font-size="9" fill="#6c757d">"A문헌 + B문헌</text>
+    <text x="380" y="60" font-family="Arial" font-size="9" fill="#6c757d">= 새 통찰 C"</text>
+
+    <!-- Row 2 -->
+    <rect x="0" y="70" width="160" height="35" fill="#fff8f0" stroke="#ddd"/>
+    <rect x="165" y="70" width="200" height="35" fill="#fff8f0" stroke="#ddd"/>
+    <rect x="370" y="70" width="170" height="35" fill="#fff8f0" stroke="#ddd"/>
+    <text x="10" y="92" font-family="Arial" font-size="10" fill="#495057" font-weight="bold">Repenning (2002)</text>
+    <text x="175" y="92" font-family="Arial" font-size="10" fill="#495057">상식 역전 + 피드백 루프</text>
+    <text x="380" y="87" font-family="Arial" font-size="9" fill="#6c757d">"상식 X + 통계 Y</text>
+    <text x="380" y="100" font-family="Arial" font-size="9" fill="#6c757d">= 시스템 함정 Z"</text>
+
+    <!-- Row 3 -->
+    <rect x="0" y="110" width="160" height="35" fill="white" stroke="#ddd"/>
+    <rect x="165" y="110" width="200" height="35" fill="white" stroke="#ddd"/>
+    <rect x="370" y="110" width="170" height="35" fill="white" stroke="#ddd"/>
+    <text x="10" y="132" font-family="Arial" font-size="10" fill="#495057" font-weight="bold">Gans et al. (2021)</text>
+    <text x="175" y="132" font-family="Arial" font-size="10" fill="#495057">인과 화살표 역전</text>
+    <text x="380" y="127" font-family="Arial" font-size="9" fill="#6c757d">"X→Y라고?</text>
+    <text x="380" y="140" font-family="Arial" font-size="9" fill="#6c757d">아니, Y→X다"</text>
+
+    <!-- Row 4 -->
+    <rect x="0" y="150" width="160" height="35" fill="#fff8f0" stroke="#ddd"/>
+    <rect x="165" y="150" width="200" height="35" fill="#fff8f0" stroke="#ddd"/>
+    <rect x="370" y="150" width="170" height="35" fill="#fff8f0" stroke="#ddd"/>
+    <text x="10" y="172" font-family="Arial" font-size="10" fill="#495057" font-weight="bold">Nanda (2024)</text>
+    <text x="175" y="172" font-family="Arial" font-size="10" fill="#495057">숨겨진 메커니즘 발견</text>
+    <text x="380" y="167" font-family="Arial" font-size="9" fill="#6c757d">"왜 A가 안 되지?</text>
+    <text x="380" y="180" font-family="Arial" font-size="9" fill="#6c757d">숨겨진 B 때문"</text>
+
+    <!-- Row 5 -->
+    <rect x="0" y="190" width="160" height="35" fill="white" stroke="#ddd"/>
+    <rect x="165" y="190" width="200" height="35" fill="white" stroke="#ddd"/>
+    <rect x="370" y="190" width="170" height="35" fill="white" stroke="#ddd"/>
+    <text x="10" y="212" font-family="Arial" font-size="10" fill="#495057" font-weight="bold">Pontikes (2012)</text>
+    <text x="175" y="212" font-family="Arial" font-size="10" fill="#495057">청중별 반대 효과</text>
+    <text x="380" y="207" font-family="Arial" font-size="9" fill="#6c757d">"X가 좋아? 나빠?</text>
+    <text x="380" y="220" font-family="Arial" font-size="9" fill="#6c757d">청중에 따라 다름"</text>
+
+    <!-- Row 6 -->
+    <rect x="0" y="230" width="160" height="35" fill="#fff8f0" stroke="#ddd"/>
+    <rect x="165" y="230" width="200" height="35" fill="#fff8f0" stroke="#ddd"/>
+    <rect x="370" y="230" width="170" height="35" fill="#fff8f0" stroke="#ddd"/>
+    <text x="10" y="252" font-family="Arial" font-size="10" fill="#495057" font-weight="bold">Zuzul (2020)</text>
+    <text x="175" y="252" font-family="Arial" font-size="10" fill="#495057">경계 조건/조절변수</text>
+    <text x="380" y="247" font-family="Arial" font-size="9" fill="#6c757d">"모두 A라고?</text>
+    <text x="380" y="260" font-family="Arial" font-size="9" fill="#6c757d">조건에 따라 다름"</text>
+  </g>
+
+  <!-- Section 3: 전(轉) - 실전 템플릿 -->
+  <rect x="20" y="500" width="570" height="520" rx="15" fill="url(#section3)" stroke="#f5c6cb" stroke-width="2"/>
+  <rect x="20" y="500" width="570" height="45" rx="15" fill="#c0392b"/>
+  <rect x="20" y="530" width="570" height="15" fill="#c0392b"/>
+  <text x="40" y="530" font-family="Arial, sans-serif" font-size="18" fill="white" font-weight="bold">🐙 전(轉): 실전 템플릿</text>
+
+  <!-- Template 1: X Setting -->
+  <rect x="35" y="560" width="540" height="100" rx="8" fill="white" stroke="#e74c3c" stroke-width="2"/>
+  <text x="50" y="585" font-family="Arial" font-size="14" fill="#c0392b" font-weight="bold">X 설정 (1-2문단)</text>
+  <text x="50" y="610" font-family="Courier, monospace" font-size="11" fill="#495057">"[Field]의 중심 아이디어 중 [X]만큼 확고한 것은</text>
+  <text x="50" y="628" font-family="Courier, monospace" font-size="11" fill="#495057">거의 없다. [Classic Citation 1, 2, 3]은 모두</text>
+  <text x="50" y="646" font-family="Courier, monospace" font-size="11" fill="#495057">[X]를 전제로 한다."</text>
+
+  <!-- Template 2: Y Puzzle -->
+  <rect x="35" y="670" width="540" height="100" rx="8" fill="white" stroke="#e74c3c" stroke-width="2"/>
+  <text x="50" y="695" font-family="Arial" font-size="14" fill="#c0392b" font-weight="bold">Y 제시 (2-3문단)</text>
+  <text x="50" y="720" font-family="Courier, monospace" font-size="11" fill="#495057">"그러나 [specific phenomenon/statistic]을 보라.</text>
+  <text x="50" y="738" font-family="Courier, monospace" font-size="11" fill="#495057">[X]가 맞다면, 왜 [Y]가 발생하는가?</text>
+  <text x="50" y="756" font-family="Courier, monospace" font-size="11" fill="#495057">이 역설은 [magnitude of puzzle]의 크기를 가진다."</text>
+
+  <!-- Template 3: Z New Lens -->
+  <rect x="35" y="780" width="540" height="110" rx="8" fill="white" stroke="#e74c3c" stroke-width="2"/>
+  <text x="50" y="805" font-family="Arial" font-size="14" fill="#c0392b" font-weight="bold">Z 제안 (2-3문단)</text>
+  <text x="50" y="830" font-family="Courier, monospace" font-size="11" fill="#495057">"나는 이 역설의 해답이 [Z]에 있다고 주장한다.</text>
+  <text x="50" y="848" font-family="Courier, monospace" font-size="11" fill="#495057">[Mechanism 설명]</text>
+  <text x="50" y="866" font-family="Courier, monospace" font-size="11" fill="#495057">이 렌즈를 적용하면 [Y]가 설명되고, 기존에</text>
+  <text x="50" y="884" font-family="Courier, monospace" font-size="11" fill="#495057">설명 불가했던 [other phenomena]도 설명된다."</text>
+
+  <!-- Template 4: X' Updated -->
+  <rect x="35" y="900" width="540" height="100" rx="8" fill="white" stroke="#e74c3c" stroke-width="2"/>
+  <text x="50" y="925" font-family="Arial" font-size="14" fill="#c0392b" font-weight="bold">X' 요약 (1문단)</text>
+  <text x="50" y="950" font-family="Courier, monospace" font-size="11" fill="#495057">"요컨대, [X]는 [condition]에서는 맞지만,</text>
+  <text x="50" y="968" font-family="Courier, monospace" font-size="11" fill="#495057">[new condition]에서는 [X']가 더 정확하다.</text>
+  <text x="50" y="986" font-family="Courier, monospace" font-size="11" fill="#495057">이것이 [practical implication]에 대한 함의를 가진다."</text>
+
+  <!-- Section 4: 결(結) - 체크리스트 & 적용 -->
+  <rect x="610" y="500" width="570" height="520" rx="15" fill="url(#section4)" stroke="#d1c4e9" stroke-width="2"/>
+  <rect x="610" y="500" width="570" height="45" rx="15" fill="#8e44ad"/>
+  <rect x="610" y="530" width="570" height="15" fill="#8e44ad"/>
+  <text x="630" y="530" font-family="Arial, sans-serif" font-size="18" fill="white" font-weight="bold">👾 결(結): 체크리스트 &amp; 적용</text>
+
+  <!-- Checklist -->
+  <rect x="625" y="560" width="540" height="200" rx="8" fill="white" stroke="#9b59b6" stroke-width="2"/>
+  <text x="640" y="585" font-family="Arial" font-size="14" fill="#8e44ad" font-weight="bold">✅ 서론 작성 전 체크리스트</text>
+  
+  <text x="650" y="615" font-family="Arial" font-size="12" fill="#495057">☐ 내 분야의 X(Gospel)가 무엇인지 명확히 알고 있는가?</text>
+  <text x="650" y="640" font-family="Arial" font-size="12" fill="#495057">☐ Y(Puzzle)가 구체적 사례나 통계로 뒷받침되는가?</text>
+  <text x="650" y="665" font-family="Arial" font-size="12" fill="#495057">☐ Z(New Lens)가 두 문헌 결합 / 인과 역전 /</text>
+  <text x="665" y="685" font-family="Arial" font-size="12" fill="#495057">숨겨진 조절변수 중 어떤 유형인가?</text>
+  <text x="650" y="710" font-family="Arial" font-size="12" fill="#495057">☐ X'(Updated Belief)가 독자에게 실용적 가치가 있는가?</text>
+  <text x="650" y="735" font-family="Arial" font-size="12" fill="#495057">☐ "So What?" &amp; "Who Cares?"에 답할 수 있는가?</text>
+
+  <!-- Application to My Thesis -->
+  <rect x="625" y="775" width="540" height="230" rx="8" fill="white" stroke="#9b59b6" stroke-width="2"/>
+  <text x="640" y="800" font-family="Arial" font-size="14" fill="#8e44ad" font-weight="bold">📌 "Flexibility and Commitment" 논문 적용</text>
+
+  <text x="650" y="830" font-family="Arial" font-size="11" fill="#c0392b" font-weight="bold">Option 1: Fine 스타일 (문헌 결합)</text>
+  <text x="660" y="850" font-family="Arial" font-size="10" fill="#495057">전략 문헌("명확한 포지셔닝") + 운영 문헌("유연한 대응")</text>
+  <text x="660" y="868" font-family="Arial" font-size="10" fill="#495057">→ Strategic Ambiguity = 이해관계자 조정 메커니즘</text>
+
+  <text x="650" y="895" font-family="Arial" font-size="11" fill="#3498db" font-weight="bold">Option 2: Gans 스타일 (인과 역전)</text>
+  <text x="660" y="915" font-family="Arial" font-size="10" fill="#495057">"이해관계자 요구 → 창업자 전략"을 뒤집어</text>
+  <text x="660" y="933" font-family="Arial" font-size="10" fill="#495057">"창업자 전략 → 이해관계자 기대 형성"으로</text>
+
+  <text x="650" y="960" font-family="Arial" font-size="11" fill="#27ae60" font-weight="bold">Option 3: Pontikes 스타일 (청중별 효과)</text>
+  <text x="660" y="980" font-family="Arial" font-size="10" fill="#495057">청중(VC vs 고객 vs 직원)에 따라 모호함의 가치가 다름</text>
+  <text x="660" y="998" font-family="Arial" font-size="10" fill="#495057">→ 초기 vs 후기에 최적 모호함 수준이 다름</text>
+
+  <!-- Footer -->
+  <rect x="0" y="1040" width="1200" height="60" fill="url(#headerGrad)"/>
+  <text x="600" y="1065" font-family="Georgia, italic" font-size="16" fill="#aaa" text-anchor="middle">"복잡한 것을 단순하게, 단순한 것을 아름답게, 아름다운 것을 기억에 남게"</text>
+  <text x="600" y="1088" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">현지의 포스터 공방 | 전라좌수군 🐅권준 시스템</text>
+
+  <!-- Must Read Section -->
+  <rect x="20" y="1115" width="1160" height="200" rx="15" fill="white" stroke="#dee2e6" stroke-width="2"/>
+  <text x="40" y="1145" font-family="Arial" font-size="16" fill="#1a1a2e" font-weight="bold">📚 Must Read: 각 논문의 핵심 인용</text>
+  
+  <g transform="translate(40, 1160)">
+    <text y="15" font-family="Arial" font-size="11" fill="#e67e22" font-weight="bold">Fine (1986):</text>
+    <text y="15" x="90" font-family="Georgia, italic" font-size="11" fill="#495057">"By introducing the idea of a quality-based learning curve, this paper links the previously disjoint literatures"</text>
+    
+    <text y="38" font-family="Arial" font-size="11" fill="#e67e22" font-weight="bold">Repenning (2002):</text>
+    <text y="38" x="130" font-family="Georgia, italic" font-size="11" fill="#495057">"Fewer than 10 percent of the Fortune 1000 had well-developed TQM programs"</text>
+    
+    <text y="61" font-family="Arial" font-size="11" fill="#e67e22" font-weight="bold">Gans (2021):</text>
+    <text y="61" x="90" font-family="Georgia, italic" font-size="11" fill="#495057">"We reconceptualize the technology S-curve not as a technological given but as an envelope of potential outcomes"</text>
+    
+    <text y="84" font-family="Arial" font-size="11" fill="#e67e22" font-weight="bold">Nanda (2024):</text>
+    <text y="84" x="100" font-family="Georgia, italic" font-size="11" fill="#495057">"Investors prefer 'killer experiments' but entrepreneurs prefer experiments that are less likely to fail"</text>
+    
+    <text y="107" font-family="Arial" font-size="11" fill="#e67e22" font-weight="bold">Pontikes (2012):</text>
+    <text y="107" x="110" font-family="Georgia, italic" font-size="11" fill="#495057">"Same coin, two sides. Which side you see depends on who you are."</text>
+    
+    <text y="130" font-family="Arial" font-size="11" fill="#e67e22" font-weight="bold">Zuzul (2020):</text>
+    <text y="130" x="100" font-family="Georgia, italic" font-size="11" fill="#495057">"The quest for creativity and novelty might actually constrain flexibility"</text>
+  </g>
+
+  <!-- Davis Interestingness Index -->
+  <rect x="20" y="1330" width="1160" height="250" rx="15" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+  <text x="40" y="1360" font-family="Arial" font-size="16" fill="#1a1a2e" font-weight="bold">🔥 Davis의 "흥미로움 지수" 매핑</text>
+  
+  <g transform="translate(40, 1380)">
+    <!-- Table Headers -->
+    <rect x="0" y="0" width="350" height="30" fill="#495057"/>
+    <rect x="355" y="0" width="400" height="30" fill="#495057"/>
+    <rect x="760" y="0" width="380" height="30" fill="#495057"/>
+    <text x="175" y="20" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">흥미로움 유형</text>
+    <text x="555" y="20" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">They Say → I Say 변환</text>
+    <text x="950" y="20" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">예시 논문</text>
+    
+    <!-- Rows -->
+    <rect x="0" y="35" width="350" height="28" fill="white" stroke="#dee2e6"/>
+    <rect x="355" y="35" width="400" height="28" fill="white" stroke="#dee2e6"/>
+    <rect x="760" y="35" width="380" height="28" fill="white" stroke="#dee2e6"/>
+    <text x="10" y="53" font-family="Arial" font-size="11" fill="#495057">Order from Chaos</text>
+    <text x="365" y="53" font-family="Arial" font-size="11" fill="#6c757d">"무질서해 보이는 것이 실은 구조를 가짐"</text>
+    <text x="770" y="53" font-family="Arial" font-size="11" fill="#3498db">Kapoor &amp; Klueter</text>
+    
+    <rect x="0" y="68" width="350" height="28" fill="#f8f9fa" stroke="#dee2e6"/>
+    <rect x="355" y="68" width="400" height="28" fill="#f8f9fa" stroke="#dee2e6"/>
+    <rect x="760" y="68" width="380" height="28" fill="#f8f9fa" stroke="#dee2e6"/>
+    <text x="10" y="86" font-family="Arial" font-size="11" fill="#495057">Complexity in Simple</text>
+    <text x="365" y="86" font-family="Arial" font-size="11" fill="#6c757d">"단일 현상이 실은 이질적"</text>
+    <text x="770" y="86" font-family="Arial" font-size="11" fill="#3498db">Pontikes</text>
+    
+    <rect x="0" y="101" width="350" height="28" fill="white" stroke="#dee2e6"/>
+    <rect x="355" y="101" width="400" height="28" fill="white" stroke="#dee2e6"/>
+    <rect x="760" y="101" width="380" height="28" fill="white" stroke="#dee2e6"/>
+    <text x="10" y="119" font-family="Arial" font-size="11" fill="#495057">Independent is Dependent</text>
+    <text x="365" y="119" font-family="Arial" font-size="11" fill="#6c757d">"결과라고 생각한 것이 실은 원인"</text>
+    <text x="770" y="119" font-family="Arial" font-size="11" fill="#3498db">Gans et al.</text>
+    
+    <rect x="0" y="134" width="350" height="28" fill="#f8f9fa" stroke="#dee2e6"/>
+    <rect x="355" y="134" width="400" height="28" fill="#f8f9fa" stroke="#dee2e6"/>
+    <rect x="760" y="134" width="380" height="28" fill="#f8f9fa" stroke="#dee2e6"/>
+    <text x="10" y="152" font-family="Arial" font-size="11" fill="#495057">Unobserved Bad</text>
+    <text x="365" y="152" font-family="Arial" font-size="11" fill="#6c757d">"좋아 보이는 것이 실은 나쁨"</text>
+    <text x="770" y="152" font-family="Arial" font-size="11" fill="#3498db">Repenning &amp; Sterman</text>
+    
+    <rect x="0" y="167" width="350" height="28" fill="white" stroke="#dee2e6"/>
+    <rect x="355" y="167" width="400" height="28" fill="white" stroke="#dee2e6"/>
+    <rect x="760" y="167" width="380" height="28" fill="white" stroke="#dee2e6"/>
+    <text x="10" y="185" font-family="Arial" font-size="11" fill="#495057">False Similarity</text>
+    <text x="365" y="185" font-family="Arial" font-size="11" fill="#6c757d">"비슷해 보이는 것이 실은 정반대"</text>
+    <text x="770" y="185" font-family="Arial" font-size="11" fill="#3498db">Zuzul &amp; Tripsas</text>
+  </g>
+
+</svg>

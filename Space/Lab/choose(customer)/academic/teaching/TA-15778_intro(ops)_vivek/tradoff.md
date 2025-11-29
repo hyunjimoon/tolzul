@@ -1,4 +1,4 @@
-from [[📖nigel18_operations strategy]] using [[nigel_tradeoff.pdf]]
+from [[Space/Library/1논문용/textbook/📖nigel18_operations strategy]] using [[nigel_tradeoff.pdf]]
 
 ![[tradoff 2025-07-22-9.svg]]
 %%[[tradoff 2025-07-22-9|🖋 Edit in Excalidraw]]%%

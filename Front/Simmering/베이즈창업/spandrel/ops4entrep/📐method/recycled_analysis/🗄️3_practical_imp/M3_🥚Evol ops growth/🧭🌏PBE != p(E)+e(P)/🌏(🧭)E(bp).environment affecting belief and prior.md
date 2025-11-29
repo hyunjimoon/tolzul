@@ -691,7 +691,7 @@ hierarchy, dynamics, bayesian are three sides of one dice
 - 🧱bricks: [[🧭2🧭🗺️_B2BD_scott-jeff-matt]],  [parallel research design for startup product cld](https://claude.ai/chat/09179a39-0f62-43eb-9990-dd0b9336ab34), [decoding angie's comprehensive coding system cld](https://claude.ai/chat/a6831148-15a0-49c6-933b-8fa05aa4294f)
 - external evaluators: [[josh_tenenbaum]], [[steve_pinker]]
 
-[[ten-great-ideas-about-chance]]
+[[Space/Library/수리과학관_數理/ten-great-ideas-about-chance]]
 
 
 

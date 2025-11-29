@@ -2,7 +2,7 @@
 modified:
   - 2025-11-19T20:32:14-05:00
 ---
-using [ops strat framework cld](https://claude.ai/chat/2e200ad6-f8ff-43b7-a536-80d44c9227db), paired with [[📖anupindi13_mng(process(business))]]
+using [ops strat framework cld](https://claude.ai/chat/2e200ad6-f8ff-43b7-a536-80d44c9227db), paired with [[Space/Library/1논문용/textbook/📖anupindi13_mng(process(business))]]
 
 ![[operations strategy 2025-06-15-10.svg]]
 %%[[operations strategy 2025-06-15-10|🖋 Edit in Excalidraw]]%%

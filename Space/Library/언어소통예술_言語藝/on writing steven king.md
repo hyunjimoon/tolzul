@@ -5,6 +5,6 @@
 # 연장통
 1. 단어
 2. 문장이 아닌 문단이 의미의 한 단위
-3. 절제된 표현 [[Larry McMurtry]]
-4. 쉬운 어휘 훌륭한 문장 [[steinbek]]
+3. 절제된 표현 [[Space/Theater/People/Larry McMurtry]]
+4. 쉬운 어휘 훌륭한 문장 [[Space/Library/언어소통예술_言語藝/Books/steinbek]]
 5. 

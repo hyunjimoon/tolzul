@@ -153,6 +153,14 @@ class LifeSpaceshipOperator:
         else:
             print("  ✅ Good Balance. You are tuning the rhythm well.")
 
+        # Trigger Visualization
+        print("\n🎨 Updating Dashboard...")
+        try:
+            import subprocess
+            subprocess.run([sys.executable, str(BASE_DIR / "visualize_spaceship.py")], check=True)
+        except Exception as e:
+            print(f"⚠️ Failed to update dashboard: {e}")
+
 if __name__ == "__main__":
     operator = LifeSpaceshipOperator()
     operator.load_daily_notes(limit=365) # Load more history for visualization

@@ -2,16 +2,47 @@
 collection:
   - "[[Space/Lab/Papers]]"
 author_ids:
+  - Gans, Joshua
+  - Stern, Scott
+  - Wu, Jane
 field:
   - 🐢inv
-year: 2020
+year: 2021
 image: Pasted image 20250409102105.png
 created: 2024-12-24
 modified:
   - 2025-10-18T14:31:18-04:00
   - 2025-10-21T09:17:56-04:00
+  - 2025-11-28
 diagrams:
   - "[[📜 gans20_choose(tech) 2025-04-21-20]]"
+---
+![[📜gans20_choose(tech)_poster.svg]]
+
+## 🔬 Intro 해부 (Cachon-Posen Framework)
+
+### P1: S-curve Gospel 세우기 (X)
+전략·혁신 연구에서 S-curve는 교과서: 초기 낮은 생산성 → 중간 가파른 상승 → 마지막 한계
+
+### P2: Exploration–Exploitation tension 상기
+March(1991)식 탐색–활용 trade-off를 S-curve 위에 올림
+
+### P3: 중심 역설 명시 (Paradox = Y)
+- S-curve는 기술적으로 주어진 현상이라고 가정
+- 동시에 그 모양은 explore vs exploit 선택에 의해 생긴다고도 말함
+- *"그럼 S-curve는 exogenous인가, choice의 결과인가?"*
+
+### P4: Tesla vs Better Place 사례 (Face-validity)
+- Better Place: 빠른 exploit, 스와핑 인프라, early mainstream → 파산
+- Tesla: 긴 explore, 럭셔리부터 단계적 roll-out → 승자
+
+### P5: 우리 렌즈(Z) – Choice-based S-curve
+**"S-curve는 exogenous가 아니라 start-up의 전략 선택의 결과물이다."**
+
+### 🐅 Framework Mapping
+- **Cachon식**: X(S-curve는 기술이 정해준 길) → Y(S-curve 모양 자체가 전략 선택으로 endogenize)
+- **Posen식**: 독자 prior "S-curve → 전략" ⇒ posterior "전략 → S-curve"로 인과 화살표 역전
+
 ---
 
 [[09-28|25-09-28]]
