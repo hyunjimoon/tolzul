@@ -1,0 +1,243 @@
+
+Unknown Speaker  0:38  
+so let's There you go. I started reading the paper.
+
+Unknown Speaker  0:45  
+I think you should focus on telling us we understand the theory. We know your
+
+Speaker 2  0:52  
+theory. But I feel theory and empirics go together, because the more I understand the like, how what is the situation under which theory works, I can look for the data like, do you agree, Scott,
+
+Speaker 1  1:06  
+I'm going to be very why don't, why don't we? Since we've discussed the theoretical part a lot, okay, you know, this is, you know, essentially, the idea is, how does vagueness or not translate into the ability to attract resources, but also then people either becoming unhappy or not with performance, right? That's the basic tension.
+
+Speaker 2  1:30  
+Are we on the same page that it's relevant to test two and choose one? I wanted to make sure of that,
+
+Speaker 1  1:39  
+I would say I maybe, I mean the idea that there's a strategic trade off, yes, I'm not sure that it's a kind of, it's test you choose one is a particular form of endogenous, you know, like within a plan of endogenous optimization, that you end up figuring out that it's time to choose, rather than you know, the cost of additional searches, the fact that there are multiple ways that you can go tells you that it's now time to pursue a path, rather than to sit on your ass and do more experiments.
+
+Speaker 2  2:21  
+So the reason during your entrepreneurship boot camp, you explained the like, the story frame you used was you compared the action school with the planning school, yeah, yep, absolutely, and motivated test to choose one. Yep, okay, oh, okay, yeah, okay, but I just wanted to make sure, like Charlie choice school, I like that, yes, but I want to make sure Charlie is on the same page as well.
+
+Unknown Speaker  2:47  
+Okay, yeah, yeah, that part I agree with Yes.
+
+Speaker 2  2:50  
+So this is the central framing, I think,
+
+Speaker 1  2:53  
+yeah, it's definitely in this in this neighborhood, so that's good,
+
+Speaker 2  2:57  
+okay, yeah, due to my lack of communications key. I wrote that in my qualification paper, but it wasn't very clearly communicated. So, so the empirics is, I think this is the most important one.
+
+Angie.H Moon  3:11  
+And so what is implemented now is the company description, and I calculate the vagueness score, and based on that, the output is the survival in the long term, and it shows by model across most industries, software and pharmaceutical and semiconductor and many other industries.
+
+Speaker 3  3:36  
+So my first question when I started reading was, you said that way, for what was it hardware firms is lower than for software and for carbs and biotech, right? And and then you said, and the reason is because of the vagueness thing. But my first thought was, are there other papers that have tried to explain the differences in survival rate from different industries, and sort of like that would seem to me to be the starting point that we observe differences in survival rate in different industries. Some of it has been explained by previous work. There's some that has not yet been explained, and that's what you're going to explain,
+
+Speaker 2  4:27  
+is that, yeah? So that's yes, yes. Thanks for the so numbers 2024 paper defines setup, step up value. And this is defined as pre post money at time t, minus one over pre money of time t. So this is the dependent variable that he uses, and the explanatory variables are like different industries, hardware, software and Magitek and pharma. And I am trying to separate this, this part into the variable E and the upper part into variable L, which is early stage funding amount and later stage survival probability and use as a vagueness. So this is I feel a little more dynamic than previous one. But did I answer your question? On Track literature on survival rates?
+
+Speaker 3  5:42  
+My question, maybe it's not the right question is, but you're trying to, you want to assert that the Vegas theory explains some of why firms survive and don't survive.
+
+Speaker 1  5:59  
+Well, I think we can be a little simpler. What I would say. So first, just I've now had a chance to not read but peruse. I think that so I'm agreeing with you, Charlie. I think that in the given the timeframe that you have for this one, I would focus, if it were me, and I feel like there was one that, okay, so what you just said, it seemed to be about transportation ventures, was the was the database, Yeah,
+
+Speaker 2  6:39  
+like, but, but that's, that's different robustness check.
+
+Speaker 1  6:42  
+Okay, why don't you focus on the main so should you have a slide with the main thing?
+
+Angie.H Moon  6:50  
+It's ongoing, but it's what it's like. The data analysis pipeline is ongoing, but all that I use here, I verify transportation shows the same U shape, and that was different from what I expected, because my original hypothesis was, the more you become vague, the more survival rate you get, right?
+
+Speaker 3  7:13  
+So this is what I was thinking about, that you're saying the survival rates are different, and you're going to explain some of the different why?
+
+Speaker 1  7:23  
+What are those? Those are across industries, yeah.
+
+Speaker 3  7:29  
+Okay, so my question was, just, have other people tried to explain these differences, and how much have they been able to explain and how much is left for you?
+
+Speaker 1  7:40  
+That's my question. Well, I'm going to be, I think we can even be more practical. Okay, that's okay. I think it so. I'm going to opt at every moment here to do something that is has internal consistency, but not necessarily, you know, doesn't necessarily be ready for publishing and management science, you know, I'm saying like, like that. It's on its own terms. You can, you'll have an output that communicates that you understand the basic things that are going on, yes, okay, and that has an internally consistent story, and that you're aware of what would take, what would be required, to make it externally valid, which I think is sort of related to what you're talking about, but that exactly so specifically, what I would do is you have basically a theory, you have some qualitative motivating case studies. I'm not sure which order I would do that. Case studies, first, then the theory, and then preliminary called exploratory empirics. If I were you, I would focus in this paper for the purposes we have on you could use this 5.3 as a motivating fact, but I would do the vagueness analysis one sector mobility and transportation, because I think a, that's what your degree is in yes and B, that's what, you know, I think you've thought about those examples, yes, okay, yeah. So that's the first thing. Then I think that, as you actually have quite a few ventures, I think what you're doing is you're selecting on ventures that get some, maybe Series B, or some, some level of venture
+
+Speaker 2  9:23  
+finance, condition on Series A, like, I say, condition
+
+Speaker 1  9:27  
+on Series A, then we track. And what I would do is just very quickly, you know, very easily I would define, I think survival is a reasonable thing to look at. It might be survival over you know, it could be a hazard model. It could be survival within n years, like, like, there's a few ways to do it, and I'm going to leave it to you to choose an appropriate tool there. It's either hazard model or some sort of logit with a fixed logit with a fixed timeframe, you know, survives five years, or whatever. And after the series A and then what I would do, and what I think you're trying to show is that the ventures that do and so, so what's the hypothesis? So before we get into what else explains it, what do you think is so the core hypothesis is, like, what are you like? Like, if you could make up the data, what would you make up? Like? What would you want to be true with the data that like, very that, like, is it U shaped this way, this way, this way.
+
+Speaker 2  10:33  
+So to be honest, I was expecting this because, like, framing is commitment, trap and flexibility. Trap meaning, if you only have one option, then you only are focused on that and one environment, like
+
+Speaker 1  10:45  
+uncertainty. So, like, so, like people who so, I would have thought, yeah, that the theory that you're saying is that people who make very specific commitments raise capital, right? Yes, while people who are they keep their options open, but it's hard to raise capital. Yeah, so that's, I guess, right. And so that would lead that the vague people, conditional on getting a Series A the vague people, because they've retained their options, do the best, and people who are super hyper specific, basically screw up. Yes, that's
+
+Unknown Speaker  11:19  
+not what you find? Yes, I
+
+Speaker 1  11:22  
+think so that is, or that is or is not what you find. So the reason, why is that so? Why so? Okay, or maybe they haven't yet done that analysis you did in other industries, not this industry, like in other words, within this industry, right, right? But those are the wrong.
+
+Unknown Speaker  11:48  
+Transportation is the same I can show. That's the only one I would show.
+
+Unknown Speaker  11:57  
+Okay, that makes sense. It's like about that? That's the thing to do.
+
+Speaker 1  12:11  
+Oh, well, either way, you could make a graph like that, yeah, but it looked like this as well. There's a new shape to firms. Did you have in the transportation? Are
+
+Unknown Speaker  12:26  
+we talking dozens
+
+Unknown Speaker  12:29  
+or hundreds? Yeah, much more.
+
+Speaker 1  12:36  
+Mobility, penetration, vehicles, drones, robotics, mobility, 50,000 ventures. Right? And so I think what you want to do is say, don't worry too much about what I would do is, is,
+
+Speaker 1  13:09  
+so the idea that it's U shaped one, there's a question of how you're measuring vagueness that would you know, but you're sort of, you're doing a text based measure, right? Kind of, how specific are they in their claims? Yeah, yeah. Fine, good. And so what I would say is, what you do is develop your, you know, you know, there's no, there's nothing wrong with developing your preliminary hypotheses, doing an exploratory but clear analysis of that single industry motivated by your example. So motivate the examples, develop theory, derive hypotheses, observe your hypotheses is that the best thing to do is being given the intermediate and being extreme is bad. Or, I don't care what it would be, you know, saying I would think the comparative static would be that the people who are vague do well, because the reason people do who are vague do well is because they've maintained their optionality for long. They've gotten the money and they haven't had to
+
+Speaker 3  14:10  
+commit. But the U shape here is that too vague is not good and too committed.
+
+Speaker 1  14:20  
+This is a survival rate. So that failure rate, it's
+
+Speaker 2  14:24  
+a survival rate. And this is vagueness. So the more vague you become, the more you survive. Yeah. So this is not consistent with what I was expecting. Because, like, this is,
+
+Speaker 1  14:34  
+well, well, what I would say, let me, let me be even clear about it, I would say that the best explanation for that, which I think is a little different than Charlie's earlier question, but Charlie's earlier question, but just so, if I were trying to explain that chart in any industry, I'd say, and I think is very consistent with the phenomena I've observed. As it relates to this is that there are two things you can do when you go to a venture capitalist in a technically minded area. One is, you know, you sort of kind of fake it till you make it kind of thing, hopefully not illegally, because I think you had a little discussion of that, but like, hopefully, what it is is you're bit vague, you try to, you attract people in a kind of Bayesian way to the vision, without committing too much to the outcome. The other is, you have some really, you have a breakthrough, and you can show it to them, but that's going to make you very concrete, but it's also going to raise your chance of survival, and what. And so I think what you have is that people who can't quite sell butterflies, you're saying, you know vagueness, but also have nothing concrete. They do the worst, like, that's it. Did you see what I'm saying? So there's an intervening thing that because, as you note, the choice to be So, in other words, if it were me, I'd have a model where you're choosing between vagueness and concreteness. You see what I'm saying?
+
+Speaker 2  15:57  
+Yeah, I was thinking your disruption strategy as that is very specific and survive, yeah? And IP strategy, which has your core technology, but you have different market applications a little having a lot of optionality, yeah, that's surviving. But what's your thought about this child? So to conclude my I originally thought this would the survival rate for the late long term survive would monotonically increase across the vagueness. But there are different ways to success and one but
+
+Speaker 1  16:33  
+just be clear, that's the that's vagueness, unmediated by quality. That's the right comparative static. The point being, though, that some people who choose the very concrete measures, like, they're ahead because they actually have something. Do you see what I'm saying?
+
+Speaker 2  16:51  
+There are two things, right? Like, you have very concrete thing and you're ahead, or you're like, executing, like, one example was May mobility. They just chose the EV shuttle as a very like niche market. Yeah, and they executed, and they succeeded to the series B.
+
+Speaker 1  17:10  
+But I think what I'm saying is, let me make a very concrete like I'm I'm relentlessly focused here, yes, by making sure that you have a paper that is over the bar. Okay, so what I would do is I'd have section two be qualitative case studies of this. I think that part's pretty good. You like to write and and it's okay to just be honest, you know, I'm saying, like, that's what good research is. Then develop a simple model, and it's okay if the main prediction in that model is this upward sloping relationship. And then what you can do in either either as part of the model or just words you say, however, just to be clear, as we'll discuss, when we look at the empirics, it's a little complicated, because the people who are choose, we know that the people who are choosing the more concrete things might have been a higher technology level, you know, like at a higher TRL, and that might also help the venture. Do you see what I'm saying? So that's like a competing effect, and that's going to lead you to more of a huge shape. Do you see what I'm saying? Then what I would do is very clearly define, like, you have to tell us that a data set similar to pitch book, you have to say what the data set actually is, how many ventures there are, so on and so forth. Very well, put together data section and then present some basic descriptives, one or two tables of regressions, you know, kind of simple logit model with controls. Show some robustness, document it and discuss it. And you can say, Oh, I see some evidence for the value of vagueness at the high end, but it's also true that people at the low end seem to do well. This seems to be a mix of the novel part of the theory that I proposed. But also, of course, it's the case that people who have made technical breakthroughs tend to have longer runways, because they actually have more to deliver to the market.
+
+Speaker 2  19:00  
+Thanks for your input. That's, I think, one influence. Implementation way I was just
+
+Unknown Speaker  19:06  
+thinking about cheap talk. If I've got something concrete, that's really good, and I can say it with confidence that I'm on the far left, right, yep,
+
+Speaker 3  19:22  
+if I don't have anything good, but I think I'm smart, yeah, then I want to be vague, right? And then the question is, how do I convince the VCs that I'm
+
+Unknown Speaker  19:30  
+smart because I'm being vague? Yes, yes, yes.
+
+Unknown Speaker  19:33  
+They can sort of see through me
+
+Speaker 1  19:35  
+that no, the right answer there is so I think there is a layer here, and I think Angie's engaged with it. So, you know, this is this Zappos case to a T. The point about vagueness, to me is that it's basically directionally. You think this is a good idea in ways that are hard to document. You're saying, but interestingly, I might, in a conversation with you, persuade you of that, and think of like even just in debt. You know, when we hire people or tenure cases, we do that all the time. You know, I'm saying, right? We sort of say, Oh, this line of work by person X, it's a little hard to explain why it's good. And so what get? What do you select on that and this, you could study right within your right, but I don't think you have to. I think you can discuss it as an area to do is you end up with attraction and kind of an arc fan and see stuff by people who are believers in the same crazy theory you have. What I mean by that is the non documentable, you know, saying, like you can poke flaws in it theory, but nonetheless, if I have a high subjective prior, just like you do, I'm going to invest in you. Did you say? I'm saying, on the other hand, if you've got the goods, everyone wants to invest you because you because you because you have this concrete measure. And so the story of the Zappos case is exactly that, in the first experiment, they convinced themselves, but are unable that case, to convince the venture capitalists because they don't have the same Angie prior. And then only when they put concrete facts on the ground, you know, do they get the big rush of venture capital? You said, I'm saying, and I think, and Abhishek Nagaraj, I think, has a new paper that documents some sort of effect like that in venture capital. So I can send that along, if I find it. He sent it to me just next few days.
+
+Unknown Speaker  21:36  
+Concrete facts about
+
+Speaker 1  21:38  
+the that there's that this persuasion effect is very important for some context. I don't even, I have no idea what he's studying. I haven't looked at the paper at all, but it's but, but I see this as being a nice compliment. I don't think there's a substitution anywhere here. I think it's very nice compliment. You're bringing a nice point to it, which is that the the way that would be implemented in data would be that if I can't, if it's you have to buy my vision, but I can't buy my, you know, because I'm not promising anything specific. That to you is a vague promise versus I'm going to achieve, you know, 20 Tesla in my magnet by a certain date. That's very concrete promise.
+
+Speaker 2  22:19  
+So my plan to Charlie's concern was, there is a data on the founder's profile. So if it is a serial founder, they have the credibility. So based on my interview, VCs are more willing to invest in them, even though, if the promise is fake.
+
+Speaker 3  22:37  
+But that's another factor that's in here, that is, if I'm a serially successful founder, I'm allowed to be more vague that, so that. But you know, you're, you're not convincing me on the yeah on the promise. You're convincing me on my track record.
+
+Speaker 1  22:58  
+But interestingly, that's the same like, that's a nice comparative static on beliefs. I might not understand your it's hard for me to evaluate your venture, but I have a high subjective prior because you made a lot of money. My summer house is paid for by your last venture. I'm a big believer.
+
+Angie.H Moon  23:21  
+That makes sense, yes. So may I return to my original plan? So the first plan is, is what Scott suggested, just not decompose the vagueness index right now and just implement my plan. Another option to plan was separate that into the market side uncertainty.
+
+Speaker 1  23:44  
+I think, I think, I think you have to be done with this in four weeks from now. And so if I were you, I would Charlie's the ultimate decision maker here. But if it were me, I would say, first undertake a plan that has internal consistency, that's tight, that you can give out to people and say, this is the kind of agenda I'm after, and you can discuss in the conclusion or even in the introduction, some of the ways that this can be broken down other avenues. But unless it's something that is, once again, that the main thing you have is a nice empirical, a preliminary but interesting empirical relationship between vagueness and survival. I don't care if I don't care even what the shape is. That's an interesting thing to explore, and you have some preliminary modeling that supports particular view, but you also understand there are competing events. I don't know
+
+Speaker 3  24:41  
+that makes a lot of lot of sense. I certainly agree having a compelling but narrow paper is much better than having a broad but less compelling paper, right?
+
+Speaker 1  24:56  
+And I would even go further than the word narrow. I would say the smaller number of nouns, the better. So that's not quite narrow or not like what I mean by that is decomposing things that just makes it more complicated. Do you see what I'm saying? But just saying the core concept you have is the vagueness that's offered as represented by the firm's website, I guess, or pitch deck, or something like that. By the description, that's an interesting measure that I'm not aware that people have grappled with. I think there's you're saying and placing that well within the literature. And as I said, the most important, believe it or not, the most important things for such a paper are that a well informed reader would know how you would, you know, know what the data was. Believe that the not stuck the rabbit in the hat in the wrong way. You know, like you're saying that you're playing fair, that it was a good sample of ventures. And, you know, for example, saying, I'm conditioning on, you know, series A ventures in clean energy or transportation mobility. So sorry, right, in transportation mobility, that's very reasonable, because basically, table states is a Series A there, like it's, those are very capital intensive ventures, yes. And so if you can't get a Series A, you know, like, of course, you know, if we had, you're saying, like, we could go talk to Jorge, and he could extract out everybody, whoever Incorporated, or whatever. But no, I don't think that's your example. Yeah. I think a very reasonable sample is the set of ventures that got a Series A they then make promises or not, and you're documenting their empirical survivability. And you have a rough theoretical frame that you're that you think explain some of the variance. And I am sensitive to what Charlie said before, which is your you should have a thoughtful discussion of what factors you're controlling for and what factors you're not controlling
+
+Speaker 3  27:09  
+for, and can you say a little bit about how you made up your vagueness measurement? It's not already existing in the literature.
+
+Unknown Speaker  27:16  
+I based it on the existing literature.
+
+Unknown Speaker  27:19  
+Existing literature has a measurement
+
+Speaker 2  27:22  
+of vagueness. Yes, there was one paper that what paper was it? Do you remember it was what I showed you to last time? Like rhetoric, orientation and vagueness? That's interesting. Yeah,
+
+Speaker 1  27:45  
+but in other words, it should be like, very like, if you're building off of a specific so I have the literature, oh, this is from from as Esther's paper. Or
+
+Speaker 2  27:56  
+there are different ways to measure vagueness, and the one I chose is categorical vagueness and the concreteness deficit. And
+
+Speaker 1  28:04  
+that's from which of those papers from Elizabeth pantikas, or like, Oh, yeah. Oh, it's from, okay, from those very specific, yeah, perfect. Okay, new. I mean, that's a literature Elizabeth panticus is very good. Hannon, that's right. Those are those people have never thought about this kind of context before, but I think that's a very useful I know all those papers, basically, so that's good, like, so your introduction should say, I take this measure that's been used in these, you know, as a Zuckerman's work. I believe that's in the financial markets setting. Yeah, right. So that's about categories. You're saying how right? And then you're, then you're going to leverage that insight to study that in this other place.
+
+Angie.H Moon  28:49  
+This was, this is not a first order issue, but there was a paper that customer and investor judge the vagueness differently in the opposite way. Yeah? So, like those kind of things to the discussion, right? Yep,
+
+Speaker 1  29:04  
+yeah. In other words, what I would do is, there's a certain kind of paper, yeah, that says I take this measure that has worked in this context, and as a first step, I just mechanically apply to this context over here, and then I will tell you the results, and then I'll make it more complicated, or I'll, I'll nuance it, but until you the first thing I need to do is take the established measure over here to the novel context in question over there.
+
+Speaker 2  29:34  
+So may I proceed as follows, like first, I'll include what Scott mentioned, first, concrete database, and I'm not like fair description of measures. And second is include the discussion what Charlie brought up as there could be some degeneracy or, like multimodal in those were being intentionally, those who are really good at being specific versus those who are committed just to earn money. I think that's the like two model here. And among those who are being very vague, some are just being vague because they don't know what to do, versus some are being vague because they are keeping intentionally some options. So I think that's that, I think is the best critic for what I have done. So that was the reason why I was planning for decomposing, but I would implement that plan once I have a very concrete MVP to show it you. Is that a viable
+
+Speaker 1  30:41  
+plan? Okay? I've got to go. And I also feel like we've been very, very Charlie, does this work for you? Yes, I just want to make sure we're okay. I gotta go some now. Said, you know, sadly, I feel like my class today is gonna be very high on the vagueness measure. Well, watch for your strategy. But today we're doing, we're today, we're actually doing test two, choose one, and we're doing, we've just finished all the little quadrants, and now we're doing like, how you make a choice which? And then we're also like, there's the problem of today's class is there are many things to get done, because we're sort of getting set for the rest of semesters. I have to, like, launch the final case, and I have to deal with their final projects, and I have to explain what we're doing class on Wednesday, and I have to there's like, and then we're not a scaling part. We have a choice little bit, little too many items,
+
+Speaker 2  31:39  
+just a quick intuition elicitation. Like, do you have any order of which strategy keeps the most
+
+Speaker 1  31:45  
+option? Yeah, I would have thought that control oriented strategies have fewer up has. So I don't want to get down on that control or right so, so exploit, right? So remember, value chain and disrupt are much more about discovering value, yes, yes. And IP and architecture about delivering value. Did you see what I'm saying or no, that's, I think the wrong way. Is cooperation, whatever.
+
+Speaker 2  32:13  
+This is collaboration and this is competition,
+
+Speaker 1  32:17  
+yeah, and this is execute, yeah, exactly. Yeah. Sorry, oh, yeah, absolutely. So I would have thought that, once again, I would say that that's an area that, you know there are, there are sort of nuances to this, but in general, for a given firm, and a choice from a choice oriented approach, and not maybe cross sectional, I'm saying, but for a choice oriented approach, IP and architecture, commit. The success of the strategy depends on a higher level of commitment, and that commitment matters because it's commitment to other so that other actors can respond to you, so that by. So one consequence of that commitment would by, I think, a higher level of what you would call concreteness, where the value chain and disruption strategy are much more like. I know you have a problem. Let's go solve it. I can't really tell you what the solution is yet. Do you see what I'm saying? And so, you know, it'd be much more like, you know, we will investigate that. And so I'd assume that particularly disruption strategy. So I was little surprised you said that I would have thought the disruption strategy is famously associated with the lowest level of or there should be the highest level of vagueness, because when you go in, you're like, we're going to disrupt the industry. And people, you know, we're going to, you know, it's like, like, we work is very much a disruptor, right? Yeah, right. And they were like, we're going to make happiness, right, or something
+
+Unknown Speaker  33:59  
+like that, enhance the consciousness
+
+Speaker 1  34:01  
+Right, right, right. That's like, like, right, where I think and, and for, for that matter, right? You know, even Zappos, which I definitely put in that, you see what I'm saying. So what I would say is, at the moment, that people are making those individual choices where they're still exploring they're going to be I would imagine their words, as communicated to investors or as communicated to customers, offer more vision than they do performance spec.
+
+Speaker 2  34:38  
+So when you say commitment, it's mostly on technology commitment.
+
+Speaker 1  34:42  
+Like, also, see, that's why this, I said they're nuances, because it also could be, it could be very much around in the architectural strategies, particularly around platforms. Yeah, very often that it's a technical commitment, but it's really about the organization of the system. Do you see what I'm saying? Like, like, you know, we're gonna, you know, we're gonna be, you know, Airbnb really making sure that they were a high trust environment. And we're gonna make sure that, you know, if something goes wrong at that rental, we're gonna, you know, put a lot of effort into arbitrating it on both sides and so really setting up, like a little mini government, those are very big commitments. Similarly, like, even when I talk about Open Table, Open Table, I don't know that they had a big innovation, but, like, once they committed to the plan, they were very specific about what they were offering the restaurants.
+
+Speaker 2  35:38  
+Yeah, I will focus on AV industry for, I think the case study construction and there are LIDAR technology and vision technology, and it's very hard to switch between, yeah. And I have sense a lot of like, they are intentionally being vague on the market applications, in some
+
+Speaker 1  35:53  
+sense, yes, yeah. So yeah, I think you're right that there's that you could imagine being very concrete on your technology, on customer, super concrete on customer. But, you know, we'll figure out the tech later. Like, I agree, there's lots of but, but the first thing I would say is that there's a mechanical version of this, yes, that is, hasn't hot, high level of internal consistency, that that will be a good outcome.
+
+Speaker 2  36:20  
+Okay, I'll follow with enhanced document. Okay, okay, may we meet next week, please? Okay, it's really conditional on my quality of my document, okay, what?

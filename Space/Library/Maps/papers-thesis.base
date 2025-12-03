@@ -1,0 +1,83 @@
+formulas:
+  Paper: |-
+    if(thesisPaper = "U", "📦 U",
+    if(thesisPaper = "C", "📦 C",
+    if(thesisPaper = "N", "📦 N", "")))
+  Chapter: |-
+    if(thesisChapter = "I", "📖 I",
+    if(thesisChapter = "T", "🧠 T",
+    if(thesisChapter = "E", "📊 E",
+    if(thesisChapter = "D", "💬 D", ""))))
+properties:
+  file.name:
+    displayName: Paper
+  formula.Paper:
+    displayName: Thesis
+  formula.Chapter:
+    displayName: Chapter
+  rank:
+    displayName: ⭐
+  by:
+    displayName: Author
+views:
+  - type: table
+    name: Thesis Papers
+    order:
+      - formula.Paper
+      - formula.Chapter
+      - file.name
+      - rank
+      - by
+    filter:
+      - property: thesisPaper
+        operator: is not empty
+    sort:
+      - property: thesisPaper
+        direction: ASC
+      - property: thesisChapter
+        direction: ASC
+      - property: rank
+        direction: DESC
+    limit: 100
+  - type: table
+    name: "📦 U Only"
+    order:
+      - formula.Chapter
+      - file.name
+      - rank
+    filter:
+      - property: thesisPaper
+        operator: equals
+        value: U
+    sort:
+      - property: thesisChapter
+        direction: ASC
+    limit: 50
+  - type: table
+    name: "📦 C Only"
+    order:
+      - formula.Chapter
+      - file.name
+      - rank
+    filter:
+      - property: thesisPaper
+        operator: equals
+        value: C
+    sort:
+      - property: thesisChapter
+        direction: ASC
+    limit: 50
+  - type: table
+    name: "📦 N Only"
+    order:
+      - formula.Chapter
+      - file.name
+      - rank
+    filter:
+      - property: thesisPaper
+        operator: equals
+        value: N
+    sort:
+      - property: thesisChapter
+        direction: ASC
+    limit: 50

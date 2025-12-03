@@ -9,6 +9,8 @@ field:
   - 👾cog  # Cognition
   - 🎯str  # Strategy
   - 🔬mth  # Methodology
+thesisPaper: U
+thesisChapter: T
 year: 2012
 rank: 9  # Critical for measurement
 research_stream:

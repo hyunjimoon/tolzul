@@ -504,16 +504,26 @@ def main() -> None:
     print(f"Virtue: {VIRTUE} (Observation) | Bayesian Role: {BAYESIAN_ROLE}")
     print("=" * 70)
 
-    content = generate_all_discussions()
+    # Mapping P-tags to User-tags (U, C, N)
+    id_map = {"P1": "U", "P2": "C", "P3": "N"}
 
-    output_path = OUTPUT_DIR / "chap4_discussion.md"
-    output_path.write_text(content)
+    for paper_id in ["P1", "P2", "P3"]:
+        user_id = id_map[paper_id]
+        content = f"# 전라좌수군 견리사의 군령\n# Chapter 4: Discussion (結) — 어영담 👾\n\n"
+        
+        if paper_id == "P1": content += generate_p1_discussion()
+        elif paper_id == "P2": content += generate_p2_discussion()
+        elif paper_id == "P3": content += generate_p3_discussion()
+        
+        content += "\n\n---\n\n"
+        content += generate_grand_synthesis()
 
-    print(f"\n✅ Generated: {output_path}")
-    print(f"📚 Managerial Rules:")
-    for paper_id, disc in DISCUSSIONS.items():
-        print(f"   - {paper_id} {disc.emoji}: {disc.rule_name}")
-    print(f"\n👾 어영담 says: '기승전결. 이야기가 완성되었소.'")
+        output_filename = f"chap4_{user_id}_discussion.md"
+        output_path = OUTPUT_DIR / output_filename
+        output_path.write_text(content)
+        print(f"✅ Generated: {output_path}")
+
+    print(f"\n👾 어영담 says: '각 함선(U,C,N)별로 결론이 분리되었습니다.'")
     print(f"\n🎊 All four chapters complete! The 전라좌수군 has fulfilled its mission.")
 
 

@@ -1,0 +1,77 @@
+{
+    "metadata": {
+        "commander": "⚓️ 이순신 (MIT PhD)",
+        "keeper": "🐅 권준/나대용",
+        "created": "2025-12-02",
+        "total_stamps": 1,
+        "total_praises": 1
+    },
+    "stamps": [
+        {
+            "id": "STAMP-001",
+            "date": "2025-12-02",
+            "context": "Hart 피드백과 Angie 메커니즘 조화",
+            "insight": "모호한 포지셔닝은 유연성을 창출하지는 않지만 보존한다: 정밀한 약속이 부과했을 제약을 피함으로써.",
+            "importance": [
+                "Hart와 Angie 모두 만족",
+                "창출 vs 보존 구분",
+                "두 가지 유연성 구분"
+            ],
+            "praise": "기대가 열려있음이 피봇 가능하고 유연성 보존으로 이어진다는 천재적 생각",
+            "tags": [
+                "flexibility",
+                "language-action",
+                "hart",
+                "mechanism"
+            ],
+            "paper": "U",
+            "section": "theory"
+        },
+        {
+            "id": "STAMP-002",
+            "date": "2025-12-03",
+            "context": "Top 3 혁신 (Innovation)",
+            "insight": "1. 폴더 코드화 (접근성↑), 2. 색상환 매핑 (문헌정리 효율화), 3. Function-Centric 구조 (패턴 축적)",
+            "importance": [
+                "생산성 극대화",
+                "시각적 직관",
+                "전문화"
+            ],
+            "praise": "Top 3 혁신 인정",
+            "tags": [
+                "innovation",
+                "workflow",
+                "structure"
+            ],
+            "paper": "ALL",
+            "section": "meta"
+        },
+        {
+            "id": "STAMP-003",
+            "date": "2025-12-03",
+            "context": "World Class Space Optimization",
+            "insight": "Physical-Digital Mapping: 3모니터 배치를 반영한 직관적 UI 설계",
+            "importance": [
+                "Cognitive Load 감소",
+                "몰입감 증대",
+                "작업 효율"
+            ],
+            "praise": "직관성 평가항목 포함 인정",
+            "tags": [
+                "ux",
+                "layout",
+                "optimization"
+            ],
+            "paper": "ALL",
+            "section": "meta"
+        }
+    ],
+    "categories": {
+        "flexibility": 1,
+        "mechanism": 1,
+        "measurement": 0,
+        "framing": 0,
+        "innovation": 1,
+        "ux": 1
+    }
+}

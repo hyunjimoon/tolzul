@@ -1,0 +1,110 @@
+[
+    {
+        "id": "001",
+        "target": "ALL",
+        "title": "Decompose Online Grocery (LPZ)",
+        "stage": "BENCHMARK",
+        "affordance": "Analyze (6+8)",
+        "status": "OPEN",
+        "priority": "HIGH"
+    },
+    {
+        "id": "002",
+        "target": "U",
+        "title": "Analyze Nanda Paper (Content)",
+        "stage": "BENCHMARK",
+        "affordance": "Analyze (6+8)",
+        "status": "OPEN",
+        "priority": "HIGH"
+    },
+    {
+        "id": "003",
+        "target": "N",
+        "title": "Analyze Hot Paper (Knowledge Transfer)",
+        "stage": "BENCHMARK",
+        "affordance": "Analyze (6+8)",
+        "status": "OPEN",
+        "priority": "HIGH"
+    },
+    {
+        "id": "004",
+        "target": "U-I",
+        "title": "Write Intro: Gospel (Precise is Better)",
+        "stage": "DRAFT",
+        "affordance": "Write (6+8)",
+        "status": "OPEN",
+        "priority": "HIGH"
+    },
+    {
+        "id": "005",
+        "target": "U-T",
+        "title": "Model V(pp-pf) ~ 1/Vagueness",
+        "stage": "MODEL",
+        "affordance": "Build (5+9)",
+        "status": "OPEN",
+        "priority": "HIGH"
+    },
+    {
+        "id": "006",
+        "target": "U-E",
+        "title": "Regress Logit L = v + v^2 (U-Shape)",
+        "stage": "CODE",
+        "affordance": "Code (4+10)",
+        "status": "OPEN",
+        "priority": "HIGH"
+    },
+    {
+        "id": "007",
+        "target": "C-I",
+        "title": "Intro: First Mover Curse & Puzzle",
+        "stage": "DRAFT",
+        "affordance": "Write (6+8)",
+        "status": "OPEN",
+        "priority": "MEDIUM"
+    },
+    {
+        "id": "008",
+        "target": "C-T",
+        "title": "Model Endogenous Prob & Quality",
+        "stage": "MODEL",
+        "affordance": "Build (5+9)",
+        "status": "OPEN",
+        "priority": "MEDIUM"
+    },
+    {
+        "id": "009",
+        "target": "C-E",
+        "title": "Empirics: Optimistic -> Trapped -> Fail",
+        "stage": "CODE",
+        "affordance": "Code (4+10)",
+        "status": "OPEN",
+        "priority": "MEDIUM"
+    },
+    {
+        "id": "010",
+        "target": "N-I",
+        "title": "Intro: FOMO Gospel & Puzzle",
+        "stage": "DRAFT",
+        "affordance": "Write (6+8)",
+        "status": "OPEN",
+        "priority": "LOW"
+    },
+    {
+        "id": "011",
+        "target": "N-T",
+        "title": "News Vendor: Commitment vs Flexibility",
+        "stage": "MODEL",
+        "affordance": "Build (5+9)",
+        "status": "OPEN",
+        "priority": "LOW"
+    },
+    {
+        "id": "012",
+        "target": "N-E",
+        "title": "Empirics: LIDAR vs Vision Switching",
+        "stage": "CODE",
+        "affordance": "Code (4+10)",
+        "status": "OPEN",
+        "priority": "LOW"
+    }
+]

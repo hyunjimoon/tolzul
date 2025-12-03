@@ -1,0 +1,24 @@
+{
+    "weights": {
+        "length_short": 50,
+        "length_shallow": 20,
+        "structure_missing": 30,
+        "vagueness": 20,
+        "citation_missing": 20,
+        "rhetoric_context": 15,
+        "rhetoric_voice": 15,
+        "rhetoric_naysayer": 10,
+        "rhetoric_sowhat": 10,
+        "surprise_null_breaking": 15,
+        "department_fit": 20
+    },
+    "toggles": {
+        "enable_length_check": true,
+        "enable_structure_check": true,
+        "enable_vagueness_check": true,
+        "enable_citation_check": true,
+        "enable_rhetoric_check": true,
+        "enable_surprise_check": true,
+        "enable_department_check": true
+    }
+}

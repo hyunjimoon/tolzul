@@ -487,7 +487,7 @@ def fig_F3b_L_given_C(df: pd.DataFrame, h4: BinaryResultsWrapper, outdir: Path) 
 
     Args:
         df: DataFrame with growth/L, z_V/z_vagueness, founder_serial
-        h4: Logit model from test_h4_growth_interaction
+        h4: Logit model from run_h4_growth_interaction
         outdir: Output directory
 
     Returns:
@@ -880,7 +880,7 @@ def create_F_series(df: pd.DataFrame, results: dict, outdir: Path) -> Dict[str, 
             - 'HEV' or 'hev': OLS from models.run_HEV(...)
             - 'HEV_interaction' or 'hev_interaction': OLS with V×F for EVF plot
             - 'HLVF' or 'hlvf': Logit from models.run_HLVF(...)
-            - 'h4': Logit from models.test_h4_growth_interaction(...)
+            - 'h4': Logit from models.run_h4_growth_interaction(...)
             - 'HSF' or 'hsf': (optional) OLS from models.run_HSF(...)
             - 'spec_df': DataFrame for spec curve
         outdir: Output directory (will create outputs/figures/)

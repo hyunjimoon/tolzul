@@ -7,6 +7,8 @@ field:
   - 👾cog  # Cognition
   - 🎯str  # Strategy
   - 🐅cba  # Causality-Based Action
+thesisPaper: U
+thesisChapter: T
 year: 1984
 rank: 10  # Foundational text
 research_stream:

@@ -9,6 +9,8 @@ field:
   - 🎯str  # Strategy
   - 🌍env  # Environment/Sustainability
   - 🐅cba  # Causality-Based Action
+thesisPaper: U
+thesisChapter: T
 year: 2015
 rank: 8
 research_stream:

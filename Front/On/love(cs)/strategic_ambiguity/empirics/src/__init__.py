@@ -16,7 +16,7 @@ Modules:
 
 Usage:
     from src.features import consolidate_company_snapshots
-    from src.models import test_h1_early_funding, test_h2_main_growth
+    from src.models import run_h1_early_funding, run_h2_main_growth
     from src.vagueness_v2 import StrategicVaguenessScorerV2
 
 CLI Usage:
@@ -35,8 +35,8 @@ __author__ = 'Promise Precision Team'
 #     filter_transportation_companies,
 # )
 # from src.models import (
-#     test_h1_early_funding,
-#     test_h2_main_growth,
+#     run_h1_early_funding,
+#     run_h2_main_growth,
 # )
 # from src.vagueness_v2 import StrategicVaguenessScorerV2
 
@@ -45,7 +45,7 @@ __all__ = [
     'engineer_features',
     'filter_quantum_companies',
     'filter_transportation_companies',
-    'test_h1_early_funding',
-    'test_h2_main_growth',
+    'run_h1_early_funding',
+    'run_h2_main_growth',
     'StrategicVaguenessScorerV2',
 ]

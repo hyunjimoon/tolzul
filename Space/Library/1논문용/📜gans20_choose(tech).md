@@ -14,10 +14,14 @@ modified:
   - 2025-10-18T14:31:18-04:00
   - 2025-10-21T09:17:56-04:00
   - 2025-11-28
+  - 2025-12-02T03:13:20-05:00
 diagrams:
   - "[[📜 gans20_choose(tech) 2025-04-21-20]]"
 ---
-![[📜gans20_choose(tech)_poster.svg]]
+
+
+----
+[[📜gans20_choose(tech) 2025-09-11-10]]
 
 ## 🔬 Intro 해부 (Cachon-Posen Framework)
 

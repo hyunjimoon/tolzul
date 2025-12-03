@@ -467,16 +467,26 @@ def main() -> None:
     print(f"Virtue: {VIRTUE} (Structure) | Bayesian Role: {BAYESIAN_ROLE}")
     print("=" * 70)
 
-    content = generate_all_theories()
+    # Mapping P-tags to User-tags (U, C, N)
+    id_map = {"P1": "U", "P2": "C", "P3": "N"}
 
-    output_path = OUTPUT_DIR / "chap2_theory.md"
-    output_path.write_text(content)
+    for paper_id in ["P1", "P2", "P3"]:
+        user_id = id_map[paper_id]
+        content = f"# 전라좌수군 견리사의 군령\n# Chapter 2: Theory (承) — 권준 🐅\n\n"
+        
+        if paper_id == "P1": content += generate_p1_theory()
+        elif paper_id == "P2": content += generate_p2_theory()
+        elif paper_id == "P3": content += generate_p3_theory()
+        
+        content += "\n\n---\n\n"
+        content += generate_cross_theory_synthesis()
 
-    print(f"\n✅ Generated: {output_path}")
-    print(f"📚 Theoretical frameworks:")
-    for paper_id, theory in THEORIES.items():
-        print(f"   - {paper_id} {theory.emoji}: {theory.core_theory}")
-    print(f"\n🐅 권준 says: '구조가 완성되었소. 김완, 의로움을 증명하시오!'")
+        output_filename = f"chap2_{user_id}_theory.md"
+        output_path = OUTPUT_DIR / output_filename
+        output_path.write_text(content)
+        print(f"✅ Generated: {output_path}")
+
+    print(f"\n🐅 권준 says: '각 함선(U,C,N)별로 구조가 분리되었습니다.'")
     print(f"\n📝 Next: 김완 🐙 (Chapter 3 - Empirics)")
 
 

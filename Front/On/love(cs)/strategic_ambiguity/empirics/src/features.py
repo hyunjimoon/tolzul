@@ -1502,7 +1502,7 @@ def preprocess_for_h2(df: pd.DataFrame, fix_founder_credibility: bool = True) ->
     out = df.copy()
     out['founding_cohort'] = create_founding_cohort(out)
 
-    for col in ['vagueness', 'employees_log']:
+    for col in ['vagueness', 'employees_log', 'firm_age']:
         if col in out.columns and out[col].std() not in [0, np.nan]:
             out[f'z_{col}'] = (out[col] - out[col].mean()) / out[col].std()
         else:
@@ -1536,3 +1536,320 @@ def preprocess_for_h2(df: pd.DataFrame, fix_founder_credibility: bool = True) ->
         assert 'founder_serial' in out.columns, "INTERNAL ERROR: founder_serial was dropped"
 
     return out
+
+def filter_hardware_companies(df: pd.DataFrame) -> pd.DataFrame:
+    """Filter for hardware companies based on Nanda (2024).
+    
+    Hardware companies are defined as:
+    1. Manufacturing computer hardware
+    2. Manufacturing and distributing communication equipment OR providing communication services
+    3. Manufacturing and designing semiconductors and circuits
+    4. Providing energy-related products
+    
+    Args:
+        df: DataFrame with company data
+        
+    Returns:
+        DataFrame with only hardware companies
+        
+    Reference:
+        Nanda (2024) - Hardware classification
+        
+    Example:
+        >>> df_all = consolidate_company_snapshots('data/raw')
+        >>> df_hw = filter_hardware_companies(df_all)
+        >>> print(f"Hardware companies: {len(df_hw):,}")
+    """
+    hardware_keywords = [
+        # Computer hardware
+        'computer hardware', 'hardware manufacturer', 'hardware design',
+        'pc manufacturer', 'workstation', 'server hardware',
+        
+        # Communication equipment/services
+        'communication equipment', 'telecom equipment', 'network equipment',
+        'communication services', 'telecom services', 'wireless equipment',
+        'router', 'switch', 'modem', '5g equipment', 'base station',
+        
+        # Semiconductors and circuits
+        'semiconductor', 'chip design', 'chip manufacturer', 'integrated circuit',
+        'asic', 'fpga', 'microprocessor', 'gpu manufacturer', 'cpu design',
+        'wafer fabrication', 'fab', 'foundry',
+        
+        # Energy products
+        'energy storage', 'battery system', 'solar panel', 'solar hardware',
+        'wind turbine', 'power converter', 'inverter', 'energy hardware',
+        'charging station hardware', 'smart grid hardware'
+    ]
+    
+    # Create mask for hardware companies
+    mask = pd.Series(False, index=df.index)
+    
+    # Check Description column
+    desc_col = 'Description' if 'Description' in df.columns else 'description' if 'description' in df.columns else None
+    if desc_col:
+        desc_mask = df[desc_col].fillna('').str.lower().str.contains(
+            '|'.join(hardware_keywords), case=False, regex=True, na=False
+        )
+        mask |= desc_mask
+        logger.info(f"  Found {desc_mask.sum():,} companies via {desc_col}")
+    
+    # Check Keywords column
+    kw_col = 'Keywords' if 'Keywords' in df.columns else 'keywords' if 'keywords' in df.columns else None
+    if kw_col:
+        kw_mask = df[kw_col].fillna('').str.lower().str.contains(
+            '|'.join(hardware_keywords), case=False, regex=True, na=False
+        )
+        mask |= kw_mask
+        logger.info(f"  Found {kw_mask.sum():,} companies via {kw_col}")
+    
+    # Check Promise column
+    prom_col = 'Promise' if 'Promise' in df.columns else 'promise' if 'promise' in df.columns else None
+    if prom_col:
+        prom_mask = df[prom_col].fillna('').str.lower().str.contains(
+            '|'.join(hardware_keywords), case=False, regex=True, na=False
+        )
+        mask |= prom_mask
+        logger.info(f"  Found {prom_mask.sum():,} companies via {prom_col}")
+    
+    df_hardware = df[mask].copy()
+    logger.info(f"\n  ✓ Total hardware companies identified: {len(df_hardware):,} ({len(df_hardware)/len(df)*100:.2f}%)")
+    
+    return df_hardware
+
+
+def filter_software_companies(df: pd.DataFrame) -> pd.DataFrame:
+    """Filter for software companies based on Nanda (2024).
+    
+    Software companies are defined as:
+    Design and develop software for both business and consumers.
+    
+    Args:
+        df: DataFrame with company data
+        
+    Returns:
+        DataFrame with only software companies
+        
+    Reference:
+        Nanda (2024) - Software classification
+        
+    Example:
+        >>> df_all = consolidate_company_snapshots('data/raw')
+        >>> df_sw = filter_software_companies(df_all)
+        >>> print(f"Software companies: {len(df_sw):,}")
+    """
+    software_keywords = [
+        # General software
+        'software', 'software development', 'software design', 'software platform',
+        'saas', 'software as a service', 'paas', 'platform as a service',
+        'application', 'mobile app', 'web app', 'desktop application',
+        'enterprise software', 'business software', 'consumer software',
+        
+        # Development
+        'developer tools', 'development platform', 'api platform', 'sdk',
+        'low-code', 'no-code', 'middleware',
+        
+        # Cloud/Infrastructure software
+        'cloud software', 'cloud platform', 'cloud management',
+        'devops', 'infrastructure software', 'container', 'kubernetes',
+        
+        # Specific software types
+        'crm software', 'erp software', 'analytics software', 'data platform',
+        'collaboration software', 'productivity software', 'workflow software',
+        'automation software', 'ai software', 'ml platform'
+    ]
+    
+    # Create mask for software companies
+    mask = pd.Series(False, index=df.index)
+    
+    # Check Description column
+    desc_col = 'Description' if 'Description' in df.columns else 'description' if 'description' in df.columns else None
+    if desc_col:
+        desc_mask = df[desc_col].fillna('').str.lower().str.contains(
+            '|'.join(software_keywords), case=False, regex=True, na=False
+        )
+        mask |= desc_mask
+        logger.info(f"  Found {desc_mask.sum():,} companies via {desc_col}")
+    
+    # Check Keywords column
+    kw_col = 'Keywords' if 'Keywords' in df.columns else 'keywords' if 'keywords' in df.columns else None
+    if kw_col:
+        kw_mask = df[kw_col].fillna('').str.lower().str.contains(
+            '|'.join(software_keywords), case=False, regex=True, na=False
+        )
+        mask |= kw_mask
+        logger.info(f"  Found {kw_mask.sum():,} companies via {kw_col}")
+    
+    # Check Promise column
+    prom_col = 'Promise' if 'Promise' in df.columns else 'promise' if 'promise' in df.columns else None
+    if prom_col:
+        prom_mask = df[prom_col].fillna('').str.lower().str.contains(
+            '|'.join(software_keywords), case=False, regex=True, na=False
+        )
+        mask |= prom_mask
+        logger.info(f"  Found {prom_mask.sum():,} companies via {prom_col}")
+    
+    df_software = df[mask].copy()
+    logger.info(f"\n  ✓ Total software companies identified: {len(df_software):,} ({len(df_software)/len(df)*100:.2f}%)")
+    
+    return df_software
+
+
+def filter_medtech_companies(df: pd.DataFrame) -> pd.DataFrame:
+    """Filter for medical technology companies based on Nanda (2024).
+    
+    MedTech companies are defined as:
+    Manufacturing healthcare devices and supplies for consumers and other healthcare organizations.
+    
+    Args:
+        df: DataFrame with company data
+        
+    Returns:
+        DataFrame with only MedTech companies
+        
+    Reference:
+        Nanda (2024) - MedTech classification
+        
+    Example:
+        >>> df_all = consolidate_company_snapshots('data/raw')
+        >>> df_medtech = filter_medtech_companies(df_all)
+        >>> print(f"MedTech companies: {len(df_medtech):,}")
+    """
+    medtech_keywords = [
+        # Healthcare devices
+        'healthcare device', 'medical device', 'health device',
+        'diagnostic device', 'monitoring device', 'wearable health',
+        'implant', 'prosthetic', 'surgical device', 'surgical equipment',
+        
+        # Specific device types
+        'pacemaker', 'defibrillator', 'insulin pump', 'glucose monitor',
+        'imaging device', 'ultrasound', 'mri', 'ct scanner', 'x-ray',
+        'ventilator', 'infusion pump', 'catheter',
+        
+        # Healthcare supplies
+        'healthcare suppl', 'medical suppl', 'health suppl',
+        'surgical suppl', 'clinical suppl', 'hospital suppl',
+        
+        # Diagnostics
+        'diagnostic equipment', 'lab equipment', 'point-of-care',
+        'molecular diagnostic', 'genetic testing device',
+        
+        # Digital health hardware
+        'remote patient monitoring', 'telehealth device', 'connected health device'
+    ]
+    
+    # Create mask for medtech companies
+    mask = pd.Series(False, index=df.index)
+    
+    # Check Description column
+    desc_col = 'Description' if 'Description' in df.columns else 'description' if 'description' in df.columns else None
+    if desc_col:
+        desc_mask = df[desc_col].fillna('').str.lower().str.contains(
+            '|'.join(medtech_keywords), case=False, regex=True, na=False
+        )
+        mask |= desc_mask
+        logger.info(f"  Found {desc_mask.sum():,} companies via {desc_col}")
+    
+    # Check Keywords column
+    kw_col = 'Keywords' if 'Keywords' in df.columns else 'keywords' if 'keywords' in df.columns else None
+    if kw_col:
+        kw_mask = df[kw_col].fillna('').str.lower().str.contains(
+            '|'.join(medtech_keywords), case=False, regex=True, na=False
+        )
+        mask |= kw_mask
+        logger.info(f"  Found {kw_mask.sum():,} companies via {kw_col}")
+    
+    # Check Promise column
+    prom_col = 'Promise' if 'Promise' in df.columns else 'promise' if 'promise' in df.columns else None
+    if prom_col:
+        prom_mask = df[prom_col].fillna('').str.lower().str.contains(
+            '|'.join(medtech_keywords), case=False, regex=True, na=False
+        )
+        mask |= prom_mask
+        logger.info(f"  Found {prom_mask.sum():,} companies via {prom_col}")
+    
+    df_medtech = df[mask].copy()
+    logger.info(f"\n  ✓ Total MedTech companies identified: {len(df_medtech):,} ({len(df_medtech)/len(df)*100:.2f}%)")
+    
+    return df_medtech
+
+
+def filter_pharma_companies(df: pd.DataFrame) -> pd.DataFrame:
+    """Filter for pharmaceutical/biotech companies based on Nanda (2024).
+    
+    Pharma companies are defined as:
+    Engaged in drug discovery and delivery of pharmaceuticals or biotechnology.
+    
+    Args:
+        df: DataFrame with company data
+        
+    Returns:
+        DataFrame with only pharmaceutical/biotech companies
+        
+    Reference:
+        Nanda (2024) - Pharma classification
+        
+    Example:
+        >>> df_all = consolidate_company_snapshots('data/raw')
+        >>> df_pharma = filter_pharma_companies(df_all)
+        >>> print(f"Pharma companies: {len(df_pharma):,}")
+    """
+    pharma_keywords = [
+        # Drug discovery
+        'drug discovery', 'drug development', 'drug design',
+        'small molecule', 'therapeutic', 'therapy development',
+        'clinical trial', 'preclinical', 'lead optimization',
+        
+        # Pharmaceuticals
+        'pharmaceutical', 'pharma', 'drug delivery', 'drug manufacturing',
+        'generic drug', 'specialty pharma', 'orphan drug',
+        
+        # Biotechnology
+        'biotech', 'biotechnology', 'biopharmaceutical', 'biopharma',
+        'biologics', 'antibody', 'monoclonal antibody',
+        'gene therapy', 'cell therapy', 'immunotherapy',
+        'protein therapeutic', 'enzyme therapy',
+        
+        # Specific technologies
+        'crispr', 'gene editing', 'rna therapy', 'mrna', 'sirna',
+        'recombinant protein', 'synthetic biology drug',
+        
+        # Disease areas
+        'oncology drug', 'cancer therapy', 'rare disease drug',
+        'antiviral', 'antibiotic', 'vaccine development'
+    ]
+    
+    # Create mask for pharma companies
+    mask = pd.Series(False, index=df.index)
+    
+    # Check Description column
+    desc_col = 'Description' if 'Description' in df.columns else 'description' if 'description' in df.columns else None
+    if desc_col:
+        desc_mask = df[desc_col].fillna('').str.lower().str.contains(
+            '|'.join(pharma_keywords), case=False, regex=True, na=False
+        )
+        mask |= desc_mask
+        logger.info(f"  Found {desc_mask.sum():,} companies via {desc_col}")
+    
+    # Check Keywords column
+    kw_col = 'Keywords' if 'Keywords' in df.columns else 'keywords' if 'keywords' in df.columns else None
+    if kw_col:
+        kw_mask = df[kw_col].fillna('').str.lower().str.contains(
+            '|'.join(pharma_keywords), case=False, regex=True, na=False
+        )
+        mask |= kw_mask
+        logger.info(f"  Found {kw_mask.sum():,} companies via {kw_col}")
+    
+    # Check Promise column
+    prom_col = 'Promise' if 'Promise' in df.columns else 'promise' if 'promise' in df.columns else None
+    if prom_col:
+        prom_mask = df[prom_col].fillna('').str.lower().str.contains(
+            '|'.join(pharma_keywords), case=False, regex=True, na=False
+        )
+        mask |= prom_mask
+        logger.info(f"  Found {prom_mask.sum():,} companies via {prom_col}")
+    
+    df_pharma = df[mask].copy()
+    logger.info(f"\n  ✓ Total pharma/biotech companies identified: {len(df_pharma):,} ({len(df_pharma)/len(df)*100:.2f}%)")
+    
+    return df_pharma
+

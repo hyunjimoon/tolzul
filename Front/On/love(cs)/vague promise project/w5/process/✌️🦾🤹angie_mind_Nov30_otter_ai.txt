@@ -1,0 +1,73 @@
+So we have three products, U, C, N, and each of them has message, or let's call it top problem or the puzzle, and what is our lens and what is our solution? And I
+
+I don't know whether, like, there's one way to success, succeed. Um, is a good enough null to break, but like, assuming some optimality itself is like optimal right under the situation, there's the modeling Efforts prescribed some optimal way, like hypothesis driven or I
+
+lean startup or like some playbooks i
+
+However, if there's one playbook that works, why is start off failure rate so high? I
+
+we explain that there are, in fact, multiple ways to success, and the success depends on which among many ways would fit their situation the Most.
+
+And we illustrate this
+
+using
+
+the choice on the market positioning, external positioning, and explain that long term success Is
+
+I like, perhaps we can follow the major lean startup which emphasizes flexibility and effectuation and like the vague founder selling, which means Once you secure the series A it is much better to like that's the major thoughts, right? It's better to have very more option and still create your more rooms. I
+
+However, our result shows that the vagueness, long term success by vagueness is U shape, and we explain this as the endogenous choice, meaning that those who already had a technological breakthrough went ahead with very specific promise and Then succeeded, whereas those who were able to sell visions, even though they did not have a technical breakthrough, both were able to survive. So we broke the null that there are multiple ways to success, and it's not how well you follow one playbook, but what playbook you choose that fits you well. So buy or make decision is your core capability. If we frame following certain playbook as buying
+
+second paper is on the commitment trap and I
+
+the null Here is those with high technical breakthrough
+
+and achieved early success
+
+would have higher long term success, and we show this as wrong can be wrong because, in the U shape, success probability, the fourth quantile, which is a vaguer success, achieved higher success probability compared to A very specific one. And argue that early success can harm long term success and explain the mechanism.
+
+And the mechanism is early success with specific technological breakthrough, attract those like minded founders and investors,
+
+and it increases the success probability of this chosen path and the sigma around it, so that the probability of pivoting like first of all, it is Very difficult to shift their belief, given the Evidence is Evidence,
+
+which can also be explained by the core competence becoming a core rigidity. This cost in a mature company, but have not been in
+
+startup context, except for 123, and the options view of this is we are sacrificing the future option for the current use, it closes certain future options. So here the empirical part is used the U shape to a shape to motivate or to create the puzzle, right? If early success and technical breakthrough is a good thing, why are there cases such as light through or biobot that had anchored on them technology and but failed to commercialize. And also the empirical results are phenomena on higher success rate for those who are vaguer.
+
+Here is, yeah, I
+
+anyway, given that the like specific promises are,
+
+yeah, I guess like, we can just say it as circumstantial proof that the vaguer ones who were able to sell visions better, success better i
+
+So here the puzzle is, if technological breakthrough is So good, why are there some failure cases and some statistics show that being specific about their vision is not good, and we explained this Using real option theory and the mechanism on Bayesian concentrates. Concentration and give a solution called Bayesian hygiene, which is include doubters in your board or organization, which is which aligns with this agreement predicts startup success by Luca guys. The third paper now is on the news vendor, and here we are, like the puzzle or the words the gospel of the field. I a
+
+given the past demand what is the optimal inventory for tomorrow? And he here we are twisting that as given the predicted cost, what is the optimal given the cost of tomorrow, on commitment versus flexibility? What is the option I should have today. So this shows that our action does not only affect it by the past, but also our projections.
+
+And using this framework makes explain two salient phenomena. One is fear of missing out, and the other is overconfident CEO or manager, committing into one option, the former, the FOMO can be optimal when the flexibility cost is lowered. By the industry trend,
+
+or like VC enhances the absorptive capability.
+
+So even though the startup does not, or this is a founder, right? So as a founder, or I think, can be applied to investor, but my point is, um, like, for instance, um, because, like Hyundai have moved To move from
+
+LIDAR to the vision only path. I
+
+this may have caused other companies.
+
+This influence other companies, flexibility, cost meaning that even though the vision only like, the probability of vision only will increase because Hyundai participated in it, and so having an option and that would not hurt them, so they increase the option and get interested in that as well.
+
+So when a big player moves into certain like, choose between one technological breakthrough, like the dominance C is influenced by that, and that's can be explained by the reaction of other companies or entrants, reaction of other entrance so my contribution here would be previous literature is mostly about the big companies, existing ones, but mine is more about like, how startups react to the technical trend, or the choice of Hyundais like so Perhaps we can think it as before and after Hyundai switch to from the vision LIDAR only to Vision only, how the value proposition
+
+of LIDAR versus the
+
+vision only the ratio changed.
+
+So that's one, and the other is overconfident founder, having a higher expectation, higher expectation, of their technological success, or that is that was explained in the commitment trap so They kill every other options and only survive this one.
+
+So to summarize, this is using the news vendor, but the information flow is the opposite, in the sense that the future influences the present, option choices rather than the past. Demand pattern influences the current inventory i Today's inventory, and it is perishable in the sense that
+
+the technology evolves and the
+
+Yeah, I think it would be interesting to discuss more about the perishability of these options, right? So it has the termination date, expiration date of the options so.
+
+Transcribed by https://otter.ai

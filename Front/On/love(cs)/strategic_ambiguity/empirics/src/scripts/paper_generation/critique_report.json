@@ -1,0 +1,183 @@
+{
+  "chap1_introduction.md": {
+    "file": "chap1_introduction.md",
+    "words": 1186,
+    "risk_score": 30,
+    "risk_level": 1,
+    "critiques": [
+      "Missing citations",
+      "Missing 'Naysayer' (Counter-arg)"
+    ],
+    "citation_count": 0
+  },
+  "chap4_U_discussion.md": {
+    "file": "chap4_U_discussion.md",
+    "words": 830,
+    "risk_score": 20,
+    "risk_level": 1,
+    "critiques": [
+      "Missing citations"
+    ],
+    "citation_count": 0
+  },
+  "chap1_N_introduction.md": {
+    "file": "chap1_N_introduction.md",
+    "words": 492,
+    "risk_score": 85,
+    "risk_level": 3,
+    "critiques": [
+      "Lacks depth",
+      "Missing citations",
+      "Missing 'They Say' (Context)",
+      "Missing 'I Say' (Voice)",
+      "Missing 'Surprise' (Null-Breaking)"
+    ],
+    "citation_count": 0
+  },
+  "chap4_C_discussion.md": {
+    "file": "chap4_C_discussion.md",
+    "words": 780,
+    "risk_score": 40,
+    "risk_level": 1,
+    "critiques": [
+      "Vague language (7/1k)",
+      "Missing citations"
+    ],
+    "citation_count": 0
+  },
+  "chap3_N_empirics.md": {
+    "file": "chap3_N_empirics.md",
+    "words": 448,
+    "risk_score": 40,
+    "risk_level": 1,
+    "critiques": [
+      "Lacks depth",
+      "Missing citations"
+    ],
+    "citation_count": 0
+  },
+  "chap2_theory.md": {
+    "file": "chap2_theory.md",
+    "words": 1240,
+    "risk_score": 30,
+    "risk_level": 1,
+    "critiques": [
+      "Missing citations",
+      "Missing 'Naysayer' (Counter-arg)"
+    ],
+    "citation_count": 0
+  },
+  "chap4_discussion.md": {
+    "file": "chap4_discussion.md",
+    "words": 1579,
+    "risk_score": 20,
+    "risk_level": 1,
+    "critiques": [
+      "Missing citations"
+    ],
+    "citation_count": 0
+  },
+  "chap1_U_introduction.md": {
+    "file": "chap1_U_introduction.md",
+    "words": 555,
+    "risk_score": 30,
+    "risk_level": 1,
+    "critiques": [
+      "Missing citations",
+      "Missing 'Naysayer' (Counter-arg)"
+    ],
+    "citation_count": 0
+  },
+  "chap4_N_discussion.md": {
+    "file": "chap4_N_discussion.md",
+    "words": 875,
+    "risk_score": 20,
+    "risk_level": 1,
+    "critiques": [
+      "Missing citations"
+    ],
+    "citation_count": 0
+  },
+  "chap2_U_theory.md": {
+    "file": "chap2_U_theory.md",
+    "words": 562,
+    "risk_score": 45,
+    "risk_level": 1,
+    "critiques": [
+      "Missing citations",
+      "Missing 'Naysayer' (Counter-arg)",
+      "Missing 'Surprise' (Null-Breaking)"
+    ],
+    "citation_count": 0
+  },
+  "chap3_empirics.md": {
+    "file": "chap3_empirics.md",
+    "words": 1123,
+    "risk_score": 20,
+    "risk_level": 1,
+    "critiques": [
+      "Missing citations"
+    ],
+    "citation_count": 0
+  },
+  "chap2_C_theory.md": {
+    "file": "chap2_C_theory.md",
+    "words": 474,
+    "risk_score": 40,
+    "risk_level": 1,
+    "critiques": [
+      "Lacks depth",
+      "Missing citations"
+    ],
+    "citation_count": 0
+  },
+  "chap3_U_empirics.md": {
+    "file": "chap3_U_empirics.md",
+    "words": 241,
+    "risk_score": 40,
+    "risk_level": 1,
+    "critiques": [
+      "Lacks depth",
+      "Missing 'Entrepreneurship' keywords (Kim U)"
+    ],
+    "citation_count": 0
+  },
+  "chap3_C_empirics.md": {
+    "file": "chap3_C_empirics.md",
+    "words": 402,
+    "risk_score": 60,
+    "risk_level": 2,
+    "critiques": [
+      "Lacks depth",
+      "Vague language (7/1k)",
+      "Missing citations"
+    ],
+    "citation_count": 0
+  },
+  "chap2_N_theory.md": {
+    "file": "chap2_N_theory.md",
+    "words": 502,
+    "risk_score": 75,
+    "risk_level": 2,
+    "critiques": [
+      "Missing citations",
+      "Missing 'They Say' (Context)",
+      "Missing 'I Say' (Voice)",
+      "Missing 'Naysayer' (Counter-arg)",
+      "Missing 'Surprise' (Null-Breaking)"
+    ],
+    "citation_count": 0
+  },
+  "chap1_C_introduction.md": {
+    "file": "chap1_C_introduction.md",
+    "words": 542,
+    "risk_score": 45,
+    "risk_level": 1,
+    "critiques": [
+      "Missing citations",
+      "Missing 'Naysayer' (Counter-arg)",
+      "Missing 'Surprise' (Null-Breaking)"
+    ],
+    "citation_count": 0
+  }
+}

@@ -404,14 +404,29 @@ def main() -> None:
     print(f"Virtue: {VIRTUE} (Speed) | Bayesian Role: {BAYESIAN_ROLE}")
     print("=" * 70)
 
-    content = generate_all_intros()
+    h1_results = load_h1_results()
+    h2_results = load_h2_results()
 
-    output_path = OUTPUT_DIR / "chap1_introduction.md"
-    output_path.write_text(content)
+    # Mapping P-tags to User-tags (U, C, N)
+    # P1 -> U, P2 -> C, P3 -> N
+    id_map = {"P1": "U", "P2": "C", "P3": "N"}
 
-    print(f"\n✅ Generated: {output_path}")
-    print(f"📊 Papers included: P1 ✌️, P2 🦾, P3 🤹")
-    print(f"\n🐢 정운 says: '거친 초안입니다. 권준, 구조를 잡아주십시오!'")
+    for paper_id in ["P1", "P2", "P3"]:
+        user_id = id_map[paper_id]
+        content = f"# 전라좌수군 견리사의 군령\n# Chapter 1: Introduction (起) — 정운 🐢\n\n"
+        content += generate_paper_intro(paper_id, h1_results, h2_results)
+        
+        # Append synthesis to all (or maybe just keep it separate? For now append to all for context)
+        # Actually, let's append the cross-synthesis to all of them so they all have the "Big Picture"
+        content += "\n\n---\n\n"
+        content += generate_cross_synthesis(h1_results, h2_results)
+
+        output_filename = f"chap1_{user_id}_introduction.md"
+        output_path = OUTPUT_DIR / output_filename
+        output_path.write_text(content)
+        print(f"✅ Generated: {output_path}")
+
+    print(f"\n🐢 정운 says: '각 함선(U,C,N)별로 초안이 분리되었습니다.'")
     print(f"\n📝 Next: 권준 🐅 (Chapter 2 - Theory)")
 
 

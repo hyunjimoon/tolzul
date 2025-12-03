@@ -1,7 +1,0 @@
-section,file,draft,coefficients,tables,figures,review,final,notes
-03,01_Framework,✓,N/A,N/A,✓ Fig1,"",""," Fig1_LV_concept.png 삽입완료"
-03,03_Hypotheses,✓,N/A,N/A,✓ Fig1_ref,"",""," Fig1 재참조 완료"
-05,01_EarlyPenalty,✓,PLACEHOLDER,pending_T1,✓ Fig2,"",""," Fig2_EVF 삽입, β_EV 수치 대기"
-05,02_LaterBenefit,✓,PLACEHOLDER,pending_T2,✓ Fig3+4,"",""," Fig3_LVF + Fig4_STV 삽입, 예측확률 계산 필요"
-05,03_VxF_Interaction,✓,PLACEHOLDER,N/A,✓ Fig3,"",""," Fig3_LVF 재참조 완료"
-05,04_Mechanisms,✓,N/A,pending_Mechanism,Fig4_ref,"",""," Fig4 간접참조, 매개분석 테이블 대기"

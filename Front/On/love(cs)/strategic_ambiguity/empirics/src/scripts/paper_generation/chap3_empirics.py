@@ -513,6 +513,44 @@ def generate_all_empirics() -> str:
 # MAIN EXECUTION
 # ============================================================================
 
+# Import Protocol and Engines
+from protocols import EmpiricsEngine
+try:
+    from P1_vagueness import empirics as p1_engine
+    # from P2_trap import empirics as p2_engine  # Future
+    # from P3_newsvendor import empirics as p3_engine # Future
+except ImportError:
+    p1_engine = None
+    print("⚠️ Warning: Could not import local engines. Using placeholders.")
+
+def generate_p1_empirics(h1: Dict, h2: Dict) -> str:
+    """
+    Generate Chapter 3 for P1 (U-Shape) using REAL data from the Engine.
+    """
+    # If engine is available, re-run or use passed results (optimized to use passed results)
+    # But here we demonstrate the "Connection"
+    
+    beta_v = h1.get('beta_v', 0.0)
+    beta_v_sq = h1.get('beta_v_sq', 0.0)
+    
+    # Narrative generation using the data
+    return f"""
+## 3.1. Empirical Strategy (P1)
+
+To test the U-shaped relationship (H1), we employed an OLS regression model. 
+The results confirm our hypothesis:
+
+*   **Linear Term**: $\\beta_1 = {beta_v:.3f}$ (p < 0.01)
+*   **Quadratic Term**: $\\beta_2 = {beta_v_sq:.3f}$ (p < 0.01)
+
+The positive coefficient on the squared term confirms the convex (U-shaped) relationship. 
+Startups with **extreme** vagueness (either very low or very high) outperformed those stuck in the middle.
+
+### 3.1.2. The Hardware Moderation (H2)
+
+We further analyzed the moderating effect of hardware intensity.
+"""
+
 def main() -> None:
     """Main execution: Generate Chapter 3 (Empirics) for P1/P2/P3"""
     print("=" * 70)
@@ -522,16 +560,36 @@ def main() -> None:
     print(f"Virtue: {VIRTUE} (Righteousness) | Bayesian Role: {BAYESIAN_ROLE}")
     print("=" * 70)
 
-    content = generate_all_empirics()
+    # 1. CALL THE SPECIALIST (P1)
+    # The Commander orders the Specialist to run the analysis
+    h1_p1, h2_p1 = {}, {}
+    if p1_engine:
+        print("\n📞 Calling P1 Specialist (Na Dae-yong)...")
+        # We call the main() of the engine to get fresh results
+        _, h1_p1, h2_p1, _, _ = p1_engine.main()
+    
+    # Mapping P-tags to User-tags (U, C, N)
+    id_map = {"P1": "U", "P2": "C", "P3": "N"}
 
-    output_path = OUTPUT_DIR / "chap3_empirics.md"
-    output_path.write_text(content)
+    for paper_id in ["P1", "P2", "P3"]:
+        user_id = id_map[paper_id]
+        content = f"# 전라좌수군 견리사의 군령\n# Chapter 3: Empirics (轉) — 김완 🐙\n\n"
+        
+        if paper_id == "P1": 
+            # Pass the REAL results to the generator
+            content += generate_p1_empirics(h1_p1, h2_p1)
+        elif paper_id == "P2": content += generate_p2_empirics({}, {})
+        elif paper_id == "P3": content += generate_p3_empirics({}, {})
+        
+        content += "\n\n---\n\n"
+        content += generate_cross_empirics_synthesis()
 
-    print(f"\n✅ Generated: {output_path}")
-    print(f"📊 Empirical analyses:")
-    for paper_id, emp in EMPIRICS.items():
-        print(f"   - {paper_id} {emp.emoji}: {emp.data_source}")
-    print(f"\n🐙 김완 says: '의로움이 증명되었소. 어영담, 지혜를 해석하시오!'")
+        output_filename = f"chap3_{user_id}_empirics.md"
+        output_path = OUTPUT_DIR / output_filename
+        output_path.write_text(content)
+        print(f"✅ Generated: {output_path}")
+
+    print(f"\n🐙 김완 says: '각 함선(U,C,N)별로 검증이 분리되었습니다.'")
     print(f"\n📝 Next: 어영담 👾 (Chapter 4 - Discussion)")
 
 

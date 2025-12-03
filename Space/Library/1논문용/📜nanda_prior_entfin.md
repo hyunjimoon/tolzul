@@ -4,6 +4,8 @@ collection:
 author_ids:
 field:
   - 🐢inv
+thesisPaper: U
+thesisChapter: T
 created: 2025-09-11
 modified:
   - 2025-11-24T07:32:02-05:00

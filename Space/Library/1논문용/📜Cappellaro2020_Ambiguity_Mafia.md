@@ -9,6 +9,8 @@ field:
   - 🎯str  # Strategy
   - 👾cog  # Cognition
   - 🌑dar  # Dark side
+thesisPaper: U
+thesisChapter: T
 year: 2020
 rank: 7
 research_stream:

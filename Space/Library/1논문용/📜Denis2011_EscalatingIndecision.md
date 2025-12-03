@@ -10,6 +10,8 @@ field:
   - 🐙ops  # Operations
   - 🎯str  # Strategy
   - 👾cog  # Cognition
+thesisPaper: U
+thesisChapter: T
 year: 2011
 rank: 7
 research_stream:

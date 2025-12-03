@@ -8,6 +8,8 @@ field:
   - 🎯str  # Strategy
   - 🌍env  # Field-level
   - 🐙ops  # Operations
+thesisPaper: U
+thesisChapter: T
 year: 2017
 rank: 8
 research_stream:

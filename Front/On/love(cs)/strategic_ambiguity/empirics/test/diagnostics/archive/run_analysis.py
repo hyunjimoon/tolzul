@@ -27,8 +27,8 @@ from modules.features import (
     create_survival_seriesb_progression, preprocess_for_h2
 )
 from modules.models import (
-    test_h1_early_funding, test_h2_main_growth,
-    test_h3_early_funding_interaction, test_h4_growth_interaction
+    run_h1_early_funding, run_h2_main_growth,
+    run_h3_early_funding_interaction, run_h4_growth_interaction
 )
 from modules.plots import (
     fig_reversal_from_models, fig_founder_interactions,
@@ -203,7 +203,7 @@ def main():
 
     # --- H1 (OLS) on companies with early_funding_musd ---
     h1_df = analysis[analysis['early_funding_musd'].notna()].copy()
-    h1_res = test_h1_early_funding(h1_df)
+    h1_res = run_h1_early_funding(h1_df)
     pd.DataFrame({
         'variable': h1_res.params.index,
         'coefficient': h1_res.params.values,
@@ -216,7 +216,7 @@ def main():
     print(f"✓ Saved: {outdir / 'h1_coefficients.csv'}")
 
     # --- H2 main (Logit; NO early_funding) ---
-    h2_res = test_h2_main_growth(analysis)
+    h2_res = run_h2_main_growth(analysis)
     pd.DataFrame({
         'variable': h2_res.params.index,
         'coefficient': h2_res.params.values,
@@ -232,7 +232,7 @@ def main():
     print("\n" + "="*80)
     print("H3: EARLY FUNDING × FOUNDER CREDIBILITY")
     print("="*80)
-    h3_res = test_h3_early_funding_interaction(analysis)
+    h3_res = run_h3_early_funding_interaction(analysis)
     pd.DataFrame({
         'variable': h3_res.params.index,
         'coefficient': h3_res.params.values,
@@ -248,7 +248,7 @@ def main():
     print("\n" + "="*80)
     print("H4: GROWTH × FOUNDER CREDIBILITY")
     print("="*80)
-    h4_res = test_h4_growth_interaction(analysis)
+    h4_res = run_h4_growth_interaction(analysis)
     pd.DataFrame({
         'variable': h4_res.params.index,
         'coefficient': h4_res.params.values,

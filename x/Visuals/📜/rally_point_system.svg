@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 200">
+  <!-- Background -->
+  <rect width="700" height="200" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="350" y="25" text-anchor="middle" font-size="14" font-weight="bold">Rally Point System (Tyco Quality Gates)</text>
+  
+  <!-- RP0 -->
+  <rect x="20" y="50" width="90" height="70" rx="6" fill="#afeeee" stroke="#20b2aa" stroke-width="2"/>
+  <text x="65" y="75" text-anchor="middle" font-size="12" font-weight="bold">RP0</text>
+  <text x="65" y="92" text-anchor="middle" font-size="10">Concept</text>
+  <text x="65" y="110" text-anchor="middle" font-size="16">🐢</text>
+  
+  <!-- Arrow -->
+  <text x="125" y="90" text-anchor="middle" font-size="20" fill="#333">→</text>
+  
+  <!-- RP1 -->
+  <rect x="135" y="50" width="90" height="70" rx="6" fill="#ffe4b5" stroke="#daa520" stroke-width="2"/>
+  <text x="180" y="75" text-anchor="middle" font-size="12" font-weight="bold">RP1</text>
+  <text x="180" y="92" text-anchor="middle" font-size="10">Design</text>
+  <text x="180" y="110" text-anchor="middle" font-size="12">🐅권준</text>
+  
+  <!-- Arrow -->
+  <text x="240" y="90" text-anchor="middle" font-size="20" fill="#333">→</text>
+  
+  <!-- RP2 -->
+  <rect x="250" y="50" width="90" height="70" rx="6" fill="#ffe4b5" stroke="#daa520" stroke-width="2"/>
+  <text x="295" y="75" text-anchor="middle" font-size="12" font-weight="bold">RP2</text>
+  <text x="295" y="92" text-anchor="middle" font-size="10">Build</text>
+  <text x="295" y="110" text-anchor="middle" font-size="12">🐅나대용</text>
+  
+  <!-- Arrow -->
+  <text x="355" y="90" text-anchor="middle" font-size="20" fill="#333">→</text>
+  
+  <!-- RP3 (Highlighted) -->
+  <rect x="365" y="45" width="90" height="80" rx="6" fill="#ffb6c1" stroke="#dc143c" stroke-width="4"/>
+  <text x="410" y="72" text-anchor="middle" font-size="12" font-weight="bold">RP3</text>
+  <text x="410" y="90" text-anchor="middle" font-size="10">Verify</text>
+  <text x="410" y="108" text-anchor="middle" font-size="12">🐙김완</text>
+  <text x="410" y="120" text-anchor="middle" font-size="8" fill="#dc143c">T(y,θ)</text>
+  
+  <!-- Arrow -->
+  <text x="470" y="90" text-anchor="middle" font-size="20" fill="#333">→</text>
+  
+  <!-- RP4 -->
+  <rect x="480" y="50" width="90" height="70" rx="6" fill="#dda0dd" stroke="#8b008b" stroke-width="2"/>
+  <text x="525" y="75" text-anchor="middle" font-size="12" font-weight="bold">RP4</text>
+  <text x="525" y="92" text-anchor="middle" font-size="10">Integrate</text>
+  <text x="525" y="110" text-anchor="middle" font-size="16">👾</text>
+  
+  <!-- Arrow -->
+  <text x="585" y="90" text-anchor="middle" font-size="20" fill="#333">→</text>
+  
+  <!-- RP5 -->
+  <rect x="595" y="50" width="90" height="70" rx="6" fill="#ffd700" stroke="#b8860b" stroke-width="3"/>
+  <text x="640" y="75" text-anchor="middle" font-size="12" font-weight="bold">RP5</text>
+  <text x="640" y="92" text-anchor="middle" font-size="10">Approve</text>
+  <text x="640" y="110" text-anchor="middle" font-size="16">⚓</text>
+  
+  <!-- Legend -->
+  <text x="350" y="160" text-anchor="middle" font-size="10" fill="#666">RP3 (🐙김완): Critical Quality Gate - 2 critiques + Calibration T(y,θ) required</text>
+  <text x="350" y="180" text-anchor="middle" font-size="10" fill="#666">필사즉생 必死卽生 | 見利思義</text>
+</svg>

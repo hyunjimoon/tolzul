@@ -8,14 +8,14 @@ Usage:
     python -m src.cli load-data
     python -m src.cli engineer-features
     python -m src.cli filter-datasets
-    python -m src.cli run-models [--dataset all|quantum|transportation]
-    python -m src.cli generate-plots [--dataset all|quantum|transportation]
+    python -m src.cli run-models [--dataset all|quantum|transportation|hardware|software|medtech|pharma]
+    python -m src.cli generate-plots [--dataset all|quantum|transportation|hardware|software|medtech|pharma]
     python -m src.cli run-all
 
 Available Commands:
-    load-data          Load .dat files and create parquet cache
+    load-data          Load .dat files and create NetCDF cache
     engineer-features  Apply vagueness scorer and create features
-    filter-datasets    Create dataset variants (all, quantum, transportation)
+    filter-datasets    Create dataset variants (7 datasets based on Nanda 2024)
     run-models         Run H1/H2 statistical models
     generate-plots     Generate F-series plots (F3a interaction plot)
     run-all            Execute complete pipeline (steps 1-5)
@@ -37,10 +37,15 @@ from .features import (
     engineer_features,
     filter_quantum_companies,
     filter_transportation_companies,
+    filter_hardware_companies,
+    filter_software_companies,
+    filter_medtech_companies,
+    filter_pharma_companies,
     preprocess_for_h2
 )
-from .models import test_h1_early_funding, test_h2_main_growth
+from .models import run_h1_early_funding, run_h2_main_growth
 from .vagueness_v2 import StrategicVaguenessScorerV2
+from .data_io import load_dataframe, save_dataframe
 
 # Configure logging
 logging.basicConfig(
@@ -64,7 +69,7 @@ PALETTE = {
 # ============================================================================
 
 def cmd_load_data(args):
-    """Load raw .dat files and create parquet cache."""
+    """Load raw .dat files and create NetCDF cache."""
     logger.info("=" * 80)
     logger.info("STEP 1: LOAD DATA")
     logger.info("=" * 80)
@@ -74,9 +79,9 @@ def cmd_load_data(args):
     cache_dir = Path("data/processed")
     cache_dir.mkdir(exist_ok=True, parents=True)
 
-    cache_file = cache_dir / "consolidated_companies.parquet"
+    cache_file = cache_dir / "consolidated_companies.nc"
 
-    # Load data (uses parquet cache if available)
+    # Load data (uses cache if available)
     logger.info(f"\n📂 Loading company data from {data_dir}")
     df = consolidate_company_snapshots(str(data_dir))
 
@@ -87,11 +92,11 @@ def cmd_load_data(args):
 
     # Save cache if not exists
     if not cache_file.exists():
-        logger.info(f"\n💾 Saving parquet cache to {cache_file}")
-        df.to_parquet(cache_file, index=False)
+        logger.info(f"\n💾 Saving NetCDF cache to {cache_file}")
+        save_dataframe(df, cache_file)
         logger.info(f"   Cache saved ({cache_file.stat().st_size / 1e6:.1f} MB)")
     else:
-        logger.info(f"\n✓ Parquet cache already exists at {cache_file}")
+        logger.info(f"\n✓ NetCDF cache already exists at {cache_file}")
 
     # Summary statistics
     logger.info("\n📊 Data Summary:")
@@ -125,14 +130,14 @@ def cmd_engineer_features(args):
     cache_dir = Path("data/processed")
     cache_dir.mkdir(exist_ok=True, parents=True)
 
-    output_file = cache_dir / "features_all.parquet"
+    output_file = cache_dir / "features_all.nc"
 
     # Check if features already exist (SPEED BOOST!)
     if output_file.exists():
         logger.info(f"\n⚡ Features cache found at {output_file}")
         logger.info(f"   Loading pre-computed features (10x faster!)...")
         try:
-            df_features = pd.read_parquet(output_file)
+            df_features = load_dataframe(output_file)
             logger.info(f"   ✓ Loaded {len(df_features):,} companies with {len(df_features.columns)} features")
             logger.info(f"\n💡 TIP: To force re-computation, delete {output_file}")
 
@@ -190,25 +195,21 @@ def cmd_engineer_features(args):
         logger.info(f"   Max:  {v_stats['max']:.4f}")
 
     # Save engineered dataset
-    output_file = cache_dir / "features_all.parquet"
+    output_file = cache_dir / "features_all.nc"
     logger.info(f"\n💾 Saving engineered features to {output_file}")
 
     try:
-        df_features.to_parquet(output_file, index=False, engine='pyarrow')
+        save_dataframe(df_features, output_file)
         # Validate the file was written correctly by checking size
         file_size = output_file.stat().st_size
         if file_size == 0:
-            logger.error(f"❌ Parquet file is empty (0 bytes)! Write may have failed.")
+            logger.error(f"❌ NetCDF file is empty (0 bytes)! Write may have failed.")
             return 1
         logger.info(f"   Saved {len(df_features):,} rows ({file_size / 1e6:.1f} MB)")
-
-        # Quick validation: try reading metadata to ensure file is valid
-        import pyarrow.parquet as pq
-        pq.read_metadata(output_file)
-        logger.info(f"   ✓ Parquet file validated successfully")
+        logger.info(f"   ✓ NetCDF file saved successfully")
 
     except Exception as e:
-        logger.error(f"❌ Failed to save/validate parquet file: {e}")
+        logger.error(f"❌ Failed to save NetCDF file: {e}")
         # Clean up potentially corrupted file
         if output_file.exists():
             output_file.unlink()
@@ -233,13 +234,13 @@ def cmd_filter_datasets(args):
     logger.info("=" * 80)
 
     # Load configuration
-    config_file = Path("config/datasets.yaml")
+    config_file = Path(__file__).parent / "config" / "datasets.yaml"
     with open(config_file) as f:
         config = yaml.safe_load(f)
 
     # Paths
     cache_dir = Path("data/processed")
-    features_file = cache_dir / "features_all.parquet"
+    features_file = cache_dir / "features_all.nc"
 
     # Load engineered features
     logger.info(f"\n📂 Loading engineered features from {features_file}")
@@ -252,9 +253,9 @@ def cmd_filter_datasets(args):
 
     # Try to load with error handling for corrupted files
     try:
-        df_all = pd.read_parquet(features_file)
+        df_all = load_dataframe(features_file)
     except Exception as e:
-        logger.error(f"❌ Failed to load parquet file: {e}")
+        logger.error(f"❌ Failed to load NetCDF file: {e}")
         logger.error(f"   File may be corrupted. Deleting and re-running Step 2 may help.")
         logger.error(f"   Run: rm {features_file} && python -m src.cli engineer-features")
         return 1
@@ -273,7 +274,11 @@ def cmd_filter_datasets(args):
     # Process each dataset variant
     filter_functions = {
         'quantum': filter_quantum_companies,
-        'transportation': filter_transportation_companies
+        'transportation': filter_transportation_companies,
+        'hardware': filter_hardware_companies,
+        'software': filter_software_companies,
+        'medtech': filter_medtech_companies,
+        'pharma': filter_pharma_companies
     }
 
     for dataset_key, dataset_config in config['datasets'].items():
@@ -284,12 +289,12 @@ def cmd_filter_datasets(args):
         # Check if filtered dataset already exists (SPEED BOOST!)
         output_dir = Path(dataset_config['output_dir'])
         output_dir.mkdir(exist_ok=True, parents=True)
-        output_file = output_dir / "dataset.parquet"
+        output_file = output_dir / "dataset.nc"
 
         if output_file.exists():
             logger.info(f"   ⚡ Filtered dataset cache found at {output_file}")
             try:
-                df_filtered = pd.read_parquet(output_file)
+                df_filtered = load_dataframe(output_file)
                 logger.info(f"   ✓ Loaded {len(df_filtered):,} companies (skip filtering)")
                 logger.info(f"   Percentage of total: {len(df_filtered)/len(df_all)*100:.2f}%")
 
@@ -305,7 +310,7 @@ def cmd_filter_datasets(args):
 
         # Apply filter if specified
         filter_func_name = dataset_config.get('filter_function')
-        if filter_func_name and filter_func_name in ['filter_quantum_companies', 'filter_transportation_companies']:
+        if filter_func_name and dataset_key in filter_functions:
             logger.info(f"   Applying filter: {filter_func_name}")
             filter_func = filter_functions[dataset_key]
             df_filtered = filter_func(df_all)
@@ -315,7 +320,7 @@ def cmd_filter_datasets(args):
 
         # Save filtered dataset
         logger.info(f"\n💾 Saving to {output_file}")
-        df_filtered.to_parquet(output_file, index=False)
+        save_dataframe(df_filtered, output_file)
         logger.info(f"   Saved {len(df_filtered):,} companies ({output_file.stat().st_size / 1e6:.1f} MB)")
         logger.info(f"   Percentage of total: {len(df_filtered)/len(df_all)*100:.2f}%")
 
@@ -355,10 +360,10 @@ def run_models_for_dataset(dataset_key: str, config: dict):
 
     # Load filtered dataset
     output_dir = Path(dataset_config['output_dir'])
-    dataset_file = output_dir / "dataset.parquet"
+    dataset_file = output_dir / "dataset.nc"
 
     logger.info(f"\n📂 Loading {dataset_file}")
-    df = pd.read_parquet(dataset_file)
+    df = load_dataframe(dataset_file)
     logger.info(f"   Companies: {len(df):,}")
 
     # Check for minimum sample size
@@ -423,7 +428,7 @@ def run_models_for_dataset(dataset_key: str, config: dict):
     logger.info(f"{'='*60}")
 
     try:
-        h1_model = test_h1_early_funding(df)
+        h1_model = run_h1_early_funding(df)
 
         # Extract coefficients into DataFrame
         h1_coef_df = pd.DataFrame({
@@ -464,7 +469,7 @@ def run_models_for_dataset(dataset_key: str, config: dict):
         logger.info(f"   Preprocessed {len(df_h2):,} companies for H2")
 
         # Run H2 model
-        h2_model = test_h2_main_growth(df_h2)
+        h2_model = run_h2_main_growth(df_h2)
 
         # Extract coefficients into DataFrame
         h2_coef_df = pd.DataFrame({
@@ -524,7 +529,7 @@ def cmd_run_models(args):
     logger.info("=" * 80)
 
     # Load configuration
-    config_file = Path("config/datasets.yaml")
+    config_file = Path(__file__).parent / "config" / "datasets.yaml"
     with open(config_file) as f:
         config = yaml.safe_load(f)
 
@@ -759,7 +764,7 @@ def cmd_generate_plots(args):
     logger.info("=" * 80)
 
     # Load configuration
-    config_file = Path("config/datasets.yaml")
+    config_file = Path(__file__).parent / "config" / "datasets.yaml"
     with open(config_file) as f:
         config = yaml.safe_load(f)
 
@@ -819,9 +824,13 @@ def cmd_run_all(args):
     logger.info("🎉 COMPLETE PIPELINE FINISHED SUCCESSFULLY")
     logger.info("=" * 80)
     logger.info("\n📊 Results available in:")
-    logger.info("   - outputs/all/")
-    logger.info("   - outputs/quantum/")
-    logger.info("   - outputs/transportation/")
+    logger.info("   - data/outputs/all/")
+    logger.info("   - data/outputs/quantum/")
+    logger.info("   - data/outputs/transportation/")
+    logger.info("   - data/outputs/hardware/")
+    logger.info("   - data/outputs/software/")
+    logger.info("   - data/outputs/medtech/")
+    logger.info("   - data/outputs/pharma/")
 
     return 0
 
@@ -846,7 +855,7 @@ Examples:
     subparsers = parser.add_subparsers(dest='command', help='Available commands')
 
     # load-data
-    subparsers.add_parser('load-data', help='Load .dat files and create parquet cache')
+    subparsers.add_parser('load-data', help='Load .dat files and create NetCDF cache')
 
     # engineer-features
     subparsers.add_parser('engineer-features', help='Apply vagueness scorer and create features')
@@ -857,13 +866,13 @@ Examples:
     # run-models
     parser_models = subparsers.add_parser('run-models', help='Run H1/H2 statistical models')
     parser_models.add_argument('--dataset', default='all',
-                               choices=['all', 'quantum', 'transportation'],
+                               choices=['all', 'quantum', 'transportation', 'hardware', 'software', 'medtech', 'pharma'],
                                help='Which dataset to process (default: all)')
 
     # generate-plots
     parser_plots = subparsers.add_parser('generate-plots', help='Generate F-series plots')
     parser_plots.add_argument('--dataset', default='all',
-                              choices=['all', 'quantum', 'transportation'],
+                              choices=['all', 'quantum', 'transportation', 'hardware', 'software', 'medtech', 'pharma'],
                               help='Which dataset to process (default: all)')
 
     # run-all

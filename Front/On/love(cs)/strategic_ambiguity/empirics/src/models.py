@@ -18,7 +18,7 @@ from statsmodels.discrete.discrete_model import BinaryResultsWrapper
 # -----------------------------
 # H1: Early funding (OLS)
 # -----------------------------
-def test_h1_early_funding(
+def run_h1_early_funding(
     df: pd.DataFrame,
     formula: str = ("early_funding_musd ~ z_vagueness + z_employees_log + founder_serial + "
                     "is_hardware + z_firm_age + C(sector_fe) + C(founding_cohort)")
@@ -73,7 +73,7 @@ def test_h1_early_funding(
 # -----------------------------
 # H2: Main (Logit, NO early_funding)
 # -----------------------------
-def test_h2_main_growth(
+def run_h2_main_growth(
     df: pd.DataFrame,
     formula: str = ("growth ~ z_vagueness * is_hardware + founder_serial + "
                     "z_employees_log + C(founding_cohort)")
@@ -182,7 +182,7 @@ def test_h2_main_growth(
 # -----------------------------
 # H3: Early funding interaction with founder credibility (OLS)
 # -----------------------------
-def test_h3_early_funding_interaction(
+def run_h3_early_funding_interaction(
     df: pd.DataFrame,
     formula: str = ("log_early_funding ~ z_vagueness * founder_serial + "
                     "z_employees_log + C(founding_cohort) + C(sector_fe)")
@@ -256,7 +256,7 @@ def test_h3_early_funding_interaction(
 # -----------------------------
 # H4: Growth interaction with founder credibility (Logit)
 # -----------------------------
-def test_h4_growth_interaction(
+def run_h4_growth_interaction(
     df: pd.DataFrame,
     formula: str = ("growth ~ z_vagueness * founder_serial + "
                     "z_employees_log + C(founding_cohort)")

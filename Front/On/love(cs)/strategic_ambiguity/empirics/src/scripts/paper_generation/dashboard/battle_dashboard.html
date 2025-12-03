@@ -1,0 +1,852 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MFS Control Tower v2.6</title>
+    <style>
+        :root {
+            --bg-color: #0b0c15;
+            --jeong-green: #00ff9d;  /* Turtle Green */
+            --na-orange: #ffcc00;    /* Tiger Orange */
+            --verify-pink: #ff0099;
+            --glass-bg: rgba(20, 30, 40, 0.6);
+            --border-dim: rgba(255, 255, 255, 0.1);
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            background-image: linear-gradient(0deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* Layout Containers */
+        .dashboard-container { display: flex; flex: 1; overflow: hidden; }
+        .dashboard-left { flex: 1; display: flex; flex-direction: column; padding: 10px; overflow-y: auto; }
+        .dashboard-right { width: 450px; border-left: 1px solid var(--border-dim); background: rgba(0,0,0,0.3); display: flex; flex-direction: column; }
+
+        /* Header */
+        .header {
+            height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px;
+            background: rgba(0,0,0,0.8); border-bottom: 1px solid var(--border-dim); flex-shrink: 0;
+        }
+        .brand { font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; color: #fff; }
+        .brand span { color: var(--jeong-green); }
+        
+        /* Main Grid */
+        .pantos-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 120px 1fr 1fr 1fr 1fr 100px; /* Label, I, T, E, D, Verify */
+            grid-template-rows: 40px 60px 1fr 1fr 1fr 60px 40px; /* Labels, Jeong, U, C, N, KwonNa, Labels */
+            gap: 5px;
+            min-height: 600px;
+        }
+
+        /* Zones */
+        .zone-label { display: flex; align-items: center; justify-content: center; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+        .jeong-zone { background: rgba(0, 255, 157, 0.1); color: var(--jeong-green); border: 1px solid var(--jeong-green); }
+        .kwon-zone { background: rgba(255, 204, 0, 0.1); color: var(--na-orange); border: 1px solid var(--na-orange); }
+        
+        /* Color Wheel Interface */
+        .color-wheel-container { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; position: relative; }
+        .color-wheel-svg { width: 100%; height: 100%; max-width: 1200px; max-height: 900px; }
+        .sector-group text { font-family: 'Courier New', monospace; letter-spacing: 1px; }
+        .agent-node circle { transition: all 0.3s ease; }
+        .agent-node:hover circle { stroke-width: 4px; filter: url(#glow); }
+        .agent-node:hover text { font-weight: bold; }
+        
+        /* Paper Deck Dock */
+        .paper-deck-dock {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10, 10, 20, 0.8);
+            border: 1px solid var(--border-dim);
+            border-radius: 12px;
+            padding: 10px 20px;
+            display: flex;
+            gap: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 100;
+        }
+        
+        /* Agents */
+        .agent-card { display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(255,255,255,0.05); border: 1px solid var(--border-dim); position: relative; transition: all 0.2s; }
+        .agent-card:hover { background: rgba(255,255,255,0.1); }
+        .jeong-agent { border-top: 2px solid var(--jeong-green); }
+        .na-agent { border-bottom: 2px solid var(--na-orange); }
+        
+        .agent-icon { font-size: 1.5rem; }
+        .agent-name { font-size: 1.1rem; margin-top: 4px; font-weight: 800; text-shadow: 0 0 5px currentColor; letter-spacing: 1px; }
+        .agent-role { font-size: 0.6rem; color: #aaa; font-weight: normal; }
+        .agent-role { font-size: 0.6rem; color: #888; }
+        
+        .log-badge { position: absolute; top: 2px; right: 2px; font-size: 0.7rem; cursor: pointer; }
+
+        /* Project Rows */
+        .project-label { display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(255,255,255,0.05); border-left: 3px solid #fff; }
+        .p-icon { font-size: 2rem; }
+        .p-name { font-size: 1.2rem; font-weight: bold; }
+        .p-desc { font-size: 0.6rem; color: #aaa; }
+
+        /* Matrix Cells */
+        .matrix-cell { background: rgba(255,255,255,0.02); border: 1px solid var(--border-dim); padding: 8px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s; cursor: pointer; }
+        .matrix-cell:hover { background: rgba(255,255,255,0.08); border-color: #fff; }
+        .matrix-cell.active { border-color: #666; }
+        .cell-title { font-size: 0.7rem; color: #888; }
+        .cell-metrics { font-size: 0.8rem; color: #fff; font-weight: bold; margin-top: 5px; }
+        .cell-dots { display: flex; gap: 2px; margin-top: 5px; }
+        .dot { width: 5px; height: 5px; border-radius: 50%; background: #333; }
+        .dot.filled { background: #fff; }
+        .issue-flag { position: absolute; top: -5px; right: -5px; font-size: 0.8rem; z-index: 10; animation: bounce 2s infinite; }
+
+        /* Verifier Column */
+        .verifier-cell { display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(255, 0, 153, 0.05); border-right: 2px solid var(--verify-pink); }
+        .v-icon { font-size: 1.5rem; }
+        .v-name { font-size: 0.7rem; color: var(--verify-pink); font-weight: bold; }
+        .v-role { font-size: 0.6rem; color: #aaa; text-align: center; padding: 2px; }
+
+        /* Server Status */
+        .server-status { font-size: 0.7rem; color: #666; display: flex; align-items: center; gap: 5px; }
+        .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #444; }
+        .status-dot.online { background: var(--jeong-green); box-shadow: 0 0 5px var(--jeong-green); }
+
+        /* Issue Queue */
+        .issue-queue { flex: 1; overflow-y: auto; font-size: 0.7rem; }
+        .issue-header { padding: 10px; background: rgba(0,0,0,0.5); border-bottom: 1px solid var(--border-dim); font-weight: bold; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
+        .issue-table { width: 100%; border-collapse: collapse; }
+        .issue-table th { text-align: left; color: #888; border-bottom: 1px solid #444; padding: 8px; position: sticky; top: 0; background: #111; z-index: 10; }
+        .issue-table td { padding: 8px; border-bottom: 1px solid #222; }
+        
+        .stage-badge { padding: 2px 6px; border-radius: 4px; font-weight: bold; display: inline-block; }
+        .stage-FLAG { background: #333; color: #fff; border: 1px solid #666; }
+        .stage-REVIEW { background: rgba(0, 255, 157, 0.2); color: var(--jeong-green); border: 1px solid var(--jeong-green); }
+        .stage-BUILD { background: rgba(255, 204, 0, 0.2); color: var(--na-orange); border: 1px solid var(--na-orange); }
+        .stage-MERGE { background: rgba(255, 0, 255, 0.2); color: #f0f; border: 1px solid #f0f; }
+
+        .action-badge { padding: 4px 8px; border-radius: 4px; font-size: 0.85em; font-weight: bold; display: inline-block; }
+        .action-wait { color: #666; }
+        .action-review { background: rgba(0, 255, 0, 0.1); color: var(--jeong-green); border: 1px solid var(--jeong-green); }
+        .action-build { background: rgba(255, 165, 0, 0.1); color: var(--na-orange); border: 1px solid var(--na-orange); }
+        .action-verify { background: rgba(255, 0, 255, 0.1); color: var(--verify-pink); border: 1px solid var(--verify-pink); }
+        
+        .action-approve { background: rgba(255, 0, 0, 0.2); color: #ff4444; border: 1px solid #ff4444; animation: pulse 2s infinite; cursor: pointer; }
+        .action-closed { background: #333; color: #888; border: 1px solid #555; }
+        
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 68, 68, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(255, 68, 68, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 68, 68, 0); } }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+
+        /* Filter Buttons */
+        .filter-btn { background: rgba(255,255,255,0.05); border: 1px solid var(--border-dim); color: #aaa; padding: 4px 8px; margin-left: 5px; cursor: pointer; font-family: 'Courier New', monospace; font-size: 0.7rem; border-radius: 3px; transition: all 0.2s; }
+        .filter-btn:hover { background: rgba(255,255,255,0.15); border-color: #fff; color: #fff; }
+        .filter-btn.active { background: var(--jeong-green); border-color: var(--jeong-green); color: var(--bg-color); font-weight: bold; }
+
+        .signal-dot { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: #fff; pointer-events: none; z-index: 100; transition: all 0.5s ease-in-out; }
+        
+        /* Stamp Panel CSS */
+        .stamp-panel {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border: 2px solid #c9a227;  /* Korean gold */
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .stamp-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #c9a227;
+            padding-bottom: 10px;
+        }
+
+        .stamp-icon { font-size: 24px; }
+        .stamp-title { color: #c9a227; font-weight: bold; font-size: 0.9rem; }
+        .stamp-count { color: #888; margin-left: auto; font-size: 0.8rem; }
+
+        .stamp-item {
+            background: rgba(201, 162, 39, 0.1);
+            border-left: 3px solid #c9a227;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .stamp-meta { color: #888; font-size: 11px; margin-bottom: 5px; }
+        .stamp-insight { color: #fff; font-style: italic; font-size: 0.8rem; }
+        .stamp-praise { color: #4ade80; font-size: 12px; margin-top: 5px; }
+
+        .stamp-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .stamp-actions button {
+            background: transparent;
+            border: 1px solid #c9a227;
+            color: #c9a227;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.7rem;
+        }
+
+        .stamp-actions button:hover {
+            background: #c9a227;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="brand">MFS <span>CONTROL TOWER</span></div>
+        <div class="server-status">
+            <div class="monitor-map" style="display: flex; flex-direction: column; align-items: flex-end; margin-right: 15px; opacity: 0.8;" title="Physical Monitor Layout: Left(Vertical), Center(Main), Bottom(Small)">
+                <div style="font-size: 0.6rem; color: #888; margin-bottom: 2px;">PHYSICAL LAYOUT</div>
+                <div style="display: flex; gap: 4px; align-items: flex-end;">
+                    <div style="width: 10px; height: 18px; background: #333; border: 1px solid #555; border-radius: 2px;" title="Left Vertical Monitor"></div>
+                    <div style="display: flex; flex-direction: column; gap: 2px; align-items: center;">
+                        <div style="width: 26px; height: 14px; background: var(--jeong-green); border: 1px solid var(--jeong-green); border-radius: 2px; box-shadow: 0 0 5px var(--jeong-green);" title="Center Main Monitor"></div>
+                        <div style="width: 18px; height: 8px; background: #333; border: 1px solid #555; border-radius: 2px;" title="Bottom Small Monitor"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="status-dot" id="server-dot"></div>
+            <span id="server-text">Link Offline</span>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        <!-- LEFT PANEL: Matrix & Status -->
+        <div class="dashboard-left">
+            <div class="color-wheel-wrapper" style="flex: 1; display: flex; justify-content: center; align-items: center; background: radial-gradient(circle at center, #1a1a2e 0%, #0b0c15 70%); flex-direction: column; position: relative;">
+                <div class="completion-index" style="position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.6); padding: 15px; border-radius: 10px; border: 1px solid var(--border-dim);"><div style="font-size: 0.8rem; font-weight: bold; margin-bottom: 10px; color: #fff;">📊 Completion Index</div><div style="margin-bottom: 8px; display: flex; align-items: center; gap: 10px;"><span style="font-size: 1.2rem;">✌️</span><div style="display: flex; gap: 2px;">
+            <div style="width: 30px; height: 6px; background: #333; border-radius: 2px; overflow: hidden;" title="Chap 1: 0/7 Para">
+                <div style="width: 0.0%; height: 100%; background: #ff0099;"></div>
+            </div>
+            
+            <div style="width: 30px; height: 6px; background: #333; border-radius: 2px; overflow: hidden;" title="Chap 2: 0/9 Para">
+                <div style="width: 0.0%; height: 100%; background: #ff0099;"></div>
+            </div>
+            
+            <div style="width: 30px; height: 6px; background: #333; border-radius: 2px; overflow: hidden;" title="Chap 3: 0/11 Para">
+                <div style="width: 0.0%; height: 100%; background: #ff0099;"></div>
+            </div>
+            
+            <div style="width: 30px; height: 6px; background: #333; border-radius: 2px; overflow: hidden;" title="Chap 4: 0/5 Para">
+                <div style="width: 0.0%; height: 100%; background: #ff0099;"></div>
+            </div>
+            </div></div><div style="margin-bottom: 8px; display: flex; align-items: center; gap: 10px;"><span style="font-size: 1.2rem;">🦾</span><div style="display: flex; gap: 2px;">
+            <div style="width: 30px; height: 6px; background: #333; border-radius: 2px; overflow: hidden;" title="Chap 1: 0/7 Para">
+                <div style="width: 0.0%; height: 100%; background: #ff0099;"></div>
+            </div>
+            
+            <div style="width: 30px; height: 6px; background: #333; border-radius: 2px; overflow: hidden;" title="Chap 2: 0/9 Para">
+                <div style="width: 0.0%; height: 100%; background: #ff0099;"></div>
+            </div>
+            
+            <div style="width: 30px; height: 6px; background: #333; border-radius: 2px; overflow: hidden;" title="Chap 3: 0/11 Para">
+                <div style="width: 0.0%; height: 100%; background: #ff0099;"></div>
+            </div>
+            
+            <div style="width: 30px; height: 6px; background: #333; border-radius: 2px; overflow: hidden;" title="Chap 4: 0/5 Para">
+                <div style="width: 0.0%; height: 100%; background: #ff0099;"></div>
+            </div>
+            </div></div><div style="margin-bottom: 8px; display: flex; align-items: center; gap: 10px;"><span style="font-size: 1.2rem;">🤹</span><div style="display: flex; gap: 2px;">
+            <div style="width: 30px; height: 6px; background: #333; border-radius: 2px; overflow: hidden;" title="Chap 1: 0/7 Para">
+                <div style="width: 0.0%; height: 100%; background: #ff0099;"></div>
+            </div>
+            
+            <div style="width: 30px; height: 6px; background: #333; border-radius: 2px; overflow: hidden;" title="Chap 2: 0/9 Para">
+                <div style="width: 0.0%; height: 100%; background: #ff0099;"></div>
+            </div>
+            
+            <div style="width: 30px; height: 6px; background: #333; border-radius: 2px; overflow: hidden;" title="Chap 3: 0/11 Para">
+                <div style="width: 0.0%; height: 100%; background: #ff0099;"></div>
+            </div>
+            
+            <div style="width: 30px; height: 6px; background: #333; border-radius: 2px; overflow: hidden;" title="Chap 4: 0/5 Para">
+                <div style="width: 0.0%; height: 100%; background: #ff0099;"></div>
+            </div>
+            </div></div></div>
+                
+    <div class="color-wheel-container">
+        <svg viewBox="0 0 1000 800" class="color-wheel-svg" preserveAspectRatio="xMidYMid meet">
+            <!-- Definitions for gradients/filters -->
+            <defs>
+                <filter id="glow">
+                    <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                    <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+                <radialGradient id="bg-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                    <stop offset="0%" stop-color="#1a1a2e" stop-opacity="1" />
+                    <stop offset="100%" stop-color="#0b0c15" stop-opacity="0" />
+                </radialGradient>
+            </defs>
+            
+            <!-- Background Aura -->
+            <circle cx="500" cy="400" r="400" fill="url(#bg-gradient)" opacity="0.5" />
+            
+            <!-- Central Hub (Moon) -->
+            <g class="sector-center" onclick="" style="cursor:pointer">
+                <circle cx="500" cy="400" r="80" fill="#1a1a2e" stroke="#fbbf24" stroke-width="3" filter="url(#glow)"/>
+                <text x="500" y="360" text-anchor="middle" fill="#fbbf24" font-size="24">🌙</text>
+                <text x="500" y="385" text-anchor="middle" fill="#fbbf24" font-size="10">COMMANDER</text>
+                
+                <!-- 3-Screen Workflow Visualization -->
+                <!-- Screen 3: Products (Top) -->
+                <g transform="translate(460, 390)">
+                    <rect x="0" y="0" width="80" height="25" rx="4" fill="rgba(255,255,255,0.1)" stroke="#fff" stroke-width="1"/>
+                    <text x="40" y="17" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">U  C  N</text>
+                </g>
+                
+                <!-- Screen 2: Logic (Center) -->
+                <g transform="translate(470, 420)">
+                    <rect x="0" y="0" width="60" height="25" rx="4" fill="rgba(255, 204, 0, 0.2)" stroke="#fbbf24" stroke-width="1"/>
+                    <text x="30" y="17" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="bold">5  4</text>
+                </g>
+                
+                <!-- Screen 1: Execution (Bottom) -->
+                <g transform="translate(450, 450)">
+                    <rect x="0" y="0" width="100" height="25" rx="4" fill="rgba(0, 255, 157, 0.2)" stroke="#00ff9d" stroke-width="1"/>
+                    <text x="50" y="17" text-anchor="middle" fill="#00ff9d" font-size="10" font-weight="bold">10 9 8 6</text>
+                </g>
+                
+                <!-- Flow Arrows -->
+                <path d="M 500 450 L 500 445" stroke="#fff" stroke-width="1" marker-end="url(#arrow)"/>
+                <path d="M 500 420 L 500 415" stroke="#fff" stroke-width="1" marker-end="url(#arrow)"/>
+            </g>
+            
+            <!-- Arrow Marker -->
+            <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
+                    <path d="M0,0 L0,6 L9,3 z" fill="#fff" />
+                </marker>
+            </defs>
+            
+            <!-- Sectors -->
+            <!-- 1. Kim (Red) - 12:00 -->
+            <g class="sector-group" transform="translate(500, 100)">
+                <line x1="0" y1="60" x2="0" y2="0" stroke="#ef4444" stroke-width="2" stroke-dasharray="4" opacity="0.5"/>
+                <text x="0" y="-20" text-anchor="middle" fill="#ef4444" font-weight="bold" font-size="14">EVALUATION (K)</text>
+                <!-- Agents -->
+                <g transform="translate(-80, 30)">
+    <g class="agent-node" onclick="launchApp('Antigravity')" style="cursor: pointer">
+        <circle r="25" fill="#1a1a2e" stroke="#ef4444" stroke-width="2"/>
+        <text text-anchor="middle" dy="5" fill="#fff" font-size="16">🛡️</text>
+        <text text-anchor="middle" dy="40" fill="#ef4444" font-size="10">1KU</text>
+        <text text-anchor="middle" dy="52" fill="#888" font-size="8">Audit U</text>
+    </g>
+    </g>
+                <g transform="translate(0, 0)">
+    <g class="agent-node" onclick="launchApp('Antigravity')" style="cursor: pointer">
+        <circle r="25" fill="#1a1a2e" stroke="#ef4444" stroke-width="2"/>
+        <text text-anchor="middle" dy="5" fill="#fff" font-size="16">⚖️</text>
+        <text text-anchor="middle" dy="40" fill="#ef4444" font-size="10">2KC</text>
+        <text text-anchor="middle" dy="52" fill="#888" font-size="8">Audit C</text>
+    </g>
+    </g>
+                <g transform="translate(80, 30)">
+    <g class="agent-node" onclick="launchApp('Antigravity')" style="cursor: pointer">
+        <circle r="25" fill="#1a1a2e" stroke="#ef4444" stroke-width="2"/>
+        <text text-anchor="middle" dy="5" fill="#fff" font-size="16">💪</text>
+        <text text-anchor="middle" dy="40" fill="#ef4444" font-size="10">3KN</text>
+        <text text-anchor="middle" dy="52" fill="#888" font-size="8">Audit N</text>
+    </g>
+    </g>
+            </g>
+            
+            <!-- 2. Na (Orange) - 3:00 -->
+            <g class="sector-group" transform="translate(800, 400)">
+                <line x1="-60" y1="0" x2="0" y2="0" stroke="#f97316" stroke-width="2" stroke-dasharray="4" opacity="0.5"/>
+                <text x="20" y="5" text-anchor="start" fill="#f97316" font-weight="bold" font-size="14">STRUCTURE (G)</text>
+                <!-- Agents -->
+                <g transform="translate(-30, -80)">
+    <g class="agent-node" onclick="launchApp('Claude')" style="cursor: pointer">
+        <circle r="25" fill="#1a1a2e" stroke="#f97316" stroke-width="2"/>
+        <text text-anchor="middle" dy="5" fill="#fff" font-size="16">🐅</text>
+        <text text-anchor="middle" dy="40" fill="#f97316" font-size="10">6GID</text>
+        <text text-anchor="middle" dy="52" fill="#888" font-size="8">Struct</text>
+    </g>
+    </g>
+                <g transform="translate(0, 0)">
+    <g class="agent-node" onclick="launchApp('Claude')" style="cursor: pointer">
+        <circle r="25" fill="#1a1a2e" stroke="#f97316" stroke-width="2"/>
+        <text text-anchor="middle" dy="5" fill="#fff" font-size="16">🏗️</text>
+        <text text-anchor="middle" dy="40" fill="#f97316" font-size="10">5GT</text>
+        <text text-anchor="middle" dy="52" fill="#888" font-size="8">Logic</text>
+    </g>
+    </g>
+                <g transform="translate(-30, 80)">
+    <g class="agent-node" onclick="launchApp('Claude')" style="cursor: pointer">
+        <circle r="25" fill="#1a1a2e" stroke="#f97316" stroke-width="2"/>
+        <text text-anchor="middle" dy="5" fill="#fff" font-size="16">💻</text>
+        <text text-anchor="middle" dy="40" fill="#f97316" font-size="10">4GE</text>
+        <text text-anchor="middle" dy="52" fill="#888" font-size="8">Code</text>
+    </g>
+    </g>
+            </g>
+            
+            <!-- 3. Jeong (Green) - 6:00 -->
+            <g class="sector-group" transform="translate(500, 700)">
+                <line x1="0" y1="-60" x2="0" y2="0" stroke="#22c55e" stroke-width="2" stroke-dasharray="4" opacity="0.5"/>
+                <text x="0" y="35" text-anchor="middle" fill="#22c55e" font-weight="bold" font-size="14">EXECUTION (J)</text>
+                <!-- Agents -->
+                <g transform="translate(80, -30)">
+    <g class="agent-node" onclick="launchApp('Claude')" style="cursor: pointer">
+        <circle r="25" fill="#1a1a2e" stroke="#22c55e" stroke-width="2"/>
+        <text text-anchor="middle" dy="5" fill="#fff" font-size="16">🐢</text>
+        <text text-anchor="middle" dy="40" fill="#22c55e" font-size="10">8JID</text>
+        <text text-anchor="middle" dy="52" fill="#888" font-size="8">Intro</text>
+    </g>
+    </g>
+                <g transform="translate(0, 0)">
+    <g class="agent-node" onclick="launchApp('Claude')" style="cursor: pointer">
+        <circle r="25" fill="#1a1a2e" stroke="#22c55e" stroke-width="2"/>
+        <text text-anchor="middle" dy="5" fill="#fff" font-size="16">🐢</text>
+        <text text-anchor="middle" dy="40" fill="#22c55e" font-size="10">9JT</text>
+        <text text-anchor="middle" dy="52" fill="#888" font-size="8">Theory</text>
+    </g>
+    </g>
+                <g transform="translate(-80, -30)">
+    <g class="agent-node" onclick="launchApp('Claude')" style="cursor: pointer">
+        <circle r="25" fill="#1a1a2e" stroke="#22c55e" stroke-width="2"/>
+        <text text-anchor="middle" dy="5" fill="#fff" font-size="16">🐢</text>
+        <text text-anchor="middle" dy="40" fill="#22c55e" font-size="10">10JE</text>
+        <text text-anchor="middle" dy="52" fill="#888" font-size="8">Empirics</text>
+    </g>
+    </g>
+            </g>
+            
+            <!-- 4. O (Blue) - 9:00 -->
+            <g class="sector-group" transform="translate(200, 400)">
+                <line x1="60" y1="0" x2="0" y2="0" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4" opacity="0.5"/>
+                <text x="-20" y="5" text-anchor="end" fill="#3b82f6" font-weight="bold" font-size="14">ORIGIN (O)</text>
+                <!-- Agents -->
+                <g transform="translate(30, 80)">
+    <g class="agent-node" onclick="" style="cursor: default">
+        <circle r="25" fill="#1a1a2e" stroke="#3b82f6" stroke-width="2"/>
+        <text text-anchor="middle" dy="5" fill="#fff" font-size="16">💾</text>
+        <text text-anchor="middle" dy="40" fill="#3b82f6" font-size="10">11OU</text>
+        <text text-anchor="middle" dy="52" fill="#888" font-size="8">MgmtSci</text>
+    </g>
+    </g>
+                <g transform="translate(0, 0)">
+    <g class="agent-node" onclick="" style="cursor: default">
+        <circle r="25" fill="#1a1a2e" stroke="#3b82f6" stroke-width="2"/>
+        <text text-anchor="middle" dy="5" fill="#fff" font-size="16">📚</text>
+        <text text-anchor="middle" dy="40" fill="#3b82f6" font-size="10">12OC</text>
+        <text text-anchor="middle" dy="52" fill="#888" font-size="8">Strategy</text>
+    </g>
+    </g>
+                <g transform="translate(30, -80)">
+    <g class="agent-node" onclick="" style="cursor: default">
+        <circle r="25" fill="#1a1a2e" stroke="#3b82f6" stroke-width="2"/>
+        <text text-anchor="middle" dy="5" fill="#fff" font-size="16">📜</text>
+        <text text-anchor="middle" dy="40" fill="#3b82f6" font-size="10">13ON</text>
+        <text text-anchor="middle" dy="52" fill="#888" font-size="8">OpsMgmt</text>
+    </g>
+    </g>
+            </g>
+            
+            <!-- Signal Path -->
+            <path id="signal-path" d="M 500 700 A 300 300 0 0 1 800 400 A 300 300 0 0 1 500 100 A 300 300 0 0 1 200 400 Z" fill="none" stroke="none"/>
+            
+            <!-- Signal Particle -->
+            <circle r="6" fill="#fff" filter="url(#glow)">
+                <animateMotion dur="6s" repeatCount="indefinite" path="M 500 700 A 300 300 0 0 1 800 400 A 300 300 0 0 1 500 100 A 300 300 0 0 1 200 400 Z" />
+            </circle>
+        </svg>
+    </div>
+    
+                <div class="paper-deck-dock">
+        <div class="paper-card" style="border: 1px solid #00ff9d; background: rgba(0,0,0,0.5); padding: 8px 12px; border-radius: 8px; width: 100px; transition: all 0.2s;">
+            <div class="paper-header" style="color: #00ff9d; font-weight: bold; font-size: 0.75rem; margin-bottom: 6px; display: flex; align-items: center; justify-content: center; gap: 4px;">
+                <span>✌️</span> U
+            </div>
+            <div class="chapter-list" style="display: flex; flex-direction: column; gap: 3px;">
+        
+                <a href="obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/P1%E2%9C%8C%EF%B8%8F/%F0%9F%93%9Dproduct/chap1_intro.md" class="chapter-link" style="color: #aaa; text-decoration: none; font-size: 0.65rem; padding: 2px 4px; border-radius: 3px; transition: all 0.2s; display: block; text-align: center;">
+                    Chap 1
+                </a>
+            
+                <a href="obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/P1%E2%9C%8C%EF%B8%8F/%F0%9F%93%9Dproduct/chap2_theory.md" class="chapter-link" style="color: #aaa; text-decoration: none; font-size: 0.65rem; padding: 2px 4px; border-radius: 3px; transition: all 0.2s; display: block; text-align: center;">
+                    Chap 2
+                </a>
+            
+                <a href="obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/P1%E2%9C%8C%EF%B8%8F/%F0%9F%93%9Dproduct/chap3_empirics.md" class="chapter-link" style="color: #aaa; text-decoration: none; font-size: 0.65rem; padding: 2px 4px; border-radius: 3px; transition: all 0.2s; display: block; text-align: center;">
+                    Chap 3
+                </a>
+            
+                <a href="obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/P1%E2%9C%8C%EF%B8%8F/%F0%9F%93%9Dproduct/chap4_discussion.md" class="chapter-link" style="color: #aaa; text-decoration: none; font-size: 0.65rem; padding: 2px 4px; border-radius: 3px; transition: all 0.2s; display: block; text-align: center;">
+                    Chap 4
+                </a>
+            </div></div>
+        <div class="paper-card" style="border: 1px solid #ffcc00; background: rgba(0,0,0,0.5); padding: 8px 12px; border-radius: 8px; width: 100px; transition: all 0.2s;">
+            <div class="paper-header" style="color: #ffcc00; font-weight: bold; font-size: 0.75rem; margin-bottom: 6px; display: flex; align-items: center; justify-content: center; gap: 4px;">
+                <span>🦾</span> C
+            </div>
+            <div class="chapter-list" style="display: flex; flex-direction: column; gap: 3px;">
+        
+                <a href="obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/P2%F0%9F%A6%BE/%F0%9F%93%9Dproduct/chap1_intro.md" class="chapter-link" style="color: #aaa; text-decoration: none; font-size: 0.65rem; padding: 2px 4px; border-radius: 3px; transition: all 0.2s; display: block; text-align: center;">
+                    Chap 1
+                </a>
+            
+                <a href="obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/P2%F0%9F%A6%BE/%F0%9F%93%9Dproduct/chap2_theory.md" class="chapter-link" style="color: #aaa; text-decoration: none; font-size: 0.65rem; padding: 2px 4px; border-radius: 3px; transition: all 0.2s; display: block; text-align: center;">
+                    Chap 2
+                </a>
+            
+                <a href="obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/P2%F0%9F%A6%BE/%F0%9F%93%9Dproduct/chap3_empirics.md" class="chapter-link" style="color: #aaa; text-decoration: none; font-size: 0.65rem; padding: 2px 4px; border-radius: 3px; transition: all 0.2s; display: block; text-align: center;">
+                    Chap 3
+                </a>
+            
+                <a href="obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/P2%F0%9F%A6%BE/%F0%9F%93%9Dproduct/chap4_discussion.md" class="chapter-link" style="color: #aaa; text-decoration: none; font-size: 0.65rem; padding: 2px 4px; border-radius: 3px; transition: all 0.2s; display: block; text-align: center;">
+                    Chap 4
+                </a>
+            </div></div>
+        <div class="paper-card" style="border: 1px solid #ff0099; background: rgba(0,0,0,0.5); padding: 8px 12px; border-radius: 8px; width: 100px; transition: all 0.2s;">
+            <div class="paper-header" style="color: #ff0099; font-weight: bold; font-size: 0.75rem; margin-bottom: 6px; display: flex; align-items: center; justify-content: center; gap: 4px;">
+                <span>🤹</span> N
+            </div>
+            <div class="chapter-list" style="display: flex; flex-direction: column; gap: 3px;">
+        
+                <a href="obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/P3%F0%9F%A4%B9/%F0%9F%93%9Dproduct/chap1_intro.md" class="chapter-link" style="color: #aaa; text-decoration: none; font-size: 0.65rem; padding: 2px 4px; border-radius: 3px; transition: all 0.2s; display: block; text-align: center;">
+                    Chap 1
+                </a>
+            
+                <a href="obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/P3%F0%9F%A4%B9/%F0%9F%93%9Dproduct/chap2_theory.md" class="chapter-link" style="color: #aaa; text-decoration: none; font-size: 0.65rem; padding: 2px 4px; border-radius: 3px; transition: all 0.2s; display: block; text-align: center;">
+                    Chap 2
+                </a>
+            
+                <a href="obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/P3%F0%9F%A4%B9/%F0%9F%93%9Dproduct/chap3_empirics.md" class="chapter-link" style="color: #aaa; text-decoration: none; font-size: 0.65rem; padding: 2px 4px; border-radius: 3px; transition: all 0.2s; display: block; text-align: center;">
+                    Chap 3
+                </a>
+            
+                <a href="obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/P3%F0%9F%A4%B9/%F0%9F%93%9Dproduct/chap4_discussion.md" class="chapter-link" style="color: #aaa; text-decoration: none; font-size: 0.65rem; padding: 2px 4px; border-radius: 3px; transition: all 0.2s; display: block; text-align: center;">
+                    Chap 4
+                </a>
+            </div></div></div>
+    <style>
+        .paper-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.05); }
+        .chapter-link:hover { background: rgba(255,255,255,0.2); color: #fff; }
+    </style>
+    
+            </div>
+        </div>
+        </div>
+
+        <!-- RIGHT PANEL: Issue Tracker -->
+        <div class="dashboard-right">
+            <div class="issue-header">
+                📋 Issue Command Center
+                <span style="float: right;">
+                    <button class="filter-btn active" onclick="filterIssues('ALL')">ALL</button>
+                    <button class="filter-btn" onclick="filterIssues('U')">U</button>
+                    <button class="filter-btn" onclick="filterIssues('C')">C</button>
+                    <button class="filter-btn" onclick="filterIssues('N')">N</button>
+                </span>
+            </div>
+            <div class="issue-queue">
+                <table class="issue-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Task</th>
+                            <th>Team</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="issue-body">
+                        <!-- Issues injected by JS -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- FLEET COMMS (Bottom Right) -->
+            
+    <div class="live-ticker" style="flex: 1; width: auto; margin: 10px; position: relative; top: auto; right: auto; height: auto; background: rgba(0,0,0,0.8); border: 1px solid var(--jeong-green); border-radius: 5px; padding: 10px; font-family: 'Courier New', monospace; font-size: 0.75rem; overflow: hidden; display: flex; flex-direction: column;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 5px; border-bottom: 1px solid #333; padding-bottom: 3px;">
+            <span style="color: var(--jeong-green); font-weight: bold;">📡 FLEET COMMS</span>
+            <span id="ticker-timer" style="color: #666;">Updating...</span>
+        </div>
+        <div id="ticker-content" style="flex: 1; overflow-y: hidden; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div class="ticker-item" style="margin-bottom: 5px;">> 11OU: Connecting to Mgmt Sci DB...</div>
+            <div class="ticker-item" style="margin-bottom: 5px;">> 12OC: Scanning Strategy Journals...</div>
+        </div>
+    </div>
+    <script>
+        const messages = {
+            "11OU": [
+                "Reviewer 2 is smiling... suspicious. 🤔",
+                "Vagueness index rising. Good? Bad? Who knows. 🤷",
+                "Mgmt Science E&I dept pinged. They want more U-shapes. 📉📈",
+                "Found a citation that contradicts us. Deleting it... just kidding. 🤥",
+                "Calculating p-value... p < 0.05! Party time! 🎉"
+            ],
+            "12OC": [
+                "Strategy alignment 98%... World domination imminent. 🌍",
+                "First Mover Curse detected. Suggesting we move second. 🥈",
+                "Commitment trap engaged. We are stuck, but happily! 🔒",
+                "Network effects analyzing... It's a bubble! 🎈",
+                "Competitor analysis: They are vague. We win. 🏆"
+            ],
+            "13ON": [
+                "Ops Mgmt efficiency at 110%. Breaking laws of physics. 🚀",
+                "Newsvendor model says: Buy more paper! 📰",
+                "FOMO levels critical. Everyone is buying NVIDIA. 📉",
+                "Flexibility cost calculated. It's expensive to be free. 💸",
+                "LIDAR vs Vision? Why not both? Oh, budget. 💰"
+            ]
+        };
+        
+        function updateTicker() {
+            const agents = ["11OU", "12OC", "13ON"];
+            const agent = agents[Math.floor(Math.random() * agents.length)];
+            const msgs = messages[agent];
+            const msg = msgs[Math.floor(Math.random() * msgs.length)];
+            
+            const div = document.createElement('div');
+            div.className = 'ticker-item';
+            div.style.marginBottom = '5px';
+            div.style.color = agent === '11OU' ? '#00ff9d' : (agent === '12OC' ? '#ffcc00' : '#ff0099');
+            div.innerHTML = `> <b>${agent}</b>: ${msg}`;
+            
+            const container = document.getElementById('ticker-content');
+            container.insertBefore(div, container.firstChild);
+            
+            if (container.children.length > 4) {
+                container.removeChild(container.lastChild);
+            }
+            
+            document.getElementById('ticker-timer').innerText = new Date().toLocaleTimeString();
+        }
+        
+        setInterval(updateTicker, 3000); // Update every 3 seconds for fun
+    </script>
+    
+            
+            <!-- Stamp Collection Panel -->
+            <div class="stamp-panel" style="margin: 10px; margin-top: 0;">
+                <div class="stamp-header">
+                    <span class="stamp-icon">🎖️</span>
+                    <span class="stamp-title">STAMP COLLECTION</span>
+                    <span class="stamp-count">[3]</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function filterIssues(product) {
+            const rows = document.querySelectorAll('.issue-row');
+            const btns = document.querySelectorAll('.filter-btn');
+            
+            // Update Buttons
+            btns.forEach(b => {
+                if (b.innerText.startsWith(product) || (product === 'ALL' && b.innerText === 'ALL')) {
+                    b.classList.add('active');
+                } else {
+                    b.classList.remove('active');
+                }
+            });
+
+            // Filter Rows
+            rows.forEach(row => {
+                const rowProduct = row.dataset.product;
+                const rowStage = row.dataset.stage;
+                
+                let show = false;
+                
+                if (product === 'CLOSED') {
+                    // Only show closed issues
+                    if (rowStage === 'CLOSED') show = true;
+                } else {
+                    // Show active issues matching product
+                    if (rowStage !== 'CLOSED') {
+                        if (product === 'ALL' || rowProduct === product) show = true;
+                    }
+                }
+                
+                row.style.display = show ? '' : 'none';
+            });
+        }
+        
+        function updateIssue(issueId, action) {
+            if (!action) return;
+            
+            fetch('/update_issue', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ issue_id: issueId, action: action })
+            })
+            .then(r => {
+                if (r.ok) window.location.reload();
+                else console.error("Update failed");
+            });
+        }
+        
+        function launchApp(appName) {
+            if (!appName) return;
+            console.log("Launching " + appName);
+            
+            fetch('/launch', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ app: appName })
+            })
+            .then(r => {
+                if (r.ok) console.log("Launched " + appName);
+                else console.error("Launch failed");
+            });
+        }
+
+        function openFile(path) {
+            if (!path || path === 'None') return;
+            fetch(`/open?file=${encodeURIComponent(path)}`)
+                .then(r => console.log("Opened", path))
+                .catch(e => console.error(e));
+        }
+
+        // Signal Flow Visualization
+        function spawnSignal() {
+            const grid = document.getElementById('main-grid');
+            const dot = document.createElement('div');
+            dot.className = 'signal-dot';
+            document.body.appendChild(dot);
+
+            // Coordinates (Hardcoded for demo, normally dynamic)
+            // We can try to find elements dynamically
+            try {
+                const moon = document.getElementById('zone-moon').getBoundingClientRect();
+                const jeong = document.querySelector('.jeong-agent').getBoundingClientRect(); // First Jeong agent
+                const na = document.querySelector('.na-agent').getBoundingClientRect(); // First Na agent
+                const kim = document.querySelector('.verifier-cell').getBoundingClientRect(); // First Verifier
+                
+                dot.style.left = (moon.left + moon.width/2) + 'px';
+                dot.style.top = (moon.top + moon.height/2) + 'px';
+                dot.style.opacity = 1;
+
+                setTimeout(() => { 
+                    dot.style.left = (jeong.left + jeong.width/2) + 'px'; 
+                    dot.style.top = (jeong.top + jeong.height/2) + 'px'; 
+                    dot.style.boxShadow = '0 0 15px var(--jeong-green)'; 
+                }, 100);
+                
+                setTimeout(() => { 
+                    dot.style.left = (na.left + na.width/2) + 'px'; 
+                    dot.style.top = (na.top + na.height/2) + 'px'; 
+                    dot.style.boxShadow = '0 0 15px var(--na-orange)'; 
+                }, 1000);
+                
+                setTimeout(() => { 
+                    dot.style.left = (kim.left + kim.width/2) + 'px'; 
+                    dot.style.top = (kim.top + kim.height/2) + 'px'; 
+                    dot.style.boxShadow = '0 0 15px var(--verify-pink)'; 
+                }, 2000);
+                
+                setTimeout(() => { dot.remove(); }, 3000);
+            } catch(e) {
+                dot.remove();
+            }
+        }
+
+        setInterval(spawnSignal, 4000);
+        spawnSignal(); // Initial spawn
+        
+        // Drag and Drop Logic
+        function drag(ev, issueId) {
+            ev.dataTransfer.setData("issueId", issueId);
+            ev.target.style.opacity = "0.5";
+        }
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+        
+        function dragEnter(ev) {
+            ev.preventDefault();
+            ev.currentTarget.style.background = "rgba(255, 255, 255, 0.2)";
+            ev.currentTarget.style.borderColor = "#fff";
+        }
+        
+        function dragLeave(ev) {
+            ev.currentTarget.style.background = "";
+            ev.currentTarget.style.borderColor = "";
+        }
+
+        function drop(ev, targetFile) {
+            ev.preventDefault();
+            ev.currentTarget.style.background = ""; // Reset style
+            ev.currentTarget.style.borderColor = "";
+            
+            var issueId = ev.dataTransfer.getData("issueId");
+            console.log("Dropped Issue #" + issueId + " on " + targetFile);
+            
+            // Send to backend
+            fetch('/assign_issue', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    issue_id: issueId,
+                    target_file: targetFile
+                }),
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log("Assignment successful");
+                    // Reload page to reflect changes
+                    window.location.reload();
+                } else {
+                    console.error("Assignment failed");
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+
+        setInterval(() => {
+            fetch('/').then(r => {
+                if(r.ok) {
+                    document.getElementById('server-dot').classList.add('online');
+                    document.getElementById('server-text').innerText = "Link Online";
+                    document.getElementById('server-text').style.color = "var(--jeong-green)";
+                }
+            }).catch(() => {
+                document.getElementById('server-dot').classList.remove('online');
+                document.getElementById('server-text').innerText = "Link Offline";
+                document.getElementById('server-text').style.color = "#666";
+            });
+        }, 5000);
+        
+        // Initial check
+        fetch('/').then(r => {
+            if(r.ok) {
+                document.getElementById('server-dot').classList.add('online');
+                document.getElementById('server-text').innerText = "Link Online";
+                document.getElementById('server-text').style.color = "var(--jeong-green)";
+            }
+        });
+    </script>
+</body>
+</html>
+    
