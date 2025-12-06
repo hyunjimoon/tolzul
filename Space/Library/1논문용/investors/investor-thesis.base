@@ -1,0 +1,222 @@
+sources:
+  - folder: Space/Library/1논문용/investors
+    recursive: true
+properties:
+  file.name:
+    displayName: Investor
+  investorType:
+    displayName: Type
+  investorStyle:
+    displayName: Style
+  thesisFocus:
+    displayName: Thesis
+  sectorFocus:
+    displayName: Sector
+  stagePreference:
+    displayName: Stage
+  dataResources:
+    displayName: Data Resources
+  thesisPaper:
+    displayName: Paper
+  investorPhilosophy:
+    displayName: Philosophy
+views:
+  - type: table
+    name: 🎯 All Thesis Investors
+    filters:
+      and:
+        - file.folder == "Space/Library/1논문용/investors"
+    order:
+      - file.name
+      - thesisPaper
+      - investorStyle
+      - investorPhilosophy
+      - sectorFocus
+      - thesisFocus
+    sort:
+      - property: investorStyle
+        direction: ASC
+      - property: file.name
+        direction: ASC
+    limit: 100
+    filter:
+      - property: investorStyle
+        operator: is not empty
+    columnSize:
+      file.name: 176
+      note.thesisPaper: 128
+      note.investorStyle: 80
+      note.investorPhilosophy: 100
+      note.thesisFocus: 250
+  - type: table
+    name: 🔍 Analyst-Style Investors
+    order:
+      - file.name
+      - sectorFocus
+      - thesisFocus
+      - stagePreference
+      - dataResources
+    sort:
+      - property: sectorFocus
+        direction: ASC
+    limit: 50
+    filter:
+      - property: investorStyle
+        operator: equals
+        value: Analyst
+  - type: table
+    name: 🙏 Believer-Style Investors
+    order:
+      - file.name
+      - investorPhilosophy
+      - sectorFocus
+      - thesisFocus
+      - stagePreference
+    sort:
+      - property: investorPhilosophy
+        direction: ASC
+    limit: 50
+    filter:
+      - property: investorStyle
+        operator: equals
+        value: Believer
+  - type: table
+    name: ⚖️ Hybrid-Style Investors
+    order:
+      - file.name
+      - investorPhilosophy
+      - sectorFocus
+      - thesisFocus
+    sort:
+      - property: sectorFocus
+        direction: ASC
+    limit: 50
+    filter:
+      - property: investorStyle
+        operator: equals
+        value: Hybrid
+  - type: table
+    name: 🚀 Space Sector Investors
+    order:
+      - file.name
+      - investorStyle
+      - thesisFocus
+      - dataResources
+    sort:
+      - property: investorStyle
+        direction: ASC
+    limit: 50
+    filter:
+      - property: sectorFocus
+        operator: contains
+        value: Space
+  - type: table
+    name: 🚗 Mobility/AV Investors
+    order:
+      - file.name
+      - investorStyle
+      - thesisFocus
+      - dataResources
+    sort:
+      - property: investorStyle
+        direction: ASC
+    limit: 50
+    filter:
+      - property: sectorFocus
+        operator: contains any of
+        value:
+          - Autonomous
+          - Mobility
+          - Transportation
+          - EV
+  - type: table
+    name: 🛡️ Defense/Govtech Investors
+    order:
+      - file.name
+      - investorStyle
+      - thesisFocus
+      - stagePreference
+    sort:
+      - property: investorStyle
+        direction: ASC
+    limit: 50
+    filter:
+      - property: sectorFocus
+        operator: contains any of
+        value:
+          - Defense
+          - Govtech
+          - Infrastructure
+  - type: table
+    name: 📊 Data Resource Providers
+    order:
+      - file.name
+      - sectorFocus
+      - dataResources
+      - thesisPaper
+    sort:
+      - property: sectorFocus
+        direction: ASC
+    limit: 50
+    filter:
+      - property: dataResources
+        operator: is not empty
+  - type: table
+    name: ✌️ Paper U Relevant
+    order:
+      - file.name
+      - investorStyle
+      - investorPhilosophy
+      - thesisFocus
+    sort:
+      - property: investorStyle
+        direction: ASC
+    limit: 50
+    filter:
+      - property: thesisPaper
+        operator: contains
+        value: U
+  - type: table
+    name: 🦾 Paper C Relevant
+    order:
+      - file.name
+      - investorStyle
+      - investorPhilosophy
+      - thesisFocus
+    sort:
+      - property: investorStyle
+        direction: ASC
+    limit: 50
+    filter:
+      - property: thesisPaper
+        operator: contains
+        value: C
+  - type: table
+    name: 🤹 Paper N Relevant
+    order:
+      - file.name
+      - investorStyle
+      - investorPhilosophy
+      - thesisFocus
+    sort:
+      - property: investorStyle
+        direction: ASC
+    limit: 50
+    filter:
+      - property: thesisPaper
+        operator: contains
+        value: N
+  - type: table
+    name: 💡 By Philosophy
+    order:
+      - file.name
+      - investorPhilosophy
+      - investorStyle
+      - sectorFocus
+    sort:
+      - property: investorPhilosophy
+        direction: ASC
+    limit: 100
+    filter:
+      - property: investorPhilosophy
+        operator: is not empty

@@ -1,46 +1,92 @@
-formulas:
-  Color: |-
-    if(agentGroup = "M", "🌙",
-    if(agentGroup = "O", "🔵",
-    if(agentGroup = "G", "🟠",
-    if(agentGroup = "J", "🟢",
-    if(agentGroup = "K", "🔴", "")))))
-  AgentNums: |-
-    if(agentGroup = "M", "(7)",
-    if(agentGroup = "O", "(11-13)",
-    if(agentGroup = "G", "(4-6)",
-    if(agentGroup = "J", "(8-10)",
-    if(agentGroup = "K", "(1-3)", "")))))
 properties:
   file.name:
-    displayName: Name
-  formula.Color:
-    displayName: 🎨
+    displayName: Agent
+  agentNum:
+    displayName: "#"
+  agentCode:
+    displayName: Code
   agentGroup:
     displayName: Group
-  formula.AgentNums:
-    displayName: Agents
   agentRole:
     displayName: Role
+  platform:
+    displayName: Platform
+  status:
+    displayName: Status
+  product:
+    displayName: 📦
 views:
   - type: table
     name: Fleet Overview
     order:
-      - formula.Color
+      - agentNum
+      - agentCode
       - agentGroup
-      - formula.AgentNums
-      - file.name
       - agentRole
+      - platform
+      - status
     sort:
-      - property: agentGroup
+      - property: agentNum
         direction: ASC
     limit: 20
     filter:
-      - property: agentGroup
+      - property: agentNum
         operator: is not empty
     columnSize:
-      formula.Color: 30
-      agentGroup: 50
-      formula.AgentNums: 70
-      file.name: 150
-      agentRole: 100
+      note.platform: 199
+  - type: table
+    name: 🔴 K (검증)
+    order:
+      - agentNum
+      - agentCode
+      - product
+      - status
+    sort:
+      - property: agentNum
+        direction: ASC
+    filter:
+      - property: agentGroup
+        operator: equals
+        value: K
+  - type: table
+    name: 🟠 G (구조화)
+    order:
+      - agentNum
+      - agentCode
+      - agentRole
+      - status
+    sort:
+      - property: agentNum
+        direction: ASC
+    filter:
+      - property: agentGroup
+        operator: equals
+        value: G
+  - type: table
+    name: 🟢 J (빠른실행)
+    order:
+      - agentNum
+      - agentCode
+      - agentRole
+      - status
+    sort:
+      - property: agentNum
+        direction: ASC
+    filter:
+      - property: agentGroup
+        operator: equals
+        value: J
+  - type: table
+    name: 🔵 O (DB)
+    order:
+      - agentNum
+      - agentCode
+      - product
+      - status
+    sort:
+      - property: agentNum
+        direction: ASC
+    filter:
+      - property: agentGroup
+        operator: equals
+        value: O

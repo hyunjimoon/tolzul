@@ -1,6 +1,6 @@
 ---
 modified:
-  - 2025-12-03T03:33:53-05:00
+  - 2025-12-03T04:33:45-05:00
 ---
  # 🎖️ choose(organization) - 전라좌수군 AI Fleet
 
@@ -60,11 +60,11 @@ choose(organization)/
 
 ## 📋 Products
 
-| Code | Target | Folder |
-|:---:|:---|:---:|
-| U ✌️ | Management Science | [[P1✌️]] |
-| C 🦾 | Business Strategy | [[P2🦾]] |
-| N 🤹 | Operations Management | [[P3🤹]] |
+| Code | Target department in Management Science journal |  Folder  |
+| :--: | :---------------------------------------------- | :------: |
+| U ✌️ | Entrepreneurship and Innovation                 | [[P1✌️]] |
+| C 🦾 | Business Strategy                               | [[P2🦾]] |
+| N 🤹 | Operations Management                           | [[P3🤹]] |
 
 ---
 

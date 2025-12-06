@@ -1,3 +1,9 @@
+---
+modified:
+  - 2025-12-04T08:59:05-05:00
+---
+bass ventures에서 뵘
+
 snu labs, naver labs, harvard phd (what are good robots) -> verve motion (what are good company)
 
 how are
@@ -8,7 +14,7 @@ how are
 	- only harware has good but can't 🙋‍♀️
 - 2016 atlas - intricate vision
 
-customer: warmart, starmarket 
+customer: walmart, starmarket 
 2000 machine
 
 고객사 (mandatory bp)

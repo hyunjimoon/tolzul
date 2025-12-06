@@ -1,6 +1,8 @@
 ---
 agentGroup: J
 agentRole: JID-Input
+modified:
+  - 2025-12-03T07:31:20-05:00
 ---
 # 🟢 JID (8) Input Resources
 
@@ -12,11 +14,11 @@ agentRole: JID-Input
 
 ### Structure & Content 벤치마킹 논문 (str_con)
 
-| # | 파일명 | 논문 | thesisPaper | 용도 |
-|:---:|:---|:---|:---:|:---|
-| 1 | `n24_prior_exp_learn_per_be.pdf` | Nanda - Prior & Experiment | P1 | Gospel, Hook 스타일 |
-| 2 | `lpk25_online_grocery_emp.pdf` | LPK - Online Grocery | P2 | Empirics 구조 |
-| 3 | `hkl25_unc_search_kwldg_tsf.pdf` | HKL - Uncertainty Search | P3 | Theory 연결 |
+|  #  | 파일명                                | 논문                         | thesisPaper | 용도               |
+| :-: | :--------------------------------- | :------------------------- | :---------: | :--------------- |
+|  1  | [[n24_prior_exp_learn_per_be.pdf]] | Nanda - Prior & Experiment |     P1      | Gospel, Hook 스타일 |
+|  2  | [[lpk25_online_grocery_emp.pdf]]   | LPK - Online Grocery       |     P2      | Empirics 구조      |
+|  3  | [[hkl25_unc_search_kwldg_tsf.pdf]] | HKL - Uncertainty Search   |     P3      | Theory 연결        |
 
 **위치**: `/Front/On/love(cs)/vague promise project/w5/str_con(paper)/`
 
@@ -38,7 +40,7 @@ agentRole: JID-Input
 
 | # | 파일명 | thesisPaper | thesisChapter | 역할 |
 |:---:|:---|:---:|:---:|:---|
-| 7 | [[📜nanda_prior_entfin]] | P1 | T | Theory 핵심 |
+| 7 | [[📜nanda24_prior_exp_learn]] | P1 | T | Theory 핵심 |
 | 8 | [[📜lpz25_role_online_grocery_household]] | P2 | E | Empirics 방법론 |
 | 9 | [[📜gans20_choose(tech)]] | P2 | T | Strategy 프레임 |
 | 10 | [[📜fine22_cog_ready]] | P3 | T | Ops 기반 |

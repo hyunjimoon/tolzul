@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#1a1a2e"/>
+  
+  <!-- Title Banner -->
+  <rect x="0" y="0" width="1200" height="80" fill="#16213e"/>
+  <text x="600" y="35" text-anchor="middle" fill="#e94560" font-size="22" font-weight="bold">📜 Control vs. Execution: Endogenous Appropriability</text>
+  <text x="600" y="58" text-anchor="middle" fill="#94a3b8" font-size="14">Ching, Gans &amp; Stern (2019) | Industrial and Corporate Change</text>
+  <text x="600" y="73" text-anchor="middle" fill="#64748b" font-size="11">Core Insight: Appropriability regimes are ENDOGENOUS to entrepreneurial choice, not exogenous</text>
+
+  <!-- 2x2 Grid Layout -->
+  
+  <!-- Quadrant 1: 기(起) - Hook/Phenomenon (Teal) -->
+  <rect x="20" y="90" width="570" height="380" rx="12" fill="#0d3b66" stroke="#14b8a6" stroke-width="2"/>
+  <rect x="20" y="90" width="570" height="40" rx="12" fill="#14b8a6"/>
+  <text x="305" y="117" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">🐢 기(起) | The Puzzle: Same Idea, Different Paths</text>
+  
+  <!-- Bell vs Western Union Story -->
+  <text x="40" y="155" fill="#e0f2fe" font-size="13" font-weight="bold">📞 The Telephone Case (1876-1879)</text>
+  
+  <rect x="40" y="170" width="250" height="120" rx="8" fill="#134e4a" opacity="0.6"/>
+  <text x="165" y="190" text-anchor="middle" fill="#5eead4" font-size="12" font-weight="bold">BELL (Control Path)</text>
+  <text x="50" y="210" fill="#d1fae5" font-size="10">• Focused on patents &amp; IP</text>
+  <text x="50" y="225" fill="#d1fae5" font-size="10">• Willing to sell for $100K</text>
+  <text x="50" y="240" fill="#d1fae5" font-size="10">• Delayed market entry</text>
+  <text x="50" y="255" fill="#d1fae5" font-size="10">• Won: Legal control</text>
+  <text x="50" y="275" fill="#fbbf24" font-size="10" font-weight="bold">→ "Quiet life" after winning</text>
+  
+  <rect x="310" y="170" width="260" height="120" rx="8" fill="#7c2d12" opacity="0.6"/>
+  <text x="440" y="190" text-anchor="middle" fill="#fca5a5" font-size="12" font-weight="bold">WESTERN UNION (Execution)</text>
+  <text x="320" y="210" fill="#fecaca" font-size="10">• Hired Edison for workaround</text>
+  <text x="320" y="225" fill="#fecaca" font-size="10">• Leveraged complementary assets</text>
+  <text x="320" y="240" fill="#fecaca" font-size="10">• Rapid market scaling</text>
+  <text x="320" y="255" fill="#fecaca" font-size="10">• Won: Market position</text>
+  <text x="320" y="275" fill="#fbbf24" font-size="10" font-weight="bold">→ Got 40% equity in settlement!</text>
+  
+  <!-- Rosenbergian Uncertainty -->
+  <rect x="40" y="300" width="530" height="80" rx="8" fill="#1e3a5f"/>
+  <text x="305" y="320" text-anchor="middle" fill="#60a5fa" font-size="12" font-weight="bold">🎲 Rosenbergian Uncertainty (Key Concept)</text>
+  <text x="50" y="340" fill="#bfdbfe" font-size="10">"Uncertainties of a specifically economic nature" that arise AFTER successful invention</text>
+  <text x="50" y="355" fill="#93c5fd" font-size="10">• Market size? Cost structure at scale? Customer applications? All unknown!</text>
+  <text x="50" y="370" fill="#fde68a" font-size="10" font-weight="bold">→ Cannot rank alternative commercialization paths → Near-term factors dominate choice</text>
+  
+  <!-- Key Literature -->
+  <text x="40" y="400" fill="#94a3b8" font-size="10">📚 Rosenberg 1994 | Teece 1986 | Shane 2000 | Gruber+ 2013</text>
+  <rect x="40" y="410" width="530" height="45" rx="6" fill="#064e3b" opacity="0.5"/>
+  <text x="50" y="428" fill="#6ee7b7" font-size="10" font-weight="bold">🔑 Gospel Truth Challenged:</text>
+  <text x="50" y="445" fill="#a7f3d0" font-size="10">"Appropriability regime is exogenous" → Actually, it's ENDOGENOUS to founder's strategic choice!</text>
+
+  <!-- Quadrant 2: 승(承) - Theory Framework (Orange) -->
+  <rect x="610" y="90" width="570" height="380" rx="12" fill="#3d2c1f" stroke="#f97316" stroke-width="2"/>
+  <rect x="610" y="90" width="570" height="40" rx="12" fill="#f97316"/>
+  <text x="895" y="117" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">🐅 승(承) | Theory: Strategic Substitutes Framework</text>
+  
+  <!-- The Choice Diagram -->
+  <text x="630" y="150" fill="#fed7aa" font-size="12" font-weight="bold">⚖️ The Fundamental Trade-off</text>
+  
+  <!-- Control Box -->
+  <rect x="630" y="165" width="180" height="130" rx="8" fill="#14532d" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="720" y="185" text-anchor="middle" fill="#22c55e" font-size="11" font-weight="bold">CONTROL</text>
+  <text x="640" y="205" fill="#bbf7d0" font-size="9">📋 Patents, secrets, non-competes</text>
+  <text x="640" y="220" fill="#bbf7d0" font-size="9">💰 Upfront costs (c)</text>
+  <text x="640" y="235" fill="#bbf7d0" font-size="9">⏳ Delayed entry (t periods)</text>
+  <text x="640" y="250" fill="#bbf7d0" font-size="9">🛡️ Prevents future competition</text>
+  <text x="640" y="270" fill="#86efac" font-size="9" font-weight="bold">Payoff: δᵗ/(1-δ) · αc·v - c</text>
+  
+  <!-- VS Arrow -->
+  <text x="870" y="230" text-anchor="middle" fill="#fbbf24" font-size="24" font-weight="bold">⟷</text>
+  <text x="870" y="250" text-anchor="middle" fill="#fcd34d" font-size="10">SUBSTITUTES</text>
+  
+  <!-- Execution Box -->
+  <rect x="930" y="165" width="180" height="130" rx="8" fill="#7c2d12" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="1020" y="185" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="bold">EXECUTION</text>
+  <text x="940" y="205" fill="#fecaca" font-size="9">🚀 Fast market entry, learning</text>
+  <text x="940" y="220" fill="#fecaca" font-size="9">💸 Ongoing costs (e/period)</text>
+  <text x="940" y="235" fill="#fecaca" font-size="9">📈 "Get ahead, stay ahead"</text>
+  <text x="940" y="250" fill="#fecaca" font-size="9">🎓 Customer learning advantage</text>
+  <text x="940" y="270" fill="#fca5a5" font-size="9" font-weight="bold">Payoff: 1/(1-δ) · (αE·v - e)</text>
+  
+  <!-- Key Equation -->
+  <rect x="630" y="305" width="530" height="50" rx="8" fill="#1e1b4b"/>
+  <text x="895" y="325" text-anchor="middle" fill="#c4b5fd" font-size="11" font-weight="bold">📐 Control Preferred When:</text>
+  <text x="895" y="345" text-anchor="middle" fill="#e9d5ff" font-size="13">(δᵗ·αC - αE)·v &gt; (1-δ)·c - e</text>
+  
+  <!-- Critical Insight Box -->
+  <rect x="630" y="365" width="530" height="90" rx="8" fill="#4c1d95" opacity="0.4" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="650" y="388" fill="#c4b5fd" font-size="11" font-weight="bold">💡 Critical Insight: Learning Forfeiture</text>
+  <text x="650" y="408" fill="#ddd6fe" font-size="10">Under CONTROL: "founders cannot gain from learning the value of innovation"</text>
+  <text x="650" y="428" fill="#ddd6fe" font-size="10">Under EXECUTION: "learning allows entrepreneur to forestall costs if value is low"</text>
+  <text x="650" y="448" fill="#fde68a" font-size="10" font-weight="bold">→ Even COSTLESS IP may be rejected if learning advantage is high enough!</text>
+
+  <!-- Quadrant 3: 전(轉) - Empirical Results (Red) -->
+  <rect x="20" y="480" width="570" height="380" rx="12" fill="#450a0a" stroke="#dc2626" stroke-width="2"/>
+  <rect x="20" y="480" width="570" height="40" rx="12" fill="#dc2626"/>
+  <text x="305" y="507" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">🐙 전(轉) | Evidence: Paper-Startup Pairs (N=103)</text>
+  
+  <!-- Method Box -->
+  <rect x="40" y="535" width="530" height="55" rx="6" fill="#1e293b"/>
+  <text x="50" y="555" fill="#94a3b8" font-size="10" font-weight="bold">🔬 Natural Experiment Design:</text>
+  <text x="50" y="570" fill="#cbd5e1" font-size="9">Same "idea" (paper co-authored by faculty &amp; student) → Different founder identity</text>
+  <text x="50" y="585" fill="#94a3b8" font-size="9">Data: CrunchBase + USPTO + Google Scholar | EE/CS startups 2007-2014</text>
+  
+  <!-- Results Table -->
+  <rect x="40" y="600" width="530" height="120" rx="8" fill="#1f2937"/>
+  <text x="305" y="620" text-anchor="middle" fill="#f472b6" font-size="11" font-weight="bold">📊 Key Results: Student vs. Faculty Founders</text>
+  
+  <!-- Table Headers -->
+  <text x="60" y="645" fill="#9ca3af" font-size="9">Measure</text>
+  <text x="200" y="645" fill="#4ade80" font-size="9">Student-led</text>
+  <text x="310" y="645" fill="#f87171" font-size="9">Faculty-led</text>
+  <text x="420" y="645" fill="#fbbf24" font-size="9">Difference</text>
+  
+  <line x1="50" y1="650" x2="560" y2="650" stroke="#374151" stroke-width="1"/>
+  
+  <!-- Table Data -->
+  <text x="60" y="665" fill="#e5e7eb" font-size="9">Patent Filing Rate</text>
+  <text x="200" y="665" fill="#86efac" font-size="9" font-weight="bold">32%</text>
+  <text x="310" y="665" fill="#fca5a5" font-size="9" font-weight="bold">70%</text>
+  <text x="420" y="665" fill="#fcd34d" font-size="9" font-weight="bold">-38 pp ***</text>
+  
+  <text x="60" y="680" fill="#e5e7eb" font-size="9">Paper → Founding</text>
+  <text x="200" y="680" fill="#86efac" font-size="9" font-weight="bold">14 mo</text>
+  <text x="310" y="680" fill="#fca5a5" font-size="9" font-weight="bold">45 mo</text>
+  <text x="420" y="680" fill="#fcd34d" font-size="9" font-weight="bold">-31 mo ***</text>
+  
+  <text x="60" y="695" fill="#e5e7eb" font-size="9">Paper → Funding</text>
+  <text x="200" y="695" fill="#86efac" font-size="9" font-weight="bold">29 mo</text>
+  <text x="310" y="695" fill="#fca5a5" font-size="9" font-weight="bold">68 mo</text>
+  <text x="420" y="695" fill="#fcd34d" font-size="9" font-weight="bold">-39 mo ***</text>
+  
+  <text x="60" y="710" fill="#e5e7eb" font-size="9">Paper → Product</text>
+  <text x="200" y="710" fill="#86efac" font-size="9" font-weight="bold">31 mo</text>
+  <text x="310" y="710" fill="#fca5a5" font-size="9" font-weight="bold">82 mo</text>
+  <text x="420" y="710" fill="#fcd34d" font-size="9" font-weight="bold">-51 mo ***</text>
+  
+  <!-- Interaction Effect -->
+  <rect x="40" y="730" width="530" height="60" rx="8" fill="#7f1d1d"/>
+  <text x="50" y="750" fill="#fca5a5" font-size="11" font-weight="bold">🎯 Critical Interaction: Trade-off Evidence</text>
+  <text x="50" y="768" fill="#fecaca" font-size="10">Student-led ventures that DO patent → +27 month delay vs. those that don't</text>
+  <text x="50" y="783" fill="#fde68a" font-size="10" font-weight="bold">→ Direct evidence of strategic substitutability between Control &amp; Execution!</text>
+  
+  <!-- Interpretation -->
+  <rect x="40" y="800" width="260" height="50" rx="6" fill="#14532d" opacity="0.7"/>
+  <text x="170" y="820" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="bold">Students → EXECUTION</text>
+  <text x="170" y="835" text-anchor="middle" fill="#86efac" font-size="9">Lower opp cost, less TLO constraint</text>
+  
+  <rect x="310" y="800" width="260" height="50" rx="6" fill="#7f1d1d" opacity="0.7"/>
+  <text x="440" y="820" text-anchor="middle" fill="#f87171" font-size="10" font-weight="bold">Faculty → CONTROL</text>
+  <text x="440" y="835" text-anchor="middle" fill="#fca5a5" font-size="9">Higher opp cost, Bayh-Dole support</text>
+
+  <!-- Quadrant 4: 결(結) - Implications (Purple) -->
+  <rect x="610" y="480" width="570" height="380" rx="12" fill="#2e1065" stroke="#a855f7" stroke-width="2"/>
+  <rect x="610" y="480" width="570" height="40" rx="12" fill="#a855f7"/>
+  <text x="895" y="507" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">👾 결(結) | Implications: For Your Dissertation</text>
+  
+  <!-- Connection to Dissertation -->
+  <rect x="630" y="535" width="530" height="100" rx="8" fill="#1e1b4b"/>
+  <text x="650" y="555" fill="#c4b5fd" font-size="11" font-weight="bold">🎓 Strategic Ambiguity Connection (P1-P3)</text>
+  
+  <text x="650" y="575" fill="#ddd6fe" font-size="10">• P1 (U-shaped survival): Early flexibility (execution) → Later commitment (control)</text>
+  <text x="650" y="592" fill="#ddd6fe" font-size="10">• P2 (Competency trap): Premature Control = lose learning → stuck in wrong path</text>
+  <text x="650" y="609" fill="#ddd6fe" font-size="10">• P3 (Optimal options): Ambiguity preserves optionality that commitment forecloses</text>
+  <text x="650" y="626" fill="#fde68a" font-size="10" font-weight="bold">→ Vague value propositions may signal EXECUTION-oriented strategy!</text>
+  
+  <!-- Founder Identity Framework -->
+  <rect x="630" y="645" width="250" height="95" rx="8" fill="#064e3b" opacity="0.6"/>
+  <text x="755" y="665" text-anchor="middle" fill="#6ee7b7" font-size="10" font-weight="bold">DISCOVERER Identity</text>
+  <text x="755" y="685" text-anchor="middle" fill="#a7f3d0" font-size="9">(like Students)</text>
+  <text x="640" y="705" fill="#d1fae5" font-size="9">• Lower commitment</text>
+  <text x="640" y="720" fill="#d1fae5" font-size="9">• Strategic ambiguity OK</text>
+  <text x="640" y="735" fill="#d1fae5" font-size="9">• Faster pivoting</text>
+  
+  <rect x="900" y="645" width="250" height="95" rx="8" fill="#7f1d1d" opacity="0.6"/>
+  <text x="1025" y="665" text-anchor="middle" fill="#fca5a5" font-size="10" font-weight="bold">REVOLUTIONARY Identity</text>
+  <text x="1025" y="685" text-anchor="middle" fill="#fecaca" font-size="9">(like Faculty)</text>
+  <text x="910" y="705" fill="#fed7d7" font-size="9">• Higher commitment</text>
+  <text x="910" y="720" fill="#fed7d7" font-size="9">• Specific value prop</text>
+  <text x="910" y="735" fill="#fed7d7" font-size="9">• Slower adaptation</text>
+  
+  <!-- Key Takeaway -->
+  <rect x="630" y="750" width="530" height="45" rx="8" fill="#4c1d95" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="895" y="770" text-anchor="middle" fill="#e9d5ff" font-size="11" font-weight="bold">🔑 Core Theoretical Contribution</text>
+  <text x="895" y="788" text-anchor="middle" fill="#f5d0fe" font-size="10">"Appropriability regime is the result of ENDOGENOUS CHOICES, not environmental factors"</text>
+  
+  <!-- Must Read Section -->
+  <text x="630" y="815" fill="#9ca3af" font-size="10" font-weight="bold">📚 Must Read:</text>
+  <text x="630" y="832" fill="#cbd5e1" font-size="9">Rosenberg 1994 (uncertainty) | Teece 1986 (PFI) | Gans+ 2016 (entrepreneurial strategy foundations)</text>
+  
+  <!-- For Your Paper -->
+  <text x="630" y="852" fill="#9ca3af" font-size="10" font-weight="bold">✍️ For Your Paper:</text>
+  <text x="800" y="852" fill="#fde68a" font-size="9">Use Control/Execution to operationalize Flexibility/Commitment trade-off!</text>
+
+  <!-- Footer -->
+  <rect x="0" y="870" width="1200" height="30" fill="#16213e"/>
+  <text x="600" y="888" text-anchor="middle" fill="#64748b" font-size="10">전라좌수군 Academic Poster System | 🐢정운(Hook) → 🐅권준(Theory) → 🐙김완(Evidence) → 👾어영담(Implications)</text>
+</svg>

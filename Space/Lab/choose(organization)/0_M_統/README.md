@@ -1,6 +1,10 @@
 ---
 agentGroup: M
 agentRole: 통제사
+agentNum: 7
+agentCode: M
+platform: Human
+status: 활성
 ---
 # 🌙 M (7) - 통제사 Command Center
 
@@ -76,7 +80,7 @@ M → [[1_O_見]]: 난중일기
 ## 🔗 Quick Links
 
 - Prompts: [[권준CLAUDE_EXECUTION_PROMPT]], [[정운CHATGPT_REVIEW_PROMPT]], [[김완GEMINI_REVIEW_PROMPT]]
-- Papers: [[1논문용]], [[📜nanda_prior_entfin]]
+- Papers: [[1논문용]], [[📜nanda24_prior_exp_learn]]
 - Products: [[P1✌️]], [[P2🦾]], [[P3🤹]]
 
 ---

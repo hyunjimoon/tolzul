@@ -1,83 +1,81 @@
-formulas:
-  Paper: |-
-    if(thesisPaper = "U", "📦 U",
-    if(thesisPaper = "C", "📦 C",
-    if(thesisPaper = "N", "📦 N", "")))
-  Chapter: |-
-    if(thesisChapter = "I", "📖 I",
-    if(thesisChapter = "T", "🧠 T",
-    if(thesisChapter = "E", "📊 E",
-    if(thesisChapter = "D", "💬 D", ""))))
 properties:
   file.name:
     displayName: Paper
-  formula.Paper:
+  thesisPaper:
     displayName: Thesis
-  formula.Chapter:
+  thesisChapter:
     displayName: Chapter
   rank:
     displayName: ⭐
-  by:
-    displayName: Author
 views:
   - type: table
     name: Thesis Papers
+    filters:
+      and:
+        - file.inFolder("Space/Library/1논문용")
+        - file.name.startsWith("📜")
     order:
-      - formula.Paper
-      - formula.Chapter
+      - thesisPaper
+      - thesisChapter
       - file.name
       - rank
-      - by
-    filter:
-      - property: thesisPaper
-        operator: is not empty
     sort:
       - property: thesisPaper
-        direction: ASC
-      - property: thesisChapter
-        direction: ASC
+        direction: DESC
+      - property: file.name
+        direction: DESC
       - property: rank
         direction: DESC
     limit: 100
+    filter:
+      - property: thesisPaper
+        operator: is not empty
+      - property: file.name
+        operator: does not contain
+        value: README
+    columnSize:
+      note.thesisPaper: 124
+      note.thesisChapter: 50
+      file.name: 407
   - type: table
-    name: "📦 U Only"
+    name: 📦 U Only
     order:
-      - formula.Chapter
+      - thesisChapter
       - file.name
       - rank
+    sort:
+      - property: thesisChapter
+        direction: ASC
+    limit: 50
     filter:
       - property: thesisPaper
         operator: equals
         value: U
+  - type: table
+    name: 📦 C Only
+    order:
+      - thesisChapter
+      - file.name
+      - rank
     sort:
       - property: thesisChapter
         direction: ASC
     limit: 50
-  - type: table
-    name: "📦 C Only"
-    order:
-      - formula.Chapter
-      - file.name
-      - rank
     filter:
       - property: thesisPaper
         operator: equals
         value: C
+  - type: table
+    name: 📦 N Only
+    order:
+      - thesisChapter
+      - file.name
+      - rank
     sort:
       - property: thesisChapter
         direction: ASC
     limit: 50
-  - type: table
-    name: "📦 N Only"
-    order:
-      - formula.Chapter
-      - file.name
-      - rank
     filter:
       - property: thesisPaper
         operator: equals
         value: N
-    sort:
-      - property: thesisChapter
-        direction: ASC
-    limit: 50

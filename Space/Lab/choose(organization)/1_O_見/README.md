@@ -14,7 +14,7 @@ agentRole: DB/조류파악
 
 | Agent | Product | DB Source |
 |:---:|:---:|:---|
-| OU | [[P1✌️]] | [[📜nanda_prior_entfin]], [[📜stern24_model]] |
+| OU | [[P1✌️]] | [[📜nanda24_prior_exp_learn]], [[📜stern24_model]] |
 | OC | [[P2🦾]] | [[📜Gans19_EntrepreneurialStrategy]] |
 | ON | [[P3🤹]] | [[business_cases]], [[📜fine22_cog_ready]] |
 

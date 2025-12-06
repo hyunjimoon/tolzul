@@ -314,19 +314,35 @@ def consolidate_quantum_snapshots(
 # Two-Snapshot Analysis Mode (Simplified E/L/S/V/F)
 # =========================================================
 
-# Deal type patterns following guidance:
-# - Series A / Early Stage VC → A (baseline event)
-# - Series B+ / Later Stage VC → B+ (success event)
-PAT_A = re.compile(r"(?:\bEarly\s*Stage\s*VC\b|\bSeries\s*A(?:\b|[\s\-]?\d*)\b)", re.I)
-PAT_Bp = re.compile(r"(?:\bLater\s*Stage\s*VC\b|\bSeries\s*[B-G](?:\b|[\s\-]?\d*)\b)", re.I)
+# PitchBook Stage Classification (list-based for clarity)
+# Note: PitchBook uses "Early Stage VC" for Series A/B and "Later Stage VC" for Series C+
+EARLY_STAGE_TYPES = [
+    'Early Stage VC',      # Primary PitchBook label (includes Series A & B)
+    'Seed Round',
+    'Angel (individual)',
+    'Accelerator/Incubator',
+]
+
+LATER_STAGE_TYPES = [
+    'Later Stage VC',      # Primary PitchBook label (Series C+)
+    'PE Growth/Expansion',
+]
+
 
 def _is_A(s: str) -> bool:
-    """Check if deal type is Series A or Early Stage VC"""
-    return bool(PAT_A.search(s or ""))
+    """Check if deal type is Early Stage (Series A/B)."""
+    if not s:
+        return False
+    s_lower = s.lower().strip()
+    return any(stage.lower() in s_lower for stage in EARLY_STAGE_TYPES)
+
 
 def _is_BPLUS(s: str) -> bool:
-    """Check if deal type is Series B+ or Later Stage VC"""
-    return bool(PAT_Bp.search(s or ""))
+    """Check if deal type is Later Stage (Series C+)."""
+    if not s:
+        return False
+    s_lower = s.lower().strip()
+    return any(stage.lower() in s_lower for stage in LATER_STAGE_TYPES)
 
 
 def load_two_snapshots(baseline_path: Union[str, Path], end_path: Union[str, Path]) -> Tuple[pd.DataFrame, pd.DataFrame]:
@@ -1168,23 +1184,19 @@ def create_survival_seriesb_progression(
         - Y_MA_lower: Lower bound (M&A=0)
         - at_risk: Whether company was in at-risk cohort
     """
-    import re
-
-    # Regex patterns for deal types (FIXED - matches actual PitchBook data structure)
-    # PitchBook uses "Early Stage VC" / "Later Stage VC" instead of "Series A/B/C"
-
-    # Series A: "Early Stage VC" is the primary label (~45K companies)
-    A_STAGE_PAT = r"(?:\bSeries\s*A(?:[-\s]?\d+|[A-Z])?\b|\bEarly[-\s]*Stage\s*VC\b)"
-
-    # Series B+: "Later Stage VC" is the primary label (~24K companies)
-    B_PLUS_PAT = r"(?:\bLater[-\s]*Stage\s*VC\b|\bSeries\s*[B-G](?:[-\s]?\d+|[A-Z])?\b)"
-
-    # M&A pattern (unchanged)
+    # M&A pattern (unchanged - these ARE regex patterns in PitchBook)
     MA_PAT = r"(?:Merger|Acquisition|Buyout|LBO)"
     OOB_VAL = "Out of Business"
 
     # Identify company ID column
     id_col = 'CompanyID' if 'CompanyID' in df_baseline.columns else 'company_id'
+
+    def _check_stage(s: str, stage_list: list) -> bool:
+        """Check if deal type matches any stage in the list."""
+        if not s:
+            return False
+        s_lower = s.lower().strip()
+        return any(stage.lower() in s_lower for stage in stage_list)
 
     def apply_asof_cap(df, snapshot_date, date_col="LastFinancingDate", type_col="LastFinancingDealType"):
         """Apply as-of date capping to prevent data leakage."""
@@ -1207,9 +1219,13 @@ def create_survival_seriesb_progression(
         if pd.notna(max_date) and max_date > snap_dt:
             print(f"  ⚠️  WARNING: Leakage detected: {max_date} > {snap_dt}")
 
-        # Convenience flags for this snapshot
-        df["asof_is_Bplus"] = df[type_col + "_asof"].fillna("").str.contains(B_PLUS_PAT, case=False, regex=True)
-        df["asof_is_Astage"] = df[type_col + "_asof"].fillna("").str.contains(A_STAGE_PAT, case=False, regex=True)
+        # Convenience flags for this snapshot (using list-based stage classification)
+        df["asof_is_Bplus"] = df[type_col + "_asof"].fillna("").apply(
+            lambda x: _check_stage(x, LATER_STAGE_TYPES)
+        )
+        df["asof_is_Astage"] = df[type_col + "_asof"].fillna("").apply(
+            lambda x: _check_stage(x, EARLY_STAGE_TYPES)
+        )
         df["asof_is_MA"] = df[type_col + "_asof"].fillna("").str.contains(MA_PAT, case=False, regex=True)
 
         # Debug: Show sample matches
@@ -1441,33 +1457,24 @@ def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
         desc = df['description'] if 'description' in df.columns else None
         df['is_hardware'] = classify_hardware_vectorized(df['keywords'], desc)
 
-    # 3) Early funding ($M) - ONLY Series A / Early Stage VC
+    # 3) Early funding ($M) - ONLY Early Stage VC (includes Series A/B)
     if 'first_financing_size' in df.columns:
-        # Pattern for Series A / Early Stage VC (same as DV creation)
-        A_STAGE_PAT = r"(?:\bSeries\s*A(?:[-\s]?\d+|[A-Z])?\b|\bEarly[-\s]*Stage\s*VC\b)"
-
         # Initialize with the funding amount
         df['early_funding_musd'] = derive_early_funding(df['first_financing_size'])
 
-        # Filter: Set to NaN if NOT Early Stage VC / Series A
+        # Filter: Set to NaN if NOT Early Stage VC
         if 'first_financing_deal_type' in df.columns:
-            is_series_a = df['first_financing_deal_type'].fillna("").str.contains(
-                A_STAGE_PAT, case=False, regex=True, na=False
-            )
-            # Keep only Series A / Early Stage VC funding
-            df.loc[~is_series_a, 'early_funding_musd'] = np.nan
-            print(f"  ℹ️  Early funding filtered to Series A / Early Stage VC: {is_series_a.sum():,} of {len(df):,} companies")
+            is_early_stage = df['first_financing_deal_type'].fillna("").apply(_is_A)
+            # Keep only Early Stage VC funding
+            df.loc[~is_early_stage, 'early_funding_musd'] = np.nan
+            print(f"  ℹ️  Early funding filtered to Early Stage VC: {is_early_stage.sum():,} of {len(df):,} companies")
         else:
             print("  ⚠️  Warning: 'first_financing_deal_type' not found. Using all first financing rounds.")
 
-    # 4) Growth (DV for H2) - Series B+ indicator
+    # 4) Growth (DV for H2) - Later Stage VC indicator (Series C+)
     if 'last_financing_deal_type' in df.columns:
-        # Pattern for Series B+: Later Stage VC / Series B-G
-        B_PLUS_PAT = r"(?:\bLater[-\s]*Stage\s*VC\b|\bSeries\s*[B-G](?:[-\s]?\d+|[A-Z])?\b)"
-        df['growth'] = df['last_financing_deal_type'].fillna("").str.contains(
-            B_PLUS_PAT, case=False, regex=True, na=False
-        ).astype(int)
-        print(f"  ✅ Growth variable created: {df['growth'].sum():,} companies with Series B+ ({df['growth'].mean()*100:.1f}%)")
+        df['growth'] = df['last_financing_deal_type'].fillna("").apply(_is_BPLUS).astype(int)
+        print(f"  ✅ Growth variable created: {df['growth'].sum():,} companies with Later Stage VC ({df['growth'].mean()*100:.1f}%)")
     else:
         print("  ⚠️  Warning: 'last_financing_deal_type' not found. Growth variable not created.")
 

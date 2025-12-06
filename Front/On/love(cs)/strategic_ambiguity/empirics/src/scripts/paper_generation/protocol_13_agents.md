@@ -1,3 +1,7 @@
+---
+modified:
+  - 2025-12-04T11:32:57-05:00
+---
 # 📜 Protocol 13: The Family of 12 & M 🌙
 
 **Commander**: M (Moon) 🌙 [Agent 7]
@@ -5,12 +9,12 @@
 ## 1. Agent Roles & Structure
 The system consists of 4 groups (K, G, J, O) and the Commander.
 
-| Group | Role | Agents | Function |
-| :--- | :--- | :--- | :--- |
-| **K** | **Evaluation** | 1, 2, 3 | Evaluates finished products. Assigned to specific product lines. |
-| **G** | **Structure** | 4, 5, 6 | Structural decomposition, Logic, Code. |
-| **J** | **Execution** | 8, 9, 10 | Content generation, Writing, Empirics. |
-| **O** | **Origin/DB** | 11, 12, 13 | Database, Retrieval, Storage. Assigned to specific product lines. |
+| Group | Role           | Agents     | Function                                                          |
+| :---- | :------------- | :--------- | :---------------------------------------------------------------- |
+| **K** | **Evaluation** | 1, 2, 3    | Evaluates finished products. Assigned to specific product lines.  |
+| **G** | **Structure**  | 4, 5, 6    | Structural decomposition, Logic, Code.                            |
+| **J** | **Execution**  | 8, 9, 10   | Content generation, Writing, Empirics.                            |
+| **O** | **Origin/DB**  | 11, 12, 13 | Database, Retrieval, Storage. Assigned to specific product lines. |
 
 ## 2. Product Lines (The "You" Universe)
 Each product line is a paper targeting a specific department.

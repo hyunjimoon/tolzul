@@ -1,4 +1,61 @@
+---
+thesisCase: U
+caseType: Murky Middle
+vagueness: 0.5
+outcome: Failure
+investment: $850M
+---
+
 [[09-12|25-09-12]]
+# Better Place: The Murky Middle Exemplar
+
+## 📊 Paper U Classification
+
+| Dimension | Value | Interpretation |
+|:---|:---|:---|
+| **Vagueness (V)** | ≈ 0.5 | Neither precise nor visionary |
+| **Analyst Appeal** | ❌ Low | "Battery swap unit economics unclear" |
+| **Believer Appeal** | ❌ Low | "Infrastructure-dependent = vision-constrained" |
+| **Outcome** | Bankruptcy (2013) | Dual threshold failure |
+
+## 🎯 Why Murky Middle Killed Better Place
+
+### Analyst Channel Failure
+```
+Analyst Question: "Does this plan make sense?"
+Better Place Answer: "We'll build 100 swap stations by 2010"
+Analyst Response: "What's the unit economics? How many swaps/day needed?"
+Better Place: "..." (no verifiable answer)
+→ VERIFICATION FAILED
+```
+
+### Believer Channel Failure
+```
+Believer Question: "Could this change the world?"
+Better Place Answer: "5-minute battery swap like gas stations"
+Believer Response: "But what about home charging? Superchargers?"
+Better Place: "We're committed to swap only"
+→ PROJECTION SPACE TOO NARROW
+```
+
+### The Dual Threshold Trap
+```
+                    Verifiability
+                         ↑
+                    High │  [Tesla Roadster: Precise specs]
+                         │
+                         │      ┌──────────────┐
+                    Mid  │      │ BETTER PLACE │ ← STUCK HERE
+                         │      │   V ≈ 0.5    │
+                         │      └──────────────┘
+                         │
+                    Low  │  [Tesla Master Plan: "Sustainable energy"]
+                         └────────────────────────→ Projectability
+                              Low            High
+```
+
+---
+
 # V/C×n 모니터링으로 본 Better Place 실패 완화 시나리오
 
 ## 🚨 2007-2013 Better Place 실패의 핵심

@@ -62,7 +62,7 @@ URL: https://gemini.google.com/app/c694fbfb9dbbdcca
 ## 7️⃣ References / Notes
 - Interviews: 25 (founders, OEM, policy).  
 - Data: PitchBook + DoE NEVI documentation.  
-- Related files: [[EV-Transition/Interviews/Founder]] [[Synthesis]]
+- Related files: [[EV-Transition/Interviews/Founder]] [[synthesis]]
 
 ---
 

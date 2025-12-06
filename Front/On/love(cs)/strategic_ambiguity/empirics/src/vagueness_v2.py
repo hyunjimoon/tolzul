@@ -613,6 +613,36 @@ class HybridVaguenessScorerV2:
         self.fit(texts, y, group_cols)
         return self.transform(texts, group_cols)
 
+    def score(self, text: str) -> float:
+        """
+        Score a single text. Returns V_raw-based hybrid score (not min-max normalized).
+
+        Parameters
+        ----------
+        text : str
+            Input text to score
+
+        Returns
+        -------
+        float
+            Hybrid vagueness score in [0, 100]
+        """
+        if not self._fitted:
+            # Quick fit on just this text
+            self.fit([text])
+
+        # Get V2 raw score (not normalized)
+        v2_df = self.v2_scorer.transform([text])
+        v2_raw = v2_df['V_raw'].values[0]
+
+        # Get concrete feature score
+        concrete_count = self._count_concrete_features(text)
+        concrete_score = 100 - min(concrete_count / max(1, self.max_concrete) * 100, 100)
+
+        # Combine 50/50 using raw V (not min-max)
+        hybrid_score = 0.5 * v2_raw + 0.5 * concrete_score
+        return float(hybrid_score)
+
 
 # Convenience function for backward compatibility with features.py
 def compute_vagueness_vectorized_v2(descriptions: pd.Series, keywords: pd.Series) -> pd.Series:
