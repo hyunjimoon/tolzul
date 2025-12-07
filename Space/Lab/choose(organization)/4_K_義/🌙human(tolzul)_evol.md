@@ -85,7 +85,7 @@ condition of
 
 2024
 배우자 조건
-same condition that i apply to myself [[log]] below 
+same condition that i apply to myself [[Space/Lab/choose(organization)/3_J_利/log]] below 
 
 | internally denser (자신)                                 | obs    | externally faster (상대)                                     | obs                               |
 | ------------------------------------------------------ | ------ | ---------------------------------------------------------- | --------------------------------- |
