@@ -97,7 +97,7 @@ EOD: 김첨사 (김U,김C,김N) → QA
 
 ## 📎 참조 문서
 
-- [[전라좌수군 견리사의 군령]] - 조직/프로세스/RP
+- [[전라좌수군 견리사의 군령 (nail)]] - 조직/프로세스/RP
 - [[When_Vagueness_Pay_Nov17.pdf]] - P1 Draft
 - [[The_Uncertainty_Engine.pdf]] - 통합 비전
 

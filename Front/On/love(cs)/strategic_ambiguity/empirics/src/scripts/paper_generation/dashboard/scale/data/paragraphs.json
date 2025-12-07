@@ -1,0 +1,83 @@
+{
+    "groups": [
+        {
+            "id": "intro",
+            "icon": "🩸",
+            "name": "Introduction",
+            "sections": [
+                "I",
+                "D"
+            ],
+            "paragraphs": [
+                {
+                    "id": "I1",
+                    "section": "I",
+                    "status": "draft",
+                    "assignee": "04_G🟠",
+                    "word_count": 150
+                },
+                {
+                    "id": "I2",
+                    "section": "I",
+                    "status": "review",
+                    "assignee": "01_K🔴",
+                    "word_count": 180
+                }
+            ]
+        },
+        {
+            "id": "u",
+            "icon": "✌️",
+            "name": "U-Shape",
+            "sections": [
+                "I",
+                "T",
+                "E",
+                "D"
+            ],
+            "paragraphs": [
+                {
+                    "id": "U-I1",
+                    "section": "I",
+                    "status": "done",
+                    "assignee": null,
+                    "word_count": 200
+                }
+            ]
+        },
+        {
+            "id": "c",
+            "icon": "🦾",
+            "name": "Commitment",
+            "sections": [
+                "I",
+                "T",
+                "E",
+                "D"
+            ],
+            "paragraphs": []
+        },
+        {
+            "id": "n",
+            "icon": "🤹",
+            "name": "Newsvendor",
+            "sections": [
+                "I",
+                "T",
+                "E",
+                "D"
+            ],
+            "paragraphs": []
+        },
+        {
+            "id": "disc",
+            "icon": "🐣",
+            "name": "Discussion",
+            "sections": [
+                "I",
+                "D"
+            ],
+            "paragraphs": []
+        }
+    ]
+}

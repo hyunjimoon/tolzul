@@ -7,7 +7,7 @@ modified:
 
 전라좌수군의 지휘소. 모든 Fleet 자원으로의 진입점.
 
-> [!home] **[[HANGAR|Home]]** | [[ONBOARDING|🌟 New Agent]] | [[전라좌수군 견리사의 군령|군령]] | [[FLEET.base|Fleet ⤵]]
+> [!home] **[[HANGAR|Home]]** | [[ONBOARDING|🌟 New Agent]] | [[전라좌수군 견리사의 군령 (nail)|군령]] | [[FLEET.base|Fleet ⤵]]
 
 ---
 

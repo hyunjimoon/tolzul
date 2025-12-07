@@ -10,7 +10,10 @@ affiliation: MIT Sloan
 created: 2025-10-14
 modified:
   - 2025-10-14T14:30:32-04:00
+  - 2025-12-07T09:43:26-05:00
 ---
+
+language you're using is settled science, but without authoritative tricks, it takes time to infer its value. 
 
 ---
 

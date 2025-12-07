@@ -1,0 +1,24 @@
+{
+    "current_task": {
+        "id": "task_001",
+        "type": "table",
+        "target": "tbl_quartile_survival",
+        "stage": "G→J",
+        "started_at": "2025-12-07T15:00:00",
+        "assignee": "04_G🟠"
+    },
+    "queue": [
+        {
+            "id": "task_002",
+            "type": "figure",
+            "target": "fig_golden_cage",
+            "priority": "H"
+        },
+        {
+            "id": "task_003",
+            "type": "paragraph",
+            "target": "U-T5",
+            "priority": "M"
+        }
+    ]
+}
