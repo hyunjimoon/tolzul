@@ -1,3 +1,7 @@
+---
+modified:
+  - 2025-12-08T01:53:16-05:00
+---
 # Scale Dashboard Operational Guide: The Diamond Squad Protocol
 
 > **Objective**: Orchestrate 3 LLMs (G, J, K) to complete 108 paragraphs using the Scale Dashboard.

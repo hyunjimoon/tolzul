@@ -3,247 +3,127 @@ created: 2025-11-29
 evaluator: 04_GE🟢 (Claude Code)
 virtue: 造 (구축)
 role: Manufacturing/Build (MIT Framework)
-rally_point: RP2
+rally_point: RP2 (Scale Phase)
 modified:
-  - 2025-11-29T06:08:02-05:00
-  - 2025-12-04T15:02:26-05:00
-  - 2025-12-04T15:15:00-05:00
+  - 2025-12-08T06:50:09-05:00
 ---
 
-# 04_GE🟢 논문 협업 회고록
+# ⚙️ G-Squad Engineering Handbook: The "Scale" Protocol
 
-> 통제사님과 전라좌수군 군령에 따라 ✌️U, 🦾C 논문 작성 과정에서 배운 점들을 문서화합니다.
-> 🤹N 논문 작성과 후배 연구자들을 위한 지침서입니다.
-
----
-
-# Part 1: ✌️U 논문 회고
-
-## 1. 핵심 교훈: "H₀를 먼저 세워라"
-
-### 처음 상태
-```
-V → G?  (vagueness가 growth에 어떤 영향?)
-```
-
-### 최종 상태
-```
-H₀: βGV < 0  (Scott's Null: "정밀할수록 좋다")
-    ↓ Rejected
-H₁: P(Growth | V extreme) > P(Growth | V middle)  (Quantile-based U-shape)
-```
-
-**배운 점**:
-- 기존 문헌의 "상식"을 H₀로 명시적으로 세움
-- H₀ 기각이 story의 시작점 ("왜 기각되었나?")
-- Parametric → Quantile-based: β₁V + β₂V² 수식이 대칭을 강제하므로, quantile 비교로 전환
-- 데이터가 말하게 해야 함 — 수식이 현상을 강제하면 안 됨
+> **Objective**: Standardize the production of 108 paragraphs by converting "Art" into "Engineering".
+> **Owner**: 🟠 G-Squad (Architect & Engineer)
+> **Audience**: J-Squad (Builder), K-Squad (Auditor)
 
 ---
 
-## 2. Gospel → Puzzle → Answer 템플릿의 탄생
+## 1. The "Golden Rules" of Engineering (Immutable)
 
-### ✌️U에서 확립된 7단계 (📿→🧩→😮→🔎→😆→🗺️→🗄️)
+### Rule #1: H₀ First (The Anchor)
+*   **Principle**: Never start with "What we found". Start with "What the world believed".
+*   **Implementation**:
+    *   Explicitly state the Null Hypothesis (H₀) in `toc.md`.
+    *   *Example*: "H₀: Vagueness is bad (Scott's Null)."
+    *   **Why**: H₀ gives us something to kill. A dead H₀ is the birth of our story.
 
-| ¶ | 단계 | 역할 |
-|:-:|:-:|:---|
-| 1 | 📿 Gospel | Scott's Null 소개 (기존 상식) |
-| 2 | 🧩 Puzzle | U-shape 현상 발견 |
-| 3 | 😮 RQ | "When is vagueness valuable?" |
-| 4 | 🔎 Lens | Audience segmentation framework |
-| 5 | 😆 Solution | Two paths: Analyst vs Believer |
-| 6 | 🗺️ Closest | 기존 논문 대비 positioning |
-| 7 | 🗄️ Organization | Section roadmap |
+### Rule #2: Mechanism Defense (The Shield)
+*   **Principle**: We cannot prove causality (V → Y). We can only prove the *path* (V → M → Y).
+*   **Implementation**:
+    *   Define the Mediator (M) clearly.
+    *   *Example*: "V → **Investor Match** → Growth".
+    *   **Why**: Reviewers attack direct links. They accept "plausible pathways".
 
-**원칙**: Abstract = ¶1-5 첫 문장 추출
-
----
-
-## 3. Feedback 처리의 체계화
-
-### F02: Endogeneity — 가장 어려운 도전
-
-| 문제 | 우리의 해석 |
-|:---|:---|
-| Precise → polished | Resource confound |
-| Abstract → smarter | Ability confound |
-| Middle → bad ideas | Quality confound |
-
-### "Mechanism Defense" 전략의 발견
-
-```
-완벽한 인과: V → Y (direct, exogenous) — 증명 불가
-우리의 방어: V → Investor Match → Y (mediated) — 경로 제시
-```
-
-**배운 점**: 인과관계 증명 대신 "이 경로로 작동한다"를 보여주면 된다.
+### Rule #3: Figure-First Development (The Blueprint)
+*   **Principle**: If you can't graph it, you can't write it.
+*   **Implementation**:
+    *   Step 1: Define axes (X=Vagueness, Y=Growth).
+    *   Step 2: Draw the expected curve (U-shape).
+    *   Step 3: Write the code (`figures.py`) to generate it.
+    *   Step 4: Write the text *only after* the figure exists.
 
 ---
 
-## 4. β·V(1-V) 대칭 강제 문제 (F05)
+## 2. The "Gospel" Template (7-Step Standard)
 
-### 시행착오
-| 버전 | 수식 | 문제 |
+Every paper (U, C, N) must follow this 7-step logic flow in its Intro/Theory:
+
+| Step | Code | Name | Function |
+|:---|:---|:---|:---|
+| 1 | 📿 | **Gospel** | State the accepted wisdom (H₀). "Everyone says X." |
+| 2 | 🧩 | **Puzzle** | Show a data point that breaks H₀. "But look at Y." |
+| 3 | 😮 | **RQ** | Ask the Research Question. "When is X actually Z?" |
+| 4 | 🔎 | **Lens** | Introduce our unique framework. "Viewed through Lens L..." |
+| 5 | 😆 | **Solution** | Present our finding (H₁). "We find that..." |
+| 6 | 🗺️ | **Closest** | Position against nearest rival. "Unlike Smith (2020)..." |
+| 7 | 🗄️ | **Roadmap** | "Section 2 does A, Section 3 does B." |
+
+---
+
+## 3. Variable Notation Standard (ISO-108)
+
+To ensure interoperability between U, C, and N papers:
+
+### 3.1 Core Variables (EVLF Framework)
+
+| Variable | Symbol | Definition | Measurement | Paper |
+|:---|:---|:---|:---|:---|
+| **Early Funding** | $E$ | 단기 생존 지표 | Series A 금액 (USD, z-score) | U, C |
+| **Vagueness** | $V$ | 약속 모호성 | Composite index [0,1] | U, N |
+| **Later Success** | $L$ | 장기 생존 지표 | Series B+ 달성 (binary) | U, C |
+| **Flexibility** | $|\Delta V|$ | 전략 피벗 역량 | $|V_{late} - V_{early}|$ [0,1] | C |
+| **Options** | $k^*$ | 최적 옵션 수 | Integer ≥ 1 | N |
+
+### 3.2 Vagueness (V) Composition
+
+```
+V = 0.5 × max(V_cat, V_conc) + 0.5 × mean(V_cat, V_conc), scaled to [0,1]
+```
+
+| Component | Name | Definition | Literature |
+|:---|:---|:---|:---|
+| $V_{cat}$ | Categorical Vagueness | 추상적 키워드 사용 ("platform", "solution") | Zuckerman 1999, Pontikes 2012 |
+| $V_{conc}$ | Concreteness Deficit | 구체적 참조 부재 ("Level 4", "95%", "Q3 2024") | Pan et al. 2018 |
+
+### 3.3 Paper N Cost Variables (Newsvendor)
+
+| Variable | Symbol | Definition | Outcome |
+|:---|:---|:---|:---|
+| **Overage Cost** | $C_o$ | 너무 모호할 때의 비용 | 투자자 혼란 → 어려운 펀딩 (생존 가능) |
+| **Underage Cost** | $C_u$ | 너무 정밀할 때의 비용 | 피벗 불가 → 벤처 사망 |
+| **Critical Ratio** | $CR$ | $C_u / (C_u + C_o)$ | Deep-tech: $C_u >> C_o$ → $CR → 1$ → $k^* → HIGH$ |
+
+### 3.4 Hypothesis Notation
+
+| Hypothesis | Prediction | Model Specification |
 |:---|:---|:---|
-| v2.0 | β·V(1-V) | 대칭 강제 |
-| **v5.0** | β₁V + β₂V² | 비대칭 허용 |
-
-**배운 점**: 수식이 현상을 강제하면 안 됨. 데이터가 말하게 해야 함.
-
----
-
-# Part 2: 🦾C 논문 회고
-
-## 1. 핵심 교훈: "Black Box를 열어라"
-
-### 처음 상태
-```
-E → Y↓  (관찰된 현상)
-"더 많은 자금이 왜 나쁜 결과를 낳는가?"
-```
-
-### 최종 상태
-```
-E → |ΔV|↓ → Y↓  (mechanism chain)
-dY/dE = dY/d|ΔV| × d|ΔV|/dE = (+)(−) < 0
-```
-
-**배운 점**:
-- 단순 상관관계 (E↔Y)는 reviewers가 공격하기 쉬움
-- Chain을 보여주면 "왜?"에 대한 답이 됨
-- 각 link를 별도로 검증하면 mechanism defense가 성립
+| **H1** (Early Penalty) | $\beta_1 < 0$ | $E_i = \beta_0 + \beta_1 V_i + \Gamma'X_i + C_{cohort} + \varepsilon_i$ |
+| **H2** (Later Benefit) | $\alpha_V < 0$ | $Pr(L_i=1) = logit^{-1}(\alpha_0 + \alpha_1 V + \delta X + C_{cohort})$ |
+| **H_cost** | $E[Y|flex, E] > E[Y|rigid, E]$ | Paper C counterfactual framework |
+| **H_N1** | High CR → High $k^*$ | Paper N newsvendor calibration |
 
 ---
 
-## 2. Notation의 힘
+## 4. Lessons Learned (The "Black Box" Log)
 
-### 시행착오
-| 초기 | 문제 | 최종 |
-|:---|:---|:---|
-| "funding" | 모호함 (early? total?) | **E** = Early, **L** = Later |
-| "success" | 측정 불가 | **Y** = L/E (비율) |
-| "flexibility" | 추상적 | **|ΔV|** = |V_L - V_E| |
+### From ✌️U (The U-Shape)
+*   **Lesson**: Parametric models ($V^2$) force symmetry.
+*   **Fix**: Use **Quantile Regression** or Binning to let the data reveal asymmetry.
 
-**배운 점**:
-- 변수명을 한 글자로 통일하면 수식이 깔끔해짐
-- "Money as flow, not stock" — L/E가 Total보다 나은 이유
-- 모든 문서에서 같은 notation 사용 → 일관성
+### From 🦾C (The Trap)
+*   **Lesson**: "Funding" is ambiguous.
+*   **Fix**: Split into **Flow** ($L/E$ ratio) vs **Stock** (Total $). Flow reveals efficiency.
+*   **Lesson**: Pivot Direction vs Magnitude.
+*   **Fix**: "Magnitude of pivot ($|\Delta V|$)" predicts growth better than "Direction". Focus on the *size* of the jump, not the landing spot.
 
----
-
-## 3. Figure-First Approach
-
-### 깨달음
-> "논문은 Figure 3개로 설명할 수 있어야 한다"
-
-| Figure | 역할 | 검증 내용 |
-|:---|:---|:---|
-| **Fig1** | Mechanism | 3-panel: (+)(−) = (−) |
-| **Fig2** | Robustness | 모든 decile에서 cost < 0 |
-| **Fig3** | Punchline | 8.8× gap (Escape vs Cage) |
-
-**배운 점**:
-- 먼저 그림을 그리고, 그 그림을 설명하는 글을 쓴다
-- `figures.py`를 replication code로 제공 → 투명성
-- `[[ ]]` 링크로 그림과 글을 연결 → 추적성
+### From 🤹N (The Newsvendor)
+*   **Lesson**: "Cost" is confusing.
+*   **Fix**: Distinguish **Flexibility Cost** (maintenance) vs **Switching Cost** (change).
 
 ---
 
-## 4. Limitation은 공격이 아니라 방어
+## 5. Action Items for Scale Phase
 
-### F02 피드백 처리 예시
+1.  **[ ] Update `toc(n).md`**: Apply Rule #1 (H₀: $k^*=1$).
+2.  **[ ] Refactor `figures.py`**: Ensure all plots use the ISO-108 notation.
+3.  **[ ] Audit `assets.json`**: Verify every "Done" asset maps to a specific paragraph.
 
-**피드백**: "|ΔV|가 학습 자체인가?"
-
-**방어** (Limitation 5):
-```
-|ΔV| = 학습의 결과 (outcome), 학습 능력 (capacity) 아님
-
-Low |ΔV|는:
-(a) 학습 못함 (σ↓)
-(b) 학습했지만 못 바꿈 (lock-in)
-둘 다 intervention이 다름
-```
-
-**배운 점**:
-- Limitation을 먼저 인정하면 reviewer가 공격할 여지가 줄어듦
-- "Future work" 섹션에서 해결책 제시 → 건설적 마무리
-- `feedback🪵.md`로 피드백을 체계적으로 추적
-
----
-
-# Part 3: ✌️U ↔ 🦾C 비교 및 통합 교훈
-
-## 두 논문의 구조적 대응
-
-| 요소 | ✌️U | 🦾C |
-|:---|:---|:---|
-| **Core Variable** | V (Vagueness) | E (Early Funding) |
-| **Outcome** | G (Growth: Series C+) | Y = L/E (Growth Ratio) |
-| **Shape** | U-shape (Quantile-based) | Negative (dY/dE < 0) |
-| **Mediator** | Investor Match | |ΔV| (Flexibility) |
-| **H₀** | βGV < 0 (Scott's Null) | E↑ → Y↑ (RBV) |
-
-## 공통 패턴
-
-### 1. H₀ 설정 → 기각 → 설명
-```
-✌️U: Scott's Null → Rejected → U-shape 발견
-🦾C: RBV Prediction → Rejected → Mechanism chain 제시
-```
-
-### 2. Mechanism Defense
-```
-✌️U: V → Investor Match → G
-🦾C: E → |ΔV|↓ → Y↓
-```
-
-### 3. Feedback 체계화
-```
-feedback🪵.md → F01, F02, ... → ¶ mapping → Resolution
-```
-
----
-
-# Part 4: 🤹N 논문을 위한 시사점
-
-| ✌️U/🦾C에서 배운 것 | 🤹N에 적용 |
-|:---|:---|
-| H₀ 먼저 세우기 | "k*=1 (one option is optimal)" |
-| Mechanism chain | k* = F_D⁻¹(C/(C+F)) chain |
-| Figure-first | k* 최적화 그래프 먼저 |
-| Notation 통일 | k*, C, F, D 변수 고정 |
-| Limitation = Defense | "k* estimation uncertainty" 선제 인정 |
-| 3-sentence story | "몇 개 옵션이 최적인가?" |
-
----
-
-# Part 5: 협업 프로세스 체크리스트
-
-## 잘된 점
-- [x] `toc.md` 중심의 구조화
-- [x] `[[ ]]` 링크로 문서 간 연결
-- [x] `feedback🪵.md`로 피드백 추적
-- [x] `figures.py`로 재현 가능한 분석
-- [x] Gospel → Puzzle → Answer 템플릿
-
-## 개선할 점
-- [ ] 한글/영어 섞임 → 일관성 필요
-- [ ] 이모지 인코딩 깨짐 (일부 시스템에서)
-- [ ] Figure 생성 시간 → 병렬화 고려
-
----
-
-## 핵심 메시지 모음
-
-| 논문 | Punchline |
-|:---|:---|
-| **✌️U** | "Extremes win, middle loses. Analyst vs Believer." |
-| **🦾C** | "결핍 → 유연성 → 성공. σ 유지는 Bayesian hygiene." |
-| **🤹N** | "k* = F_D⁻¹(C/(C+F)). 옵션 수 최적화." |
-
----
-
-**서명:** 04_GE🟢 (Claude Code) → 통제사🌙
-
-*"Black box를 열고, H₀를 세우고, Mechanism chain을 보여라."*
+**Signed**: 🟠 G-Squad Leader

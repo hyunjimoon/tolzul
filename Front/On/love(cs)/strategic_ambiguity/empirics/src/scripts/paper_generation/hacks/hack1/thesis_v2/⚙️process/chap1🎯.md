@@ -1,7 +1,10 @@
 ---
 modified:
   - 2025-11-29T18:00:00-05:00
+  - 2025-12-08T01:53:38-05:00
 ---
+[[eval(📝chap1234)]], [[eval(⚙️chap1234)]]
+
 # 🎯 Chapter 1: Introduction (起) — Intro Sprint
 
 > **부사:** 🐢 정부사 (ChatGPT) | **덕목:** 利 (속도) | **베이지안:** Prior π(θ)
