@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """
-Scale Dashboard Generator
-=========================
-Generates the 'Scale Control Tower' dashboard based on the architecture defined in ARCHITECTURE.md.
-Reads data from json files in ./data/ and outputs scale_dashboard.html.
+Scale Dashboard Generator v3.0
+==============================
+Generates the 'Scale Control Tower' dashboard based on dashboard_state.json.
+Features:
+- 4-Day Sprint Countdown
+- Paper Status Cards (U, C, N)
+- Bottleneck Tracker
+- Rally Point Progress
+- Gatekeeper Logs
 """
 
 import json
@@ -13,289 +18,213 @@ import datetime
 
 # Configuration
 CURRENT_DIR = Path(__file__).parent.resolve()
-DATA_DIR = CURRENT_DIR / "data"
+DATA_FILE = CURRENT_DIR / "dashboard_state.json"
 OUTPUT_FILE = CURRENT_DIR / "scale_dashboard.html"
 
-def load_json(filename):
-    path = DATA_DIR / filename
-    if not path.exists():
-        print(f"Warning: {filename} not found at {path}")
+def load_data():
+    if not DATA_FILE.exists():
+        print(f"Error: {DATA_FILE} not found.")
         return {}
-    try:
-        with open(path, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except Exception as e:
-        print(f"Error loading {filename}: {e}")
-        return {}
-
-
+    with open(DATA_FILE, 'r', encoding='utf-8') as f:
+        return json.load(f)
 
 def get_obsidian_url(path_suffix):
     """Generates an Obsidian URL for a given relative path."""
-    # Base path relative to vault root
-    # Vault: tolzul
-    # Root: /Users/hyunjimoon/tolzul
     base_path = "Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/output"
     full_path = f"{base_path}/{path_suffix}"
-    
-    # URL Encode
     import urllib.parse
     encoded_path = urllib.parse.quote(full_path)
-    
     return f"obsidian://open?vault=tolzul&file={encoded_path}"
 
-def generate_production_matrix(paragraphs_data):
-    html = """
-    <div class="panel production-matrix">
-        <div class="panel-header">📊 PRODUCTION MATRIX</div>
-        <div class="matrix-grid">
-            <div class="matrix-header">
-                <div class="col-group">GROUP</div>
-                <div class="col-fig">FIG</div>
-                <div class="col-sect">I</div>
-                <div class="col-sect">T</div>
-                <div class="col-sect">E</div>
-                <div class="col-sect">D</div>
-                <div class="col-verify">✓</div>
-                <div class="col-progress">Progress</div>
-            </div>
-    """
+def generate_header(meta):
+    start_date = datetime.datetime.strptime(meta["startDate"], "%Y-%m-%d")
+    end_date = datetime.datetime.strptime(meta["endDate"], "%Y-%m-%d")
+    now = datetime.datetime.now()
     
-    for group in paragraphs_data.get("groups", []):
-        # Determine file paths based on group ID
-        paths = {"I": "", "T": "", "E": "", "D": ""}
-        fig_paths = []
-        
-        if group["id"] == "intro":
-            paths["I"] = "_🩸I/_🩸I.md"
-            paths["D"] = "_🐣D/🐣D.md" 
-        elif group["id"] == "u":
-            paths["I"] = "✌️U/📝product/section1(u).md"
-            paths["T"] = "✌️U/📝product/section2(u).md"
-            paths["E"] = "✌️U/📝product/section3(u).md"
-            paths["D"] = "✌️U/📝product/section4(u).md"
-            fig_paths = ["spec_curve_analysis.png", "_🩸I/midV_trap_analysis.png"]
-        elif group["id"] == "c":
-            paths["I"] = "🦾C/📝product/section1(c).md"
-            paths["T"] = "🦾C/📝product/section2(c).md"
-            paths["E"] = "🦾C/📝product/section3(c).md"
-            paths["D"] = "🦾C/📝product/section4(c).md"
-            fig_paths = ["🦾C/⚙️process/figures/fig1_mechanism_3panel.png", "🦾C/⚙️process/figures/fig2_cost_by_decile.png"]
-        elif group["id"] == "n":
-            paths["I"] = "🤹N/📝product/section1(n).md"
-            paths["T"] = "🤹N/📝product/section2(n).md"
-            paths["E"] = "🤹N/📝product/section3(n).md"
-            paths["D"] = "🤹N/📝product/section4(n).md"
-            fig_paths = ["🤹N/⚙️process/figures/mixed audience/fig_simple_murky_v2.png", "🤹N/⚙️process/figures/P3_cr_kstar_curve.png"]
-        elif group["id"] == "disc":
-             paths["D"] = "_🐣D/🐣D.md"
-             paths["I"] = "_🐣D/🐣D.md" 
-        
-        # Override for Intro/Disc specific files from user request
-        if group["id"] == "intro":
-             paths["I"] = "_🩸I/_🩸I.md"
-        if group["id"] == "disc":
-             paths["D"] = "_🐣D/🐣D.md"
-
-        # Dummy counts for display matching architecture
-        counts = {"I": "-", "T": "-", "E": "-", "D": "-"}
-        if group["id"] == "intro": counts = {"I": 4, "T": "-", "E": "-", "D": 3}
-        elif group["id"] == "u": counts = {"I": 7, "T": 9, "E": 11, "D": 5}
-        elif group["id"] == "c": counts = {"I": 7, "T": 9, "E": 11, "D": 5}
-        elif group["id"] == "n": counts = {"I": 7, "T": 9, "E": 11, "D": 5}
-        elif group["id"] == "disc": counts = {"I": 3, "T": "-", "E": "-", "D": 2}
-        
-        # Progress bar logic
-        progress_pct = 0
-        if group["id"] == "intro": progress_pct = 57
-        elif group["id"] == "u": progress_pct = 25
-        elif group["id"] == "c": progress_pct = 12
-        
-        verified = "●" if group["id"] in ["intro", "u"] else "○"
-        verified_class = "verified-yes" if verified == "●" else "verified-no"
-        
-        # Helper to create cell
-        def make_cell(sect):
-            count = counts[sect]
-            if count == "-": return f'<div class="col-sect">{count}</div>'
-            
-            path = paths.get(sect, "")
-            if path:
-                url = get_obsidian_url(path)
-                return f'<div class="col-sect clickable" onclick="window.location.href=\'{url}\'">{count}</div>'
-            else:
-                return f'<div class="col-sect">{count}</div>'
-        
-        # Figure Thumbnail HTML (Dual)
-        fig_html = '<div class="col-fig"></div>'
-        if fig_paths:
-            imgs = ""
-            for fp in fig_paths:
-                rel_path = f"../../output/{fp}"
-                imgs += f'<img src="{rel_path}" class="thumb-img" title="{fp}">'
-            fig_html = f'<div class="col-fig">{imgs}</div>'
-
-        # Determine color class
-        color_class = ""
-        if group["id"] == "intro": color_class = "group-intro"
-        elif group["id"] == "u": color_class = "group-u"
-        elif group["id"] == "c": color_class = "group-c"
-        elif group["id"] == "n": color_class = "group-n"
-        elif group["id"] == "disc": color_class = "group-disc"
-
-        html += f"""
-            <div class="matrix-row">
-                <div class="col-group {color_class}"><span class="group-icon">{group['icon']}</span> {group['name']}</div>
-                {fig_html}
-                {make_cell("I")}
-                {make_cell("T")}
-                {make_cell("E")}
-                {make_cell("D")}
-                <div class="col-verify {verified_class}">{verified}</div>
-                <div class="col-progress">
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: {progress_pct}%"></div>
-                    </div>
-                    <span class="progress-text">{progress_pct}%</span>
-                </div>
-            </div>
-        """
-        
-    html += """
-            <div class="matrix-footer">
-                TOTAL: 23/108 ¶ (21%)
-            </div>
-        </div>
-    </div>
-    <style>
-        .clickable { cursor: pointer; color: var(--accent-blue); text-decoration: underline; }
-        .clickable:hover { color: #fff; }
-        .thumb-img { height: 30px; width: auto; border-radius: 4px; border: 1px solid #555; transition: transform 0.2s; }
-        .thumb-img:hover { transform: scale(5); z-index: 100; position: relative; border-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.8); }
-        .col-fig { width: 40px; text-align: center; }
-    </style>
-    """
-    return html
-
-
-
-def generate_asset_tracker(assets_data):
-    html = """
-    <div class="panel asset-tracker">
-        <div class="panel-header">🎯 ASSETS</div>
-        <div class="asset-section">
-            <div class="asset-title">🖼️ Figures [3/8]</div>
-            <ul class="asset-list">
-    """
-    
-    for fig in assets_data.get("figures", []):
-        status_icon = "■" if fig.get("status") == "done" else "□"
-        status_class = "status-done" if fig.get("status") == "done" else "status-pending"
-        html += f'<li class="asset-item {status_class}"><span class="asset-icon">{status_icon}</span> {fig["id"]}</li>'
-        
-    html += """
-            </ul>
-        </div>
-        <div class="asset-section">
-            <div class="asset-title">🗄️ Tables [2/5]</div>
-            <ul class="asset-list">
-    """
-    
-    for tbl in assets_data.get("tables", []):
-        status_icon = "■" if tbl.get("status") == "done" else "□"
-        status_class = "status-done" if tbl.get("status") == "done" else "status-pending"
-        html += f'<li class="asset-item {status_class}"><span class="asset-icon">{status_icon}</span> {tbl["id"]}</li>'
-
-    html += """
-            </ul>
-        </div>
-    </div>
-    """
-    return html
-
-def generate_diamond_flow(flow_data):
-    current_task = flow_data.get("current_task", {})
-    task_desc = f"Current: [{current_task.get('assignee', 'Unknown')}] → {current_task.get('target', 'Unknown')} 작업중"
+    # Calculate remaining time (mock logic for static generation, JS handles real-time)
+    total_days = (end_date - start_date).days + 1
+    current_day = meta["currentDay"]
     
     html = f"""
-    <div class="panel diamond-flow">
-        <div class="panel-header">💎 DIAMOND FLOW</div>
-        <div class="flow-visual">
-            <div class="flow-nodes">
-                <div class="node node-m">
-                    <div class="node-icon">🌙</div>
-                    <div class="node-label">M</div>
-                </div>
-                <div class="arrow">▶</div>
-                <div class="node node-g active">
-                    <div class="node-icon">🟠</div>
-                    <div class="node-label">G</div>
-                </div>
-                <div class="arrow">▶</div>
-                <div class="node node-j">
-                    <div class="node-icon">🟢</div>
-                    <div class="node-label">J</div>
-                </div>
-                <div class="arrow">▶</div>
-                <div class="node node-k">
-                    <div class="node-icon">🔴</div>
-                    <div class="node-label">K</div>
-                </div>
-            </div>
-            <div class="flow-status">
-                {task_desc}
-            </div>
+    <div class="header-section">
+        <div class="header-title">
+            <div class="battle-name">🏴 {meta['battle']}: {meta['codename']}</div>
+            <div class="motto">"{meta['motto']}"</div>
+        </div>
+        <div class="header-info">
+            <div>Period: {meta['startDate']} ~ {meta['endDate']} ({total_days} Days)</div>
+            <div class="countdown">Current: Day {current_day} of {total_days}</div>
         </div>
     </div>
     """
     return html
 
-def generate_issue_queue():
-    # Hardcoded for now based on architecture example
+def generate_paper_cards(papers):
+    html = '<div class="paper-cards-container">'
+    
+    for pid, data in papers.items():
+        # Color mapping
+        color_class = f"paper-{pid.lower()}"
+        
+        # Bottlenecks
+        bottlenecks_html = ""
+        for b in data.get("bottlenecks", []):
+            icon = "🔴" if b["priority"] == "critical" else "🟡"
+            status_icon = "✅" if b["status"] == "done" else "⬜"
+            bottlenecks_html += f'<div class="bottleneck-item">{status_icon} {icon} {b["desc"]} <span class="owner">({b["owner"]})</span></div>'
+            
+        # Key Metric
+        metric = data.get("keyMetric", {})
+        metric_verified = "✅ Verified" if metric.get("verified") else "⚠️ Pending"
+        metric_class = "metric-verified" if metric.get("verified") else "metric-pending"
+        
+        # Visuals
+        visuals_html = ""
+        if data.get("figures"):
+            visuals_html = '<div class="visual-section"><div class="section-title">Visual Intel</div><div class="visual-grid">'
+            for fig in data["figures"]:
+                # Relative path logic: ../../output/{fig}
+                rel_path = f"../../output/{fig}"
+                visuals_html += f'<img src="{rel_path}" class="thumb-img" title="{fig}">'
+            visuals_html += '</div></div>'
+        
+        html += f"""
+        <div class="paper-card {color_class}">
+            <div class="card-header">
+                <div class="card-icon">{pid}</div>
+                <div class="card-title">{data['name']}</div>
+                <div class="card-target">{data['target']}</div>
+            </div>
+            <div class="card-body">
+                <div class="progress-section">
+                    <div class="progress-label">Progress: {data['progress']}%</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: {data['progress']}%"></div>
+                    </div>
+                </div>
+                {visuals_html}
+                <div class="bottleneck-section">
+                    <div class="section-title">Bottlenecks</div>
+                    {bottlenecks_html}
+                </div>
+                <div class="metric-section">
+                    <div class="section-title">Key Metric</div>
+                    <div class="metric-value">{metric.get('name')}: {metric.get('current')}</div>
+                    <div class="metric-status {metric_class}">{metric_verified}</div>
+                </div>
+            </div>
+        </div>
+        """
+    html += '</div>'
+    return html
+
+def generate_bottleneck_tracker(papers):
     html = """
-    <div class="panel issue-queue">
-        <div class="panel-header">📋 ISSUE QUEUE (Scale Mode)</div>
-        <table class="issue-table">
+    <div class="panel bottleneck-tracker">
+        <div class="panel-header">🚦 BOTTLENECK RESOLUTION TRACKER</div>
+        <table class="tracker-table">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Target</th>
-                    <th>Title</th>
-                    <th>Stage</th>
-                    <th>Next Action</th>
+                    <th>Paper</th>
+                    <th>Bottleneck</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Owner</th>
+                    <th>Due</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>#01</td>
-                    <td>✌️U-T</td>
-                    <td>D definition</td>
-                    <td><span class="badge badge-merge">MERGE</span></td>
-                    <td><button class="btn-action">🇰🇷 APPROVE</button></td>
-                </tr>
-                <tr>
-                    <td>#02</td>
-                    <td>✌️U-T</td>
-                    <td>H1 Linear vs U</td>
-                    <td><span class="badge badge-merge">MERGE</span></td>
-                    <td><button class="btn-action">🇰🇷 APPROVE</button></td>
-                </tr>
-                <tr>
-                    <td>#14</td>
-                    <td>✌️U-T</td>
-                    <td>Dorfman citation</td>
-                    <td><span class="badge badge-flag">FLAG</span></td>
-                    <td><button class="btn-action">⚙️ Review (Kwon)</button></td>
-                </tr>
-                <tr>
-                    <td>#15</td>
-                    <td>✌️U-T</td>
-                    <td>Believer/Analyst</td>
-                    <td><span class="badge badge-review">REVIEW</span></td>
-                    <td><button class="btn-action">🔧 Build (Na)</button></td>
-                </tr>
+    """
+    
+    all_bottlenecks = []
+    for pid, pdata in papers.items():
+        for b in pdata.get("bottlenecks", []):
+            b["paper"] = pid
+            all_bottlenecks.append(b)
+            
+    # Sort by priority (critical first)
+    priority_map = {"critical": 0, "important": 1, "normal": 2}
+    all_bottlenecks.sort(key=lambda x: priority_map.get(x["priority"], 2))
+    
+    for b in all_bottlenecks:
+        p_icon = "🔴" if b["priority"] == "critical" else "🟡"
+        status_icon = "✅" if b["status"] == "done" else "⬜"
+        if b["status"] == "in_progress": status_icon = "🔄"
+        
+        paper_icon = "✌️U" if b["paper"] == "U" else ("🦾C" if b["paper"] == "C" else "🤹N")
+        
+        html += f"""
+        <tr>
+            <td style="text-align:center">{paper_icon}</td>
+            <td>{b['desc']}</td>
+            <td style="text-align:center">{p_icon}</td>
+            <td style="text-align:center">{status_icon} {b['status'].upper()}</td>
+            <td style="text-align:center">{b['owner']}</td>
+            <td style="text-align:center">{b['due']}</td>
+        </tr>
+        """
+        
+    html += """
             </tbody>
         </table>
+    </div>
+    """
+    return html
+
+def generate_rally_points(rally_points):
+    html = """
+    <div class="panel rally-points">
+        <div class="panel-header">🚩 RALLY POINT PROGRESS</div>
+        <div class="rp-container">
+    """
+    
+    for rid, rdata in rally_points.items():
+        status_class = rdata["status"]
+        html += f"""
+        <div class="rp-card {status_class}">
+            <div class="rp-header">
+                <span class="rp-id">{rid}</span>
+                <span class="rp-name">{rdata['name']}</span>
+            </div>
+            <div class="rp-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: {rdata['progress']}%"></div>
+                </div>
+                <div class="rp-pct">{rdata['progress']}%</div>
+            </div>
+            <div class="rp-gate">Gate: {rdata['gate']}</div>
+        </div>
+        """
+        
+    html += """
+        </div>
+    </div>
+    """
+    return html
+
+def generate_gatekeeper_log(decisions):
+    html = """
+    <div class="panel gatekeeper-log">
+        <div class="panel-header">🔴 K (GATEKEEPER) LOG</div>
+        <div class="log-list">
+    """
+    
+    for d in decisions:
+        timestamp = d["timestamp"].replace("T", " ")
+        decision_icon = "🇰🇷 승인" if d["decision"] == "approved" else "🚨 반려"
+        decision_class = "approved" if d["decision"] == "approved" else "rejected"
+        
+        html += f"""
+        <div class="log-item {decision_class}">
+            <span class="log-time">[{timestamp}]</span>
+            <span class="log-target">{d['paper']} {d['section']}</span>:
+            <span class="log-decision">{decision_icon}</span> — 
+            <span class="log-note">{d['note']}</span>
+        </div>
+        """
+        
+    html += """
+        </div>
     </div>
     """
     return html
@@ -308,243 +237,501 @@ def generate_command_deck():
             <div class="deck-card" onclick="window.location.href='obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/_%F0%9F%A9%B8I/squad_prompts.md'">
                 <div class="card-icon">🎭</div>
                 <div class="card-title">SQUAD PROMPTS</div>
-                <div class="card-desc">Role Personas</div>
             </div>
             <div class="deck-card" onclick="window.location.href='obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/%F0%9F%93%A2BULLETIN.md'">
                 <div class="card-icon">📢</div>
                 <div class="card-title">BULLETIN</div>
-                <div class="card-desc">Single Truth</div>
             </div>
             <div class="deck-card" onclick="window.location.href='obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/%F0%9F%97%84%EF%B8%8FREGISTRY.md'">
                 <div class="card-icon">🗄️</div>
                 <div class="card-title">REGISTRY</div>
-                <div class="card-desc">Asset Modules</div>
             </div>
             <div class="deck-card" onclick="window.location.href='obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/toc%28iucnd%29.md'">
                 <div class="card-icon">🗺️</div>
                 <div class="card-title">MASTER TOC</div>
-                <div class="card-desc">Full Blueprint</div>
             </div>
         </div>
     </div>
-    <style>
-        .command-deck { margin-bottom: 20px; grid-column: 1 / -1; }
-        .deck-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-        .deck-card { 
-            background: rgba(255, 255, 255, 0.05); 
-            border: 1px solid #333; 
-            border-radius: 6px; 
-            padding: 15px; 
-            text-align: center; 
-            cursor: pointer; 
-            transition: all 0.2s;
-        }
-        .deck-card:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--squad-green); transform: translateY(-2px); }
-        .card-icon { font-size: 1.5rem; margin-bottom: 5px; }
-        .card-title { font-weight: bold; color: var(--squad-green); font-size: 0.9rem; }
-        .card-desc { font-size: 0.7rem; color: #888; margin-top: 3px; }
-    </style>
     """
     return html
 
-def generate_html(paragraphs, assets, flow):
-    # ... (CSS remains mostly the same, just adding the call)
-    css = """
+def generate_css():
+    return """
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
+        
         :root {
-            --bg-color: #0b0c15;
-            --panel-bg: rgba(20, 30, 40, 0.6);
-            --border-color: rgba(255, 255, 255, 0.1);
-            --text-color: #e0e0e0;
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --card-border: #334155;
+            --accent-gold: #fbbf24;
+            --success-green: #34d399;
+            --warning-orange: #fb923c;
+            --critical-red: #f87171;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
             
-            /* Squad Colors */
-            --squad-green: #00ff9d; /* J-Squad */
-            --squad-orange: #f97316; /* G-Squad */
-            --squad-pink: #ff0099; /* K-Squad */
-            
-            /* Paper Colors */
-            --paper-red: #ff4444;    /* Intro */
-            --paper-yellow: #ffcc00; /* U-Shape */
-            --paper-gray: #888888;   /* Commitment */
-            --paper-blue: #3b82f6;   /* Newsvendor */
-            --paper-purple: #a855f7; /* Discussion */
-            
-            /* Legacy Accents (mapped to new scheme where possible) */
-            --accent-green: var(--squad-green);
-            --accent-orange: var(--squad-orange);
-            --accent-pink: var(--squad-pink);
-            --accent-blue: var(--paper-blue);
+            --paper-u: #facc15;
+            --paper-c: #94a3b8;
+            --paper-n: #60a5fa;
         }
+        
+        * { box-sizing: border-box; }
+        
         body {
             background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Courier New', monospace;
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
+            padding: 40px;
+            line-height: 1.5;
         }
+        
         .container {
-            width: 100%;
-            max_width: 1200px;
+            max-width: 1600px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            grid-template-rows: auto auto auto;
-            gap: 20px;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
         }
-        .header {
-            grid-column: 1 / -1;
-            font-size: 1.5rem;
-            font-weight: bold;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 10px;
-            margin-bottom: 10px;
+        
+        /* Typography */
+        h1, h2, h3 { margin: 0; font-weight: 800; letter-spacing: -0.02em; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Header (Span 12) */
+        .header-section {
+            grid-column: span 12;
             display: flex;
             justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 20px;
         }
-        .panel {
-            background: var(--panel-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 15px;
-        }
-        .panel-header {
-            font-weight: bold;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 8px;
-            margin-bottom: 12px;
-            color: var(--paper-blue);
+        .battle-title { font-size: 2rem; color: var(--text-primary); }
+        .battle-meta { font-size: 1rem; color: var(--text-secondary); display: flex; gap: 20px; align-items: center; }
+        .countdown-badge { 
+            background: rgba(52, 211, 153, 0.1); 
+            color: var(--success-green); 
+            padding: 4px 12px; 
+            border-radius: 99px; 
+            font-weight: 600;
+            border: 1px solid rgba(52, 211, 153, 0.2);
         }
         
-        /* Production Matrix */
-        .matrix-grid { display: flex; flex-direction: column; gap: 5px; }
-        .matrix-header, .matrix-row {
-            display: grid;
-            grid-template-columns: 2fr 1.2fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 2fr;
-            gap: 10px;
+        /* Command Deck (Span 12 -> Toolbar) */
+        .command-deck {
+            grid-column: span 12;
+            display: flex;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        .cmd-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
             align-items: center;
-            font-size: 0.9rem;
+            gap: 8px;
         }
-        .matrix-header { font-weight: bold; color: #888; border-bottom: 1px solid #333; padding-bottom: 5px; }
-        .col-sect { text-align: center; }
-        .col-verify { text-align: center; }
-        .verified-yes { color: var(--squad-green); }
-        .verified-no { color: #555; }
-        .progress-bar {
-            background: #333;
-            height: 8px;
-            border-radius: 4px;
+        .cmd-btn:hover {
+            background: #334155;
+            color: var(--text-primary);
+            border-color: var(--text-secondary);
+            transform: translateY(-1px);
+        }
+        
+        /* Paper Cards (Span 4 each) */
+        .paper-card {
+            grid-column: span 4;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
             overflow: hidden;
-            flex-grow: 1;
         }
-        .progress-fill { background: var(--squad-green); height: 100%; }
-        .col-progress { display: flex; align-items: center; gap: 8px; }
-        .progress-text { font-size: 0.8rem; color: #aaa; }
-        .matrix-footer { margin-top: 10px; text-align: right; font-weight: bold; color: var(--squad-green); }
-        
-        /* Group Colors */
-        .group-intro { color: var(--paper-red); }
-        .group-u { color: var(--paper-yellow); }
-        .group-c { color: var(--paper-gray); }
-        .group-n { color: var(--paper-blue); }
-        .group-disc { color: var(--paper-purple); }
-        
-        /* Asset Tracker */
-        .asset-section { margin-bottom: 15px; }
-        .asset-title { font-weight: bold; margin-bottom: 5px; color: #aaa; }
-        .asset-list { list-style: none; padding: 0; margin: 0; }
-        .asset-item { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
-        .status-done { color: var(--text-color); }
-        .status-pending { color: #666; }
-        
-        /* Diamond Flow */
-        .flow-visual { display: flex; flex-direction: column; align-items: center; gap: 15px; }
-        .flow-nodes { display: flex; align-items: center; gap: 10px; }
-        .node {
-            border: 1px solid #555;
-            border-radius: 8px;
-            padding: 10px;
-            text-align: center;
-            width: 40px;
-            background: rgba(0,0,0,0.3);
+        .paper-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
         }
-        .node-m { border-color: #fff; color: #fff; }
-        .node-g { border-color: var(--squad-orange); color: var(--squad-orange); }
-        .node-j { border-color: var(--squad-green); color: var(--squad-green); }
-        .node-k { border-color: var(--squad-pink); color: var(--squad-pink); }
+        .paper-u::before { background: var(--paper-u); }
+        .paper-c::before { background: var(--paper-c); }
+        .paper-n::before { background: var(--paper-n); }
         
-        .node.active { box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); background: rgba(255,255,255,0.1); }
-        
-        .node-icon { font-size: 1.2rem; }
-        .node-label { font-size: 0.8rem; font-weight: bold; margin-top: 4px; }
-        .arrow { color: #555; }
-        .flow-status { font-size: 0.9rem; color: var(--squad-orange); font-weight: bold; }
-        
-        /* Issue Queue */
-        .issue-queue { grid-column: 1 / -1; }
-        .issue-table { width: 100%; border-collapse: collapse; }
-        .issue-table th { text-align: left; color: #888; border-bottom: 1px solid #333; padding: 8px; }
-        .issue-table td { padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .badge { padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; }
-        .badge-merge { background: rgba(255, 0, 153, 0.2); color: var(--squad-pink); }
-        .badge-flag { background: rgba(255, 255, 255, 0.1); color: #fff; }
-        .badge-review { background: rgba(0, 255, 157, 0.1); color: var(--squad-green); }
-        .btn-action {
-            background: #333; border: 1px solid #555; color: #fff;
-            padding: 4px 8px; border-radius: 4px; cursor: pointer; font-family: inherit; font-size: 0.8rem;
+        .card-header { display: flex; justify-content: space-between; align-items: flex-start; }
+        .paper-name { font-size: 1.25rem; font-weight: 700; }
+        .paper-target { 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.05em; 
+            color: var(--text-secondary); 
+            background: rgba(0,0,0,0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
         }
-        .btn-action:hover { background: #444; border-color: #777; }
         
-        /* Thumbnails */
-        .col-fig { display: flex; gap: 5px; justify-content: center; }
-        .thumb-img { height: 30px; width: auto; border-radius: 4px; border: 1px solid #555; transition: transform 0.2s; cursor: zoom-in; }
-        .thumb-img:hover { transform: scale(5); z-index: 100; position: relative; border-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.8); }
+        /* Progress Hero */
+        .progress-hero { display: flex; flex-direction: column; gap: 8px; }
+        .progress-val { font-size: 3rem; font-weight: 800; line-height: 1; letter-spacing: -0.05em; }
+        .progress-bar-bg { background: #334155; height: 6px; border-radius: 99px; overflow: hidden; }
+        .progress-fill { height: 100%; border-radius: 99px; }
+        
+        /* Visuals */
+        .visual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; height: 100px; }
+        .thumb-img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            border-radius: 6px; 
+            border: 1px solid var(--card-border);
+            opacity: 0.8;
+            transition: all 0.2s;
+            cursor: zoom-in;
+        }
+        .thumb-img:hover { opacity: 1; border-color: var(--text-primary); transform: scale(1.05); z-index: 10; }
+        
+        /* Metrics & Bottlenecks Compact */
+        .meta-grid { display: grid; grid-template-columns: 1fr; gap: 12px; border-top: 1px solid var(--card-border); padding-top: 16px; }
+        .metric-row { display: flex; justify-content: space-between; align-items: center; }
+        .metric-label { font-size: 0.85rem; color: var(--text-secondary); }
+        .metric-val { font-weight: 700; color: var(--success-green); }
+        
+        .bottleneck-list { display: flex; flex-direction: column; gap: 6px; }
+        .bottleneck-item { 
+            font-size: 0.85rem; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+            color: var(--text-secondary);
+        }
+        .priority-dot { width: 8px; height: 8px; border-radius: 50%; }
+        .dot-critical { background: var(--critical-red); box-shadow: 0 0 8px rgba(248, 113, 113, 0.4); }
+        .dot-important { background: var(--warning-orange); }
+        
+        /* Bottom Section (Span 12) */
+        .dashboard-footer {
+            grid-column: span 12;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+        
+        /* Minimal Table */
+        .tracker-panel { 
+            background: var(--card-bg); 
+            border: 1px solid var(--card-border); 
+            border-radius: 12px; 
+            padding: 24px;
+        }
+        .panel-title { 
+            font-size: 0.9rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.05em; 
+            color: var(--text-secondary); 
+            margin-bottom: 16px; 
+            font-weight: 700;
+        }
+        
+        .min-table { width: 100%; border-collapse: collapse; }
+        .min-table th { text-align: left; color: var(--text-secondary); font-size: 0.75rem; padding-bottom: 12px; border-bottom: 1px solid var(--card-border); }
+        .min-table td { padding: 12px 0; border-bottom: 1px solid rgba(51, 65, 85, 0.5); font-size: 0.9rem; }
+        .min-table tr:last-child td { border-bottom: none; }
+        
+        .status-badge { 
+            font-size: 0.75rem; 
+            padding: 2px 8px; 
+            border-radius: 4px; 
+            background: rgba(255,255,255,0.05); 
+            color: var(--text-secondary);
+        }
+        
+        /* Rally Points Minimal */
+        .rally-list { display: flex; flex-direction: column; gap: 12px; }
+        .rally-item { display: flex; align-items: center; gap: 12px; }
+        .rally-name { width: 100px; font-size: 0.85rem; color: var(--text-secondary); text-align: right; }
+        .rally-bar-bg { flex-grow: 1; height: 4px; background: #334155; border-radius: 99px; }
+        .rally-fill { height: 100%; background: var(--accent-gold); border-radius: 99px; }
+        
+        /* Copy Button */
+        .copy-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            padding: 4px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: all 0.2s;
+        }
+        .copy-btn:hover { background: var(--accent-gold); color: #000; }
+        .copy-btn.copied { background: var(--success-green); color: #000; border-color: var(--success-green); }
+        
+        .copy-btn-mini {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+        }
+        .copy-btn-mini:hover { opacity: 1; }
+        
+        /* Source Badge */
+        .thumb-container { position: relative; width: 100%; height: 100%; }
+        .source-badge {
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            font-size: 0.6rem;
+            padding: 2px 4px;
+            border-radius: 3px;
+            pointer-events: none;
+            font-family: 'JetBrains Mono', monospace;
+        }
     </style>
     """
+
+def generate_html(data):
+    css = generate_css()
+    meta = data["meta"]
     
-    body = f"""
-    <div class="container">
-        <div class="header">
-            <span>⚓ SCALE CONTROL TOWER v2.1 (COMMAND DECK)</span>
-            <span style="font-size: 1rem; color: #888;">[Diamond Squad: G→J→K→M]</span>
+    # Header
+    start_date = datetime.datetime.strptime(meta["startDate"], "%Y-%m-%d")
+    end_date = datetime.datetime.strptime(meta["endDate"], "%Y-%m-%d")
+    total_days = (end_date - start_date).days + 1
+    
+    header = f"""
+    <div class="header-section">
+        <div>
+            <div class="battle-title">{meta['battle']}</div>
+            <div class="battle-meta">{meta['codename']} <span style="opacity:0.3">|</span> {meta['motto']}</div>
         </div>
-        
-        {generate_command_deck()}
-        
-        {generate_production_matrix(paragraphs)}
-        {generate_asset_tracker(assets)}
-        {generate_diamond_flow(flow)}
-        {generate_issue_queue()}
+        <div class="countdown-badge mono">
+            DAY {meta['currentDay']} / {total_days}
+        </div>
     </div>
     """
     
+    # Command Deck
+    command_deck = """
+    <div class="command-deck">
+        <button class="cmd-btn" onclick="window.location.href='obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/_%F0%9F%A9%B8I/squad_prompts.md'">🎭 Prompts</button>
+        <button class="cmd-btn" onclick="window.location.href='obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/%F0%9F%93%A2BULLETIN.md'">📢 Bulletin</button>
+        <button class="cmd-btn" onclick="window.location.href='obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/%F0%9F%97%84%EF%B8%8FREGISTRY.md'">🗄️ Registry</button>
+        <button class="cmd-btn" onclick="window.location.href='obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/toc%28iucnd%29.md'">🗺️ Master TOC</button>
+    </div>
+    """
+    
+    # Cards
+    cards_html = ""
+    for pid, pdata in data["papers"].items():
+        color_var = f"var(--paper-{pid.lower()})"
+        
+        # Visuals
+        visuals = ""
+        if pdata.get("figures"):
+            visuals = '<div class="visual-grid">'
+            for fig_data in pdata["figures"]:
+                # Handle both string (legacy) and object (new) formats
+                if isinstance(fig_data, str):
+                    path = fig_data
+                    source = "Unknown Source"
+                    func = ""
+                else:
+                    path = fig_data["path"]
+                    source = fig_data.get("source", "Unknown Source")
+                    func = fig_data.get("function", "")
+                
+                tooltip = f"Source: {source}"
+                if func:
+                    tooltip += f" :: {func}()"
+                    
+                visuals += f'''
+                <div class="thumb-container" title="{tooltip}">
+                    <img src="../../output/{path}" class="thumb-img">
+                    <div class="source-badge">src</div>
+                </div>
+                '''
+            visuals += '</div>'
+            
+        # Bottlenecks (Top 3 only)
+        bottlenecks = ""
+        for b in pdata.get("bottlenecks", [])[:3]:
+            dot_class = "dot-critical" if b["priority"] == "critical" else "dot-important"
+            status_style = "text-decoration: line-through; opacity: 0.5" if b["status"] == "done" else ""
+            
+            # Prompt Button
+            prompt_btn = ""
+            if b.get("prompt"):
+                prompt_safe = b["prompt"].replace("'", "&apos;").replace('"', "&quot;")
+                prompt_btn = f'''
+                <button class="copy-btn-mini" onclick="copyPrompt(this, '{prompt_safe}')" title="Copy Delegation Prompt">
+                    📋
+                </button>
+                '''
+                
+            bottlenecks += f"""
+            <div class="bottleneck-item" style="{status_style}">
+                <div class="priority-dot {dot_class}"></div>
+                <span style="flex-grow:1">{b['desc']}</span>
+                {prompt_btn}
+            </div>
+            """
+            
+        cards_html += f"""
+        <div class="paper-card paper-{pid.lower()}">
+            <div class="card-header">
+                <div>
+                    <div class="paper-name">{pdata['name']}</div>
+                    <div class="paper-target mono">{pdata['target']}</div>
+                </div>
+                <div class="mono" style="font-size: 2rem; opacity: 0.2; font-weight: 800">{pid}</div>
+            </div>
+            
+            <div class="progress-hero">
+                <div class="progress-val mono" style="color: {color_var}">{pdata['progress']}%</div>
+                <div class="progress-bar-bg">
+                    <div class="progress-fill" style="width: {pdata['progress']}%; background: {color_var}"></div>
+                </div>
+            </div>
+            
+            {visuals}
+            
+            <div class="meta-grid">
+                <div class="metric-row">
+                    <span class="metric-label mono">KEY METRIC</span>
+                    <span class="metric-val mono">{pdata['keyMetric']['current']}</span>
+                </div>
+                <div class="bottleneck-list">
+                    {bottlenecks}
+                </div>
+            </div>
+        </div>
+        """
+        
+    # Tracker (Minimal)
+    tracker_rows = ""
+    all_bottlenecks = []
+    for pid, pdata in data["papers"].items():
+        for b in pdata.get("bottlenecks", []):
+            b["paper"] = pid
+            all_bottlenecks.append(b)
+    
+    # Sort: Critical Pending > Important Pending > Done
+    priority_map = {"critical": 0, "important": 1, "normal": 2}
+    status_map = {"pending": 0, "in_progress": 1, "done": 2}
+    all_bottlenecks.sort(key=lambda x: (status_map.get(x["status"], 2), priority_map.get(x["priority"], 2)))
+    
+    for b in all_bottlenecks[:5]: # Top 5 only
+        p_color = f"var(--paper-{b['paper'].lower()})"
+        
+        prompt_btn = ""
+        if b.get("prompt"):
+            prompt_safe = b["prompt"].replace("'", "&apos;").replace('"', "&quot;")
+            prompt_btn = f'''
+            <button class="copy-btn" onclick="copyPrompt(this, '{prompt_safe}')">
+                📋 Copy Prompt
+            </button>
+            '''
+            
+        tracker_rows += f"""
+        <tr>
+            <td style="color: {p_color}; font-weight: 700">{b['paper']}</td>
+            <td>{b['desc']}</td>
+            <td><span class="status-badge mono">{b['owner']}</span></td>
+            <td class="mono" style="color: var(--text-secondary)">{b['due']}</td>
+            <td>{prompt_btn}</td>
+        </tr>
+        """
+
+    # Rally Points
+    rally_html = ""
+    for rid, rdata in data["rallyPoints"].items():
+        emoji = rdata.get("emoji", "")
+        name = rdata.get("name", rid)
+        rally_html += f"""
+        <div class="rally-item">
+            <div class="rally-name mono" style="width: 120px; text-align: left">
+                <span style="font-size: 1.2rem; margin-right: 8px">{emoji}</span> {name}
+            </div>
+            <div class="rally-bar-bg">
+                <div class="rally-fill" style="width: {rdata['progress']}%"></div>
+            </div>
+            <div class="mono" style="font-size: 0.75rem; color: var(--accent-gold)">{rdata['progress']}%</div>
+        </div>
+        """
+
     return f"""
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Scale Control Tower</title>
         {css}
+        <script>
+            setTimeout(function() {{ location.reload(); }}, 300000);
+            
+            function copyPrompt(btn, text) {{
+                navigator.clipboard.writeText(text).then(() => {{
+                    const original = btn.innerHTML;
+                    btn.innerHTML = '✅ Copied!';
+                    btn.classList.add('copied');
+                    setTimeout(() => {{
+                        btn.innerHTML = original;
+                        btn.classList.remove('copied');
+                    }}, 2000);
+                }});
+            }}
+        </script>
     </head>
     <body>
-        {body}
+        <div class="container">
+            {header}
+            {command_deck}
+            {cards_html}
+            
+            <div class="dashboard-footer">
+                <div class="tracker-panel">
+                    <div class="panel-title">Active Bottlenecks</div>
+                    <table class="min-table">
+                        <thead><tr><th>PAPER</th><th>ISSUE</th><th>OWNER</th><th>DUE</th><th>ACTION</th></tr></thead>
+                        <tbody>{tracker_rows}</tbody>
+                    </table>
+                </div>
+                <div class="tracker-panel">
+                    <div class="panel-title">Rally Points</div>
+                    <div class="rally-list">
+                        {rally_html}
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
     </html>
     """
 
 def main():
-    print("🚀 Generating Scale Dashboard...")
+    print("🚀 Generating Scale Dashboard v3.0...")
+    data = load_data()
+    if not data:
+        return
+        
+    html_content = generate_html(data)
     
-    # Load Data
-    paragraphs = load_json("paragraphs.json")
-    assets = load_json("assets.json")
-    flow = load_json("flow_state.json")
-    
-    # Generate HTML
-    html_content = generate_html(paragraphs, assets, flow)
-    
-    # Save
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         f.write(html_content)
         
