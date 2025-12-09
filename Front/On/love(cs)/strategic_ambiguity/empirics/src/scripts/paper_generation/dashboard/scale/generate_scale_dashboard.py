@@ -728,18 +728,23 @@ def generate_html(data):
 def generate_markdown_dashboard(data, html_content=None):
     """Generate a Markdown version of the dashboard for Obsidian Publish."""
     
-    # Hybrid Approach: Iframe + Link
-    # 1. Iframe: Works on Obsidian Publish (if configured correctly).
-    # 2. Link: Fallback if iframe is blocked.
+    # Hosted Approach: GitHub Pages Iframe
+    # We point the iframe to the GitHub Pages URL where the HTML will be hosted.
+    # URL Structure: https://<user>.github.io/<repo>/<path/to/file>
+    # Repo: tolzul
+    # Path: Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/dashboard/scale/scale_dashboard.html
+    
+    gh_pages_url = "https://hyunjimoon.github.io/tolzul/Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/dashboard/scale/scale_dashboard.html"
     
     md = f"# 🚀 Scale Command Center (v3.0)\n\n"
     md += f"> **Battle**: {data['meta']['battle']} ({data['meta']['codename']})\n"
     md += f"> **Day**: {data['meta']['currentDay']} | **Motto**: {data['meta']['motto']}\n\n"
     
     md += "## 🖥️ Live Dashboard\n\n"
-    md += "*(If the dashboard below is blank, click the link to open it directly)*\n\n"
-    md += '<iframe src="scale_dashboard.html" style="width:100%; height:800px; border:none; background: #0f172a; border-radius: 12px;"></iframe>\n\n'
-    md += "🔗 [**Open Dashboard in New Tab**](scale_dashboard.html)\n\n"
+    md += "*(Loading live command center from HQ...)*\n\n"
+    # Using standard iframe attributes as requested
+    md += f'<iframe src="{gh_pages_url}" width="100%" height="1000" frameborder="0"></iframe>\n\n'
+    md += f"🔗 [**Open Full Screen**]({gh_pages_url})\n\n"
     
     md += "---\n\n"
     

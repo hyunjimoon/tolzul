@@ -1,6 +1,6 @@
 ---
 modified:
-  - 2025-12-09T05:54:16-05:00
+  - 2025-12-09T06:22:09-05:00
 ---
 # 🚀 Scale Command Center (v3.0)
 
@@ -9,11 +9,11 @@ modified:
 
 ## 🖥️ Live Dashboard
 
-*(If the dashboard below is blank, click the link to open it directly)*
+*(Loading live command center from HQ...)*
 
-<iframe src="scale_dashboard.html" style="width:100%; height:800px; border:none; background: #0f172a; border-radius: 12px;"></iframe>
+<iframe src="https://hyunjimoon.github.io/tolzul/Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/dashboard/scale/scale_dashboard.html" width="100%" height="1000" frameborder="0"></iframe>
 
-🔗 [**Open Dashboard in New Tab**](scale_dashboard.html)
+🔗 [**Open Full Screen**](https://hyunjimoon.github.io/tolzul/Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/dashboard/scale/scale_dashboard.html)
 
 ---
 
