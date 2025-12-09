@@ -96,7 +96,7 @@ vagueness_diagnosis.txt
 *.nc
 
 # Paper generation output (regenerated files)
-src/scripts/paper_generation/output/
+
 outputs/all/panel_v3.nc
 outputs/quantum/panel_v3.nc
 outputs/transportation/panel_v3.nc

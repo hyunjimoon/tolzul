@@ -12,7 +12,9 @@ Features:
 """
 
 import json
+import datetime
 import os
+import urllib.parse
 from pathlib import Path
 import datetime
 import base64
@@ -557,13 +559,17 @@ def generate_html(data):
                     source = fig_data.get("source", "Unknown Source")
                     func = fig_data.get("function", "")
                 
+                # URL Encode path components to handle emojis
+                # Split by / to encode each segment separately, preserving the slashes
+                encoded_path = "/".join([urllib.parse.quote(part) for part in path.split("/")])
+                
                 tooltip = f"Source: {source}"
                 if func:
                     tooltip += f" :: {func}()"
                     
                 visuals += f'''
                 <div class="thumb-container" title="{tooltip}">
-                    <img src="../../output/{path}" class="thumb-img">
+                    <img src="../../output/{encoded_path}" class="thumb-img">
                     <div class="source-badge">src</div>
                 </div>
                 '''
@@ -686,6 +692,15 @@ def generate_html(data):
         <script>
             setTimeout(function() {{ location.reload(); }}, 300000);
             
+            // Fix for html-preview.github.io: Set base URL to raw github content
+            if (window.location.hostname.includes('html-preview')) {{
+                var base = document.createElement('base');
+                // Point to the raw file location of this HTML file
+                base.href = 'https://raw.githubusercontent.com/hyunjimoon/tolzul/master/Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/dashboard/scale/';
+                document.head.appendChild(base);
+                console.log('Adjusted base URL for html-preview');
+            }}
+            
             function copyPrompt(btn, text) {{
                 navigator.clipboard.writeText(text).then(() => {{
                     const original = btn.innerHTML;
@@ -734,7 +749,9 @@ def generate_markdown_dashboard(data, html_content=None):
     # Repo: tolzul (Public)
     # Path: Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/dashboard/scale/scale_dashboard.html
     
-    gh_pages_url = "https://hyunjimoon.github.io/tolzul/Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/dashboard/scale/scale_dashboard.html"
+    # URL Encode the path to handle parentheses in 'love(cs)'
+    # love(cs) -> love%28cs%29
+    gh_pages_url = "https://hyunjimoon.github.io/tolzul/Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/dashboard/scale/scale_dashboard.html"
     
     md = f"# 🚀 Scale Command Center (v3.0)\n\n"
     md += f"> **Battle**: {data['meta']['battle']} ({data['meta']['codename']})\n"
@@ -742,9 +759,15 @@ def generate_markdown_dashboard(data, html_content=None):
     
     md += "## 🖥️ Live Dashboard\n\n"
     md += "*(Loading live command center from HQ...)*\n\n"
-    # Using standard iframe attributes as requested
-    md += f'<iframe src="{gh_pages_url}" width="100%" height="1000" frameborder="0"></iframe>\n\n'
+    # Wrap in div to ensure block rendering and avoid Markdown parser issues
+    md += f'<div><iframe src="{gh_pages_url}" width="100%" height="1000" frameborder="0"></iframe></div>\n\n'
     md += f"🔗 [**Open Full Screen**]({gh_pages_url})\n\n"
+    
+    md += "> [!TIP] Troubleshooting\n"
+    md += "> If the dashboard shows a 404 error:\n"
+    md += "> 1. **Wait**: GitHub Pages takes 1-5 minutes to deploy after you push.\n"
+    md += "> 2. **Check Settings**: Ensure GitHub Pages is enabled in the `tolzul` repo settings (Source: Deploy from branch).\n"
+    md += f"> 3. **Test Link**: Click [here]({gh_pages_url}) to verify the URL works in your browser.\n\n"
     
     md += "---\n\n"
     

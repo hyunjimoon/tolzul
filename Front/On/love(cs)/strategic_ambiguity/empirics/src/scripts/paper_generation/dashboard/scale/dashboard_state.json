@@ -114,7 +114,7 @@
         },
         "N": {
             "name": "Paper N: Promise Vendor",
-            "target": "OM (M&SOM)",
+            "target": "OM (MS)",
             "progress": 55,
             "keyMetric": {
                 "name": "k* fit",
@@ -161,6 +161,15 @@
                     "owner": "G",
                     "due": "D1 PM",
                     "prompt": "G-Squad (Commander): Explicitly state the limitations of using |Delta V| as a proxy for flexibility. Acknowledge that it captures 'Observed Pivot' but not 'Latent Optionality'."
+                },
+                {
+                    "id": "N4",
+                    "desc": "Bias & Trade-off",
+                    "priority": "critical",
+                    "status": "pending",
+                    "owner": "G",
+                    "due": "D2",
+                    "prompt": "G-Squad (Quant): Define Type I (Omission bias) = Analysts, Type II (Commission bias) = Believers. Show that the optimal trade-off occurs at k = F⁻¹(CR)."
                 }
             ]
         }
