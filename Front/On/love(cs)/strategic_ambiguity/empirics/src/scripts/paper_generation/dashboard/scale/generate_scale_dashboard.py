@@ -731,7 +731,7 @@ def generate_markdown_dashboard(data, html_content=None):
     # Hosted Approach: GitHub Pages Iframe
     # We point the iframe to the GitHub Pages URL where the HTML will be hosted.
     # URL Structure: https://<user>.github.io/<repo>/<path/to/file>
-    # Repo: tolzul
+    # Repo: tolzul (Public)
     # Path: Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/dashboard/scale/scale_dashboard.html
     
     gh_pages_url = "https://hyunjimoon.github.io/tolzul/Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/dashboard/scale/scale_dashboard.html"
