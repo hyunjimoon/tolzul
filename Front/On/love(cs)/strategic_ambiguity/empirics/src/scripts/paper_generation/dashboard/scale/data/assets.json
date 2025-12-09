@@ -1,0 +1,32 @@
+{
+    "figures": [
+        {
+            "id": "fig_ushape_4panel",
+            "paper": "✌️U",
+            "file": "fig_ushape_4panel_ms.pdf",
+            "status": "done",
+            "path": "/output/P1✌️/figures/",
+            "verified_by": "01_K🔴",
+            "verified_at": "2025-12-07"
+        },
+        {
+            "id": "fig_golden_cage",
+            "paper": "🦾C",
+            "file": null,
+            "status": "pending",
+            "path": null
+        }
+    ],
+    "tables": [
+        {
+            "id": "tbl_quartile_survival",
+            "paper": "✌️U",
+            "file": "table_quartile_summary.tex",
+            "status": "done",
+            "data": {
+                "transport_chi2": 1430.9,
+                "software_chi2": 564.8
+            }
+        }
+    ]
+}

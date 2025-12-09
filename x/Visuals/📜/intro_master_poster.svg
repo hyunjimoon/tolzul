@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1800">
+  <defs>
+    <linearGradient id="masterBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c0a09"/>
+      <stop offset="100%" style="stop-color:#1c1917"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1400" height="1800" fill="url(#masterBg)"/>
+  
+  <!-- Title -->
+  <text x="700" y="70" font-family="Georgia, serif" font-size="48" fill="#fff" text-anchor="middle" font-weight="bold">📚 Intro 작문법 마스터 가이드</text>
+  <text x="700" y="110" font-family="Georgia, serif" font-size="24" fill="#a8a29e" text-anchor="middle">Posen-Cachon Framework: 세 논문에서 배우는 "Interesting" 서론</text>
+  
+  <!-- Core Formula -->
+  <rect x="100" y="140" width="1200" height="120" fill="#292524" stroke="#f59e0b" stroke-width="3" rx="12"/>
+  <text x="700" y="185" font-family="Georgia, serif" font-size="32" fill="#f59e0b" text-anchor="middle" font-weight="bold">🎯 핵심 공식: X → Y → Z → X'</text>
+  <text x="200" y="230" font-family="monospace" font-size="18" fill="#d6d3d1">X: Gospel (당연한 것)</text>
+  <text x="470" y="230" font-family="Georgia, serif" font-size="24" fill="#f59e0b">→</text>
+  <text x="500" y="230" font-family="monospace" font-size="18" fill="#d6d3d1">Y: Paradox (모순)</text>
+  <text x="740" y="230" font-family="Georgia, serif" font-size="24" fill="#f59e0b">→</text>
+  <text x="770" y="230" font-family="monospace" font-size="18" fill="#d6d3d1">Z: New Lens</text>
+  <text x="980" y="230" font-family="Georgia, serif" font-size="24" fill="#f59e0b">→</text>
+  <text x="1010" y="230" font-family="monospace" font-size="18" fill="#22c55e">X': Updated Belief</text>
+  
+  <!-- Paper 1: Fine -->
+  <rect x="60" y="290" width="420" height="500" fill="#1c1917" stroke="#ec4899" stroke-width="2" rx="8"/>
+  <text x="270" y="330" font-family="Georgia, serif" font-size="22" fill="#ec4899" text-anchor="middle" font-weight="bold">🐢 Fine (1986)</text>
+  <text x="270" y="355" font-family="Georgia, serif" font-size="14" fill="#a8a29e" text-anchor="middle">Quality &amp; Learning</text>
+  
+  <rect x="80" y="375" width="380" height="60" fill="#292524" rx="4"/>
+  <text x="95" y="400" font-family="monospace" font-size="12" fill="#ec4899">X: Prior</text>
+  <text x="95" y="420" font-family="Georgia, serif" font-size="15" fill="#fff">"Quality↑ = Cost↑" (ECL Model)</text>
+  
+  <rect x="80" y="445" width="380" height="60" fill="#292524" rx="4"/>
+  <text x="95" y="470" font-family="monospace" font-size="12" fill="#fbbf24">Y: Puzzle</text>
+  <text x="95" y="490" font-family="Georgia, serif" font-size="15" fill="#fff">Japan: Quality↑ AND Cost↓</text>
+  
+  <rect x="80" y="515" width="380" height="60" fill="#292524" rx="4"/>
+  <text x="95" y="540" font-family="monospace" font-size="12" fill="#22c55e">Z: New Lens</text>
+  <text x="95" y="560" font-family="Georgia, serif" font-size="15" fill="#fff">Quality → Learning → Cost↓</text>
+  
+  <rect x="80" y="585" width="380" height="80" fill="#292524" stroke="#22c55e" stroke-width="1" rx="4"/>
+  <text x="95" y="610" font-family="Georgia, serif" font-size="14" fill="#22c55e" font-weight="bold">작문 기술</text>
+  <text x="95" y="635" font-family="Georgia, serif" font-size="13" fill="#d6d3d1">• 두 문헌 "결혼" (QC + Learning Curve)</text>
+  <text x="95" y="655" font-family="Georgia, serif" font-size="13" fill="#d6d3d1">• 양측 다 "특정 조건에서 맞다"</text>
+  
+  <text x="95" y="700" font-family="Georgia, serif" font-size="13" fill="#a8a29e" font-style="italic">"firms manufacture products that have</text>
+  <text x="95" y="720" font-family="Georgia, serif" font-size="13" fill="#a8a29e" font-style="italic">BOTH higher quality AND lower cost"</text>
+  <text x="95" y="745" font-family="monospace" font-size="11" fill="#78716c">— Opening paradox</text>
+  
+  <!-- Paper 2: Gans -->
+  <rect x="490" y="290" width="420" height="500" fill="#1c1917" stroke="#3b82f6" stroke-width="2" rx="8"/>
+  <text x="700" y="330" font-family="Georgia, serif" font-size="22" fill="#3b82f6" text-anchor="middle" font-weight="bold">🐅 Gans et al. (2021)</text>
+  <text x="700" y="355" font-family="Georgia, serif" font-size="14" fill="#a8a29e" text-anchor="middle">Choosing Technology</text>
+  
+  <rect x="510" y="375" width="380" height="60" fill="#292524" rx="4"/>
+  <text x="525" y="400" font-family="monospace" font-size="12" fill="#3b82f6">X: Prior</text>
+  <text x="525" y="420" font-family="Georgia, serif" font-size="15" fill="#fff">"S-curve = given trajectory"</text>
+  
+  <rect x="510" y="445" width="380" height="60" fill="#292524" rx="4"/>
+  <text x="525" y="470" font-family="monospace" font-size="12" fill="#fbbf24">Y: Puzzle</text>
+  <text x="525" y="490" font-family="Georgia, serif" font-size="15" fill="#fff">Tesla vs Better Place: 같은 기술, 다른 결과</text>
+  
+  <rect x="510" y="515" width="380" height="60" fill="#292524" rx="4"/>
+  <text x="525" y="540" font-family="monospace" font-size="12" fill="#22c55e">Z: New Lens</text>
+  <text x="525" y="560" font-family="Georgia, serif" font-size="15" fill="#fff">S-curve = envelope of choices</text>
+  
+  <rect x="510" y="585" width="380" height="80" fill="#292524" stroke="#22c55e" stroke-width="1" rx="4"/>
+  <text x="525" y="610" font-family="Georgia, serif" font-size="14" fill="#22c55e" font-weight="bold">작문 기술</text>
+  <text x="525" y="635" font-family="Georgia, serif" font-size="13" fill="#d6d3d1">• 인과 화살표 역전</text>
+  <text x="525" y="655" font-family="Georgia, serif" font-size="13" fill="#d6d3d1">• 극단적 대비 사례로 퍼즐 구체화</text>
+  
+  <text x="525" y="700" font-family="Georgia, serif" font-size="13" fill="#a8a29e" font-style="italic">"if S-curve is given... why does</text>
+  <text x="525" y="720" font-family="Georgia, serif" font-size="13" fill="#a8a29e" font-style="italic">entrepreneurial strategy matter?"</text>
+  <text x="525" y="745" font-family="monospace" font-size="11" fill="#78716c">— Self-contradiction exposed</text>
+  
+  <!-- Paper 3: Repenning -->
+  <rect x="920" y="290" width="420" height="500" fill="#1c1917" stroke="#f97316" stroke-width="2" rx="8"/>
+  <text x="1130" y="330" font-family="Georgia, serif" font-size="22" fill="#f97316" text-anchor="middle" font-weight="bold">🐙 Repenning &amp; Sterman</text>
+  <text x="1130" y="355" font-family="Georgia, serif" font-size="14" fill="#a8a29e" text-anchor="middle">Capability Traps (2002)</text>
+  
+  <rect x="940" y="375" width="380" height="60" fill="#292524" rx="4"/>
+  <text x="955" y="400" font-family="monospace" font-size="12" fill="#f97316">X: Prior</text>
+  <text x="955" y="420" font-family="Georgia, serif" font-size="15" fill="#fff">"Experience → Improvement"</text>
+  
+  <rect x="940" y="445" width="380" height="60" fill="#292524" rx="4"/>
+  <text x="955" y="470" font-family="monospace" font-size="12" fill="#fbbf24">Y: Puzzle</text>
+  <text x="955" y="490" font-family="Georgia, serif" font-size="15" fill="#fff">"TQM works, but &lt;10% succeed"</text>
+  
+  <rect x="940" y="515" width="380" height="60" fill="#292524" rx="4"/>
+  <text x="955" y="540" font-family="monospace" font-size="12" fill="#22c55e">Z: New Lens</text>
+  <text x="955" y="560" font-family="Georgia, serif" font-size="15" fill="#fff">Physical × Attribution = Trap</text>
+  
+  <rect x="940" y="585" width="380" height="80" fill="#292524" stroke="#22c55e" stroke-width="1" rx="4"/>
+  <text x="955" y="610" font-family="Georgia, serif" font-size="14" fill="#22c55e" font-weight="bold">작문 기술</text>
+  <text x="955" y="635" font-family="Georgia, serif" font-size="13" fill="#d6d3d1">• 교과서적 상식을 X로 설정</text>
+  <text x="955" y="655" font-family="Georgia, serif" font-size="13" fill="#d6d3d1">• 구체적 숫자로 Y 증명</text>
+  
+  <text x="955" y="700" font-family="Georgia, serif" font-size="13" fill="#a8a29e" font-style="italic">"Few ideas more central than...</text>
+  <text x="955" y="720" font-family="Georgia, serif" font-size="13" fill="#a8a29e" font-style="italic">organizations improve"</text>
+  <text x="955" y="745" font-family="monospace" font-size="11" fill="#78716c">— Most basic premise as X</text>
+  
+  <!-- Common Techniques -->
+  <rect x="60" y="820" width="1280" height="300" fill="#292524" stroke="#f59e0b" stroke-width="2" rx="8"/>
+  <text x="700" y="860" font-family="Georgia, serif" font-size="28" fill="#f59e0b" text-anchor="middle" font-weight="bold">🔧 세 논문의 공통 작문 기술</text>
+  
+  <g transform="translate(100, 890)">
+    <rect width="380" height="100" fill="#1c1917" rx="4"/>
+    <text x="20" y="30" font-family="Georgia, serif" font-size="16" fill="#ec4899" font-weight="bold">1. Gospel 선언</text>
+    <text x="20" y="55" font-family="Georgia, serif" font-size="14" fill="#d6d3d1">첫 문장에서 분야의 dominant belief를</text>
+    <text x="20" y="75" font-family="Georgia, serif" font-size="14" fill="#d6d3d1">명시적으로 세운다</text>
+  </g>
+  
+  <g transform="translate(510, 890)">
+    <rect width="380" height="100" fill="#1c1917" rx="4"/>
+    <text x="20" y="30" font-family="Georgia, serif" font-size="16" fill="#3b82f6" font-weight="bold">2. 구체적 Evidence</text>
+    <text x="20" y="55" font-family="Georgia, serif" font-size="14" fill="#d6d3d1">추상적 "많이 실패한다"가 아닌</text>
+    <text x="20" y="75" font-family="Georgia, serif" font-size="14" fill="#d6d3d1">숫자, 사례로 퍼즐 크기 보여주기</text>
+  </g>
+  
+  <g transform="translate(920, 890)">
+    <rect width="380" height="100" fill="#1c1917" rx="4"/>
+    <text x="20" y="30" font-family="Georgia, serif" font-size="16" fill="#f97316" font-weight="bold">3. Gap의 체계적 나열</text>
+    <text x="20" y="55" font-family="Georgia, serif" font-size="14" fill="#d6d3d1">기존 문헌 A는 [한계], B는 [한계]</text>
+    <text x="20" y="75" font-family="Georgia, serif" font-size="14" fill="#d6d3d1">각각 무엇이 부족한지 명시</text>
+  </g>
+  
+  <g transform="translate(100, 1010)">
+    <rect width="380" height="80" fill="#1c1917" rx="4"/>
+    <text x="20" y="30" font-family="Georgia, serif" font-size="16" fill="#a855f7" font-weight="bold">4. 누락된 변수/메커니즘</text>
+    <text x="20" y="55" font-family="Georgia, serif" font-size="14" fill="#d6d3d1">Z의 핵심 = 기존 모형에서 빠진 것</text>
+  </g>
+  
+  <g transform="translate(510, 1010)">
+    <rect width="380" height="80" fill="#1c1917" rx="4"/>
+    <text x="20" y="30" font-family="Georgia, serif" font-size="16" fill="#22c55e" font-weight="bold">5. Abstract에서 완전 노출</text>
+    <text x="20" y="55" font-family="Georgia, serif" font-size="14" fill="#d6d3d1">기여를 숨기지 않고 첫 페이지에 선언</text>
+  </g>
+  
+  <g transform="translate(920, 1010)">
+    <rect width="380" height="80" fill="#1c1917" rx="4"/>
+    <text x="20" y="30" font-family="Georgia, serif" font-size="16" fill="#fbbf24" font-weight="bold">6. 조건 명시</text>
+    <text x="20" y="55" font-family="Georgia, serif" font-size="14" fill="#d6d3d1">"X도 맞고 Y도 맞는 조건" 구분</text>
+  </g>
+  
+  <!-- Your Thesis Application -->
+  <rect x="60" y="1150" width="1280" height="300" fill="#1c1917" stroke="#22c55e" stroke-width="3" rx="8"/>
+  <text x="700" y="1190" font-family="Georgia, serif" font-size="28" fill="#22c55e" text-anchor="middle" font-weight="bold">🎯 너의 Thesis: Flexibility &amp; Commitment</text>
+  
+  <g transform="translate(100, 1220)">
+    <rect width="280" height="100" fill="#292524" rx="4"/>
+    <text x="20" y="30" font-family="monospace" font-size="14" fill="#ec4899">X: Prior</text>
+    <text x="20" y="55" font-family="Georgia, serif" font-size="14" fill="#fff">"명확한 가치 제안으로</text>
+    <text x="20" y="75" font-family="Georgia, serif" font-size="14" fill="#fff">이해관계자를 설득"</text>
+  </g>
+  
+  <text x="400" y="1280" font-family="Georgia, serif" font-size="28" fill="#f59e0b">→</text>
+  
+  <g transform="translate(430, 1220)">
+    <rect width="280" height="100" fill="#292524" rx="4"/>
+    <text x="20" y="30" font-family="monospace" font-size="14" fill="#fbbf24">Y: Puzzle</text>
+    <text x="20" y="55" font-family="Georgia, serif" font-size="14" fill="#fff">"성공한 창업자는 의도적으로</text>
+    <text x="20" y="75" font-family="Georgia, serif" font-size="14" fill="#fff">모호한 가치 제안을 사용"</text>
+  </g>
+  
+  <text x="730" y="1280" font-family="Georgia, serif" font-size="28" fill="#f59e0b">→</text>
+  
+  <g transform="translate(760, 1220)">
+    <rect width="280" height="100" fill="#292524" rx="4"/>
+    <text x="20" y="30" font-family="monospace" font-size="14" fill="#22c55e">Z: New Lens</text>
+    <text x="20" y="55" font-family="Georgia, serif" font-size="14" fill="#fff">"Strategic Ambiguity가</text>
+    <text x="20" y="75" font-family="Georgia, serif" font-size="14" fill="#fff">조정 유연성 → commitment 전환"</text>
+  </g>
+  
+  <text x="1060" y="1280" font-family="Georgia, serif" font-size="28" fill="#f59e0b">→</text>
+  
+  <g transform="translate(1090, 1220)">
+    <rect width="230" height="100" fill="#292524" stroke="#22c55e" stroke-width="2" rx="4"/>
+    <text x="20" y="30" font-family="monospace" font-size="14" fill="#22c55e">X': Updated</text>
+    <text x="20" y="55" font-family="Georgia, serif" font-size="14" fill="#22c55e">"명확 vs 모호가 아니라</text>
+    <text x="20" y="75" font-family="Georgia, serif" font-size="14" fill="#22c55e">언제 명확해지느냐"</text>
+  </g>
+  
+  <!-- Three Papers Connection -->
+  <text x="100" y="1380" font-family="Georgia, serif" font-size="18" fill="#d6d3d1" font-weight="bold">세 논문과의 연결:</text>
+  <text x="100" y="1410" font-family="Georgia, serif" font-size="15" fill="#ec4899">Fine: 품질 투자 = Commitment의 한 형태. 초기 비용 → 학습 수익</text>
+  <text x="100" y="1435" font-family="Georgia, serif" font-size="15" fill="#3b82f6">Gans: S-curve는 선택의 결과. Explore vs Exploit timing이 핵심</text>
+  <text x="750" y="1435" font-family="Georgia, serif" font-size="15" fill="#f97316">Repenning: 피드백 지연이 귀인 오류 유발. 짧은 루프 설계가 성공 열쇠</text>
+  
+  <!-- Template -->
+  <rect x="60" y="1470" width="1280" height="280" fill="#292524" rx="8"/>
+  <text x="100" y="1510" font-family="Georgia, serif" font-size="24" fill="#f59e0b" font-weight="bold">📝 실전 템플릿</text>
+  
+  <text x="100" y="1545" font-family="monospace" font-size="14" fill="#ec4899">P1: Gospel 세우기</text>
+  <text x="350" y="1545" font-family="Georgia, serif" font-size="14" fill="#a8a29e">"[분야]의 중심 전제는 [X]이다." (인용 3-4개)</text>
+  
+  <text x="100" y="1575" font-family="monospace" font-size="14" fill="#fbbf24">P2-3: 현실 역설</text>
+  <text x="350" y="1575" font-family="Georgia, serif" font-size="14" fill="#a8a29e">"그러나 [구체적 현상/데이터]는 [X]와 모순된다."</text>
+  
+  <text x="100" y="1605" font-family="monospace" font-size="14" fill="#a855f7">P4: Gap 나열</text>
+  <text x="350" y="1605" font-family="Georgia, serif" font-size="14" fill="#a8a29e">"기존 문헌 A는 [한계], B는 [한계], C는 [한계]"</text>
+  
+  <text x="100" y="1635" font-family="monospace" font-size="14" fill="#22c55e">P5: 새 렌즈</text>
+  <text x="350" y="1635" font-family="Georgia, serif" font-size="14" fill="#a8a29e">"우리는 [새 변수/메커니즘]을 도입해서..."</text>
+  
+  <text x="100" y="1665" font-family="monospace" font-size="14" fill="#3b82f6">P6: 기여 &amp; 로드맵</text>
+  <text x="350" y="1665" font-family="Georgia, serif" font-size="14" fill="#a8a29e">"이 논문은 [문헌 A], [B], [C]에 기여한다."</text>
+  
+  <!-- Avoid Section -->
+  <rect x="100" y="1690" width="600" height="60" fill="#1c1917" stroke="#ef4444" stroke-width="1" rx="4"/>
+  <text x="120" y="1715" font-family="Georgia, serif" font-size="14" fill="#ef4444" font-weight="bold">⚠️ 피할 것:</text>
+  <text x="220" y="1715" font-family="Georgia, serif" font-size="14" fill="#a8a29e">X 약함 | Y 추상적 | Gap 없이 Z | Z가 기술적</text>
+  
+  <!-- Footer -->
+  <text x="60" y="1780" font-family="monospace" font-size="12" fill="#57534e">🎞️ Intro 작문법 마스터 가이드 | 전라좌수군 시스템 | v1.0 | 2025-11-28</text>
+</svg>

@@ -1,15 +1,15 @@
 ---
 collection:
-  - "[[Courses]]"
+  - "[[Space/Library/Maps/Courses]]"
 by: "[[Josh Tenenbaum]]"
 year: 2024
 yearXP: 2024
-semester: "Fall 2024"
-courseCategory: "Cognition"
-courseStatus: "진행중"
-institution: "MIT"
+semester: Fall 2024
+courseCategory: Cognition
+courseStatus: 진행중
+institution: MIT
 courseCode: "9.66"
-image: "https://example.com/course-poster.jpg"
+image: https://example.com/course-poster.jpg
 created: 2024-09-01
 rank: 5
 ---

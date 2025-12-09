@@ -1,0 +1,178 @@
+{UTF-8}
+Adjusting Time Worked ATW=
+	(Indicated Time Worked ITW-Time Worked TW)/Time to Adjust Time Worked at
+	~	hours/Day/Day
+	~		|
+
+Desired Time to Complete Tasks dt=
+	4
+	~	Day
+	~		|
+
+Indicated Completion Rate IC=
+	Work to Do W/Desired Time to Complete Tasks dt
+	~	tasks/Day
+	~		|
+
+Indicated Time Worked ITW=
+	Indicated Completion Rate IC/Productivity p
+	~	hours/Day
+	~		|
+
+Max Completion Rate from Resources MCR=
+	Time Worked TW*Productivity p
+	~	tasks/Day
+	~		|
+
+Max Completion Rate from Work MC=
+	Work to Do W/Min Time to Complete Task mt
+	~	tasks/Day
+	~		|
+
+Min Time to Complete Task mt=
+	1
+	~	Day
+	~		|
+
+Productivity p=
+	0.5
+	~	tasks/hour
+	~		|
+
+Receiving Assignments R=
+	32
+	~	tasks/Day
+	~		|
+
+Task Completion C=
+	min(Max Completion Rate from Work MC,Max Completion Rate from Resources MCR)
+	~	tasks/Day
+	~		|
+
+Time to Adjust Time Worked at=
+	1
+	~	Day
+	~		|
+
+Time Worked TW= INTEG (
+	Adjusting Time Worked ATW,
+		64)
+	~	hours/Day
+	~		|
+
+Work to Do W= INTEG (
+	Receiving Assignments R-Task Completion C,
+		256)
+	~	tasks
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 50
+	~	Day
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Day
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Day [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.125
+	~	Day [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Work to Do W,555,154,44,20,3,131,0,32,0,0,0,0,0-0-0,0-0-0,Arial|||0-0-0,0,0,0,0,0,0
+12,2,48,700,152,10,8,0,3,0,32,-1,0,0,0,0-0-0,0-0-0,Arial|||0-0-0,0,0,0,0,0,0
+1,3,5,2,4,0,0,22,0,0,0,-1--1--1,,1|(668,152)|
+1,4,5,1,100,0,0,22,0,0,0,-1--1--1,,1|(616,152)|
+11,5,0,640,152,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,6,Task Completion C,640,178,51,18,40,3,0,32,-1,0,0,0,0-0-0,0-0-0,Arial|||0-0-0,0,0,0,0,0,0
+12,7,48,393,155,10,8,0,3,0,32,-1,0,0,0,0-0-0,0-0-0,Arial|||0-0-0,0,0,0,0,0,0
+1,8,10,1,4,0,0,22,0,0,0,-1--1--1,,1|(487,155)|
+1,9,10,7,100,0,0,22,0,0,0,-1--1--1,,1|(427,155)|
+11,10,0,457,155,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,11,Receiving Assignments R,457,181,56,18,40,3,0,32,-1,0,0,0,0-0-0,0-0-0,Arial|||0-0-0,0,0,0,0,0,0
+10,12,Min Time to Complete Task mt,748,34,67,18,8,3,0,32,0,0,0,0,0-0-0,0-0-0,Arial|||0-0-0,0,0,0,0,0,0
+10,13,Max Completion Rate from Work MC,613,36,73,18,8,3,0,32,0,0,0,0,0-0-0,0-0-0,Arial|||0-0-0,0,0,0,0,0,0
+1,14,1,13,1,0,0,0,0,64,0,-1--1--1,,1|(538,111)|
+1,15,12,13,1,0,0,0,0,64,0,-1--1--1,,1|(691,11)|
+1,16,13,5,1,0,0,0,0,64,0,-1--1--1,,1|(661,78)|
+10,17,Max Completion Rate from Resources MCR,762,279,79,18,8,3,0,32,0,0,0,0,0-0-0,0-0-0,Arial|||0-0-0,0,0,0,0,0,0
+1,18,17,6,1,0,0,0,0,64,0,-1--1--1,,1|(705,198)|
+10,19,Productivity p,598,622,49,10,8,3,0,32,0,0,0,0,0-0-0,0-0-0,Arial|||0-0-0,0,0,0,0,0,0
+1,20,19,17,1,0,0,0,0,64,0,-1--1--1,,1|(766,557)|
+10,21,Indicated Completion Rate IC,476,283,72,18,8,3,0,32,0,0,0,0,0-0-0,0-0-0,Arial|||0-0-0,0,0,0,0,0,0
+1,22,1,21,1,0,0,0,0,64,0,-1--1--1,,1|(513,196)|
+10,23,Desired Time to Complete Tasks dt,325,225,69,18,8,3,0,32,0,0,0,0,0-0-0,0-0-0,Arial|||0-0-0,0,0,0,0,0,0
+1,24,23,21,1,0,0,0,0,64,0,-1--1--1,,1|(356,255)|
+10,25,Indicated Time Worked ITW,502,387,54,18,8,3,0,50,0,0,0,0,0-0-0,0-0-0,Arial||B|17-128-64,0,0,0,0,0,0
+1,26,21,25,1,0,0,0,0,64,0,-1--1--1,,1|(471,341)|
+1,27,19,25,1,0,0,0,0,64,0,-1--1--1,,1|(480,523)|
+10,28,Time Worked TW,723,434,40,20,3,3,0,34,0,0,0,0,0-0-0,0-0-0,Arial|||17-128-64,0,0,0,0,0,0
+12,29,48,560,446,10,8,0,3,0,32,-1,0,0,0,0-0-0,0-0-0,Arial|||0-0-0,0,0,0,0,0,0
+1,30,32,28,4,0,0,22,0,0,0,-1--1--1,,1|(661,446)|
+1,31,32,29,100,0,0,22,0,0,0,-1--1--1,,1|(598,446)|
+11,32,0,633,446,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,33,Adjusting Time Worked ATW,633,472,55,18,40,3,0,32,-1,0,0,0,0-0-0,0-0-0,Arial|||0-0-0,0,0,0,0,0,0
+1,34,25,33,1,0,0,0,0,64,0,-1--1--1,,1|(523,442)|
+10,35,Time to Adjust Time Worked at,592,549,59,18,8,3,0,32,0,0,0,0,0-0-0,0-0-0,Arial|||0-0-0,0,0,0,0,0,0
+1,36,35,33,1,0,0,0,0,64,0,-1--1--1,,1|(647,517)|
+1,37,28,32,1,0,0,0,0,64,0,-1--1--1,,1|(652,397)|
+1,38,28,17,1,0,0,0,0,64,0,-1--1--1,,1|(760,392)|
+12,39,0,983,211,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+r = c = mcr = p TW -> TW = r/p
+12,40,0,983,326,142,38,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+ITW = TW = W/dt -> W = dt * r/p
+///---\\\
+:L<%^E!@
+4:Time
+5:Indicated Completion Rate IC
+9:Current
+19:100,0
+24:0
+25:50
+26:50
+22:hour,hours
+22:unit,units
+22:Week,Weeks
+22:worker,workers
+23:0
+15:0,0,0,0,0,0
+27:2,
+34:0,
+42:0
+72:0
+73:0
+95:0
+96:0
+97:0
+77:0
+78:0
+102:1
+93:0
+94:0
+92:0
+91:0
+90:0
+87:0
+75:
+43:
+103:8,8,8,3,8
+105:0,0,0,0,0,0,0,0,0,0
+104:Courier|12||0-0-0|0-0-0|-1--1--1|0-0-255|192-192-192|-1--1--1

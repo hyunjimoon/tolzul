@@ -1,0 +1,32 @@
+% Auto-generated Results section
+% Module #23-27
+
+\section{Results}
+
+\subsection{H1: Early Funding (OLS)}
+% Paragraph 23: H1 results
+For H1, the coefficient on vagueness is \textcolor{blue}{statistically significant and negative}: $\hat\beta_1 \approx -8.51e-07$ ($p=0.000$). This supports the information cost hypothesis: vague promises reduce early funding by preventing investors from updating beliefs through verifiable milestones.
+
+\input{paper/tables/table1_h1.tex}
+
+\subsection{H2: Growth to Series B+ (Logit)}
+% Paragraph 24: H2 main effect
+For H2, we find a statistically \textcolor{blue}{significant negative main effect of vagueness on growth}: $\hat\alpha_1 \approx -0.0372$ ($p=0.0000$).
+The interaction with hardware is negative and statistically significant at the 10\% level: $\hat\alpha_3 \approx -0.0300$ ($p=0.046$). This suggests that exercisability moderates the effect of vagueness on later success.
+
+\input{paper/tables/table2_h2.tex}
+
+% Figures
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=0.9\linewidth]{paper/figures/fig2_early_funding.pdf}
+    \caption{Early Funding vs. Vagueness (H1)}
+    \label{fig:Fig2_EVF}
+\end{figure}
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=0.9\linewidth]{paper/figures/fig3_later_success.pdf}
+    \caption{Later Success vs. Vagueness by Exercisability (H2)}
+    \label{fig:Fig3_LVF}
+\end{figure}

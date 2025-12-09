@@ -13,5 +13,6 @@ views:
       and:
         - field == ["👾cog"]
         - file.name.startsWith("📜")
+        - file.path.startsWith("Space")
     order:
       - file.fullname

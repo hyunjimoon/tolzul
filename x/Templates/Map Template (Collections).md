@@ -1,11 +1,11 @@
 ---
 collection:
-  - "[[Maps]]"
-  - "[[Collections]]"
+  - "[[Space/Library/Maps/Maps]]"
+  - "[[Space/Library/Maps/Collections]]"
 created: "{{date}}"
 rank: 1
 ---
-~ [[Collections]] 
+~ [[Space/Library/Maps/Collections]] 
 
 This note collects all notes where the `collection` property says `{{title}}`.
 

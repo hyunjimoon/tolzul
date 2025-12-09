@@ -1,0 +1,444 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="turtleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4ade80"/>
+      <stop offset="100%" style="stop-color:#22c55e"/>
+    </linearGradient>
+    <linearGradient id="tigerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fb923c"/>
+      <stop offset="100%" style="stop-color:#f97316"/>
+    </linearGradient>
+    <linearGradient id="octopusGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f87171"/>
+      <stop offset="100%" style="stop-color:#ef4444"/>
+    </linearGradient>
+    <linearGradient id="alienGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a78bfa"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="1600" fill="url(#bgGrad)"/>
+  
+  <!-- Title Section -->
+  <text x="600" y="55" text-anchor="middle" fill="#e2e8f0" font-family="Georgia, serif" font-size="28" font-weight="bold">
+    Ambiguity as Strategy in Organizational Communication
+  </text>
+  <text x="600" y="85" text-anchor="middle" fill="#94a3b8" font-family="Georgia, serif" font-size="18">
+    "Clarity is NOT the gold standard — Strategic Ambiguity is a resource"
+  </text>
+  <text x="600" y="110" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="14">
+    Eisenberg (1984) | Communication Monographs | THE Foundational Paper for U-Theory
+  </text>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- SECTION 1: 기(起) - 🐢 Hook/Problem -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <rect x="30" y="130" width="560" height="340" rx="15" fill="#0f172a" stroke="url(#turtleGrad)" stroke-width="3"/>
+  
+  <!-- Section Header -->
+  <rect x="30" y="130" width="560" height="45" rx="15" fill="url(#turtleGrad)" opacity="0.9"/>
+  <text x="60" y="160" fill="#0f172a" font-family="Arial, sans-serif" font-size="24" font-weight="bold">
+    🐢 기(起) THE PUZZLE
+  </text>
+  <text x="520" y="160" fill="#0f172a" font-family="Arial, sans-serif" font-size="14">정운 | 선봉</text>
+  
+  <!-- Central Question Box -->
+  <rect x="50" y="190" width="520" height="55" rx="10" fill="#1e293b" stroke="#4ade80" stroke-width="1"/>
+  <text x="310" y="215" text-anchor="middle" fill="#fbbf24" font-family="Georgia, serif" font-size="16" font-style="italic">
+    "명확할수록 좋다" — 정말 그럴까?
+  </text>
+  <text x="310" y="237" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="13">
+    Is CLARITY always the gold standard in organizational communication?
+  </text>
+  
+  <!-- Two Paradigms Visual -->
+  <g transform="translate(60, 260)">
+    <!-- Traditional View Box -->
+    <rect x="0" y="0" width="230" height="100" rx="8" fill="#2d1b1b" stroke="#f87171" stroke-width="2"/>
+    <text x="115" y="25" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      ❌ TRADITIONAL VIEW
+    </text>
+    <text x="115" y="47" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">Ambiguity = Communication FAILURE</text>
+    <text x="115" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• 모호함은 제거해야 할 노이즈</text>
+    <text x="115" y="80" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• 명확성이 효과성의 척도</text>
+    <text x="115" y="95" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• 이상적 커뮤니케이션 = 투명성</text>
+    
+    <!-- Arrow -->
+    <text x="250" y="50" fill="#fbbf24" font-family="Arial, sans-serif" font-size="28">→</text>
+    
+    <!-- New View Box -->
+    <rect x="280" y="0" width="230" height="100" rx="8" fill="#1b2d1b" stroke="#4ade80" stroke-width="2"/>
+    <text x="395" y="25" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      ✓ EISENBERG'S VIEW
+    </text>
+    <text x="395" y="47" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">Ambiguity = Strategic RESOURCE</text>
+    <text x="395" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• 모호함은 전략적 도구</text>
+    <text x="395" y="80" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• 상황에 따라 최적 모호성 존재</text>
+    <text x="395" y="95" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• 조직 목표 달성의 수단</text>
+  </g>
+  
+  <!-- Key Insight -->
+  <rect x="50" y="375" width="520" height="80" rx="8" fill="#1e3a2f" stroke="#4ade80" stroke-width="1"/>
+  <text x="310" y="400" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    💡 THE REFRAME: "Ambiguity is not absence of meaning,
+  </text>
+  <text x="310" y="420" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    but ABUNDANCE of meaning"
+  </text>
+  <text x="310" y="445" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="12">
+    모호함 = 의미의 부재가 아닌, 의미의 풍요로움 → UNIFIED DIVERSITY 가능
+  </text>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- SECTION 2: 승(承) - 🐅 Theory/Framework -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <rect x="610" y="130" width="560" height="340" rx="15" fill="#0f172a" stroke="url(#tigerGrad)" stroke-width="3"/>
+  
+  <!-- Section Header -->
+  <rect x="610" y="130" width="560" height="45" rx="15" fill="url(#tigerGrad)" opacity="0.9"/>
+  <text x="640" y="160" fill="#0f172a" font-family="Arial, sans-serif" font-size="24" font-weight="bold">
+    🐅 승(承) THE MECHANISM
+  </text>
+  <text x="1100" y="160" fill="#0f172a" font-family="Arial, sans-serif" font-size="14">권준 | 중군</text>
+  
+  <!-- Core Concept: Unified Diversity -->
+  <rect x="630" y="190" width="520" height="90" rx="10" fill="#1e293b" stroke="#fb923c" stroke-width="2"/>
+  <text x="890" y="215" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+    🔑 UNIFIED DIVERSITY
+  </text>
+  <text x="890" y="240" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="12">
+    Single Message → Multiple Valid Interpretations → Organizational Unity
+  </text>
+  <text x="890" y="260" text-anchor="middle" fill="#fbbf24" font-family="Georgia, serif" font-size="13" font-style="italic">
+    "다양한 이해관계자가 각자의 해석을 유지하면서도 하나의 방향으로 뭉친다"
+  </text>
+  <text x="890" y="275" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">
+    Becker (1968): "Maximum individuality within maximum community"
+  </text>
+  
+  <!-- 3 Functions Flow -->
+  <g transform="translate(630, 295)">
+    <!-- Function 1 -->
+    <rect x="0" y="0" width="160" height="70" rx="8" fill="#1b2d1b" stroke="#4ade80" stroke-width="1"/>
+    <text x="80" y="20" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="12" font-weight="bold">① UNIFIED DIVERSITY</text>
+    <text x="80" y="38" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="10">다양한 해석 허용하며</text>
+    <text x="80" y="52" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="10">통합 유지</text>
+    <text x="80" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Mission Statements</text>
+    
+    <!-- Arrow 1 -->
+    <text x="170" y="35" fill="#fb923c" font-family="Arial, sans-serif" font-size="18">→</text>
+    
+    <!-- Function 2 -->
+    <rect x="180" y="0" width="160" height="70" rx="8" fill="#2d2b1b" stroke="#fbbf24" stroke-width="1"/>
+    <text x="260" y="20" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12" font-weight="bold">② CHANGE FACILITATION</text>
+    <text x="260" y="38" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="10">목표의 점진적 재해석</text>
+    <text x="260" y="52" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="10">저항 없는 변화</text>
+    <text x="260" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Cruise Lines Example</text>
+    
+    <!-- Arrow 2 -->
+    <text x="350" y="35" fill="#fb923c" font-family="Arial, sans-serif" font-size="18">→</text>
+    
+    <!-- Function 3 -->
+    <rect x="360" y="0" width="160" height="70" rx="8" fill="#2d1b2d" stroke="#a78bfa" stroke-width="1"/>
+    <text x="440" y="20" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">③ PRESERVE PRIVILEGE</text>
+    <text x="440" y="38" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="10">기존 권력/귀속 유지</text>
+    <text x="440" y="52" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="10">부인 가능성 확보</text>
+    <text x="440" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Deniability</text>
+  </g>
+  
+  <!-- Key Conditions -->
+  <rect x="630" y="380" width="520" height="75" rx="8" fill="#1e293b" stroke="#fb923c" stroke-width="1"/>
+  <text x="890" y="402" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="13" font-weight="bold">
+    ⚙️ WHEN Strategic Ambiguity Works
+  </text>
+  <text x="700" y="422" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• 다양한 이해관계자 존재</text>
+  <text x="950" y="422" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• 복잡하고 변화하는 환경</text>
+  <text x="700" y="442" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• 갈등적 목표의 균형 필요</text>
+  <text x="950" y="442" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• 미래 옵션 보존 필요</text>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- SECTION 3: 전(轉) - 🐙 Evidence/Examples -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <rect x="30" y="490" width="560" height="360" rx="15" fill="#0f172a" stroke="url(#octopusGrad)" stroke-width="3"/>
+  
+  <!-- Section Header -->
+  <rect x="30" y="490" width="560" height="45" rx="15" fill="url(#octopusGrad)" opacity="0.9"/>
+  <text x="60" y="520" fill="#0f172a" font-family="Arial, sans-serif" font-size="24" font-weight="bold">
+    🐙 전(轉) EXAMPLES &amp; EVIDENCE
+  </text>
+  <text x="520" y="520" fill="#0f172a" font-family="Arial, sans-serif" font-size="14">김완 | 후군</text>
+  
+  <!-- Example 1: University Mission -->
+  <rect x="50" y="550" width="250" height="120" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1"/>
+  <text x="175" y="575" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="13" font-weight="bold">
+    🏛️ UNIVERSITY MISSION
+  </text>
+  <text x="60" y="595" fill="#fbbf24" font-family="Georgia, serif" font-size="10" font-style="italic">
+    "The University shall be responsive
+  </text>
+  <text x="60" y="610" fill="#fbbf24" font-family="Georgia, serif" font-size="10" font-style="italic">
+    to its surrounding areas..."
+  </text>
+  <text x="60" y="630" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="10">• 어떤 영역? → 해석의 여지</text>
+  <text x="60" y="645" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="10">• 지역 vs 국가 vs 글로벌?</text>
+  <text x="60" y="660" fill="#4ade80" font-family="Arial, sans-serif" font-size="9">→ 다양한 이해관계자 만족</text>
+  
+  <!-- Example 2: Cruise Lines -->
+  <rect x="320" y="550" width="250" height="120" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1"/>
+  <text x="445" y="575" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="13" font-weight="bold">
+    🚢 CRUISE LINES (Naisbitt)
+  </text>
+  <text x="330" y="600" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="10">목표: "Entertainment or Transportation?"</text>
+  <text x="330" y="620" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• 항공 등장 → 운송 비즈니스 위기</text>
+  <text x="330" y="640" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• 모호한 정의 → 엔터테인먼트로 전환</text>
+  <text x="330" y="660" fill="#4ade80" font-family="Arial, sans-serif" font-size="9">→ "배가 목적지" 새로운 해석 허용</text>
+  
+  <!-- Research Framework: 2x2 Matrix -->
+  <rect x="50" y="685" width="520" height="150" rx="8" fill="#1e293b"/>
+  <text x="310" y="710" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    📊 Research Context Matrix (Figure 1)
+  </text>
+  
+  <!-- Matrix -->
+  <g transform="translate(100, 720)">
+    <!-- Headers -->
+    <text x="200" y="0" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">FORMALITY</text>
+    <text x="125" y="15" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Formal</text>
+    <text x="275" y="15" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Informal</text>
+    <text x="-20" y="55" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10" transform="rotate(-90, -20, 55)">AUDIENCE</text>
+    
+    <!-- Grid -->
+    <rect x="60" y="25" width="130" height="40" fill="#2d1b2d" stroke="#a78bfa"/>
+    <text x="125" y="50" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="9">I. Goals/Policies</text>
+    
+    <rect x="190" y="25" width="130" height="40" fill="#1b2d2d" stroke="#22d3ee"/>
+    <text x="255" y="50" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="9">II. Conversations</text>
+    
+    <rect x="60" y="65" width="130" height="40" fill="#2d2b1b" stroke="#fbbf24"/>
+    <text x="125" y="90" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="9">III. PR/Advertising</text>
+    
+    <rect x="190" y="65" width="130" height="40" fill="#1b2d1b" stroke="#4ade80"/>
+    <text x="255" y="90" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="9">IV. Networks</text>
+    
+    <!-- Labels -->
+    <text x="30" y="50" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Internal</text>
+    <text x="30" y="90" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">External</text>
+  </g>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- SECTION 4: 결(結) - 👾 Implications -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <rect x="610" y="490" width="560" height="360" rx="15" fill="#0f172a" stroke="url(#alienGrad)" stroke-width="3"/>
+  
+  <!-- Section Header -->
+  <rect x="610" y="490" width="560" height="45" rx="15" fill="url(#alienGrad)" opacity="0.9"/>
+  <text x="640" y="520" fill="#0f172a" font-family="Arial, sans-serif" font-size="24" font-weight="bold">
+    👾 결(結) FOR YOUR THESIS
+  </text>
+  <text x="1100" y="520" fill="#0f172a" font-family="Arial, sans-serif" font-size="14">어영담 | 척후</text>
+  
+  <!-- Core Connection to Thesis -->
+  <rect x="630" y="550" width="520" height="100" rx="10" fill="#1e1b4b" stroke="#a78bfa" stroke-width="2"/>
+  <text x="890" y="575" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+    🎯 THIS IS THE H2 MECHANISM
+  </text>
+  <text x="890" y="600" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="12">
+    H2: Vague Promises → Higher Later Success (β₁ > 0)
+  </text>
+  <text x="640" y="625" fill="#fbbf24" font-family="Arial, sans-serif" font-size="11">
+    Low τ → Multiple Interpretations → Diverse Stakeholders → Broad Coalition → Success
+  </text>
+  <text x="640" y="645" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">
+    Eisenberg's "Unified Diversity" = Your "Strategic Ambiguity in Value Propositions"
+  </text>
+  
+  <!-- Causal Chain Visual -->
+  <g transform="translate(640, 665)">
+    <rect x="0" y="0" width="80" height="35" rx="5" fill="#1e3a2f" stroke="#4ade80"/>
+    <text x="40" y="22" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="10">Low τ</text>
+    
+    <text x="90" y="18" fill="#fb923c" font-family="Arial, sans-serif" font-size="14">→</text>
+    
+    <rect x="100" y="0" width="80" height="35" rx="5" fill="#1e293b" stroke="#fb923c"/>
+    <text x="140" y="15" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="9">Multiple</text>
+    <text x="140" y="28" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="9">Interp.</text>
+    
+    <text x="190" y="18" fill="#fb923c" font-family="Arial, sans-serif" font-size="14">→</text>
+    
+    <rect x="200" y="0" width="80" height="35" rx="5" fill="#1e293b" stroke="#f87171"/>
+    <text x="240" y="15" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="9">Diverse</text>
+    <text x="240" y="28" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="9">Stakeholders</text>
+    
+    <text x="290" y="18" fill="#fb923c" font-family="Arial, sans-serif" font-size="14">→</text>
+    
+    <rect x="300" y="0" width="80" height="35" rx="5" fill="#1e293b" stroke="#a78bfa"/>
+    <text x="340" y="15" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="9">Broad</text>
+    <text x="340" y="28" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="9">Coalition</text>
+    
+    <text x="390" y="18" fill="#fb923c" font-family="Arial, sans-serif" font-size="14">→</text>
+    
+    <rect x="400" y="0" width="90" height="35" rx="5" fill="#14532d" stroke="#4ade80" stroke-width="2"/>
+    <text x="445" y="22" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="11" font-weight="bold">SUCCESS</text>
+  </g>
+  
+  <!-- But Also H1 -->
+  <rect x="630" y="715" width="250" height="60" rx="8" fill="#2d1b1b" stroke="#f87171"/>
+  <text x="755" y="738" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="12" font-weight="bold">
+    ⚠️ BUT ALSO H1 (Implicit)
+  </text>
+  <text x="755" y="758" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="10">
+    Early: VCs need clarity → α₁ &lt; 0
+  </text>
+  <text x="755" y="773" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">
+    Unified diversity requires TOLERANCE
+  </text>
+  
+  <!-- Measurement Strategy -->
+  <rect x="900" y="715" width="250" height="60" rx="8" fill="#1b2d1b" stroke="#4ade80"/>
+  <text x="1025" y="738" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="12" font-weight="bold">
+    📏 MEASUREMENT IDEA
+  </text>
+  <text x="1025" y="758" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="10">
+    Count valid interpretations
+  </text>
+  <text x="1025" y="773" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">
+    Semantic breadth × # meanings = 1/τ
+  </text>
+  
+  <!-- Connection Box -->
+  <rect x="630" y="790" width="520" height="45" rx="8" fill="#1e293b" stroke="#fbbf24"/>
+  <text x="890" y="818" text-anchor="middle" fill="#fbbf24" font-family="Georgia, serif" font-size="13" font-style="italic">
+    "Your contribution = Bayesian formalization of Eisenberg's insight"
+  </text>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- Must Read Section -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <rect x="30" y="870" width="560" height="170" rx="15" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
+  <rect x="30" y="870" width="560" height="35" rx="15" fill="#334155"/>
+  <text x="60" y="894" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+    📚 MUST READ: Knowledge Genealogy
+  </text>
+  
+  <g transform="translate(50, 920)">
+    <text x="0" y="0" fill="#4ade80" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🐢 기(起)</text>
+    <text x="55" y="0" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">Weick (1979) Organizing | March &amp; Olsen (1976) Ambiguity in Orgs</text>
+    
+    <text x="0" y="25" fill="#fb923c" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🐅 승(承)</text>
+    <text x="55" y="25" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">Perrow (1970) Goals | Pfeffer (1981) Power | Thompson (1967)</text>
+    
+    <text x="0" y="50" fill="#f87171" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🐙 전(轉)</text>
+    <text x="55" y="50" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">Padgett &amp; Ansell (1993) Medici | Abdallah (2014) Double-Edge</text>
+    
+    <text x="0" y="75" fill="#a78bfa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">👾 결(結)</text>
+    <text x="55" y="75" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">Sillince (2012) Rhetoric | Ferraro (2015) Grand Challenges</text>
+    
+    <text x="0" y="100" fill="#22d3ee" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🔗 Your</text>
+    <text x="55" y="100" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">Zuzul &amp; Tripsas (2020) | Grodal (2017) | Your OIL Framework</text>
+  </g>
+  
+  <!-- For Your Paper Section -->
+  <rect x="610" y="870" width="560" height="170" rx="15" fill="#0f172a" stroke="#fbbf24" stroke-width="2"/>
+  <rect x="610" y="870" width="560" height="35" rx="15" fill="#78350f"/>
+  <text x="640" y="894" fill="#fbbf24" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+    ✍️ FOR YOUR PAPER: Application Guide
+  </text>
+  
+  <g transform="translate(630, 920)">
+    <text x="0" y="0" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12" font-weight="bold">핵심 연결점 (Scott Stern meets Charlie Fine):</text>
+    <text x="0" y="20" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="10">• Scott: Evidence-based learning → Strategic choices (낮은 τ로 학습 공간 확보)</text>
+    <text x="0" y="38" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="10">• Charlie: Flexibility → Operational systems (모호함이 피봇 비용 절감)</text>
+    
+    <text x="0" y="60" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12" font-weight="bold">가설 연결:</text>
+    <rect x="0" y="70" width="500" height="45" rx="5" fill="#1e293b" stroke="#fbbf24"/>
+    <text x="250" y="90" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">
+      HE: Vague → Lower early funding (clarity required for evaluation)
+    </text>
+    <text x="250" y="108" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="11">
+      HL: Vague → Higher later success (unified diversity → broad coalition)
+    </text>
+  </g>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- COMMITMENT vs FLEXIBILITY SECTION -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <rect x="30" y="1060" width="1140" height="200" rx="15" fill="#0f172a" stroke="#22d3ee" stroke-width="3"/>
+  <rect x="30" y="1060" width="1140" height="40" rx="15" fill="#164e63"/>
+  <text x="600" y="1088" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    ⚖️ Strategic Ambiguity ↔ Flexibility &amp; Commitment Framework
+  </text>
+  
+  <g transform="translate(50, 1115)">
+    <!-- Commitment Side -->
+    <rect x="0" y="0" width="350" height="130" rx="10" fill="#2d1b1b" stroke="#f87171" stroke-width="2"/>
+    <text x="175" y="25" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="14" font-weight="bold">🔒 HIGH COMMITMENT (High τ)</text>
+    <text x="15" y="50" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• Precise promises → Clear expectations</text>
+    <text x="15" y="70" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• Single interpretation → Homogeneous coalition</text>
+    <text x="15" y="90" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• Easy to evaluate (VCs prefer) → α₁ &gt; 0</text>
+    <text x="15" y="110" fill="#f87171" font-family="Arial, sans-serif" font-size="11">• Pivoting cost HIGH → Later flexibility ↓</text>
+    <text x="15" y="125" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Revolutionary Identity (Zuzul &amp; Tripsas)</text>
+    
+    <!-- Center: Tension Arrow -->
+    <g transform="translate(375, 40)">
+      <text x="0" y="0" fill="#fbbf24" font-family="Arial, sans-serif" font-size="30">⇄</text>
+      <text x="0" y="30" fill="#fbbf24" font-family="Arial, sans-serif" font-size="11" text-anchor="middle">TENSION</text>
+      <text x="0" y="50" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10" text-anchor="middle">Your thesis explores</text>
+      <text x="0" y="65" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10" text-anchor="middle">this tradeoff</text>
+    </g>
+    
+    <!-- Flexibility Side -->
+    <rect x="420" y="0" width="350" height="130" rx="10" fill="#1b2d1b" stroke="#4ade80" stroke-width="2"/>
+    <text x="595" y="25" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="14" font-weight="bold">🔓 HIGH FLEXIBILITY (Low τ)</text>
+    <text x="435" y="50" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• Vague promises → Open interpretation</text>
+    <text x="435" y="70" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• Multiple meanings → Unified Diversity</text>
+    <text x="435" y="90" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="11">• Hard to evaluate → α₁ &lt; 0 (early penalty)</text>
+    <text x="435" y="110" fill="#4ade80" font-family="Arial, sans-serif" font-size="11">• Pivoting cost LOW → Later success ↑ (β₁ &gt; 0)</text>
+    <text x="435" y="125" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Discoverer Identity (Zuzul &amp; Tripsas)</text>
+    
+    <!-- Key Insight Box -->
+    <rect x="790" y="0" width="290" height="130" rx="10" fill="#1e1b4b" stroke="#a78bfa" stroke-width="2"/>
+    <text x="935" y="25" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="14" font-weight="bold">💡 Eisenberg's Key Insight</text>
+    <text x="805" y="50" fill="#fbbf24" font-family="Georgia, serif" font-size="11" font-style="italic">"Clarity is only a measure of</text>
+    <text x="805" y="68" fill="#fbbf24" font-family="Georgia, serif" font-size="11" font-style="italic">communicative competence if</text>
+    <text x="805" y="86" fill="#fbbf24" font-family="Georgia, serif" font-size="11" font-style="italic">the individual's goal is to be clear"</text>
+    <text x="935" y="110" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="10">→ 명확성은 보편적 목표가 아니다</text>
+    <text x="935" y="125" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="10">상황에 따라 최적 τ* 존재</text>
+  </g>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- Footer with Key Quote -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <rect x="30" y="1280" width="1140" height="70" rx="15" fill="#1e1b4b" stroke="#a78bfa" stroke-width="2"/>
+  <text x="600" y="1312" text-anchor="middle" fill="#fbbf24" font-family="Georgia, serif" font-size="18" font-style="italic">
+    "Strategic ambiguity is essential to organizing: it promotes unified diversity,
+  </text>
+  <text x="600" y="1335" text-anchor="middle" fill="#fbbf24" font-family="Georgia, serif" font-size="18" font-style="italic">
+    facilitates organizational change, and preserves privileged positions."
+  </text>
+  
+  <!-- Signature -->
+  <text x="600" y="1375" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="14">
+    🐅 권준 | 전라좌수군 시스템 | "구조 &gt; 속도" | Foundational Paper for ✌️U Theory
+  </text>
+  
+  <!-- 4 Framework Icons Legend -->
+  <g transform="translate(350, 1400)">
+    <text x="0" y="0" fill="#4ade80" font-family="Arial, sans-serif" font-size="11">🐢 정운(기) Hook</text>
+    <text x="140" y="0" fill="#fb923c" font-family="Arial, sans-serif" font-size="11">🐅 권준(승) Theory</text>
+    <text x="280" y="0" fill="#f87171" font-family="Arial, sans-serif" font-size="11">🐙 김완(전) Evidence</text>
+    <text x="420" y="0" fill="#a78bfa" font-family="Arial, sans-serif" font-size="11">👾 어영담(결) Implications</text>
+  </g>
+</svg>

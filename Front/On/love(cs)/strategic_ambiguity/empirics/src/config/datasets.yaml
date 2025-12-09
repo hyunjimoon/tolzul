@@ -1,0 +1,62 @@
+# Dataset configuration for thesis pipeline
+# Three analysis variants: all companies, quantum-only, transportation-only
+
+datasets:
+  all:
+    name: "All Companies"
+    description: "Complete dataset - all venture-backed companies"
+    filter_function: null
+    output_dir: "data/outputs/all"
+
+  quantum:
+    name: "Quantum Computing"
+    description: "Quantum computing and quantum technology companies"
+    filter_function: "filter_quantum_companies"
+    output_dir: "data/outputs/quantum"
+
+  transportation:
+    name: "Transportation & Mobility"
+    description: "Autonomous vehicles, logistics, and mobility companies"
+    filter_function: "filter_transportation_companies"
+    output_dir: "data/outputs/transportation"
+
+  hardware:
+    name: "Hardware"
+    description: "Hardware companies (Nanda 2024): computer hardware, communication equipment, semiconductors, energy products"
+    filter_function: "filter_hardware_companies"
+    output_dir: "data/outputs/hardware"
+
+  software:
+    name: "Software"
+    description: "Software companies (Nanda 2024): software development for business and consumers"
+    filter_function: "filter_software_companies"
+    output_dir: "data/outputs/software"
+
+  medtech:
+    name: "Medical Technology"
+    description: "MedTech companies (Nanda 2024): healthcare devices and supplies"
+    filter_function: "filter_medtech_companies"
+    output_dir: "data/outputs/medtech"
+
+  pharma:
+    name: "Pharmaceutical & Biotech"
+    description: "Pharma companies (Nanda 2024): drug discovery, pharmaceuticals, biotechnology"
+    filter_function: "filter_pharma_companies"
+    output_dir: "data/outputs/pharma"
+
+# Pipeline settings
+pipeline:
+  data_dir: "data/raw"
+  cache_dir: "data/processed"
+  vagueness_scorer: "StrategicVaguenessScorerV2"
+  random_seed: 42
+
+# Output settings
+output:
+  figures:
+    dpi: 300
+    format: ["png", "pdf"]
+  tables:
+    format: "csv"
+  reports:
+    format: "markdown"

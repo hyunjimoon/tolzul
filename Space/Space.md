@@ -2,8 +2,10 @@
 created: 2025-11-01
 type: hub
 rank: 5
+modified:
+  - 2025-11-02T22:20:26-05:00
 ---
-
+![[school_lab_theater_lib.png]]
 # 👂 Space - 귀 / RO
 
 > **여백을 듣는다. 불확실성을 보존한다.**
@@ -19,7 +21,7 @@ Space는 지식의 전체 지형을 보는 곳이다.
 
 ## 🗺️ 세 가지 관점
 
-> [!globe] **[[Maps|Maps]]**  
+> [!globe] **[[Space/Library/Maps/Maps|Maps]]**  
 > 지식의 지형도 — 연결의 구조
 
 > [!book] **[[Space/Papers|Papers]]**  

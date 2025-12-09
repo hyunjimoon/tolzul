@@ -1,0 +1,194 @@
+{UTF-8}
+Average Skill New Hire=
+	10
+	~	Skills/Person
+	~		|
+
+Average Skill of Employee=
+	Total Employee Skill/Employees
+	~	Skills/Person
+	~		|
+
+Average Staying Time=
+	10
+	~	Month
+	~		|
+
+Employees= INTEG (
+	Hiring-Turnover,
+		Hiring*Average Staying Time)
+	~	Person
+	~		|
+
+Hiring=
+	100*(Step(0.3,10)+1)
+	~	Person/Month
+	~		|
+
+Skill Increase by Experience=
+	Employees*Skill Increase per Month of Experience
+	~	Skills/Month
+	~		|
+
+Skill Increase by Hiring=
+	Hiring*Average Skill New Hire
+	~	Skills/Month
+	~		|
+
+Skill Increase by Training=
+	Employees*Training Time Per Employee per Month*Skill Increase per Training Hour
+	~	Skills/Month
+	~		|
+
+Skill Increase per Month of Experience=
+	0.5
+	~	Skills/Person/Month
+	~		|
+
+Skill Increase per Training Hour=
+	0.1
+	~	Skills/Hour
+	~		|
+
+Skill Loss in Turnover=
+	Turnover*Average Skill of Employee
+	~	Skills/Month
+	~		|
+
+Total Employee Skill= INTEG (
+	Skill Increase by Experience+Skill Increase by Hiring+Skill Increase by Training-Skill Loss in Turnover\
+		,
+		(Skill Increase by Experience+Skill Increase by Hiring+Skill Increase by Training)*\
+		Average Staying Time)
+	~	Skills
+	~		|
+
+Training Time Per Employee per Month=
+	5*(1+Step(0.3,60))
+	~	Hours/Person/Month
+	~		|
+
+Turnover=
+	Employees/Average Staying Time
+	~	Person/Month
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 100
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.125
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Arial|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Employees,279,138,40,20,3,3,0,0,0,0,0,0
+12,2,48,97,139,10,8,0,3,0,0,-1,0,0,0
+1,3,5,1,4,0,0,22,0,0,0,-1--1--1,,1|(193,140)|
+1,4,5,2,100,0,0,22,0,0,0,-1--1--1,,1|(121,140)|
+11,5,48,141,140,6,8,34,3,0,0,1,0,0,0
+10,6,Hiring,141,158,23,10,40,3,0,0,-1,0,0,0
+12,7,48,450,142,10,8,0,3,0,0,-1,0,0,0
+1,8,10,7,4,0,0,22,0,0,0,-1--1--1,,1|(412,142)|
+1,9,10,1,100,0,0,22,0,0,0,-1--1--1,,1|(346,142)|
+11,10,48,379,142,6,8,34,3,0,0,1,0,0,0
+10,11,Turnover,379,160,32,10,40,3,0,0,-1,0,0,0
+10,12,Total Employee Skill,299,326,55,22,3,131,0,0,0,0,0,0
+12,13,48,105,332,10,8,0,3,0,0,-1,0,0,0
+1,14,16,12,4,0,0,22,0,0,0,-1--1--1,,1|(203,331)|
+1,15,16,13,100,0,0,22,0,0,0,-1--1--1,,1|(133,331)|
+11,16,48,157,331,6,8,34,3,0,0,1,0,0,0
+10,17,Skill Increase by Hiring,157,357,59,18,40,3,0,0,-1,0,0,0
+12,18,48,285,454,10,8,0,3,0,0,-1,0,0,0
+1,19,21,12,4,0,0,22,0,0,0,-1--1--1,,1|(285,373)|
+1,20,21,18,100,0,0,22,0,0,0,-1--1--1,,1|(285,428)|
+11,21,48,285,405,8,6,33,3,0,0,4,0,0,0
+10,22,Skill Increase by Training,352,405,59,18,40,3,0,0,-1,0,0,0
+12,23,48,316,232,10,8,0,3,0,0,-1,0,0,0
+1,24,26,12,4,0,0,22,0,0,0,-1--1--1,,1|(312,289)|
+1,25,26,23,100,0,0,22,0,0,0,-1--1--1,,1|(312,251)|
+11,26,48,312,269,8,6,33,3,0,0,2,0,0,0
+10,27,Skill Increase by Experience,245,269,59,18,40,3,0,0,-1,0,0,0
+10,28,Average Skill of Employee,396,241,58,18,8,3,0,0,0,0,0,0
+12,29,48,498,327,10,8,0,3,0,0,-1,0,0,0
+1,30,32,29,4,0,0,22,0,0,0,-1--1--1,,1|(455,328)|
+1,31,32,12,100,0,0,22,0,0,0,-1--1--1,,1|(382,328)|
+11,32,48,417,328,6,8,34,3,0,0,1,0,0,0
+10,33,Skill Loss in Turnover,417,354,44,18,40,3,0,0,-1,0,0,0
+1,34,1,28,1,0,0,0,0,64,0,-1--1--1,,1|(329,189)|
+1,35,12,28,1,0,0,0,0,64,0,-1--1--1,,1|(360,290)|
+1,36,28,32,1,0,0,0,0,64,0,-1--1--1,,1|(422,286)|
+1,37,11,32,1,0,0,0,0,64,0,-1--1--1,,1|(446,197)|
+10,38,Average Staying Time,393,53,48,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-128-0
+1,39,38,10,1,0,0,0,0,64,0,-1--1--1,,1|(396,84)|
+1,40,1,10,1,0,0,0,0,64,0,-1--1--1,,1|(324,94)|
+10,41,Employees,522,470,50,10,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,42,Training Time Per Employee per Month,409,502,75,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-128-0
+10,43,Skill Increase per Training Hour,211,500,63,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-128-0
+1,44,42,22,0,0,0,0,0,64,0,-1--1--1,,1|(384,459)|
+1,45,43,21,1,0,0,0,0,64,0,-1--1--1,,1|(238,439)|
+1,46,41,22,1,0,0,0,0,64,0,-1--1--1,,1|(430,432)|
+10,47,Skill Increase per Month of Experience,195,203,61,26,8,131,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-128-0
+1,48,47,27,1,0,0,0,0,64,0,-1--1--1,,1|(207,235)|
+1,49,1,27,1,0,0,0,0,64,0,-1--1--1,,1|(263,197)|
+1,50,6,16,1,0,0,0,0,64,0,-1--1--1,,1|(122,242)|
+10,51,Average Skill New Hire,67,432,49,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-128-0
+1,52,51,17,1,0,0,0,0,64,0,-1--1--1,,1|(138,402)|
+1,53,38,1,0,0,0,0,0,64,1,-1--1--1,,1|(342,90)|
+1,54,38,12,0,0,0,0,0,64,1,-1--1--1,,1|(348,180)|
+12,55,0,769,239,250,198,3,188,0,0,1,0,0,0
+GRAPH
+1,57,56,33,0,0,0,0,0,64,0,-1--1--1,,1|(448,383)|
+///---\\\
+:GRAPH GRAPH
+:TITLE Workforce Skill
+:SCALE
+:VAR Average Skill of Employee
+:Y-MIN 15
+:Y-MAX 25
+:SCALE
+:VAR Training Time Per Employee per Month
+:SCALE
+:VAR Hiring
+:L<%^E!@
+1:Current.vdf
+9:Current
+22:$,Dollar,Dollars,$s
+22:Hour,Hours
+22:Month,Months
+22:Person,People,Persons
+22:Unit,Units
+22:Week,Weeks
+22:Year,Years
+22:Day,Days
+15:0,0,0,0,0,0
+19:100,0
+27:2,
+34:0,
+4:Time
+5:Total Employee Skill
+24:0
+25:100
+26:100

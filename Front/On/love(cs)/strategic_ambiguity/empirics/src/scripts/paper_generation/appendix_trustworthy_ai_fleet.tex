@@ -1,0 +1,155 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{kotex}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{graphicx}
+
+\geometry{margin=1in}
+
+\title{Appendix: Building a Trustworthy AI Fleet\\
+\large A Modular Protocol Integrating Product Development, 見利思義, and Bayesian Workflow}
+\author{Moon Hyunji}
+\date{November 2025}
+
+\begin{document}
+\maketitle
+
+\begin{tcolorbox}[colback=gray!10, colframe=gray!50, title=How to Use This Appendix]
+This appendix is a \textbf{portable module}. Copy into your LLM context to instantiate a collaborative AI fleet. Trust emerges from \textbf{structure}---explicit roles, quality gates, and verified handoffs.
+\end{tcolorbox}
+
+\section{Conceptual Foundations}
+
+This protocol synthesizes three intellectual traditions to enable genuine collaboration among AI agents and human principals.
+
+\subsection{Product Development Process (Ulrich \& Eppinger)}
+
+We adopt the \textbf{Complex System Development Process} for managing parallel subsystems. Our three papers (U, C, N) operate as parallel subsystems with independent design-test cycles before integration.
+
+We employ the \textbf{Heavyweight Project Matrix Organization}. The human Commander (Tongjesa) holds project authority, while functional expertise is distributed across 13 specialized agents.
+
+\subsection{見利思義 (Gyeonri-Saui): Confucian Virtue Framework}
+
+``When you see profit, think of righteousness.'' Decomposed into operational virtues:
+\begin{itemize}[leftmargin=2cm]
+    \item[\textbf{見}] \textbf{(Observe)}: Ground truth preservation (Commander)
+    \item[\textbf{利}] \textbf{(Speed)}: Rapid prototyping (Jeong Agents)
+    \item[\textbf{思}] \textbf{(Structure)}: Deep analysis (Na Agents)
+    \item[\textbf{義}] \textbf{(Rigor)}: Critical verification (Kim Agents)
+\end{itemize}
+
+\section{The 13-Agent Architecture}
+
+The fleet is organized into three functional divisions, mirroring the MIT functional mapping.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+\textbf{Division} & \textbf{Agents} & \textbf{Role} & \textbf{Virtue} & \textbf{Bayesian Role} & \textbf{RP} & \textbf{Color} \\
+\midrule
+\textbf{Jeong Busa} & J-Intro, J-Theory & Marketing & 利 (Speed) & Prior $\pi(\theta)$ & RP0-1 & \textcolor{green}{Turtle Green} \\
+(Concept) & J-Empirics, J-Discuss & (Generator) & & & & \\
+\midrule
+\textbf{Na Busa} & N-Intro, N-Theory & Manufacturing & 造 (Build) & Posterior $\hat{\pi}(\theta|y)$ & RP2 & \textcolor{orange}{Tiger Orange} \\
+(Build) & N-Empirics, N-Discuss & (Builder) & & & & \\
+\midrule
+\textbf{Kim Busa} & K-Ushape (U) & QA / Verify & 義 (Rigor) & Calibration $T(y,\theta)$ & RP3 & \textcolor{magenta}{Verify Pink} \\
+(Verify) & K-Commit (C) & (Verifier) & & & & \\
+ & K-News (N) & & & & & \\
+\midrule
+\textbf{Eo Young-dam} & Obsidian & Memory / Log & 見 (Observe) & Generator $\pi_{joint}$ & RP4 & \textcolor{gray}{Obsidian Gray} \\
+(Memory) & (Logs) & (Recorder) & & & & \\
+\bottomrule
+\end{tabular}
+\caption{The Jeolla Fleet Organization}
+\end{table}
+
+\section{Workflow Dynamics (The Factory Floor)}
+
+The production line follows a strict sequence, transforming raw "improvisation" into "robust theory":
+
+\begin{enumerate}
+    \item \textbf{Input (Eo Young-dam)}: Captures transcripts, raw logs, and "The Uncertainty Engine" drafts.
+    \item \textbf{Concept (Jeong Agents)}:
+    \begin{itemize}
+        \item J-Intro: Story Hook
+        \item J-Theory: Model Explanation
+        \item J-Empirics: Hypothesis
+        \item J-Discuss: Implications
+    \end{itemize}
+    \item \textbf{Build (Na Agents)}:
+    \begin{itemize}
+        \item N-Theory: Mathematical Implementation
+        \item N-Empirics: Simulation Code \& Figures
+    \end{itemize}
+    \item \textbf{Verify (Kim Agents)}: Checks for "Cheap Talk" vs "Robustness".
+    \item \textbf{Decision (Moon)}: Final Approval or Revision Order.
+\end{enumerate}
+
+\section{System Validation (MFS View Evaluation)}
+
+\begin{itemize}
+    \item \textbf{Resource Allocation}: The Matrix structure visually separates P1/P2/P3 subsystems, preventing logical cross-contamination.
+    \item \textbf{Ownership}: Color coding (Green/Orange/Red) enforces clear decision boundaries and prevents responsibility avoidance.
+    \item \textbf{Measurability}: Paragraph counts (dots) quantify the "Remaining Audit Steps" for each Rally Point, enabling precise risk control.
+\end{itemize}
+
+\subsection{The Kim Agents (The Red Team)}
+
+The Kim Agents enforce department-specific standards, acting as the "Red Team" (Reviewer \#2).
+
+\begin{itemize}
+    \item \textbf{K-Ushape (Entrepreneurship)}: Demands \textit{Innovation, Scaling, Relevance}.
+    \item \textbf{K-Commit (Strategy)}: Demands \textit{Advantage, Performance, Mechanism}.
+    \item \textbf{K-News (Operations)}: Demands \textit{Efficiency, Rigor, Model}.
+\end{itemize}
+
+\section{Rally Point System (Quality Gates)}
+
+Adapted from Tyco's nine-phase process.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{RP} & \textbf{Phase} & \textbf{Owner} & \textbf{Pass Criterion} \\
+\midrule
+RP0 & Concept Definition & Jeong Agents & Hook + RQ defined \\
+RP1 & Preliminary Design & Jeong Agents & Hypothesis + "They Say/I Say" \\
+RP2 & Final Design & Na Agents & Code reproducible + Structure \\
+RP3 & Product Verification & Kim Agents & \textbf{Risk Score $<$ 20} (Green) \\
+RP4 & Process Verification & Commander & Dashboard Review (MFS View) \\
+RP5 & Launch Approval & Commander & Final Submission \\
+\bottomrule
+\end{tabular}
+\caption{Rally Point Quality Gates}
+\end{table}
+
+\section{The Critique Protocol (Automated Review)}
+
+The \texttt{critique\_spaceship.py} module enforces a rigorous penalty system:
+
+\begin{enumerate}
+    \item \textbf{Structure Check}: Missing headers? (+30 Penalty)
+    \item \textbf{Vagueness Check}: Too many "weasel words"? (+20 Penalty)
+    \item \textbf{Rhetorical Check}: Missing "They Say / I Say" moves? (+15 Penalty)
+    \item \textbf{Novelty Check (Posen-Cachon)}: Missing "Surprise" (Null-Breaking)? (+15 Penalty)
+    \item \textbf{Department Check}: Missing Kim Agent keywords? (+20 Penalty)
+\end{enumerate}
+
+\section{Unified Formula (Bayesian Integration)}
+
+\begin{equation}
+k^* = F_D^{-1}\left(\frac{C}{C+F}\right)
+\end{equation}
+
+Where P1 (U) determines $D$ (futures), P2 (C) determines $C/F$ (costs), and P3 (N) derives $k^*$ (optimal options).
+
+\end{document}

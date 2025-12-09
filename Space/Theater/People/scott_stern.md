@@ -5,8 +5,62 @@ modified:
   - 2025-10-20T21:52:14-04:00
   - 2025-10-21T08:54:28-04:00
   - 2025-10-22T08:41:46-04:00
+  - 2025-11-06T10:27:15-05:00
+  - 2025-11-25T11:23:25-05:00
 URL: https://gemini.google.com/app/e605dca2904b1ced
 ---
+the meaning of quality differs in nail and scale stage 
+- Test Two, Choose One"**을 통해 **최적화(Optimization)**와 **선택(Choice)** 사이의 **내생적 격차**를 해소하는 **탐색(Search) 정책**을 강조
+- “vagueness on investors’ perception of venture” is the closest proxy for founder’s consideration set size. For better or for worse, I’m not separating intentional vs unintentional vagueness. In theory, larger consideration set generates option value, especially under sudden environmental change (e.g. 2022 chatGPT, 2023 crash in San Francisco involving a Cruise robotaxi). 
+
+2023 crash in San Francisco involving a Cruise robotaxi
+
+
+
+[[2025-11-25]]
+may i raise a doubt on your feedback "strength is quickness and weakness is sequencing required for depth"
+i view
+1. quickness is a result of depth (Fine 1986)
+2. multiple styles to success exists e.g. sequential and parallel
+-> 무의식적으로 단복수를 썼는데, 동양에서는 원래 단복수개념이 없다. compete하면서 collaborate하는게 가능한것처럼. 
+
+choose one strategy 
+
+
+# choose customer
+
+⭐️you should be the one choosing the customer, not venture 
+
+in his leadership class, thomas malone emphasized the importance of "choosing to come to MIT". I can make other options, but the spirit and culture of "for the better world", I can't feel in other places.
+
+
+
+
+
+----
+# 10/24
+P.P.S. Erin chose “value chain strategy – unsung heroes” as her favorite strategies among the four. I think I committed too early to “architectural strategy”, instead of doing test two choose one.
+
+Hi Scott,
+
+could you offer a quick chat where I could learn your research agenda? 
+
+  
+
+After receiving the letter attached, I'm re-organizing myself to re-position. Moreover, I also chose "understanding others' needs" as a skill I should work on to pursue the academic career option I committed to recently. 
+
+  
+
+I know how busy you are so I'd prefer if you could share two to three papers you think will increase my absorptive capacity.
+
+  
+
+Angie
+
+P.S. Erin picked value chain strategy "unsung heros" as her favorite. I'm curious what your favorite is. Looking back, I committed too early to architectural strategy and would like to test value chain strategy, if that makes sense to you...
+
+---
+
 2025 [[10-21]], delivered my thoughts to scott via [[on love, bayes, what drives me]]
 
 # 초안

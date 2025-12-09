@@ -1,0 +1,30 @@
+---
+collection:
+  - "[[Space/Lab/Papers]]"
+author_ids:
+  - phillips
+  - how
+  - we
+  - know
+  - what
+  - not
+  - to
+  - think
+field:
+  - 🐢inv
+year: 2019
+created: 2024-12-11
+---
+
+Humans often represent and reason about unrealized possible actions – the vast inﬁnity of things that were not (or have not yet been) chosen. This capacity is central to the most impressive of human abilities: causal reasoning, planning, linguistic communication, moral judgment, etc. Nevertheless, how do we select possible actions that are worth considering from the inﬁnity of unrealized actions that are better left ignored? We review research across the cognitive sciences, and ﬁnd that the possible actions considered by default are those that are both likely to occur and generally valuable. We then offer a uniﬁed theory of why. We propose that (i) across diverse cognitive tasks, the possible actions we consider are biased towards those of general practical utility, and (ii) a plausible primary function for this mechanism resides in decision making.
+
+| Chapter/Section | Research Question | Key Literature | Key Message | Technical Details/Examples |
+|----------------|-------------------|----------------|--------------|------------------------|
+| Introduction | How do humans efficiently choose which unrealized possible actions to consider from an infinite set? | • Marr (1982) on computational analysis<br>• Research on modal cognition and possibilities | The ability to represent and reason about unrealized possible actions is central to high-level cognition but requires efficiently selecting relevant possibilities from an infinite set | • Examples: choosing cities to move to, judging others' actions, assigning responsibility |
+| Traditional Approaches | How have different fields traditionally modeled reasoning about possibilities? | • Research on possible worlds semantics<br>• Work on mental models<br>• Studies of counterfactual thinking | Prior approaches focus on partitioning possibility spaces and ordering possibilities but don't explain which specific possibilities come to mind | • Philosophical models using possible worlds<br>• Psychological work on mental models<br>• Linguistics research on modal terms |
+| Default Representations of Possible Actions | What consistent patterns emerge in how people initially represent possible actions? | • Studies of possibility judgments<br>• Work on causal attribution<br>• Research on linguistic modality | Default representations of possible actions consistently favor those that are probable and valuable across diverse cognitive domains | • Children judge morally wrong actions "impossible"<br>• Causal attributions focus on probable alternatives<br>• Modal language sensitive to both probability and value |
+| Functional Role in Decision Making | Why do default representations favor probable and valuable actions? | • Research on consideration sets<br>• Work on reinforcement learning<br>• Studies of expertise | This pattern likely stems from the function of identifying practical options during decision making - sampling higher utility actions improves efficiency | • Chess experts consider better moves first<br>• Consumer decisions shaped by initial consideration sets<br>• AI systems use similar sampling strategies |
+| Two-Stage Model | How do sampling and evaluation processes interact in decision making? | • Work on fast vs slow decision systems<br>• Research on cached vs computed values | A quick sampling stage based on cached approximate values is followed by more precise evaluation of sampled options | • Cached values allow rapid generation of candidates<br>• Detailed evaluation only of sampled subset<br>• Balance between accuracy and computational cost |
+| Broader Implications | What are the implications for understanding modal cognition and its origins? | • Work on development of possibility concepts<br>• Research on individual differences<br>• Studies of modal cognition across tasks | Default modal cognition may derive core properties from its role in decision making, explaining consistent biases across diverse cognitive tasks | • Predicts similar biases across domains<br>• Explains development of modal concepts<br>• Accounts for effects of time pressure |
+
+[[📜tenanbaum14_1sample(1decide)]]

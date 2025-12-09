@@ -1,0 +1,661 @@
+Hello, hello,
+
+okay, I haven't had time to think about your Hello, yeah,
+
+yeah, I can hear you. I
+
+haven't had time to think about your email. I just got back a few minutes ago from meetings, and I just got back I was traveling all day yesterday, but
+
+it's okay, but I prepared a pretty visuals for us.
+
+Okay, so tell me what you want to talk about.
+
+I want to talk about the second and Okay, first of all, the last time your feedback about the null setting was very effective. I think we discussed rather than think vagueness is better, we you change to specific is better that as an old model and you the keyword that you gave Scott as a technology and innovation scholar, that keyword is what was very helpful to me, because I can prompt it to the GPT. So based on that input, I want that to that operations to apply to my second and third paper. And the reason why I'm trying to write three different papers is two reasons. First, I think I am type of person who learned better by doing several thing at the same time, because like only writing one paper, I find it a little difficult to apply your theory, but if I do that same time with three different ideas, I can learn better for what is the process rule? Does that make sense? So I I learned very effectively in this way. And I prepared some no model that I have set for the second paper, which is, hold on. So if you Yeah, the slide that I prepared, the what we did last time was paper you the blue one. And today I want to get your feedback on paper C and paper N and paper C is about the commitment trap. And here I'm arguing that hold on so the null model is like we the data I have processed has early stage funding and later stage funding, and I observe that the startups that has earned a lot of early stage funding tend to pivot less, and yeah, I'm trying to explain that what made you early, early success prevents growth is kind of the narrative I'm trying to show.
+
+So I don't buy your logic, okay, right? It is, I think you have to be very careful when thinking about the world as your starting point, not your theory. Observing that in the data does not mean you're implying that they're pivoting less is a bad thing. That's not clear at all. If you imagine the world looks like this, projects are allocated randomly to people, some are good, some are bad. Yeah. If God came down and gave you a good product, a good idea, yeah, and that made you both more likely to raise funding, that would make you both more likely to raise funding and less likely to pivot. So your causal model, for me, the inference you're drawing from that is, is is is, is highly problematic.
+
+Yeah, we had different opinions about whether what we are doing a scientist or advocate.
+
+Put aside the philosophy, which I still feel very strongly about, but put that. Put that aside. That's not the question. The question is, what is the data generating model? If you observe that in the world, people that raise a lot of money pivot less, if they're random, you're drawing an inference, as if money was randomly allocated across projects, in which the money would be a treatment, but the money is not randomly allocated across projects. Yeah, better if the world, unless the world is really fucked up, ideas margin better. Should raise more capital. They should also pivot less.
+
+So my language was a little crude. I'm sorry I'm not a native speaker, but I am better at writing math than I just put it in the Zoom chats what I have in mind. So, oh
+
+no, I have, I have no problem. My comment is not what you have in mind. My comment is the inference you're drawing from the empirical world. I observed in the data that companies that raised more money pivot less so. There could be a treatment effect of money
+
+owes a language. So how I define pivot is changes meaning I don't have any problem with good idea like starting with
+
+my argument whatever, it is, they do something more or less. They do x more or less, if they raise more money. That is, you can forget about whether you call it your vagueness, change in vagueness, or whatever you want to call it. I think that's highly problematic. To call that pivoting, but that doesn't matter. That's not my that's not my comment here. My comment is that money is not relevant, allocated randomly. And if that mud, the way the money is allocated is either right, is, is correlated with this, with with their behavior, then you can't draw that inference. Judea Pearl would have a heart attack if you told them your story.
+
+Yeah, I don't, to be very frank, I don't buy a lot of causal inferences like but
+
+you are making, you are in your causal inference from that data. You're making mistake 101,
+
+so Hart, I'm I think there are increasing number of literature focusing on prediction.
+
+No, but I just want to be clear, you are not taking seriously the data generating process in the world. Your implicit assumption with your statement is that money is allocated like a treatment, like a drug trial. Some people get the drug, some people get the placebo. It is not if there is any inherent correlation between the behavior and that treatment, you can't draw the inference you're drawing. It doesn't mean your inference is wrong. It means you can't draw it from the data
+
+I see. Yeah. Um, so what I want to what I'm aiming for is, this is a multi stage financing.
+
+So I had a paper like that in my dissertation that did something very similar. I abandoned it, by the way, okay. I had a paper in my dissertation called, what was it called the munificence penalty, or something like that, that companies founded in times when venture capitals were munificent somehow behave less effectively than those that were founded in times when venture capital was not Munificent?
+
+What does manifest mean?
+
+Like an environment where any idiot can raise money an easy environment versus a tough environment. So venture capital goes in cycles across different sectors. So there are times when it's very munificent anyone can raise money in that sector, and other times where in a particular sector, it's very hard to raise money.
+
+Your hypothesis was, if it is hard to raise, and they raised it. They have a higher quality
+
+No, that was that wasn't my hypothesis in that paper. But it doesn't matter what I did in that paper. I understand the data and I understand the structure. My only comment is, you're talking about dollars as if it's a treatment, a randomly assigned treatment, in which case you could draw inference from the effective dollar. So my comment is not about your theory. It's about nothing. It's about the inference you're drawing from your example I saw in the data. That's only my only comment. You cannot infer that from the data the way you're doing it, yeah.
+
+But the thing is, nobody can observe the ideas quality, so the money is the only way we can measure that is my opinion. Yeah.
+
+But if it just to be clear, you're arguing against your logic, because if the if, if the quality, if you're saying the money has a causal effect on subsequent pivoting, that would imply there's, there are ventures out there. God randomly allocates money, the ones who got lots of money pivot less. That would be, that would be a causal effect of the drug money. If, on the other hand, he who gets money have better quality ideas, then they're also less likely to pivot. But it's not caused by the money. The money and the pivoting are a consequence of the latent, unobservable quality,
+
+yeah, yeah. So there is latent variable that causes or affects both the amount that we earned, yeah. So okay,
+
+but that's not what you described to me at the beginning of this conversation. You said those that got more money pivot less as a causal statement. I just want to be clear, if you talk to any economist the way you just gave me that story, a guy like Scott stern will have a heart attack, might die.
+
+Okay, so this is what I this is time key. So just to be clear, I think there is some causal effect of money, but I don't think that's everything.
+
+So I buy that, because the money has both a the amount of money they raise as a function of quality, plus a noise function. The noise function is what gives you random is, may have an effect, but my only question is the way you talked about it. I'm not talking about your math. I have no problem with the math, the math mathematically, you think, well, but when you talk about the empirical world, you say things that are both antithetical to your math and indicate that you don't suggest to a reader that doesn't know you, that you don't understand the data generating process in the world I see I see, so I'm just trying to break you out of that habit.
+
+Okay, yeah, thanks, yeah, I struggle a lot from some contrarian think I have about against the causal inference, but I should a little
+
+this, not this is not a question about this is about taking serious when you describe the empirical world. You want to be very clear in articulating what you think the data generating process is, yes, the price right? Is it like a drug trial where some people randomly get the money and some people don't. Or it right? What is? What is this? What is the way the world works? If you can't articulate how the world works, great. So your statement got it, the amount of money they raise is correlated with their with their unobservable latent quality. There's also a big noise component. So something right? So on average, better better ventures get more money. But there's a big noise component, what you might be able to draw inference on the using that noise component as a means of drawing inference about the direct effect, the treatment effect of money on on behavior, I see, but you don't want to suggest that there, yeah, you just there's some causal structure in the world. And you really want to understand that,
+
+yes, and
+
+I know you want, and you, I know you understand it the way you talk about it sometimes
+
+is product Got it, got it, yeah, um, but this coming, coming back. Thanks for raising that concern. I will try to improve. But here I want to a little focus on commitment trip. And what I mean by that is, I think the reason why ventures some part of the reason why ventures commit, it's because they need a capital. And I was trying
+
+before, before you go on one, one thing, okay, you put quotes around. More Resources equal better outcomes, is that actually a quote?
+
+No, that's from the LLM so that's why I said this.
+
+You should not put, you should not put quotes around it. Then, Oh, I see you do the same thing on the on the slide, yeah, this one, yeah, you do the same thing on the Spence slide, about clarity beats ambiguity. Michael Spence never said that.
+
+I see, yeah,
+
+yeah. And I don't
+
+Hart, none of this is written by me, so I should train GPT not to do that.
+
+Oh, well, you should. You should not share things that are not written by you.
+
+I disagree with that, but I appreciate what why you're saying that
+
+when you send me a file by you, you're responsible for its content, regardless of who wrote, of whether chat GPT wrote it or you wrote it, you're taking ownership of that of that content,
+
+75% accuracy. And do you think all founders take ownership of their MVP? There's like Dropbox share something that doesn't like
+
+that's that's different. Angie that's you're putting. You're sharing things that have quotes in them that are not actually quotes.
+
+Okay, I Hart, I don't
+
+want you to get in trouble.
+
+Yeah, I see, I see I see,
+
+because anyone who knows these people, and I don't know Michael Spence, but I know Jay Barney, and I know Rita McGrath, and I know I know what they've said, and as soon as I see you quoting them, yeah, even paraphrasing, because I actually don't even think the even as a paraphrase, more recent equals better outcomes. I don't even think Barney would agree with that as a paraphrase. I know Barney very well.
+
+Yeah, that's that's why I thought it was very suspicious. So I said, check AI's recommendation. So yeah, apologies for my AI. I will train it better. Um,
+
+so okay, I've experienced too much pushbacks from you on the first 10 minutes, my soul has gone out of the room. Let me try.
+
+These are, these are small things which have a very massive impact. This happens in talks. You give a talk, you see things that you think are throwaway things that not you, I mean people, but here's students, junior faculty, they say things that are sort of an aside or a throwaway thing at the beginning, and they end up talking about it for the first 45 minutes of their talk. Happens all the time, okay? All the time, constantly.
+
+Okay, I should try to train myself to save myself from that. Okay.
+
+Well, you know the reason, the reason it happens is because I have ambiguity. Actually, the audience is uncertain about the point you're trying to make. So you say something, they're trying to make sense of it so that you said it, so they think this is relevant and important, and they're just trying to make sense of the world because they don't know what you're trying to say. So this is a story of ambiguity.
+
+Yeah, it is a destructive ambiguity, I guess not constructive.
+
+So I like, actually, I like that word Angie. I like that language of destructive ambiguity versus constructive. And it's parallelism to interference. I think that's exactly that I hadn't thought of that. Actually, I like it so much I'm making a note of it.
+
+Angie, hang on, there was a paper on that I can share it.
+
+Oh, send it to send it to
+
+me. Yeah, I'll find it. And that's that.
+
+But that's a, that's a that's very good. So Jim March is very good at constructive ambiguity.
+
+Oh, okay, yeah. So I want to write my thesis on how founders should leverage from constructive ambiguity rather than the opposite. I need your help.
+
+I So, so I like so the What is this? What is this paper on constructive versus destructive ambiguity?
+
+Let me find it. I
+
+think it's by Abdullah.
+
+May I follow through mail after Yeah,
+
+perfect, yeah. Very
+
+nice. Very nice. Yeah, okay, um, yeah. So here, just to come back to my second paper, like just just before jumping in the high level of my goal is I'm in a transportation program, so I need to write something about transportation and mobility venture, and I observed that they have a very high failure rate. And I'm trying to this is my hypothesis that capital forces commitment and uncertainty forces the flexibility. So this two factors, which is very severe in mobility venture, makes the failure rate increase. Okay, and I want to structure my three paper as borrowing Matt cronin's framework of what, how and why. So he has written a recent paper on like, what is a theory and like construct theory the what for me is the U shape of growth by vagueness. There are two extremes that can succeed and the how. Layer two is the commitment trap. So like the data, at least the data shows not perfect symmetry, but rather like this J shape, meaning I was surprised by it as well. The success rate for the vague part is a little higher than the very specific ones. And I was trying to explain that as some commitment trap, meaning, if Yeah, you can your idea can be very good and you have some IP of a breakthrough technology, but perhaps specifying too much might not always helpful for the long term, like the value sometimes constructive ambiguity can give some room for different investors to Project their vision on and make the market much bigger. And the third one is why? And here the rational rationality comes in optimization model of what is the optimal numbers of option you should have. And I explained two phenomena. One is the fear of missing out. Can be optimal when the fear let us overestimate the commitment cost. So commitment cost is a loss of per lost, lost sales in news vendor. So here everyone is doing AI, and I'm not doing AI, and that increases the commitment cost. So I am forced or by rationality, I have to add my option of AI as well. So that's the first phenomenon explaining why. And second phenomena is overconfident, founder, underestimate the commitment cost and remove all option and commit to one of them, which is very widely observed. I interviewed several, not only founders, but also corporate friends as well. So that's the first you my U shaped paper explaining what is the data saying and how, why is the commitment sometimes be dangerous and prevent the long term success.
+
+So what did, what did, who is your tell me who your audience is.
+
+So I just
+
+still Scott Stern, or who's the audience.
+
+I tried to unify all the audience here, like Scott technology.
+
+And what would Scott stern think about this as a null
+
+this being?
+
+What did he think before your paper, before you, before you talked about it? What if you're going to say something interesting to him? It has to be surprising to him. If he's your audience, if he were sitting in the room, you'd want to be able to say, Scott, look your literature you or has talked about this.
+
+That's a good question. So let me, let me update one. So layer three, I think Operations Management might be an audience because you mentioned last time.
+
+Well, you just told you, I'm You're confusing me again because you just told me Scott Stern was the representative example of the audience
+
+I changed the third one, perhaps operations management, because last time you said one other architecture of the paper can be, oh, there is a problem outside our field that can be solved by using our main tool. So news vendor model is Operations Management kind of Bible tool, right? So I'm trying to use that as, oh, there are,
+
+okay, so what? But okay, that so. But to do that, you have to that's your model. That's got nothing to do with what they thought before. What did the operations people think before then,
+
+I had an impression that we don't need an element of surprise, if that's our strategy.
+
+No, you have you. So the paper to read that I like, that does this beautifully well, is a paper by Westfall and Zajac. And what they do is they're sociologists. Basically, it's a paper in ASQ. I'll tell you which one it is,
+
+Westfall and
+
+yeah, but they got, they got a million papers. Hang on. I'll tell you what paper it is. I
+
+and here's it'll also point out why I think this is a hard thing to do in in this question. So the paper I'm thinking about is called some readings. Day one, no day two. It's 1998 and ASQ, and it's called the symbolic management of stakeholders. So there's a large literature in financial economics on corporate governance. And one of the things that came out of agency theory in the 70s and 80s was that you want to give the you want to give the executives high powered incentives, right? You want to give them incentive contracts to get them to work in the interest of the owners. And this is the basic understanding of corporate governance in the financial economics literature. Now, Westfall and Zajac are mostly sociologists, and they're writing an ASQ, not an econ journal. And so what they do in the start of that paper? So I read the introduction. You don't need to read the rest. They say, look, but keep in mind for the governance people in sociology, the finance people are their sworn enemy. This works because the finance people are their sworn enemy. So they say those people in finance think that you align the incentives of the CEO by giving them high powered incentives, and the market, capital market responds by increasing the share price, because the board has done good work by aligning incentives in this paper. Empirically, it's shit. I don't buy it. Empirically, I'm only showing it for the style they go and say to their sociology friends, hey, sociology friends of mine, those corporate finance people, they think this about high powered incentives. Let me show you something, firms that firms that announce high powered incentives for the CEO but don't actually implement it, get the same stock bump as firms that actually implement it. It's only symbolic. There is no effect of high powered incentives. This only works, though, because the corporate finance people are the sworn enemy of the sociologists that think about governance.
+
+So sorry. So are you saying that there are sociologists, the authors and corporate finance and like they are enemies, and the sociologists went there and attacked them.
+
+I don't know what there's there's sociology. One box has s in it. One box has E in it. Okay, one circle, there's an E circle and an S circle. In terms of work on corporate governance, most of the work is a lot of the work, the work in financial economics, is in the E circle. That's about agency theory. Now Westfall and Zajac are in the sociology camp for governance. The economists are the enemies of the sociologist. So they say, Hey to my to my sociologist Friends, let me show you that those financial economists, they are such hot shots with their story about this. But in fact, let me show you that it's all sociological. We're right. They're wrong. I don't think that works for you here, because I think that that spot between the disciplines is not strong enough to do that struggle.
+
+Yeah, it's not, but so, but Right? I don't
+
+read the intro of the West fallen Zajac. It's a beautiful example of how to do it.
+
+Okay, thanks. Um, so you're saying I should also have some, oh, maybe, like, formal can be rational. Like, does any person think FOMO is rational?
+
+I can think of many models that would produce it. I don't know if anyone's talking about it.
+
+Okay, yeah. Is that surprising enough? I can't
+
+find you have to set up the null. I see sometimes. Yeah. So here's a way. Here's a way to do that. You really need to come take my course sometime. When I give it in America's you know that you can't come to Hong Kong. One way to do that, okay, is to say, look, sometimes you we write papers where the null, the audience is null, is implicit rather than explicit. Lots of people in whatever have talked, you know, recognize the, you know, the behavioral implications of the fear of missing out. Yeah, implicitly, when they talk about it, they talk about it as if it is bad. Yeah, right. Oh, why did he do that? Oh, it's purely FOMO. And you have to then set up for the audience. You have to get the audience to believe they really thought it was bad by using language in a way to and I think we say fear of missing out. I think most people will see it as leading to bad behavior. So what you can do is say, you know, people have talked about this, you know, mention it, lots of stuff. Talk about it, the implicit assumption is that it is bad. And if the odd, if your audience can identify with that and say, Yeah, I hadn't thought about it, but Angie's right. When I think about it, I think about it, but it's bad, and now Angie's so you you then have to mask like an artist set up the null.
+
+Yeah, I appreciate that. Is there any way to quantify how audience is buying my argument,
+
+it's an art, art, but so your problem, Angie, is that you don't know the audience. It's not your fault, because this is the life of being a student and junior faculty. You don't know the audience very well. You can only infer from reading,
+
+yeah, oh, yeah.
+
+And things like, chat. GP, consensus and perplexity can help, but not a lot you can see how they can misinterpret and misunderstand. Yeah, you know, it's it. I There is no man, but every if you don't understand the audience, you can't set up their null. And so what one does is one struggles, right? You go and talk to Scott and say, Look,
+
+yeah, so, but what I've been trying to do since last time is make a null network. Let me share my screen. This is the best I can do to construct their no model. So last time you said I should have like Scott turns no model. So I listed Scott Stern, Josh against and perhaps I adding several papers they have written, and I am just adding this file to whatever I want their
+
+one name I didn't recognize was the guy with the who's Patrick Bolton? Oh, I don't know him.
+
+Yeah, he wrote a paper moral hazard in experiments with Roman Ananda. Okay?
+
+He's one of, he's one of romana's co authors. Got it? Okay, yeah.
+
+So I don't know who
+
+i Is this his? Was this guy? His student? Who is he? I've never heard of him.
+
+He wrote a paper called satisfiable contract, which I like,
+
+Oh, he's a he's a finance guy. Okay, got it. So he's not writing in our literature. Stick with people in the literature you want to talk to.
+
+Oh, I see, I thought, like, since
+
+this, this, this guy is a professor of finance.
+
+I don't know, like, how to associate this Bayesian entrepreneurship field, because, like, a lot
+
+of the finance guys that are, you know, there are finance guys in it, the class, the classical story there is Josh Lerner and Paul Gompers, right, who are financial economists. So there's a role for the finance guys in this. They mostly came in through the vehicle of Lerner and Gompers looking at venture capital in the 90s and early, 2000s
+
+so you think those are the groups I should first exclude, and like, focus on the first four, I guess,
+
+yeah, you want to think. And even our I know Arnaldo, you know, you know he's camped, he's camped out with Gambardella. Yeah, yeah. I know those guys extremely well kept I know Keppo Faline very, very well. I know all so
+
+last time
+
+they all fit together in your ion, like, see the ion thing you had in your email, I noticed, yeah.
+
+So those are the people invited to the base and entrepreneurship?
+
+Because those guys are the guys, or those are the guys organizing it, yeah.
+
+And also then alphabet, I think, was also invited in the first conference. Say that again, Daniel alphabet, you're
+
+he might have been presenting our, my paper, yeah.
+
+So yeah, he is also part of associate, associated with, I think, Bayesian entrepreneurship.
+
+Well, through his work with me, yes, yes,
+
+yes, yes, yes. Um, yeah. So yeah, the reason I asked was last I I might be wrong, but once you mentioned temple felon is orthogonal to what I'm doing.
+
+Tempo is not, you know he you got to be careful with him, because he doesn't. He's actually a very smart guy, but he doesn't understand math at all, and he's a guy who uses ambiguity very effectively. By the way, there's writing,
+
+yeah, yeah, that's but
+
+I'm not sure if it's because he's using ambiguity purposefully or he doesn't know. But I like him. I, he's I, you know, I happened to my camera.
+
+I like your jokes about or not joke. But ambiguity, humor is also ambiguity. Ambiguous. It holds some different aspects. Your camera is going crazy. It wants to show me your room. Okay? Coming back, if you don't mind. Okay, yeah. So now I just wanted to share that I now have a clear idea of my mental or no model, but I still, I'm still learning, so I don't know. I need some help in setting. What is the paper like? The no for the second paper
+
+I buy that early success can look I buy this story that early success can constrain right, no problem, right. This is like there's someone standing at a fork in the road. They can go left and right. If you go left, group A, pay you. If you go right, group B, pay you. Yeah. So once you go left, you feel obliged to keep going left and not turn right, because the people who wanted you to go left page you. That's what you're saying. It's the model of constraint.
+
+Exactly. Yeah, no
+
+problem with it. I buy that. I buy that there's a modicum of truth in that I don't think the problem is, I don't think anyone would disagree with that.
+
+Oh, I see that's a problem.
+
+So that leaves you with no null, right? This is why the starting point for every paper as an audience is null. So here's one way to set it up.
+
+Okay, okay. Here like a artist, just demonstrating and improvising.
+
+You have to, you know, framing across the best, the best, right? The best people are doing this. When you see the great economists who are able to do this and others and in but in many fields in the sciences as well, this does involve a kind of creativity and artistry that comes from a deep understanding of something that is hard to do and hard to learn to do if you set it up to find you know, We tend to view access to resources as freeing startups to pursue the things they want to pursue. Yeah, yeah, yeah. And somehow you have to set that up and put sites to that, or say, we implicitly you have to somehow buttress that, yeah, you say. But in fact, I'll show you that there are conditions under which these resources act as a cons, as constraint, not freedom.
+
+Exactly May I like improvise one more. So entrepreneurship is framed as an experiment, and venture capitalists are paying money to do that experiment. So this capital was intended to improve learning, but in fact, it lures learning in some sense, by constraining good.
+
+So that's that, that's just you did something very nice, right? You were talking to Todd Zenger and and Gambardella and kama foo and to to Josh GaNS and Scott stern, and to Hart Posen, and you were saying, Ah, you thought this money allowed you to conduct the experiment.
+
+Yeah, yes, but
+
+in fact, it may restrict the experiments you can conduct.
+
+Yes, yes.
+
+Okay, good.
+
+Quick question, so can I treat experiment and learning equivalent?
+
+Okay, I'm going to give you two answers, my my answer, and Dan leventhal's Answer, gambridella and Todd zenger's Answer. Wow, they're different answers.
+
+I'll give you a I'll even give you a third answer. The third answer has Jay Barney in it. Okay, so, so, so, so, so, gambride kama food, Todd Zenger, those guys, learning is experimenting. Now, for myself and Dan Leventhal, it would be an experiment is one way of there's a hierarchy. Yes, an experiment is a way of learning, but it's one of many, many, many ways of learning. They're not synonyms. Learning is above experimenting. There are many other ways of learning than just experimenting, and now Jay Barney, with a paper that is either forthcoming or coming out, shows that you also conduct experiments, not just to learn, but also to convince others. So. So, so those stories on simply that you know that these are learning and experiment learning is the same as experimenting is not true for all the audience in this space I
+
+see, but I
+
+think right so expect you could be doing experiments for reasons other than learning. There are many other ways to learn beyond conducting gambridella Like experiments, but I think we'd all agree that experiments can be one way of learning.
+
+So I disagree with Barney, because I, in my definition, learning is updating any priors or models.
+
+And yeah, but who's learning? You see? So what they're it? Yeah, Jay Bart. The Jay Barney paper says I'll conduct an experiment. And in fact, in that paper, I'll conduct an experiment, and even the what I will experiment on may be more driven by convincing outside people, yeah, yeah. So then it's not my learning.
+
+Sure, sure. I am learning the others mental model.
+
+No, no, no, no, no, no. That's not what I'm saying. Okay, you could be do. You might do an experiment. Let's say you're the entrepreneur. You might do an experiment that you do not need to do. You don't need. You will learn nothing. But if you did that experiment, it would convince venture capital,
+
+yeah, yeah, yeah, that's
+
+the J barn. That's the j, so that's, that's the J, the J Barney story, is it? I think that's Jay on that paper. Maybe that's not. I can't remember who the co authors are on that paper.
+
+I see I have a good example for that.
+
+Yeah, it's a published paper already. So they don't need the examples. Okay?
+
+Galileo. Galilei, dropping the ball from the Tower of Pisa.
+
+Yeah, yeah. So this is, this is so. So they would argue that, in fact, you'll do experiments you don't need to do. You'll do experiments that were different than that. You might do an experiment that is not optimal for your learning, but maybe optimal for convincing others.
+
+Yeah, just for the future record, I'm not fully persuaded, but thanks for letting me know the three schools of thoughts, but my knowledge, I could
+
+come up with more schools of thought.
+
+Okay, too much information. You know, too much. But for the purpose of setting the normal model of like engineering surprise, that capital that is supposed to enhance learning harms learning that is more related to the camfus school, right? Experiment, learning, same thing.
+
+That's right, you just, that's my point is you want it. You want to when you make that statement setting up the null, you want to include the right people in the sites to go with that statement of the null. If you put the wrong people, you cause confusion.
+
+Yeah, yeah, yeah. So
+
+my point in giving you those three options just they think very specifically who you have in mind. So if you were to cite in that statement, you know, they don't often talk about, you know, the role of venture capitalists to fund experiments. They're not thinking like that because they're not talking about venture capital very much. They're mostly talking about the experiments itself. But if the experiments are costly, then one needs capital to do them. Implicit in that story is that one raises capital during the early stages, in part to fund the experiments. So you don't want to put words in the mind. You want to get that language just right, right?
+
+Oh, I see, yeah. I'm sure you know the line of research by Raman Ananda on experimentation as like financing. So do you think that would be a better null for what I just described, capital equals capital helps learning?
+
+No, I but I think yeah, so that it capital helps learning. Because, look, if I was writing this, here's what I would write. I write something better, because I'd spend a whole, I'd spend a whole, a whole day, or two days, writing this one, these two sentences, until they were beautiful and perfect. Oh, really, wow, the first paragraphs are all that matters. Fuck up the first paragraphs. Don't bother working on the rest of the paper. A growing body of literature in strategy and entrepreneurship, or entrepreneurship, entrepreneurial strategy focuses on the merits and benefits of experimentation as a means of learning, sight, camefu, gambre della, Zenger Ganz, Nanda, etc, got it,
+
+got it, got it. That's a beautiful, oh no.
+
+Take Nanda out of that first part. Then the next part is, these experiments are often costly, and firms raise capital to fund these experiments cite Nanda.
+
+So you're trying to separate the learning part and the capital part, right?
+
+Well, because, yeah, because you're because you want to get, you want to bring, right, because, because Gambardella, etc, are not talking about capital. They're talking about the experiments. Nanda is talking about capital and experiments, I see, I see, I see, right, yeah. So gambride says, oh, experimenting is an important means of learning for new ventures. But experimenting can often be costly. Firms raise capital to be able to do the experiment. In this sense, raising capital implicitly, is a mechanism that enhances learning.
+
+Wow, that's
+
+this paper. Okay. I argue that, wow, cap, the raising of capital can, in fact, facilitate learning. There are mechanisms under which it actually can constrain learning.
+
+Oh, yeah. One thing I want to try is, I don't use while a lot, but I observe you use that very beautifully, like while,
+
+it forces your mind to set up a comparison, the No, and then the contrast,
+
+Oh, I see I
+
+I trained myself to think that way.
+
+Got it. Got it. Got it right.
+
+You always want to sell you thought a, I'm going to show you under some conditions. It's B,
+
+got it. So experiments are helping learning, and sometimes those learnings are costly, so founders raise capital to do that, and like some implicit assumption is like, or combining the first two, capital is used to enhance learning, while it seems capital is used to enhance learning. I show in this paper, I show some mechanism where capital constrains learning.
+
+Yes, now it's very important you stick closely to this audience, because in other domains, there'll be lots of discussion in sociology and elsewhere on other relationships between capital and behavior. There's you know, so you want to get that, you want to you want to set up for the the implication of this is that capital is a mechanism by which, first, that facilitates learning. In this paper, I argue that there are also mechanisms by which capital can undermine learning, right then you've got now, as I say, I would spend days and days getting this null just right.
+
+Yeah, thanks. Thanks to your Hart. I think I'm discovering, or did you know, desires are the things also constructed. I'm sure you already know.
+
+Say that. Say that. Again,
+
+desires are also constructed. It's not,
+
+are constructed? Yes, okay, yeah, yeah, yeah. I like that. I buy that, yeah.
+
+So it's from a book called looking awry. And I thanks.
+
+Hang on, looking awry. This is how do you spell a rye,
+
+a, W, R, Y. It's by Zizek. I found it. Is it good? Uh, yeah, I I learned a lot about fantasy and desire and so and so. I just put it on a chat the whole book.
+
+Oh, good, thank you.
+
+Yeah, but my point was I learned from this both desires are constructed and thanks by interacting with you, I learned the kind of relish of crafting the sentences or like structuring and knowing separating different things. I think that's,
+
+well, I'll tell you, it took me many years to figure it out, because the people who are good at doing this got good at doing it by chance, and they locked on to it, and those that didn't get and so they can't explain it, because they don't have the words. It's they know it, but it's tacit, and those who didn't get good at doing it by whatever chance, end up as non at second tier schools or and people I never interact with. And so it's actually it, as I say, I've dedicated 15 years to being able to articulate this cool
+
+as the role model scholar that you learn.
+
+No, I couldn't find anyone who could explain it to me in a way that was satisfactory,
+
+okay, um, and just for Oh, yeah. And you previously said, I think you previously gave some hint about how to set it as a normal model. I forgot. Hold on. Oh, oh, one question I had. So previously, you framed this as behavioral implication of fear of missing out. People talk about as if it's bad, but in this paper, I show the condition under which this can be optimal, right? But, yeah, one concern is, I am not only discussing the FOMO, but also another example as well. So I'm worried whether, what's your
+
+other example?
+
+Confident founders commit to one option. So they're
+
+well, you know, I have a lot of work on modeling overconfidence of various sorts across a half dozen pages. I can also show you conditions under which overconfident founders are if any of the other parameters are non optimal, you can always find conditions under which some kind of competence, bias, confidence. Bias can compensate for another bias. I can come up with a whole list of conditions under which overconfidence is good. They all require there to be non optimality elsewhere in the model. If every other parameter is optimal, then that parameter needs to be optimal as well, but if some other parameters are non optimal, then there's compensating variation across all kinds of different biases.
+
+I see, yeah, I I agree that in a model with more parameters, there can be several degeneracies, like compensating with each other. But in my model, I only have like, two parameters, right? That coming,
+
+but you, you
+
+so I thought there were some value in it, you know what? I mean, simple model.
+
+Here's the thing, Angie, okay, if you can get over confident. So I want to use the word overconfident. Confident is a level. How confident you now, there are at least three kinds of confidences in the literature. If you buy you mean it would if you say, if confident is just a level, then there's some optimal level. If you're below optimal, then more is good. If you're above optimal, more is bad. This is always the case.
+
+How do you define good or bad?
+
+Meaning improves outcomes or or hurts outcomes. So first you have, if you're going to talk about confidence, first you have to talk about about what is the optimal level of confidence. So I don't know what you mean by confidence in here estimation, I think it's a point eight when it's a point two. Or do you mean precision? The precision of my beliefs. Am I overly precise? Those are two fundamentally separable notions. So, so, so, so
+
+you're trying to say, if this is the like, true population, this can be also the confidence, like, let's say the mean is the same, but also this can be also the confidence, or that's at least a two notion of confidence.
+
+What one is, one notion is your estimate, and the other is the error bars around your estimate. Yeah, right. So, for instance, the classic model on the precision story is Angie's an undergraduate. She she's taking exams, the scholar that are studying, the students that come out of the exam room, and they ask, What do you think you got? Give me, give me, give me, or the range, which is also equivalent to giving you the you know, or give me what you think and give me error bars around it. And then they look to see if the truth is within the error bars, that's about precision, right? So there those are so the paper this comes out of that really finally figured out why the literature and psychology and economics is so fucked up about confidence is called by Healy and Moore, two psychologists. It's called The trouble with overconfidence. It's extraordinary. Paper been very influential.
+
+I see trouble of overconfidence? Yeah,
+
+Healy, H, E, A, l, y and Moore, M, O, O, R, E, I talk about their papers in all of my paper, that paper, and all of my papers,
+
+okay, um, yeah. But just just a slight, Oh, just a slight note. The true whether it is included in the error bar, that's very frequent this way, just a mental note.
+
+No, you can frame it that way, because those guys do it in a frequentist way. But you could also frame it in a Bayesian in a Bayesian way. It affects how much you update your beliefs to new information. Is the Bayesian story. So, if so, so how much, if you're playing a band and you're updating your beliefs. How much you update your beliefs is a function of the precision of your priors and the noisiness of the signal. All else being equal, the noisier the signal, the less you should update your your update your beliefs and new information. There's an optimal amount of updating that's equivalent to the precision in your prior not them. So if you think about it as a Bernoulli bandit, where the prior is, is a beta function, the precision is the mean of the beta function is your estimate, and the one over the variance of the beta function is your precision. So you can frame that same precision story in both a frequentist and a Bayesian way. In fact, I always, in my papers, I'm always modeling it in that Bayesian way. I see,
+
+yeah, okay, so is it a correct understanding that the noisiness of the environment has the same rule with the precision of my prior right? And you
+
+think about think about it, that think it, think about it is a simplify things. It is a question of, how much should your beliefs change on if you get new information, how much should they change? There's some optimal amount they should change. Given the nature of the signal, the noisier the signal, the smaller the optimal amount of change of your prior, of your belief, right?
+
+Based on the assumption you know the like size of the signal and size,
+
+that's absolutely right. That's the only way you can that's the only way you can define what is Bayesian in that sense, don't know if you don't know the variance, yeah, of the signal, yeah. Cannot know how much to update. You don't know if it's all noise or all signal, exactly,
+
+exactly. And you
+
+must know you can't be Bayesian without without some belief about the noisiness of the signal.
+
+Yeah, but that's very unrealistic. Because, like,
+
+it's unrealistic in a mathematically true sense, but you know when a signal but but in a directional sense, you have a sense of whether the signal is noisy or or whether God is speaking to you, or a four year old is speaking to you.
+
+If God year old might be better, yeah, well,
+
+I might share your your your view on that. I take a four year old over God any day, but in a mathematical sense, yes, you need to know exactly. But in a practical sense, we just need directionality. And remember, a lot of that work on signal and noise comes out of engineering after World War Two at MIT, trying to think about radar signals and pulling that signal from noise,
+
+nobody had gave, gave me a satisfactory explanation on signal and noise.
+
+So, yo, it's purely Bayesian story.
+
+It's, my only argument is, you need to have the full model of the world in order to,
+
+of course, but, but that's the come up, that's the come up, that's the That's exactly it. And for some signal detection problems, there is no optimal no closed form solution. There are only heuristic rules to signal that certain signal detection problems, and those are closely related to models of Bayesian learning and Kalman filters.
+
+Yeah, yeah, that is correct. Yeah.
+
+No, I've been studying all that literature for many years. It's very interesting.
+
+Yeah, so the work, I don't want to go off tangent too far, but the work I was doing with hazir, when I was doing a pre doc, was developing an inference engine for the system dynamic software. And yeah, like, yeah was one of them, and MCMC was another.
+
+So, yeah, yeah. All that goes back to work on radar in the in the 40s and 50s.
+
+I see, okay, um, back. I will just
+
+raise filters trying to figure out where the how many airplanes there are, and are they coming to you or going away or going left or right? Is that? It's very interesting stuff. Yeah.
+
+You know, Hart, I think if we start chatting, I think we can chat for a whole day.
+
+Stuff also interesting.
+
+I know, I know, that's why I enjoy chatting with you. Like every topic, we have so much thing to say,
+
+okay, but we got to finish up.
+
+Yeah, thanks. Um, so the next question is about how I should format the paper, and by chatting with you, I have a sense that I don't want to go into weeds of the confidence, so I'll just focus on FOMO.
+
+I think just doing the FOMO to start with and getting that right. Yeah, yes, confidence is a separate, a separate it's a much more complex thing, because there's so many literatures, both the hand wavy, shitty psychology stuff, but also formal. I know, I know all the formal mathematical stuff. Yeah.
+
+So I have three options for the news vendor. So the contribution here is first applying the news vendor to startup setting. And the twist for me is news vendor always predicts what I'm going to do inventory optimal, using the past data. But startup does not have a past data, so what they're doing is using the future information of a promise and determine what I was going to do now. So I think that as a reverse time as an interesting thing, but that's not enough for engineering a surprise. So perhaps FOMO is the foil for starting the paper. That's and three options of the architecture of the paper is, first, is focusing on phenomena.
+
+Explanation is one question is, what you're doing, are you? And so if you're, I think what you're doing is you're, you're going to say, look, and you tell me with it. Are you there? Are you're you're saying that the optimal behavior will look like it's fear of missing out, but it's actually not fear of missing out. There two, there are two versions, okay, one is fear of missing out. The agents are actually biased. They have this bias called FOMO. And that FOMO, in fact, there are conditions under which it's good. Another story is so that would be like, in my papers, they've got this kind of confidence bias, and under certain conditions it's actually good. My papers have a variety of mechanisms. There's something else. So in my papers on this, and that is what looks to an observer like a confidence bias. So in one of my papers, it looks like there's a sunk cost bias, but in fact, the agents are fully rational. There is no sunk cost bias. It just looks like a sunk cost bias to an observer who only sees, let's say the entrance.
+
+No. Hart, it's very hard to separate the two.
+
+It's not hard to separate the two for me, but you have to ask. So for instance, in my 2018 paper, it looks like there's a sunk cost bias in that model. Startups that enter the market when they have to pay a higher sunk cost, stay in the market longer with a bad idea than those that that have to pay a lower sunk cost. But they have no sunk cost bias. That is purely the result of a selection process. There is no sunk cost bias in the model. The agents are Bayesian rational. So there are two different things. One is a parent. The word in the literature on there's a paper in the economics literature called apparent overconfidence, over I don't think I can spell a parent.
+
+Oh yeah, there's also Eric.
+
+So there's a there's a paper in the Econometrica called apparent overconfidence by Benoit, and I'll give you the site. And my 2018 paper has apparent, apparent overconfidence and apparent sunk, sunk cost fallacy in it,
+
+got it. Got it. Yeah. ERIC VAN DEN Stein also has a paper on over rational overconfidence. Yes, that's right. Is that after? Oh, I think that's after.
+
+No, that's that's 2011 as well. Oh, really,
+
+11 was a fear of overconfidence.
+
+And then my paper was, is this one that has essentially,
+
+so you gave me the two types. Which is the first one, hold on. Let me think so. So first one is, actually I am biased, but it end up being good. And second one is I am purely rational, and the observer things bias, right? That's right, but the three papers that you just shared is all of them in the second bucket,
+
+no apparent overconfidence is, oh no, I can't remember which bucket is, which you have to read. So, so, so, my papers across the series of papers, the 2018 then the 22 and 23 or four, yeah, yeah, do, do? Do both of them. Oh, different ways and in different places.
+
+This 2018 paper, my
+
+1018 paper,
+
+it's the second bucket because it's selection thing. So it's a rational
+
+well, for what? For one element, for the sunk cost part yes, and for the apparent over conflict, over confidence part yes. But then we also do the first bucket as well. We do the second bucket and the first bucket
+
+in another paper, or in the
+
+same No, in the 2018 paper in the 2022 and 2024 or whatever, or three, it's the first bucket.
+
+Oh, I see, um, yeah. So, so
+
+anyways, my point is only they're two slightly different arguments.
+
+Yeah. Does agent know their bias when they're making a rational decision? That's a very hard question.
+
+The other problem you get into is, what is rational? What do we mean by rational? No one knows. No That's exactly it, because it's conditional on the information set the actor has, right? So what looks like? You know, apparent over confidence and my apparent sunk cost fallacy and my apparent overconfidence comes because the observer only has a subset of the data to them it looks like so for entrepreneurs, you typically have entrants, but not those who decide not to scale up. So if you only look at the set who enter, they'll look like they're overconfident, even though, on even if they are average, fully rational. So it's always playing around with restricting the information set.
+
+Are you using enterance as CNN was scaling up
+
+in my MA, in my models, I have a two I start with the basic ball is a two period game. There's a pre entry period where you only learn experiment, and then you have to, if you can. Then at the end of that period, you decide whether you're going to exit or you're going to pay the sun cost and Enter. And then after you enter, you earn profits and losses, and you can still decide to exit at any point.
+
+So you're saying the selection happens here.
+
+It's an and it's endogenous. It's the it's the entrepreneur themselves making the decision, yes,
+
+and you're calling this like decision to scale. And here, people can exit at any time, right?
+
+They can exit at any time. And so they make type one and type two errors all over the place, right? They could enter when they shouldn't have. They could not enter when they should have and if they enter and pay the sun cost, they can exit when they should have stayed in, or they could stay in when they should have exited. Wow, that so you have all, you have four kinds of errors, and changing biases changes the distribution of those errors. But for an econometrician who only sees the folks that actually, you know, put money into the venture, they will look like they're biased. They must look like they're biased.
+
+Who is the observer here the
+
+economy, an econometrician looking at the set of entrance. They will look like they're biased. They'll look like they they're overconfident.
+
+I have to read your paper to see yes, okay, but I trust all, all
+
+of these, because it, it comes from information restriction, right? Rational is rational, if we mean by rational, rational conditional on what information you have. God sees them when they were thinking about this and working in on it in their garage, and when they enter the market, the observer doesn't see the guys who are working on it in their garage, only the ones that raise venture capital in it and potentially enter the market. So if you only see the selected set, you will endogen. You will naturally see particular patterns of overconfidence in the world.
+
+Oh, I had similar thoughts, in the sense that those who have a bigger, like ambitious, they this vision, if you will, they affect like first action and second action, like endogenously. So may I understand working in a garage, they tried several different ways, and that somehow increased the like idea of quality perception.
+
+So in this paper, it's to use the pakeson Erickson language. It's passive learning, not active learning, meaning God gave them a good so the in that model, Angie's lying in bed, God comes down gives her either a good idea or a bad idea. But Angie doesn't know which kind it is, so she spends a year trying to figure out if it's a good idea or a bad idea at at some point. So she at some point, she has to decide either she's going to quit her day job and invest a million dollars, or she's going to abandon the idea, I see, and then if you invest your million dollars now you're actually selling your widget, you could make profits or losses, but you're still learning if your idea is good or bad, because you could have made either a type one or type two error on on entering,
+
+okay, okay,
+
+it's pure. It's in the pigs and Erickson language, passive learning.
+
+I think my brain is too small for that. I need some advice, like, if you're a which bucket would you choose?
+
+Well, what bucket does your model do? You already got a model if you want to choose, you
+
+know, the only model I have is there is a commitment cost and there is a flexibility cost, and for situations,
+
+so good, so, so, so, so, I think you're in the first bucket.
+
+Okay, I
+
+don't think you're true. You're You told me your model, your model doesn't your model. If everything is rational in your model, then I don't see how you produce your results. So somewhere, right, right, if you build in fear of missing out, I don't know how you build in fear of missing out here, though,
+
+you know Hart, if we put the like phenomenal perspective, the reason why founder would choose to add AI as their solution, or at least label that is like they can reconfigure it meaning like, if I if the industry trend is,
+
+where will a reader see fear of missing out in your model?
+
+So my point is, Fear Of Missing Out is translated as the Lord commitment cost,
+
+by the way, to any strategy person your flexibility and commitment will immediately evoke Pankaj gemawat book on called commitment. What's that? Pankaj gemawat was used to be the chair of the strategy group at HBS. He had a book a long time ago called commitment. I think it's
+
+so is that a good thing or a bad thing? Yeah.
+
+In You made me think about it because of the language. And I don't know, you know, the book's quite old. Now, it's 30 years old, but it's quite a famous book in the field. But because I'm having a hard time mapping, if you're going to frame the paper around fear of missing out, it's got to be clearly visible in what you're doing. Why would fear of missing out change commitment cost?
+
+Something like, why would fear of missing out change the commitment cost? So I'm trying to argue that fear of missing like the fear is rational in the sense that if everyone else is doing me, doing the same thing lowers the cost because that ability is used.
+
+Yeah, sure. I think people will find that too much of a disconnect between your story very your story and your model, you're going to have to make that you know tighter right commitment cost is not you would have to make an argument that when you have fear of missing out, one of the things you are unwilling to do is commit implicitly. That means your committing meant cost is higher. Somehow you're going to have to make that argument really convincing otherwise people,
+
+yeah, so, so let me try it again. So the fear of missing out in my model is adding one more option than what I originally had had. So the commitment causes a price you pay for locking into a path that turns out to be a dead end. So like, let's say I was doing any
+
+why, but if you were giving a talk on this, you'd have a half hour conversation on your hand at this point. What? Why is that fear of missing out? It's just not I buy that story. I have no problem with that story. It's just that mapping, if you frame your paper around fear of missing out, that connection to the has to be self evident. This is what a Rube Goldberg machine to make this claim, connection between Fear Of Missing Out and commitment.
+
+Oh, I see, yeah. So recently, Hyundai switched from Lidar Base to the vision I know, because, like the whole
+
+community, everyone, because Tesla and everyone else has has got rid of LIDAR because it's too expensive.
+
+Yeah, so I thought that's part of fear of missing out, because people who had only the LIDAR path is now considering the vision only option as well.
+
+That's not clear that that's fear of missing out. Okay, that could be. They've updated their beliefs quite rationally, that Lidar is the cost of Lidar is not worth the efficacy. Five years ago, they thought it was. Lots of people thought it was. Now we no longer think that. It's not clear that that's fear of missing out. It could be, but it could quite easily be quite a rational story.
+
+Yeah, I think so. Yeah. Sorry.
+
+It's not fear of missing out, though. If they, if they initially their belief was, Lidar is better than standard cameras. Now they work for five years and watch others work for five years, updating their beliefs along the way, and they say, I guess we were wrong. Lidar is not going to be the solution. How is that fear of missing out?
+
+So there is economics behind not wanting to be missed out, because if many people are jumping in, the cost would be lower, right?
+
+That's not fear of missing out. Not. It is not necessarily. It is not fear of missing out the way. It is. It is, it is used. It is used. If we look at the definition, let me just tell you what the definition is. In this psychology literature here,
+
+fear of missing out.
+
+Yeah, fear of missing of definition in literature, the definition of Fear Of Missing Out in the anxiety here, here's the definition, okay, anxiety related state or trait. It comes from psychology involving concern that others are enjoying rewarding experiences from which one is absent. What I'm going to give you the definition this is, let's come up here. This is, this is from
+
+other people's absence. That's,
+
+I'm putting it in the chat for you. Okay, thank you. Apparently, this is the paper it comes from, or the quote where perplexity is getting it from. It's not where it's from. So, oh, the torque. The term was coined in 2004 apparently. So this paper, I this paper, I put in the, this link I put in the gives you the the history of the word. It's not clear that what you're describing is fear of missing out. Angie, I gotta go. We are way over time here.
+
+Okay, okay, yeah. May I just one parting question stuff Bocconi or HCC or Utah online. Do you, if you were me, Which place do you think for what, whoever would work with me after
+
+they're all one? See, the reason most you name those all three together as they come, because Alfonso Gambardella got to know this guy who owns ion, really rich Italian guy, yeah, yeah. He raised up. He raised money for a thing at baconi. Then Todd Zenger jumped on the bandwagon, and they convinced him to do one at Utah. Yeah. And then Tom master bro got on the bag and bandwagon at H, as they say, and they convinced him to do one there, in terms of place to do your PhD. Clearly, none of them are in the same playing the same game as as, as is an elite American school. You do a PhD at Utah, you're not, you're unlikely to get a job at a high at a high status school, even though they have many good people there, by the way, and many, I quite like that group of people there is excellent, but it's Utah, yeah, they have many good people there, who I know very I have co authors there. Bocconi has many good people. You won't get a job in the US with a PhD from Bocconi, as I say, has some good people. You won't get a job in the US with a with a PhD from Ashay say, or you're unlikely to, got
+
+it. Got it, yeah, that's very helpful. So
+
+you're playing in a different, completely Angie, a completely different tier.
+
+Got it, yeah, from outsider. I have no knowledge of that, so thanks
+
+for they all have. You know of the three of them, though, I think, as I say, would be the lowest these that given who's at Utah right now. Otherwise, I would have said Utah. But Utah has very good they've spent, they raised a lot of money, and spent so much money over the last 10 years at Utah, hiring Jay Barney, hiring Todd Zenger, hiring a bunch of others. They've got very good people there at the moment, but in terms of, you know how it works, you get it, you get a PhD at MIT, you'll get it. Your chance of a decent job are pretty good. Get a PhD at Utah. You're sort of limited to folks other schools in the in tendency. This is in Tendency only. You tend to be quite, limited. There's a bit of upside, but more, you know,
+
+yeah, I was aware of the vague, yeah,
+
+but those schools are not, they're not playing. They have so those schools have some very good people, but they're not. They're not. Bocconi is very high status in in Italy, okay, all the rich kids, go to Baconian Italy.
+
+Here's my plan. I will try my best to stay in MIT and by writing this paper very well and persuade Charlie, but,
+
+but if you want to, if you, if you do want to go to those places, I don't know Tom very well. I know his wife. Actually, his wife is at Copenhagen. I know Tom I certainly know Kama, foo, gambre del I have I know extremely well. Todd Zenger, Jay Barney at Utah, I know extremely well. So you know, if those are places you want to go, I can help you. I know that.
+
+Thanks. But
+
+I think you know
+
+you have, yeah, yeah. If your
+
+problem, your problem at MIT is you're in a department that is not a department that's doing work that is in the area of your work.
+
+Yeah, that's a problem which
+
+is a different kind of cost, which also reduces success possibilities, right?
+
+So if it were your daughter's problem, what would you advice to your daughter?
+
+I think you just called me old, by the way, did I little? Dot. You're equating you're equating you're equating me to being of your father's age. Now I probably am, nonetheless, I imagine your father's around 60 or so.
+
+He was born in 1968
+
+oh, your father's younger than me. Then I was born in 66
+
+okay, I guess my father is a system dynamics professor in Korea. What school? Korean Defense University,
+
+okay, okay, good, so that's how you ended up with systems dynamics? Yeah, I have a Bayesian learning model a bandit model of career choice in my mind, okay, I think there are trade offs to the two. I think your chances of being successful in the domain in which you want to be successful with your current set of advisors in the department you're in is very is very low, because no one knows those people in the people you want to talk to, say, now you're fighting a real fight. Your advisors aren't even in the field you want to be in. That's highly problematic, and means your chances of success are very low.
+
+Even was caught on my comedy.
+
+That helps a lot, but he's not. Your main advisor is on your committee. How much time is he going to spend with you? How much is he going to be willing to sell you and go on the market and talk to talk to these people about you? So that will help. But he's not your advisor. You're still going to be talking mostly to the same guys you're talking to now who are not your audience and don't even know your audience as you've currently framed it.
+
+You mean the professors we just mentioned?
+
+No, your professors at MIT, they're not your audience, and they don't I'm not that, right? Your your your formal advisor is not your audience. Doesn't Know your audience. Those people don't know him,
+
+yeah? But he won't. He's interested in it.
+
+I understand that I'm interested in lots of things, but I wouldn't be the right advisor. I'm interested in work in physics. I'm interested in work in psychology. I read very broadly. I'm interested in lots of stuff.
+
+Yeah, makes sense.
+
+So the trick and but if you, if you end up at a place like Utah or Bocconi or, as I say, your prospects, and where you have prospects are limited in a different way. So it's like everything else. This is a question of as much horizontal differences as vertical differences. Okay, Angie, I gotta go, man, it's we've been here way too long, but I enjoy talking to you. And did I give you the link to the get? Oh, yeah, I put together all this, all the papers I talked about, I put in the chat. Yeah, so the Gemma watt book on commitment is there is a very famous book.
+
+Okay, thanks. Yeah, Gemma, commitment was Scotch language commitment versus flexible,
+
+yeah, and that, that He that comes, that's that language is introduced in strategy by gamma lot.
+
+Oh, I see. Okay, okay, thank you. Um, May I follow with the updated, like, full sentence version of the three paper. Yeah, I'm trying. I'm trying very hard.
+
+You you're struggling with the reason I pushed you so hard on this is you want to learn how to do it. It's very hard to learn how to how to do and the only way you can learn it is by struggling to do it. Right? I think you'd agree with this notion that learning comes through struggle.
+
+Yeah, yeah, right.
+
+And it's people when they don't realize that they have to put themselves in a position to struggle, that they do not learn to do it. One has to you have to place yourself in a domain where you will struggle to benefit.
+
+Yeah, I am truly risking my life to do this work.
+
+Yes, and I'm not sure it's a good decision for you. I find it interesting.
+
+Okay, I'm happy to be a animal in a cage observed by you. Yes, yes. Thanks, Hart. Have a nice weekend. You too. Thank you. Bye.
+
+Transcribed by https://otter.ai

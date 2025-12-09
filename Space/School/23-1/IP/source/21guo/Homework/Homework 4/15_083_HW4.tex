@@ -1,0 +1,137 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{amssymb}
+\usepackage{subfig}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{multirow}
+\usepackage{bbding}
+\usepackage{fancyhdr}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage[inline]{enumitem}
+\usepackage{booktabs}
+\usepackage{capt-of}
+\usepackage{tikz}  
+\usepackage{parskip}
+\usepackage{comment}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\usepackage[colorlinks=true]{hyperref}
+
+\allowdisplaybreaks
+
+\fancyhf{}
+\rfoot{\thepage}
+\lfoot{\emph{15.083 Spring 2021 Assignment 4}}
+
+\begin{document}
+{\bf
+15.093: Integer Programming and Combinatorial Optimization
+\hfil
+Spring 2021
+
+Assignment 4: Cutting planes and branching algorithms}
+
+\vspace{12pt}
+\emph{Assigned: April 12; Due: April 22, 11:59 pm.}
+
+\vspace{12pt}
+{\bf Problem 1: Cutting plane game [20 pts]}
+\vspace{6pt}
+
+Play the cutting plane game \href{https://gonzalomunoz.org/the-cutting-plane-game/}{here}!
+
+The game illustrates the impact of various families of cuts in integer programming. In each of the 9 levels, you are given a polyhedron. The goal is to apply cuts to obtain a polyhedron as close as possible to the convex hull of the discrete feasible region. You have access to three families of cuts:
+\begin{itemize}[noitemsep,topsep=0pt]
+    \item[--] circle cuts: this is a special class of intersection cuts. The point where you click becomes the center of the circle, which ``grows'' until it meets a point in $\mathbb{Z}^2$.
+    \item[--] Gomory's mixed-integer cuts. For each non-integer extreme point of the polyhedron, the game selects, among all Gomory's mixed-integer cuts, the most violated one from the tableau.
+    \item[--] split cuts: variable-based disjunctions, corresponding to horizontal and vertical splits. Where you click becomes the midpoint of the split, which ``grows'' until it meets a point in $\mathbb{Z}^2$.
+\end{itemize}
+
+In each level, you have a limited budget of cuts from each family (for split cuts, the budget is shared across horizontal and vertical cuts). You earn points based on the area of the polyhedron that you cut. Whenever you get the convex hull of the feasible region, your total score doubles! However, this is very hard and even impossible for several levels.
+
+Complete the nine levels and write a short note (2-3 paragraphs) outlining:
+\begin{itemize}[noitemsep,topsep=0pt]
+    \item[--] your final score (with screenshot!);
+    \item[--] an example of a ``nice shot'', that is, a cut or a combination of cuts that was effective and non-obvious (screenshot welcome here as well, but not necessary if not convenient);
+    \item[--] the main learning points about cutting plane algorithms, including strengths and weaknesses.
+\end{itemize}
+
+\vspace{12pt}
+{\bf Problem 2: Market sharing problem [20 pts]}
+\vspace{6pt}
+
+A company has two divisions $D_1$ and $D_2$. The company supplies retailers (indexed by $j=1,\cdots,n$) with several products (indexed by $i=1,\cdots,m$). Each retailer is served by exactly one division. The goal is to allocate each retailer to $D_1$ or $D_2$ so that $D_1$ serves a quantity $b_i$ for each product $i$ and $D_2$ the remaining demand. Whenever the desired split is not possible, the goal is to minimize the absolute deviation from it. The problem can be formulated as:
+\begin{align*}
+    \min\quad & \sum_{i=1}^m |s_i|\\
+    \text{s.t.}\quad & \sum_{j=1}^na_{ij}x_j+s_i=b_i & \forall i=1,\cdots,m \\
+    & x_j\in\{0,1\} & \forall j=1,\cdots,n,
+\end{align*}
+where $a_{ij}$ is the demand for product $i$ from retailer $j$ and $b_i$ is the desired amount of product $i$ for division $D_1$. The binary variable $x_j$ indicates whether retailer $j$ is part of division $D_1$, and the continuous variable $s_i$ indicates the deviation from the desired market split for product $i$.
+
+Though seemingly simple, this problem can be very challenging. In particular, the \href{https://miplib.zib.de/instance_details_markshare2.html}{\texttt{markshare2} problem} is the smallest ``hard'' instance in the mixed-integer programming library (MIPLIB).
+
+The goal of this problem is to experiment with parameter configurations on a hard instance. Download the \texttt{markshare2} instance as an MPS file, which you can load into JuMP using the commands:
+\begin{verbatim}
+model = read_from_file("markshare2.mps")
+set_optimizer(model, Gurobi.Optimizer)
+\end{verbatim}
+
+Implement the model with different values of the \texttt{TimeLimit}, \texttt{Cuts} and \texttt{VarBranch} parameters in Gurobi. For a few combinations of parameters, report the number of nodes visited, the computational time, and the final solution. Avoid the default values of the parameters. Throughout, specify a time limit of at least 3 minutes (for meaningful computations) and at most 10 minutes (to avoid long computational times). What is the best overall solution that you could find?
+
+\vspace{12pt}
+{\bf Problem 3: Generalized assignment problem [35 pts]}
+\vspace{6pt}
+
+A cloud computing provider needs to process $m$ jobs with $n$ machines. For each job, the machine can operate in one of $K$ modes (e.g., ``eco'', ``base'', ``boost''). We denote by $c_{ijk}$ the cost of assigning job $j$ to machine $i$ in level $k$, by $d_{ijk}$ the utilization of machine $i$ to process job $j$ in level $k$, and by $u_i$ the capacity of machine $i$. The binary decision variable $x_{ijk}$ indicates whether job $j$ is assigned to machine $i$ in level $k$. We formulate the generalized assignment model, or $(GAM)$, as follows:
+\begin{align*}
+    \min        &   \ \sum_{i=1}^n\sum_{j=1}^m\sum_{k=1}^Kc_{ijk}x_{ijk} \\
+    \text{s.t.} &   \ \sum_{i=1}^n\sum_{k=1}^Kx_{ijk}=1,\ \forall j=1,\cdots,m \\
+                &   \ \sum_{j=1}^m\sum_{k=1}^Kd_{ijk}x_{ijk}\leq u_i,\ \forall i=1,\cdots,n \\
+                &   \ x_{ijk}\in\{0,1\},\ \forall i=1,\cdots,n,\ \j=1,\cdots,m,\ k=1,\cdots,K
+\end{align*}
+
+We design a tailored cutting plane algorithm for this problem. For each $\bar{\mathbf{d}}\in\mathbb{R}^{m\times K}$ and all $\bar{u}\in\mathbb{R}$, we denote by $\mathcal{P}(\bar{\mathbf{d}},\bar{u})$ the following polyhedron and by $\mathcal{F}(\bar{\mathbf{d}},\bar{u})=\mathcal{P}(\bar{\mathbf{d}},\bar{u})\cap\mathbb{Z}^{m\times K}$.
+$$\mathcal{P}(\bar{\mathbf{d}},\bar{u})=\left\{\mathbf{y}\in[0,1]^{m\times K}:\sum_{j=1}^m\sum_{k=1}^K\bar{d}_{jk}y_{jk}\leq \bar{u}\right\}$$
+
+For any $\bar{\mathbf{y}}\in\mathcal{P}(\bar{\mathbf{d}},\bar{u})$, we aim to solve the separation problem that consists of finding a hyperplane separating $\bar{\mathbf{y}}$ from $\text{conv}(\mathcal{F}(\bar{\mathbf{d}},\bar{u}))$, or to show that none exists.
+
+\begin{enumerate}[label=\alph*]
+\item We seek $\boldsymbol{\alpha}\in\mathbb{R}^{m\times K}$ and $\beta\in\mathbb{R}$ such that $\boldsymbol{\alpha}^\top\mathbf{y}\leq\beta$ for all $\mathbf{y}\in\mathcal{F}(\bar{\mathbf{d}},\bar{u})$, and that maximizes the violation in $\bar{\mathbf{y}}$. Formulate this problem as a linear programming model. We add the normalization constraint $\beta=1$ to avoid unboundedness. We refer to this model as $(S)$. What can you infer from the solution of $(S)$, in view of the separation problem? {\bf[10 pts]}
+\end{enumerate}
+
+Unfortunately, $(S)$ involves an exponential number of constraints. We define a relaxed version by simply ensuring that $\boldsymbol{\alpha}^\top\mathbf{y}\leq\beta$ for all $\mathbf{y}\in\mathcal{F}_0(\bar{\mathbf{d}},\bar{u})\subseteq\mathcal{F}(\bar{\mathbf{d}},\bar{u})$. We refer to this model as $(S_0)$.
+
+\begin{enumerate}[label=\alph*]\setcounter{enumi}{1}
+\item Denote by $\bar{\boldsymbol{\alpha}}$ and $\bar{\beta}$ the optimal solution of $(S_0)$. Formulate an integer optimization model that returns $\mathbf{x}\in\mathcal{F}(\bar{\mathbf{d}},\bar{u})$ such that $\bar{\boldsymbol{\alpha}}^\top\mathbf{x}>\bar{\beta}$ or a certificate that none exists. What is the structure of this optimization problem? {\bf[10 pts]}
+\item Using the building blocks from Questions a. and b., design a cutting plane routine that can be embedded into a branch-and-cut algorithm for $(GAM)$. Clearly specify the termination criteria at each step of the algorithm. {\bf[15 pts]}
+\end{enumerate}
+
+\vspace{12pt}
+{\bf Problem 4: Non-linear optimization [25 pts]}
+\vspace{6pt}
+
+We consider a collection of $n$ piece-wise linear functions $f_j:[l_j,u_j]\rightarrow\mathbb{R}$ for $j=1,\cdots,n$. Each function $f_j$ has $m_j$ breakpoints, denoted by $l_j=s_{j1}<s_{j2}<\cdots,s_{j,m_j}=u_j$, such that $f_j$ is linear between $s_{j1}$ and $s_{j2}$, between $s_{j2}$ and $s_{j3}$, ..., and between $s_{j,m_j-1}$ and $s_{j,m_j}$. We are interested in solving the following non-linear optimization problem, referred to as $(NLOP)$:
+$$\min\ \left\{\sum_{j=1}^nf_j(x_j):\mathbf{A}\mathbf{x}\leq\mathbf{b},\ \mathbf{l}\leq\mathbf{x}\leq\mathbf{u}\right\}$$
+
+Let us first formulate below the problem of minimizing a single piece-wise linear function $f:[l,u]\rightarrow\mathbb{R}$ with corresponding breakpoints $l=s_1<\cdots,s_m=u$. The idea is to write any point $x\in[l,u]$ as a linear combination of two consecutive breakpoints (say, $s_2$ and $s_3$) and the value of $f(x)$ as the corresponding linear combination of the function values (say, $f(s_2)$ and $f(s_3)$). Specifically, we write $x=\sum_{k=1}^m\lambda_ks_k$ and $f(x)=\sum_{k=1}^m\lambda_kf(s_k)$ where $\sum_{k=1}^m\lambda_k=1$ and $(\lambda_k)_{k=1,\cdots,m}$ are such that at most two of them are positive and the positive values are consecutive (e.g., $\lambda_2>0$ and $\lambda_3>0$). Let $\mathcal{Q}(m)$ be the set of $m$-dimensional vectors with this property. The problem is written as:
+$$\min\left\{\sum_{k=1}^m\lambda_kf(s_k):\sum_{k=1}^m\lambda_k=1,\boldsymbol{\lambda}\in\mathcal{Q}(m),\ \boldsymbol{\lambda}\geq\boldsymbol{0}\right\}$$
+
+We could formulate and solve this problem as an integer programming model. Instead, we will directly solve it with a tailored branching strategy.
+\begin{enumerate}[label=\alph*]
+\item For any $p=2,\cdots,m-1$, show that a valid branching disjunction for the single-function minimization problem is given by $\sum_{k=1}^{p-1}\lambda_k=0$ or $\sum_{k=p+1}^{m}\lambda_k=0$. {\bf[5 pts]}
+\item Design a branch-and-bound algorithm to solve $(NLOP)$ based on this disjunction. Please specify clearly the branching rules, the bounding strategy, and the pruning strategy. {\bf[20 pts]}
+\end{enumerate}
+
+\end{document}

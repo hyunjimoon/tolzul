@@ -1,0 +1,221 @@
+{
+    "meta": {
+        "battle": "Sprint 4",
+        "codename": "Convergence",
+        "startDate": "2025-12-09",
+        "endDate": "2025-12-12",
+        "currentDay": 1,
+        "motto": "Prove It or Kill It"
+    },
+    "papers": {
+        "U": {
+            "name": "Paper U: Vague Promise",
+            "target": "E&I (MS)",
+            "progress": 75,
+            "keyMetric": {
+                "name": "Chi-sq (Transportation)",
+                "target": ">300***",
+                "current": "1430.9***",
+                "verified": true
+            },
+            "figures": [
+                {
+                    "path": "spec_curve_analysis.png",
+                    "source": "hacks/hack1/thesis_v1/⚙️process/2️⃣_PRODUCTION/Empirics_Later/run.py",
+                    "function": "spec_curve_analysis"
+                },
+                {
+                    "path": "_🩸I/midV_trap_analysis.png",
+                    "source": "hacks/hack1/thesis_v1/⚙️process/2️⃣_PRODUCTION/Theory/run.py",
+                    "function": "generate_voi_ro_tradeoff"
+                }
+            ],
+            "bottlenecks": [
+                {
+                    "id": "U1",
+                    "desc": "Bolton s2 <-> V Mapping",
+                    "priority": "critical",
+                    "status": "pending",
+                    "owner": "G",
+                    "due": "D1 PM",
+                    "prompt": "G-Squad (Quant): Map the Bolton (2002) parameter s2 (differentiation) to our Strategic Ambiguity measure V. Show that high s2 corresponds to low V (Precision) and low s2 corresponds to high V (Ambiguity)."
+                },
+                {
+                    "id": "U2",
+                    "desc": "Refine Narrative Hook",
+                    "priority": "critical",
+                    "status": "pending",
+                    "owner": "G",
+                    "due": "D2 AM",
+                    "prompt": "G-Squad (Commander): Refine the narrative hook for Paper U. Why is the 'Wealth Paradox' surprising? Contrast the 'Resource-Based View' (More Money = Better) with our 'Real Options' view (More Money = Less Flexibility)."
+                },
+                {
+                    "id": "U3",
+                    "desc": "Clarify Contribution",
+                    "priority": "important",
+                    "status": "pending",
+                    "owner": "G",
+                    "due": "D2 PM",
+                    "prompt": "G-Squad (Commander): Explicitly state the contribution of Paper U to the Entrepreneurship literature. How does this challenge the 'Lean Startup' methodology?"
+                }
+            ]
+        },
+        "C": {
+            "name": "Paper C: Commitment Trap",
+            "target": "Strategy (SMJ/MS)",
+            "progress": 70,
+            "keyMetric": {
+                "name": "Corr(Y, |dV|)",
+                "target": ">+0.15***",
+                "current": "+0.159***",
+                "verified": true
+            },
+            "figures": [
+                {
+                    "path": "🦾C/⚙️process/figures/fig1_mechanism_3panel.png",
+                    "source": "hacks/hack1/thesis_v1/⚙️process/2️⃣_PRODUCTION/Theory/run.py",
+                    "function": "generate_architecture_comparison"
+                },
+                {
+                    "path": "🦾C/⚙️process/figures/fig2_cost_by_decile.png",
+                    "source": "hacks/hack1/thesis_v1/⚙️process/2️⃣_PRODUCTION/Empirics_Early/run.py",
+                    "function": "plot_h1_scatter"
+                }
+            ],
+            "bottlenecks": [
+                {
+                    "id": "C1",
+                    "desc": "Position vs Nanda",
+                    "priority": "critical",
+                    "status": "pending",
+                    "owner": "G",
+                    "due": "D1 PM",
+                    "prompt": "G-Squad (Commander): Position Paper C against Nanda (2016). Explicitly argue that 'Money is not Experimentation; it is Concrete.' Show how early funding increases Abandonment Option Cost (AOC)."
+                },
+                {
+                    "id": "C2",
+                    "desc": "Formalize AOC",
+                    "priority": "critical",
+                    "status": "pending",
+                    "owner": "G",
+                    "due": "D1 PM",
+                    "prompt": "G-Squad (Quant): Formalize the Abandonment Option Cost (AOC). Define AOC = Value(Uncommitted) - Value(Committed). Show that AOC increases with Capital Intensity (E)."
+                },
+                {
+                    "id": "C3",
+                    "desc": "Strengthen H3 Logic",
+                    "priority": "important",
+                    "status": "pending",
+                    "owner": "G",
+                    "due": "D2 PM",
+                    "prompt": "G-Squad (Commander): Strengthen the interpretation of Hypothesis 3. Why does the 'Commitment Trap' lead to lower survival rates in the Mobility sector?"
+                }
+            ]
+        },
+        "N": {
+            "name": "Paper N: Promise Vendor",
+            "target": "OM (M&SOM)",
+            "progress": 55,
+            "keyMetric": {
+                "name": "k* fit",
+                "target": ">90%",
+                "current": "TBD",
+                "verified": false
+            },
+            "figures": [
+                {
+                    "path": "🤹N/⚙️process/figures/mixed audience/fig_simple_murky_v2.png",
+                    "source": "hacks/hack1/thesis_v1/⚙️process/2️⃣_PRODUCTION/Empirics_Later/run.py",
+                    "function": "plot_interaction"
+                },
+                {
+                    "path": "🤹N/⚙️process/figures/P3_cr_kstar_curve.png",
+                    "source": "hacks/hack1/thesis_v1/⚙️process/2️⃣_PRODUCTION/Theory/run.py",
+                    "function": "generate_voi_ro_tradeoff"
+                }
+            ],
+            "bottlenecks": [
+                {
+                    "id": "N1",
+                    "desc": "CR Calibration",
+                    "priority": "critical",
+                    "status": "pending",
+                    "owner": "J",
+                    "due": "D1 PM",
+                    "prompt": "J-Squad (Builder): Calibrate the Critical Ratio (CR) for AV vs Fleet sectors. Use 'Market Cap of Leader' as a proxy for Cost of Underage (Cu) and 'Burn Rate' for Cost of Overage (Co). Goal: Show CR_AV ~ 0.9 and CR_Fleet ~ 0.3."
+                },
+                {
+                    "id": "N2",
+                    "desc": "Redefine Demand (D)",
+                    "priority": "critical",
+                    "status": "pending",
+                    "owner": "G",
+                    "due": "D1 PM",
+                    "prompt": "G-Squad (Quant): Redefine Demand (D) in the context of 'Promise Vendor'. Show that D is not just 'Customer Orders' but 'Investor Belief'. Verify the mathematical validity of this redefinition."
+                },
+                {
+                    "id": "N3",
+                    "desc": "Delta V Proxy Caveat",
+                    "priority": "important",
+                    "status": "pending",
+                    "owner": "G",
+                    "due": "D1 PM",
+                    "prompt": "G-Squad (Commander): Explicitly state the limitations of using |Delta V| as a proxy for flexibility. Acknowledge that it captures 'Observed Pivot' but not 'Latent Optionality'."
+                }
+            ]
+        }
+    },
+    "rallyPoints": {
+        "Ideate": {
+            "name": "Ideate",
+            "emoji": "💡",
+            "gate": "Done",
+            "progress": 100,
+            "status": "done"
+        },
+        "Draft": {
+            "name": "Draft",
+            "emoji": "🐣",
+            "gate": "Done",
+            "progress": 100,
+            "status": "done"
+        },
+        "Test": {
+            "name": "Test",
+            "emoji": "🧪",
+            "gate": "K",
+            "progress": 45,
+            "status": "in_progress"
+        },
+        "Submit": {
+            "name": "Submit",
+            "emoji": "📝",
+            "gate": "M",
+            "progress": 0,
+            "status": "pending"
+        }
+    },
+    "signals": [
+        {
+            "timestamp": "2025-12-09T09:00:00",
+            "level": "normal",
+            "message": "Sprint 4 Started"
+        }
+    ],
+    "gatekeeperDecisions": [
+        {
+            "timestamp": "2025-12-08T22:30:00",
+            "paper": "U",
+            "section": "S3",
+            "decision": "approved",
+            "note": "Chi-sq verified"
+        },
+        {
+            "timestamp": "2025-12-08T22:30:00",
+            "paper": "C",
+            "section": "S3",
+            "decision": "approved",
+            "note": "Correlation values confirmed"
+        }
+    ]
+}

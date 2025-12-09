@@ -1,0 +1,22 @@
+═══════════════════════════════════════════════════════════════════
+H2 LOGISTIC REGRESSION: Later Success ~ Vagueness × Hardware
+═══════════════════════════════════════════════════════════════════
+
+DV: series_b_plus (binary: 0=No Series B+, 1=Yes Series B+)
+Key hypotheses:
+  H2a: β(vagueness) < 0 for software (main effect)
+  H2b: β(vagueness × hardware) < 0 (interaction - scissors pattern)
+
+                   Unnamed: 0      coef  std_err           z         P>|z|  conf_low  conf_high
+                    Intercept -4.015897 0.010360 -387.623972  0.000000e+00 -4.036203  -3.995591
+C(founding_cohort)[T.2010-14]  1.725452 0.013348  129.265865  0.000000e+00  1.699290   1.751614
+C(founding_cohort)[T.2015-18]  2.113901 0.012622  167.472269  0.000000e+00  2.089162   2.138641
+C(founding_cohort)[T.2019-20]  1.290961 0.018260   70.697113  0.000000e+00  1.255172   1.326751
+   C(founding_cohort)[T.2021] -1.387631 0.079642  -17.423278  5.493792e-68 -1.543727  -1.231534
+  C(founding_cohort)[T.2022+] -3.017899 0.097488  -30.956480 2.078459e-210 -3.208973  -2.826825
+                  z_vagueness -0.039276 0.006414   -6.122991  9.183512e-10 -0.051848  -0.026704
+                  is_hardware  0.456797 0.013445   33.976308 4.987584e-253  0.430446   0.483148
+      z_vagueness:is_hardware -0.047035 0.014852   -3.166890  1.540786e-03 -0.076144  -0.017925
+
+Dataset: all
+N = 1250423

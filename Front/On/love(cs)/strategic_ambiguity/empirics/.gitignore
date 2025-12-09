@@ -1,0 +1,103 @@
+spandrel/**/*
+spandrel/data/**/*
+myenv/**/*
+_ref/
+**/.DS_Store
+**/.dll
+**/.m
+*.m
+*.docx
+*.parquet
+*.deb
+**/*.m
+**/.trash/
+**/.sops/
+.trash/
+
+# Add new extensions
+*.voc
+**/*.voc
+*.vpd
+**/*.vpd
+*.lst
+**/*.lst
+*.vsc
+**/*.vsc
+*.vmf
+**/*.vmf
+*.prm
+**/*.prm
+**/*.key
+**/*.pptx
+**/*.pdf
+
+🌙amoon()/⚡️generate(tolzul)/management/1🔴BayesSD/1🏭generator/branched_generator/bit(generator)/**
+
+# to exclude Obsidian's settings (including plugin and hotkey configurations)
+.obsidian/
+
+# to only exclude plugin configuration. Might be useful to prevent some plugin from exposing sensitive data
+.obsidian/plugins
+
+# OR only to exclude workspace cache
+.obsidian/workspace.json
+
+# to exclude workspace cache specific to mobile devices
+.obsidian/workspace-mobile.json
+
+# Add below lines to exclude OS settings and caches
+.trash/
+.DS_Store🌙amoon()/⚡️generate(tolzul)/operations/2🟩bayes_dec_game/transpo/Wu23_transpo101_pset_rec_quiz.pdf
+🌏world(amoon)/🌀iter(🤹🏼‍♂️)=E/🏛️semester_class/Tenanbaum24/*.pptx
+🌏world(amoon)/🌀iter(🤹🏼‍♂️)=E/🏛️semester_class/Tenanbaum24/*.pdf
+🌏world(amoon)/🤹🏼‍♂️atom(bit)/🗺️atom(PC⬆️⬇️)/jun_youngbum/*.pdf
+🌏world(amoon)/🤹🏼‍♂️atom(bit)/🧭atom(PC🔃)/moshe_ben-akiva/*.pdf
+🌙amoon()/⚡️generate(tolzul)/operations/2🟩bayes_dec_game/optimization/*.key
+
+
+
+
+# Ignore Smart Environment folder
+.smart-env
+
+# Symlinks for emoji directory access
+charlie_scott
+Front/On/charlie_scott
+
+# Large data files (>100MB)
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/processed/company_master.csv
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/raw/Company20211201.dat
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/raw/Company20220101.dat
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/raw/Company20220501.dat
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/raw/Company20230501.dat
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/raw/Company20251001.dat
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/raw/Deal20230501.dat
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/output/pipeline_checkpoint.pkl
+*.pyc
+__pycache__/
+
+# Test coverage reports
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.pytest_cache/
+
+Front/On/strategic ambiguity/empirics/code/hypothesis_testing_pipeline/output/pb_processed_dataset.nc
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/전투일지🩸.md
+*.dat
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/processed/company_master.csv
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/processed/deal_master.csv
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/data/processed/deal_panel.csv
+Front/On/💌찰리스캇 러브레터 플젝/strategic ambiguity/empirics/output/report_poc2/pipeline_checkpoint.pkl
+vagueness_diagnosis.txt
+*.pkl
+*.csv
+*.nc
+
+# Paper generation output (regenerated files)
+src/scripts/paper_generation/output/
+outputs/all/panel_v3.nc
+outputs/quantum/panel_v3.nc
+outputs/transportation/panel_v3.nc
+outputs/transportation/panel_v3.nc

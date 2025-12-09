@@ -1,0 +1,190 @@
+---
+collection:
+  - "[[Space/Lab/Papers]]"
+author_ids:
+field:
+  - 🐢inv
+thesisPaper: U
+thesisChapter: T
+created: 2025-09-11
+modified:
+  - 2025-11-24T07:32:02-05:00
+  - 2025-12-05T08:47:26-05:00
+URL: https://notebooklm.google.com/notebook/e12bb12b-76b1-4c45-863b-a85736615cf6
+---
+![[📜nanda_prior_be_entfin 2025_11_24.excalidraw]]
+# 숨겨진 메커니즘 발견의 예술
+*Ramana Nanda's Style: Moral Hazard in Experiment Design (Bolton et al. 2024)*
+
+## 핵심 논점 (Core Argument)
+딥테크 분야 투자가 부진한 이유 중 하나는 기존에 알려지지 않은 새로운 '도덕적 해이' 때문이다. 투자자는 진실을 밝히는 '킬러 실험'을 원하지만, 창업가는 프로젝트의 지속을 위해 실패를 피하는 실험을 선호한다. 이 근본적인 인센티브 불일치는 일반적인 '성과급' 계약으로 해결되지 않는다.
+
+## 논문 구조 분석 (Paper Structure Analysis)
+| 섹션 제목                     | 하위 섹션 수 | 문단 수 |
+| :------------------------ | :------ | :--- |
+| 1. Introduction           | 0       | 12   |
+| 2. Relation to Literature | 0       | 9    |
+| 3. The Model              | 2       | 40   |
+| 4. Policy Responses       | 3       | 21   |
+| 5. Conclusion             | 0       | 3    |
+
+## 🐢🐅🐙👾 프레임워크 매핑 (Framework Mapping)
+| 구조 | 기호 | 역할 | 논문 섹션 |
+| :--- | :--- | :--- | :--- |
+| **기(起)** | 🐢 | **문제설득/기여명시** | Sec 1. Introduction |
+| **승(承)** | 🐅 | **이론적배경/모델링** | Sec 2. Relation to Literature <br> Sec 3. The Model |
+| **전(轉)** | 🐙 | **응용/함의** | Sec 4. Policy Responses |
+| **결(結)** | 👾 | **추가연구/결론** | Sec 5. Conclusion |
+
+## 문체 정수 (Stylistic Essence)
+* **Hook:** 제약 산업의 높은 실패율과 같은 **충격적인 경험적 사실(Striking Empirical Fact)**로 시작하여 새로운 이론적 문제를 제기한다.
+* **Evidence:** **수학적 모델 그 자체**가 핵심적인 증거다. 모델의 논리적 전개가 곧 주장의 증명 과정이다.
+* **Logic:** `문제 → 문헌 연구 → 공식 모델과 가정 → 균형점 분석 → 정책적 함의`로 이어지는 전형적인 미시경제학적 구조를 따른다.
+* **Voice:** **메커니즘 설계자(Mechanism Designer)**. 현상 이면의 인센티브 구조를 파헤치는 엄밀하고 분석적인 목소리.
+* **Goal:** 현실의 퍼즐을 설명하기 위해 **새로운 인과적 메커니즘(Novel Causal Mechanism)**을 발견하고 공식화하는 것을 목표로 한다.
+
+## 🐅 스타일의 특징적 기법들
+
+### 1. 충격적 사실로 시작하기
+**Nanda의 전형적 오프닝**:
+```
+"90% of drug candidates fail in clinical trials, 
+yet venture capital continues to flow into biotech. Why?"
+```
+
+**효과적인 통계 활용법**:
+- 직관에 반하는 수치 제시
+- 산업 간 극명한 대조 보여주기
+- "puzzle" 또는 "paradox"로 프레이밍
+
+### 2. 인센티브 불일치의 정교한 모델링
+**핵심 요소**:
+- Principal (투자자) vs. Agent (창업가)
+- Information asymmetry (정보 비대칭)
+- Hidden action (숨겨진 행동)
+- Moral hazard (도덕적 해이)
+
+**모델 구축 단계**:
+```
+1. Players와 그들의 목적함수 정의
+2. Information structure 명시
+3. Timing of the game 설정
+4. Equilibrium concept 선택
+5. 균형 도출 및 비교정학 분석
+```
+
+### 3. 게임이론적 직관의 우아한 전달
+**Nanda 스타일의 설명 기법**:
+```markdown
+"직관은 단순하다. 창업가가 '킬러 실험'을 선택하면, 
+높은 확률로 프로젝트가 종료되고 자신의 private benefit을 잃는다. 
+반면 '안전한 실험'을 선택하면, 프로젝트는 계속되지만 
+진정한 가치 창출 가능성은 낮아진다."
+```
+
+### 4. 수식과 직관의 균형
+**효과적인 수식 제시**:
+```
+Entrepreneur's Payoff = α·Project Value + Private Benefit
+Investor's Payoff = (1-α)·Project Value - Investment Cost
+
+여기서 α는 지분율, Private Benefit은 창업가만의 효용
+```
+
+**직관적 설명 추가**:
+- "The key tension arises because..."
+- "This creates a wedge between..."
+- "The first-best outcome requires..."
+
+### 5. 정책적 함의의 구체화
+**Nanda의 정책 제안 구조**:
+1. **시장 실패의 근원 진단**
+2. **정부 개입의 이론적 정당성**
+3. **구체적 정책 도구 제안**
+4. **잠재적 부작용 논의**
+
+## 실전 작성 예시
+
+### 🐅 모델 섹션 도입부 (Nanda 스타일)
+```markdown
+우리는 한 명의 창업가(E)와 한 명의 투자자(VC)로 구성된 
+두 기간 모델을 고려한다. 창업가는 불확실한 품질 θ ∈ {L, H}의 
+프로젝트를 보유하고 있으며, 이는 사전적으로 
+Pr(θ = H) = p₀로 주어진다.
+
+핵심적으로, 창업가는 첫 번째 기간에 두 가지 실험 중 
+하나를 선택할 수 있다:
+- 정보적 실험 (Informative): 진실을 밝힐 확률이 높지만 실패 위험도 높음
+- 안전한 실험 (Safe): 생존 확률은 높지만 학습 효과는 낮음
+
+이 선택은 관찰 불가능하며, 여기서 도덕적 해이가 발생한다.
+```
+
+### 균형 분석 (Nanda 스타일)
+```markdown
+명제 1. 일차 최선(first-best)에서는 창업가가 항상 
+정보적 실험을 선택한다. 그러나 균형에서는 
+창업가의 private benefit B가 충분히 클 때, 
+안전한 실험을 선택하는 비효율적 균형이 존재한다.
+
+증명: [수식 전개]
+
+직관: 창업가는 프로젝트 실패 시 B를 잃게 되므로, 
+실패 확률이 높은 정보적 실험을 기피하게 된다.
+```
+
+## 난다에게 배우는 글쓰기 지혜
+
+### 1. "현실과 이론의 긴밀한 연결"
+- 실제 산업 데이터에서 출발
+- 이론 모델로 메커니즘 규명
+- 다시 현실로 돌아와 정책 제안
+
+### 2. "정교함 속의 명료함"
+- 복잡한 수식도 직관적 설명 동반
+- 핵심 trade-off 명확히 부각
+- ⭐️가정의 역할 투명하게 설명⭐️
+
+### 3. "인센티브 중심 사고"
+- 모든 행위자의 ⭐️동기 분석⭐️
+- 정보 구조의 중요성 인식
+- 계약 설계의 한계 인정
+
+## 체크리스트: Nanda 스타일 점검
+
+- [ ] 충격적이고 구체적인 경험적 사실로 시작했는가?
+- [ ] 인센티브 불일치를 명확히 식별했는가?
+- [ ] 모델의 각 가정이 현실적으로 정당화되는가?
+- [ ] 수식과 직관적 설명이 균형을 이루는가?
+- [ ] 균형 분석이 엄밀하게 수행되었는가?
+- [ ] 비교정학 분석을 통해 정책 함의를 도출했는가?
+- [ ] 모델의 한계와 확장 가능성을 논의했는가?
+- [ ] 실증 검증 가능한 예측을 제시했는가?
+
+## 고급 기법: Multi-Agent 상황
+
+### 경쟁 상황 모델링
+```markdown
+N명의 창업가가 동시에 자금을 경쟁할 때:
+- Signaling game 요소 추가
+- Pooling vs. Separating equilibrium
+- Market unraveling 가능성
+```
+
+### 동적 모델로의 확장
+```markdown
+T기간 반복 상황:
+- Reputation effects
+- Learning dynamics
+- Path dependence
+```
+
+## 추천 읽기 자료
+1. Holmström (1979) - "Moral Hazard and Observability"
+2. Hart & Moore (1988) - "Incomplete Contracts"
+3. Tirole (2006) - "The Theory of Corporate Finance"
+4. Bergemann & Hege (2005) - "The Financing of Innovation"
+
+---
+
+*"The best models are simple enough to be insightful, yet rich enough to capture the essential trade-offs."* - Ramana Nanda의 정신을 담아

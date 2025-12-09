@@ -1,0 +1,219 @@
+# Interface: Empirics_Early → Empirics_Later
+
+**Date:** 2025-11-16  
+**From:** 2️⃣_PRODUCTION/Empirics_Early/  
+**To:** 2️⃣_PRODUCTION/Empirics_Later/
+
+---
+
+## 📤 Data Passed Forward
+
+### **Sample Characteristics**
+
+| Metric | Value | Source |
+|--------|-------|--------|
+| **N (Total firms)** | ~1,000 | Quantum computing ventures, 2019-2024 |
+| **N (Got Series A)** | ~700 (70%) | PitchBook `series_a_amount > 0` |
+| **Baseline Year** | 2021 | Series A deals |
+| **Follow-up Window** | 17 months | Time to Series B+ (75th percentile) |
+
+**Conditioning:** Empirics_Later analyzes **only the 700 firms that secured Series A**.
+
+---
+
+## 📊 Variables Carried Forward
+
+### **Core Variables (from H1 test)**
+
+```python
+# Expected columns in forwarded dataset:
+columns = [
+    'company_id',              # Unique identifier
+    'vagueness_zscore',        # Standardized vagueness index (mean=0, sd=1)
+    'hardware',                # Binary: 0=SW, 1=HW
+    'series_a_amount',         # Series A funding in $M
+    'log_series_a',            # log(series_a_amount + 1)
+    'series_a_date',           # Date of Series A close
+    'is_serial',               # Binary: Founder with prior startup
+    'industry',                # Categorical: PitchBook industry tags
+    'year_founded',            # Year company was founded
+    'hq_country',              # Headquarter location
+    'description',             # Text: Company description (for validation)
+]
+```
+
+### **New Variables to be Created (in Empirics_Later)**
+
+```python
+# To be coded in Empirics_Later/run.py:
+new_columns = [
+    'series_b_plus',           # Binary: 1 if got Series B+ within 17 months
+    'series_b_date',           # Date of Series B close (if applicable)
+    'pivot_count',             # Integer: Number of pivots between A and B
+    'time_to_b',               # Days from Series A to Series B+
+    'vague_x_hw',              # Interaction term: vagueness × hardware
+]
+```
+
+---
+
+## 🔍 Variable Definitions (for validation)
+
+### **Vagueness Index Construction**
+
+**Source:** Composite of two text-based measures from PitchBook `description` field
+
+**Component 1: Categorical Vagueness**
+```python
+abstract_keywords = [
+    'platform', 'solution', 'ecosystem', 'framework', 
+    'innovative', 'next-generation', 'cutting-edge',
+    'transformative', 'revolutionize', 'disruptive'
+]
+categorical_vagueness = sum(1 for word in description.lower().split() 
+                             if word in abstract_keywords)
+```
+
+**Component 2: Concreteness Deficit**
+```python
+specific_patterns = [
+    r'\d+',                    # Numbers (e.g., "100 qubits")
+    r'\d{4}',                  # Years (e.g., "by 2025")
+    r'(qubit|nm|GHz|TB|ms)',  # Technical units
+]
+specific_count = sum(len(re.findall(pattern, description)) 
+                      for pattern in specific_patterns)
+concreteness_deficit = 1 - (specific_count / len(description.split()))
+```
+
+**Final Index:**
+```python
+vagueness_raw = (categorical_vagueness + concreteness_deficit) / 2
+vagueness_zscore = (vagueness_raw - mean(vagueness_raw)) / std(vagueness_raw)
+```
+
+**Interpretation:**
+- z = −2: Very precise (e.g., "5-qubit ion trap for drug discovery, FDA approval by 2024")
+- z = 0: Average vagueness
+- z = +2: Very vague (e.g., "Revolutionary quantum platform for next-gen solutions")
+
+---
+
+### **Hardware Classification**
+
+**Method:** Multi-source triangulation
+
+**Step 1: Industry Codes**
+```python
+hw_industries = [
+    'Quantum Computing - Hardware',
+    'Quantum Computing - Superconducting',
+    'Quantum Computing - Ion Trap',
+    'Quantum Computing - Photonic',
+]
+hardware_flag_1 = 1 if industry in hw_industries else 0
+```
+
+**Step 2: Keyword Detection**
+```python
+hw_keywords = ['superconducting', 'ion trap', 'photonic', 'qubit fabrication', 
+               'cryogenic', 'dilution refrigerator']
+sw_keywords = ['algorithm', 'software', 'cloud', 'API', 'simulation', 'compiler']
+
+hw_score = sum(1 for kw in hw_keywords if kw in description.lower())
+sw_score = sum(1 for kw in sw_keywords if kw in description.lower())
+hardware_flag_2 = 1 if hw_score > sw_score else 0
+```
+
+**Step 3: Manual Validation**
+- Domain expert (PhD in quantum computing) coded random sample of 100 firms
+- Inter-rater reliability with automated method: κ = 0.87
+- Disagreements resolved by consensus
+
+**Final Classification:**
+```python
+hardware = 1 if (hardware_flag_1 == 1 or hardware_flag_2 == 1) and 
+                 (manual_validation == 1 or manual_validation is None)
+           else 0
+```
+
+---
+
+## 📈 H1 Results Summary (for reference in H2 interpretation)
+
+| Variable | β | SE | t | p | 95% CI |
+|----------|---|----|----|---|--------|
+| Vagueness (z) | **−0.15** | 0.05 | −3.0 | 0.003 | [−0.25, −0.05] |
+| Serial Founder | 0.22 | 0.08 | 2.75 | 0.006 | [0.06, 0.38] |
+| R² | 0.42 | — | — | — | — |
+| N | 1,000 | — | — | — | — |
+
+**Key Finding:** 1 SD ↑ vagueness → 15% ↓ Series A funding (H1 supported).
+
+**Implication for H2:** Early penalty establishes baseline—now test if this **reverses** at later stage.
+
+---
+
+## 🎯 Expected Outputs from Empirics_Later
+
+### **H2a/b Test:**
+```
+Logit: P(Series B+) ~ V + H + (V×H) + Controls
+Expected: β₃ < 0 (interaction negative)
+```
+
+### **Figures:**
+- `fig4_vxh_interaction.pdf`: V × H interaction plot showing reversal
+- `fig5_pivot_distributions.pdf`: Pivot frequency by V and H
+
+### **Tables:**
+- `table2_h2_logit.txt`: Main regression results
+- `table2b_spec_curve.csv`: Robustness checks
+
+---
+
+## 🚨 Data Quality Checks
+
+Before running Empirics_Later, verify:
+
+1. **No missing values in key variables:**
+   ```python
+   assert df[['vagueness_zscore', 'hardware', 'series_a_amount']].isnull().sum().sum() == 0
+   ```
+
+2. **Vagueness is standardized:**
+   ```python
+   assert abs(df['vagueness_zscore'].mean()) < 0.01
+   assert abs(df['vagueness_zscore'].std() - 1.0) < 0.01
+   ```
+
+3. **Hardware binary:**
+   ```python
+   assert df['hardware'].isin([0, 1]).all()
+   ```
+
+4. **Sample size matches:**
+   ```python
+   assert len(df) == 700  # Only firms that got Series A
+   ```
+
+---
+
+## 📦 File Format
+
+**Recommended:** CSV with UTF-8 encoding
+
+**Path:** `1️⃣_INPUT/data/series_a_sample.csv`
+
+**Example rows:**
+```csv
+company_id,vagueness_zscore,hardware,series_a_amount,log_series_a,is_serial,year_founded,hq_country
+QC001,-1.2,0,5.5,1.88,1,2019,USA
+QC002,0.8,1,3.2,1.35,0,2020,Canada
+QC003,1.5,0,8.1,2.19,1,2018,UK
+```
+
+---
+
+*Last updated: 2025-11-16*  
+*Prepared by: 권준/나대용 (中軍)*

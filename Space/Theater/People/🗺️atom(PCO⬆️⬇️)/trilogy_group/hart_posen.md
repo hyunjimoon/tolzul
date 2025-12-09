@@ -9,7 +9,64 @@ atom: 🗺️atom(PCO⬆️⬇️)
 created: 2024-11-15
 modified:
   - 2025-10-20T11:48:26-04:00
+  - 2025-12-09T03:21:48-05:00
 ---
+# 2025 Dec
+[[2025-12-09]]
+![[_hart__angie_⚙️engineering narrative2_otter_ai.txt]]
+![[hart__angie_engineering narrative_otter_ai.txt]]
+
+
+### 1. That Vagueness is a Feature of _High-Performing_ Startups, Not Just "Lemons"
+
+**The Context from the Chat:**  
+Scott Stern repeatedly pushed back on the idea of "vagueness." He argued from a classic Economics standpoint (Signaling Theory): Why would a good company want to be vague? Usually, vagueness is "cheap talk"—something low-quality companies do to hide their flaws. He struggled to see why a high-quality entrepreneur wouldn't just tell the truth about their excellent strategy.
+
+**The Surprise:**  
+It would surprise Scott to see empirical evidence or a formal model proving that **the best startups are intentionally vague to preserve "Option Value."**
+
+- **Why it surprises Scott:** He assumes "truth-telling" is the optimal strategy for good companies.
+- **The Argument:** If Angie can prove that being specific forces a startup to "lock in" a strategy too early (creating an "inventory" of promises they can't change), then vagueness becomes a rational economic tool for managing uncertainty. It shifts vagueness from being a sign of _ignorance_ (I don't know what I'm doing) to a sign of _prudence_ (I am keeping my options open until the market reveals itself).
+
+### 2. That "Inventory Theory" (The News Vendor Model) Explains Narrative Construction
+
+**The Context from the Chat:**  
+Charlie Fine is an Operations Management scholar. He understands the "News Vendor Model" (balancing the cost of having too much inventory vs. too little) in the context of physical goods—widgets, car parts, clothes. During the chat, both professors struggled to connect the "math" of inventory to the "soft skills" of pitching a story. They questioned if the analogy actually holds up.
+
+**The Surprise:**  
+It would surprise Charlie to see a rigorous demonstration that **words in a pitch deck behave exactly like perishable inventory.**
+
+- **Why it surprises Charlie:** He is used to applying this logic to supply chains, not psychology or linguistics.
+- **The Argument:** Angie needs to show that entrepreneurs face the exact same trade-offs as a supply chain manager:
+    - **Underage Cost (Too Vague):** If you don't promise enough, investors "walk away" (lost sales).
+    - **Overage Cost (Too Specific):** If you promise too much specific detail, and the market pivots, you are stuck with "obsolete inventory" (a strategy that no longer works).
+    - **The Shock:** Proving that _narrative_ has a holding cost and a spoilage rate just like physical inventory.
+
+### 3. That Funding _Reduces_ Flexibility (The "Resource Curse" of Pivoting)
+
+**The Context from the Chat:**  
+There was a significant discussion about the relationship between money and pivoting. The standard intuition (often held by Strategy scholars like Scott) is that **Money = Time**. If you have more money, you have more runway, which means you have more time to experiment and pivot. Therefore, more money should lead to _more_ flexibility.
+
+**The Surprise:**  
+It would be a major counter-intuitive finding to prove that **more funding causally leads to _less_ pivoting.**
+
+- **Why it surprises them:** It contradicts the idea that resources enable freedom.
+- **The Argument:** Angie’s paper suggests that when you take money, you are often forced to "crystallize" your strategy to justify the investment. The money comes with strings attached—specifically, the expectation of executing the specific plan you pitched. Therefore, a well-funded startup is actually _less_ able to pivot than a lean one, because their "inventory" (their strategy) has been paid for and locked in by the investors. This turns the "Resource-Based View" upside down: resources can be a trap.
+
+
+### Chat Log Summary
+
+| Time Range        | Primary Topic                     | Key Discussion Points                                                                                                                                                                                                                             | Academic References & Resources Shared                                                                                                                                                                                                                           |
+| :---------------- | :-------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **15:37 - 16:02** | **FOMO & Behavior**               | • Angie discusses the behavioral implications of FOMO (Fear Of Missing Out).• Suggests framing FOMO as "bad" to the audience to influence behavior.                                                                                               | • _Screenshot2025_12_05_153710.jpg_                                                                                                                                                                                                                              |
+| **16:12 - 16:21** | **Experimentation & Learning**    | • **Ion Lab view:** Learning is synonymous with experimenting.• **Hart/Dan view:** Hierarchy of learning (experimentation is just one method).• **Barney view:** Experiments are conducted specifically to convince others.                       | • _Priors Experiments Learning Persuasion in Entrepreneurial Finance.pdf_• _Zizek91_Looking Awry.pdf_                                                                                                                                                            |
+| **16:25 - 16:35** | **Defining Confidence**           | • Angie outlines three types of confidence.• Technical definition: Overestimating the mean while underestimating the standard deviation.• Counter-intuitive point: Under certain conditions, the behavioral bias of FOMO is actually "good."      | N/A                                                                                                                                                                                                                                                              |
+| **16:37 - 16:39** | **Overconfidence Literature**     | • Discussion on "Apparent Overconfidence" vs. "Rational Overconfidence."• Angie notes that Hart’s 2018 paper covers both concepts and links sunk costs to rationality.                                                                            | • **Benoit & Dubra (2011):** _Apparent overconfidence_ (Econometrica)• **Van den Steen (2011):** _Overconfidence by bayesian-rational agents_ (Mgmt Science)• **Chen, Croson, Elfenbein, & Posen (2018):** _Impact of Learning and Overconfidence_ (Org Science) |
+| **16:50 - 16:52** | **Commitment & FOMO Definitions** | • Hart introduces the concept of strategic commitment.• Angie notes observers only see a subset of data (entrances vs. scaling).• Hart provides a formal psychological definition of FOMO (anxiety regarding absence from rewarding experiences). | • **Ghemawat (1991):** _Commitment: Dynamic of strategy_ (Free Press)• **NCBI Article:** [Link to FOMO research](https://pmc.ncbi.nlm.nih.gov/articles/PMC8283615/)                                                                                              |
+
+
+# 2025 Nov
+----
 
 q to hart
 1. what should i know before choosing theorist as my scholarly career?

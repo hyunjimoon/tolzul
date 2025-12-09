@@ -13,7 +13,7 @@ using [year-end awards system cld](https://claude.ai/chat/784865a1-191f-4fa3-810
 - [[sound|📣 Sound]] - Sonic innovation and auditory arts
 
 ### 📚 Knowledge & Communication
-- [[📚language|📚 Language]] - Linguistic innovation and literary excellence
+- [[Space/Library/2참고용/언어소통관_言語/📚language|📚 Language]] - Linguistic innovation and literary excellence
 - [[🏑field|🏑 Field]] - Domain expertise and specialized knowledge
 - [[university|🏫 University]] - Educational and research excellence
 

@@ -1,9 +1,9 @@
 ---
-up: 
-related: 
+up:
+related:
 created: "{{date}}"
 collection:
   - "[[Views]]"
-  - "[[Maps]]"
+  - "[[Space/Library/Maps/Maps]]"
 rank: 1
 ---

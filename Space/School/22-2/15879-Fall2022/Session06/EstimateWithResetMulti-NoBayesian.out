@@ -1,0 +1,135 @@
+:COMSYS After 3210 simulations
+:COMSYS Best payoff is -24078.9
+:COMSYS User terminated optimization session
+:OPTIMIZER=Powell
+:SENSITIVITY=Off
+:MULTIPLE_START=Off
+:RANDOM_NUMBER=Default
+:OUTPUT_LEVEL=On
+:TRACE=Off
+:MAX_ITERATIONS=1000
+:RESTART_MAX=0
+:PASS_LIMIT=2
+:FRACTIONAL_TOLERANCE=0.0003
+:TOLERANCE_MULTIPLIER=21
+:ABSOLUTE_TOLERANCE=1
+:SCALE_ABSOLUTE=1
+:VECTOR_POINTS=25
+:MCLIMIT=0
+:MCJUMP=0.05
+:MCBURNIN=0
+:MCDELTA=0.0001
+:MCTEMP=1
+:MCNCHAINS=2
+:MCUPDATEPAIRS=2
+:MCSCHEDULE=0
+:MCOUTLIER=0.05
+:MCXOVER=0.2
+:MCCOOLING=1000
+:MCINITMETHOD=0
+:MCPAYOFFTYPE=0
+:MCGAMMA=1
+:MCRECORD=0
+:MCKNN=0
+:MCEPSILON=0.01
+:MCFTEMP=1
+1 <= Shopping Time[S1] = 13.9182  <= 30
+1 <= Shopping Time[S2] = 15.1282  <= 30
+1 <= Shopping Time[S3] = 13.9632  <= 30
+1 <= Shopping Time[S4] = 14.708  <= 30
+1 <= Shopping Time[S5] = 15.2371  <= 30
+1 <= Shopping Time[S6] = 15.6363  <= 30
+1 <= Shopping Time[S7] = 15.2086  <= 30
+1 <= Shopping Time[S8] = 14.8484  <= 30
+1 <= Shopping Time[S9] = 15.1406  <= 30
+1 <= Shopping Time[S10] = 15.6635  <= 30
+1 <= Shopping Time[S11] = 14.9616  <= 30
+1 <= Shopping Time[S12] = 14.8609  <= 30
+1 <= Shopping Time[S13] = 15.1824  <= 30
+1 <= Shopping Time[S14] = 15.637  <= 30
+1 <= Shopping Time[S15] = 15.4613  <= 30
+1 <= Shopping Time[S16] = 14.7847  <= 30
+1 <= Shopping Time[S17] = 15.1858  <= 30
+1 <= Shopping Time[S18] = 15.2264  <= 30
+1 <= Shopping Time[S19] = 14.213  <= 30
+1 <= Shopping Time[S20] = 14.9646  <= 30
+1 <= Shopping Time[S21] = 14.6728  <= 30
+1 <= Shopping Time[S22] = 14.332  <= 30
+1 <= Shopping Time[S23] = 14.9669  <= 30
+1 <= Shopping Time[S24] = 15.6684  <= 30
+1 <= Shopping Time[S25] = 15.2247  <= 30
+1 <= Shopping Time[S26] = 15.13  <= 30
+1 <= Shopping Time[S27] = 14.631  <= 30
+1 <= Shopping Time[S28] = 15.8348  <= 30
+1 <= Shopping Time[S29] = 15.0146  <= 30
+1 <= Shopping Time[S30] = 14.7703  <= 30
+1 <= Shopping Time[S31] = 14.8394  <= 30
+1 <= Shopping Time[S32] = 15.3654  <= 30
+1 <= Shopping Time[S33] = 14.6594  <= 30
+1 <= Shopping Time[S34] = 14.8897  <= 30
+1 <= Shopping Time[S35] = 15.2014  <= 30
+1 <= Shopping Time[S36] = 15.2229  <= 30
+1 <= Shopping Time[S37] = 14.9284  <= 30
+1 <= Shopping Time[S38] = 14.8262  <= 30
+1 <= Shopping Time[S39] = 15.1952  <= 30
+1 <= Shopping Time[S40] = 15.1978  <= 30
+1 <= Shopping Time[S41] = 14.9855  <= 30
+1 <= Shopping Time[S42] = 14.2238  <= 30
+1 <= Shopping Time[S43] = 15.3719  <= 30
+1 <= Shopping Time[S44] = 15.1173  <= 30
+1 <= Shopping Time[S45] = 14.2776  <= 30
+1 <= Shopping Time[S46] = 14.7486  <= 30
+1 <= Shopping Time[S47] = 15.1854  <= 30
+1 <= Shopping Time[S48] = 15.1841  <= 30
+1 <= Shopping Time[S49] = 15.6699  <= 30
+1 <= Shopping Time[S50] = 15.0646  <= 30
+1 <= Shopping Time[S51] = 15.0051  <= 30
+1 <= Shopping Time[S52] = 15.0698  <= 30
+1 <= Shopping Time[S53] = 14.9203  <= 30
+1 <= Shopping Time[S54] = 14.6584  <= 30
+1 <= Shopping Time[S55] = 14.3284  <= 30
+1 <= Shopping Time[S56] = 14.3361  <= 30
+1 <= Shopping Time[S57] = 15.4253  <= 30
+1 <= Shopping Time[S58] = 15.3717  <= 30
+1 <= Shopping Time[S59] = 16.066  <= 30
+1 <= Shopping Time[S60] = 14.3212  <= 30
+1 <= Shopping Time[S61] = 14.9867  <= 30
+1 <= Shopping Time[S62] = 14.8129  <= 30
+1 <= Shopping Time[S63] = 15.6707  <= 30
+1 <= Shopping Time[S64] = 15.1675  <= 30
+1 <= Shopping Time[S65] = 15.0072  <= 30
+1 <= Shopping Time[S66] = 15.438  <= 30
+1 <= Shopping Time[S67] = 15.0196  <= 30
+1 <= Shopping Time[S68] = 15.6705  <= 30
+1 <= Shopping Time[S69] = 14.6255  <= 30
+1 <= Shopping Time[S70] = 16.0486  <= 30
+1 <= Shopping Time[S71] = 16.0444  <= 30
+1 <= Shopping Time[S72] = 13.7295  <= 30
+1 <= Shopping Time[S73] = 14.7033  <= 30
+1 <= Shopping Time[S74] = 14.8663  <= 30
+1 <= Shopping Time[S75] = 15.3467  <= 30
+1 <= Shopping Time[S76] = 14.4473  <= 30
+1 <= Shopping Time[S77] = 14.6464  <= 30
+1 <= Shopping Time[S78] = 14.8313  <= 30
+1 <= Shopping Time[S79] = 14.9602  <= 30
+1 <= Shopping Time[S80] = 15.8462  <= 30
+1 <= Shopping Time[S81] = 15.408  <= 30
+1 <= Shopping Time[S82] = 14.9771  <= 30
+1 <= Shopping Time[S83] = 15.1277  <= 30
+1 <= Shopping Time[S84] = 15.6876  <= 30
+1 <= Shopping Time[S85] = 15.6741  <= 30
+1 <= Shopping Time[S86] = 15.3463  <= 30
+1 <= Shopping Time[S87] = 14.5947  <= 30
+1 <= Shopping Time[S88] = 15.2562  <= 30
+1 <= Shopping Time[S89] = 15.2666  <= 30
+1 <= Shopping Time[S90] = 15.2246  <= 30
+1 <= Shopping Time[S91] = 14.8161  <= 30
+1 <= Shopping Time[S92] = 14.2297  <= 30
+1 <= Shopping Time[S93] = 15.2186  <= 30
+1 <= Shopping Time[S94] = 15.2454  <= 30
+1 <= Shopping Time[S95] = 14.315  <= 30
+1 <= Shopping Time[S96] = 14.7417  <= 30
+1 <= Shopping Time[S97] = 15.641  <= 30
+1 <= Shopping Time[S98] = 15.2676  <= 30
+1 <= Shopping Time[S99] = 14.6886  <= 30
+1 <= Shopping Time[S100] = 14.971  <= 30

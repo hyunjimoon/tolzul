@@ -6,7 +6,7 @@ rank: 5
 
 ~ [[Balance]]
 
-> [!calendar] [[Daily]] | [[Weekly]] | **[[Monthly]]**
+> [!calendar] [[Balance/Daily]] | [[Weekly]] | **[[Monthly]]**
 
 **Monthly = 월별 화음**
 

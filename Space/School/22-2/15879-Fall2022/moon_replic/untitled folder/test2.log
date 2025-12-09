@@ -1,0 +1,79 @@
+INFO:        Initial point of search.
+INFO:          "S-Prime" = 20.
+INFO:          Fraction of Discrepancy Ordered Each Period = 0.5.
+INFO:          Fraction of Supply Line Taken into Account = 0.5.
+INFO:          Theta = 0.5.
+INFO:        Simulations = 1.
+INFO:        Pass = 0.
+INFO:        Payoff = 0.
+INFO:        ---------------------------------.
+INFO:        NOTE Payoff (0) realized at multiple parameter values.
+INFO:        With "S-Prime" = 20 and -8.57512e+36.
+INFO:        NOTE Payoff (0) realized at multiple parameter values.
+INFO:        With "S-Prime" = -8.57512e+36 and -2.24499e+37.
+INFO:        NOTE Payoff (0) realized at multiple parameter values.
+INFO:        With "S-Prime" = -2.24499e+37 and 20.
+INFO:        With Fraction of Discrepancy Ordered Each Period = 0.5 and -8.57512e+36.
+INFO:        NOTE Payoff (0) realized at multiple parameter values.
+INFO:        With Fraction of Discrepancy Ordered Each Period = -8.57512e+36 and -2.24499e+37.
+INFO:        NOTE Payoff (0) realized at multiple parameter values.
+INFO:        With Fraction of Discrepancy Ordered Each Period = -2.24499e+37 and 0.5.
+INFO:        With Fraction of Supply Line Taken into Account = 0.5 and -8.57512e+36.
+INFO:        NOTE Payoff (0) realized at multiple parameter values.
+INFO:        With Fraction of Supply Line Taken into Account = -8.57512e+36 and -2.24499e+37.
+INFO:        .
+INFO:        ERROR: Floating point error computing : Change in Expected Orders.
+INFO:        ERROR: Check causes and uses of Change in Expected Orders for division by zero or overflow.
+INFO:        .
+INFO:        Floating point error during optimization with.
+INFO:        ------------------.
+INFO:         *"S-Prime" = 20.
+INFO:         *Fraction of Discrepancy Ordered Each Period = 0.5.
+INFO:         *Fraction of Supply Line Taken into Account = 0.5.
+INFO:         *Theta = -8.57512e+36.
+INFO:        ------------------.
+INFO:        .
+INFO:        ERROR: Floating point error computing : Change in Expected Orders.
+INFO:        ERROR: Check causes and uses of Change in Expected Orders for division by zero or overflow.
+INFO:        .
+INFO:        .
+INFO:        ERROR: Floating point error computing : Change in Expected Orders.
+INFO:        ERROR: Check causes and uses of Change in Expected Orders for division by zero or overflow.
+INFO:        .
+INFO:        NOTE Payoff (0) realized at multiple parameter values.
+INFO:        With "S-Prime" = 20 and -8.57512e+36.
+INFO:        With Fraction of Supply Line Taken into Account = -2.24499e+37 and 0.5.
+INFO:        NOTE Payoff (0) realized at multiple parameter values.
+INFO:        With "S-Prime" = -8.57512e+36 and -2.24499e+37.
+INFO:        NOTE Payoff (0) realized at multiple parameter values.
+INFO:        With "S-Prime" = -2.24499e+37 and 20.
+INFO:        With Fraction of Discrepancy Ordered Each Period = 0.5 and -8.57512e+36.
+INFO:        NOTE Payoff (0) realized at multiple parameter values.
+INFO:        With Fraction of Discrepancy Ordered Each Period = -8.57512e+36 and -2.24499e+37.
+INFO:        NOTE Payoff (0) realized at multiple parameter values.
+INFO:        With Fraction of Discrepancy Ordered Each Period = -2.24499e+37 and 0.5.
+INFO:        With Fraction of Supply Line Taken into Account = 0.5 and -8.57512e+36.
+INFO:        NOTE Payoff (0) realized at multiple parameter values.
+INFO:        With Fraction of Supply Line Taken into Account = -8.57512e+36 and -2.24499e+37.
+INFO:        .
+INFO:        ERROR: Floating point error computing : Change in Expected Orders.
+INFO:        ERROR: Check causes and uses of Change in Expected Orders for division by zero or overflow.
+INFO:        .
+INFO:        .
+INFO:        ERROR: Floating point error computing : Change in Expected Orders.
+INFO:        ERROR: Check causes and uses of Change in Expected Orders for division by zero or overflow.
+INFO:        .
+INFO:        .
+INFO:        ERROR: Floating point error computing : Change in Expected Orders.
+INFO:        ERROR: Check causes and uses of Change in Expected Orders for division by zero or overflow.
+INFO:        .
+INFO:        Maximum payoff found at:.
+INFO:          "S-Prime" = 20.
+INFO:          Fraction of Discrepancy Ordered Each Period = 0.5.
+INFO:          Fraction of Supply Line Taken into Account = -2.24499e+37.
+INFO:         *Theta = 0.5.
+INFO:        Simulations = 19.
+INFO:        NOTE 6 of the simulations caused floating point errors (first was reported).
+INFO:        Pass = 3.
+INFO:        Payoff = 0.
+INFO:        ---------------------------------.

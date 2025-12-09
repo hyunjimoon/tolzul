@@ -1,6 +1,11 @@
 ---
 벗: 정하
+modified:
+  - 2025-11-28T12:20:42-05:00
 ---
+[[2025-11-28]]
+lastly, thank you [[jungha_kim]] sun sang neem, my lifelong object of cruel optimism.
+
 [[10-09|25-10-09]]
 트라우마라는 단어가 얼마나 무거운데, 그걸 단순 성적따위에 사용하다니 비위가 상하셨을수도 있겠습니다.
 
@@ -18,6 +23,8 @@
 다른 종류의 두 솔직하지 못함이 관계에 파국.
 정하는 의와 맞바꾼 실력을 탐했고, 현지는 어리석은 짓궃음을 탐했다 (반어법; 스승은 제자에게 -> 내 상황은 내가 선생님께 훨씬 낙관이 있었기에..). 이 모든 순간은 모여서 그리움이 되었다. 
 
+edit: [[2025-11-28]] 의와 맞바꾼 실력이 무슨 뜻이지?
+
 citation of [[creul_technical_optimism]] from phd thesis, 
 > Berlant acknowledges “the authority of Cathy Caruth’s model in humanities work on trauma” and explains that this model “represents trauma through a symptom’s blockage of full subjective experience, performing, marking, and foreclosing the exposure to self-shattering loss
 
@@ -31,9 +38,13 @@ citation of [[creul_technical_optimism]] from phd thesis,
 
 > temporality of the present assumes in trauma as a zone of convergence of memories and histories.
 
-> affect is in many ways synonymous with force or forces of encounter.
+> affect is in many ways synonymous with force or forces of encounter.” Affect theorists often differentiate emotion from affect 
+> 
+> by contrasting the 🌙reciprocal dimension of affect🌙 to the personal property of emotion: Brian Massumi’s often-quoted definition, for example, 
+> places affect as something that does not require a subject and that is unformed, beside emotion, which does require subject and involves meaning. 
+> Mel Y. Chen similarly explains that affect “engages many bodies at once, rather than (only) being contained as an emotion within a single body. Affect inheres in the capacity to affect and be affected.”
 
-> affect is in many ways synonymous with force or forces of encounter.” Affect theorists often differentiate emotion from affect by contrasting the reciprocal dimension of affect to the personal property of emotion: Brian Massumi’s often-quoted definition, for example, places affect as something that does not require a subject and that is unformed, beside emotion, which does require subject and involves meaning. Mel Y. Chen similarly explains that affect “engages many bodies at once, rather than (only) being contained as an emotion within a single body. Affect inheres in the capacity to affect and be affected.”
+-  inhere (formally exists); affect inheres in the capacity to affect and be afffected
 
 Berlant argues that trauma enables a productive linkage to the present rather than detachment of the subject from it; provoking reading of the unique temporality of belatedness in trauma, which is known as deferred action
 
@@ -104,11 +115,12 @@ categories:
 선, 똘똘, 웃음, 후회, 생태, 보편, 상대성에
 언어, 재현, 생태, 똘똘, 선악
 ## 2022-2
-미니멀리즘은 Raymond Carver, Tobias Wolff, Bobbie Ann Mason 등을 위시한 전후 미국소설의 한 경향을 뜻하기도 하지만, 위기로 점철된 21세기의 일상을 살아 나가는 디톡스적 라이프스타일이자 현대소설 속 인물들의 축소된 행위성 및 수동성, flash fiction, twitterature와 같은 새로운 장르들을 아우르는 키워드다. 20세기 중후반 미국의 미니멀리즘이 베트남 전쟁을 비롯한 당대 트라우마에 대한 예술적 대응이었다면, 21세기의 미니멀리즘은 이 시대가 직면한 위기에 응답하는 글로벌한 미학적 반응을 통칭하는 것일까?
+미니멀리즘은 Raymond Carver, Tobias Wolff, Bobbie Ann Mason 등을 위시한 전후 미국소설의 한 경향을 뜻하기도 하지만, 위기로 점철된 21세기의 일상을 살아 나가는 디톡스적 라이프스타일이자 현대소설 속 인물들의 축소된 행위성 및 수동성, flash fiction, twitterature와 같은 새로운 장르들을 아우르는 키워드다.
+20세기 중후반 미국의 미니멀리즘이 베트남 전쟁을 비롯한 당대 트라우마에 대한 예술적 대응이었다면, 21세기의 미니멀리즘은 이 시대가 직면한 위기에 응답하는 글로벌한 미학적 반응을 통칭하는 것일까?
 
 [[김정하_2022-2_대학원특강.pdf]]
 
-
+[[Space/Library/언어소통예술_言語藝/they say i say|they say i say]]
 [[김정하_2022-2_영미문학특강.pdf]]
 
 In this course we will read selected writings of Freud and think about the basic assumptions he brought into his interpretations of human mind, society, and artistic creation, Questions will be made on what sort of "truth" psychoanalysis tries to find out, what significance it adds to our interpretation of works of art, and what possibilities and limitations it has to offer in dealing with literary works of art. Latter half of the semester will be devoted to the psychoanalytic reading of selected literary works.

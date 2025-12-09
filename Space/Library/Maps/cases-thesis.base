@@ -1,0 +1,156 @@
+sources:
+  - folder: Space/Library/1논문용/business_cases
+    recursive: true
+properties:
+  file.name:
+    displayName: Case
+  thesisCase:
+    displayName: Paper
+  caseType:
+    displayName: Type
+  vagueness:
+    displayName: V
+  outcome:
+    displayName: Outcome
+  investment:
+    displayName: Investment
+views:
+  - type: table
+    name: All Thesis Cases
+    filters:
+      and:
+        - file.inFolder("Space/Library/1논문용/business_cases")
+    order:
+      - thesisCase
+      - caseType
+      - file.name
+      - vagueness
+      - outcome
+      - investment
+    sort:
+      - property: thesisCase
+        direction: ASC
+      - property: caseType
+        direction: ASC
+    limit: 100
+    filter:
+      - property: thesisCase
+        operator: is not empty
+      - property: file.name
+        operator: does not contain
+        value: README
+      - property: file.folder
+        operator: contains
+        value: business_cases
+    columnSize:
+      note.thesisCase: 50
+      note.caseType: 100
+      note.vagueness: 50
+      note.outcome: 100
+  - type: table
+    name: 📦 Paper U Cases
+    order:
+      - caseType
+      - file.name
+      - vagueness
+      - outcome
+      - investment
+    sort:
+      - property: caseType
+        direction: ASC
+      - property: vagueness
+        direction: ASC
+    limit: 50
+    filter:
+      - property: thesisCase
+        operator: equals
+        value: U
+      - property: file.folder
+        operator: contains
+        value: business_cases
+  - type: table
+    name: 📦 Paper C Cases
+    order:
+      - caseType
+      - file.name
+      - outcome
+    sort:
+      - property: caseType
+        direction: ASC
+    limit: 50
+    filter:
+      - property: thesisCase
+        operator: equals
+        value: C
+      - property: file.folder
+        operator: contains
+        value: business_cases
+  - type: table
+    name: 📦 Paper N Cases
+    order:
+      - caseType
+      - file.name
+      - outcome
+    sort:
+      - property: caseType
+        direction: ASC
+    limit: 50
+    filter:
+      - property: thesisCase
+        operator: equals
+        value: N
+      - property: file.folder
+        operator: contains
+        value: business_cases
+  - type: table
+    name: 🔴 Murky Middle Failures
+    order:
+      - file.name
+      - vagueness
+      - investment
+      - outcome
+    sort:
+      - property: investment
+        direction: DESC
+    limit: 50
+    filter:
+      - property: caseType
+        operator: equals
+        value: Murky Middle
+      - property: file.folder
+        operator: contains
+        value: business_cases
+  - type: table
+    name: 🟡 Commitment Trap
+    order:
+      - file.name
+      - outcome
+      - investment
+    sort:
+      - property: investment
+        direction: DESC
+    limit: 50
+    filter:
+      - property: caseType
+        operator: contains
+        value: Commitment
+      - property: file.folder
+        operator: contains
+        value: business_cases
+  - type: table
+    name: 🟢 Pure Strategy Successes
+    order:
+      - file.name
+      - vagueness
+      - outcome
+    sort:
+      - property: vagueness
+        direction: ASC
+    limit: 50
+    filter:
+      - property: caseType
+        operator: contains
+        value: Pure
+      - property: file.folder
+        operator: contains
+        value: business_cases

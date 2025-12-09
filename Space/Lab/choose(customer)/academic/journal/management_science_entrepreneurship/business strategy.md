@@ -1,0 +1,7 @@
+---
+modified:
+  - 2025-11-08T13:58:33-05:00
+---
+The Business Strategy department seeks papers with research questions that deepen our understanding of business performance in competitive contexts. The department is interested in rigorous analyses that show how managerial choices impact performance, broadly construed, with special attention paid to persistent differences amongst competitors. Because we define strategic choices as those with significant competitive implications, the department will eschew papers that focus primarily on internal functions (e.g., finance or marketing), but welcome studies that link firm organization to market performance.
+
+The primary criterion for consideration for publication in _Management Science_ is the potential for impact on future study. This means that the research must conform to rigorous standards of quality in both theory development and empirical methodology and execution. We are agnostic as to the disciplinary origins of analysis. Finally, as the criterion is the potential for impact, this means that significant contributions may very well raise more questions than they answer and generate challenging and controversial findings with respect to the existing literature.

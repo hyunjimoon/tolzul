@@ -1,2 +1,2 @@
-- [[tim_miller_transcript]]
+- [[Space/School/2324_🚉1.200/tim_miller/tim_miller_transcript]]
 - [[🧭atom(PC🔃)]] for insight

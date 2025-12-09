@@ -1,0 +1,130 @@
+📦 Theory → Empirics Handoff
+═══════════════════════════════════════════════════════════════
+
+## Variables to Test
+
+| Variable | Symbol | Type | Range | Source |
+|----------|--------|------|-------|--------|
+| **Vagueness** | V | Continuous | 0-100 | Composite index (categorical + concreteness) |
+| **Early Funding** | E | Continuous | $M | PitchBook: Series A amount |
+| **Later Success** | L | Binary | 0/1 | PitchBook: P(Series B+ within 17mo) |
+| **Hardware** | H | Binary | 0/1 | Industry + keyword classification |
+
+---
+
+## Hypotheses to Test
+
+### **H1: Vagueness → Early Funding (−)**
+```
+Model: E = α₀ + α₁·V + Controls + ε
+Expected: α₁ < 0
+```
+
+**Controls to include:**
+- Founder serial status (binary)
+- Industry fixed effects
+- Year fixed effects
+- Geographic region
+
+---
+
+### **H2a: Vagueness × Hardware → Later Success (−)**
+```
+Model: logit(L) = β₀ + β₁·V + β₂·H + β₃·(V×H) + Controls + ε
+Expected: β₃ < 0
+```
+
+**Interpretation:**
+- For Software (H=0): slope = β₁ (should be positive per H2b)
+- For Hardware (H=1): slope = β₁ + β₃ (should be negative or zero)
+
+---
+
+### **H2b: Vagueness → Later Success (+) for Software**
+```
+Model: logit(L) = β₀ + β₁·V + Controls when H=0
+Expected: β₁ > 0
+```
+
+**Test:** Restrict sample to Software firms, run simple logit.
+
+---
+
+## Expected Outputs (to be created in Empirics sections)
+
+### **From Empirics_Early:**
+1. **Table 1:** H1 regression results
+   - N ≈ 1,000 (Series A firms)
+   - DV: Series A amount (log)
+   - IV: Vagueness score (z-scored)
+   - Controls: Serial founder, Industry FE, Year FE
+   - Reporting: β, SE, p-value, 95% CI
+
+2. **Figure 3:** Scatter plot
+   - X-axis: Vagueness (z-score)
+   - Y-axis: Series A amount ($M)
+   - Color: Red gradient
+   - Add regression line with 95% CI band
+
+### **From Empirics_Later:**
+1. **Table 2:** H2a interaction model
+   - N ≈ 700 (firms that got Series A)
+   - DV: P(Series B+)
+   - IVs: Vagueness, Hardware, V×H
+   - Reporting: Odds ratios + marginal effects
+
+2. **Figure 4:** Interaction plot
+   - X-axis: Vagueness (z-score)
+   - Y-axis: P(Series B+)
+   - Two lines: Software (sky blue), Hardware (gray)
+   - Show crossover if exists
+
+3. **Table 3:** H2b software subsample
+   - N ≈ 600 (Software firms only)
+   - Simple logit: L ~ V + Controls
+
+---
+
+## Data Requirements
+
+**File location:**
+- Raw: `../1️⃣_INPUT/data/pitchbook_raw.csv`
+- Cleaned: `../1️⃣_INPUT/data/pitchbook_clean.csv`
+
+**Required columns:**
+```python
+[
+    'company_name',
+    'description',           # For vagueness calculation
+    'series_a_date',
+    'series_a_amount',
+    'series_b_date',         # For outcome variable
+    'is_hardware',           # Classification
+    'is_serial_founder',     # Control
+    'industry',              # FE
+    'year_founded',          # FE
+    'hq_country'            # Geographic control
+]
+```
+
+---
+
+## Quality Gates (before moving to Empirics)
+
+- [ ] Figures 1-2 generated in `3️⃣_OUTPUT/figures/`
+- [ ] Theory section text complete
+- [ ] Scott Advisor approval: "Hypotheses are testable"
+- [ ] Variable operationalizations match PitchBook data dictionary
+
+---
+
+## Next Steps for Empirics Team
+
+1. **Data prep:** Run vagueness calculation on `description` field
+2. **H1 test:** Empirics_Early/run.py → Table 1 + Figure 3
+3. **H2 test:** Empirics_Later/run.py → Table 2-3 + Figure 4
+
+**Critical Path:** Need Table 1 completion to unblock Later section.
+
+═══════════════════════════════════════════════════════════════
+Theory Section Output Complete. Ready for Empirics.

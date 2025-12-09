@@ -1,13 +1,13 @@
 ---
 collection:
-  - "[[Courses]]"
+  - "[[Space/Library/Maps/Courses]]"
 by: "[[Hazhir Rahmandad]]"
 year: 2022
 yearXP: 2022
-semester: "Fall 2022"
-courseCategory: "Operations"
-courseStatus: "완료"
-institution: "MIT Sloan"
+semester: Fall 2022
+courseCategory: Operations
+courseStatus: 완료
+institution: MIT Sloan
 courseCode: "15.873"
 image: ""
 created: 2022-09-01

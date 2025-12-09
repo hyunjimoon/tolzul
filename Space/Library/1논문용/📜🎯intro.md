@@ -1,0 +1,12 @@
+---
+modified:
+  - 2025-11-28T00:54:24-05:00
+---
+- [[🖐🏼top5_impactful_paper]]
+- [[📜gelman06_boxer🥊.md]]
+- [[📜repenning02_capability(trap, learning)]]
+- [[📜fine86_quality(learning, cost)]], [[Front/Simmering/베이즈창업/spandrel/ops4entrep/📐method/📜_fed/📜🐙_fine22_integrate(operations, theory)|📜🐙_fine22_integrate(operations, theory)]]
+- [[📜gans20_choose(tech)]]
+- [[📜stern06_tech_org_econ_exp]]
+- [[🗄️🗄️scott_charlie]]
+- [[top5_impactful_paper]]

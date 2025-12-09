@@ -22,3 +22,9 @@ sort:
     direction: desc
   - property: year
     direction: desc
+views:
+  - type: table
+    name: Table
+    sort:
+      - property: file.name
+        direction: ASC

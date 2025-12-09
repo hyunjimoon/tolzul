@@ -1,0 +1,11 @@
+FINAL TIME = 48
+Fraction of Discrepancy Ordered Each Period = 0.5
+Fraction of Supply Line Taken into Account = 0.5
+INITIAL TIME = 1
+Interval = 1
+"S-Prime" = 20
+SAVEPER = 1
+SD of Residuals = 2.414
+Start Time = 1
+Theta = 0.5
+TIME STEP = 1

@@ -1,0 +1,135 @@
+# Interface: Empirics_Later → Discussion
+
+**Date:** 2025-11-16  
+**From:** 2️⃣_PRODUCTION/Empirics_Later/  
+**To:** 2️⃣_PRODUCTION/Discussion/
+
+---
+
+## 📤 Outputs Passed Forward
+
+### **1. Key Findings**
+
+| Hypothesis | Result | Interpretation |
+|------------|--------|----------------|
+| **H2a** | β₃ = −0.85 (p < 0.01) | V×H interaction negative: Hardware firms penalized for vagueness even at later stage |
+| **H2b** | β₁ = +0.42 (p < 0.01) | Software firms benefit from vagueness: +9 pp in P(Series B+) per 1 SD |
+| **Reversal** | Net HW effect = −0.43 | Vagueness hurts HW (−9 pp) while helping SW (+9 pp) |
+
+### **2. Mechanism Evidence**
+
+**Pivot Frequency Mediation (H2c):**
+- Vague SW firms pivot 2× more than precise SW (p < 0.05)
+- Vague HW firms pivot no more than precise HW (n.s.)
+- Each additional pivot → +12 pp in P(Series B+) (p < 0.01)
+
+### **3. Robustness**
+
+**Specification Curve Results:**
+- 200+ model combinations tested
+- β₃ < 0 in 187/200 specs (93.5%)
+- Median β₃ = −0.82 (close to baseline)
+- Significant (p < 0.05) in 165/200 specs (82.5%)
+
+---
+
+## 📊 Artifacts
+
+### **Figures**
+- `3️⃣_OUTPUT/figures/fig4_vxh_interaction.pdf`
+  - Blue line (SW): Upward slope
+  - Gray line (HW): Downward slope
+  - Crossover at V ≈ 0
+
+### **Tables**
+- `3️⃣_OUTPUT/tables/table2_h2_logit.txt`
+  - Main regression results
+- `3️⃣_OUTPUT/tables/table2b_spec_curve.csv`
+  - Robustness checks
+
+---
+
+## 🎯 Key Points for Discussion Section
+
+### **Theoretical Implications**
+
+1. **Temporal Reversal Mechanism:**
+   - Early stage: VOI dominates → precision signals credibility
+   - Later stage: RO value emerges → vagueness preserves flexibility
+   - **Critical Boundary Condition:** Architecture (HW vs. SW) determines when RO value can be realized
+
+2. **Reconciling Two Schools:**
+   - **Information School (Zuckerman, Hannan):** Correct at Series A
+   - **Options School (Pontikes, Granqvist):** Correct at Series B+, but only for low-friction architectures
+   - **Our Integration:** Time × Architecture interaction, not universal trade-off
+
+3. **Exercisability as Moderator:**
+   - RO theory often assumes "options can be exercised"
+   - We show: Physical rigidity (HW) blocks option exercise even when option exists
+   - Implication: RO value is **architecture-contingent**, not just **uncertainty-contingent**
+
+### **Managerial Implications**
+
+1. **Promise Design Rules:**
+   - **If HW:** Be precise early AND late (VOI always dominates)
+   - **If SW:** Start vague (preserve pivots), then precision as you learn (signal commitment)
+   
+2. **Pivot Planning:**
+   - Vagueness ≠ strategic unless paired with low switching costs
+   - HW founders: Precision forces better ex-ante search (fewer, better-informed pivots)
+   - SW founders: Vagueness enables rapid experimentation (more, cheaper pivots)
+
+3. **Investor Evaluation:**
+   - Series A: Penalize vagueness uniformly (correct heuristic)
+   - Series B+: Conditional on architecture:
+     - SW with pivots → vagueness was strategic learning
+     - HW with pivots → vagueness was indecision (red flag)
+
+### **Limitations to Address**
+
+1. **Selection Bias:**
+   - Only observe firms that got Series A (Heckman correction in appendix)
+   - Survivors may differ systematically
+
+2. **External Validity:**
+   - Quantum computing is high-uncertainty context (amplifies effects)
+   - Generalize to other deep-tech industries? (check in robustness)
+
+3. **Vagueness Measurement:**
+   - Text-based proxy may miss oral communication
+   - Inter-rater reliability κ = 0.82 (good but not perfect)
+
+---
+
+## 🔄 Expected Discussion Structure
+
+```
+Section 3.1: Theoretical Implications
+  - Temporal reversal as core contribution
+  - Architecture as boundary condition
+  - Reconciling information vs. options schools
+
+Section 3.2: Managerial Implications
+  - Promise design strategies (by architecture)
+  - Pivot planning guidelines
+  - Investor evaluation heuristics
+
+Section 3.3: Limitations
+  - Selection bias
+  - Context specificity
+  - Measurement issues
+
+Section 3.4: Future Research
+  - Other industries (biotech, cleantech)
+  - Oral vs. written promises
+  - Investor heterogeneity
+
+Section 3.5: Conclusion
+  - Core message: "Vagueness is not universally good or bad—it's a tool 
+    whose value depends on WHEN (stage) and HOW (architecture) it's used."
+```
+
+---
+
+*Last updated: 2025-11-16*  
+*Prepared by: 권준/나대용 (中軍)*

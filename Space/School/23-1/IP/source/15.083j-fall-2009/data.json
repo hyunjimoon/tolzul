@@ -1,0 +1,25 @@
+{
+  "course_title":"Integer Programming and Combinatorial Optimization",
+  "course_description":"The course is a comprehensive introduction to the theory, algorithms and applications of integer optimization and is organized in four parts: formulations and relaxations, algebra and geometry of integer optimization, algorithms for integer optimization, and extensions of integer optimization.\n",
+  "site_uid":"769a1d0d-9db6-4e7d-b26e-9bbd565d57d1",
+  "legacy_uid":"0bce5d0a-e25c-92df-8381-e21cbaa29c4e","instructors": [{
+    "first_name":"Dimitris",
+    "last_name":"Bertsimas",
+    "middle_initial":"",
+    "salutation":"Prof.",
+    "title":"Prof. Dimitris Bertsimas"},{
+    "first_name":"Andreas",
+    "last_name":"Schulz",
+    "middle_initial":"",
+    "salutation":"Prof.",
+    "title":"Prof. Andreas Schulz"}],"department_numbers":["15","6"],
+  "learning_resource_types":["Problem Sets","Exams","Lecture Notes"],
+  "topics":[["Engineering","Systems Engineering","Systems Optimization"],["Mathematics","Applied Mathematics"],["Mathematics","Computation"]],
+  "primary_course_number":"15.083J",
+  "extra_course_numbers":"6.859J",
+  "term":"Fall",
+  "year":"2009",
+  "level":["Graduate"],
+  "image_src":"./static_resources/7e9b1cf3cf6ee9e6dbf50f48bb1a45c1_15-083jf09.jpg",
+  "course_image_metadata":{"content_type":"resource","description":"","draft":false,"file":"/courses/15-083j-integer-programming-and-combinatorial-optimization-fall-2009/7e9b1cf3cf6ee9e6dbf50f48bb1a45c1_15-083jf09.jpg","file_type":"image/jpeg","image_metadata":{"caption":"An example of Lagrangean duality, discussed in Lecture 8. (Image by Prof. Bertsimas.)","credit":"","image-alt":"A figure illustrating Lagrangean duality."},"iscjklanguage":false,"learning_resource_types":[],"license":"https://creativecommons.org/licenses/by-nc-sa/4.0/","ocw_type":"OCWImage","resourcetype":"Image","title":"15-083jf09.jpg","uid":"7e9b1cf3-cf6e-e9e6-dbf5-0f48bb1a45c1"}}
+

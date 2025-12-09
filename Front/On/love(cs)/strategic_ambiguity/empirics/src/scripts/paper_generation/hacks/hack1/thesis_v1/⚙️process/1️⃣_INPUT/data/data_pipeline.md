@@ -1,0 +1,11 @@
+---
+modified:
+  - 2025-11-15T13:55:21-05:00
+  - 2025-11-16T02:09:42-05:00
+---
+
+| 파일                  | 주요 목적                                   | 공개 함수/객체                                                                                                                                                                                                                       | 입·출력(핵심)                                                                                           | 메모                                                              |
+| ------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| `features.py`       | V, F 생성 및 생존라벨 보조                       | `compute_vagueness_vectorized`, `StrategicVaguenessScorer.score_vagueness`, `classify_hardware_or_software`/`classify_hardware_vectorized`, `derive_early_funding`, `create_survival_seriesb_progression`, `engineer_features` | 입력: 설명/키워드/라운드정보 → 출력: `vagueness`, `is_hardware`, `F_flexibility (=1−is_hardware)`, `Y_primary` 등 | V 구성요소(불확실어/구체성결핍/범주적 모호성)와 HW/SW 키워드 규칙 제공. B+ 진행/검열 처리 로직 포함. |
+| `models.py`         | 두 스냅샷 회귀 러너(진단/빠른 베이스라인)                | `run_HEV`(E~V OLS), `run_HLVF`(L~V×F Logit), `run_HSF`(log S~V×F OLS; L==1)                                                                                                                                                    | 입력: 단면 또는 두시점 DF → 출력: statsmodels 결과                                                              | HLVF는 **E 제외(매개)** 원칙을 명시. 샘플 불균형 대응을 위한 L1 규제 폴백 포함.           |
+| `plots_F_series.py` | 표준 F‑시리즈 도표(Pr(L) vs V, L\|F, 분포, 사양곡선) | `create_F_series`, `fig_F1_E_vs_V`, `fig_F2_PrL_vs_V`, `fig_F3a_L_given_F` 등                                                                                                                                                   | 입력: DF + 결과객체 → 출력: PNG/PDF                                                                        | HLVF의 **NO‑E 원칙**과 팔레트/라인스타일 규칙 문서화. Stan 예측값으로도 바로 사용 가능.      |

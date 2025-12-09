@@ -42,4 +42,4 @@ using [applying bayesian workflow to business modeling cld](https://claude.ai/ch
 
 [[fail_fast]]
 
-[[🛝mmi24_2]]
+[[Space/School/24_🚗Zhao23_behav_mob_ai/🛝mmi24_2]]

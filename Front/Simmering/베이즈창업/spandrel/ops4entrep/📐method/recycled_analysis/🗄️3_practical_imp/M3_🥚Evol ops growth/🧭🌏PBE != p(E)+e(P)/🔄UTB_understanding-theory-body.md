@@ -114,7 +114,7 @@ With [[Cronin_SAJ.pdf]]'s lens, our system dynamics model reveals three foundati
 [[Front/Simmering/베이즈창업/spandrel/ops4entrep/📐method/recycled_analysis/🗄️3_practical_imp/M3_🥚Evol ops growth/🧭🌏PBE != p(E)+e(P)/📜Nelson61_uc_learn_econ]] 's parallel R&D framework complements these SAJ dynamics by explaining when to multiply each type of collaborative pairing. The optimal number of parallel paths depends on balancing development costs against improved decision-making from accumulated information. Our framework extends this insight by distinguishing two types of parallelism: parallel processing (multiple programmatic theories testing the same understanding, as in functional shift) and parallel discovery (multiple instances of discovery processes running simultaneously, as in co-option). The ratio of implementation to development time ($\color{Red}t_{imp}\color{White}/\color{Green}t_{test}$) determines when to add parallel theory paths for Scientist-Judge skill development, while the ratio of understanding growth to feedback time ($1/\color{#C0A0C0}t_{receive}$) indicates when to pursue parallel Artist-Scientist discovery processes.
 
 🚨todo1: connect with scott's execute and control (testK-implement1)
-🚨🚨todo2: connect with charlie's nail and scale (segment, processify, automate on [[JetZero]], [[🛝mmi24_2]] ): nailK-scale1
+🚨🚨todo2: connect with charlie's nail and scale (segment, processify, automate on [[JetZero]], [[Space/School/24_🚗Zhao23_behav_mob_ai/🛝mmi24_2]] ): nailK-scale1
 🚨🚨🚨todo3: john's idea 
 🚨🚨🚨🚨todo4: connect risk vs uncertainty with josh's fair2unfair dice [[966 Computational Cognitive Science]]
 
@@ -309,7 +309,7 @@ Like Tesla's shift from "Silicon Valley startup" outsourcing to vertical integra
 ---
 Spandrel
 
-- [ ] include medical examples from  [[2024-11-27🌱🦅🐠]] (@2024-11-28)
+- [x] include medical examples from  [[2024-11-27🌱🦅🐠]] (@2024-11-28)
 - [ ] check projection from  [[🚰tap-atp🗺️]], consistency with [[🗄️🪶product2]]
 - [ ] [[📝🪶Sequential Evolutionary and Parallel Bayesian Startup Adaptations]]
 - [ ] [[🧠👁️🤜scientist_artist_judge]] and ready-fire-aim VS ready-aim-fire

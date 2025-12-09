@@ -1,0 +1,11 @@
+---
+collection:
+  - "[[Space/Lab/Papers]]"
+author_ids:
+field:
+  - 🐙ops
+year: 2016
+created: 2025-05-27
+---
+
+"Platform Revolution: How Networked Markets Are Transforming the Economy" Abstract/Key Insight: This work examines how platform businesses create value through network effects and ecosystem orchestration. The authors demonstrate that platforms face unique challenges in solving "chicken-and-egg" problems where the value for one stakeholder group (e.g., customers) depends on participation from another group (e.g., suppliers), creating interdependent utility functions that traditional business models don't address.

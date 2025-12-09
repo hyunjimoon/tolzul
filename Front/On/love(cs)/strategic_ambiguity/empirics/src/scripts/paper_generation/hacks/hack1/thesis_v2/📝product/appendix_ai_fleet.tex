@@ -1,0 +1,203 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{kotex}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+
+\geometry{margin=1in}
+\definecolor{techgreen}{RGB}{34,139,34}
+\definecolor{opred}{RGB}{178,34,34}
+\definecolor{despurple}{RGB}{128,0,128}
+
+\title{Appendix: Building a Trustworthy AI Fleet\\
+\large A Modular Protocol Integrating Product Development, 見利思義, and Bayesian Workflow}
+\author{Moon Hyunji}
+\date{November 2025}
+
+\begin{document}
+\maketitle
+
+\begin{tcolorbox}[colback=gray!10, colframe=gray!50, title=How to Use This Appendix]
+This appendix is a \textbf{portable module}. Copy into your LLM context to instantiate a collaborative AI fleet. Trust emerges from \textbf{structure}—explicit roles, quality gates, and verified handoffs.
+\end{tcolorbox}
+
+\section{Conceptual Foundations}
+
+This protocol synthesizes four intellectual traditions:
+
+\subsection{Product Development Process (Ulrich \& Eppinger)}
+
+We adopt the \textbf{Complex System Development Process} (Exhibit 2-5c) where parallel subsystems undergo independent design-test cycles before integration:
+
+\begin{quote}
+``The process flow diagram for development of complex systems shows the decomposition into parallel stages of work on the many subsystems and components.'' \textit{(Ulrich \& Eppinger, Ch. 2)}
+\end{quote}
+
+Our three papers (P1, P2, P3) operate as parallel subsystems with a final integration phase.
+
+We employ the \textbf{Heavyweight Project Matrix Organization} (Exhibit 2-8):
+\begin{quote}
+``The heavyweight project manager has complete budget authority, is heavily involved in performance evaluation of the team members, and makes most of the major resource allocation decisions.'' \textit{(Ulrich \& Eppinger, Ch. 2)}
+\end{quote}
+
+The human Commander holds project authority; functional expertise is distributed across agents.
+
+Finally, we implement \textbf{Rally Points} (Tyco system, Exhibit 2-6):
+\begin{quote}
+``Each phase is followed by a critical review (called a Rally Point), which is required to gain approval to proceed to the next phase.'' \textit{(Ulrich \& Eppinger, Ch. 2)}
+\end{quote}
+
+\subsection{見利思義 (Gyeonri-Saui): Confucian Virtue Framework}
+
+``When you see profit, think of righteousness.'' Decomposed into four operational virtues:
+\begin{itemize}[leftmargin=2cm]
+    \item[\textbf{見}] \textbf{(Observe)}: Ground truth preservation
+    \item[\textbf{利}] \textbf{(Speed)}: Rapid prototyping
+    \item[\textbf{思}] \textbf{(Structure)}: Deep analysis
+    \item[\textbf{義}] \textbf{(Rigor)}: Critical verification
+\end{itemize}
+
+\subsection{Bayesian Workflow (Gelman et al.)}
+
+\begin{equation}
+\underbrace{\pi(\theta)}_{\text{Prior}} \xrightarrow{\text{data } y} \underbrace{\pi(\theta|y)}_{\text{Posterior}} \xrightarrow{\text{evaluate}} \underbrace{d^*}_{\text{Decision}} \xrightarrow{\text{feedback}} \pi'(\theta)
+\end{equation}
+
+Today's posterior becomes tomorrow's prior. Calibration uses simulation-based checks with test statistics $T(y,\theta) = \log p(y|\theta)$.
+
+\subsection{Integration: The Trust Framework}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lllll@{}}
+\toprule
+\textbf{MIT Function} & \textbf{Virtue} & \textbf{Bayesian Role} & \textbf{Rally Point} \\
+\midrule
+Marketing/Concept & 利 (Speed) & Prior $\pi(\theta)$ & RP0 \\
+Engineering/Design & 思 (Structure) & Likelihood $\pi(y|\theta)$ & RP1 \\
+Manufacturing/Build & 造 (Build) & Posterior $\hat{\pi}(\theta|y)$ & RP2 \\
+Quality Assurance & 義 (Rigor) & Calibration $T(y,\theta)$ & RP3 \\
+Documentation & 見 (Observe) & Generator $\pi_{joint}$ & RP4 \\
+Project Management & 統 (Integrate) & Decision $d^*$ & RP5 \\
+\bottomrule
+\end{tabular}
+\caption{Four-Framework Integration: MIT + 見利思義 + Bayesian + Rally Point}
+\end{table}
+
+\section{Process: Complex System Development}
+
+\begin{verbatim}
+[System-Level Design: "5.3% Dilemma" Unified Theme]
+                    |
+    +---------------+---------------+
+    |               |               |
+   P1              P2              P3
+[Design→Test]  [Design→Test]  [Design→Test]
+    |               |               |
+    +---------------+---------------+
+                    |
+           [Integrate & Test]
+                    |
+         [Validation & Ramp-Up]
+\end{verbatim}
+
+\section{Organization: Heavyweight Project Matrix}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}p{2cm}p{1.5cm}p{2.5cm}p{2cm}p{3cm}@{}}
+\toprule
+\textbf{Agent} & \textbf{Virtue} & \textbf{MIT Function} & \textbf{Lead} & \textbf{Trust Obligation} \\
+\midrule
+Observer & 見 & Documentation & Ch4 & Preserve ground truth \\
+Generator & 利 & Marketing & Ch1 & Move fast; accept errors \\
+Architect & 思 & Engineering & Ch2 & Structure + 1 self-critique \\
+Builder & 造 & Manufacturing & Ch3 & Reproducibility \\
+Verifier & 義 & QA (Gatekeeper) & RP0-4 & 2 critiques + calibration \\
+Commander & 統 & Project Mgmt & RP5 & Final responsibility \\
+\bottomrule
+\end{tabular}
+\caption{Agent-Role Specification with MIT Functional Mapping}
+\end{table}
+
+\section{Rally Point System}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lllll@{}}
+\toprule
+\textbf{RP} & \textbf{Phase} & \textbf{Owner} & \textbf{Pass Criterion} & \textbf{Fail Action} \\
+\midrule
+RP0 & Concept & Generator & Hook + RQ complete & Revise concept \\
+RP1 & Design & Architect & Hypothesis + 1 critique & Restructure theory \\
+RP2 & Build & Builder & Code reproducible & Debug pipeline \\
+RP3 & Verify & Verifier & 2 critiques + $T(y,\theta)$ robust & Full rework \\
+RP4 & Integrate & Observer & Ch4 synthesis complete & Reconcile papers \\
+RP5 & Approve & Commander & Ready for submission & Team revisit \\
+\bottomrule
+\end{tabular}
+\caption{Rally Point Quality Gates (adapted from Tyco, Exhibit 2-7)}
+\end{table}
+
+\section{Test Statistics by Paper}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Paper} & \textbf{Target Dept} & \textbf{Test Statistic} $T(y,\theta)$ & \textbf{Detects} \\
+\midrule
+P1 & E\&I & $\hat{\beta}_{V(1-V)} < 0$ & U-shape validity \\
+P2 & Strategy & $\Delta\sigma_{\text{post-shock}}$ & Belief rigidity \\
+P3 & OM & $k^* = F_D^{-1}(CR)$ fit & Newsvendor accuracy \\
+\midrule
+Cross & — & P1→D, P2→C/F, P3→k* & Integration coherence \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Handoff Contracts}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{From → To} & \textbf{Must Include} & \textbf{Trust Function} \\
+\midrule
+Generator → Architect & Draft + 3 options & Admits uncertainty \\
+Architect → Verifier & Framework + \textbf{1 self-critique} & Shows honesty \\
+Verifier → Builder & Verified design + \textbf{2 critiques} & Earns gate authority \\
+Builder → Verifier & Code + results + repro steps & Enables verification \\
+Verifier → Observer & Validated output + visual & Takes responsibility \\
+Observer → Commander & Synthesis + recommendation & Supports decision \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Unified Formula}
+
+\begin{equation}
+k^* = F_D^{-1}\left(\frac{C}{C+F}\right)
+\end{equation}
+
+Where P1 determines $D$, P2 determines $C$ and $F$, and P3 derives $k^*$.
+
+\section*{Motto}
+\begin{center}
+\large\textit{必死卽生} — Commit fully, and you will find life.\\
+\large\textit{見利思義} — When you see opportunity, think of what is right.
+\end{center}
+
+\section*{References}
+\begin{itemize}
+    \item Ulrich, K.T. \& Eppinger, S.D. (2020). \textit{Product Design and Development}. McGraw-Hill.
+    \item Modrák, M., Moon, A.H., Kim, S., et al. (2022). Simulation-Based Calibration Checking.
+    \item Gelman, A., et al. (2020). Bayesian Workflow.
+\end{itemize}
+
+\end{document}

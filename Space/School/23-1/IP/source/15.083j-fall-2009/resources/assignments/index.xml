@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Assignments on MIT OpenCourseWare</title>
+    <link>/resources/assignments/</link>
+    <description>Recent content in Assignments on MIT OpenCourseWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/resources/assignments/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Assignments</title>
+      <link>/pages/assignments/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pages/assignments/data.json</guid>
+      <description>Assigned problems are from the course textbook: Bertsimas, Dimitris, and Robert Weismantel. Optimization over Integers. Belmont, MA: Dynamic Ideas, 2005. ISBN: 9780975914625.
+ASSN # ASSIGNMENTS DUE DATES 1 1.2, 1.7, 1.21, 1.23 Lec #3 2 2.1, 2.9, 2.15, 2.20 Lec #7 3 3.13, 3.14, 3.15, 3.19, 3.21 Lec #11 4
+4.10, 4.11, 4.12, 5.8
+Lec #13 (Optional)
+You are encouraged to work on these problems to prepare for the exam.</description>
+    </item>
+    
+    <item>
+      <title>MIT15_083JF09_assn01_sol.pdf</title>
+      <link>/resources/mit15_083jf09_assn01_sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit15_083jf09_assn01_sol/data.json</guid>
+      <description>This resource contains solutions of problem set 1.</description>
+    </item>
+    
+    <item>
+      <title>MIT15_083JF09_assn02_sol.pdf</title>
+      <link>/resources/mit15_083jf09_assn02_sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit15_083jf09_assn02_sol/data.json</guid>
+      <description>This resource contains solutions of problem set 2.</description>
+    </item>
+    
+    <item>
+      <title>MIT15_083JF09_assn03_sol.pdf</title>
+      <link>/resources/mit15_083jf09_assn03_sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit15_083jf09_assn03_sol/data.json</guid>
+      <description>This resource contains solutions of problem set 3.</description>
+    </item>
+    
+    <item>
+      <title>MIT15_083JF09_assn04_sol.pdf</title>
+      <link>/resources/mit15_083jf09_assn04_sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit15_083jf09_assn04_sol/data.json</guid>
+      <description>This resource contains solutions of problem set 4.</description>
+    </item>
+    
+    <item>
+      <title>MIT15_083JF09_assn05_sol.pdf</title>
+      <link>/resources/mit15_083jf09_assn05_sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit15_083jf09_assn05_sol/data.json</guid>
+      <description>This resource contains solutions of problem set 5.</description>
+    </item>
+    
+    <item>
+      <title>MIT15_083JF09_assn05.pdf</title>
+      <link>/resources/mit15_083jf09_assn05/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit15_083jf09_assn05/data.json</guid>
+      <description>This resource contains problem set 5.</description>
+    </item>
+    
+    <item>
+      <title>MIT15_083JF09_assn06_sol.pdf</title>
+      <link>/resources/mit15_083jf09_assn06_sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit15_083jf09_assn06_sol/data.json</guid>
+      <description>This resource contains solutions of problem set 6.</description>
+    </item>
+    
+  </channel>
+</rss>

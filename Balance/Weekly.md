@@ -6,7 +6,7 @@ rank: 5
 
 ~ [[Balance]]
 
-> [!calendar] [[Daily]] | **[[Weekly]]** | [[Monthly]]
+> [!calendar] [[Balance/Daily]] | **[[Weekly]]** | [[Monthly]]
 
 **Weekly = 주별 멜로디**
 

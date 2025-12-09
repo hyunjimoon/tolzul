@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="1600" fill="url(#bgGrad2)"/>
+  
+  <!-- Header -->
+  <rect x="60" y="40" width="1080" height="180" fill="none" stroke="#f97316" stroke-width="2" rx="4"/>
+  <text x="100" y="100" font-family="Georgia, serif" font-size="38" fill="#fff" font-weight="bold">Repenning &amp; Sterman (2002)</text>
+  <text x="100" y="145" font-family="Georgia, serif" font-size="22" fill="#94a3b8">Capability Traps and Self-Confirming Attribution Errors</text>
+  <text x="100" y="190" font-family="Georgia, serif" font-size="16" fill="#64748b">Administrative Science Quarterly • MIT Sloan</text>
+  <text x="1000" y="100" font-size="48">🐅🐙</text>
+  
+  <!-- Section 1: Gospel & Paradox -->
+  <rect x="60" y="260" width="530" height="350" fill="#1e293b" rx="8"/>
+  <text x="80" y="300" font-family="Georgia, serif" font-size="26" fill="#f97316">🐢 기(起): Gospel vs Reality</text>
+  
+  <!-- Gospel Box -->
+  <rect x="80" y="320" width="490" height="90" fill="#0f172a" stroke="#22d3ee" stroke-width="2" rx="4"/>
+  <text x="100" y="350" font-family="monospace" font-size="14" fill="#22d3ee">X: Field Gospel</text>
+  <text x="100" y="375" font-family="Georgia, serif" font-size="16" fill="#fff">"With time and experience,</text>
+  <text x="100" y="395" font-family="Georgia, serif" font-size="16" fill="#fff">organizations improve their capabilities."</text>
+  
+  <!-- Paradox Box -->
+  <rect x="80" y="420" width="490" height="90" fill="#0f172a" stroke="#f97316" stroke-width="2" rx="4"/>
+  <text x="100" y="450" font-family="monospace" font-size="14" fill="#f97316">Y: Paradox</text>
+  <text x="100" y="475" font-family="Georgia, serif" font-size="16" fill="#fff">"TQM works, but fewer than 10% succeed.</text>
+  <text x="100" y="495" font-family="Georgia, serif" font-size="16" fill="#fff">TQM fell from #3 to #14 in usage."</text>
+  
+  <!-- Core Question -->
+  <text x="100" y="555" font-family="Georgia, serif" font-size="18" fill="#f97316" font-style="italic">"Why do useful innovations go unused?"</text>
+  <text x="100" y="585" font-family="Georgia, serif" font-size="14" fill="#64748b">— The central puzzle</text>
+  
+  <!-- Section 2: The Mechanism -->
+  <rect x="610" y="260" width="530" height="350" fill="#1e293b" rx="8"/>
+  <text x="630" y="300" font-family="Georgia, serif" font-size="26" fill="#f97316">🐅 승(承): Dual Mechanism</text>
+  
+  <!-- Capability Trap -->
+  <rect x="630" y="320" width="230" height="130" fill="#0f172a" rx="4"/>
+  <text x="650" y="350" font-family="monospace" font-size="14" fill="#ef4444">Capability Trap</text>
+  <text x="650" y="375" font-family="Georgia, serif" font-size="13" fill="#fff">Pressure↑ → Improve↓</text>
+  <text x="650" y="395" font-family="Georgia, serif" font-size="13" fill="#fff">→ Problems↑ → Defects↑</text>
+  <text x="650" y="415" font-family="Georgia, serif" font-size="13" fill="#fff">→ Performance↓ → Pressure↑↑</text>
+  <text x="650" y="440" font-family="Georgia, serif" font-size="12" fill="#ef4444">(Reinforcing Loop R1)</text>
+  
+  <!-- Self-Confirming Attribution -->
+  <rect x="880" y="320" width="240" height="130" fill="#0f172a" rx="4"/>
+  <text x="900" y="350" font-family="monospace" font-size="14" fill="#a855f7">Self-Confirming Attribution</text>
+  <text x="900" y="375" font-family="Georgia, serif" font-size="13" fill="#fff">Low output → "People fault"</text>
+  <text x="900" y="395" font-family="Georgia, serif" font-size="13" fill="#fff">→ More pressure → Output↑</text>
+  <text x="900" y="415" font-family="Georgia, serif" font-size="13" fill="#fff">→ "I was right!" → More pressure</text>
+  <text x="900" y="440" font-family="Georgia, serif" font-size="12" fill="#a855f7">(Fundamental Attribution Error)</text>
+  
+  <!-- Interaction Arrow -->
+  <path d="M 860 400 L 880 400" stroke="#f97316" stroke-width="2" stroke-dasharray="4"/>
+  <text x="700" y="490" font-family="Georgia, serif" font-size="16" fill="#f97316" font-weight="bold">The Interaction</text>
+  <text x="650" y="515" font-family="Georgia, serif" font-size="14" fill="#94a3b8">Physical structure × Attribution errors</text>
+  <text x="650" y="540" font-family="Georgia, serif" font-size="14" fill="#94a3b8">= Self-reinforcing failure</text>
+  
+  <!-- Key Quote -->
+  <text x="650" y="580" font-family="Georgia, serif" font-size="13" fill="#64748b" font-style="italic">"Blaming the tools is simply another type of attribution error"</text>
+  
+  <!-- Section 3: Evidence (MCT vs PDP) -->
+  <rect x="60" y="630" width="1080" height="280" fill="#1e293b" rx="8"/>
+  <text x="80" y="670" font-family="Georgia, serif" font-size="26" fill="#f97316">🐙 전(轉): Evidence — MCT vs PDP</text>
+  
+  <!-- MCT Success -->
+  <rect x="80" y="700" width="500" height="180" fill="#0f172a" stroke="#22c55e" stroke-width="2" rx="4"/>
+  <text x="100" y="730" font-family="Georgia, serif" font-size="20" fill="#22c55e" font-weight="bold">✓ MCT (Manufacturing Cycle Time)</text>
+  <text x="100" y="760" font-family="Georgia, serif" font-size="15" fill="#fff">• Cycle time: 15 days → &lt;1 day (20x improvement)</text>
+  <text x="100" y="785" font-family="Georgia, serif" font-size="15" fill="#fff">• Feedback delay: Weeks (short)</text>
+  <text x="100" y="810" font-family="Georgia, serif" font-size="15" fill="#fff">• Early wins visible in months</text>
+  <text x="100" y="835" font-family="Georgia, serif" font-size="15" fill="#fff">• Attribution correction: Fast</text>
+  <text x="100" y="865" font-family="Georgia, serif" font-size="14" fill="#22c55e">Result: Virtuous cycle triggered</text>
+  
+  <!-- PDP Failure -->
+  <rect x="600" y="700" width="520" height="180" fill="#0f172a" stroke="#ef4444" stroke-width="2" rx="4"/>
+  <text x="620" y="730" font-family="Georgia, serif" font-size="20" fill="#ef4444" font-weight="bold">✗ PDP (Product Development Process)</text>
+  <text x="620" y="760" font-family="Georgia, serif" font-size="15" fill="#fff">• Cycle time: 3+ years</text>
+  <text x="620" y="785" font-family="Georgia, serif" font-size="15" fill="#fff">• Feedback delay: Years (long)</text>
+  <text x="620" y="810" font-family="Georgia, serif" font-size="15" fill="#fff">• Results ambiguous, other changes occur</text>
+  <text x="620" y="835" font-family="Georgia, serif" font-size="15" fill="#fff">• Attribution correction: Impossible</text>
+  <text x="620" y="865" font-family="Georgia, serif" font-size="14" fill="#ef4444">Result: Vicious cycle persisted</text>
+  
+  <!-- Section 4: Feedback Loop Diagram -->
+  <rect x="60" y="930" width="530" height="300" fill="#1e293b" rx="8"/>
+  <text x="80" y="970" font-family="Georgia, serif" font-size="26" fill="#f97316">📊 Core Feedback Structure</text>
+  
+  <!-- Loop Diagram -->
+  <ellipse cx="200" cy="1080" rx="70" ry="35" fill="none" stroke="#22d3ee" stroke-width="2"/>
+  <text x="160" y="1085" font-family="Georgia, serif" font-size="14" fill="#22d3ee">Throughput</text>
+  <text x="180" y="1100" font-family="Georgia, serif" font-size="14" fill="#22d3ee">Gap</text>
+  
+  <ellipse cx="400" cy="1030" rx="70" ry="35" fill="none" stroke="#ef4444" stroke-width="2"/>
+  <text x="360" y="1035" font-family="Georgia, serif" font-size="14" fill="#ef4444">Work</text>
+  <text x="360" y="1050" font-family="Georgia, serif" font-size="14" fill="#ef4444">Harder (B1)</text>
+  
+  <ellipse cx="400" cy="1130" rx="70" ry="35" fill="none" stroke="#22c55e" stroke-width="2"/>
+  <text x="360" y="1135" font-family="Georgia, serif" font-size="14" fill="#22c55e">Work</text>
+  <text x="355" y="1150" font-family="Georgia, serif" font-size="14" fill="#22c55e">Smarter (B3)</text>
+  
+  <!-- Arrows -->
+  <path d="M 270 1070 L 330 1040" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <path d="M 270 1090 L 330 1120" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  
+  <!-- Legend -->
+  <text x="80" y="1180" font-family="Georgia, serif" font-size="14" fill="#ef4444">B1: Immediate but temporary</text>
+  <text x="80" y="1200" font-family="Georgia, serif" font-size="14" fill="#22c55e">B3: Delayed but permanent</text>
+  <text x="350" y="1200" font-family="Georgia, serif" font-size="12" fill="#64748b">[DELAY]</text>
+  
+  <!-- Section 5: Implications -->
+  <rect x="610" y="930" width="530" height="300" fill="#1e293b" rx="8"/>
+  <text x="630" y="970" font-family="Georgia, serif" font-size="26" fill="#f97316">👾 결(結): Thesis Connection</text>
+  
+  <!-- For Your Thesis -->
+  <rect x="630" y="1000" width="490" height="200" fill="#0f172a" stroke="#f97316" stroke-width="1" rx="4"/>
+  <text x="650" y="1030" font-family="monospace" font-size="14" fill="#f97316">Flexibility &amp; Commitment 연결점</text>
+  
+  <text x="650" y="1060" font-family="Georgia, serif" font-size="14" fill="#fff">• Capability Trap = 잘못된 commitment (단기 생산성)</text>
+  <text x="650" y="1085" font-family="Georgia, serif" font-size="14" fill="#fff">• Self-Confirming = "이 전략이 맞았다" 함정</text>
+  <text x="650" y="1110" font-family="Georgia, serif" font-size="14" fill="#fff">• 피드백 지연 = Strategic ambiguity 효과도 지연</text>
+  <text x="650" y="1135" font-family="Georgia, serif" font-size="14" fill="#fff">• Work Harder vs Smarter ≈ Exploit vs Explore</text>
+  
+  <text x="650" y="1170" font-family="Georgia, serif" font-size="15" fill="#22c55e" font-weight="bold">핵심 통찰:</text>
+  <text x="650" y="1190" font-family="Georgia, serif" font-size="14" fill="#94a3b8">MCT 성공의 열쇠 = 짧은 피드백 루프</text>
+  
+  <!-- Cachon-Posen Framework -->
+  <rect x="60" y="1250" width="1080" height="180" fill="none" stroke="#f97316" stroke-width="2" rx="8"/>
+  <text x="100" y="1290" font-family="Georgia, serif" font-size="22" fill="#f97316" font-weight="bold">🎯 Posen-Cachon Intro 작문법</text>
+  
+  <!-- X → Y → Z flow -->
+  <rect x="100" y="1310" width="200" height="60" fill="#0f172a" rx="4"/>
+  <text x="120" y="1335" font-family="monospace" font-size="12" fill="#22d3ee">X: "Learning = Improvement"</text>
+  <text x="120" y="1355" font-family="Georgia, serif" font-size="12" fill="#64748b">Field's central premise</text>
+  
+  <text x="310" y="1345" font-family="Georgia, serif" font-size="24" fill="#f97316">→</text>
+  
+  <rect x="340" y="1310" width="200" height="60" fill="#0f172a" rx="4"/>
+  <text x="360" y="1335" font-family="monospace" font-size="12" fill="#ef4444">Y: "&lt;10% TQM success"</text>
+  <text x="360" y="1355" font-family="Georgia, serif" font-size="12" fill="#64748b">Concrete statistics</text>
+  
+  <text x="550" y="1345" font-family="Georgia, serif" font-size="24" fill="#f97316">→</text>
+  
+  <rect x="580" y="1310" width="250" height="60" fill="#0f172a" rx="4"/>
+  <text x="600" y="1335" font-family="monospace" font-size="12" fill="#a855f7">Z: Physical × Attribution</text>
+  <text x="600" y="1355" font-family="Georgia, serif" font-size="12" fill="#64748b">Interaction, not single cause</text>
+  
+  <text x="840" y="1345" font-family="Georgia, serif" font-size="24" fill="#f97316">→</text>
+  
+  <rect x="870" y="1310" width="250" height="60" fill="#0f172a" stroke="#22c55e" stroke-width="2" rx="4"/>
+  <text x="890" y="1335" font-family="monospace" font-size="12" fill="#22c55e">X': "Failure = System Trap"</text>
+  <text x="890" y="1355" font-family="Georgia, serif" font-size="12" fill="#64748b">Not lack of will</text>
+  
+  <!-- Writing Technique -->
+  <text x="100" y="1405" font-family="Georgia, serif" font-size="14" fill="#94a3b8">작문 기술: 1) 교과서적 상식을 X로 설정 2) 구체적 숫자로 Y 증명 3) 상호작용(interaction)이 Z의 핵심</text>
+  
+  <!-- Must Read -->
+  <rect x="60" y="1450" width="530" height="100" fill="#1e293b" rx="8"/>
+  <text x="80" y="1480" font-family="Georgia, serif" font-size="18" fill="#f97316">📚 Must Read</text>
+  <text x="80" y="1505" font-family="Georgia, serif" font-size="13" fill="#fff">• Fine (1986) - Quality-Learning Trade-off</text>
+  <text x="80" y="1525" font-family="Georgia, serif" font-size="13" fill="#fff">• March (1991) - Exploration vs Exploitation</text>
+  <text x="80" y="1545" font-family="Georgia, serif" font-size="13" fill="#fff">• Sterman (2000) - Business Dynamics</text>
+  
+  <!-- Key Insight -->
+  <rect x="610" y="1450" width="530" height="100" fill="#1e293b" rx="8"/>
+  <text x="630" y="1480" font-family="Georgia, serif" font-size="18" fill="#f97316">💡 Key Quote</text>
+  <text x="630" y="1510" font-family="Georgia, serif" font-size="14" fill="#fff" font-style="italic">"There are two theories. One says 'there's a problem,</text>
+  <text x="630" y="1530" font-family="Georgia, serif" font-size="14" fill="#fff" font-style="italic">let's fix it.' The other says 'someone is screwing up,</text>
+  <text x="630" y="1550" font-family="Georgia, serif" font-size="14" fill="#fff" font-style="italic">let's go beat them up.'"</text>
+  
+  <!-- Footer -->
+  <text x="60" y="1580" font-family="monospace" font-size="12" fill="#475569">📜repenning02_capability(trap, learning) | 전라좌수군 🐅권준 🐙김완</text>
+</svg>

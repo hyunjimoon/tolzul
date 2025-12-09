@@ -1,0 +1,271 @@
+Unknown Speaker  0:00  
+We have three dessert presentations to prepare a little candy like, oh, wow, yeah, I end up with a student struggling with homework and the final exam. They're eating a lot of candy.
+
+Unknown Speaker  0:20  
+Thank you. I think of you really, literally every day because of the figures that you gave me last time. Oh, okay, okay, yeah,
+
+Unknown Speaker  0:35  
+it's a high energy Yeah. Oh my gosh. Define gravity. That's
+
+Unknown Speaker  0:46  
+okay. Let's just, yeah, sure dive in. Give me a lecture, please.
+
+Unknown Speaker  0:53  
+Like, long story short, I'm kind of writing my, like, master thesis for between, like comparing Charlie fine, my operational side entrepreneurship professor with Scott Stern, who is strategy side approach for the entrepreneurship okay, this is the operational side. Professors, yeah, but like, Scott has another, like, strategy side perspective, which is a thicker, this is a comic book. That's a comic book, yeah? Gosh, okay, he used AI for that
+
+Unknown Speaker  1:33  
+generated, yeah, didn't hire the actors, yeah.
+
+Unknown Speaker  1:39  
+But long story short, I've been sensing the different approaches or like assumptions cooked in to the strategy field and operations field, and I felt the value proposition of the venture can help me disambiguate the differences. Okay, so do you by any chance, like, remember where we laughed off last time? Just vaguely, it was, like, vague promise. Okay, so, for instance, i
+
+Unknown Speaker  2:25  
+i Yeah. I found people think this is most intuitive, and I just show them the data. Yeah, so this is the example of the data, like companies from quantum computing, mostly here, and this is the hypothesis I established, which is, we look at the early stage vagueness. And what I mean by that is, pitch book data has some description of what they're doing. We develop neural atom quantum computing with novel modular architecture. It's usually can be decomposed into different vagueness in terms of technology and also the market. But here I'm just, this is the prototype. So I translate first this text into the vagueness core, and then this is the dependent. This is the independent variable that influences both early funding amount and the later funding success probability. And my hypothesis was the amount that this early vagueness influences the later success is moderated by the environment, environment, meaning how flexible founder and the like industry or the investors is. For instance, I felt that hardware might have harder later success because the reconfiguration cost is very high. And the intuition behind that is like, imagine you have a very vague promise for the hardware. And the benefit of having a vague promise is you have some rooms for pivoting. So for instance, in hardware, there are four modularities, I think you may already know, but like ion trap or the new like photon and many different things, but software, if you build them, you can apply to many different modularities, so And also, if you build some like software, SDKs, it can apply to many different industries as well, like cyber security to however, hardware, if you develop like a superconductor, you're locked into one vertical, okay, so that's what I meant by this option, from the vague promise, is that option if you're in hardware, because you're locked in anyway, so like, just give the information value to the VCs, and that would somehow benefit you. Like, so far, so good. Any questions or,
+
+Unknown Speaker  5:14  
+I mean, first thing first is the promises by made by made to whom? Good question.
+
+Unknown Speaker  5:21  
+So this is the pitch book experts just recording what is this company doing, and investors read that to decide whether to invest or not.
+
+Unknown Speaker  5:36  
+That's just a one sentence of summarizing what the firms, yeah, do, but in terms of VC making decisions like we will not just read the one sentence. We schedule meetings, sure, sure, and dig further and do due diligence and talk to the customers and team and etc, is way more information than just though, I don't know how you define the weakness here.
+
+Unknown Speaker  6:04  
+I see, yeah, I am aware of the limitation of this research, but I guess what I want to what I'm curious about is actually what's called has very high interest, like test to choose one strategy. Founders, okay, would you mind if I explain more about so the idea is, before committing on one idea, whether it is the idea is customer or the technology or the organization or the competition, you should try at least two before committing into one. So like, how that relates with this vagueness idea is, like, good example is a pill pack. Pill pack. Have you heard of pill package? It was a like a medicine dispatcher machine. And what they did was, given their technology, they tested on three different markets, like elderly and then different customer segments, like young people, and then compared the options and then committed to one market. So that's, I think, some flexibility, or some option, considering that, I feel founders would find value, I mean, but how's your observation about that? I'll stop talking now.
+
+Unknown Speaker  7:39  
+I wouldn't see like the the pitch book, one sentence description as a promise, first of all, but I think the board level conversations will be treated as projections and promises.
+
+Unknown Speaker  8:01  
+Yeah, it's very vague. But we also have the keywords, like for instance, like for AV, the keywords just crudely, okay, the numbers of keywords you have is the vagueness you have. Okay, I see. So how specific your idea? Exactly?
+
+Unknown Speaker  8:22  
+Specific? Yeah, I recall your example about Elon Musk talking about the range future eBay by 20 years. Yeah. Now that that that sounds to me a very interesting yeah, example about meaning the weakness the wrench, or a very specific number? Yeah, yeah, that sounds like a very interesting idea to me. And may I ask, Why? Why do you think that's interesting? Because comparing to a range, definitely a specific number is a breakthrough, right in terms of specificness, specificity, yeah, specific city, I'm always confused about Yeah, meaning, like, as we discussed, like, if You put down a range, 220 right? So that might be a magic number defining whether EV will be your only car or only become a toy like your family cannot depend on EV. If it's the range is under 220 that might be the perspective from how the message is perceived by the customers and the industry players. I see if you say that range is 180 to 250 even though the mean of that is still 220 for example, still like you are not going to buy 180 miles range, because you have to, you cannot go to New York, right? Or you can even go to New Haven with this kind of ICS range, right? People cannot depend on the
+
+Unknown Speaker  10:09  
+car to commute. Yeah, yeah, yeah. So that's a good point, because in my original model, I had two parameters, which is the mean of the promise, okay, and the variance of the promise, okay? But I felt that using the data I have to, like, inferring the two is very risky, because it can create some degeneracy, okay? So I and also it's a rare case for having very specific numbers, like range. It's like very like in EV people may promise on a range scale, but I felt the vagueness or the variance is more general metric, because I can use the keyword to somehow proxy vagueness, okay, but I'm generally glad that you find it interesting.
+
+Unknown Speaker  11:00  
+I would like to see, like another variable might be the significance of this promise. For example, can you go back to your examples? Sure, yeah, with the development neutral autumn quantum computing with novel, modular architecture. So what's the meaning behind this neutral autumn? Is that a super, yeah, that's one. That's one modularity among the four. Okay, yeah,
+
+Unknown Speaker  11:38  
+so we somehow give that as a specificity, because you can just say quantum computer, right, but you are locking in to one right, exactly. Do you mean? What? So definitely the neutral autumn is significant to the industry expert. That's a good point, because what's the current this is the current baseline superconductor. So how VCs? I'm also curious about, how do you do the portfolio management? Because compared to this, if one venture success or failure teaches you a lot. Like, for instance, you felt that this neural ion, Atom thing, its probability of success was 10% is what you thought. But if this experiment succeeded, and this somehow raises to like 30%
+
+Unknown Speaker  12:39  
+and also you multiply this 0.3 minus 0.1 multiplied by the market size, yeah, that is, yeah. That is the like value that VCs are willing to pay for this experiment, right, right. So that's the paper I share with you on entrepreneur finance, meaning that the value venture creates to the investors is proportional to the market size and how much you move the investors prior correct and plus a willingness from VCs about how much risk you are willing to take. Sometimes we are not willing to take risks because of our own reasons. For example, we are in the middle of fundraising, meaning, like our previous fund is approaching the end of the investment period. If we do not have a new fund raised by this amount of this period time, meaning we're running out of cash. Those dry powders are only, only, only capital available for future investment, and we are to at the later period stage of the fund life. That meaning we need to be more conservative, because our runway was shorter. I see another thing is like, if put in a situation like the fund is super successful, we pay back 3x to the investors already, because of the early success came back 3x meaning the cost we invest in the companies you guys are portfolio, like our earlier portfolios, had turned to be a huge success, that the value They generated already cover 3x of our engine cost. I see, okay, we can go, right. Oh, yeah, waiting together, yeah, let's go for the rest of the capital. We are covered for sure. We can how to boost the fund to 10x that. Let's bet that like neutral computing, right? So otherwise, I'd rather buy, like a shoes or ad printing shoes, right? So this,
+
+Unknown Speaker  15:08  
+that's interesting. So my question is that's relevant. With my implementation of this, I am looking at 2022 to 2024 and to 2025 and what I mean by this is 2022 is, is this is a cohort, and there, I think at least, I think a million companies here. But what they are is they earned series, A or early stage VC in 2022 they all start in 2022 and the early funding is the amount they raised. So let's say the company Quora computing. This is normalized, but let's say they some, some are do raise the most, whereas they are like, kind of the middle, so I normalized it and 2024 this is by the time of 2024 whether they have earned the series B, okay, so you can see, yeah, this should be one way.
+
+Unknown Speaker  16:17  
+Yeah. Okay. Why not there? Okay,
+
+Unknown Speaker  16:20  
+yeah. So lt is a time series, meaning that it's like probability of raising b by time t, and it includes both survival and non survival. So my question was, you mentioned each VC firm has the time period like by the end of this year, like, my point is, if you average out all the VCs out, do you think that effect is ignorable? The effect is normal, ignorable. Ignorable. Yeah, because there are, like, we see a firm, B firm and C firm, dot, dot, dot. And they are their end of the fund is 2022 and the other firm ends of the fund is 2023 so kind of end the fund effect? If, if you will, like the by so if we define end of fund effect as like you are being more conservative by the end of the like fund, I'd say,
+
+Unknown Speaker  17:26  
+I will say, like, it might be meaningful to translate, or build up a model to translate the promise into quantifiable risks, meaning like, for example, kind of like a manual pressing pricing, right? So if I read this, I mean, oh, super high risk, yeah, promise, because it's not, it's quite weak. But there's a reason for being weak, because there's still a lot of scientific research is to be done experiments and people really. It's really beyond the current human knowledge, but it's a huge market, if the if the success, if there's a success, right? So then that translates to, like, read, ratio of 65% or score, or whatever. Then, as a venture capitalist, I at the stage on my own firm, because that's my ecosystem. I know the best. What how much risk I'm willing to take. Then I would decide on my own, like, I'm going to take risk score, 65 opportunity or 35 which is lower risk. Sorry, I'm not following so 65 like, let's define that as a high risk opportunity at the scale of 100 I think you leave the venture capital firms to decide on their own how much risk they're willing to take, but your model can tell them, like for this particular promise that translate our model that translates to a score of risk, then you decide on your own whether you want to Take it or not.
+
+Unknown Speaker  19:19  
+Yeah, it's like analogy might be like GPT providing me the answer, and right next to the answer, I'm uncertain by how much degree kind of,
+
+Unknown Speaker  19:31  
+yeah, yeah. I'm not saying, like suggesting to search 100 VC firm and to see how to normalize their demand they can make their own decisions. Yeah. That makes sense. But you are guiding them how to read this. Promises, yeah, from the messages they receive, I see so
+
+Unknown Speaker  19:54  
+this is, I appreciate the feedback. This is very like baby size, and I guess I need to, like, given the time I have, like, a few weeks, I think I need to, like, be laser focused on what really matters in, like, the first order, important variables. But in that sense, like, does this has a red flag to you
+
+Unknown Speaker  20:24  
+What are you going to predict? Yeah, if you are predicting, like, based on all the variables like you digest, how to feature engineering from the promises you receive, including like the crunch book or the pitch, book summary, or the board, or whatsoever the speeches, etc, then what's your model of predicting? How much risk it means? Yeah, good question.
+
+Unknown Speaker  20:51  
+So I'm not at the level of prediction, but what I'm doing is comparing the software and hardware. Okay, and this stands for the reconfiguration cost. Hardware has higher read configuration cost, so we have the vague promise. Doesn't help there. That's the hypothesis, and I am doing the regression using this and this term and this term is what matters, because this is the interaction between the vagueness score and the hardware. So like we predict some like negative, like I make of prediction, and this is the preliminary result is this is related to what we predicted, the normalized early funding. As the vagueness increases, both industry decreases because it gives low information, in other words, low specificity venture profile or their promise. It's not informative for venture capitals because you don't you want to somehow, given this is fail or succeed. Like, what is the what is the probability for them to pass this milestone or not? Like that's the definition of specificity, false, false, false positive. Okay, so my point is, this is as expected. But what was surprising was both software and hardware has a negative slope. So I was predicting software to be positive, meaning, oh, because their culture is very flexible and they can pivot a lot, so the vague you are, somehow the success long term would increase, but that wasn't the case. But another explanation is here, hardware has a hot like more negative compared to the software, so that shows at least the reconfiguration cost based reasoning is correct, or at least not rejected.
+
+Unknown Speaker  23:15  
+Perhaps software development is very costly too. I think you better define what I mean. The CEOs are the product managers need to define what products, software, products, you are making. So from business perspective, we appreciate the ideas being concrete and specific,
+
+Unknown Speaker  23:41  
+but there is some degree of specificness, meaning, like, you can be super specific I'm targeting, like, let's say I'm making a advertisement, but I can say, Oh, I'm targeting from 30 to 40 year woman who is in Boston and like these specifically can go forever compared to I can just target those who live in Boston, right? There is some benefit in just scoping as a Boston, because you can test then switch. So that's, I don't think it would be more specific, the better you know what I mean,
+
+Unknown Speaker  24:20  
+right? If you categorize your customer base and segregate segregates, yeah, to provide products, that's easier for me to understand. There's a range, but when you talk about the startups promises to their investors, we wanted the certain level of specific, specific activity, yeah, to understand, to have a confidence that the team really knows what they're doing, yeah, yeah, yeah. Because many, many times, if the team only delivers a very big ideas, which means mostly, most of the time they which means, like, they don't know what they're doing, yeah, yeah, yeah. I agree with that. So they're still, like experimenting and trying and they're not sure. You must give me certain level of confidence, like these are the set of parameters, and you are pretty sure. Then this is the categories when you're experimenting, exploring, if there's a huge market opportunity over there, let's so I can bear with you for not being very specific. Given the size or the mover, there's no industry data to support, to validate,
+
+Unknown Speaker  25:58  
+yeah, the new user, it is the last specific you become because you don't know much. Yeah, yes, yeah. I wonder what Uber's promise was. I think it would be very vague, like platform, solution, ecosystem. Those are very abstract keywords, and so this two are main component of the vagueness when I compute them, but level 495, the specific numbers by which time
+
+Unknown Speaker  26:27  
+those are okay, okay, that's cool. And also like this type of promises related to the incentive plan set up if you're very specific about idea, yeah, your incentive will be performance. Incentive will be tied up to that goal.
+
+Unknown Speaker  26:48  
+Exactly, yeah, and it's like, what people say they're gonna do, they end up focusing on that,
+
+Unknown Speaker  26:57  
+right? And that lowers your exploration Exactly, right. You're paying a cost of not, yeah, taking enough risks.
+
+Unknown Speaker  27:05  
+Yeah? It's like your children saying, Oh, I'm gonna be a doctor, right?
+
+Unknown Speaker  27:09  
+Yeah, in the media and a bunch of hundreds of other opportunities.
+
+Unknown Speaker  27:13  
+Yeah, that's the kind of, the core motivation for my research, meaning, I want to give more kind of exploration opportunity to the founders, because there are a lot of founders who just say they're going to do this to fund their race, and that itself locks them into certain opportunities. Exactly,
+
+Unknown Speaker  27:32  
+yeah, but how to tell a story? Exactly? Yeah, yeah, yeah, to balance, yeah. Why you're doing interested in this research, yeah,
+
+Unknown Speaker  27:42  
+yeah. That's kind of like, yeah, that aside takes two step back, and this is kind of the whole picture I'm looking at. So currently I'm just computing the vagueness score in one dimension, like abstract keyword numbers, but I've been testing this hypothesis. Imagine we can separate the vagueness in terms of customer and the technology and the organization and the competition, like for this, maybe we need some pitch, like the pitch like that data. But imagine we have the data, and do you agree or disagree when I say vague value proposition pays when the customers are very heterogeneous, heterogeneous means like diversified, like in fashion industry compared to the commodity industry, like there are different segments of customers, okay,
+
+Unknown Speaker  28:49  
+you mean more concentrated or more diverse or hold on, hold on. Yeah, that's a good question. I know the word of homogeneous, but thorough genius is the up.
+
+Unknown Speaker  29:04  
+Yeah, I think that's too academic, where I don't like it, but people use it so. But anyway, from the last class, this is what I feel homogeneous, fast food, commodities generate drops basic health care or economy airline seats, whereas more heterogeneous customer preferences is fashion service, luxury goods, entertainment, Education,
+
+Unknown Speaker  29:31  
+okay, yeah, personal preferences matter more.
+
+Unknown Speaker  29:38  
+Okay? I guess let's tackle what's the easiest thing first. I think this is what we chatted last time. Like you mentioned you gave me the idea. Actually, you said what really matters the most is the founder, like their credibility. If Alan must say something you trust. No, I really think that's true. So vague promise, Proposition pays when organization has a credibility. Meaning, there is a recent example, Mira Mura, who just started her new startup from open AI, she doesn't pitch or describe any of her company, but just because she is in there, like everyone is throwing money. So that's one example. So is there anything fishy about this? Okay, one pass second competition. If there are several other, like three or four competitors, then you if I were a founder, I would be a little careful in what we're gonna like focus on. So I don't want my our company direction to be probably information, so that would incentivize me to be a little vague.
+
+Unknown Speaker  31:07  
+So, so yeah, many people think that will help them, but to differentiate. But in reality, I think if people are not open minded, or they don't want to share. It's hard for them to to collaborate with Yeah, it really depends on like you, how strategic you play like you definitely don't want to open up to the public market too soon before you are playing head of the market, for example, to protect yourself, but you have to be like making right decisions who you chose, to be transparent with, because you cannot. You have to convince people to work for you, or commence the capital to work for you, you have to tell them clearly, like, what's your idea? Yeah, yeah. You can be very strategy to choose who you are transparent to. But you cannot just hold on the ideas just only by yourself, like not telling anyone, because, yeah, I mean, the VCs may like a big mouse, and they may go back and invest in my competitors. Wow, if you are the number one, why we bother? Why do we bother to invest in another one? So, yeah,
+
+Unknown Speaker  32:36  
+yeah, I guess the situation here is, um, I appreciate that they choose who you're going to be transparent with what the data we have is like just official pitch book data, so we cannot know the layer of which they reveal their plan. Having said that, I wonder what so let's say in I think there are like two stories, as you mentioned. One is you want to differentiate from other competitors. So you that incentivize you to be specific. You you need to open up to the people you think who may help you to realize this idea. So what Scott always emphasizes as a founder, you don't need to convince every VCs out there. You just need one VCs that resonate with you, like they're willing to pay money. I
+
+Unknown Speaker  33:43  
+many entrepreneurs came to us saying, like, oh, I don't want, I don't want to open up because, you know, they may come. I don't want to talk to any VCs, because the VCs can invest in my competitors and steal my star ideas, etc. For this type of people, I would say, like, they are not that type of entrepreneur who can build a big business. They can probably build a pretty successful business, but not with the investable because they have no instinct to identify like to realize that actually ideas are cheap, so it's more important to, like, how you build up a team working with you, to realize that execution,
+
+Unknown Speaker  34:33  
+yeah, that's very interesting, because, like, one pushback on this vagueness thing is more operational perspective, meaning, if you have a very specific idea, and then you execute it, and you build the operational capability, yeah, of
+
+Unknown Speaker  34:50  
+organization, right? And how you align with your team, right? If you are very big and everybody has 10 ideas from your mind, yeah, ideas from mine, and it will be 100 ideas, right? Yeah, the team can be very messy, like, where we go,
+
+Unknown Speaker  35:05  
+yeah? So, like a cult culture, like forming a culture, it's only possible if you're doing
+
+Unknown Speaker  35:11  
+something right. I will see, like a weakness is the wise choice you made very deliberately. But it doesn't mean like it can the weakness in your mind. In your mind, you need to be very specific about what to do. The weakness in the founders mind will kill the company.
+
+Unknown Speaker  35:33  
+Interesting, yeah, yeah, there are two schools in entrepreneur strategy, which is action school and planning school. Action school is like, just go do something and that something would emerge, yeah, which I think is related to lean startup,
+
+Unknown Speaker  35:50  
+right, right? And also, depending on, like, a which stage after startups you are in, if you are in the exploration period, you can keep yourself open to experiments, new ideas, etc, exploring. But if you are the in the face of a skill up, you better be quite specific about what you're planning to where you're planning to spend your money, and what team you hire. Then what's your KPI? How you incentivize? What's What's the incentives you give to the team at the KPI performance review, etc?
+
+Unknown Speaker  36:25  
+I don't have a good graph photo, but what I have learned in one workshop was about diversity of a team. So here, like, think of diversity of the team members as different options for your customers, right? But the idea is, like, kind of this was, they are saying, if this is diverse, you may an early period. It may take some time because you're exploring different options, but that pays off later right? So when I said vague promise hurts early stage, but helps later stage, I was referring to kind of this, yeah,
+
+Unknown Speaker  37:13  
+could be Yeah, yeah. So like, maybe tackle the first two. Are you ready?
+
+Unknown Speaker  37:30  
+That's been enormously helpful. Thank you. Yeah, the technology side is, like our new it really depends on the stage of how to actually convert the technology to products, right? The technology doesn't naturally come with a real product. But for the product development period, you better be quite specific, because you're putting a lot of resources right, money and buying machines and etc. But for the technology the research period time, maybe some weakness will be pushing you off the limit and off your comfort zones, and keeping question, where do you think, if you're me, what industry would You choose to describe this as examples?
+
+Unknown Speaker  38:21  
+Which industry looking back or looking forward. What do you mean? Like, I felt that our conversation could have been more like, easier if it wanted. I
+
+Unknown Speaker  38:36  
+feel like the quantum computing might be one of this, yeah, because nobody knows. Very few people knows exactly what completely is. Then your stimulate imaginations in people's minds, so they will say, oh my, this formal fear of missing out. Then if I don't put a chip on it, I may be out of the game forever, then before maybe some weakness will help people to gamble. Yeah, the investors because of the formal sentiment, yeah. But if you are saying like, are we building the next EV factory? You at this now? Or you better, like, be very specific, like, the calculation of the output, input and the efficiency,
+
+Unknown Speaker  39:35  
+yeah. So if I were doing EV, I would go back to 2008 or that era where there aren't any dominant architecture, exactly. So I need to capture a period like that, right, right? But I'm curious, are you aware of any vertical within transportation that has gone through that competition? The only thing I knew a little bit about transportation is, Ev, yeah. Started from like a 10 years ago. Nobody believed in this, or the competing architectures there,
+
+Unknown Speaker  40:15  
+plugging or not plugging. It was a big debate, and how to because not plugging meaning you need a dual engine, so you need the gas, gasoline as well. I noticed that you're expert in this field. Plugging means the EVS can be the single, singular system, right? And other things like how to manage the batteries. You can be like building a big battery block, or you build a small cells and then put them together into how to see that blocks, small blocks. It's like a building, Legos, yeah, the battery, how to how the battery will look like other things like auto driving is very, very Oh, the battery itself is like the material sciences, how this plays role. You go, it's impossible for me to pronounce that English, but the Chinese has got different technology methodologies of seeing that the efficiency, the trade off between safety and efficiency for battery materials got it. Yeah. So those are the discussions of also the auto driving, like you put all the radar and the LIDAR on top of other car bodies, and will be very, super costly. Oh, different versus wider, right? Yeah, lighter This is, yeah, yeah, it's still debating, right? Yeah, Tesla is mission, way more is a lighter, yeah, still debate, right? So a lot of debate. Like,
+
+Unknown Speaker  42:10  
+so, I guess it would be amazing if this is a technology domain, and does this affect some customer segments as well, meaning, like, let's say urban versus rural.
+
+Unknown Speaker  42:25  
+I would say if you go with LiDAR, LIDAR means it will be super, super costly, given the hardware expenses. If you go with vision, is the compute that really matters, but not much on hardware, meaning, like, if you go with vision, probably us can buy affordable Tesla, for example. I'm driving FSD now, oh, wow, yeah. And if you go with Neda, and there's a bit of still not a customer car is you have to run a different model, either be like a subsidized by Google forever, or it could be like you have to be running the car 24 hours a day to make a profit. But a regular customer passenger car cannot be 24 hours, right? So if the So, the people are not willing to pay for expensive equipment, etc, so these type of investments and cost are segregating them to different customer markets.
+
+Unknown Speaker  43:33  
+So there are more like mass markets versus Lidar is more who are their main customer segments, LiDAR, taxis, so that's a
+
+Unknown Speaker  43:43  
+Google running taxes, right? So vimo is you have to, for example, the your breakthrough break even hours, like 12 hours a day to run the car, to pay off the sun cost, the fixed cost you put in the car you run 12 hours, for example? Yeah, that's why that. That's why this type of cars cannot be a passenger car, passengers, like own, like we only drive like, hopefully just one hour a day, otherwise, we'll be kidding us, right? But you cannot make your service
+
+Unknown Speaker  44:21  
+versus private ownership. This is super, super, super valuable. Thank you. I don't know how that relates to your paper, but it's just my intuitive situation, yeah, because I have to find some area where customer and technology entangles, yeah, yeah. Because you have data in this, it's
+
+Unknown Speaker  44:45  
+still debating, right? Where's Tesla going? And, like, how much Tesla is worse? Like, should I buy more? It's a 300 today. 300 ID.
+
+Unknown Speaker  44:56  
+If you were me, would you choose EV for like, this type of questions, or AV, maybe you mean, okay, I will ask this question again after I explain the AVR. Or maybe, what do you mean? Like, what I mean by that is, I need to find the data among, like, 1 million. Okay, more specific on one article. Yeah. My recitation started, yeah. I'll wrap now. So I want to have some domain knowledge, but given the lack of time, I just want to focus on one, like EV versus AV. AV, what? That's me, autonomous vehicle in EV is electric. Oh, see, like, EV makes EV auto drive a much easier. Oh, no. I guess my question is, should I, like, filter out the data, I mean the companies, they're specific in electric vehicle space, or, like, autonomous vehicle space,
+
+Unknown Speaker  46:02  
+if you ask me, I think the auto driving space is more interesting. Interesting, yeah, the EV is like, No, it's all materials and manufacturing. The EV is valuable because their design structure made the auto driving achievable, possible if you drive a gas car, because it's so complicated, the brakes and how to transmission system, etc, will make the auto driving system much, much more complex. Got it like, Are there any
+
+Unknown Speaker  46:37  
+hardware components or light there is a hardware components in AV, right? Yeah, is there any like different architecture within LIDAR as well,
+
+Unknown Speaker  46:45  
+or a lot? So neither it comes a reader, so it's sorry, I learned all the terminology in Chinese, but you can do Chinese next, all times, chatgpt can help us all kinds of different types of equipment to help you. Some radar can see very far, but some can see in very bad weather, like raining or, yes, yeah, it's a lidar is a kind of a system of it's multiple, multiple, multiple I see.
+
+Unknown Speaker  47:35  
+So perhaps I can be more specific about, like, pivoting costs there, right, right. Like, imagine you're a founder and first committed into type a lidar, but now the trend has turned into type B LiDAR, so you have to change the line, line switching cost, and that's what I mean by reconfiguration
+
+Unknown Speaker  47:58  
+cost. Yeah, it will be very expensive. Like the f you can you can compare, like the vision part is basically a software so that echoes your ideas about hardware and software. You're my hero.
+
+Unknown Speaker  48:15  
+Yes. Oh, thank you so much. Okay, I'm really sure this saved me, like 100 hours, so happy. Thank you.
+
+Unknown Speaker  48:37  
+No worries. Here. Search
+
+Unknown Speaker  48:45  
+curiosity. What does FSD
+
+Unknown Speaker  48:57  
+stand for full self driving? Yes, no, it's called supervised FSD. Now it's still requiring supervision, but you say, if you go with patient, the beauty of that is you don't have to upgrade your hardware. It just keeps Oh, yeah, so you build a as long as your build your hardware with sufficient how to say that sufficient computation power capability, the platform runs the newest FSD programs very easily, so meaning You buy, for example, you don't expect people to buy upgrade their cars every two or three years, but my FSD software kept updating like two or three times a year platform. So so as as a business strategy like you, definitely prefer the software. Part of this, because you sell the car, they are good for adapting to the newest software for the next three or five years. Then they don't have to pay again, yeah. Then you can keep selling them the greatest, the newest software, but with ladder, wow. Okay, you have to drive that back to the chance that the chips that the setup, yeah, costs,
+
+Unknown Speaker  50:25  
+because my advisor is manufacturing person, okay, so, like, we want to invent creative ways for hardware manufacture or hardware companies to behave like software, right, modularity and more flexibility, right? Because we don't. We don't want funding to, like, look like several million, but we want to somehow more look like this. How to make it more testable in multi stage financing. But I don't know, like, what are some ways to do that, but the example you just gave, like, some auto upgrade, I have to think more.
+
+Unknown Speaker  51:04  
+Yeah, is people losing money for Google or adding value? So I don't know if you have conclusions. Tell me tag
+
+Unknown Speaker  51:20  
+along with you? Thanks for the candy so much.
+
+Unknown Speaker  51:32  
+I always feel like, oh, enlighten, oh. This
+
+Unknown Speaker  51:53  
+semester, no, summer, it's very efficient. You know, where I can, like, ride the autonomous car. I think that will make me more excited about this topic.
+
+Unknown Speaker  52:08  
+Oh, really, yeah, I Well, my husband is driving that car now, but let's see. Are
+
+jay barney  52:20  
+it.
+
+Unknown Speaker  52:22  
+Are you enjoying the service like autonomous driving? I only saw it in YouTube. You need to get used to it like probably you're such a young driver, so I drove before the GPS came. I
+
+Unknown Speaker  52:47  
+There were
+
+Unknown Speaker  53:02  
+a lot of slow fellows in this room. 250 Yes,
+
+Unknown Speaker  53:14  
+once you got used to drive without the GPS, when the GPS first came, you kept fighting with the GPS. Why are you making me attend?
+
+isabella  53:24  
+It's not the way
+
+Unknown Speaker  53:25  
+I'm going. Like, but after a while, you feel like you're so dependent on GPS. FSD is a similar experience, like, because we have been driving for 20 years. Then I felt like I was scared. Right? The wheel is moving yourself, like, what if it doesn't stop, breaker, stop, because, stop, etc, somebody like this. Oh my gosh. It's
+
+Unknown Speaker  53:49  
+the best invention of the world. Okay, yeah, experience again. Thank you so much. Thank you. What?
+
+Transcribed by https://otter.ai

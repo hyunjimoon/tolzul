@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="1600" fill="url(#bgGrad)"/>
+  
+  <!-- Header (Simplified) -->
+  <rect x="60" y="40" width="1080" height="140" fill="none" stroke="#f97316" stroke-width="2" rx="4"/>
+  <text x="100" y="95" font-family="Georgia, serif" font-size="42" fill="#fff" font-weight="bold">Ghemawat91</text>
+  <text x="100" y="135" font-family="Georgia, serif" font-size="24" fill="#94a3b8">Commitment: The Dynamic of Strategy</text>
+  <text x="980" y="100" font-size="56">🐅🐙</text>
+  
+  <!-- QUADRANT 1: 기 - Gospel vs Paradox (X→Y) -->
+  <rect x="60" y="210" width="530" height="280" fill="#1e293b" rx="8"/>
+  <text x="80" y="255" font-family="Georgia, serif" font-size="28" fill="#f97316">🐢 기(起): X → Y</text>
+  
+  <rect x="80" y="280" width="490" height="180" fill="#0f172a" rx="4"/>
+  <text x="100" y="315" font-family="monospace" font-size="16" fill="#22d3ee">X: "Success factors = sustained advantage"</text>
+  <text x="270" y="360" font-family="Georgia, serif" font-size="32" fill="#f97316">↓</text>
+  <text x="100" y="405" font-family="monospace" font-size="16" fill="#ef4444">Y: "They're static, ignore path dependence"</text>
+  <text x="100" y="445" font-family="Georgia, serif" font-size="15" fill="#64748b" font-style="italic">"Why does history matter for strategy?"</text>
+  
+  <!-- QUADRANT 2: 승 - Three-Layer Architecture (Z) -->
+  <rect x="610" y="210" width="530" height="280" fill="#1e293b" rx="8"/>
+  <text x="630" y="255" font-family="Georgia, serif" font-size="28" fill="#f97316">🐅 승(承): Z = Three Layers</text>
+  
+  <!-- Stacked layers -->
+  <rect x="630" y="280" width="490" height="55" fill="#0f172a" rx="4"/>
+  <text x="650" y="315" font-family="monospace" font-size="16" fill="#22d3ee">POSITIONING</text>
+  <text x="850" y="315" font-family="Georgia, serif" font-size="14" fill="#94a3b8">Static value creation</text>
+  
+  <rect x="630" y="345" width="490" height="55" fill="#0f172a" rx="4"/>
+  <text x="650" y="380" font-family="monospace" font-size="16" fill="#a855f7">SUSTAINABILITY</text>
+  <text x="870" y="380" font-family="Georgia, serif" font-size="14" fill="#94a3b8">Defend vs rivals</text>
+  
+  <rect x="630" y="410" width="490" height="55" fill="#0f172a" stroke="#22c55e" stroke-width="2" rx="4"/>
+  <text x="650" y="445" font-family="monospace" font-size="16" fill="#22c55e">FLEXIBILITY</text>
+  <text x="850" y="445" font-family="Georgia, serif" font-size="14" fill="#94a3b8">Revision possibilities</text>
+  
+  <!-- QUADRANT 3: 전 - Core Formula -->
+  <rect x="60" y="510" width="530" height="280" fill="#1e293b" rx="8"/>
+  <text x="80" y="555" font-family="Georgia, serif" font-size="28" fill="#f97316">🐙 전(轉): Commitment = Constraint</text>
+  
+  <!-- Central formula -->
+  <rect x="80" y="580" width="490" height="180" fill="#0f172a" stroke="#22c55e" stroke-width="2" rx="8"/>
+  <text x="150" y="640" font-family="monospace" font-size="24" fill="#22c55e">Flexibility Value =</text>
+  <text x="150" y="685" font-family="monospace" font-size="28" fill="#fff">f(Irreversibility, Ambiguity)</text>
+  <text x="150" y="735" font-family="Georgia, serif" font-size="16" fill="#94a3b8">Lock-in + Lock-out + Lags + Inertia → AOC</text>
+  
+  <!-- QUADRANT 4: 결 - YOUR THESIS (HERO) -->
+  <rect x="610" y="510" width="530" height="280" fill="#1e293b" rx="8"/>
+  <text x="630" y="555" font-family="Georgia, serif" font-size="28" fill="#f97316">👾 결(結): X' = Your Thesis</text>
+  
+  <!-- HERO FORMULA -->
+  <rect x="630" y="580" width="490" height="180" fill="#0f172a" stroke="#f97316" stroke-width="3" rx="8"/>
+  <text x="720" y="640" font-family="monospace" font-size="32" fill="#f97316" font-weight="bold">k* = F⁻¹(CR)</text>
+  <text x="660" y="690" font-family="Georgia, serif" font-size="18" fill="#fff">Capital as OPTIONS vs Capital as CONCRETE</text>
+  <text x="660" y="730" font-family="Georgia, serif" font-size="14" fill="#94a3b8">Analysts (Type I) ↔ Believers (Type II)</text>
+  
+  <!-- BOTTOM: Key Insight (Single band) -->
+  <rect x="60" y="820" width="1080" height="120" fill="#0f172a" stroke="#f97316" stroke-width="2" rx="8"/>
+  <text x="100" y="865" font-family="Georgia, serif" font-size="22" fill="#f97316" font-weight="bold">Core Insight</text>
+  <text x="100" y="905" font-family="Georgia, serif" font-size="18" fill="#fff">"If investment were reversible, firms could ignore the long term;</text>
+  <text x="100" y="930" font-family="Georgia, serif" font-size="18" fill="#fff">with irreversibility, they must look deeply into the future."</text>
+  
+  <!-- Thesis Connection Table -->
+  <rect x="60" y="970" width="1080" height="200" fill="#1e293b" rx="8"/>
+  <text x="80" y="1010" font-family="Georgia, serif" font-size="22" fill="#f97316">🎯 Direct Thesis Mapping</text>
+  
+  <!-- Table headers -->
+  <text x="100" y="1050" font-family="monospace" font-size="14" fill="#64748b">GHEMAWAT91</text>
+  <text x="450" y="1050" font-family="monospace" font-size="14" fill="#64748b">YOUR MODULE</text>
+  <text x="800" y="1050" font-family="monospace" font-size="14" fill="#64748b">FORMULA</text>
+  
+  <!-- Row 1 -->
+  <text x="100" y="1085" font-family="Georgia, serif" font-size="16" fill="#fff">Flexibility Value</text>
+  <text x="450" y="1085" font-family="Georgia, serif" font-size="16" fill="#22c55e">🤹N FOMO Dilemma</text>
+  <text x="800" y="1085" font-family="monospace" font-size="16" fill="#fff">k* = F⁻¹(CR)</text>
+  
+  <!-- Row 2 -->
+  <text x="100" y="1120" font-family="Georgia, serif" font-size="16" fill="#fff">Type I/II Orgs</text>
+  <text x="450" y="1120" font-family="Georgia, serif" font-size="16" fill="#a855f7">Analyst vs Believer</text>
+  <text x="800" y="1120" font-family="monospace" font-size="16" fill="#fff">Omission ↔ Commission</text>
+  
+  <!-- Row 3 -->
+  <text x="100" y="1155" font-family="Georgia, serif" font-size="16" fill="#fff">Sticky Assets (AOC)</text>
+  <text x="450" y="1155" font-family="Georgia, serif" font-size="16" fill="#ef4444">🦾C Commitment Trap</text>
+  <text x="800" y="1155" font-family="monospace" font-size="16" fill="#fff">θ* = μ + kσ</text>
+  
+  <!-- Must Read (Compact) -->
+  <rect x="60" y="1200" width="530" height="100" fill="#1e293b" rx="8"/>
+  <text x="80" y="1235" font-family="Georgia, serif" font-size="18" fill="#f97316">📚 Priority Reading</text>
+  <text x="80" y="1265" font-family="Georgia, serif" font-size="14" fill="#fff">1. Ch.2 Commitment → Core definition, AOC</text>
+  <text x="80" y="1290" font-family="Georgia, serif" font-size="14" fill="#fff">2. Ch.6 Flexibility → Real options, k* logic</text>
+  
+  <!-- Key Connection (Compact) -->
+  <rect x="610" y="1200" width="530" height="100" fill="#1e293b" rx="8"/>
+  <text x="630" y="1235" font-family="Georgia, serif" font-size="18" fill="#f97316">💡 For Your Paper</text>
+  <text x="630" y="1265" font-family="Georgia, serif" font-size="14" fill="#fff">"Bad news is better than no news" = Strategic</text>
+  <text x="630" y="1290" font-family="Georgia, serif" font-size="14" fill="#fff">ambiguity creates INFORMATION VALUE</text>
+  
+  <!-- Footer -->
+  <text x="60" y="1340" font-family="monospace" font-size="12" fill="#475569">📜ghemawat_commitment_the_dynamic_of_strategy | 전라좌수군 🐅권준 🐙김완</text>
+</svg>

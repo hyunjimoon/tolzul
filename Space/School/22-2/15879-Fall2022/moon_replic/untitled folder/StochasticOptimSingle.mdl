@@ -1,0 +1,372 @@
+{UTF-8}
+FirstRatioOptim= INITIAL(
+	CoefFirst/(CoefFirst+CoefZerro))
+	~	dmnl
+	~		|
+
+Average Capability Life=
+	6
+	~	Month
+	~		|
+
+iid Noise IN=
+	RANDOM NORMAL(-1e+06, 1e+06, 0, Adoption Noise Standard Deviation s
+	, NoiseSeed ns)
+	~	dmnl
+	~	The iid noise stream that drives the autocorrelated adoption noise.
+	|
+
+Capability Under Development= INTEG (
+	+Capability Investment-Capability Developed,
+		FirstRatioOptim*Total Resources*Capability Building Time)
+	~	Unit
+	~		|
+
+Capability= INTEG (
+	Capability Developed-Capability Erosion,
+		Total Resources*FirstRatioOptim*Average Capability Life)
+	~	Unit
+	~		|
+
+Capability Building Resource= GAME (
+	Total Resources*FractionAllocated)
+	~	Unit/Month
+	~		|
+
+Cost of Resources=
+	Total Resources*Unit Cost of Resource
+	~	Unit/Month
+	~		|
+
+Capability Developed=
+	Capability Under Development/Capability Building Time
+	~	Unit/Month
+	~		|
+
+Capability Erosion=
+	Capability/Average Capability Life
+	~	Unit/Month
+	~		|
+
+Capability Investment=
+	Max(Capability Building Resource*Productivity of Capability Building,Min Capability Recovery\
+		)
+	~	Unit/Month
+	~		|
+
+Production Noise AN= INTEG (
+	(((w*iid Noise IN+(1-w)*Production Noise AN)/sqrt(w^2+(1-w)^2))-Production Noise AN)\
+		/TIME STEP,
+		iid Noise IN)
+	~	dmnl
+	~	The first-order auto-correlated noise is generated used iid normal random \
+		numbers with the desired standard deviation.
+	|
+
+CoefFirst=
+	0.7
+	~	dmnl
+	~		|
+
+CoefZerro=
+	0.3
+	~	dmnl
+	~		|
+
+Unit Cost of Resource=
+	BaseCost*(Total Resources/BaseCap)^2
+	~	dmnl
+	~		|
+
+Performance=
+	Production-Cost of Resources
+	~	Unit/Month
+	~		|
+
+Production=
+	(Capability^CoefFirst)*(Production Effort^CoefZerro)/(Average Capability Life^CoefFirst\
+		)*(1+Production Noise AN)
+	~	Unit/Month
+	~		|
+
+Production Effort=
+	Total Resources-Capability Building Resource
+	~	Unit/Month
+	~		|
+
+Adoption Noise Standard Deviation s=
+	0.1
+	~	dmnl
+	~	The standard deviation of the random noise impacting the adoption rate.
+	|
+
+Itr:
+	i1
+	~	
+	~		|
+
+NoiseSeed ns=
+	5
+	~	dmnl [0,10,1]
+	~	The parameter specifying the pseudo-random number stream that impacts \
+		adoption.
+	|
+
+Productivity of Capability Building=
+	1
+	~	dmnl
+	~		|
+
+w=
+	TIME STEP/Noise Half Life f
+	~	dmnl
+	~		|
+
+Noise Half Life f=
+	0.5
+	~	Year
+	~	This parameter specifies the time constant for autocorrelation in the \
+		adoption noise.
+	|
+
+BaseCap=
+	200
+	~	Unit/Month
+	~		|
+
+BaseCost=
+	0.05
+	~	dmnl
+	~		|
+
+Capability Building Time=
+	3
+	~	Month
+	~		|
+
+Min Capability Recovery=
+	30
+	~	Unit/Month
+	~		|
+
+FractionAllocated=
+	0.2
+	~	dmnl [0,1]
+	~		|
+
+Total Resources=
+	100
+	~	Unit/Month [0,2000]
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 100
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.25
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Arial|10||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Production,593,285,39,9,8,3,0,0,0,0,0,0
+10,2,Capability,469,196,40,20,3,3,0,0,0,0,0,0
+10,3,Production Effort,629,460,48,9,8,3,0,0,0,0,0,0
+10,4,Capability Building Resource,388,433,46,9,8,3,0,0,0,0,0,0
+10,5,Average Capability Life,584,107,43,16,8,3,0,0,0,0,0,0
+10,6,Productivity of Capability Building,164,353,57,16,8,3,0,0,0,0,0,0
+10,7,Total Resources,536,537,56,9,8,3,0,0,0,0,0,0
+10,8,CoefZerro,732,247,30,9,8,3,0,0,0,0,0,0
+10,9,CoefFirst,780,282,28,9,8,3,0,0,0,0,0,0
+1,10,8,1,0,0,0,0,0,64,0,-1--1--1,,1|(670,263)|
+1,11,9,1,0,0,0,0,0,64,0,-1--1--1,,1|(699,282)|
+1,12,3,1,1,0,0,0,0,64,0,-1--1--1,,1|(634,362)|
+1,13,2,1,1,0,0,0,0,64,0,-1--1--1,,1|(514,253)|
+12,14,48,135,187,10,8,0,3,0,0,-1,0,0,0
+1,15,17,29,4,0,0,22,0,0,0,-1--1--1,,1|(233,193)|
+1,16,17,14,100,0,0,22,0,0,0,-1--1--1,,1|(166,193)|
+11,17,48,194,193,6,8,34,3,0,0,1,0,0,0
+10,18,Capability Investment,194,217,33,16,40,3,0,0,-1,0,0,0
+12,19,48,618,199,10,8,0,3,0,0,-1,0,0,0
+1,20,22,19,4,0,0,22,0,0,0,-1--1--1,,1|(593,199)|
+1,21,22,2,100,0,0,22,0,0,0,-1--1--1,,1|(537,199)|
+11,22,48,572,199,6,8,34,3,0,0,1,0,0,0
+10,23,Capability Erosion,572,216,55,9,40,3,0,0,-1,0,0,0
+1,24,4,18,1,0,0,0,0,64,0,-1--1--1,,1|(243,374)|
+1,25,6,18,1,0,0,0,0,64,0,-1--1--1,,1|(168,300)|
+1,26,7,3,0,0,0,0,0,64,0,-1--1--1,,1|(576,502)|
+1,27,7,4,0,0,0,0,0,64,0,-1--1--1,,1|(467,488)|
+1,28,5,22,1,0,0,0,0,64,0,-1--1--1,,1|(588,160)|
+10,29,Capability Under Development,306,195,40,20,3,3,0,0,0,0,0,0
+1,30,32,2,4,0,0,22,0,0,0,-1--1--1,,1|(411,195)|
+1,31,32,29,100,0,0,22,0,0,0,-1--1--1,,1|(363,195)|
+11,32,300,387,195,6,8,34,3,0,0,1,0,0,0
+10,33,Capability Developed,387,219,32,16,40,3,0,0,-1,0,0,0
+1,34,2,22,1,0,0,0,0,64,0,-1--1--1,,1|(526,162)|
+10,35,Capability Building Time,335,101,42,16,8,3,0,0,0,0,0,0
+1,36,35,32,1,0,0,0,0,64,0,-1--1--1,,1|(369,141)|
+1,37,29,32,1,0,0,0,0,64,0,-1--1--1,,1|(351,157)|
+1,38,5,1,1,0,0,0,0,64,0,-1--1--1,,1|(647,176)|
+10,39,FirstRatioOptim,532,383,48,9,8,3,0,0,-1,0,0,0
+1,40,4,3,0,0,0,0,0,64,0,-1--1--1,,1|(500,445)|
+1,41,39,4,0,0,0,0,0,64,0,-1--1--1,,1|(466,405)|
+10,42,FractionAllocated,302,522,53,9,8,3,0,0,-1,0,0,0
+1,43,42,4,0,0,0,0,0,64,0,-1--1--1,,1|(339,482)|
+12,44,0,936,662,220,193,3,188,0,0,1,0,0,0
+Performance
+1,45,5,2,0,0,0,0,0,64,1,-1--1--1,,1|(534,145)|
+1,46,39,2,0,0,0,0,0,64,1,-1--1--1,,1|(504,301)|
+1,47,7,2,0,0,0,0,0,64,1,-1--1--1,,1|(504,378)|
+1,48,35,29,0,0,0,0,0,64,1,-1--1--1,,1|(323,139)|
+1,49,39,29,0,0,0,0,0,64,1,-1--1--1,,1|(431,298)|
+1,50,7,29,0,0,0,0,0,64,1,-1--1--1,,1|(428,377)|
+1,51,9,39,0,0,0,0,0,64,1,-1--1--1,,1|(662,329)|
+1,52,8,39,0,0,0,0,0,64,1,-1--1--1,,1|(637,311)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 2
+$192-192-192,0,Arial|10||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Production,591,320,33,9,8,3,0,0,0,0,0,0
+10,2,Capability,412,239,40,20,3,3,0,0,0,0,0,0
+10,3,Production Effort,476,374,50,9,8,3,0,0,0,0,0,0
+10,4,Capability Building Resource,268,374,57,16,8,3,0,0,0,0,0,0
+10,5,Average Capability Life,594,200,43,16,8,3,0,0,0,0,0,0
+10,6,Productivity of Capability Building,107,396,57,16,8,3,0,0,0,0,0,0
+10,7,Total Resources,391,462,53,9,8,3,0,18,0,0,0,0,0-0-0,0-0-0,|10|B|0-128-0
+10,8,CoefZerro,675,290,30,9,8,3,0,0,0,0,0,0
+10,9,CoefFirst,725,310,28,9,8,3,0,0,0,0,0,0
+1,10,8,1,0,0,0,0,0,64,0,-1--1--1,,1|(638,303)|
+1,11,9,1,0,0,0,0,0,64,0,-1--1--1,,1|(666,314)|
+1,12,3,1,1,0,0,0,0,64,0,-1--1--1,,1|(543,358)|
+1,13,2,1,1,0,0,0,0,64,0,-1--1--1,,1|(480,306)|
+12,14,48,78,230,8,6,0,3,0,0,-1,0,0,0
+1,15,17,29,4,0,0,22,0,0,0,-1--1--1,,1|(177,236)|
+1,16,17,14,100,0,0,22,0,0,0,-1--1--1,,1|(109,236)|
+11,17,48,138,236,6,8,34,3,0,0,1,0,0,0
+10,18,Capability Investment,138,260,33,16,40,3,0,0,-1,0,0,0
+12,19,48,562,242,8,6,0,3,0,0,-1,0,0,0
+1,20,22,19,4,0,0,22,0,0,0,-1--1--1,,1|(538,242)|
+1,21,22,2,100,0,0,22,0,0,0,-1--1--1,,1|(480,242)|
+11,22,48,515,242,6,8,34,3,0,0,1,0,0,0
+10,23,Capability Erosion,515,259,55,9,40,3,0,0,-1,0,0,0
+1,24,4,18,1,0,0,0,0,64,0,-1--1--1,,1|(190,336)|
+1,25,6,18,1,0,0,0,0,64,0,-1--1--1,,1|(111,343)|
+1,26,7,3,0,0,0,0,0,64,0,-1--1--1,,1|(429,422)|
+1,27,7,4,0,0,0,0,0,64,0,-1--1--1,,1|(339,424)|
+1,28,5,22,1,0,0,0,0,64,0,-1--1--1,,1|(554,232)|
+10,29,Capability Under Development,250,238,40,20,3,3,0,0,0,0,0,0
+1,30,32,2,4,0,0,22,0,0,0,-1--1--1,,1|(354,238)|
+1,31,32,29,100,0,0,22,0,0,0,-1--1--1,,1|(306,238)|
+11,32,300,330,238,6,8,34,3,0,0,1,0,0,0
+10,33,Capability Developed,330,262,32,16,40,3,0,0,-1,0,0,0
+1,34,2,22,1,0,0,0,0,64,0,-1--1--1,,1|(467,212)|
+10,35,Capability Building Time,278,144,42,16,8,3,0,0,0,0,0,0
+1,36,35,32,1,0,0,0,0,64,0,-1--1--1,,1|(312,184)|
+1,37,29,32,1,0,0,0,0,64,0,-1--1--1,,1|(294,200)|
+1,38,5,1,1,0,0,0,0,64,0,-1--1--1,,1|(619,250)|
+10,39,FirstRatioOptim,80,490,48,9,8,3,0,0,-1,0,0,0
+1,40,4,3,0,0,0,0,0,64,0,-1--1--1,,1|(370,374)|
+10,41,FractionAllocated,250,502,58,9,8,3,0,18,-1,0,0,0,0-0-0,0-0-0,|10|B|0-128-0
+1,42,41,4,0,0,0,0,0,64,0,-1--1--1,,1|(257,446)|
+1,43,5,2,0,0,0,0,0,64,1,-1--1--1,,1|(506,218)|
+1,44,39,2,0,0,0,0,0,64,1,-1--1--1,,1|(233,374)|
+1,45,7,2,0,0,0,0,0,64,1,-1--1--1,,1|(400,361)|
+1,46,35,29,0,0,0,0,0,64,1,-1--1--1,,1|(266,183)|
+1,47,39,29,0,0,0,0,0,64,1,-1--1--1,,1|(158,374)|
+1,48,7,29,0,0,0,0,0,64,1,-1--1--1,,1|(326,360)|
+1,49,9,39,0,0,0,0,0,64,1,-1--1--1,,1|(409,398)|
+1,50,8,39,0,0,0,0,0,64,1,-1--1--1,,1|(382,388)|
+10,51,Min Capability Recovery,120,138,44,16,8,3,0,0,0,0,0,0
+1,52,51,17,1,0,0,0,0,64,0,-1--1--1,,1|(112,194)|
+12,53,0,799,712,284,167,3,188,0,0,1,0,0,0
+Performance
+10,54,FINAL TIME,874,278,45,9,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|10||128-128-128
+10,55,Time,947,383,24,9,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|10||128-128-128
+10,56,TIME STEP,978,334,44,9,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|10||128-128-128
+10,57,Performance,723,355,43,9,8,3,0,16,0,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+10,58,Cost of Resources,716,478,56,9,8,3,0,0,0,0,0,0
+10,59,Unit Cost of Resource,604,434,36,16,8,3,0,0,0,0,0,0
+1,60,59,58,1,0,0,0,0,64,0,-1--1--1,,1|(662,452)|
+1,61,58,57,1,0,0,0,0,64,0,-1--1--1,,1|(725,383)|
+1,62,1,57,1,0,0,0,0,64,0,-1--1--1,,1|(648,340)|
+10,63,BaseCap,599,486,29,9,8,3,0,0,-1,0,0,0
+1,64,63,59,0,0,0,0,0,64,0,-1--1--1,,1|(600,468)|
+10,65,BaseCost,529,468,31,9,8,3,0,0,-1,0,0,0
+1,66,65,59,0,0,0,0,0,64,0,-1--1--1,,1|(553,456)|
+1,67,7,59,1,0,0,0,0,64,0,-1--1--1,,1|(536,435)|
+1,68,7,58,1,0,0,0,0,64,0,-1--1--1,,1|(508,506)|
+10,69,Adoption Noise Standard Deviation s,788,106,62,14,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-128-0
+1,70,69,78,1,0,0,0,0,64,0,-1--1--1,,1|(806,130)|
+10,71,NoiseSeed ns,898,142,42,8,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-128-0
+1,72,71,78,1,0,0,0,0,64,0,-1--1--1,,1|(863,177)|
+10,73,Production Noise AN,712,195,40,20,3,3,0,0,0,0,0,0
+10,74,w,650,154,6,8,8,3,0,0,0,0,0,0
+1,75,74,73,0,0,0,0,0,64,0,-1--1--1,,1|(663,163)|
+10,76,Noise Half Life f,586,113,46,8,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12|B|0-128-0
+1,77,76,74,1,0,0,0,0,64,0,-1--1--1,,1|(623,134)|
+10,78,iid Noise IN,852,196,34,8,8,3,0,0,0,0,0,0
+1,79,78,73,0,0,0,0,0,64,0,-1--1--1,,1|(790,195)|
+10,80,TIME STEP,698,94,42,8,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|10||128-128-128
+1,81,80,74,0,0,0,0,0,64,0,-1--1--1,,1|(677,119)|
+1,82,80,73,0,0,0,0,0,64,0,-1--1--1,,1|(702,133)|
+1,83,73,1,1,0,0,0,0,64,0,-1--1--1,,1|(657,265)|
+///---\\\
+:GRAPH Performance
+:TITLE Performance
+:SCALE
+:VAR Performance
+:L<%^E!@
+1:Current1.vdf
+9:Current1
+22:$,Dollar,Dollars,$s
+22:Hour,Hours
+22:Month,Months
+22:Person,People,Persons
+22:Unit,Units
+22:Week,Weeks
+22:Year,Years
+22:Day,Days
+11:OptimExampleStoch.voc
+12:OptimExample.vpd
+17:OptimStoch.lst
+18:StochasticOptimSingle.vsc
+20:OptimStoch.lst
+15:0,0,0,0,0,0
+19:100,1
+27:2,
+34:0,
+4:Time
+5:Performance
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+42:0
+24:0
+25:100
+26:0
+6:i1

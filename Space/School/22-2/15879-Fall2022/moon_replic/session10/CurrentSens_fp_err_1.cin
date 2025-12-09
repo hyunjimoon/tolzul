@@ -1,0 +1,12 @@
+Estimated p1 = 1
+Estimated p2 = 1
+FINAL TIME = 100
+INITIAL TIME = 1
+NoiseSeed = 100
+Real p1 = 2
+Real p2 = 3
+TIME STEP = 1
+W 1[m1,m1] = 100
+W 1[m1,m2] = 0
+W 1[m2,m1] = 0
+W 1[m2,m2] = 1
