@@ -1,333 +1,337 @@
-# 4차 전투일지🩸 — 4일 강행군 (Final Sprint)
-
-> **코드명:** 수습(收拾) | **기간:** Dec 9-12, 2025 (4일)
-> **단계:** Scale Phase | **군령:** v4.4
-> **모토:** "Prove It or Kill It"
+---
+modified:
+  - 2025-12-09T10:30:00-05:00
+version: 4.1
+---
+# 4차 전투일지🩸 — 4-Day Sprint
+## Dec 9-12, 2025 | Prove It or Kill It
+## R&R Concerns 반영 버전
 
 ---
 
-## 🏛️ 4대 원칙 (Scale Principles)
+## §1. 목표
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│  1. METRICS OVER VISION — 수치가 없으면 존재하지 않는다         │
-│  2. PROVE OR KILL — 증명 불가하면 폐기한다                      │
-│  3. PROCESS IS FREEDOM — 프로세스가 자유를 보장한다             │
-│  4. DELIVERY IS INTEGRITY — 납품이 곧 진정성이다                │
-└─────────────────────────────────────────────────────────────────┘
-```
+> **"2025년 12월 12일(D4)까지 Charlie Fine과 Scott Stern에게 'Unrejectable Manuscript' 제출"**
 
----
+**Unrejectable = 심사위원이 싫어도(Dislike) 거절할 수 없다(Cannot Reject)**
 
-## 📊 Nail → Scale 전환 비교
-
-![Nail vs Scale Phase Comparison](nail_scale_comparison.png)
-
-| 차원 | NAIL (1-3차) | SCALE (4차) |
-|:---|:---|:---|
-| **목표** | 탐색 (Exploration) | 검증 (Verification) |
-| **Agent** | 13명 선형 | 4명 다이아몬드 루프 |
-| **성공 기준** | "작동하는가?" | "반박 불가한가?" |
-| **실패 대응** | 피봇 | 폐기 (Kill) |
-| **Dashboard** | Iron Boss (생산 추적) | Scale Control Tower (검증 추적) |
+| Advisor | 기준 |
+|:---|:---|
+| **Charlie** | "Structure is publication-ready" |
+| **Scott** | "Theory is sound, mechanism is clear" |
 
 ---
 
-# §1. 전투 요약 (Battle Summary)
-
-## 1.1 전투 타임라인
+## §2. 편제: MGK 체제
 
 ```
-Oct 21 ─────── Nov 10 ──── Nov 20-24 ──── Nov 29 ─── Dec 4 ─── Dec 7 ─── Dec 9-12
-   │              │            │              │          │         │         │
-   └── 1차 전투 ──┘            │              └─ 3차 전투─┘         │         │
-       "적지(適地)"            │                 "U-Sprint"         │         │
-       21일                    └── 2차 전투 ──┘                전환점 ↑         │
-                                   "종교적 박해"                              │
-                                   5일                               4차 전투
-                                                                   "수습(收拾)"
-                                                                      4일
-═══════════════════════════ NAIL ═════════════════════════════════╪═════════════
-═══════════════════════════════════════════════════════════════ SCALE ══════════
+┌─────────────────────────────────────────────────────────────────────────┐
+│                         4차 전투 편제 (MGK)                             │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│                           M_統 (통제사)                                  │
+│                          ┌─────────────┐                                │
+│                          │  起 + 結    │                                │
+│                          │  지휘/결론  │                                │
+│                          └──────┬──────┘                                │
+│                                 │                                       │
+│                    ┌────────────┴────────────┐                          │
+│                    ↓                         ↓                          │
+│             ┌─────────────┐           ┌─────────────┐                   │
+│             │   G🟠 중군   │           │   K🔴 검사   │                   │
+│             │   承 + 轉    │           │  🎛️ + 🔍    │                   │
+│             │  이론/결과   │           │ Dashboard   │                   │
+│             └─────────────┘           │ + D3 검증   │                   │
+│                                       └─────────────┘                   │
+│                                                                         │
+├─────────────────────────────────────────────────────────────────────────┤
+│  ❌ J🟢: 폐지 → G🟠에 통합 (핸드오프 비용 제거)                          │
+└─────────────────────────────────────────────────────────────────────────┘
 ```
 
-## 1.2 전술 효과성 분석
+| 역할 | Platform | 덕목 | 기승전결 | 책임 |
+|:---|:---:|:---:|:---:|:---|
+| **M_統** | Human | 見 | **起 + 結** | 지휘, Hook, 결론 |
+| **G🟠** | Claude | 思+造 | **承 + 轉** | 이론, 코드, 숫자 |
+| **K🔴** | Gemini | 義 | **검증** | 🎛️Dashboard + 🔍D3검증 |
 
-### 1차 전투: 적지(適地) — Oct 21 - Nov 10 (21일)
+---
 
-| 전술 | 효과 | 교훈 |
-|:---|:---:|:---|
-| **98%→12% DV 수정** | ★★★★★ | 이론에서 DV 도출 필수 |
-| **deal_panel 110B 시도** | ★☆☆☆☆ | 데이터 한계 조기 인정 |
-| **PitchBook 직접 활용** | ★★★★☆ | 원천 데이터가 답 |
-| **spec_curve 설계** | ★★★★★ | Multiverse = 견고성 |
+## §3. Rally Points: IDTS Protocol
 
-**핵심 성과:** N = 408,784 확보, 4개 산업 분할
-**핵심 실패:** 110B 패널 구축 실패 → 직접 매칭 포기
-
-### 2차 전투: 종교적 박해 — Nov 20-24 (5일)
-
-| 전술 | 효과 | 교훈 |
-|:---|:---:|:---|
-| **4차원 V 측정** | ★★☆☆☆ | Coverage <30% → 축소 |
-| **3차원 축소** | ★★★★★ | Coverage >50% 확보 |
-| **Multiverse 설계** | ★★★★☆ | 10,000+ specs 관리 가능 |
-| **Eisenberg 발굴** | ★★★★★ | 이론적 앵커 확보 |
-
-**핵심 성과:** V 측정 체계 완성, Analyst/Believer 프레임 발견
-**핵심 실패:** V_org 과신 → 3차원 축소로 해결
-
-### 3차 전투: U-shaped Sprint — Nov 29 - Dec 4 (6일)
-
-| 전술 | 효과 | 교훈 |
-|:---|:---:|:---|
-| **Quartile + χ²** | ★★★★★ | 비모수적 검증 = 견고성 |
-| **β₂ 회귀 포기** | ★★★★☆ | 선형 가정 오해 방지 |
-| **Murky Middle 명명** | ★★★★★ | Hook 확보 |
-| **3주 목표** | ★★☆☆☆ | 비현실적 → 12일 조정 |
-
-**핵심 성과:** χ² = 1430.9***, U-shape 확정, ρ(Y,|ΔV|) = 0.159***
-**핵심 실패:** 일정 과대 → 현실적 조정
-
-### 전술 효과성 종합
+> **Rally Point = 구성원 간 생존신고**
 
 ```
-★★★★★ (5): Theory-first DV, Quartile+χ², Murky Middle Hook
-★★★★☆ (4): Multiverse, 3차원 축소, 원천 데이터
-★★★☆☆ (3): -
-★★☆☆☆ (2): 4차원 V, 3주 일정
-★☆☆☆☆ (1): 110B 패널, 과신
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│   💡 Ideate ────→ 🐣 Draft ────→ 🧪 Test ────→ 📝 Submit                │
+│      100%          100%          45%           0%                       │
+│      ████████      ████████      ████░░░░      ░░░░░░░░                │
+│      DONE          DONE          NOW           D4                       │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-# §2. 4일 작전 계획 (Operation Plan) — Editor 반영 수정판
+## §4. D1-D4 일정: 무기 제조 공정
 
-## 2.1 일별 목표
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│   D1: 🔨 鍛造 (FORGING)     "쇳덩이를 두드려 형태를 만든다"             │
+│       ────────────────                                                  │
+│       Team: M ⇄ G🟠         K🔴: 🎛️ Dashboard                          │
+│       Task: 🔴 Critical 해결 (R&R #1-5 포함)                            │
+│       IDTS: 🧪 45% → 70%                                                │
+│                                                                         │
+│                          ↓                                              │
+│                                                                         │
+│   D2: ⚙️ 組立 (ASSEMBLY)    "부품들을 하나의 무기로 조립한다"           │
+│       ────────────────                                                  │
+│       Team: M ⇄ G🟠         K🔴: 🎛️ Dashboard                          │
+│       Task: 🟡 Standard + Draft 통합                                    │
+│       IDTS: 🧪 70% → 95%                                                │
+│                                                                         │
+│   ══════════════════════════ K GATE ════════════════════════════════    │
+│                                                                         │
+│   D3: 🔍 檢收 (INSPECTION)  "품질검사관이 무기를 검수한다"              │
+│       ────────────────                                                  │
+│       Team: G🟠 → K🔴        K🔴: 🔍 Audit 활성화                       │
+│       Task: 품질 검증 (R&R 체크리스트), M_統 結 작성                     │
+│       IDTS: 🧪 → 📝 전환                                                │
+│                                                                         │
+│                          ↓                                              │
+│                                                                         │
+│   D4: 📦 出荷 (SHIPPING)    "완성된 무기를 장군에게 납품한다"           │
+│       ────────────────                                                  │
+│       Team: → Advisors                                                  │
+│       Task: Charlie & Scott 이메일 제출                                 │
+│       IDTS: 📝 100%                                                     │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+```
 
-| Day | Focus | Key Deliverable | Gate |
+---
+
+## §5. R&R Concerns → Task 매핑
+
+### R&R 요약
+
+| # | Concern | Paper | 핵심 질문 |
+|:---:|:---|:---:|:---|
+| 1 | \|ΔV\| as proxy | N | k 직접측정 불가, \|ΔV\|로 대체 가능한가? |
+| 2 | FOMO → Cu | N | Pop-psychology에서 formal parameter로 전환이 rigorous한가? |
+| 3 | Industry Interaction | C/N | Trans (ρ≈+0.236) > Software 교호작용이 유의한가? |
+| 4 | D Redefinition | N | Demand → Distribution 유비가 수학적으로 성립하는가? |
+| 5 | Asset Specificity | C | "More money = flexibility" 반론을 격파하는가? |
+
+### 🔑 R&R #2 핵심 논증: FOMO → Cu
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│   "Anxiety is a Bayesian signal of high Cu"                             │
+│                                                                         │
+│   FOMO (Behavioral)           Cu (Formal Economic)                      │
+│   ─────────────────           ────────────────────                      │
+│   Fear of Missing Out    →    High Sensitivity to Underage Cost         │
+│                                                                         │
+│   논증:                                                                 │
+│   1. Anxiety = 예상되는 후회(anticipated regret)의 주관적 경험          │
+│   2. Regret = 실현된 underage cost (Cu)                                 │
+│   3. High anxiety ⟹ 에이전트의 사전 확률: P(Cu가 높다)가 높음          │
+│   4. 따라서: FOMO ≡ Cu >> Co라는 베이지안 믿음                          │
+│                                                                         │
+│   수학적 연결:                                                          │
+│   CR = Cu / (Cu + Co)                                                   │
+│   High FOMO → High Cu → High CR → High k* (더 많은 옵션 필요)           │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## §6. Task 배분표 (R&R 반영)
+
+### 🔴 Editor-Critical (D1 필수)
+
+| # | Task | Paper | R&R | Owner | Due |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 1 | **Golden Cage → Asset Specificity 피봇** | C | #5 | G🟠 | D1 PM |
+| 2 | **Data Correction (8.8× → 2.7×)** | ALL | - | G🟠 | D1 AM |
+| 3 | **FOMO → Cu 수학적 매핑** | N | #2 | G🟠 | D1 PM |
+| 4 | **CR Calibration** | N | #4 | G🟠 | D1 PM |
+| 5 | **D 재정의 타당성** | N | #4 | G🟠 | D1 PM |
+| 6 | **\|ΔV\| as proxy caveat** | N | #1 | G🟠 | D1 PM |
+
+### 🟡 Standard (D2)
+
+| # | Task | Paper | R&R | Owner | Due |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 7 | Bolton s₂↔V 매핑 | U | - | G🟠 | D2 AM |
+| 8 | Hook 서사 강화 | U | - | **M_統** | D2 AM |
+| 9 | Nanda 포지셔닝 | C | - | **M_統** | D2 PM |
+| 10 | **Industry Interaction 검증** | C/N | #3 | G🟠 | D2 PM |
+| 11 | 인과추론 Caveat | ALL | - | G🟠 | D2 PM |
+
+### ⏳ D3-D4
+
+| # | Task | Owner | Due |
+|:---:|:---|:---:|:---:|
+| 12 | 3 Papers 품질 검증 (R&R 체크리스트) | **K🔴** | D3 |
+| 13 | Contribution 명시 | **M_統** | D3 |
+| 14 | 제출 이메일 | **M_統** | D4 |
+
+---
+
+## §7. 기승전결 × 담당자 × 상태
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│   起 (M_統)        承 (G🟠)         轉 (G🟠)         結 (M_統)          │
+│   ─────────        ─────────        ─────────        ─────────          │
+│   Hook/도입        이론/논리        결과/증거        결론/기여          │
+│                                                                         │
+│   🟡 70%           🟡 75%           🔴 45%           ⏳ 0%              │
+│                                                                         │
+│   Tasks:           Tasks:           Tasks:           Tasks:             │
+│   • Hook 서사      • FOMO→Cu #2     • 숫자 검증      • Contribution     │
+│   • Nanda 톤       • D 재정의 #4    • Industry #3    • Implication      │
+│                    • Bolton 연결    • CR Calibration                    │
+│                    • Asset Spec #5  • |ΔV| proxy #1                     │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## §8. Paper 진행률
+
+| Paper | Title | 진행률 | Key Metric | R&R Focus |
+|:---:|:---|:---:|:---|:---|
+| ✌️U | Vague Promise | 75% | χ²=1430.9*** | Bolton s₂↔V |
+| 🦾C | Commitment Trap | 70% | ρ=+0.159*** | #3, #5 |
+| 🤹N | Promise Vendor | 55% | TBD (CR) | #1, #2, #4 |
+
+---
+
+## §9. 공식 숫자 (BULLETIN 기준)
+
+| Variable | Value | Status |
+|:---|:---:|:---:|
+| N_total | **408,784** | ✅ |
+| N_panel | **123,906** | ✅ |
+| ρ(Y, \|ΔV\|) | **+0.159***| ✅ |
+| ρ(E, \|ΔV\|)_within_V | **-0.052***| ✅ |
+| Flexibility Gap | **2.7×** | ✅ |
+| Mid-V Trap Rate | **25.6%** | ✅ |
+| Trans ρ(\|ΔV\|, Y) | **≈+0.236** | ⚠️ 검증 필요 |
+
+### ❌ Deprecated (사용 금지)
+- ~~488,381~~ → 408,784
+- ~~8.8×~~ → 2.7×
+- ~~-0.4~~ → -0.052
+
+---
+
+## §10. K🔴 D3 검증 체크리스트 (R&R 포함)
+
+### R&R 대응 검증
+
+| # | R&R Concern | 검증 항목 | Status |
 |:---:|:---|:---|:---:|
-| **D1** | Bottleneck 해소 | 7개 Bottleneck → 0개 | K🔴 |
-| **D2** | 초안 완성 | 3 Papers Draft Complete | K🔴 |
-| **D3** | 검증 + 통합 | Ch5 통합, RP4 통과 | M |
-| **D4** | 제출 | Charlie & Scott 이메일 | M |
+| 1 | \|ΔV\| as proxy | k 직접측정 불가 명시, caveat 문구 | [ ] |
+| 2 | FOMO → Cu | **"Anxiety = Bayesian signal of high Cu"** 수학적 연결 | [ ] |
+| 3 | Industry Interaction | Trans (ρ≈+0.236) > Software, 교호작용 유의성 | [ ] |
+| 4 | D 재정의 | Demand → Distribution, CDF 타당성 | [ ] |
+| 5 | Asset Specificity | "More money = flexibility" 반론 격파 | [ ] |
 
-## 2.2 D1 Action Items (Editor 반영 재배치)
+### Paper별 체크리스트
 
-| Priority | Task | Paper | 근거 | Owner | Deadline |
-|:---:|:---|:---:|:---|:---:|:---:|
-| 🔴1 | **Golden Cage → Asset Specificity 피봇** | C | Editor "fatal flaw" | G🟠 | D1 PM |
-| 🔴2 | **8.8× → 2.7× 전문 숫자 검토** | ALL | Editor "disregard" | J🟢 | D1 AM |
-| 🔴3 | **FOMO→Cu 수학적 매핑 명확화** | N | Editor "mathematically" | G🟠 | D1 PM |
-| 🔴4 | CR Calibration (Scott λ) | N | 기존 유지 | J🟢 | D1 PM |
-| 🟡5 | Bolton s₂↔V 연결 | U | 내부 정합성 | G🟠 | D2 AM |
-| 🟡6 | 인과추론 한계 Caveat | ALL | Editor "limited" | G🟠 | D2 PM |
-| ⬇️7 | Nanda 확장 톤 조정 | C | 우선순위 하향 | G🟠 | D3 |
+**Paper ✌️U**
+- [ ] U-Shape: Q1 > Q2, Q4 > Q3
+- [ ] 방법론: Quartile + χ² (NOT β₂)
+- [ ] Bolton s₂↔V 매핑
 
----
+**Paper 🦾C**
+- [ ] Golden Cage → Asset Specificity 피봇 완료
+- [ ] "More money = flexibility" 반론 격파
+- [ ] Industry Interaction (Trans > Software)
 
-# §3. 리스크 매트릭스 (Risk Matrix) — Editor 반영 수정판
-
-## 3.0 Editor Note vs 4차 전투 Gap 분석
-
-> **핵심 발견:** 내가 놓친 Critical Gap이 3개 있었다.
-
-```
-┌───────────────────────────────────────────────────────────────────────────────┐
-│                    Editor Concern vs 4차 전투 Critical 비교                    │
-├───────────────────────────────┬─────────────────────────┬─────────┬───────────┤
-│ Editor Note (5개)             │ 4차 전투 Bottleneck     │ 일치    │ Gap       │
-├───────────────────────────────┼─────────────────────────┼─────────┼───────────┤
-│ 1. DATA CORRECTION (2.7×)     │ -                       │ ❌ 누락  │ 숫자 검토 │
-│ 2. Paper N: k* 직접 측정 불가  │ 🔴 CR Calibration       │ ✅ 일치  │ -         │
-│ 3. MEASUREMENT 관찰적 한계     │ -                       │ ⚠️ 부분  │ Caveat    │
-│ 4. FOMO→Cu 수학적 매핑        │ -                       │ ❌ 누락  │ 엄밀성    │
-│ 5. GOLDEN CAGE (ρ=-0.014)     │ -                       │ ❌ 누락  │ 치명적!   │
-├───────────────────────────────┼─────────────────────────┼─────────┼───────────┤
-│ -                             │ 🔴 Bolton 연결 (U)      │ ⚠️ 관련  │ 내부용    │
-│ -                             │ 🔴 Nanda 포지셔닝 (C)   │ ⬇️ 하향  │ 톤 문제   │
-└───────────────────────────────┴─────────────────────────┴─────────┴───────────┘
-```
-
-## 3.1 4대 핵심 리스크 (Editor 반영 재배치)
-
-### Risk 1: GOLDEN CAGE 약점 🔴🔴🔴 (신규 — 가장 심각)
-
-| 차원 | 내용 |
-|:---|:---|
-| **증상** | Paper C의 E→ΔV 연결이 ρ=-0.014로 약함 |
-| **확률** | High (80%) |
-| **영향** | **FATAL** — Editor: "fatal flaw?" |
-| **원인** | "돈이 굳힌다" 주장의 증거 부족 |
-| **대응** | **Asset Specificity로 피봇** |
-| **대안** | 한계 인정 + Industry 차이로 설명 |
-| **담당** | G🟠 |
-| **마감** | D1 PM |
-
-**Editor 원문:**
-> "Look for whether the paper successfully pivots the argument to **Asset Specificity** (hardware/contracts) rather than just financial capital as the source of lock-in, or if this remains a **fatal flaw**."
-
-**피봇 전략:**
-```
-현재 (약함):
-E (Capital) ──→ ΔV 감소 ──→ Rigidity
-                   │
-               ρ = -0.014 (😰)
-
-피봇 후 (강함):
-E (Capital) ──→ Asset Specificity ──→ ΔV 감소 ──→ Rigidity
-                      │
-              ┌───────┴───────┐
-        Hardware (공장)   Contracts (계약)
-```
-
-**증거:**
-| Industry | ρ(Y,|ΔV|) | Asset Specificity | 해석 |
-|:---|:---:|:---:|:---|
-| Transportation | +0.236*** | 높음 | 유연성 효과 최대 |
-| Hardware | +0.180*** | 높음 | 유연성 효과 큼 |
-
-### Risk 2: DATA CORRECTION 🔴🔴 (신규)
-
-| 차원 | 내용 |
-|:---|:---|
-| **증상** | Abstract에 8.8× 잔존 가능 |
-| **확률** | Medium (50%) |
-| **영향** | High — 신뢰도 붕괴 |
-| **원인** | 검증 전 숫자 기재 |
-| **대응** | 전문 숫자 검토: **2.7×, N=408,784** |
-| **담당** | J🟢 |
-| **마감** | D1 AM |
-
-**Editor 지시:**
-> "Disregard the claim of an 8.8× growth gap and N=488,381. Use 2.7×."
-
-### Risk 3: FOMO→Cu 수학적 매핑 🔴🔴 (신규)
-
-| 차원 | 내용 |
-|:---|:---|
-| **증상** | Paper N의 FOMO→Cu 변환 엄밀성 부족 |
-| **확률** | Medium (60%) |
-| **영향** | High — Trilogy 구조 붕괴 |
-| **원인** | 행동→수학 매핑 정당화 미흡 |
-| **대응** | D→Belief, FOMO→Cu 수학적 명시 |
-| **담당** | G🟠 |
-| **마감** | D1 PM |
-
-**Editor 지시:**
-> "Scrutinize the theoretical validity of mapping Demand (D) to 'Belief Distribution' and FOMO to 'High Sensitivity to Underage Cost (Cu)'. This translation must hold **mathematically**."
-
-**매핑 명확화:**
-```
-Newsvendor          Promise Vendor
-─────────────       ─────────────────
-Demand D        ↔   Belief Distribution (Analysts + Believers)
-Underage Cu     ↔   FOMO (missed opportunity cost)
-Overage Co      ↔   Burn (wasted resource cost)
-k* = F⁻¹(CR)   ↔   Optimal # of strategic options
-```
-
-### Risk 4: CR Calibration 데이터 부족 🔴 (기존 유지)
-
-| 차원 | 내용 |
-|:---|:---|
-| **증상** | Paper N의 AV vs Fleet CR 값 추정 불가 |
-| **확률** | High (70%) |
-| **영향** | Critical — N 전체 설득력 붕괴 |
-| **대응** | Scott et al. (2019) λ ratio 활용 |
-| **담당** | J🟢 (데이터), G🟠 (해석) |
-| **마감** | D1 PM |
-
-## 3.2 리스크 대응 요약 (Editor 반영)
-
-```
-┌──────────────────────────────────────────────────────────────────────────────────┐
-│  RANK │ RISK                  │ PROB  │ IMPACT  │ RESPONSE                      │
-├──────────────────────────────────────────────────────────────────────────────────┤
-│  🔴1  │ GOLDEN CAGE (C)       │ HIGH  │ FATAL   │ Asset Specificity 피봇        │
-│  🔴2  │ DATA CORRECTION       │ MED   │ HIGH    │ 8.8→2.7× 전수 검토            │
-│  🔴3  │ FOMO→Cu 매핑 (N)      │ MED   │ HIGH    │ 수학적 엄밀성 명시            │
-│  🔴4  │ CR Calibration (N)    │ HIGH  │ CRIT    │ Scott λ proxy                 │
-│  🟡5  │ Bolton 연결 (U)       │ MED   │ HIGH    │ V ≡ 1-s₂ 명시                │
-│  🟡6  │ 인과추론 Caveat       │ MED   │ MED     │ "limited" 명시                │
-│  ⬇️7  │ Nanda 톤 (C)          │ MED   │ MED     │ 우선순위 하향                 │
-└──────────────────────────────────────────────────────────────────────────────────┘
-```
-
-## 3.3 교훈: Editor vs 나의 관점 차이
-
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│ Editor (외부 심사 관점)              │ 나 (내부 작업 관점)              │
-├────────────────────────────────────┼────────────────────────────────────┤
-│ "숫자가 맞는가?" (Data)              │ "구조가 맞는가?" (Theory)         │
-│ "수학이 되는가?" (Rigor)             │ "연결이 되는가?" (Logic)          │
-│ "인과가 되는가?" (Causality)         │ "톤이 맞는가?" (Framing)          │
-│ "치명적 약점은?" (Weakness)          │ "빠진 것은?" (Completeness)       │
-└────────────────────────────────────┴────────────────────────────────────┘
-```
-
-> **핵심 교훈:** Golden Cage의 ρ=-0.014은 내가 "알고 있었지만" "치명적"이라고 인식하지 못했다.
-> **원칙:** 약점을 숨기지 말고, 피봇하라.
+**Paper 🤹N**
+- [ ] k 직접측정 불가 명시
+- [ ] FOMO → Cu 수학적 연결 ("Anxiety = Bayesian signal")
+- [ ] D 재정의 타당성
+- [ ] CR Calibration (Scott λ)
 
 ---
 
-# §4. 성공 기준 & 검증 (Success Criteria)
+## §11. 리스크 매트릭스
 
-## 4.1 Required Metrics (Editor 반영)
+| Risk | R&R | Prob | Impact | Response | Owner | Due |
+|:---|:---:|:---:|:---:|:---|:---:|:---:|
+| 🔴 Golden Cage ρ=-0.014 | #5 | 80% | FATAL | Asset Specificity 피봇 | G🟠 | D1 |
+| 🔴 FOMO pop-psychology | #2 | 60% | High | "Anxiety = Bayesian Cu" | G🟠 | D1 |
+| 🔴 k 직접측정 기대 | #1 | 70% | FATAL | \|ΔV\| proxy caveat | G🟠 | D1 |
+| 🔴 D 유비 붕괴 | #4 | 50% | FATAL | 수학적 타당성 증명 | G🟠 | D1 |
+| 🟡 Industry Interaction 없음 | #3 | 40% | High | Trans vs Software 검증 | G🟠 | D2 |
 
-| Paper | Metric | Target | Current | Status |
-|:---:|:---|:---|:---|:---:|
-| ✌️U | χ² (4 industries) | >300*** | 1430.9*** | ✅ |
-| ✌️U | Bolton 연결 | 명확 | - | ⚠️ |
-| 🦾C | ρ(Y, \|ΔV\|) | >+0.15*** | +0.159*** | ✅ |
-| 🦾C | **Asset Specificity 피봇** | 명확 | - | ❌ 신규 |
-| 🦾C | **숫자 정정 (2.7×)** | 전수 검토 | - | ❌ 신규 |
-| 🤹N | **FOMO→Cu 매핑** | 수학적 | - | ❌ 신규 |
-| 🤹N | CR Calibration | AV vs Fleet | - | ⚠️ |
-| Ch5 | Paradox 통합 | Single narrative | - | ❌ |
+---
 
-## 4.2 Rally Point 진행
+## §12. 협업 프로토콜
 
-```
-RP3 (QA)        RP4 (Integration)    RP5 (Submit)
-[██████░░░░]    [░░░░░░░░░░]        [░░░░░░░░░░]
-   60%              0%                  0%
-Gate: K🔴        Gate: M              Gate: M
-Due: D2          Due: D3              Due: D4
-```
-
-## 4.3 최종 성공 기준
+### D1-D2: M ⇄ G🟠 직접 모드
 
 ```
-Charlie: "Structure is publication-ready"
-Scott: "Theory is sound, mechanism is clear"
+M_統 (지시) ──→ G🟠 (설계+실행) ──→ M_統 (검토)
+     ↑                                    │
+     └────────────────────────────────────┘
+              실시간 피드백 루프
+              
+K🔴: 🎛️ Dashboard 모드 (수동적 — 보고 받아 반영)
+```
 
-= "Unrejectable Manuscript"
-심사위원이 싫어도(Dislike) 거절할 수 없다(Cannot Reject)
+### D3: G🟠 → K🔴 검증 모드
+
+```
+G🟠 (완성품) ──→ K🔴 (검증: R&R 체크리스트) ──→ 🇰🇷 승인 / 🚨 Reject
+                                                    │
+                                              M_統 (結 작성)
 ```
 
 ---
 
-## 📁 파일 위치
+## §13. 핵심 파일 위치
 
-| 산출물 | 경로 |
+| 파일 | 위치 |
 |:---|:---|
-| 4차 전투일지 | 본 문서 |
-| Editor vs Battle 비교 | `editor_vs_battle_comparison.md` |
-| Paper U | `.../output/✌️U/📝product/` |
-| Paper C | `.../output/🦾C/📝product/` |
-| Paper N | `.../output/🤹N/📝product/` |
-| Dashboard | `.../dashboard/scale/scale_dashboard.html` |
+| 📢 BULLETIN | `/output/📢BULLETIN.md` |
+| 🗄️ REGISTRY | `/output/🗄️REGISTRY.md` |
+| Squad Prompts | `/output/_🩸I/squad_prompts.md` |
+| K🔴 Checklist | `/output/_🩸I/K🔴_D3_test_checklist.md` |
+| Paper U | `/output/✌️U/` |
+| Paper C | `/output/🦾C/` |
+| Paper N | `/output/🤹N/` |
 
 ---
 
-*必死卽生 — 4일 안에 결판을 낸다*
-*"약점을 숨기지 말고, 피봇하라"*
+## §14. 변경 이력
+
+| Date | Version | Change |
+|:---|:---:|:---|
+| 12-09 | **v4.1** | R&R Concerns 통합, Task #5-6 추가, FOMO→Cu 논증 |
+| 12-09 | v4.0 | JGK→MGK 전환, IDTS Protocol 도입 |
+| 12-08 | v3.0 | Editor Note 반영, Golden Cage 리스크 식별 |
+| 12-07 | v2.0 | 4-Day Sprint 구조 수립 |
 
 ---
 
-**Version History:**
-- v1.0 (2025-12-09): 4일 강행군 계획 수립
-- v2.0 (2025-12-09): 4섹션 구조, 4대 원칙, 1-3차 전투 요약 추가
-- v3.0 (2025-12-09): **Editor Note 반영 — 우선순위 재배치, Golden Cage 피봇 추가**
+*"構造 > 速度 — 빠름보다 견고함이 먼저다"*
+
+*"Anxiety is a Bayesian signal of high Cu"*
+
+*"必死卽生 — 죽고자 하면 살고, 살고자 하면 죽는다"*
+
+🎯 4차 전투, D1 진행 중.

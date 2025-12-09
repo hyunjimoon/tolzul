@@ -15,6 +15,7 @@ import json
 import os
 from pathlib import Path
 import datetime
+import base64
 
 # Configuration
 CURRENT_DIR = Path(__file__).parent.resolve()
@@ -724,18 +725,89 @@ def generate_html(data):
     </html>
     """
 
+def generate_markdown_dashboard(data, html_content=None):
+    """Generate a Markdown version of the dashboard for Obsidian Publish."""
+    
+    # Hybrid Approach: Iframe + Link
+    # 1. Iframe: Works on Obsidian Publish (if configured correctly).
+    # 2. Link: Fallback if iframe is blocked.
+    
+    md = f"# 🚀 Scale Command Center (v3.0)\n\n"
+    md += f"> **Battle**: {data['meta']['battle']} ({data['meta']['codename']})\n"
+    md += f"> **Day**: {data['meta']['currentDay']} | **Motto**: {data['meta']['motto']}\n\n"
+    
+    md += "## 🖥️ Live Dashboard\n\n"
+    md += "*(If the dashboard below is blank, click the link to open it directly)*\n\n"
+    md += '<iframe src="scale_dashboard.html" style="width:100%; height:800px; border:none; background: #0f172a; border-radius: 12px;"></iframe>\n\n'
+    md += "🔗 [**Open Dashboard in New Tab**](scale_dashboard.html)\n\n"
+    
+    md += "---\n\n"
+    
+    # 1. Paper Progress
+    md += "## 📊 Paper Status\n\n"
+    md += "| Paper | Target | Progress | Key Metric | Status |\n"
+    md += "|:---|:---|:---|:---|:---|\n"
+    
+    for pid, pdata in data["papers"].items():
+        status_icon = "🟢" if pdata['progress'] >= 80 else "🟡" if pdata['progress'] >= 50 else "🔴"
+        md += f"| **{pdata['name']}** | {pdata['target']} | {status_icon} {pdata['progress']}% | {pdata['keyMetric']['current']} | {pdata['keyMetric']['target']} |\n"
+    
+    md += "\n---\n\n"
+    
+    # 2. Rally Points (IDTS)
+    md += "## 🚩 Rally Points (IDTS)\n\n"
+    md += "| Phase | Status | Gate |\n"
+    md += "|:---|:---|:---|\n"
+    for rid, rdata in data["rallyPoints"].items():
+        emoji = rdata.get("emoji", "")
+        name = rdata.get("name", rid)
+        status = "✅ Done" if rdata['status'] == 'done' else "🔄 In Progress" if rdata['status'] == 'in_progress' else "⏳ Pending"
+        md += f"| {emoji} **{name}** | {status} | {rdata['gate']} |\n"
+        
+    md += "\n---\n\n"
+    
+    # 3. Active Bottlenecks
+    md += "## 🚨 Active Bottlenecks\n\n"
+    md += "| Paper | Issue | Owner | Due | Prompt |\n"
+    md += "|:---|:---|:---|:---|:---|\n"
+    
+    all_bottlenecks = []
+    for pid, pdata in data["papers"].items():
+        for b in pdata.get("bottlenecks", []):
+            b["paper"] = pid
+            all_bottlenecks.append(b)
+            
+    # Sort
+    priority_map = {"critical": 0, "important": 1, "normal": 2}
+    status_map = {"pending": 0, "in_progress": 1, "done": 2}
+    all_bottlenecks.sort(key=lambda x: (status_map.get(x["status"], 2), priority_map.get(x["priority"], 2)))
+    
+    for b in all_bottlenecks[:10]:
+        if b['status'] == 'done': continue
+        prompt_snippet = (b.get('prompt', '')[:50] + '...') if b.get('prompt') else '-'
+        md += f"| **{b['paper']}** | {b['desc']} | {b['owner']} | {b['due']} | `{prompt_snippet}` |\n"
+        
+    return md
+
 def main():
     print("🚀 Generating Scale Dashboard v3.0...")
-    data = load_data()
-    if not data:
-        return
-        
-    html_content = generate_html(data)
     
-    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+    # Load state
+    data = load_data()
+    
+    # Generate HTML
+    html_content = generate_html(data)
+    output_path = CURRENT_DIR / "scale_dashboard.html"
+    with open(output_path, "w") as f:
         f.write(html_content)
-        
-    print(f"✅ Dashboard saved to {OUTPUT_FILE}")
+    print(f"✅ HTML Dashboard saved to {output_path}")
+    
+    # Generate Markdown (New)
+    md_content = generate_markdown_dashboard(data, html_content)
+    md_output_path = CURRENT_DIR / "scale_dashboard.md"
+    with open(md_output_path, "w") as f:
+        f.write(md_content)
+    print(f"✅ Markdown Dashboard saved to {md_output_path}")
 
 if __name__ == "__main__":
     main()

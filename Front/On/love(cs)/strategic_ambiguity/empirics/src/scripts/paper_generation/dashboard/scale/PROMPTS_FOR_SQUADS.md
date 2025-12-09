@@ -93,11 +93,15 @@ We need a new "Key Constructs" table. Please define these terms precisely for th
 *   **Punchline**: "Strategy is not about being 'Lean' or 'Fat'; it is about matching your $k$ to your $CR$."
 
 ### 🔴 Prompt for K-Squad (The Skeptic)
-**Task**: **Audit the "Winner-Take-All" Assumption.**
+**Task**: **Audit the "Winner-Take-All" Assumption & Proxy Validity.**
 *   **Challenge**: Is $CR_{AV} \approx 0.9$ still true in 2025?
 *   **Check**:
     *   Has the AV market shifted from "Winner-Take-All" to "Fragmented Service"? If so, $C_u$ drops, and $k^*$ should drop.
     *   **Verify**: Does the data show AV startups reducing their option portfolios (consolidating sensors) as the hype cycle cools?
+*   **New Audit Items (G-Squad Request)**:
+    *   **D Redefinition**: Verify the mathematical validity of redefining Demand ($D$) in the context of "Promise Vendor".
+    *   **Delta V Proxy**: Ensure the limitations of using $|\Delta V|$ as a proxy for flexibility are clearly stated (Caveat).
+    *   **Industry Interaction**: Check if the interaction effect (V × Industry) holds for Transportation vs Software.
 *   **Output**: A "Sensitivity Warning" if the CR assumption is outdated.
 
 ---
